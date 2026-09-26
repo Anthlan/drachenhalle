@@ -169,7 +169,7 @@ const originalMimeType = (item) => {
                     type="button"
                     class="gallery-action"
                     data-share-image
-                    data-share-url={originalImageUrl(item)}
+                    data-share-url={item.webUrl}
                     aria-label={`${item.title} teilen`}
                   >
                     <span aria-hidden="true">↗</span> Teilen
@@ -307,7 +307,7 @@ const originalMimeType = (item) => {
         detailStyleRow.hidden = !hasStyle;
         detailStyle.textContent = hasStyle ? `${card.dataset.style} – ${card.dataset.styleLabel}` : "";
         detailOriginal.href = card.dataset.original;
-        detailShare.dataset.shareUrl = card.dataset.originalImage;
+        detailShare.dataset.shareUrl = card.dataset.web;
         detailDownload.dataset.originalUrl = card.dataset.originalImage;
         detailDownload.dataset.fileName = card.dataset.originalName;
         detailDownload.dataset.mimeType = card.dataset.originalMime;
