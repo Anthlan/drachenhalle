@@ -240,6 +240,20 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                         <img src={document.imageUrl} alt={`Grafik zu ${document.title}`} />
                       </a>
                       <p>Passende Grafik zum Teilen im Allianzchat.</p>
+                      <div class="document-visual-actions" aria-label="Bildaktionen">
+                        <button
+                          type="button"
+                          class="gallery-action"
+                          data-share-image
+                          data-share-url={document.imageUrl}
+                          data-share-title={document.title}
+                        >
+                          <span aria-hidden="true">↗</span> Teilen
+                        </button>
+                        <a class="gallery-action" href={document.imageUrl} download={`${document.slug}.webp`}>
+                          <span aria-hidden="true">↓</span> Herunterladen
+                        </a>
+                      </div>
                       <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
                         Originalgrafik auf GitHub öffnen <span aria-hidden="true">↗</span>
                       </a>
@@ -258,6 +272,20 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                         <img src={document.imageUrl} alt={`Grafik zu ${document.title}`} />
                       </a>
                       <p>Passende Grafik zum Teilen im Allianzchat.</p>
+                      <div class="document-visual-actions" aria-label="Bildaktionen">
+                        <button
+                          type="button"
+                          class="gallery-action"
+                          data-share-image
+                          data-share-url={document.imageUrl}
+                          data-share-title={document.title}
+                        >
+                          <span aria-hidden="true">↗</span> Teilen
+                        </button>
+                        <a class="gallery-action" href={document.imageUrl} download={`${document.slug}.webp`}>
+                          <span aria-hidden="true">↓</span> Herunterladen
+                        </a>
+                      </div>
                       <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
                         Originalgrafik auf GitHub öffnen <span aria-hidden="true">↗</span>
                       </a>
@@ -273,10 +301,14 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
         </div>
       </main>
 
+      <p class="share-feedback" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></p>
+
       <SiteFooter />
     </div>
 
     <script>
+      import { initializeImageActions } from "../../scripts/image-actions";
+
       const tipCatalogs = document.querySelectorAll("[data-tip-catalog]");
 
       for (const catalog of tipCatalogs) {
@@ -378,6 +410,8 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
           }
         });
       }
+
+      initializeImageActions();
     </script>
   </body>
 </html>

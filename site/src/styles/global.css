@@ -480,6 +480,8 @@ h1 {
 
 .gallery-card {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .gallery-card[hidden] {
@@ -581,6 +583,41 @@ h1 {
 .card-copy time {
   flex: 0 0 auto;
   text-align: right;
+}
+
+.gallery-card-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: auto;
+  padding: 10px 2px 0;
+}
+
+.gallery-action {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: rgba(17, 25, 54, 0.7);
+  color: var(--gold-pale);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.gallery-action:hover,
+.gallery-action:focus-visible {
+  border-color: var(--gold);
+  background: rgba(33, 45, 88, 0.9);
+  color: var(--ink);
 }
 
 .gallery-empty {
@@ -737,21 +774,93 @@ h1 {
   line-height: 1.45;
 }
 
-.detail-original {
+.dialog-image-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
   margin-top: auto;
+}
+
+.detail-share,
+.detail-download,
+.detail-original {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 13px 16px;
-  border: 1px solid var(--gold);
   border-radius: 4px;
-  background: linear-gradient(180deg, #edbd64, #cc8f2c);
-  color: #101225;
+  font: inherit;
   font-size: 14px;
   font-weight: 750;
   text-align: center;
+  cursor: pointer;
 }
 
+.detail-share {
+  border: 1px solid var(--line-bright);
+  background: rgba(17, 25, 54, 0.82);
+  color: var(--gold-pale);
+}
+
+.detail-download {
+  border: 1px solid var(--gold);
+  background: linear-gradient(180deg, #edbd64, #cc8f2c);
+  color: #101225;
+}
+
+.detail-original {
+  margin-top: 9px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.detail-share:hover,
+.detail-share:focus-visible,
 .detail-original:hover,
 .detail-original:focus-visible {
+  border-color: var(--line-bright);
+  background: rgba(33, 45, 88, 0.72);
+  color: var(--ink);
+}
+
+.detail-download:hover,
+.detail-download:focus-visible {
   background: linear-gradient(180deg, #f6d180, #dda13b);
+}
+
+.share-feedback {
+  position: fixed;
+  z-index: 150;
+  right: 20px;
+  bottom: 20px;
+  max-width: min(360px, calc(100% - 40px));
+  margin: 0;
+  padding: 13px 17px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  background: #111936;
+  color: var(--gold-pale);
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.share-feedback.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.share-feedback.is-error {
+  border-color: #c66;
+  color: #ffd0d0;
 }
 
 .next-sections {
@@ -2152,6 +2261,7 @@ h1 {
 
 .tip-viewer.is-enhanced[data-active-view="detail"] .tip-shared-visual > a:first-child,
 .tip-viewer.is-enhanced[data-active-view="detail"] .tip-shared-visual > p,
+.tip-viewer.is-enhanced[data-active-view="detail"] .tip-shared-visual > .document-visual-actions,
 .tip-viewer.is-enhanced[data-active-view="detail"] .tip-shared-visual > a:last-child {
   width: min(720px, 100%);
   margin-inline: auto;
@@ -2164,6 +2274,10 @@ h1 {
 
 .tip-viewer.is-enhanced[data-active-view="detail"] .tip-shared-visual img {
   max-height: none;
+}
+
+.tip-viewer.is-enhanced[data-active-view="detail"] .document-visual-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .tip-view h2[id],
@@ -2216,6 +2330,13 @@ h1 {
 .document-visual > a:last-child {
   color: var(--gold-pale);
   font-size: 12px;
+}
+
+.document-visual-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  margin: 16px 0 10px;
 }
 
 .document-article {
@@ -2648,6 +2769,11 @@ footer a {
     text-align: left;
   }
 
+  .gallery-card-actions {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
   .gallery-dialog {
     width: 100%;
     max-height: 100vh;
@@ -2676,6 +2802,12 @@ footer a {
     min-height: 330px;
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .share-feedback {
+    right: 12px;
+    bottom: 12px;
+    max-width: calc(100% - 24px);
   }
 
   .next-sections .section-link {

@@ -38,6 +38,10 @@ const dateFormatter = new Intl.DateTimeFormat("de-DE", {
 });
 
 const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00:00Z`)) : "Ohne Datum";
+const downloadName = (item) => {
+  const sourceName = item.sourcePath.split("/").at(-1) ?? "die-bild";
+  return sourceName.replace(/\.[^.]+$/, "") + ".webp";
+};
 ---
 
 <!doctype html>
@@ -79,7 +83,7 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
               <p class="eyebrow">Die vollständige Bildsammlung</p>
               <h2 id="gallery-title">Galerie</h2>
             </div>
-            <p class="gallery-hint">Bild auswählen, um die größere Ansicht und das Original zu öffnen.</p>
+            <p class="gallery-hint">Bild auswählen, teilen oder direkt als optimierte Webversion herunterladen.</p>
           </div>
 
           <div class="gallery-toolbar">
@@ -128,6 +132,7 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
                 data-date-label={formatDate(item.date)}
                 data-web={item.webUrl}
                 data-original={item.repositoryUrl}
+                data-download={downloadName(item)}
               >
                 <button class="gallery-open" type="button" aria-label={`${item.title} öffnen`}>
                   <div class="image-frame">
@@ -150,6 +155,26 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
                     <time datetime={item.date ?? undefined}>{formatDate(item.date)}</time>
                   </div>
                 </button>
+                <div class="gallery-card-actions" aria-label={`Aktionen für ${item.title}`}>
+                  <button
+                    type="button"
+                    class="gallery-action"
+                    data-share-image
+                    data-share-url={item.webUrl}
+                    data-share-title={item.title}
+                    aria-label={`${item.title} teilen`}
+                  >
+                    <span aria-hidden="true">↗</span> Teilen
+                  </button>
+                  <a
+                    class="gallery-action"
+                    href={item.webUrl}
+                    download={downloadName(item)}
+                    aria-label={`${item.title} herunterladen`}
+                  >
+                    <span aria-hidden="true">↓</span> Herunterladen
+                  </a>
+                </div>
               </article>
             ))}
           </div>
@@ -195,6 +220,14 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
               <div><dt>Datum</dt><dd id="detail-date"></dd></div>
               <div id="detail-style-row"><dt>Stil</dt><dd id="detail-style"></dd></div>
             </dl>
+            <div class="dialog-image-actions" aria-label="Bildaktionen">
+              <button class="detail-share" id="detail-share" type="button" data-share-image>
+                <span aria-hidden="true">↗</span> Teilen
+              </button>
+              <a class="detail-download" id="detail-download" href="#" download>
+                <span aria-hidden="true">↓</span> Herunterladen
+              </a>
+            </div>
             <a class="detail-original" id="detail-original" href="#" target="_blank" rel="noopener noreferrer">
               Original auf GitHub öffnen <span aria-hidden="true">↗</span>
             </a>
@@ -202,10 +235,14 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
         </div>
       </dialog>
 
+      <p class="share-feedback" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></p>
+
       <SiteFooter />
     </div>
 
     <script>
+      import { initializeImageActions } from "../scripts/image-actions";
+
       const cards = [...document.querySelectorAll(".gallery-card")];
       const categoryButtons = [...document.querySelectorAll(".category-chip[data-category]")];
       const peopleFilter = document.querySelector("#people-filter");
@@ -221,6 +258,8 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
       const detailStyle = document.querySelector("#detail-style");
       const detailStyleRow = document.querySelector("#detail-style-row");
       const detailOriginal = document.querySelector("#detail-original");
+      const detailShare = document.querySelector("#detail-share");
+      const detailDownload = document.querySelector("#detail-download");
       const detailPosition = document.querySelector("#detail-position");
       const previousButton = document.querySelector("#detail-previous");
       const nextButton = document.querySelector("#detail-next");
@@ -257,6 +296,10 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
         detailStyleRow.hidden = !hasStyle;
         detailStyle.textContent = hasStyle ? `${card.dataset.style} – ${card.dataset.styleLabel}` : "";
         detailOriginal.href = card.dataset.original;
+        detailShare.dataset.shareTitle = card.dataset.title;
+        detailShare.dataset.shareUrl = card.dataset.web;
+        detailDownload.href = card.dataset.web;
+        detailDownload.download = card.dataset.download;
         detailPosition.textContent = `${currentIndex + 1} / ${visibleCards.length}`;
         previousButton.disabled = visibleCards.length < 2;
         nextButton.disabled = visibleCards.length < 2;
@@ -281,7 +324,11 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
 
       peopleFilter.addEventListener("change", applyFilters);
       styleFilter.addEventListener("change", applyFilters);
-      cards.forEach((card) => card.querySelector(".gallery-open").addEventListener("click", () => showCard(card)));
+      cards.forEach((card) => {
+        card.querySelector(".gallery-open").addEventListener("click", () => showCard(card));
+      });
+
+      initializeImageActions();
 
       previousButton.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + visibleCards.length) % visibleCards.length;
