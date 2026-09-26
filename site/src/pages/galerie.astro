@@ -38,9 +38,16 @@ const dateFormatter = new Intl.DateTimeFormat("de-DE", {
 });
 
 const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00:00Z`)) : "Ohne Datum";
-const downloadName = (item) => {
-  const sourceName = item.sourcePath.split("/").at(-1) ?? "die-bild";
-  return sourceName.replace(/\.[^.]+$/, "") + ".webp";
+const originalFileName = (item) => item.sourcePath.split("/").at(-1) ?? "die-bild.png";
+const originalImageUrl = (item) => {
+  const encodedPath = item.sourcePath.split("/").map((segment) => encodeURIComponent(segment)).join("/");
+  return `https://raw.githubusercontent.com/Anthlan/zroute_die/main/${encodedPath}`;
+};
+const originalMimeType = (item) => {
+  const extension = originalFileName(item).split(".").at(-1)?.toLowerCase();
+  if (extension === "jpg" || extension === "jpeg") return "image/jpeg";
+  if (extension === "webp") return "image/webp";
+  return "image/png";
 };
 ---
 
@@ -132,7 +139,9 @@ const downloadName = (item) => {
                 data-date-label={formatDate(item.date)}
                 data-web={item.webUrl}
                 data-original={item.repositoryUrl}
-                data-download={downloadName(item)}
+                data-original-image={originalImageUrl(item)}
+                data-original-name={originalFileName(item)}
+                data-original-mime={originalMimeType(item)}
               >
                 <button class="gallery-open" type="button" aria-label={`${item.title} öffnen`}>
                   <div class="image-frame">
@@ -160,20 +169,22 @@ const downloadName = (item) => {
                     type="button"
                     class="gallery-action"
                     data-share-image
-                    data-share-url={item.webUrl}
-                    data-share-title={item.title}
+                    data-share-url={originalImageUrl(item)}
                     aria-label={`${item.title} teilen`}
                   >
                     <span aria-hidden="true">↗</span> Teilen
                   </button>
-                  <a
+                  <button
+                    type="button"
                     class="gallery-action"
-                    href={item.webUrl}
-                    download={downloadName(item)}
-                    aria-label={`${item.title} herunterladen`}
+                    data-save-image
+                    data-original-url={originalImageUrl(item)}
+                    data-file-name={originalFileName(item)}
+                    data-mime-type={originalMimeType(item)}
+                    aria-label={`Original von ${item.title} speichern`}
                   >
-                    <span aria-hidden="true">↓</span> Herunterladen
-                  </a>
+                    <span aria-hidden="true">↓</span> Original speichern
+                  </button>
                 </div>
               </article>
             ))}
@@ -224,9 +235,9 @@ const downloadName = (item) => {
               <button class="detail-share" id="detail-share" type="button" data-share-image>
                 <span aria-hidden="true">↗</span> Teilen
               </button>
-              <a class="detail-download" id="detail-download" href="#" download>
-                <span aria-hidden="true">↓</span> Herunterladen
-              </a>
+              <button class="detail-download" id="detail-download" type="button" data-save-image>
+                <span aria-hidden="true">↓</span> Original speichern
+              </button>
             </div>
             <a class="detail-original" id="detail-original" href="#" target="_blank" rel="noopener noreferrer">
               Original auf GitHub öffnen <span aria-hidden="true">↗</span>
@@ -296,10 +307,10 @@ const downloadName = (item) => {
         detailStyleRow.hidden = !hasStyle;
         detailStyle.textContent = hasStyle ? `${card.dataset.style} – ${card.dataset.styleLabel}` : "";
         detailOriginal.href = card.dataset.original;
-        detailShare.dataset.shareTitle = card.dataset.title;
-        detailShare.dataset.shareUrl = card.dataset.web;
-        detailDownload.href = card.dataset.web;
-        detailDownload.download = card.dataset.download;
+        detailShare.dataset.shareUrl = card.dataset.originalImage;
+        detailDownload.dataset.originalUrl = card.dataset.originalImage;
+        detailDownload.dataset.fileName = card.dataset.originalName;
+        detailDownload.dataset.mimeType = card.dataset.originalMime;
         detailPosition.textContent = `${currentIndex + 1} / ${visibleCards.length}`;
         previousButton.disabled = visibleCards.length < 2;
         nextButton.disabled = visibleCards.length < 2;

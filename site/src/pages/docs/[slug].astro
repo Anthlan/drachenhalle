@@ -245,14 +245,20 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                           type="button"
                           class="gallery-action"
                           data-share-image
-                          data-share-url={document.imageUrl}
-                          data-share-title={document.title}
+                          data-share-url={document.imageOriginalUrl}
                         >
                           <span aria-hidden="true">↗</span> Teilen
                         </button>
-                        <a class="gallery-action" href={document.imageUrl} download={`${document.slug}.webp`}>
-                          <span aria-hidden="true">↓</span> Herunterladen
-                        </a>
+                        <button
+                          type="button"
+                          class="gallery-action"
+                          data-save-image
+                          data-original-url={document.imageOriginalUrl}
+                          data-file-name={document.imageOriginalName}
+                          data-mime-type={document.imageOriginalMimeType}
+                        >
+                          <span aria-hidden="true">↓</span> Original speichern
+                        </button>
                       </div>
                       <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
                         Originalgrafik auf GitHub öffnen <span aria-hidden="true">↗</span>
@@ -277,14 +283,20 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                           type="button"
                           class="gallery-action"
                           data-share-image
-                          data-share-url={document.imageUrl}
-                          data-share-title={document.title}
+                          data-share-url={document.imageOriginalUrl}
                         >
                           <span aria-hidden="true">↗</span> Teilen
                         </button>
-                        <a class="gallery-action" href={document.imageUrl} download={`${document.slug}.webp`}>
-                          <span aria-hidden="true">↓</span> Herunterladen
-                        </a>
+                        <button
+                          type="button"
+                          class="gallery-action"
+                          data-save-image
+                          data-original-url={document.imageOriginalUrl}
+                          data-file-name={document.imageOriginalName}
+                          data-mime-type={document.imageOriginalMimeType}
+                        >
+                          <span aria-hidden="true">↓</span> Original speichern
+                        </button>
                       </div>
                       <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
                         Originalgrafik auf GitHub öffnen <span aria-hidden="true">↗</span>

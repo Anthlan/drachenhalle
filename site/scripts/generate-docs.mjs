@@ -9,6 +9,19 @@ const repositoryDirectory = path.resolve(siteDirectory, "..");
 const outputPath = path.join(siteDirectory, "src", "data", "docs.generated.json");
 const galleryDataPath = path.join(siteDirectory, "src", "data", "gallery.generated.json");
 const repositoryUrl = "https://github.com/Anthlan/zroute_die";
+const rawRepositoryUrl = "https://raw.githubusercontent.com/Anthlan/zroute_die/main";
+
+const encodeRepositoryPath = (sourcePath) => sourcePath
+  .split("/")
+  .map((segment) => encodeURIComponent(segment))
+  .join("/");
+
+const imageMimeType = (sourcePath) => {
+  const extension = path.posix.extname(sourcePath).toLowerCase();
+  if (extension === ".jpg" || extension === ".jpeg") return "image/jpeg";
+  if (extension === ".webp") return "image/webp";
+  return "image/png";
+};
 
 const baseDocuments = [
   {
@@ -230,6 +243,9 @@ for (const fileName of tipFileNames) {
     topicTags: validateTipTags(frontmatter.themen, tipTopicTags, "themen", source),
     imageUrl: image?.webUrl ?? null,
     imageRepositoryUrl: image?.repositoryUrl ?? null,
+    imageOriginalUrl: image ? `${rawRepositoryUrl}/${encodeRepositoryPath(image.sourcePath)}` : null,
+    imageOriginalName: image ? path.posix.basename(image.sourcePath) : null,
+    imageOriginalMimeType: image ? imageMimeType(image.sourcePath) : null,
   });
 }
 
@@ -360,10 +376,7 @@ for (const document of documents) {
   const introSection = tipSections.find((section) => section.title.startsWith("wofür"));
   const mainSection = tipSections.find((section) => section.title === "tipp");
   const copySection = tipSections.find((section) => section.title.startsWith("html-block"));
-  const encodedSource = document.source
-    .split("/")
-    .map((segment) => encodeURIComponent(segment))
-    .join("/");
+  const encodedSource = encodeRepositoryPath(document.source);
 
   items.push({
     ...document,
