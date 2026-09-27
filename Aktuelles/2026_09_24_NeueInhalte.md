@@ -6,7 +6,7 @@ summary: "Die Informationssammlung und die Galerie wurden um neue Tipps und Chat
 featured: false
 ---
 
-Unter **Nützliches** stehen weitere praktische Tipps für den Spielalltag bereit. Die zugehörigen Grafiken
+Unter **Drachenwissen** stehen weitere praktische Tipps für den Spielalltag bereit. Die zugehörigen Grafiken
 können direkt auf den Tippseiten angesehen werden.
 
 Auch die Galerie wurde um neue Chatmotive ergänzt. Über die Kategorien und Personenfilter lassen sich die

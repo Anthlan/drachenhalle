@@ -5,7 +5,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import docsData from "../../data/docs.generated.json";
 
 const itemBySlug = new Map(docsData.items.map((item) => [item.slug, item]));
-const informationSection = docsData.sections.find((section) => section.name === "Informationen");
+const informationSection = docsData.sections.find((section) => section.name === "Drachenwissen");
 const usefulDocuments = informationSection
   ? informationSection.items.map((slug) => itemBySlug.get(slug)).filter(Boolean)
   : [];
@@ -18,10 +18,10 @@ const usefulDocuments = informationSection
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="Tipps und Spielwissen sowie Allianzinformationen der DIE Drachenhalle."
+      content="Tipps, Strategien und Informationen für den Spiel- und Allianzalltag der DIE Drachenhalle."
     />
-    <link rel="icon" type="image/png" href="/zroute_die/favicon.png" />
-    <title>Nützliches · DIE Drachenhalle</title>
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Wissen der Drachenhalle · DIE Drachenhalle</title>
   </head>
   <body>
     <div class="page-shell">
@@ -29,18 +29,18 @@ const usefulDocuments = informationSection
 
       <main class="docs-main" id="main-content">
         <section class="docs-intro" aria-labelledby="docs-title">
-          <p class="eyebrow">Informationen</p>
-          <h1 id="docs-title">Nützliches</h1>
+          <p class="eyebrow">Drachenwissen</p>
+          <h1 id="docs-title">Wissen der Drachenhalle</h1>
           <p>
-            Tipps und Spielwissen sowie Informationen zur Allianz – direkt aus den Markdown-Dateien
-            des Repositorys erzeugt.
+            Tipps, Strategien und Informationen für den Spiel- und Allianzalltag – direkt aus den
+            Markdown-Dateien des Repositorys erzeugt.
           </p>
-          <dl class="archive-stats" aria-label="Umfang der nützlichen Inhalte">
+          <dl class="archive-stats" aria-label="Umfang des Drachenwissens">
             <div><dt>{usefulDocuments.length}</dt><dd>Themen</dd></div>
           </dl>
         </section>
 
-        <section class="docs-library docs-collection" aria-label="Nützliche Inhalte">
+        <section class="docs-library docs-collection" aria-label="Drachenwissen">
           <div class="docs-card-grid is-useful">
             {usefulDocuments.map((item, index) => (
               <a class="docs-card" href={item.url} data-index={String(index + 1).padStart(2, "0")}>

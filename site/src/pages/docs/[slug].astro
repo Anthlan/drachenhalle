@@ -23,11 +23,11 @@ const sectionDocuments = topLevelSectionDocuments.flatMap((item) =>
 );
 const activeSection = document.section === "Gestaltung"
   ? "gestaltung"
-  : document.section === "Informationen"
+  : document.section === "Drachenwissen"
     ? "informationen"
     : "";
-const overviewUrl = document.section === "Gestaltung" ? "/zroute_die/docs/styleguides/" : "/zroute_die/docs/";
-const overviewLabel = document.section === "Gestaltung" ? "Styleguides" : "Nützliches";
+const overviewUrl = document.section === "Gestaltung" ? "/drachenhalle/docs/styleguides/" : "/drachenhalle/docs/";
+const overviewLabel = document.section === "Gestaltung" ? "Styleguides" : "Drachenwissen";
 const tipArtOptions = ["Anleitung", "Strategie", "Optimierung"];
 const tipTopicOptions = ["Allianz", "Events", "Kampf", "Truppen", "Aufbau", "Weltkarte"];
 const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
@@ -39,7 +39,7 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={document.summary} />
-    <link rel="icon" type="image/png" href="/zroute_die/favicon.png" />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>{document.title} · DIE Drachenhalle</title>
   </head>
   <body>
@@ -48,7 +48,7 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
 
       <main class="document-main" id="main-content">
         <nav class="breadcrumbs" aria-label="Brotkrümelnavigation">
-          <a href="/zroute_die/">Start</a>
+          <a href="/drachenhalle/">Start</a>
           <span aria-hidden="true">/</span>
           <a href={overviewUrl}>{overviewLabel}</a>
           <span aria-hidden="true">/</span>
@@ -111,9 +111,23 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                   </div>
                 </dl>
               )}
-              <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
-                Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
-              </a>
+              <div class="document-header-actions">
+                {document.kind === "tip" && (
+                  <button
+                    type="button"
+                    class="tip-article-share"
+                    data-share-image
+                    data-share-url={document.url}
+                    aria-label={`Artikel ${document.title} teilen`}
+                    title="Artikel teilen"
+                  >
+                    <ImageActionIcon type="share" />
+                  </button>
+                )}
+                <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                  Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </header>
             {isTipsOverview && (
               <section class="knowledge-children tip-catalog" aria-labelledby="knowledge-children-title" data-tip-catalog>
@@ -170,7 +184,7 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                       data-topic={item.topicTags.join("|")}
                     >
                       <div>
-                        <span>Informationen · Tipp</span>
+                        <span>Drachenwissen · Tipp</span>
                         <h3>{item.title}</h3>
                         <p>{item.summary}</p>
                         <dl class="tip-taxonomy" aria-label={`Tags für ${item.title}`}>
@@ -245,16 +259,6 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                         <button
                           type="button"
                           class="gallery-action"
-                          data-share-image
-                          data-share-url={document.url}
-                          aria-label={`Seite zu ${document.title} teilen`}
-                          title="Teilen"
-                        >
-                          <ImageActionIcon type="share" />
-                        </button>
-                        <button
-                          type="button"
-                          class="gallery-action"
                           data-save-image
                           data-original-url={document.imageOriginalUrl}
                           data-file-name={document.imageOriginalName}
@@ -284,16 +288,6 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                       </a>
                       <p>Passende Grafik zum Teilen im Allianzchat.</p>
                       <div class="document-visual-actions" aria-label="Bildaktionen">
-                        <button
-                          type="button"
-                          class="gallery-action"
-                          data-share-image
-                          data-share-url={document.url}
-                          aria-label={`Seite zu ${document.title} teilen`}
-                          title="Teilen"
-                        >
-                          <ImageActionIcon type="share" />
-                        </button>
                         <button
                           type="button"
                           class="gallery-action"

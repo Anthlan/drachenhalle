@@ -9,7 +9,7 @@ const repositoryDirectory = path.resolve(siteDirectory, "..");
 const eventsDirectory = path.join(repositoryDirectory, "Termine");
 const outputPath = path.join(siteDirectory, "src", "data", "events.generated.json");
 const calendarDirectory = path.join(siteDirectory, "public", "generated", "events");
-const repositoryUrl = "https://github.com/Anthlan/zroute_die";
+const repositoryUrl = "https://github.com/Anthlan/drachenhalle";
 
 const slugify = (value) => value
   .normalize("NFKD")
@@ -79,7 +79,7 @@ const createCalendar = ({ title, date, time, end, endDate, location, summary, sl
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
-    `UID:${slug}-${compactDate(date)}@zroute-die`,
+    `UID:${slug}-${compactDate(date)}@drachenhalle`,
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "")}`,
   ];
 
@@ -149,7 +149,7 @@ for (const fileName of fileNames) {
     location: String(metadata.location ?? "").trim() || null,
     summary,
     html: await marked.parse(markdown.replaceAll("DlE", "DIE").replaceAll("dle", "die")),
-    calendarUrl: `/zroute_die/generated/events/${calendarName}`,
+    calendarUrl: `/drachenhalle/generated/events/${calendarName}`,
     repositoryUrl: `${repositoryUrl}/blob/main/${sourceRelativePath.split("/").map(encodeURIComponent).join("/")}`,
   });
 }

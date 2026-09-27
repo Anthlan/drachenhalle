@@ -4,6 +4,10 @@ Dieser Ordner bündelt Regeln, Rollen, Kommunikationsstrategien und wiederverwen
 
 Hier liegen auch fertige Informationsgrafiken für Allianz-Mitteilungen, beispielsweise Hinweise zu Schutzschilden, Events oder organisatorischen Abläufen.
 
+## Verfügbare Mitteilungen
+
+- [DIE Drachenhalle bewerben](Website_Drachenhalle.md) – Website-Vorteile, kopierbarer Ingame-Text und passende Grafik
+
 ## Benennungsregeln
 
 - Schema: `Event_Message.Dateiendung`, beispielsweise `Raubzugkaempfe_Schilde_Hoch.png`.

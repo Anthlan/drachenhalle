@@ -15,7 +15,7 @@ themen:
 
 - **Hit & Run** bedeutet: ein lohnendes Ziel kurz angreifen und die eigene Basis verlagern, bevor der Gegner wirksam zurückschlagen kann.
 - Für kleine Allianzen ist das oft sinnvoller, als eine nicht haltbare Position gegen deutlich stärkere Gegner zu verteidigen.
-- **Fluchtweg A – Raubzug/Überfall:** Solange der Überfall im Allianz-Wettbewerb verfügbar ist, könnt ihr über **Allianz-Wettbewerb → Überfall → Los** auf den gegnerischen Server springen. Nach aktueller DIE-Spielerfahrung müssen dafür Truppen außerhalb der Basis nicht vorher zurückgerufen werden.
+- **Fluchtweg A – Serverwechsel über Raubzug/Überfall:** Der Notausgang funktioniert in beide Richtungen. Kämpft ihr auf dem gegnerischen Server, springt ihr bei Gefahr über **Zurückkehren** nach Hause. Kämpft ihr während der Hauptstadteroberung auf dem eigenen Server, wechselt ihr über **Allianz-Wettbewerb → Überfall → Los** auf den gegnerischen Server. Nach aktueller DIE-Spielerfahrung müssen Truppen außerhalb der Basis dafür nicht vorher zurückgerufen werden.
 - **Fluchtweg B – zufälliger Versetzer:** Ruft alle Truppen in die Basis zurück und nutzt den zufälligen Versetzer, bevor der Kampf beginnt. Die neue Randposition ist nicht planbar, trennt euch aber schnell vom bisherigen Gefahrenpunkt.
 - Wartet nicht auf den Einschlag. Sobald der Kampf bereits läuft, kann ein normaler Versetzer nicht mehr genutzt werden.
 - Nach jeder Verlagerung sofort Position, eingehende Märsche, Schildstatus, Battle Frenzy und Rückwege der eigenen Truppen kontrollieren.
@@ -64,7 +64,7 @@ Der Rückzug ist dabei kein Scheitern. Er ist ein geplanter Teil des Angriffs.
 Greift erst an, wenn diese Fragen beantwortet sind:
 
 1. Ist der Raubzug beziehungsweise Überfall aktuell geöffnet?
-2. Ist der Sprung zum gegnerischen Server für euch verfügbar?
+2. Kämpft ihr gerade auf dem eigenen oder auf dem gegnerischen Server – und welcher Wechsel führt euch aus der Gefahr?
 3. Liegt ein zufälliger Versetzer im Inventar?
 4. Sind alle normalen Märsche schnell zurückrufbar?
 5. Läuft bereits Battle Frenzy oder ein anderer Teleport-Hinderungsstatus?
@@ -73,30 +73,33 @@ Greift erst an, wenn diese Fragen beantwortet sind:
 
 > **Praxisregel:** Der Fluchtweg wird vor dem Angriff entschieden, nicht erst unter Zeitdruck.
 
-## Fluchtweg A: Über den Raubzug auf den gegnerischen Server
+## Fluchtweg A: Über den Raubzug die Serverseite wechseln
 
-Während des Allianz-Wettbewerbs kann der Bereich je nach deutscher Übersetzung als **Raubzug** oder **Überfall** bezeichnet werden. Der bekannte Weg lautet:
+Während des Allianz-Wettbewerbs kann der Bereich je nach deutscher Übersetzung als **Raubzug** oder **Überfall** bezeichnet werden. Der Serverwechsel lässt sich als Fluchtweg in beide Richtungen einsetzen:
 
-`Allianz-Wettbewerb → Überfall → Los`
+- **Ihr kämpft auf dem gegnerischen Server:** Nach eurem Angriff nutzt ihr bei Gefahr **Zurückkehren** und springt auf den eigenen Server.
+- **Ihr kämpft auf dem eigenen Server:** Das kann besonders während der Hauptstadteroberung passieren. Bei Gefahr nutzt ihr **Allianz-Wettbewerb → Überfall → Los** und springt auf den gegnerischen Server.
 
-Nach aktueller DIE-Spielerfahrung funktioniert dieser serverübergreifende Sprung auch, wenn sich eigene Truppen außerhalb der Basis befinden. Das macht ihn für einen schnellen Rückzug besonders wertvoll: Ein vollständiger Rückruf ist für diesen Weg nicht erforderlich.
+Nach aktueller DIE-Spielerfahrung funktioniert dieser serverübergreifende Wechsel auch, wenn sich eigene Truppen außerhalb der Basis befinden. Das macht ihn für einen schnellen Rückzug besonders wertvoll: Ein vollständiger Rückruf ist für diesen Weg nicht erforderlich.
 
 ### Ablauf
 
-1. Gegnerisches Ziel nur mit der vorgesehenen Zahl an Teams angreifen.
-2. Karte und eingehende Märsche beobachten.
-3. Bei klarer Gefahr den Allianz-Wettbewerb öffnen.
-4. **Überfall/Raubzug → Los** wählen.
-5. Eine freie Position auf dem Zielserver auswählen und den kostenlosen Sprung prüfen.
+1. Vor dem Angriff prüfen, auf welcher Serverseite ihr euch befindet und welcher Wechsel als Notausgang bereitsteht.
+2. Das vorgesehene Ziel angreifen.
+3. Karte und eingehende Märsche beobachten.
+4. Bei klarer Gefahr sofort die passende Richtung wählen:
+   - **Gegnerischer Server → eigener Server:** **Zurückkehren**.
+   - **Eigener Server → gegnerischer Server:** **Allianz-Wettbewerb → Überfall → Los**.
+5. Den Serverwechsel bestätigen und die neue Position wählen, soweit das Spiel dies anbietet.
 6. Nach dem Wechsel sofort Truppenanzeigen, Rückwege und eingehende Märsche kontrollieren.
-7. Erst nach neuer Lagebewertung weiterkämpfen oder über „Zurückkehren“ den Heimatserver neu betreten.
+7. Erst nach neuer Lagebewertung weiterkämpfen, heilen oder neu sammeln.
 
 ### Vorteile
 
 - Kein vorheriger Rückruf aller Truppen erforderlich.
 - Nach dokumentierter Spielerfahrung kostenlos.
-- Zielposition auf dem gegnerischen Server frei wählbar.
-- Über „Zurückkehren“ lässt sich später auch die Heimatposition neu wählen.
+- Die Servergrenze kann je nach Ausgangsseite in beide Richtungen als Notausgang dienen.
+- Auf dem gegnerischen Server lässt sich die Zielposition und bei der Rückkehr auch die neue Heimatposition nach dokumentierter Erfahrung frei wählen.
 
 ### Grenzen
 
@@ -142,8 +145,9 @@ Weitere Eigenschaften der drei Versetzer stehen in Tipp #4 – Richtig teleporti
 
 | Situation | Bevorzugter Weg | Warum |
 | --- | --- | --- |
-| Überfall verfügbar, Truppen noch unterwegs | **Raubzug-Sprung** | kein vollständiger Rückruf nötig |
-| Überfall verfügbar, freie Zielwahl gewünscht | **Raubzug-Sprung** | Position kann nach DIE-Erfahrung gewählt werden |
+| Gefahr nach Angriff auf dem gegnerischen Server | **Zurückkehren** | schneller Wechsel auf den eigenen Server |
+| Gefahr nach Kampf auf dem eigenen Server, etwa bei der Hauptstadteroberung | **Überfall → Los** | schneller Wechsel auf den gegnerischen Server |
+| Serverwechsel verfügbar, Truppen noch unterwegs | **Raubzug-Sprung** | kein vollständiger Rückruf nötig |
 | Überfall nicht verfügbar, alle Truppen zu Hause | **zufälliger Versetzer** | vorbereiteter, günstiger Notausgang |
 | Exakte neue Position erforderlich | **fortgeschrittener Versetzer** | nur dieser reguläre Versetzer erlaubt gezielte Platzierung |
 | Kampf läuft bereits | **kein normaler Versetzer** | Rückzug wurde zu spät eingeleitet |
@@ -217,7 +221,7 @@ Nicht jedes Auskundschaften ist automatisch ein Angriff. Bei starkem Kräfteunte
 
 Greift nur an, wenn euer <b>Fluchtweg bereits feststeht</b>. Bei starker Gegenwehr nicht stehen bleiben!
 
-🌍 <b>WEG A – RAUBZUG:</b> Über <b>Allianz-Wettbewerb → Überfall → Los</b> auf den gegnerischen Server springen. Nach aktueller Erfahrung müssen Truppen außerhalb der Basis dafür nicht zurückgerufen werden.
+🌍 <b>WEG A – SERVERWECHSEL:</b> Der Raubzug funktioniert als Notausgang in beide Richtungen: Auf dem Gegner-Server bei Gefahr <b>Zurückkehren</b>. Auf dem eigenen Server – etwa bei der Hauptstadteroberung – über <b>Allianz-Wettbewerb → Überfall → Los</b> zum Gegner springen. Truppen außerhalb der Basis müssen nach aktueller Erfahrung nicht zurückgerufen werden.
 
 ❓ <b>WEG B – ZUFÄLLIGER VERSETZER:</b> Alle Truppen zur Basis holen und teleportieren, <b>bevor</b> der Kampf beginnt.
 

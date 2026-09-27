@@ -42,7 +42,7 @@ const formatDate = (date) => date ? dateFormatter.format(new Date(`${date}T00:00
 const originalFileName = (item) => item.sourcePath.split("/").at(-1) ?? "die-bild.png";
 const originalImageUrl = (item) => {
   const encodedPath = item.sourcePath.split("/").map((segment) => encodeURIComponent(segment)).join("/");
-  return `https://raw.githubusercontent.com/Anthlan/zroute_die/main/${encodedPath}`;
+  return `https://raw.githubusercontent.com/Anthlan/drachenhalle/main/${encodedPath}`;
 };
 const originalMimeType = (item) => {
   const extension = originalFileName(item).split(".").at(-1)?.toLowerCase();
@@ -61,7 +61,7 @@ const originalMimeType = (item) => {
       name="description"
       content="Die Bilderwelt der DIE Drachenhalle mit Chatbildern, Charaktermodellen und Allianzmotiven."
     />
-    <link rel="icon" type="image/png" href="/zroute_die/favicon.png" />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Galerie · DIE Drachenhalle</title>
   </head>
   <body>
@@ -144,7 +144,7 @@ const originalMimeType = (item) => {
                 data-original-image={originalImageUrl(item)}
                 data-original-name={originalFileName(item)}
                 data-original-mime={originalMimeType(item)}
-                data-page-url={`/zroute_die/galerie/#bild-${item.id}`}
+                data-page-url={`/drachenhalle/galerie/#bild-${item.id}`}
               >
                 <button class="gallery-open" type="button" aria-label={`${item.title} öffnen`}>
                   <div class="image-frame">
@@ -172,7 +172,7 @@ const originalMimeType = (item) => {
                     type="button"
                     class="gallery-action"
                     data-share-image
-                    data-share-url={`/zroute_die/galerie/#bild-${item.id}`}
+                    data-share-url={`/drachenhalle/galerie/#bild-${item.id}`}
                     aria-label={`${item.title} teilen`}
                     title="Teilen"
                   >
@@ -202,13 +202,13 @@ const originalMimeType = (item) => {
         </section>
 
         <section class="next-sections" aria-label="Weitere Bereiche der Drachenhalle">
-          <a class="section-link" href="/zroute_die/docs/">
+          <a class="section-link" href="/drachenhalle/docs/">
             <span>01</span>
-            <h2>Nützliches</h2>
-            <p>Tipps und Spielwissen sowie Informationen zur Allianz.</p>
+            <h2>Drachenwissen</h2>
+            <p>Tipps, Strategien und Informationen für den Spiel- und Allianzalltag.</p>
             <strong>Bereich öffnen →</strong>
           </a>
-          <a class="section-link" href="/zroute_die/docs/styleguides/">
+          <a class="section-link" href="/drachenhalle/docs/styleguides/">
             <span>02</span>
             <h2>Styleguides</h2>
             <p>Verbindliche Bildsprache, Gestaltung und Textformatierung.</p>

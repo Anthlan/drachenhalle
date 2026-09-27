@@ -1,6 +1,6 @@
-# Nützliches
+# Drachenwissen
 
-Auf der Website bündelt **Nützliches** zwei zentrale Informationssammlungen:
+Auf der Website bündelt **Drachenwissen** Tipps, Strategien und Informationen für den Spiel- und Allianzalltag in zwei zentralen Sammlungen:
 
 - [Tipps](Tipps/README.md) – die zentrale Sammlung für Spielwissen; nach **Art** und **Thema** filterbar
 - [Allianz](Allianz/README.md) – Regeln, Rollen und wiederverwendbare Mitteilungen

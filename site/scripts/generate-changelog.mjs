@@ -52,8 +52,8 @@ const classify = (filePath) => {
   if (/^(Archiv|99_Archiv)\//.test(filePath) || filePath.startsWith("tmp/")) return null;
   if (/^(Aktuelles|00_Neuigkeiten)\//.test(filePath)) return { key: "news", name: "Neuigkeiten" };
   if (filePath.startsWith("Termine/")) return { key: "events", name: "Termine" };
-  if (filePath.startsWith("Nützliches/") || /^(01_Tips|02_Anleitungen|07_Allianz|08_Strategien|09_Analysen)\//.test(filePath)) {
-    return { key: "information", name: "Informationen" };
+  if (filePath.startsWith("Drachenwissen/") || /^(01_Tips|02_Anleitungen|07_Allianz|08_Strategien|09_Analysen)\//.test(filePath)) {
+    return { key: "information", name: "Drachenwissen" };
   }
   if (/^(Styleguides|06_Design-Guidelines)\//.test(filePath)) return { key: "style", name: "Styleguides" };
   if (filePath.startsWith("Galerie/") || /^(03_Avatare|04_Charaktermodelle|05_Chatbilder)\//.test(filePath)) {

@@ -8,7 +8,7 @@ const siteDirectory = path.resolve(scriptDirectory, "..");
 const repositoryDirectory = path.resolve(siteDirectory, "..");
 const newsDirectory = path.join(repositoryDirectory, "Aktuelles");
 const outputPath = path.join(siteDirectory, "src", "data", "news.generated.json");
-const repositoryUrl = "https://github.com/Anthlan/zroute_die";
+const repositoryUrl = "https://github.com/Anthlan/drachenhalle";
 
 const slugify = (value) => value
   .normalize("NFKD")
@@ -89,7 +89,7 @@ for (const fileName of fileNames) {
     summary,
     featured: metadata.featured === true,
     html: await marked.parse(normalizedMarkdown),
-    url: `/zroute_die/neuigkeiten/${slugify(fileName.replace(/\.md$/i, "").replace(/^\d{4}_\d{2}_\d{2}_/, ""))}/`,
+    url: `/drachenhalle/neuigkeiten/${slugify(fileName.replace(/\.md$/i, "").replace(/^\d{4}_\d{2}_\d{2}_/, ""))}/`,
     repositoryUrl: `${repositoryUrl}/blob/main/${sourceRelativePath.split("/").map(encodeURIComponent).join("/")}`,
   });
 }

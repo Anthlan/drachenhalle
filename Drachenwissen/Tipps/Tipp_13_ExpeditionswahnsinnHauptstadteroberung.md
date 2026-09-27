@@ -341,7 +341,7 @@ Die Strategie trennt deshalb zwischen stabilen Grundsätzen – koordinierte Ral
 
 ## Quellen und Verlässlichkeit
 
-- **DIE-Termine und Einsatzgrundlage:** [Hauptstadteroberung am 26.09.2026](https://github.com/Anthlan/zroute_die/blob/main/Termine/2026_09_26_Hauptstadteroberung.md) – Angreifer-/Verteidigerlogik, Zeitfenster, 100-%-Fortschritt, Aufgabenverteilung und Battle Frenzy.
+- **DIE-Termine und Einsatzgrundlage:** [Hauptstadteroberung am 26.09.2026](https://github.com/Anthlan/drachenhalle/blob/main/Termine/2026_09_26_Hauptstadteroberung.md) – Angreifer-/Verteidigerlogik, Zeitfenster, 100-%-Fortschritt, Aufgabenverteilung und Battle Frenzy.
 - **Ausführliche Community-Dokumentation:** [Expedition Frenzy – Zroute Unofficial](https://zroutegame.com/expedition-frenzy/) – Phasen, Serverzeit, Zusammenarbeit, Batteriepositionen und -werte, persönliche Wertung sowie Rollen. Die Quelle kennzeichnet zahlreiche offene oder nur aus Screenshots abgelesene Angaben selbst.
 - **Versionshinweise:** [Z Route Academy – Updates](https://zroute.dev/updates/) – dokumentiert unter anderem die visuelle Überarbeitung des Expeditionswahnsinns sowie spätere Änderungen bei Rückreise, Markierungen und Belohnungen.
 - **Verwandte DIE-Tipps:** Tipp #2 zu Sammelangriffen, Tipp #4 zum Teleportieren, Tipp #8 zur schnellen Heilung, Tipp #9 zum kostenlosen Raubzug-Sprung, Tipp #10 zu Hit & Run, Tipp #11 zu festen Raidteams und Tipp #12 zum Lesen von Kampfberichten.

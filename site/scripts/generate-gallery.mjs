@@ -12,11 +12,11 @@ const chatStyleIndexFile = path.join(repositoryRoot, "Galerie", "Chatbilder", "S
 const imageExtensions = new Set([".png", ".jpg", ".jpeg", ".webp"]);
 
 const contentAreas = [
-  ["Nützliches/Tipps", "Tipp"],
-  ["Nützliches/Anleitungen", "Anleitung"],
-  ["Nützliches/Allianz", "Allianz"],
-  ["Nützliches/Strategien", "Strategie"],
-  ["Nützliches/Analysen", "Analyse"],
+  ["Drachenwissen/Tipps", "Tipp"],
+  ["Drachenwissen/Anleitungen", "Anleitung"],
+  ["Drachenwissen/Allianz", "Allianz"],
+  ["Drachenwissen/Strategien", "Strategie"],
+  ["Drachenwissen/Analysen", "Analyse"],
   ["Galerie/Avatare", "Avatar"],
   ["Galerie/Charaktermodelle", "Charaktermodell"],
   ["Galerie/Chatbilder", "Chatbild"],
@@ -279,9 +279,9 @@ const items = await mapWithConcurrency(sources, 3, async ({ absolutePath, catego
     fingerprint,
     originalBytes: fileStats.size,
     sourcePath: relativePath,
-    repositoryUrl: `https://github.com/Anthlan/zroute_die/blob/main/${encodedSourcePath}`,
-    thumbnailUrl: `/zroute_die/generated/gallery/${thumbnailName}`,
-    webUrl: `/zroute_die/generated/gallery/${webName}`,
+    repositoryUrl: `https://github.com/Anthlan/drachenhalle/blob/main/${encodedSourcePath}`,
+    thumbnailUrl: `/drachenhalle/generated/gallery/${thumbnailName}`,
+    webUrl: `/drachenhalle/generated/gallery/${webName}`,
   };
 });
 

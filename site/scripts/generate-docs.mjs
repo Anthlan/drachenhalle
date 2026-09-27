@@ -8,8 +8,8 @@ const siteDirectory = path.resolve(scriptDirectory, "..");
 const repositoryDirectory = path.resolve(siteDirectory, "..");
 const outputPath = path.join(siteDirectory, "src", "data", "docs.generated.json");
 const galleryDataPath = path.join(siteDirectory, "src", "data", "gallery.generated.json");
-const repositoryUrl = "https://github.com/Anthlan/zroute_die";
-const rawRepositoryUrl = "https://raw.githubusercontent.com/Anthlan/zroute_die/main";
+const repositoryUrl = "https://github.com/Anthlan/drachenhalle";
+const rawRepositoryUrl = "https://raw.githubusercontent.com/Anthlan/drachenhalle/main";
 
 const encodeRepositoryPath = (sourcePath) => sourcePath
   .split("/")
@@ -39,17 +39,17 @@ const baseDocuments = [
     summary: "Verbindliche Regeln für Ablage, Benennung und Pflege der Inhalte.",
   },
   {
-    source: "Nützliches/Tipps/README.md",
+    source: "Drachenwissen/Tipps/README.md",
     slug: "tipps",
     title: "Tipps",
-    section: "Informationen",
+    section: "Drachenwissen",
     summary: "Tipps und Spielwissen für den Alltag, gefiltert nach Art und Thema.",
   },
   {
-    source: "Nützliches/Allianz/README.md",
+    source: "Drachenwissen/Allianz/README.md",
     slug: "allianz",
     title: "Allianz",
-    section: "Informationen",
+    section: "Drachenwissen",
     summary: "Regeln, Rollen und wiederverwendbare Texte der DIE-Allianz.",
   },
   {
@@ -201,7 +201,7 @@ const validateTipTags = (tags, allowedTags, field, source) => {
   return tags;
 };
 
-const tipDirectory = path.join(repositoryDirectory, "Nützliches", "Tipps");
+const tipDirectory = path.join(repositoryDirectory, "Drachenwissen", "Tipps");
 const tipFileNames = (await readdir(tipDirectory, { withFileTypes: true }))
   .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".md") && entry.name.toLowerCase() !== "readme.md")
   .map((entry) => entry.name)
@@ -217,7 +217,7 @@ try {
 const tipDocuments = [];
 
 for (const fileName of tipFileNames) {
-  const source = `Nützliches/Tipps/${fileName}`;
+  const source = `Drachenwissen/Tipps/${fileName}`;
   const sourcePath = path.join(tipDirectory, fileName);
   const sourceMarkdown = await readFile(sourcePath, "utf8");
   const { data: frontmatter, content: markdown } = parseFrontmatter(sourceMarkdown);
@@ -228,14 +228,14 @@ for (const fileName of tipFileNames) {
   const summary = plainText(introduction.split(/\r?\n\s*\r?\n/)[0]) || "Praktischer Tipp für den Spielalltag.";
   const image = galleryItems.find((item) => {
     const itemBaseName = path.posix.basename(item.sourcePath, path.posix.extname(item.sourcePath));
-    return item.sourcePath.startsWith("Nützliches/Tipps/") && itemBaseName === baseName;
+    return item.sourcePath.startsWith("Drachenwissen/Tipps/") && itemBaseName === baseName;
   });
 
   tipDocuments.push({
     source,
     slug: slugify(baseName),
     title,
-    section: "Informationen",
+    section: "Drachenwissen",
     summary,
     parentSlug: "tipps",
     kind: "tip",
@@ -253,7 +253,7 @@ const documents = [...baseDocuments, ...tipDocuments];
 
 const sectionDescriptions = {
   Projekt: "Orientierung, Regeln und Hintergrund zum Archiv.",
-  Informationen: "Tipps und Spielwissen sowie Informationen zur Allianz.",
+  Drachenwissen: "Tipps, Strategien und Informationen für den Spiel- und Allianzalltag.",
   Gestaltung: "Verbindliche Regeln für Bilder und Texte.",
   Bildarchiv: "Struktur und Pflege der visuellen Inhalte.",
 };
@@ -389,12 +389,12 @@ for (const document of documents) {
     introHtml: introSection ? await marked.parse(introSection.markdown) : null,
     tipHtml: mainSection ? await marked.parse(mainSection.markdown) : null,
     copyHtml: copySection ? await marked.parse(copySection.markdown) : null,
-    url: `/zroute_die/docs/${document.slug}/`,
+    url: `/drachenhalle/docs/${document.slug}/`,
     repositoryUrl: `${repositoryUrl}/blob/main/${encodedSource}`,
   });
 }
 
-const sectionOrder = ["Projekt", "Informationen", "Gestaltung", "Bildarchiv"];
+const sectionOrder = ["Projekt", "Drachenwissen", "Gestaltung", "Bildarchiv"];
 const sections = sectionOrder.map((name) => ({
   name,
   description: sectionDescriptions[name],

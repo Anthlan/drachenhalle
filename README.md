@@ -1,6 +1,6 @@
 # ZRoute – DIE Drachenhalle
 
-Dieses Repository ist die zentrale, strukturierte Sammlung von Inhalten rund um **Z:Route: Redemption** und die Allianz **DIE**. Seine Hauptbereiche entsprechen direkt der Navigation der [Website](https://anthlan.github.io/zroute_die/).
+Dieses Repository ist die zentrale, strukturierte Sammlung von Inhalten rund um **Z:Route: Redemption** und die Allianz **DIE**. Seine Hauptbereiche entsprechen direkt der Navigation der [Website](https://anthlan.github.io/drachenhalle/).
 
 ## Einstieg
 
@@ -16,7 +16,7 @@ Jeder Fachordner enthält eine eigene `README.md` mit seinem Zweck, seiner vorge
 | [`Aktuelles`](Aktuelles/README.md) | Manuell gepflegte Neuigkeiten für die Startseite |
 | [`Termine`](Termine/README.md) | Kommende und vergangene Allianz-Events mit Kalender-Download |
 | [`Galerie`](Galerie/README.md) | Avatare, Charaktermodelle und Chatbilder |
-| [`Nützliches`](Nützliches/README.md) | Tipps und Spielwissen mit Art-/Thema-Tags sowie Allianzmaterial |
+| [`Drachenwissen`](Drachenwissen/README.md) | Tipps, Strategien und Informationen für den Spiel- und Allianzalltag |
 | [`Styleguides`](Styleguides/README.md) | Gestaltungs- und Textregeln für konsistente DIE-Inhalte |
 | [`Archiv`](Archiv/README.md) | Ersetzte, veraltete oder historisch relevante Inhalte |
 | [`site`](site) | Technische Quellen der automatisch erzeugten Website |

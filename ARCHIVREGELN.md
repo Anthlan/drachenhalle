@@ -24,7 +24,7 @@ Auf dieser Website und im Repository wird die Allianz durchgängig als **DIE** b
 - `Aktuelles`: manuell gepflegte Neuigkeiten für die Startseite
 - `Termine`: Allianz-Events mit Datum, Uhrzeit und optionalem Kalender-Download
 - `Galerie`: Avatare, Charaktermodelle und Chatbilder
-- `Nützliches`: Tipps und Spielwissen mit Art-/Thema-Tags sowie Allianzmaterial
+- `Drachenwissen`: Tipps und Spielwissen mit Art-/Thema-Tags sowie Allianzmaterial
 - `Styleguides`: verbindliche Regeln für Gestaltung und Textformatierung
 - `Archiv`: ersetzte, veraltete oder nur noch historisch relevante Fassungen
 - `site`: technische Quellen und Build-Skripte der Website
