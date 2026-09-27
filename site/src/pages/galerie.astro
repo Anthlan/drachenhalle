@@ -90,7 +90,7 @@ const originalMimeType = (item) => {
               <p class="eyebrow">Die vollständige Bildsammlung</p>
               <h2 id="gallery-title">Galerie</h2>
             </div>
-            <p class="gallery-hint">Bild auswählen, teilen oder direkt als optimierte Webversion herunterladen.</p>
+            <p class="gallery-hint">Bild auswählen, die Galerieseite teilen oder das Original herunterladen.</p>
           </div>
 
           <div class="gallery-toolbar">
@@ -129,6 +129,7 @@ const originalMimeType = (item) => {
           <div class="gallery-grid" id="gallery-grid">
             {galleryItems.map((item, index) => (
               <article
+                id={`bild-${item.id}`}
                 class="gallery-card"
                 data-category={item.category}
                 data-people={item.people.join("|")}
@@ -142,6 +143,7 @@ const originalMimeType = (item) => {
                 data-original-image={originalImageUrl(item)}
                 data-original-name={originalFileName(item)}
                 data-original-mime={originalMimeType(item)}
+                data-page-url={`/zroute_die/galerie/#bild-${item.id}`}
               >
                 <button class="gallery-open" type="button" aria-label={`${item.title} öffnen`}>
                   <div class="image-frame">
@@ -169,7 +171,7 @@ const originalMimeType = (item) => {
                     type="button"
                     class="gallery-action"
                     data-share-image
-                    data-share-url={item.webUrl}
+                    data-share-url={`/zroute_die/galerie/#bild-${item.id}`}
                     aria-label={`${item.title} teilen`}
                   >
                     <span aria-hidden="true">↗</span> Teilen
@@ -307,7 +309,7 @@ const originalMimeType = (item) => {
         detailStyleRow.hidden = !hasStyle;
         detailStyle.textContent = hasStyle ? `${card.dataset.style} – ${card.dataset.styleLabel}` : "";
         detailOriginal.href = card.dataset.original;
-        detailShare.dataset.shareUrl = card.dataset.web;
+        detailShare.dataset.shareUrl = card.dataset.pageUrl;
         detailDownload.dataset.originalUrl = card.dataset.originalImage;
         detailDownload.dataset.fileName = card.dataset.originalName;
         detailDownload.dataset.mimeType = card.dataset.originalMime;
@@ -340,6 +342,11 @@ const originalMimeType = (item) => {
       });
 
       initializeImageActions();
+
+      const linkedCard = window.location.hash.startsWith("#bild-")
+        ? document.getElementById(window.location.hash.slice(1))
+        : null;
+      if (linkedCard?.classList.contains("gallery-card")) showCard(linkedCard);
 
       previousButton.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + visibleCards.length) % visibleCards.length;
