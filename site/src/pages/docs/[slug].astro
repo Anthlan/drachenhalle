@@ -2,6 +2,7 @@
 import "../../styles/global.css";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import docsData from "../../data/docs.generated.json";
 
 export function getStaticPaths() {
@@ -246,8 +247,10 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                           class="gallery-action"
                           data-share-image
                           data-share-url={document.url}
+                          aria-label={`Seite zu ${document.title} teilen`}
+                          title="Teilen"
                         >
-                          <span aria-hidden="true">↗</span> Teilen
+                          <ImageActionIcon type="share" />
                         </button>
                         <button
                           type="button"
@@ -256,8 +259,10 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                           data-original-url={document.imageOriginalUrl}
                           data-file-name={document.imageOriginalName}
                           data-mime-type={document.imageOriginalMimeType}
+                          aria-label={`Originalgrafik zu ${document.title} speichern`}
+                          title="Original speichern"
                         >
-                          <span aria-hidden="true">↓</span> Original speichern
+                          <ImageActionIcon type="download" />
                         </button>
                       </div>
                       <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
@@ -284,8 +289,10 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                           class="gallery-action"
                           data-share-image
                           data-share-url={document.url}
+                          aria-label={`Seite zu ${document.title} teilen`}
+                          title="Teilen"
                         >
-                          <span aria-hidden="true">↗</span> Teilen
+                          <ImageActionIcon type="share" />
                         </button>
                         <button
                           type="button"
@@ -294,8 +301,10 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                           data-original-url={document.imageOriginalUrl}
                           data-file-name={document.imageOriginalName}
                           data-mime-type={document.imageOriginalMimeType}
+                          aria-label={`Originalgrafik zu ${document.title} speichern`}
+                          title="Original speichern"
                         >
-                          <span aria-hidden="true">↓</span> Original speichern
+                          <ImageActionIcon type="download" />
                         </button>
                       </div>
                       <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">

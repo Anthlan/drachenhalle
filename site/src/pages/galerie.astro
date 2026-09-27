@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import ImageActionIcon from "../components/ImageActionIcon.astro";
 import galleryData from "../data/gallery.generated.json";
 
 const galleryItems = galleryData.items;
@@ -173,8 +174,9 @@ const originalMimeType = (item) => {
                     data-share-image
                     data-share-url={`/zroute_die/galerie/#bild-${item.id}`}
                     aria-label={`${item.title} teilen`}
+                    title="Teilen"
                   >
-                    <span aria-hidden="true">↗</span> Teilen
+                    <ImageActionIcon type="share" />
                   </button>
                   <button
                     type="button"
@@ -184,8 +186,9 @@ const originalMimeType = (item) => {
                     data-file-name={originalFileName(item)}
                     data-mime-type={originalMimeType(item)}
                     aria-label={`Original von ${item.title} speichern`}
+                    title="Original speichern"
                   >
-                    <span aria-hidden="true">↓</span> Original speichern
+                    <ImageActionIcon type="download" />
                   </button>
                 </div>
               </article>
@@ -234,11 +237,11 @@ const originalMimeType = (item) => {
               <div id="detail-style-row"><dt>Stil</dt><dd id="detail-style"></dd></div>
             </dl>
             <div class="dialog-image-actions" aria-label="Bildaktionen">
-              <button class="detail-share" id="detail-share" type="button" data-share-image>
-                <span aria-hidden="true">↗</span> Teilen
+              <button class="detail-share" id="detail-share" type="button" data-share-image aria-label="Bild teilen" title="Teilen">
+                <ImageActionIcon type="share" />
               </button>
-              <button class="detail-download" id="detail-download" type="button" data-save-image>
-                <span aria-hidden="true">↓</span> Original speichern
+              <button class="detail-download" id="detail-download" type="button" data-save-image aria-label="Originalbild speichern" title="Original speichern">
+                <ImageActionIcon type="download" />
               </button>
             </div>
             <a class="detail-original" id="detail-original" href="#" target="_blank" rel="noopener noreferrer">
