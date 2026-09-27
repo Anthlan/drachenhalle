@@ -53,6 +53,14 @@ const baseDocuments = [
     summary: "Regeln, Rollen und wiederverwendbare Texte der DIE-Allianz.",
   },
   {
+    source: "Drachenwissen/Allianz/Website_Drachenhalle.md",
+    slug: "website-drachenhalle",
+    title: "DIE Drachenhalle bewerben",
+    section: "Drachenwissen",
+    summary: "Kopierbare Allianz-Mitteilung und Grafiken zum Weitergeben der Drachenhalle.",
+    parentSlug: "allianz",
+  },
+  {
     source: "Styleguides/README.md",
     slug: "design-guidelines",
     title: "Design-Guidelines",
@@ -250,6 +258,8 @@ for (const fileName of tipFileNames) {
 }
 
 const documents = [...baseDocuments, ...tipDocuments];
+const documentUrl = (document) => `/drachenhalle/docs/${document.slug}/`;
+const documentUrlBySource = new Map(documents.map((document) => [document.source, documentUrl(document)]));
 
 const sectionDescriptions = {
   Projekt: "Orientierung, Regeln und Hintergrund zum Archiv.",
@@ -302,6 +312,28 @@ const resolveLocalMarkdownImages = (markdown, source) => {
   });
 };
 
+const resolveLocalMarkdownLinks = (markdown, source) => {
+  const sourceDirectory = path.posix.dirname(source);
+
+  return markdown.replace(/(?<!!)\[([^\]]+)]\(([^)\s]+\.md)\)/gi, (match, label, linkTarget) => {
+    if (/^(?:[a-z]+:|\/|#)/i.test(linkTarget)) return match;
+
+    let decodedTarget;
+    try {
+      decodedTarget = decodeURIComponent(linkTarget);
+    } catch {
+      return match;
+    }
+
+    const targetSource = path.posix.normalize(
+      path.posix.join(sourceDirectory, decodedTarget.replaceAll("\\", "/")),
+    );
+    const websiteUrl = documentUrlBySource.get(targetSource);
+    const targetUrl = websiteUrl ?? `${repositoryUrl}/blob/main/${encodeRepositoryPath(targetSource)}`;
+    return `[${label}](${targetUrl})`;
+  });
+};
+
 marked.setOptions({
   gfm: true,
   breaks: false,
@@ -342,8 +374,8 @@ for (const document of documents) {
   const sourcePath = path.join(repositoryDirectory, ...document.source.split("/"));
   const sourceMarkdown = await readFile(sourcePath, "utf8");
   const { content: markdown } = parseFrontmatter(sourceMarkdown);
-  const normalizedMarkdown = resolveLocalMarkdownImages(
-    normalizeWebsiteSpelling(markdown, document.source),
+  const normalizedMarkdown = resolveLocalMarkdownLinks(
+    resolveLocalMarkdownImages(normalizeWebsiteSpelling(markdown, document.source), document.source),
     document.source,
   );
   const articleMarkdown = normalizedMarkdown.replace(/^#\s+.*?(?:\r?\n)+/, "");
@@ -389,7 +421,7 @@ for (const document of documents) {
     introHtml: introSection ? await marked.parse(introSection.markdown) : null,
     tipHtml: mainSection ? await marked.parse(mainSection.markdown) : null,
     copyHtml: copySection ? await marked.parse(copySection.markdown) : null,
-    url: `/drachenhalle/docs/${document.slug}/`,
+    url: documentUrl(document),
     repositoryUrl: `${repositoryUrl}/blob/main/${encodedSource}`,
   });
 }
