@@ -31,6 +31,7 @@ const overviewLabel = document.section === "Gestaltung" ? "Styleguides" : "Drach
 const tipArtOptions = ["Anleitung", "Strategie", "Optimierung"];
 const tipTopicOptions = ["Allianz", "Events", "Kampf", "Truppen", "Aufbau", "Weltkarte"];
 const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
+const isAllianceOverview = document.slug === "allianz" && childDocuments.length > 0;
 ---
 
 <!doctype html>
@@ -209,7 +210,64 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
                 </div>
               </section>
             )}
-            {document.kind === "tip" && document.hasBriefView ? (
+            {isAllianceOverview && (
+              <section class="knowledge-children alliance-catalog" aria-labelledby="alliance-children-title">
+                <div class="tip-catalog-heading">
+                  <p class="eyebrow">Allianzwissen</p>
+                  <h2 id="alliance-children-title">Regeln &amp; Mitteilungen</h2>
+                  <p>Ausführliche Informationen, passende Grafiken und direkt verwendbare Texte für den Allianzalltag.</p>
+                </div>
+                <div class="knowledge-card-list">
+                  {childDocuments.map((item) => (
+                    <a class="knowledge-card" href={item.url}>
+                      <div>
+                        <span>Drachenwissen · Allianz</span>
+                        <h3>{item.title}</h3>
+                        <p>{item.summary}</p>
+                        <strong>Informationsseite öffnen →</strong>
+                      </div>
+                      {item.imageUrl && <img src={item.imageUrl} alt="" loading="lazy" />}
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
+            {document.kind === "alliance" && document.allianceArticleHtml && document.allianceCopyHtml ? (
+              <div class="alliance-article-body">
+                <div class:list={["alliance-main-layout", { "has-aside-image": document.imageUrl }]}>
+                  <section class="markdown-content alliance-main-content" set:html={document.allianceArticleHtml} />
+                  {document.imageUrl && (
+                    <aside class="document-visual" aria-label="Zugehörige Allianz-Grafik">
+                      <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
+                        <img src={document.imageUrl} alt={`Grafik zu ${document.title}`} />
+                      </a>
+                      <p>Passende Grafik zum Teilen im Allianzchat.</p>
+                      <div class="document-visual-actions" aria-label="Bildaktionen">
+                        <button
+                          type="button"
+                          class="gallery-action"
+                          data-save-image
+                          data-original-url={document.imageOriginalUrl}
+                          data-file-name={document.imageOriginalName}
+                          data-mime-type={document.imageOriginalMimeType}
+                          aria-label={`Originalgrafik zu ${document.title} speichern`}
+                          title="Original speichern"
+                        >
+                          <ImageActionIcon type="download" />
+                        </button>
+                      </div>
+                      <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
+                        Originalgrafik auf GitHub öffnen <span aria-hidden="true">↗</span>
+                      </a>
+                    </aside>
+                  )}
+                </div>
+                <section class="markdown-content alliance-copy" data-copy-section>
+                  <button type="button" class="copy-code-button" data-copy-code>Mitteilung kopieren</button>
+                  <div set:html={document.allianceCopyHtml} />
+                </section>
+              </div>
+            ) : document.kind === "tip" && document.hasBriefView ? (
               <div class="tip-viewer" data-tip-viewer>
                 <div class="tip-view-switcher" role="group" aria-label="Ansicht des Tipps auswählen">
                   <button
@@ -427,6 +485,35 @@ const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
       }
 
       initializeImageActions();
+
+      for (const button of document.querySelectorAll("[data-copy-code]")) {
+        button.addEventListener("click", async () => {
+          if (!(button instanceof HTMLButtonElement)) return;
+          const section = button.closest("[data-copy-section]");
+          const code = section?.querySelector("pre code");
+          const copyText = code?.textContent ?? "";
+          if (!copyText) return;
+
+          try {
+            await navigator.clipboard.writeText(copyText);
+            button.textContent = "Kopiert!";
+          } catch {
+            const textarea = document.createElement("textarea");
+            textarea.value = copyText;
+            textarea.style.position = "fixed";
+            textarea.style.opacity = "0";
+            document.body.append(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            textarea.remove();
+            button.textContent = "Kopiert!";
+          }
+
+          window.setTimeout(() => {
+            button.textContent = "Mitteilung kopieren";
+          }, 1800);
+        });
+      }
     </script>
   </body>
 </html>

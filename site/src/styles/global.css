@@ -2176,6 +2176,50 @@ h1 {
   border-top: 1px solid var(--line);
 }
 
+.alliance-main-layout.has-aside-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+  align-items: start;
+}
+
+.alliance-main-content,
+.alliance-copy {
+  max-width: none;
+}
+
+.alliance-copy {
+  position: relative;
+  border-top: 1px solid var(--line);
+  background: rgba(6, 9, 20, 0.3);
+}
+
+.alliance-copy > div > h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.copy-code-button {
+  min-height: 40px;
+  float: right;
+  margin: 0 0 16px 20px;
+  padding: 9px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  background: rgba(17, 25, 54, 0.82);
+  color: var(--gold-pale);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.copy-code-button:hover,
+.copy-code-button:focus-visible {
+  background: rgba(33, 45, 88, 0.9);
+  color: var(--ink);
+}
+
 .tip-view-switcher {
   display: none;
   align-items: center;
@@ -3149,6 +3193,10 @@ footer a {
   }
 
   .tip-main-layout.has-aside-image {
+    grid-template-columns: 1fr;
+  }
+
+  .alliance-main-layout.has-aside-image {
     grid-template-columns: 1fr;
   }
 

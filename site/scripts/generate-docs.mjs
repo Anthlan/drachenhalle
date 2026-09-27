@@ -53,6 +53,16 @@ const baseDocuments = [
     summary: "Regeln, Rollen und wiederverwendbare Texte der DIE-Allianz.",
   },
   {
+    source: "Drachenwissen/Allianz/Allianzregeln.md",
+    slug: "allianzregeln",
+    title: "DIE – Allianzregeln",
+    section: "Drachenwissen",
+    summary: "Verbindliche Regeln zu NAP10, erlaubten Angriffen, Plündern und dem Umgang mit Verstößen.",
+    parentSlug: "allianz",
+    kind: "alliance",
+    imageSource: "Drachenwissen/Allianz/Allianzregeln.png",
+  },
+  {
     source: "Drachenwissen/Allianz/Website_Drachenhalle.md",
     slug: "website-drachenhalle",
     title: "DIE Drachenhalle bewerben",
@@ -222,6 +232,17 @@ try {
   console.warn("Gallery data is unavailable; documentation images will be omitted.");
 }
 
+for (const document of baseDocuments) {
+  if (!document.imageSource) continue;
+
+  const image = galleryItems.find((item) => item.sourcePath === document.imageSource);
+  document.imageUrl = image?.webUrl ?? null;
+  document.imageRepositoryUrl = image?.repositoryUrl ?? null;
+  document.imageOriginalUrl = image ? `${rawRepositoryUrl}/${encodeRepositoryPath(image.sourcePath)}` : null;
+  document.imageOriginalName = image ? path.posix.basename(image.sourcePath) : null;
+  document.imageOriginalMimeType = image ? imageMimeType(image.sourcePath) : null;
+}
+
 const tipDocuments = [];
 
 for (const fileName of tipFileNames) {
@@ -380,7 +401,10 @@ for (const document of documents) {
   );
   const articleMarkdown = normalizedMarkdown.replace(/^#\s+.*?(?:\r?\n)+/, "");
   const html = await marked.parse(articleMarkdown);
-  const tipSections = document.kind === "tip" ? splitLevelTwoSections(articleMarkdown) : [];
+  const articleSections = ["tip", "alliance"].includes(document.kind)
+    ? splitLevelTwoSections(articleMarkdown)
+    : [];
+  const tipSections = document.kind === "tip" ? articleSections : [];
   const briefSection = tipSections.find((section) => section.title === "das wichtigste in kürze");
   const detailStartIndex = tipSections.findIndex((section) => section.title.startsWith("wofür ist dieser tipp"));
   const detailMarkdown = detailStartIndex >= 0
@@ -408,6 +432,15 @@ for (const document of documents) {
   const introSection = tipSections.find((section) => section.title.startsWith("wofür"));
   const mainSection = tipSections.find((section) => section.title === "tipp");
   const copySection = tipSections.find((section) => section.title.startsWith("html-block"));
+  const allianceCopyMatch = document.kind === "alliance"
+    ? /^##\s+Allianz-Mitteilung zum Kopieren\s*$/im.exec(articleMarkdown)
+    : null;
+  const allianceArticleMarkdown = allianceCopyMatch
+    ? articleMarkdown.slice(0, allianceCopyMatch.index).trim()
+    : null;
+  const allianceCopyMarkdown = allianceCopyMatch
+    ? articleMarkdown.slice(allianceCopyMatch.index).trim()
+    : null;
   const encodedSource = encodeRepositoryPath(document.source);
 
   items.push({
@@ -421,6 +454,10 @@ for (const document of documents) {
     introHtml: introSection ? await marked.parse(introSection.markdown) : null,
     tipHtml: mainSection ? await marked.parse(mainSection.markdown) : null,
     copyHtml: copySection ? await marked.parse(copySection.markdown) : null,
+    allianceArticleHtml: allianceArticleMarkdown
+      ? addHeadingIds(await marked.parse(removeTipMainImage(allianceArticleMarkdown, document.imageUrl)))
+      : null,
+    allianceCopyHtml: allianceCopyMarkdown ? addHeadingIds(await marked.parse(allianceCopyMarkdown)) : null,
     url: documentUrl(document),
     repositoryUrl: `${repositoryUrl}/blob/main/${encodedSource}`,
   });

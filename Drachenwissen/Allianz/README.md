@@ -6,6 +6,7 @@ Hier liegen auch fertige Informationsgrafiken für Allianz-Mitteilungen, beispie
 
 ## Verfügbare Mitteilungen
 
+- [DIE – Allianzregeln](Allianzregeln.md) – ausführliche Erläuterung, kompakte Grafik und kopierbare Ingame-Mitteilung
 - [DIE Drachenhalle bewerben](Website_Drachenhalle.md) – Website-Vorteile, kopierbarer Ingame-Text und passende Grafik
 
 ## Benennungsregeln
