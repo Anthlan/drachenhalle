@@ -290,13 +290,11 @@ Der kostenlose Tagesgutschein und bereits erspielte Vorratsgutscheine reduzieren
 ```html
 <color=#FFD700><b>✈️ EVENT-GUIDE – FLUGBESATZUNG</b></color>
 
-In der Startsequenz gibt es <b>15 Fliegende-Stern-Münzen pro Eventtag</b>, also 75 über fünf Tage. Mit einer Münze je Shop-Reset sind voraussichtlich bis zu <b>83 kostenlose Münzen</b> möglich.
+<color=#7FFF00><b>F2P:</b></color> 15 Münzen je Eventtag, 75 in 5 Tagen; mit Shop-Resets bis zu 83 gratis. Bis zum letzten sicheren Nutzungstag sammeln und gebündelt drehen. 1 Vorratsgutschein pro Tag ist gratis; 500 Diamanten für den zweiten lohnen meist nicht.
 
-<color=#7FFF00><b>F2P:</b></color> Münzen bis zum letzten sicheren Nutzungstag sammeln und dann gebündelt drehen. Täglich gibt es 1 Vorratsgutschein gratis; der zweite kostet 500 Diamanten und lohnt meist nur zum Schließen einer konkreten Lücke.
+<color=#7FFF00><b>GEZIELTE KÄUFER:</b></color> Münzen haben den besseren Erwartungswert, direkte Gutscheine geben Sicherheit. 60 Gutscheine für 10 UR-Splitter kosten sicher 8,48 €; 100 für die Deluxe-Truhe 14,48 €. Aus der Truhe sind 5.000 Veredelte Steine die beste allgemeine Wahl.
 
-<color=#7FFF00><b>GEZIELTE KÄUFER:</b></color> Münzen bieten den besseren Erwartungswert, direkte Gutscheine die Sicherheit. Wer die tägliche Belohnung garantiert möchte, zahlt für 60 Gutscheine <b>8,48 €</b> oder für 100 Gutscheine <b>14,48 €</b>. Wer Risiko akzeptiert, kauft zuerst günstige Münzen und schließt danach nur die Restlücke.
+<color=#7FFF00><b>SKIN:</b></color> Kostet 4.000 Gutscheine. Erst Münzen drehen, danach nur die Restlücke direkt kaufen. Münz-Erwartungswert ca. 250 € – keine Garantie. Sicherer Direktkauf ca. 596 €.
 
-In der Deluxe-Truhe sind <b>5.000 Veredelte Steine</b> die beste allgemeine Wahl. Das ist der doppelte Steinkurs des normalen Tauschs. Wer diese Tagesangebote nicht möchte, sammelt die Vorratsgutscheine und verteilt sie rechtzeitig vor Ablauf des Vorratsdepots.
-
-<color=#7FFF00><b>GROSSSPENDER / SKIN-ZIEL:</b></color> Münzen bis zum letzten sicheren Nutzungstag sammeln, anschließend nur die verbleibende Lücke zu 4.000 Gutscheinen direkt schließen. Münz-Erwartungswert: etwa <b>250 €</b>. Vollständig sicherer Direktkauf: rund <b>596 €</b> vor Abzug kostenloser oder erspielter Gutscheine.
+<color=#FFAA00><b>WICHTIG:</b></color> Der Slot-Punktezähler wird täglich zurückgesetzt. Tagesangebote mit „Heute übrig: 1“ verfallen beim Reset.
 ```
