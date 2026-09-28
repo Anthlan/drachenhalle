@@ -1946,14 +1946,17 @@ h1 {
   border-bottom: 1px solid var(--line);
 }
 
-.council-hero .eyebrow,
-.council-hero h1 {
+.council-hero-heading {
   grid-column: 1;
 }
 
-.council-hero h1 {
+.council-hero-heading h1 {
   margin-top: -6px;
   font-size: clamp(48px, 7vw, 82px);
+}
+
+.council-share-button {
+  margin-top: 24px;
 }
 
 .council-hero > p:not(.eyebrow) {

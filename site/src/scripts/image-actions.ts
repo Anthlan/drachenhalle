@@ -29,7 +29,7 @@ async function copyImageLink(url: string) {
   if (!copied) throw new Error("Link konnte nicht kopiert werden.");
 }
 
-async function shareImage(relativeUrl: string) {
+async function shareLink(relativeUrl: string, linkLabel: "Bildlink" | "Seitenlink") {
   const url = new URL(relativeUrl, window.location.href).href;
 
   if (typeof navigator.share === "function") {
@@ -43,9 +43,9 @@ async function shareImage(relativeUrl: string) {
 
   try {
     await copyImageLink(url);
-    showShareFeedback("Bildlink wurde kopiert.");
+    showShareFeedback(`${linkLabel} wurde kopiert.`);
   } catch {
-    showShareFeedback("Der Bildlink konnte nicht kopiert werden.", true);
+    showShareFeedback(`Der ${linkLabel} konnte nicht kopiert werden.`, true);
   }
 }
 
@@ -99,7 +99,7 @@ async function saveOriginalImage(url: string, fileName: string, mimeType: string
 }
 
 export function initializeImageActions() {
-  const shareButtons = document.querySelectorAll("[data-share-image]");
+  const shareButtons = document.querySelectorAll("[data-share-image], [data-share-page]");
 
   for (const button of shareButtons) {
     if (!(button instanceof HTMLButtonElement)) continue;
@@ -107,7 +107,8 @@ export function initializeImageActions() {
     button.addEventListener("click", () => {
       const url = button.dataset.shareUrl;
       if (!url) return;
-      void shareImage(url);
+      const linkLabel = button.hasAttribute("data-share-page") ? "Seitenlink" : "Bildlink";
+      void shareLink(url, linkLabel);
     });
   }
 

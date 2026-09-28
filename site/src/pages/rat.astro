@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import ImageActionIcon from "../components/ImageActionIcon.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import docsData from "../data/docs.generated.json";
@@ -26,8 +27,20 @@ const internalDocuments = docsData.items.filter((document) => document.hidden);
 
       <main class="council-main" id="main-content">
         <section class="council-hero" aria-labelledby="council-title">
-          <p class="eyebrow">Allianzrat</p>
-          <h1 id="council-title">Strategieraum</h1>
+          <div class="council-hero-heading">
+            <p class="eyebrow">Allianzrat</p>
+            <h1 id="council-title">Strategieraum</h1>
+            <button
+              type="button"
+              class="tip-article-share council-share-button"
+              data-share-page
+              data-share-url="/drachenhalle/rat/"
+              aria-label="Strategieraum teilen"
+              title="Strategieraum teilen"
+            >
+              <ImageActionIcon type="share" />
+            </button>
+          </div>
           <p>Interne Beratungsunterlagen und Diskussionsgrundlagen für den Allianzrat.</p>
         </section>
 
@@ -54,7 +67,15 @@ const internalDocuments = docsData.items.filter((document) => document.hidden);
         </section>
       </main>
 
+      <p class="share-feedback" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></p>
+
       <SiteFooter />
     </div>
+
+    <script>
+      import { initializeImageActions } from "../scripts/image-actions";
+
+      initializeImageActions();
+    </script>
   </body>
 </html>

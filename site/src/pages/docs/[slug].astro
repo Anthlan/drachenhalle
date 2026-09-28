@@ -124,13 +124,13 @@ const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
                   </div>
                 </dl>
               )}
-          {!document.hidden && (isBriefKnowledgeArticle || document.section !== "Drachenwissen") && (
+          {(document.hidden || isBriefKnowledgeArticle || document.section !== "Drachenwissen") && (
             <div class="document-header-actions">
-              {isBriefKnowledgeArticle && (
+              {(document.hidden || isBriefKnowledgeArticle) && (
                 <button
                   type="button"
                   class="tip-article-share"
-                  data-share-image
+                  data-share-page
                   data-share-url={document.url}
                   aria-label={`Artikel ${document.title} teilen`}
                   title="Artikel teilen"
@@ -138,7 +138,7 @@ const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
                   <ImageActionIcon type="share" />
                 </button>
               )}
-              {document.section !== "Drachenwissen" && (
+              {!document.hidden && document.section !== "Drachenwissen" && (
                 <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
                   Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
                 </a>
