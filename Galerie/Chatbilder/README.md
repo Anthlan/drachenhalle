@@ -1,20 +1,18 @@
 # Chatbilder
 
-Dieser Ordner sammelt fertige Szenen, Memes und humorvolle Bilder aus dem Allianzkontext. Die Bilder werden chronologisch und mit einem aussagekräftigen Kurztitel benannt.
+Dieser Ordner sammelt szenische oder erzählerische Motive aus dem Allianzkontext: Momentaufnahmen, Memes, Running Gags und kleine Geschichten. Der Verwendungszweck entscheidet über die Ablage. Auch ein Bild im Chibi-Stil bleibt ein Chatbild, wenn es eine Szene oder Handlung erzählt.
 
-Bewusst überzeichnete Chibi-Reaktionsbilder gehören in den Unterordner `Chibi`.
+Kurze, wiederverwendbare Antworten und Grüße gehören stattdessen nach [`Galerie/Reaktionsbilder`](../Reaktionsbilder/README.md).
 
 ## Stilzuordnung
 
-Die Bilder werden drei bewusst groben Stilgruppen zugeordnet:
+Chatbilder können unabhängig von ihrem Verwendungszweck einen der drei Darstellungsstile besitzen:
 
 - **S1 – Filmische Allianz-Fantasy:** zusammenhängende, halb-realistische Szene mit erzählerischer Bildkomposition
 - **S2 – Fantasy-Comic & Infografik:** text-, panel- oder UI-betonte Darstellung im gemeinsamen DIE-Look
-- **S3 – Chibi-Reaktion:** stark vereinfachte, niedliche und bewusst überzeichnete Reaktionsbilder
+- **S3 – Chibi-Fantasy:** stark vereinfachte, niedliche und bewusst überzeichnete Darstellung
 
-Die verbindliche Zuordnung aller vorhandenen Bilder steht im [`STILINDEX.md`](STILINDEX.md). Der Stil wird nicht in den Dateinamen aufgenommen. Der Website-Build liest den Index als Bildmetadaten ein und stellt die Zuordnung in der Galerie als Badge, Detailangabe und Filter bereit. Neue oder umbenannte Chatbilder ohne gültigen Eintrag lassen den Build bewusst fehlschlagen.
-
-Neue Bilder werden bei der Prüfung einer bestehenden Gruppe zugewiesen; eine weitere Gruppe wird nur ergänzt, wenn keine der drei vorhandenen Gruppen sinnvoll passt.
+Die verbindliche Zuordnung aller Chat- und Reaktionsbilder steht im zentralen [`Galerie/STILINDEX.md`](../STILINDEX.md). Der Stil wird weder aus dem Ordner noch aus dem Dateinamen abgeleitet. Neue oder umbenannte Bilder ohne genau einen gültigen Stileintrag lassen den Website-Build bewusst fehlschlagen.
 
 ## Benennungsregeln
 
@@ -23,4 +21,4 @@ Neue Bilder werden bei der Prüfung einer bestehenden Gruppe zugewiesen; eine we
 - Der Zeitstempel steht zuerst. Kurztitel und Hauptfiguren enthalten keine Leerzeichen; mehrere eindeutig erkennbare Hauptfiguren werden jeweils mit einem Unterstrich angehängt.
 - Tiere, Gegenstände und unbenannte Nebenfiguren gehören bei Bedarf in den Kurztitel und werden nicht wie Spielernamen an den Dateinamen angehängt.
 - Spielernamen übernehmen ihre bestätigte Groß- und Kleinschreibung. Dateiendungen werden kleingeschrieben.
-- `README.md` und `STILINDEX.md` sind von diesem Bildschema ausgenommen; Chibi-Bilder werden ausschließlich im Unterordner `Chibi` abgelegt.
+- `README.md` ist von diesem Bildschema ausgenommen. Bilder liegen direkt in diesem Ordner; stilbezogene Unterordner werden nicht verwendet.

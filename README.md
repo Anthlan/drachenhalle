@@ -15,7 +15,7 @@ Jeder Fachordner enthält eine eigene `README.md` mit seinem Zweck, seiner vorge
 | --- | --- |
 | [`Aktuelles`](Aktuelles/README.md) | Manuell gepflegte Neuigkeiten für die Startseite |
 | [`Termine`](Termine/README.md) | Kommende und vergangene Allianz-Events mit Kalender-Download |
-| [`Galerie`](Galerie/README.md) | Avatare, Charaktermodelle und Chatbilder |
+| [`Galerie`](Galerie/README.md) | Chatbilder, Reaktionsbilder, Avatare und Charaktermodelle |
 | [`Drachenwissen`](Drachenwissen/README.md) | Tipps, Strategien und Informationen für den Spiel- und Allianzalltag |
 | [`Styleguides`](Styleguides/README.md) | Gestaltungs- und Textregeln für konsistente DIE-Inhalte |
 | [`Archiv`](Archiv/README.md) | Ersetzte, veraltete oder historisch relevante Inhalte |
@@ -29,7 +29,7 @@ Bitte im Dateinamen nach Möglichkeit den eigenen Spielernamen und einen kurzen 
 
 ## Gestaltungsprinzip
 
-Normale Chatbilder verwenden einen hochwertigen, filmischen und halb-realistischen Fantasy-Stil mit stabilen Charaktermodellen, dunkelblau-goldener Farbwelt und warmem Licht. Für bewusst überzeichnete Reaktionen existiert ergänzend ein eigener Chibi-Stil. Die verbindlichen Vorgaben befinden sich unter [`Styleguides`](Styleguides).
+Bei Chat- und Reaktionsbildern werden Verwendungszweck und Darstellungsstil getrennt gepflegt. Chatbilder erzählen Szenen, Reaktionsbilder liefern kurze wiederverwendbare Antworten oder Grüße. Beide Kategorien können unabhängig davon in S1, S2 oder S3 gestaltet sein. Die verbindlichen Vorgaben befinden sich unter [`Styleguides`](Styleguides), die Zuordnung im [`Galerie/STILINDEX.md`](Galerie/STILINDEX.md).
 
 ## Projektstatus
 

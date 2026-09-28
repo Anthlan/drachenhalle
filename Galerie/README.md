@@ -4,6 +4,9 @@ Dieser Bereich enthält die visuellen Sammlungen, die auf der Website in der **G
 
 - [Avatare](Avatare/README.md) – fertige Profil- und Avatarbilder
 - [Charaktermodelle](Charaktermodelle/README.md) – verbindliche Referenzen wiederkehrender Figuren
-- [Chatbilder](Chatbilder/README.md) – Szenen, Memes und Chibi-Reaktionsbilder
+- [Chatbilder](Chatbilder/README.md) – szenische Motive, Memes und kleine Geschichten
+- [Reaktionsbilder](Reaktionsbilder/README.md) – kurze, wiederverwendbare Antworten und Grüße
+
+Der Verwendungszweck wird durch den Galerieordner bestimmt. Die davon unabhängige Darstellungsform S1, S2 oder S3 wird für Chat- und Reaktionsbilder gemeinsam im [`STILINDEX.md`](STILINDEX.md) gepflegt.
 
 Zusätzliche Grafiken aus `Drachenwissen` und `Styleguides` können ebenfalls in der Webgalerie erscheinen, bleiben im Repository aber bei ihrem fachlichen Inhalt abgelegt.

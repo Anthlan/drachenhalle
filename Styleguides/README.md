@@ -1,6 +1,6 @@
 # Styleguides
 
-Dieser Ordner enthält die verbindlichen Gestaltungs- und Textregeln der DIE Drachenhalle. Sie dienen als Grundlage für neue Avatare, Charaktermodelle, Chatbilder und Allianz-Mitteilungen.
+Dieser Ordner enthält die verbindlichen Gestaltungs- und Textregeln der DIE Drachenhalle. Sie dienen als Grundlage für neue Avatare, Charaktermodelle, Chat- und Reaktionsbilder sowie Allianz-Mitteilungen.
 
 Änderungen sollten bewusst vorgenommen und mit einem aussagekräftigen Git-Commit festgehalten werden, da sie zukünftige Inhalte beeinflussen.
 
@@ -17,7 +17,7 @@ Dieser Ordner enthält die verbindlichen Gestaltungs- und Textregeln der DIE Dra
 - [`DlE – Textformatierung`](DlE%20%E2%80%93%20Textformatierung.md) – Formatierung, Zielgruppenansprache und redaktionelle Perspektive
 - [`DlE-Stil – Tipps`](DlE-Stil%20%E2%80%93%20Tipps.md) – informationsreiche, direkt teilbare Wissensgrafiken
 - [`DlE-Stil – Allianz-Mitteilungen`](DlE-Stil%20%E2%80%93%20Allianz-Mitteilungen.md) – kompakte offizielle Informationsgrafiken
-- [`DlE-Stil – Chat-Bilder`](DlE-Stil%20%E2%80%93%20Chat-Bilder.md) – filmische Allianz-Momentaufnahmen
-- [`DlE-Stil – Chibi-Chatbilder`](DlE-Stil%20%E2%80%93%20Chibi-Chatbilder.md) – bewusst überzeichnete Reaktionsbilder
+- [`DlE-Stil – Chat-Bilder`](DlE-Stil%20%E2%80%93%20Chat-Bilder.md) – gemeinsame Stilgruppen für Chat- und Reaktionsbilder
+- [`DlE-Stil – Chibi-Chatbilder`](DlE-Stil%20%E2%80%93%20Chibi-Chatbilder.md) – Stilregeln für bewusst überzeichnete S3-Motive
 - [`DlE-Stil – Avatarbilder`](DlE-Stil%20%E2%80%93%20Avatarbilder.md) – konsistente Profilbilder
 - [`DlE-Stil – Charaktermodelle`](DlE-Stil%20%E2%80%93%20Charaktermodelle.md) – verbindliche Modellbögen für neue und wiederkehrende Figuren

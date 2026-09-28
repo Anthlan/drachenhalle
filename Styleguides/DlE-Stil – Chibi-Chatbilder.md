@@ -1,18 +1,19 @@
-# DlE-Stil – Chibi-Chatbilder
+# DlE-Stil – Chibi-Bilder
 
 ## Zweck
 
-Chibi-Chatbilder dienen als bewusst überzeichnete Ergänzung zum normalen DlE-Chatbildstil. Sie eignen sich für kurze Reaktionen, Running Gags, Insider und humorvolle Alltagssituationen. Der Chibi-Stil ersetzt nicht den filmischen, halb-realistischen Standardstil für normale Chatbilder.
+Der Chibi-Stil S3 ist eine bewusst überzeichnete Ergänzung zur filmischen und comicartigen DlE-Bildsprache. Er kann sowohl bei kurzen Reaktionsbildern als auch bei szenischen oder erzählerischen Chatbildern eingesetzt werden. Der Stil allein bestimmt nicht, in welchem Galerieordner ein Bild liegt.
 
 ## Geeignete Motive
 
 - übertriebene Freude, Wut, Panik, Verlegenheit oder Enttäuschung
 - freundschaftliche Neckereien und kleine Missgeschicke
 - wiederkehrende Gags rund um Kaffee, Strategie, Events oder den Angriffsknopf
-- schnelle Reaktionen auf Situationen aus dem Allianzchat
+- schnelle Reaktionen und wiederverwendbare Grüße aus dem Allianzchat
 - niedliche Überspitzungen eigentlich dramatischer Momente
+- szenische oder erzählerische Chibi-Motive mit einer klaren kleinen Handlung
 
-Ernsthafte Allianzankündigungen, Charakterreferenzen, große Erfolge und emotionale Schlüsselmomente bleiben im normalen DlE-Stil.
+Ernsthafte Allianzankündigungen und verbindliche Charakterreferenzen bleiben in ihren dafür vorgesehenen Formaten. Bei Chat- und Reaktionsbildern entscheidet das Motiv bewusst zwischen S1, S2 und S3.
 
 ## Optik
 
@@ -40,7 +41,7 @@ Ernsthafte Allianzankündigungen, Charakterreferenzen, große Erfolge und emotio
 
 ## Komposition und Humor
 
-- bevorzugt quadratisches Format für die Verwendung im Chat
+- bei kurzen Reaktionsbildern bevorzugt quadratisches Format für die Verwendung im Chat
 - ein klarer Gag oder eine eindeutige Reaktion pro Bild
 - Hauptfiguren und Pointe müssen auch in kleiner Darstellung sofort verständlich sein
 - Requisiten sparsam einsetzen und auf die Pointe ausrichten
@@ -73,14 +74,22 @@ Ernsthafte Allianzankündigungen, Charakterreferenzen, große Erfolge und emotio
 
 ## Ablage und Benennung
 
-Chibi-Chatbilder werden im Unterordner `Galerie/Chatbilder/Chibi` abgelegt. Sie verwenden dasselbe Benennungsschema wie normale Chatbilder:
+Die Ablage richtet sich nach dem Verwendungszweck:
+
+- szenische oder erzählerische Motive nach `Galerie/Chatbilder`
+- kurze, wiederverwendbare Antworten und Grüße nach `Galerie/Reaktionsbilder`
+
+Beide Kategorien verwenden dasselbe Benennungsschema:
 
 ```text
 YYYY_MM_DD_HHMM_Kurztitel_[Hauptfiguren].Dateiendung
 ```
 
-Beispiel:
+Beispiele:
 
 ```text
 2026_09_23_0751_AngriffsknopfChibi_Somea_Anthlan.png
+2026_09_25_2331_Passt_Anthlan.png
 ```
+
+`AngriffsknopfChibi` ist wegen seiner szenischen Handlung ein Chatbild im Stil S3. `Passt` ist wegen seines wiederverwendbaren Zwecks ein Reaktionsbild, ebenfalls im Stil S3. Reaktionsbilder dürfen jedoch ebenso S1 oder S2 zugeordnet werden. Die verbindliche Stilzuordnung steht in `Galerie/STILINDEX.md`.

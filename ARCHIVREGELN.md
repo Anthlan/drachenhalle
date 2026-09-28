@@ -23,7 +23,7 @@ Auf dieser Website und im Repository wird die Allianz durchgängig als **DIE** b
 
 - `Aktuelles`: manuell gepflegte Neuigkeiten für die Startseite
 - `Termine`: Allianz-Events mit Datum, Uhrzeit und optionalem Kalender-Download
-- `Galerie`: Avatare, Charaktermodelle und Chatbilder
+- `Galerie`: Chatbilder, Reaktionsbilder, Avatare und Charaktermodelle
 - `Drachenwissen`: Tipps und Spielwissen mit Art-/Thema-Tags sowie Allianzmaterial
 - `Styleguides`: verbindliche Regeln für Gestaltung und Textformatierung
 - `Archiv`: ersetzte, veraltete oder nur noch historisch relevante Fassungen
@@ -109,7 +109,7 @@ Spielername_Referenzmodell_Ausruestung.Dateiendung
 
 Der Spielername wird in der im Spiel beziehungsweise auf dem Referenzbild verwendeten Groß- und Kleinschreibung übernommen.
 
-### Allgemeine Chatbilder
+### Chat- und Reaktionsbilder
 
 Schema:
 
@@ -119,13 +119,17 @@ YYYY_MM_DD_HHMM_Kurztitel_[Hauptfiguren].Dateiendung
 
 Hier steht der Zeitstempel zuerst, weil die chronologische Einordnung wichtiger ist als die Gruppierung nach einem einzelnen Charakter. Die Hauptfiguren werden nur ergänzt, wenn sie eindeutig zuzuordnen sind; mehrere Namen werden jeweils mit einem Unterstrich getrennt. Der Kurztitel und die Hauptfiguren enthalten keine Leerzeichen.
 
-Chibi-Chatbilder verwenden dasselbe Schema und liegen im Unterordner `Galerie/Chatbilder/Chibi`.
+- `Galerie/Chatbilder` enthält szenische oder erzählerische Motive.
+- `Galerie/Reaktionsbilder` enthält kurze, wiederverwendbare Antworten und Grüße.
+
+Die Ordner beschreiben ausschließlich den Verwendungszweck. Die Darstellungsstile S1, S2 und S3 werden unabhängig davon im zentralen `Galerie/STILINDEX.md` zugeordnet. Ein szenisches Chibi-Motiv bleibt deshalb ein Chatbild im Stil S3; ein Reaktionsbild wird nicht allein aufgrund seiner Kategorie automatisch S3.
 
 Beispiele:
 
 ```text
 2026_09_17_2043_KaffeeOderSomea_Anthlan_Somea.png
 2026_09_18_0718_Kaffeepause.png
+2026_09_25_2331_Passt_Anthlan.png
 ```
 
 ## Umgang mit historischen Inhalten

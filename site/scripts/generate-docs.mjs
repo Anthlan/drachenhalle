@@ -46,6 +46,13 @@ const baseDocuments = [
     summary: "Tipps und Spielwissen für den Alltag, gefiltert nach Art und Thema.",
   },
   {
+    source: "Drachenwissen/Events/README.md",
+    slug: "events",
+    title: "Events",
+    section: "Drachenwissen",
+    summary: "Zeitlich begrenzte Event-Guides mit Währungen, Belohnungen und Empfehlungen nach Budget.",
+  },
+  {
     source: "Drachenwissen/Allianz/README.md",
     slug: "allianz",
     title: "Allianz",
@@ -90,16 +97,16 @@ const baseDocuments = [
   {
     source: "Styleguides/DlE-Stil – Chibi-Chatbilder.md",
     slug: "stil-chibi-chatbilder",
-    title: "Stil: Chibi-Chatbilder",
+    title: "Stil: Chibi-Bilder",
     section: "Gestaltung",
-    summary: "Format, Aufbau und Wiedererkennungsmerkmale der Chibi-Motive.",
+    summary: "Darstellungsregeln für Chat- und Reaktionsbilder im Chibi-Stil S3.",
   },
   {
     source: "Styleguides/DlE-Stil – Chat-Bilder.md",
     slug: "stil-chatbilder",
-    title: "Stil: Chatbilder",
+    title: "Stil: Chat- und Reaktionsbilder",
     section: "Gestaltung",
-    summary: "Gestaltungsregeln für normale Chatbilder der Allianz.",
+    summary: "Gemeinsame Stilgruppen für szenische und wiederverwendbare Bildmotive.",
   },
   {
     source: "Styleguides/DlE-Stil – Avatarbilder.md",
@@ -151,11 +158,11 @@ const baseDocuments = [
     summary: "Regeln und Struktur für die Sammlung der Chatmotive.",
   },
   {
-    source: "Galerie/Chatbilder/Chibi/README.md",
-    slug: "chibi",
-    title: "Chibi-Chatbilder",
+    source: "Galerie/Reaktionsbilder/README.md",
+    slug: "reaktionsbilder",
+    title: "Reaktionsbilder",
     section: "Bildarchiv",
-    summary: "Eigener Bereich für kompakte Motive im Chibi-Stil.",
+    summary: "Kurze, wiederverwendbare Antworten und Grüße für den Allianzchat.",
   },
   {
     source: "Archiv/README.md",
@@ -288,7 +295,45 @@ for (const fileName of tipFileNames) {
   });
 }
 
-const documents = [...baseDocuments, ...tipDocuments];
+const eventDirectory = path.join(repositoryDirectory, "Drachenwissen", "Events");
+const eventFileNames = (await readdir(eventDirectory, { withFileTypes: true }))
+  .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".md") && entry.name.toLowerCase() !== "readme.md")
+  .map((entry) => entry.name)
+  .sort((left, right) => left.localeCompare(right, "de", { numeric: true }));
+const eventDocuments = [];
+
+for (const fileName of eventFileNames) {
+  const source = `Drachenwissen/Events/${fileName}`;
+  const sourcePath = path.join(eventDirectory, fileName);
+  const sourceMarkdown = await readFile(sourcePath, "utf8");
+  const { content: markdown } = parseFrontmatter(sourceMarkdown);
+  const baseName = path.basename(fileName, path.extname(fileName));
+  const heading = markdown.match(/^#\s+(.+)$/m)?.[1] ?? baseName;
+  const title = plainText(heading).replace(/^✈️\s*/u, "");
+  const introduction = markdown.match(/##\s+Wofür[^\n]*\r?\n+([\s\S]*?)(?=\r?\n##\s|$)/i)?.[1] ?? "";
+  const summary = plainText(introduction.split(/\r?\n\s*\r?\n/)[0]) || "Zeitlich begrenzter Event-Guide.";
+  const image = galleryItems.find((item) => {
+    const itemBaseName = path.posix.basename(item.sourcePath, path.posix.extname(item.sourcePath));
+    return item.sourcePath.startsWith("Drachenwissen/Events/") && itemBaseName === baseName;
+  });
+
+  eventDocuments.push({
+    source,
+    slug: slugify(baseName),
+    title,
+    section: "Drachenwissen",
+    summary,
+    parentSlug: "events",
+    kind: "event",
+    imageUrl: image?.webUrl ?? null,
+    imageRepositoryUrl: image?.repositoryUrl ?? null,
+    imageOriginalUrl: image ? `${rawRepositoryUrl}/${encodeRepositoryPath(image.sourcePath)}` : null,
+    imageOriginalName: image ? path.posix.basename(image.sourcePath) : null,
+    imageOriginalMimeType: image ? imageMimeType(image.sourcePath) : null,
+  });
+}
+
+const documents = [...baseDocuments, ...tipDocuments, ...eventDocuments];
 const documentUrl = (document) => `/drachenhalle/docs/${document.slug}/`;
 const documentUrlBySource = new Map(documents.map((document) => [document.source, documentUrl(document)]));
 
@@ -411,12 +456,12 @@ for (const document of documents) {
   );
   const articleMarkdown = normalizedMarkdown.replace(/^#\s+.*?(?:\r?\n)+/, "");
   const html = await marked.parse(articleMarkdown);
-  const articleSections = ["tip", "alliance"].includes(document.kind)
+  const articleSections = ["tip", "event", "alliance"].includes(document.kind)
     ? splitLevelTwoSections(articleMarkdown)
     : [];
-  const tipSections = document.kind === "tip" ? articleSections : [];
+  const tipSections = ["tip", "event"].includes(document.kind) ? articleSections : [];
   const briefSection = tipSections.find((section) => section.title === "das wichtigste in kürze");
-  const detailStartIndex = tipSections.findIndex((section) => section.title.startsWith("wofür ist dieser tipp"));
+  const detailStartIndex = tipSections.findIndex((section) => section.title.startsWith("wofür ist dieser"));
   const detailMarkdown = detailStartIndex >= 0
     ? tipSections.slice(detailStartIndex).map((section) => section.markdown).join("\n\n")
     : null;

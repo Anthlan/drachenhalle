@@ -31,7 +31,9 @@ const overviewLabel = document.section === "Gestaltung" ? "Styleguides" : "Drach
 const tipArtOptions = ["Anleitung", "Strategie", "Optimierung"];
 const tipTopicOptions = ["Allianz", "Events", "Kampf", "Truppen", "Aufbau", "Weltkarte"];
 const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
+const isEventsOverview = document.slug === "events" && childDocuments.length > 0;
 const isAllianceOverview = document.slug === "allianz" && childDocuments.length > 0;
+const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
 ---
 
 <!doctype html>
@@ -112,9 +114,9 @@ const isAllianceOverview = document.slug === "allianz" && childDocuments.length 
                   </div>
                 </dl>
               )}
-          {(document.kind === "tip" || document.section !== "Drachenwissen") && (
+          {(isBriefKnowledgeArticle || document.section !== "Drachenwissen") && (
             <div class="document-header-actions">
-              {document.kind === "tip" && (
+              {isBriefKnowledgeArticle && (
                 <button
                   type="button"
                   class="tip-article-share"
@@ -236,6 +238,28 @@ const isAllianceOverview = document.slug === "allianz" && childDocuments.length 
                 </div>
               </section>
             )}
+            {isEventsOverview && (
+              <section class="knowledge-children alliance-catalog" aria-labelledby="event-children-title">
+                <div class="tip-catalog-heading">
+                  <p class="eyebrow">Eventwissen</p>
+                  <h2 id="event-children-title">Aktuelle Event-Guides</h2>
+                  <p>Kurzfassung, ausführliche Mechanik und eine realistische Empfehlung passend zum eigenen Budget.</p>
+                </div>
+                <div class="knowledge-card-list">
+                  {childDocuments.map((item) => (
+                    <a class="knowledge-card" href={item.url}>
+                      <div>
+                        <span>Drachenwissen · Event</span>
+                        <h3>{item.title}</h3>
+                        <p>{item.summary}</p>
+                        <strong>Event-Guide öffnen →</strong>
+                      </div>
+                      {item.imageUrl && <img src={item.imageUrl} alt="" loading="lazy" />}
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
             {document.kind === "alliance" && document.allianceArticleHtml && document.allianceCopyHtml ? (
               <div class="alliance-article-body">
                 <div class:list={["alliance-main-layout", { "has-aside-image": document.imageUrl }]}>
@@ -271,7 +295,7 @@ const isAllianceOverview = document.slug === "allianz" && childDocuments.length 
                   <div set:html={document.allianceCopyHtml} />
                 </section>
               </div>
-            ) : document.kind === "tip" && document.hasBriefView ? (
+            ) : isBriefKnowledgeArticle && document.hasBriefView ? (
               <div class="tip-viewer" data-tip-viewer>
                 <div class="tip-view-switcher" role="group" aria-label="Ansicht des Tipps auswählen">
                   <button
@@ -312,7 +336,7 @@ const isAllianceOverview = document.slug === "allianz" && childDocuments.length 
                   </div>
 
                   {document.imageUrl && (
-                    <aside class="document-visual tip-shared-visual" aria-label="Zugehörige Tipp-Grafik">
+                    <aside class="document-visual tip-shared-visual" aria-label={`Zugehörige ${document.kind === "event" ? "Event" : "Tipp"}-Grafik`}>
                       <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
                         <img src={document.imageUrl} alt={`Grafik zu ${document.title}`} />
                       </a>

@@ -8,7 +8,7 @@ import galleryData from "../data/gallery.generated.json";
 const galleryItems = galleryData.items;
 const categoryLabels = {
   Chatbild: "Chatbilder",
-  Chibi: "Chibi",
+  Reaktionsbild: "Reaktionsbilder",
   Avatar: "Avatare",
   Charaktermodell: "Charaktere",
   Allianz: "Allianz",
@@ -29,7 +29,9 @@ const people = [...new Set(galleryItems.flatMap((item) => item.people))].sort((l
   left.localeCompare(right, "de"),
 );
 const styles = galleryData.styles;
-const chatImageCount = galleryItems.filter((item) => item.category === "Chatbild").length;
+const chatAndReactionImageCount = galleryItems.filter((item) =>
+  ["Chatbild", "Reaktionsbild"].includes(item.category),
+).length;
 const referenceCount = galleryItems.filter((item) => ["Avatar", "Charaktermodell"].includes(item.category)).length;
 const dateFormatter = new Intl.DateTimeFormat("de-DE", {
   day: "numeric",
@@ -59,7 +61,7 @@ const originalMimeType = (item) => {
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="Die Bilderwelt der DIE Drachenhalle mit Chatbildern, Charaktermodellen und Allianzmotiven."
+      content="Die Bilderwelt der DIE Drachenhalle mit Chatbildern, Reaktionsbildern, Charaktermodellen und Allianzmotiven."
     />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Galerie · DIE Drachenhalle</title>
@@ -75,12 +77,12 @@ const originalMimeType = (item) => {
             <h1 id="archive-title">Bilder und Geschichten der Drachenritter</h1>
           </div>
           <p class="intro-copy">
-            Durchsuche Chatbilder, Charakterreferenzen und Allianzmaterial. Die Originale bleiben mit ihrer
+            Durchsuche Chatbilder, Reaktionsbilder, Charakterreferenzen und Allianzmaterial. Die Originale bleiben mit ihrer
             vollständigen Qualität und Historie im GitHub-Repository erhalten.
           </p>
           <dl class="archive-stats" aria-label="Umfang der Galerie">
             <div><dt>{galleryData.imageCount}</dt><dd>Bilder</dd></div>
-            <div><dt>{chatImageCount}</dt><dd>Chatbilder</dd></div>
+            <div><dt>{chatAndReactionImageCount}</dt><dd>Chat- &amp; Reaktionsbilder</dd></div>
             <div><dt>{referenceCount}</dt><dd>Referenzen</dd></div>
           </dl>
         </section>

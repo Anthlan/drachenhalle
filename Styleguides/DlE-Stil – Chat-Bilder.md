@@ -1,17 +1,24 @@
-# DlE-Stil – Chat-Bilder / Momentaufnahmen
+# DlE-Stil – Chat- und Reaktionsbilder / Momentaufnahmen
 
 **Ziel:**  
-Szenische Bilder für interne Chats, Running Gags, besondere Momente und kleine Geschichten aus der Allianz. Hier stehen die Charaktere und ihre Dynamik im Mittelpunkt.
+Eine gemeinsame Bildsprache für szenische Chatbilder und kurze, wiederverwendbare Reaktionsbilder. Verwendungszweck und Darstellungsstil werden dabei unabhängig voneinander behandelt.
+
+## Verwendungszweck
+
+- **Chatbild:** szenisches oder erzählerisches Motiv, Running Gag, besonderer Moment oder kleine Geschichte aus der Allianz
+- **Reaktionsbild:** kurze, wiederverwendbare Antwort oder Begrüßung wie „Passt“, „Stark“, „Wie bitte?“, „Moin“ oder „Gute Nacht“
+
+Die Kategorie ergibt sich aus dem Verwendungszweck, nicht aus dem Stil. Ein Chatbild kann deshalb ebenso S3 verwenden; ein Reaktionsbild ist nicht automatisch S3.
 
 ## Verbindlicher Standardstil
 
-Normale Chatbilder verwenden den ausgereiften DlE-Allianzstil: eine hochwertige, filmische und halb-realistische Fantasyillustration mit stabilen Charaktermodellen, dunkelblau-goldener Grundgestaltung und warmem bernsteinfarbenem Licht. Abweichende Stile sind nur für bewusst abgegrenzte Sondermotive vorgesehen.
+S1-Chatbilder verwenden den ausgereiften DlE-Allianzstil: eine hochwertige, filmische und halb-realistische Fantasyillustration mit stabilen Charaktermodellen, dunkelblau-goldener Grundgestaltung und warmem bernsteinfarbenem Licht. S2 und S3 übertragen dieselbe Wiedererkennbarkeit in stärker erklärende beziehungsweise bewusst überzeichnete Darstellungen.
 
-Humorvolle Überspitzungen im Chibi-Stil werden als eigenes Format behandelt und folgen der separaten Guideline `DlE-Stil – Chibi-Chatbilder.md`.
+Motive im Chibi-Stil folgen zusätzlich der separaten Guideline `DlE-Stil – Chibi-Chatbilder.md`, unabhängig davon, ob sie als Chat- oder Reaktionsbild verwendet werden.
 
 ## Stilgruppen
 
-Alle Chatbilder bleiben Teil derselben blau-goldenen DlE-Bildwelt. Für die praktische Einordnung werden nur drei grobe Stilgruppen verwendet:
+Alle Chat- und Reaktionsbilder bleiben Teil derselben blau-goldenen DlE-Bildwelt. Für die Darstellungsform werden drei grobe Stilgruppen verwendet:
 
 ### S1 – Filmische Allianz-Fantasy
 
@@ -21,11 +28,11 @@ Der Standard für zusammenhängende Szenen. Figuren, Umgebung und Handlung bilde
 
 Für Motive, bei denen Erklärungen, Running Gags oder Spielmechaniken mehr Raum benötigen. Mehrere Panels, deutliche Sprechblasen, Checklisten, UI-Elemente und plakative Überschriften sind erlaubt. Charaktermodelle, Farbwelt, Materialien und Licht bleiben dennoch an den normalen DlE-Stil gebunden; sterile Standard-Infografiken und rohe Screenshots ohne gestalterische Einbindung sind zu vermeiden.
 
-### S3 – Chibi-Reaktion
+### S3 – Chibi-Fantasy
 
-Für kurze, stark überzeichnete Reaktionen mit vereinfachten Proportionen. Diese Bilder liegen im Unterordner `Galerie/Chatbilder/Chibi` und folgen zusätzlich der separaten Chibi-Guideline.
+Für stark vereinfachte, niedliche und bewusst überzeichnete Darstellungen mit klaren Silhouetten und vereinfachten Proportionen. S3 eignet sich sowohl für kurze Reaktionen als auch für szenische Chibi-Chatbilder.
 
-Die Stilgruppe wird im `Galerie/Chatbilder/STILINDEX.md` dokumentiert und nicht in Dateiname oder Ordnerstruktur kodiert. Neue Gruppen werden nur eingeführt, wenn ein Bild keiner bestehenden Gruppe sinnvoll zugeordnet werden kann.
+Die Stilgruppe wird im zentralen `Galerie/STILINDEX.md` dokumentiert und nicht in Dateiname oder Ordnerstruktur kodiert. Neue Gruppen werden nur eingeführt, wenn ein Bild keiner bestehenden Gruppe sinnvoll zugeordnet werden kann.
 
 ### Optik
 - Hochwertige **cinematische, halb-realistische Fantasyillustration** im Stil edler Game-Art
@@ -80,7 +87,7 @@ Die Stilgruppe wird im `Galerie/Chatbilder/STILINDEX.md` dokumentiert und nicht 
 ### Vermeiden
 - Reine Infografik
 - Generische Fantasy-Portraits ohne Handlung
-- Wechselnde Zeichenstile oder widersprüchliche Charakterdarstellungen innerhalb der normalen Chatbilder
+- Wechselnde Zeichenstile oder widersprüchliche Charakterdarstellungen innerhalb einer Bildserie
 - Extrem fotorealistische, stark cartoonhafte oder deutlich animeartige Stilbrüche
 - Zu düstere Horror- oder Zombie-Optik
 - Übersexualisierte Darstellung
