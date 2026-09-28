@@ -1,3 +1,5 @@
 .pnpm-store/
 tmp/
+.pnpm-store/
+tmp/
 
