@@ -38,6 +38,7 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der drei Stilgrupp
 - [2026_09_21_2301_StilleMitHase_Skibbi.png](Chatbilder/2026_09_21_2301_StilleMitHase_Skibbi.png)
 - [2026_09_22_1356_Entscheidungshelfer_Anthlan_Somea_DaVinci1986.png](Chatbilder/2026_09_22_1356_Entscheidungshelfer_Anthlan_Somea_DaVinci1986.png)
 - [2026_09_24_2248_BasisLevel26_Somea.png](Chatbilder/2026_09_24_2248_BasisLevel26_Somea.png)
+- [2026_09_28_2042_KaffeemaschineMeine_Somea_Drachenherz.png](Chatbilder/2026_09_28_2042_KaffeemaschineMeine_Somea_Drachenherz.png)
 
 ## S2 – Fantasy-Comic & Infografik
 

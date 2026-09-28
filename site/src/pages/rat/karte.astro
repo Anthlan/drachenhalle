@@ -1,0 +1,134 @@
+---
+import "../../styles/global.css";
+import ImageActionIcon from "../../components/ImageActionIcon.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import mapData from "../../data/map.generated.json";
+
+const mapAspect = mapData.width / mapData.height;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Interne Planungskarte für den Allianzrat der DIE Drachenhalle." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Planungskarte · Strategieraum · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell map-page-shell">
+      <SiteHeader active="" />
+
+      <main class="council-map-main" id="main-content">
+        <nav class="breadcrumbs" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/rat/">Strategieraum</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Planungskarte</span>
+        </nav>
+
+        <header class="council-map-hero">
+          <div>
+            <p class="eyebrow">Allianzrat · Planungsinstrument</p>
+            <h1>Gebietskarte</h1>
+            <p>Gebiete auswählen, Zuständigkeiten farblich planen und Spielkoordinaten ablesen.</p>
+          </div>
+          <button
+            type="button"
+            class="tip-article-share"
+            data-share-page
+            data-share-url="/drachenhalle/rat/karte/"
+            aria-label="Planungskarte teilen"
+            title="Planungskarte teilen"
+          >
+            <ImageActionIcon type="share" />
+          </button>
+        </header>
+
+        <section
+          class="council-map-workspace"
+          data-council-map
+          data-mask-url={mapData.maskUrl}
+          data-regions={JSON.stringify(mapData.regions)}
+          style={`--map-aspect: ${mapAspect}`}
+          aria-labelledby="map-workspace-title"
+        >
+          <h2 class="visually-hidden" id="map-workspace-title">Interaktive Gebietskarte</h2>
+
+          <div class="council-map-toolbar" aria-label="Kartensteuerung">
+            <div class="map-zoom-controls" role="group" aria-label="Zoom">
+              <button type="button" data-map-zoom-out aria-label="Verkleinern" title="Verkleinern">−</button>
+              <button type="button" data-map-reset>Gesamtansicht</button>
+              <button type="button" data-map-zoom-in aria-label="Vergrößern" title="Vergrößern">+</button>
+            </div>
+            <label class="map-layer-toggle">
+              <input type="checkbox" data-map-layer checked />
+              <span>Planungsebene</span>
+            </label>
+            <output class="map-coordinate-output" data-map-coordinates aria-live="polite">X 500 · Y 500</output>
+          </div>
+
+          <div class="council-map-layout">
+            <div
+              class="council-map-viewport"
+              data-map-viewport
+              tabindex="0"
+              aria-label="Interaktive Karte. Mit Pfeiltasten verschieben, mit Plus und Minus zoomen."
+            >
+              <div class="council-map-stage" data-map-stage>
+                <img src={mapData.baseMapUrl} alt="Neutralisierte Übersichtskarte der Spielwelt" draggable="false" />
+                <canvas
+                  class="council-map-overlay"
+                  data-map-overlay
+                  width={mapData.width}
+                  height={mapData.height}
+                  aria-hidden="true"
+                ></canvas>
+                <div class="council-map-labels" data-map-labels>
+                  {mapData.regions.map((region) => (
+                    <button
+                      type="button"
+                      class="map-region-label"
+                      data-map-region={region.id}
+                      style={`left:${(region.center.pixelX / mapData.width) * 100}%;top:${(region.center.pixelY / mapData.height) * 100}%;--region-color:${region.color}`}
+                      aria-label={`${region.code}: ${region.name}`}
+                      title={`${region.code}: ${region.name}`}
+                    >
+                      {region.id}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <p class="map-gesture-hint">Ziehen zum Verschieben · Mausrad oder Tasten zum Zoomen · Gebiet antippen für Details</p>
+            </div>
+
+            <aside class="council-map-inspector" aria-live="polite">
+              <p class="eyebrow">Auswahl</p>
+              <div data-map-selection>
+                <h2>Gebiet wählen</h2>
+                <p>Tippe eine nummerierte Fläche an. Namen, Farben und Notizen stammen aus <code>Karte/GEBIETE.md</code>.</p>
+              </div>
+              <dl class="map-coordinate-legend">
+                <div><dt>Unten links</dt><dd>1 × 1</dd></div>
+                <div><dt>Oben rechts</dt><dd>999 × 999</dd></div>
+              </dl>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <p class="share-feedback" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></p>
+      <SiteFooter />
+    </div>
+
+    <script>
+      import { initializeImageActions } from "../../scripts/image-actions";
+      import { initializeCouncilMap } from "../../scripts/council-map";
+
+      initializeImageActions();
+      initializeCouncilMap();
+    </script>
+  </body>
+</html>

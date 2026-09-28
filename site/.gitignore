@@ -9,3 +9,4 @@ src/data/news.generated.json
 src/data/events.generated.json
 src/data/changelog.generated.json
 src/data/document-images.generated.json
+src/data/map.generated.json
