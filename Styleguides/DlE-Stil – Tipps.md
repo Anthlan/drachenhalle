@@ -6,6 +6,14 @@ Tipps sind eigenständige, direkt teilbare Wissensgrafiken für Z:Route: Redempt
 
 Die Grafik soll den vollständigen Inhalt des zugehörigen Tipptextes verständlich vermitteln. Aufgeräumte Gestaltung bedeutet dabei eine klare Gliederung – nicht das Weglassen spielrelevanter Details.
 
+## Zielgruppe und Perspektive
+
+- Tipps richten sich in erster Linie an unsere eigenen Allianzmitglieder.
+- Artikel, Grafiktexte und kopierbare Mitteilungen werden aus unserer gemeinsamen Perspektive formuliert: bevorzugt mit **wir**, **uns** und **unser** sowie in direkter Ansprache mit **ihr** und **euch**.
+- Wir erklären, wie wir als Allianz vorgehen und was ihr konkret tun könnt. Wir schreiben nicht wie außenstehende Beobachter über „die Allianz“ oder „ihre Mitglieder“, wenn natürlich „wir“ oder „unsere Mitglieder“ passt.
+- Spielmechaniken, Namen von Funktionen und allgemeingültige Fakten dürfen sachlich-neutral beschrieben werden. Empfehlungen, Abläufe und Bewertungen werden als unser gemeinsames Wissen formuliert.
+- Die vollständigen übergreifenden Regeln stehen in [`DlE – Textformatierung`](DlE%20%E2%80%93%20Textformatierung.md).
+
 ## Grundsatz
 
 **Informationsvollständigkeit steht vor dekorativer Reduktion.**

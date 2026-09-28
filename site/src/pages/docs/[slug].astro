@@ -112,23 +112,27 @@ const isAllianceOverview = document.slug === "allianz" && childDocuments.length 
                   </div>
                 </dl>
               )}
-              <div class="document-header-actions">
-                {document.kind === "tip" && (
-                  <button
-                    type="button"
-                    class="tip-article-share"
-                    data-share-image
-                    data-share-url={document.url}
-                    aria-label={`Artikel ${document.title} teilen`}
-                    title="Artikel teilen"
-                  >
-                    <ImageActionIcon type="share" />
-                  </button>
-                )}
+          {(document.kind === "tip" || document.section !== "Drachenwissen") && (
+            <div class="document-header-actions">
+              {document.kind === "tip" && (
+                <button
+                  type="button"
+                  class="tip-article-share"
+                  data-share-image
+                  data-share-url={document.url}
+                  aria-label={`Artikel ${document.title} teilen`}
+                  title="Artikel teilen"
+                >
+                  <ImageActionIcon type="share" />
+                </button>
+              )}
+              {document.section !== "Drachenwissen" && (
                 <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
                   Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
                 </a>
-              </div>
+              )}
+            </div>
+          )}
             </header>
             {isTipsOverview && (
               <section class="knowledge-children tip-catalog" aria-labelledby="knowledge-children-title" data-tip-catalog>

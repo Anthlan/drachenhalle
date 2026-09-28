@@ -63,6 +63,16 @@ const baseDocuments = [
     imageSource: "Drachenwissen/Allianz/Allianzregeln.png",
   },
   {
+    source: "Drachenwissen/Allianz/R4_Rollen_Verantwortlichkeiten.md",
+    slug: "r4-rollen-verantwortlichkeiten",
+    title: "R4-Rollen und Verantwortlichkeiten",
+    section: "Drachenwissen",
+    summary: "Klare Zuständigkeiten für Führung, Gemeinschaft, Events, Forschung und Versorgung.",
+    parentSlug: "allianz",
+    kind: "alliance",
+    imageSource: "Drachenwissen/Allianz/R4_Rollen_Verantwortlichkeiten.png",
+  },
+  {
     source: "Drachenwissen/Allianz/Website_Drachenhalle.md",
     slug: "website-drachenhalle",
     title: "DIE Drachenhalle bewerben",

@@ -7,6 +7,9 @@ Dieses Dokument beschreibt die Formatierungsregeln für Texte in Z:Route: Redemp
 ## Allgemeine Regeln
 
 - Texte werden auf Deutsch oder Englisch passend zum Empfängerkreis erstellt.
+- Artikel und Mitteilungen richten sich in erster Linie an unsere eigenen Allianzmitglieder. Sie werden deshalb aus der Perspektive unserer Allianz geschrieben: bevorzugt mit **wir**, **uns** und **unser** sowie in direkter Ansprache mit **ihr** und **euch**.
+- Formulierungen wie „die Allianz“, „ihre Mitglieder“ oder „Spieler sollten“ werden vermieden, wenn natürlicher „wir“, „unsere Mitglieder“ oder „ihr solltet“ gesagt werden kann.
+- Spielmechaniken dürfen sachlich und neutral erklärt werden. Einordnung, Empfehlungen und organisatorische Abläufe werden dagegen als unser gemeinsames Wissen und Vorgehen formuliert.
 - Der Allianz-Tag wird als **DlE** geschrieben.
 - HTML-Tags müssen korrekt geöffnet und geschlossen werden.
 - Formatierung wird gezielt eingesetzt: wenige Farben, kurze Hervorhebungen und klare Abschnitte.
@@ -114,6 +117,7 @@ Zu viele Farben machen kurze Texte unruhig. Pro Nachricht reichen meistens zwei 
 ## Stil der Texte
 
 - Kurz, klar und spielnah formulieren.
+- Aus unserer Gemeinschaft heraus schreiben, nicht wie ein außenstehender Beobachter über die Allianz berichten.
 - Erst die Handlung, danach die Begründung.
 - Keine unnötigen Fachbegriffe oder langen Einleitungen.
 - Bei Strategien klare Rollen und Ziele nennen.

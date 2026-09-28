@@ -1,38 +1,38 @@
 # DIE – Allianzregeln
 
-Die Allianzregeln schützen unsere Mitglieder, vermeiden unnötige Konflikte und sorgen dafür, dass Angriffe und Beutezüge mit den Absprachen unseres Servers vereinbar bleiben. Im Zweifel gilt: erst prüfen, dann handeln und bei Unsicherheit einen R4 oder R5 fragen.
+Unsere Allianzregeln schützen uns, vermeiden unnötige Konflikte und sorgen dafür, dass unsere Angriffe und Beutezüge mit den Absprachen unseres Servers vereinbar bleiben. Im Zweifel prüfen wir zuerst und handeln danach. Wenn ihr unsicher seid, fragt bitte einen R4 oder R5.
 
 ![DIE – Allianzregeln](Allianzregeln.png)
 
 ## 1. NAP10 respektieren
 
-Mitglieder der aktuellen **NAP10-Allianzen dürfen nicht angegriffen werden**. Die Rangliste kann sich verändern; eine frühere Einordnung ist deshalb keine verlässliche Grundlage für einen späteren Angriff.
+Wir greifen **keine Mitglieder der aktuellen NAP10-Allianzen** an. Da sich die Rangliste verändern kann, verlassen wir uns nicht auf eine frühere Einordnung.
 
-Prüft vor einem Angriff immer noch einmal die aktuelle Rangliste und die Allianzzugehörigkeit des Ziels. Befindet sich die Allianz in den NAP10 oder ist die Lage unklar, wird nicht angegriffen. So vermeiden wir Gegenangriffe und diplomatische Konflikte, die die gesamte Allianz betreffen können.
+Prüft vor jedem Angriff noch einmal die aktuelle Rangliste und die Allianzzugehörigkeit eures Ziels. Gehört die Allianz zu den NAP10 oder ist die Lage unklar, greifen wir nicht an. So vermeiden wir Gegenangriffe und diplomatische Konflikte, die uns alle betreffen können.
 
 ## 2. Erlaubte Basenangriffe
 
-Angriffe sind auf **allianzlose Spieler** und auf Spieler mit einem Namen nach dem Muster **Commander\*\*\*\*** erlaubt. Auch bei einem erlaubten Ziel bleibt das Maß wichtig: Bitte niemanden vollständig auf **0** bringen.
+Angreifen dürfen wir **allianzlose Spieler** und Spieler mit einem Namen nach dem Muster **Commander\*\*\*\***. Auch bei einem erlaubten Ziel achten wir auf das richtige Maß: Bitte bringt niemanden vollständig auf **0**.
 
-Ein erlaubter Angriff ist kein Freibrief für unnötiges Nachsetzen. Beendet den Angriff, sobald das eigene Ziel erreicht ist, und prüft bei mehreren Angriffen erneut, ob sich Allianzname, Rang oder Situation geändert haben.
+Ein erlaubter Angriff ist für uns kein Freibrief für unnötiges Nachsetzen. Beendet euren Angriff, sobald ihr das Ziel erreicht habt. Prüft vor weiteren Angriffen erneut, ob sich Allianzname, Rang oder Situation geändert haben.
 
 ## 3. Richtig plündern
 
-Lastwagen, Güterzüge und Spezialmissionen **unseres eigenen Servers** werden nicht geplündert. Wählt in der jeweiligen Ansicht immer ein Ziel von **einem anderen Server**.
+Wir plündern keine Lastwagen, Güterzüge oder Spezialmissionen **unseres eigenen Servers**. Wählt in der jeweiligen Ansicht immer ein Ziel von **einem anderen Server**.
 
-Kontrolliert die Servernummer vor dem Start sorgfältig. Ein attraktiver Ertrag oder eine seltene Fracht ändert nichts an dieser Regel. Damit schützen wir die Zusammenarbeit auf dem eigenen Server und vermeiden unnötige Auseinandersetzungen mit anderen Allianzen.
+Kontrolliert die Servernummer vor dem Start sorgfältig. Auch ein attraktiver Ertrag oder eine seltene Fracht ändert nichts an unserer Regel. Damit schützen wir die Zusammenarbeit auf unserem Server und vermeiden unnötige Auseinandersetzungen mit anderen Allianzen.
 
 ## 4. Wenn ein NAP10-Mitglied angreift
 
-Werdet ihr von einem Mitglied einer NAP10-Allianz angegriffen, gilt: **nicht zurückschlagen**. Ein direkter Gegenangriff kann die Klärung erschweren und aus einem einzelnen Vorfall einen größeren Konflikt machen.
+Wenn euch ein Mitglied einer NAP10-Allianz angreift, gilt für uns: **nicht zurückschlagen**. Ein direkter Gegenangriff kann unsere Klärung erschweren und aus einem einzelnen Vorfall einen größeren Konflikt machen.
 
-Teilt stattdessen den Angriffsbericht und meldet den Vorfall einem **R4 oder R5**. Fügt nach Möglichkeit den Namen des Angreifers, seine Allianz und den Zeitpunkt hinzu. Die Allianzführung übernimmt anschließend die Abstimmung und informiert euch über das weitere Vorgehen.
+Teilt stattdessen den Angriffsbericht und meldet den Vorfall einem **R4 oder R5**. Fügt nach Möglichkeit den Namen des Angreifers, seine Allianz und den Zeitpunkt hinzu. Unsere Allianzführung übernimmt anschließend die Abstimmung und informiert euch über unser weiteres Vorgehen.
 
 ## Regelverstöße und Verwarnungen
 
-Beim ersten Regelverstoß wird eine **Verwarnung** ausgesprochen. Eine zweite Verwarnung führt zum **Ausschluss aus der Allianz**. Verwarnungen sollen regelkonformes Verhalten fördern und können nach einer längeren Zeit ohne weitere Verstöße wieder entfallen.
+Beim ersten Regelverstoß sprechen wir eine **Verwarnung** aus. Eine zweite Verwarnung führt zum **Ausschluss aus unserer Allianz**. Verwarnungen sollen uns an das vereinbarte Verhalten erinnern und können nach einer längeren Zeit ohne weitere Verstöße wieder entfallen.
 
-| Situation | Richtiges Verhalten |
+| Situation | Unser richtiges Vorgehen |
 | --- | --- |
 | Ziel gehört zu einer aktuellen NAP10-Allianz | Nicht angreifen |
 | Ziel ist allianzlos oder heißt Commander\*\*\*\* | Angriff erlaubt, aber nicht auf 0 bringen |
@@ -40,7 +40,7 @@ Beim ersten Regelverstoß wird eine **Verwarnung** ausgesprochen. Eine zweite Ve
 | NAP10-Mitglied greift euch an | Nicht zurückschlagen; Bericht an R4 oder R5 senden |
 | Ihr seid unsicher | Vor der Aktion einen R4 oder R5 fragen |
 
-> **Merksatz:** Erst Rangliste und Server prüfen. Bei einem NAP10-Vorfall nicht zurückschlagen, sondern melden.
+> **Unser Merksatz:** Wir prüfen zuerst Rangliste und Server. Bei einem NAP10-Vorfall schlagen wir nicht zurück, sondern melden ihn.
 
 ## Allianz-Mitteilung zum Kopieren
 
@@ -48,16 +48,16 @@ Beim ersten Regelverstoß wird eine **Verwarnung** ausgesprochen. Eine zweite Ve
 <size=46><b>DIE - ALLIANZREGELN</b></size>
 
 🛡️ <size=40><b>1. NAP10 respektieren</b></size>
-Keine Angriffe auf Mitglieder der aktuellen NAP10-Allianzen. Bitte regelmäßig die Rangliste prüfen.
+Wir greifen keine Mitglieder der aktuellen NAP10-Allianzen an. Bitte regelmäßig die Rangliste prüfen.
 
 🏰 <size=40><b>2. Basen angreifen</b></size>
-Allianzlose Spieler und Commander**** dürfen angegriffen werden. Bitte niemanden auf 0 bringen.
+Wir dürfen allianzlose Spieler und Commander**** angreifen. Bitte niemanden auf 0 bringen.
 
 🚚 <size=40><b>3. Plündern</b></size>
-Keine Lastwagen, Güterzüge oder Spezialmissionen unseres Servers plündern. Immer <color=#9DBA32><b>einen anderen Server</b></color> wählen.
+Wir plündern keine Lastwagen, Güterzüge oder Spezialmissionen unseres Servers. Immer <color=#9DBA32><b>einen anderen Server</b></color> wählen.
 
 ⚠️ <size=40><b>4. Angriffe durch NAP10</b></size>
-<color=#E6A23C><b>Nicht zurückschlagen!</b></color> Angriffsbericht teilen und den Vorfall einem R4 oder R5 melden.
+<color=#E6A23C><b>Wir schlagen nicht zurück!</b></color> Teilt den Angriffsbericht und meldet den Vorfall einem R4 oder R5.
 
 📌 <size=40><b>Regelverstöße</b></size>
 1. Verstoß = Verwarnung, 2. Verwarnung = Ausschluss. Verwarnungen können bei längerer Regelkonformität wieder entfallen.

@@ -7,6 +7,7 @@ Hier liegen auch fertige Informationsgrafiken für Allianz-Mitteilungen, beispie
 ## Verfügbare Mitteilungen
 
 - [DIE – Allianzregeln](Allianzregeln.md) – ausführliche Erläuterung, kompakte Grafik und kopierbare Ingame-Mitteilung
+- [R4-Rollen und Verantwortlichkeiten](R4_Rollen_Verantwortlichkeiten.md) – rollenbasierte Zuständigkeiten ohne personengebundene Zuordnung
 - [DIE Drachenhalle bewerben](Website_Drachenhalle.md) – Website-Vorteile, kopierbarer Ingame-Text und passende Grafik
 
 ## Benennungsregeln

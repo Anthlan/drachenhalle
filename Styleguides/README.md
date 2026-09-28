@@ -14,6 +14,7 @@ Dieser Ordner enthält die verbindlichen Gestaltungs- und Textregeln der DIE Dra
 
 ## Themen
 
+- [`DlE – Textformatierung`](DlE%20%E2%80%93%20Textformatierung.md) – Formatierung, Zielgruppenansprache und redaktionelle Perspektive
 - [`DlE-Stil – Tipps`](DlE-Stil%20%E2%80%93%20Tipps.md) – informationsreiche, direkt teilbare Wissensgrafiken
 - [`DlE-Stil – Allianz-Mitteilungen`](DlE-Stil%20%E2%80%93%20Allianz-Mitteilungen.md) – kompakte offizielle Informationsgrafiken
 - [`DlE-Stil – Chat-Bilder`](DlE-Stil%20%E2%80%93%20Chat-Bilder.md) – filmische Allianz-Momentaufnahmen

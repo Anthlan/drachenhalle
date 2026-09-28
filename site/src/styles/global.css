@@ -235,7 +235,7 @@ a {
 
 .mobile-menu-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: 8px;
   margin-top: 10px;
   padding-top: 10px;
@@ -258,8 +258,24 @@ a {
 
 .repository-link,
 .inbox-link {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 42px;
+  padding: 0;
   border: 1px solid var(--line);
   color: var(--gold-pale);
+}
+
+.inbox-action-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .repository-link:hover,
