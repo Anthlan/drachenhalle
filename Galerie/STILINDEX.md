@@ -83,6 +83,7 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der drei Stilgrupp
 - [2026_09_24_1503_ZehnWichtigeChats_mysteryZ.png](Chatbilder/2026_09_24_1503_ZehnWichtigeChats_mysteryZ.png)
 - [2026_09_25_1505_Drachenritt_mysteryZ.png](Chatbilder/2026_09_25_1505_Drachenritt_mysteryZ.png)
 - [2026_09_25_1505_Level28_Drachenherz.png](Chatbilder/2026_09_25_1505_Level28_Drachenherz.png)
+- [2026_09_28_1011_SiebzigKamele_Somea.png](Chatbilder/2026_09_28_1011_SiebzigKamele_Somea.png)
 
 ## S3 – Chibi-Fantasy
 
@@ -105,10 +106,10 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der drei Stilgrupp
 - [2026_09_27_2230_Natuerlich_Somea.png](Reaktionsbilder/2026_09_27_2230_Natuerlich_Somea.png)
 - [2026_09_27_2231_IchRegelDas_Somea.png](Reaktionsbilder/2026_09_27_2231_IchRegelDas_Somea.png)
 - [2026_09_27_2232_WieBitte_Somea.png](Reaktionsbilder/2026_09_27_2232_WieBitte_Somea.png)
+- [2026_09_28_0825_GutenMorgenAusDerSchweiz_DaVinci1986.png](Reaktionsbilder/2026_09_28_0825_GutenMorgenAusDerSchweiz_DaVinci1986.png)
 - [2026_09_28_1131_Passt_Somea.png](Reaktionsbilder/2026_09_28_1131_Passt_Somea.png)
 - [2026_09_28_1131_Stark_Somea.png](Reaktionsbilder/2026_09_28_1131_Stark_Somea.png)
 - [2026_09_28_1131_Sicher_Somea.png](Reaktionsbilder/2026_09_28_1131_Sicher_Somea.png)
 - [2026_09_28_1131_Natuerlich_Somea.png](Reaktionsbilder/2026_09_28_1131_Natuerlich_Somea.png)
 - [2026_09_28_1132_IchRegelDas_Somea.png](Reaktionsbilder/2026_09_28_1132_IchRegelDas_Somea.png)
 - [2026_09_28_1132_WieBitte_Somea.png](Reaktionsbilder/2026_09_28_1132_WieBitte_Somea.png)
-

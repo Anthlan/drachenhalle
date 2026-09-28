@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "dropboxFolder": "/Dateianfragen/ZRoute Upload-Inbox",
-  "lastCheckedAt": "2026-09-25T20:45:39+02:00",
+  "dropboxFolder": "/Dateianfragen/Drachenhalle-Inbox",
+  "lastCheckedAt": "2026-09-28T14:26:12+02:00",
   "processed": [
     {
       "fileId": "id:nTVVCXDkSgcAAAAAAAAADA",
@@ -20,6 +20,18 @@
       "revision": "0165c4e5e21c9a6000000038a389113",
       "sourcePath": "/Dateianfragen/ZRoute Upload-Inbox/2026-09-25 - File_00000000F388820c83fddc7909c60cb6.png",
       "destinationPath": "Galerie/Chatbilder/2026_09_25_1505_Drachenritt_mysteryZ.png"
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAADw",
+      "revision": "0165c8546a77d6e000000038a389113",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-09-28 - 8C9fe56e_80Ba_4Ec0_942D_4B0078fd9813.png",
+      "destinationPath": "Galerie/Reaktionsbilder/2026_09_28_0825_GutenMorgenAusDerSchweiz_DaVinci1986.png"
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAAEQ",
+      "revision": "0165c869bb724fb000000038a389113",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-09-28 - B714d795_4701_475F_9F01_24452F34a772.png",
+      "destinationPath": "Galerie/Chatbilder/2026_09_28_1011_SiebzigKamele_Somea.png"
     }
   ]
 }
