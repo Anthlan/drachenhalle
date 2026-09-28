@@ -2,12 +2,14 @@ import { readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
+import { loadContentVisibility, removeHiddenMarker } from "./content-visibility.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const siteDirectory = path.resolve(scriptDirectory, "..");
 const repositoryDirectory = path.resolve(siteDirectory, "..");
 const outputPath = path.join(siteDirectory, "src", "data", "docs.generated.json");
 const galleryDataPath = path.join(siteDirectory, "src", "data", "gallery.generated.json");
+const documentImageDataPath = path.join(siteDirectory, "src", "data", "document-images.generated.json");
 const repositoryUrl = "https://github.com/Anthlan/drachenhalle";
 const rawRepositoryUrl = "https://raw.githubusercontent.com/Anthlan/drachenhalle/main";
 
@@ -249,6 +251,16 @@ try {
   console.warn("Gallery data is unavailable; documentation images will be omitted.");
 }
 
+let documentImages = [];
+try {
+  documentImages = JSON.parse(await readFile(documentImageDataPath, "utf8")).items;
+} catch {
+  console.warn("Hidden document image data is unavailable; its images will be omitted.");
+}
+
+const renderImages = [...galleryItems, ...documentImages];
+const contentVisibility = await loadContentVisibility(repositoryDirectory);
+
 for (const document of baseDocuments) {
   if (!document.imageSource) continue;
 
@@ -333,7 +345,66 @@ for (const fileName of eventFileNames) {
   });
 }
 
-const documents = [...baseDocuments, ...tipDocuments, ...eventDocuments];
+const registeredDocuments = [...baseDocuments, ...tipDocuments, ...eventDocuments];
+const registeredSources = new Set(registeredDocuments.map((document) => document.source));
+const parentDocuments = baseDocuments
+  .filter((document) => path.posix.basename(document.source).toLowerCase() === "readme.md")
+  .map((document) => ({ ...document, directory: path.posix.dirname(document.source) }))
+  .sort((left, right) => right.directory.length - left.directory.length);
+
+const sectionForSource = (source) => {
+  if (source.startsWith("Drachenwissen/")) return "Drachenwissen";
+  if (source.startsWith("Styleguides/")) return "Gestaltung";
+  if (source.startsWith("Galerie/")) return "Bildarchiv";
+  return "Projekt";
+};
+
+const hiddenDocuments = [];
+for (const source of [...contentVisibility.hiddenDocuments].sort((left, right) => left.localeCompare(right, "de"))) {
+  if (registeredSources.has(source)) continue;
+
+  const sourceMarkdown = contentVisibility.markdownBySource.get(source);
+  if (!sourceMarkdown) continue;
+
+  const { content } = parseFrontmatter(sourceMarkdown);
+  const markdown = removeHiddenMarker(content);
+  const baseName = path.posix.basename(source, path.posix.extname(source));
+  const heading = markdown.match(/^#\s+(.+)$/m)?.[1] ?? baseName;
+  const title = plainText(heading);
+  const articleMarkdown = markdown.replace(/^#\s+.*?(?:\r?\n)+/, "");
+  const summary = articleMarkdown
+    .split(/\r?\n\s*\r?\n/)
+    .map((block) => plainText(block))
+    .find((block) => block && !block.startsWith("#")) ?? title;
+  const section = sectionForSource(source);
+  const parentDocument = parentDocuments.find((document) =>
+    document.section === section
+      && document.directory !== "."
+      && path.posix.dirname(source).startsWith(document.directory),
+  );
+
+  hiddenDocuments.push({
+    source,
+    slug: slugify(baseName),
+    title,
+    section,
+    summary,
+    parentSlug: parentDocument?.slug,
+    kind: "document",
+    hidden: true,
+  });
+}
+
+const documents = [...registeredDocuments, ...hiddenDocuments].map((document) => ({
+  ...document,
+  hidden: document.hidden || contentVisibility.hiddenDocuments.has(document.source),
+}));
+const duplicateSlugs = documents
+  .map((document) => document.slug)
+  .filter((slug, index, slugs) => slugs.indexOf(slug) !== index);
+if (duplicateSlugs.length) {
+  throw new Error(`Doppelte Dokument-Slugs: ${[...new Set(duplicateSlugs)].join(", ")}`);
+}
 const documentUrl = (document) => `/drachenhalle/docs/${document.slug}/`;
 const documentUrlBySource = new Map(documents.map((document) => [document.source, documentUrl(document)]));
 
@@ -382,7 +453,7 @@ const resolveLocalMarkdownImages = (markdown, source) => {
     const sourcePath = path.posix.normalize(
       path.posix.join(sourceDirectory, decodedTarget.replaceAll("\\", "/")),
     );
-    const image = galleryItems.find((item) => item.sourcePath === sourcePath);
+    const image = renderImages.find((item) => item.sourcePath === sourcePath);
 
     return image ? `![${alt}](${image.webUrl})` : match;
   });
@@ -404,6 +475,7 @@ const resolveLocalMarkdownLinks = (markdown, source) => {
     const targetSource = path.posix.normalize(
       path.posix.join(sourceDirectory, decodedTarget.replaceAll("\\", "/")),
     );
+    if (contentVisibility.hiddenDocuments.has(targetSource) && targetSource !== source) return label;
     const websiteUrl = documentUrlBySource.get(targetSource);
     const targetUrl = websiteUrl ?? `${repositoryUrl}/blob/main/${encodeRepositoryPath(targetSource)}`;
     return `[${label}](${targetUrl})`;
@@ -444,18 +516,26 @@ const addHeadingIds = (html) => {
   });
 };
 
+const decorateHiddenConsultation = (html) => html
+  .replace(/<h3 id="([^"]+)">(Chancen)<\/h3>/gi, '<h3 id="$1" class="consultation-chances">$2</h3>')
+  .replace(/<h3 id="([^"]+)">(Risiken)<\/h3>/gi, '<h3 id="$1" class="consultation-risks">$2</h3>');
+
 const items = [];
 
 for (const document of documents) {
   const sourcePath = path.join(repositoryDirectory, ...document.source.split("/"));
-  const sourceMarkdown = await readFile(sourcePath, "utf8");
-  const { content: markdown } = parseFrontmatter(sourceMarkdown);
+  const sourceMarkdown = contentVisibility.markdownBySource.get(document.source) ?? await readFile(sourcePath, "utf8");
+  const { content } = parseFrontmatter(sourceMarkdown);
+  const markdown = removeHiddenMarker(content);
   const normalizedMarkdown = resolveLocalMarkdownLinks(
     resolveLocalMarkdownImages(normalizeWebsiteSpelling(markdown, document.source), document.source),
     document.source,
   );
   const articleMarkdown = normalizedMarkdown.replace(/^#\s+.*?(?:\r?\n)+/, "");
-  const html = await marked.parse(articleMarkdown);
+  const parsedHtml = document.hidden
+    ? addHeadingIds(await marked.parse(articleMarkdown))
+    : await marked.parse(articleMarkdown);
+  const html = document.hidden ? decorateHiddenConsultation(parsedHtml) : parsedHtml;
   const articleSections = ["tip", "event", "alliance"].includes(document.kind)
     ? splitLevelTwoSections(articleMarkdown)
     : [];
@@ -522,12 +602,12 @@ const sectionOrder = ["Projekt", "Drachenwissen", "Gestaltung", "Bildarchiv"];
 const sections = sectionOrder.map((name) => ({
   name,
   description: sectionDescriptions[name],
-  items: items.filter((item) => item.section === name && !item.parentSlug).map((item) => item.slug),
+  items: items.filter((item) => item.section === name && !item.parentSlug && !item.hidden).map((item) => item.slug),
 }));
 
 await writeFile(
   outputPath,
-  `${JSON.stringify({ documentCount: items.length, sections, items }, null, 2)}\n`,
+  `${JSON.stringify({ documentCount: items.filter((item) => !item.hidden).length, sections, items }, null, 2)}\n`,
   "utf8",
 );
 

@@ -1081,6 +1081,7 @@ h1 {
 .news-main,
 .events-main,
 .docs-main,
+.council-main,
 .document-main {
   padding-top: 46px;
 }
@@ -1930,6 +1931,130 @@ h1 {
     rgba(10, 15, 34, 0.62);
 }
 
+.council-hero,
+.council-library {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.council-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
+  align-items: end;
+  gap: clamp(28px, 6vw, 90px);
+  padding: 22px 0 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.council-hero .eyebrow,
+.council-hero h1 {
+  grid-column: 1;
+}
+
+.council-hero h1 {
+  margin-top: -6px;
+  font-size: clamp(48px, 7vw, 82px);
+}
+
+.council-hero > p:not(.eyebrow) {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.council-library {
+  padding: 38px 0 70px;
+}
+
+.council-library > header {
+  margin-bottom: 24px;
+}
+
+.council-library > header h2 {
+  margin: 0;
+  font: 500 30px/1.15 Georgia, "Times New Roman", serif;
+}
+
+.council-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 16px;
+}
+
+.council-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(227, 173, 78, 0.3);
+  background:
+    radial-gradient(circle at 92% 12%, rgba(227, 173, 78, 0.12), transparent 13rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 55%),
+    rgba(8, 13, 29, 0.88);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.council-card:hover,
+.council-card:focus-visible {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.council-card::after {
+  content: attr(data-index);
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  color: rgba(246, 216, 141, 0.09);
+  font: 500 72px/1 Georgia, "Times New Roman", serif;
+  pointer-events: none;
+}
+
+.council-card > span {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.council-card h3 {
+  max-width: 720px;
+  margin: 28px 0 12px;
+  font: 500 clamp(24px, 3vw, 34px)/1.18 Georgia, "Times New Roman", serif;
+}
+
+.council-card p {
+  max-width: 760px;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.council-card strong {
+  margin-top: auto;
+  padding-top: 30px;
+  color: var(--gold-pale);
+  font-size: 12px;
+}
+
+.council-empty {
+  padding: 28px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
 .breadcrumbs {
   justify-content: flex-start;
   gap: 9px;
@@ -1948,6 +2073,12 @@ h1 {
   grid-template-columns: minmax(210px, 0.28fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 84px);
   align-items: start;
+}
+
+.document-layout.is-hidden-document {
+  max-width: 1120px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-inline: auto;
 }
 
 .document-sidebar {
@@ -2564,6 +2695,17 @@ h1 {
   box-shadow: 0 26px 100px rgba(0, 0, 0, 0.22);
 }
 
+.document-article.is-hidden-consultation {
+  background:
+    radial-gradient(circle at 85% 4%, rgba(227, 173, 78, 0.075), transparent 30%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 38%),
+    rgba(8, 13, 29, 0.9);
+}
+
+.is-hidden-consultation > header {
+  background: linear-gradient(90deg, rgba(227, 173, 78, 0.045), transparent 68%);
+}
+
 .document-article > header {
   padding: clamp(28px, 5vw, 62px);
   border-bottom: 1px solid var(--line);
@@ -2699,6 +2841,60 @@ h1 {
   border: 1px solid var(--line);
   background: #050814;
   object-fit: contain;
+}
+
+.consultation-content {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.consultation-content img {
+  width: min(100%, 720px);
+  max-height: none;
+  margin: 30px auto 40px;
+  border: 1px solid rgba(227, 173, 78, 0.48);
+  border-radius: 12px;
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.32);
+}
+
+.consultation-content h3.consultation-chances,
+.consultation-content h3.consultation-risks {
+  margin-bottom: 0;
+  padding: 16px 20px 11px;
+  border: 1px solid;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.consultation-content h3.consultation-chances {
+  border-color: rgba(116, 165, 111, 0.38);
+  background: linear-gradient(90deg, rgba(52, 104, 65, 0.2), rgba(227, 173, 78, 0.035));
+  color: #d9e6c7;
+}
+
+.consultation-content h3.consultation-risks {
+  border-color: rgba(170, 91, 79, 0.4);
+  background: linear-gradient(90deg, rgba(116, 48, 45, 0.2), rgba(227, 173, 78, 0.035));
+  color: #ead0bd;
+}
+
+.consultation-content h3.consultation-chances + ul,
+.consultation-content h3.consultation-risks + ul {
+  margin-top: 0;
+  padding: 14px 22px 20px 42px;
+  border: 1px solid;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.consultation-content h3.consultation-chances + ul {
+  border-color: rgba(116, 165, 111, 0.38);
+  background: rgba(39, 82, 51, 0.1);
+}
+
+.consultation-content h3.consultation-risks + ul {
+  border-color: rgba(170, 91, 79, 0.4);
+  background: rgba(103, 42, 39, 0.1);
 }
 
 .markdown-content img[alt="Ingame-Buffübersicht mit Hilfslimit 25 und Hilfszeit 742"] {
@@ -3065,8 +3261,28 @@ footer a {
   .news-main,
   .events-main,
   .docs-main,
+  .council-main,
   .document-main {
     padding-top: 34px;
+  }
+
+  .council-hero {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 8px 0 34px;
+  }
+
+  .council-hero > p:not(.eyebrow) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .council-library {
+    padding: 30px 0 52px;
+  }
+
+  .council-card {
+    min-height: 230px;
   }
 
   .news-hero,

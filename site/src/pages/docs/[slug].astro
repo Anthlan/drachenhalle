@@ -13,11 +13,12 @@ export function getStaticPaths() {
 }
 
 const { document } = Astro.props;
-const topLevelSectionDocuments = docsData.items.filter(
+const publicDocuments = docsData.items.filter((item) => !item.hidden);
+const topLevelSectionDocuments = publicDocuments.filter(
   (item) => item.section === document.section && !item.parentSlug,
 );
 const activeCollectionSlug = document.parentSlug ?? document.slug;
-const childDocuments = docsData.items.filter((item) => item.parentSlug === activeCollectionSlug);
+const childDocuments = publicDocuments.filter((item) => item.parentSlug === activeCollectionSlug);
 const sectionDocuments = topLevelSectionDocuments.flatMap((item) =>
   item.slug === activeCollectionSlug ? [item, ...childDocuments] : [item],
 );
@@ -26,8 +27,16 @@ const activeSection = document.section === "Gestaltung"
   : document.section === "Drachenwissen"
     ? "informationen"
     : "";
-const overviewUrl = document.section === "Gestaltung" ? "/drachenhalle/docs/styleguides/" : "/drachenhalle/docs/";
-const overviewLabel = document.section === "Gestaltung" ? "Styleguides" : "Drachenwissen";
+const overviewUrl = document.hidden
+  ? "/drachenhalle/rat/"
+  : document.section === "Gestaltung"
+    ? "/drachenhalle/docs/styleguides/"
+    : "/drachenhalle/docs/";
+const overviewLabel = document.hidden
+  ? "Allianzrat"
+  : document.section === "Gestaltung"
+    ? "Styleguides"
+    : "Drachenwissen";
 const tipArtOptions = ["Anleitung", "Strategie", "Optimierung"];
 const tipTopicOptions = ["Allianz", "Events", "Kampf", "Truppen", "Aufbau", "Weltkarte"];
 const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
@@ -42,6 +51,7 @@ const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={document.summary} />
+    {document.hidden && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>{document.title} · DIE Drachenhalle</title>
   </head>
@@ -58,8 +68,8 @@ const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
           <span aria-current="page">{document.title}</span>
         </nav>
 
-        <div class:list={["document-layout", { "is-knowledge-page": document.imageUrl }]}>
-          <aside class="document-sidebar">
+        <div class:list={["document-layout", { "is-knowledge-page": document.imageUrl, "is-hidden-document": document.hidden }]}>
+          {!document.hidden && <aside class="document-sidebar">
             <p class="eyebrow">{document.section}</p>
             <a class="docs-overview-link" href={overviewUrl}>← {overviewLabel}</a>
             {sectionDocuments.length > 0 && (
@@ -95,13 +105,13 @@ const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
                 </nav>
               </details>
             )}
-          </aside>
+          </aside>}
 
-          <article class="document-article">
+          <article class:list={["document-article", { "is-hidden-consultation": document.hidden }]}>
             <header>
               <p class="eyebrow">{document.section}</p>
               <h1>{document.title}</h1>
-              <p>{document.summary}</p>
+              {!document.hidden && <p>{document.summary}</p>}
               {document.kind === "tip" && (
                 <dl class="tip-taxonomy tip-taxonomy-detail" aria-label="Einordnung des Tipps">
                   <div>
@@ -114,7 +124,7 @@ const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
                   </div>
                 </dl>
               )}
-          {(isBriefKnowledgeArticle || document.section !== "Drachenwissen") && (
+          {!document.hidden && (isBriefKnowledgeArticle || document.section !== "Drachenwissen") && (
             <div class="document-header-actions">
               {isBriefKnowledgeArticle && (
                 <button
@@ -396,7 +406,7 @@ const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
                 <section class="markdown-content tip-copy" set:html={document.copyHtml} />
               </div>
             ) : (
-              <div class="markdown-content" set:html={document.html} />
+              <div class:list={["markdown-content", { "consultation-content": document.hidden }]} set:html={document.html} />
             )}
           </article>
         </div>

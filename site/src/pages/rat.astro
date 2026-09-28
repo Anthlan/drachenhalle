@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import docsData from "../data/docs.generated.json";
+
+const internalDocuments = docsData.items.filter((document) => document.hidden);
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Nicht gelistete Beratungsunterlagen für den Allianzrat der DIE Drachenhalle."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Strategieraum des Allianzrats · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="" />
+
+      <main class="council-main" id="main-content">
+        <section class="council-hero" aria-labelledby="council-title">
+          <p class="eyebrow">Allianzrat</p>
+          <h1 id="council-title">Strategieraum</h1>
+          <p>Interne Beratungsunterlagen und Diskussionsgrundlagen für den Allianzrat.</p>
+        </section>
+
+        <section class="council-library" aria-labelledby="council-library-title">
+          <header>
+            <p class="eyebrow">Unterlagen</p>
+            <h2 id="council-library-title">Aktuelle Beratungen</h2>
+          </header>
+
+          {internalDocuments.length > 0 ? (
+            <div class="council-card-grid">
+              {internalDocuments.map((document, index) => (
+                <a class="council-card" href={document.url} data-index={String(index + 1).padStart(2, "0")}>
+                  <span>Interne Beratung</span>
+                  <h3>{document.title}</h3>
+                  <p>{document.summary}</p>
+                  <strong>Unterlage öffnen →</strong>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <p class="council-empty">Derzeit sind keine Beratungsunterlagen hinterlegt.</p>
+          )}
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
+  </body>
+</html>

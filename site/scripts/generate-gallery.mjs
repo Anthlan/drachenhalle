@@ -3,11 +3,14 @@ import { mkdir, readFile, readdir, stat, unlink, writeFile } from "node:fs/promi
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import sharp from "sharp";
+import { loadContentVisibility } from "./content-visibility.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repositoryRoot = path.resolve(siteRoot, "..");
 const outputDirectory = path.join(siteRoot, "public", "generated", "gallery");
+const documentOutputDirectory = path.join(siteRoot, "public", "generated", "documents");
 const dataFile = path.join(siteRoot, "src", "data", "gallery.generated.json");
+const documentImageDataFile = path.join(siteRoot, "src", "data", "document-images.generated.json");
 const styleIndexFile = path.join(repositoryRoot, "Galerie", "STILINDEX.md");
 const imageExtensions = new Set([".png", ".jpg", ".jpeg", ".webp"]);
 const validStyles = new Set(["S1", "S2", "S3"]);
@@ -197,6 +200,15 @@ async function loadPreviousItems() {
   }
 }
 
+async function loadPreviousDocumentImages() {
+  try {
+    const data = JSON.parse(await readFile(documentImageDataFile, "utf8"));
+    return new Map(data.items.map((item) => [item.sourcePath, item]));
+  } catch {
+    return new Map();
+  }
+}
+
 async function mapWithConcurrency(values, concurrency, worker) {
   const results = new Array(values.length);
   let nextIndex = 0;
@@ -213,16 +225,20 @@ async function mapWithConcurrency(values, concurrency, worker) {
 }
 
 await mkdir(outputDirectory, { recursive: true });
+await mkdir(documentOutputDirectory, { recursive: true });
 await mkdir(path.dirname(dataFile), { recursive: true });
 
 const previousItems = await loadPreviousItems();
+const previousDocumentImages = await loadPreviousDocumentImages();
 const styleIndex = await loadStyleIndex();
+const contentVisibility = await loadContentVisibility(repositoryRoot);
 const sources = [];
 
 for (const [directory, category] of contentAreas) {
   const absoluteDirectory = path.join(repositoryRoot, directory);
   for (const absolutePath of await walk(absoluteDirectory)) {
     const relativePath = path.relative(repositoryRoot, absolutePath).split(path.sep).join("/");
+    if (contentVisibility.hiddenOnlyImages.has(relativePath)) continue;
     sources.push({ absolutePath, category, relativePath });
   }
 }
@@ -322,6 +338,58 @@ const generatedBytes = (
   await Promise.all([...expectedOutputs].map(async (file) => (await stat(path.join(outputDirectory, file))).size))
 ).reduce((sum, size) => sum + size, 0);
 
+const hiddenDocumentSources = [...contentVisibility.hiddenOnlyImages]
+  .filter((sourcePath) => imageExtensions.has(path.posix.extname(sourcePath).toLowerCase()))
+  .map((sourcePath) => ({
+    absolutePath: path.join(repositoryRoot, ...sourcePath.split("/")),
+    sourcePath,
+  }));
+
+const documentImages = await mapWithConcurrency(hiddenDocumentSources, 3, async ({ absolutePath, sourcePath }) => {
+  const fileStats = await stat(absolutePath);
+  const fingerprint = `${fileStats.size}-${Math.trunc(fileStats.mtimeMs)}`;
+  const hash = crypto.createHash("sha1").update(sourcePath).digest("hex").slice(0, 10);
+  const webName = `${slugify(path.posix.basename(sourcePath, path.posix.extname(sourcePath))) || "bild"}-${hash}-web.webp`;
+  const webPath = path.join(documentOutputDirectory, webName);
+  const previous = previousDocumentImages.get(sourcePath);
+  let width = previous?.width ?? null;
+  let height = previous?.height ?? null;
+
+  let outputExists = true;
+  try {
+    await stat(webPath);
+  } catch {
+    outputExists = false;
+  }
+
+  if (previous?.fingerprint !== fingerprint || !outputExists) {
+    const image = sharp(absolutePath, { failOn: "warning" }).rotate();
+    const sourceMetadata = await image.metadata();
+    width = sourceMetadata.width ?? null;
+    height = sourceMetadata.height ?? null;
+    await image.resize({ width: 1440, withoutEnlargement: true }).webp({ quality: 80, effort: 5 }).toFile(webPath);
+  }
+
+  return {
+    sourcePath,
+    webUrl: `/drachenhalle/generated/documents/${webName}`,
+    width,
+    height,
+    fingerprint,
+  };
+});
+
+const expectedDocumentOutputs = new Set(documentImages.map((item) => path.basename(item.webUrl)));
+for (const output of await readdir(documentOutputDirectory)) {
+  if (!expectedDocumentOutputs.has(output)) await unlink(path.join(documentOutputDirectory, output));
+}
+
+await writeFile(
+  documentImageDataFile,
+  `${JSON.stringify({ generatedAt: new Date().toISOString(), items: documentImages }, null, 2)}\n`,
+  "utf8",
+);
+
 const galleryData = {
   generatedAt: new Date().toISOString(),
   imageCount: items.length,
@@ -338,5 +406,5 @@ await writeFile(dataFile, `${JSON.stringify(galleryData, null, 2)}\n`, "utf8");
 
 const megabytes = (bytes) => `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 console.log(
-  `Gallery ready: ${items.length} originals (${megabytes(galleryData.originalBytes)}) → ${items.length * 2} web assets (${megabytes(generatedBytes)})`,
+  `Gallery ready: ${items.length} originals (${megabytes(galleryData.originalBytes)}) → ${items.length * 2} web assets (${megabytes(generatedBytes)}); ${documentImages.length} hidden document assets`,
 );

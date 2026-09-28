@@ -3,6 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
+import { loadContentVisibility } from "./content-visibility.mjs";
 
 const execFileAsync = promisify(execFile);
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -72,6 +73,7 @@ const result = {
 };
 
 try {
+  const contentVisibility = await loadContentVisibility(repositoryDirectory);
   const metadata = await runGit(["log", "-1", "--format=%H%x1f%s%x1f%cI"]);
   const [hash, title, date] = metadata.split("\x1f");
   const changesText = await runGit(["-c", "core.quotepath=false", "diff-tree", "--no-commit-id", "--name-status", "-r", "-M", "--root", "HEAD"]);
@@ -83,6 +85,11 @@ try {
   const groups = new Map();
 
   for (const change of changes) {
+    if (
+      contentVisibility.hiddenDocuments.has(change.path)
+      || contentVisibility.hiddenOnlyImages.has(change.path)
+    ) continue;
+
     const group = classify(change.path);
     if (!group) continue;
     if (!groups.has(group.key)) groups.set(group.key, { name: group.name, items: new Set() });
