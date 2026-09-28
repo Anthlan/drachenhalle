@@ -37,6 +37,9 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
       <span class="action-label-short" aria-hidden="true">Einreichen</span>
       <span aria-hidden="true">↗</span>
     </a>
+    <button class="upload-help-trigger" type="button" aria-label="Hilfe zum Einreichen von Dateien" aria-haspopup="dialog" aria-controls="upload-help-dialog" title="So funktioniert das Einreichen">
+      <span aria-hidden="true">?</span>
+    </button>
     <a class="inbox-link" href={inboxUrl} target="_blank" rel="noopener noreferrer" aria-label="Dropbox-Inbox ansehen (öffnet in neuem Tab)" title="Inbox ansehen">
       <InboxIcon />
     </a>
@@ -57,6 +60,9 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
       </nav>
       <div class="mobile-menu-actions">
         <a class="upload-link" href={uploadUrl} target="_blank" rel="noopener noreferrer">Datei einreichen <span aria-hidden="true">↗</span></a>
+        <button class="upload-help-trigger" type="button" aria-label="Hilfe zum Einreichen von Dateien" aria-haspopup="dialog" aria-controls="upload-help-dialog" title="So funktioniert das Einreichen">
+          <span aria-hidden="true">?</span>
+        </button>
         <a class="inbox-link" href={inboxUrl} target="_blank" rel="noopener noreferrer" aria-label="Dropbox-Inbox ansehen (öffnet in neuem Tab)" title="Inbox ansehen">
           <InboxIcon />
         </a>
@@ -64,3 +70,63 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
     </div>
   </details>
 </header>
+
+<dialog class="upload-help-dialog" id="upload-help-dialog" aria-labelledby="upload-help-title">
+  <div class="upload-help-content">
+    <div class="upload-help-heading">
+      <div>
+        <p class="eyebrow">Datei einreichen</p>
+        <h2 id="upload-help-title">So funktioniert der Upload</h2>
+      </div>
+      <button class="upload-help-close" type="button" aria-label="Hilfe schließen" title="Schließen" data-upload-help-close>×</button>
+    </div>
+
+    <ol class="upload-help-steps">
+      <li>
+        <strong>Datei auswählen</strong>
+        <span>Wähle in der Dropbox-Dateianfrage das Bild oder Dokument aus, das du einreichen möchtest.</span>
+      </li>
+      <li>
+        <strong>Ingame-Namen eintragen</strong>
+        <span>Nutze deinen Ingame-Namen. Als E-Mail-Adresse genügt eine formal gültige Beispieladresse wie <code>spielername@example.com</code>.</span>
+      </li>
+      <li>
+        <strong>Upload bestätigen</strong>
+        <span>Tippe auf „Hochladen“. Die anschließende Bestätigung zeigt dir, dass die Datei erfolgreich übermittelt wurde.</span>
+      </li>
+    </ol>
+
+    <p class="upload-privacy-note">
+      <strong>Bitte keine personenbezogenen Daten angeben.</strong>
+      Verwende weder deinen echten Namen noch eine private E-Mail-Adresse oder andere persönliche Angaben. Ingame-Name und Beispieladresse reichen aus.
+    </p>
+
+    <p class="upload-inbox-note">
+      Nach dem Abschicken kannst du über das Inbox-Symbol prüfen, ob deine Datei angekommen ist und noch auf die Verarbeitung wartet.
+    </p>
+
+    <div class="upload-help-actions">
+      <a class="upload-link" href={uploadUrl} target="_blank" rel="noopener noreferrer">Datei auswählen <span aria-hidden="true">↗</span></a>
+      <a class="inbox-link" href={inboxUrl} target="_blank" rel="noopener noreferrer" aria-label="Dropbox-Inbox ansehen (öffnet in neuem Tab)" title="Inbox ansehen">
+        <InboxIcon />
+      </a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const uploadHelpDialog = document.querySelector("#upload-help-dialog");
+  const uploadHelpTriggers = document.querySelectorAll(".upload-help-trigger");
+  const uploadHelpClose = document.querySelector("[data-upload-help-close]");
+
+  if (uploadHelpDialog instanceof HTMLDialogElement) {
+    uploadHelpTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => uploadHelpDialog.showModal());
+    });
+
+    uploadHelpClose?.addEventListener("click", () => uploadHelpDialog.close());
+    uploadHelpDialog.addEventListener("click", (event) => {
+      if (event.target === uploadHelpDialog) uploadHelpDialog.close();
+    });
+  }
+</script>

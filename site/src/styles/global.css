@@ -235,7 +235,7 @@ a {
 
 .mobile-menu-actions {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   gap: 8px;
   margin-top: 10px;
   padding-top: 10px;
@@ -276,6 +276,151 @@ a {
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.upload-help-trigger,
+.upload-help-close {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--gold-pale);
+  cursor: pointer;
+}
+
+.upload-help-trigger {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 42px;
+  padding: 0;
+  border-radius: 50%;
+  font: 700 19px/1 Georgia, "Times New Roman", serif;
+}
+
+.upload-help-trigger:hover,
+.upload-help-trigger:focus-visible,
+.upload-help-close:hover,
+.upload-help-close:focus-visible {
+  border-color: var(--line-bright);
+  background: rgba(227, 173, 78, 0.07);
+}
+
+.upload-help-dialog {
+  width: min(560px, calc(100% - 32px));
+  max-height: min(760px, calc(100dvh - 32px));
+  padding: 0;
+  border: 1px solid var(--line-bright);
+  border-radius: 6px;
+  background: #0a0f22;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.72);
+  color: var(--ink);
+}
+
+.upload-help-dialog::backdrop {
+  background: rgba(2, 5, 14, 0.78);
+  backdrop-filter: blur(3px);
+}
+
+.upload-help-content {
+  padding: clamp(24px, 5vw, 38px);
+}
+
+.upload-help-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.upload-help-heading .eyebrow {
+  margin: 0 0 8px;
+}
+
+.upload-help-heading h2 {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 38px);
+  line-height: 1.05;
+}
+
+.upload-help-close {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 50%;
+  font: 400 27px/1 system-ui, sans-serif;
+}
+
+.upload-help-steps {
+  display: grid;
+  gap: 18px;
+  margin: 30px 0 24px;
+  padding: 0;
+  list-style: none;
+  counter-reset: upload-step;
+}
+
+.upload-help-steps li {
+  position: relative;
+  display: grid;
+  gap: 5px;
+  min-height: 42px;
+  padding-left: 54px;
+  counter-increment: upload-step;
+}
+
+.upload-help-steps li::before {
+  content: counter(upload-step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-bright);
+  border-radius: 50%;
+  color: var(--gold);
+  font-weight: 750;
+}
+
+.upload-help-steps strong {
+  color: var(--gold-pale);
+  font-size: 16px;
+}
+
+.upload-help-steps span,
+.upload-inbox-note {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.upload-help-steps code {
+  color: var(--gold-pale);
+  overflow-wrap: anywhere;
+}
+
+.upload-privacy-note {
+  margin: 0;
+  padding: 15px 17px;
+  border-left: 3px solid var(--gold);
+  background: rgba(227, 173, 78, 0.08);
+  line-height: 1.6;
+}
+
+.upload-privacy-note strong {
+  display: block;
+  color: var(--gold-pale);
+}
+
+.upload-inbox-note {
+  margin: 20px 0 0;
+}
+
+.upload-help-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
 }
 
 .repository-link:hover,
