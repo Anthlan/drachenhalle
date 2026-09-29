@@ -3474,6 +3474,7 @@ h1 {
   visibility: hidden;
 }
 
+.tutorial-controls [data-tutorial-next],
 .tutorial-complete-button {
   grid-column: 3;
   grid-row: 1;
@@ -3519,8 +3520,36 @@ h1 {
   transition: transform 260ms cubic-bezier(0.2, 0.85, 0.3, 1.1);
 }
 
+.tutorial-celebration-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 240px;
+  height: 240px;
+  left: 50%;
+  top: -112px;
+  border: 1px solid rgba(240, 198, 111, 0.28);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 198, 111, 0.22), rgba(227, 173, 78, 0.04) 48%, transparent 70%);
+  opacity: 0;
+  transform: translateX(-50%) scale(0.45);
+}
+
+.tutorial-celebration-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .tutorial-celebration.is-visible .tutorial-celebration-card {
   transform: translateY(0) scale(1);
+}
+
+.tutorial-celebration.is-visible .tutorial-celebration-card::before {
+  animation: tutorial-halo 1200ms ease-out both;
+}
+
+.tutorial-celebration.is-visible .tutorial-celebration-seal {
+  animation: tutorial-seal-pop 680ms cubic-bezier(0.15, 0.85, 0.28, 1.25) both;
 }
 
 .tutorial-celebration-seal {
@@ -3577,46 +3606,97 @@ h1 {
 }
 
 .tutorial-celebration-particles span {
-  --angle: calc(var(--particle) * 30deg);
-  width: 8px;
-  height: 18px;
+  --angle: calc(var(--particle) * 12.857deg);
+  --distance: -350px;
+  width: 10px;
+  height: 25px;
   position: absolute;
-  left: -4px;
-  top: -9px;
+  left: -5px;
+  top: -12px;
   border-radius: 2px;
-  background: var(--gold);
+  background: linear-gradient(180deg, #fff2bd, var(--gold) 68%);
+  box-shadow: 0 0 12px rgba(240, 198, 111, 0.82);
   opacity: 0;
-  transform: rotate(var(--angle)) translateY(-30px);
+  transform: rotate(var(--angle)) translateY(-54px) scale(0.5);
 }
 
 .tutorial-celebration-particles span:nth-child(3n) {
-  width: 7px;
-  height: 7px;
+  --distance: -290px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background: #8fa4e5;
+  background: #91a9f2;
+  box-shadow: 0 0 14px rgba(145, 169, 242, 0.9);
 }
 
 .tutorial-celebration-particles span:nth-child(3n + 2) {
-  background: var(--gold-pale);
+  --distance: -400px;
+  width: 8px;
+  height: 20px;
+  background: linear-gradient(180deg, #fff7d6, var(--gold-pale));
+}
+
+.tutorial-celebration-particles span:nth-child(4n) {
+  --distance: -325px;
+  border-radius: 50% 2px 50% 2px;
+  background: #e99142;
+  box-shadow: 0 0 14px rgba(233, 145, 66, 0.86);
 }
 
 .tutorial-celebration.is-visible .tutorial-celebration-particles span {
-  animation: tutorial-celebrate 900ms cubic-bezier(0.15, 0.75, 0.3, 1) calc(var(--particle) * 24ms) both;
+  animation: tutorial-celebrate 1450ms cubic-bezier(0.12, 0.72, 0.28, 1) calc(var(--particle) * 13ms) both;
 }
 
 @keyframes tutorial-celebrate {
   0% {
     opacity: 0;
-    transform: rotate(var(--angle)) translateY(-38px) scale(0.45);
+    transform: rotate(var(--angle)) translateY(-48px) scale(0.3);
   }
 
-  22% {
+  12% {
     opacity: 1;
+  }
+
+  68% {
+    opacity: 0.94;
   }
 
   100% {
     opacity: 0;
-    transform: rotate(var(--angle)) translateY(-260px) rotate(160deg) scale(1);
+    transform: rotate(var(--angle)) translateY(var(--distance)) rotate(240deg) scale(1.05);
+  }
+}
+
+@keyframes tutorial-halo {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.4);
+  }
+
+  28% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.16;
+    transform: translateX(-50%) scale(1.35);
+  }
+}
+
+@keyframes tutorial-seal-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.35) rotate(-18deg);
+  }
+
+  62% {
+    opacity: 1;
+    transform: scale(1.14) rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
   }
 }
 
@@ -3628,6 +3708,11 @@ h1 {
   }
 
   .tutorial-celebration.is-visible .tutorial-celebration-particles span {
+    animation: none;
+  }
+
+  .tutorial-celebration.is-visible .tutorial-celebration-seal,
+  .tutorial-celebration.is-visible .tutorial-celebration-card::before {
     animation: none;
   }
 }
@@ -3701,6 +3786,7 @@ h1 {
     min-height: 48px;
   }
 
+  .tutorial-controls [data-tutorial-next],
   .tutorial-complete-button {
     grid-column: 2;
     grid-row: 2;
