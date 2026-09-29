@@ -3401,6 +3401,7 @@ h1 {
 }
 
 .tutorial-step-content {
+  display: flow-root;
   max-width: 880px;
   padding-top: 14px;
 }
@@ -3444,6 +3445,31 @@ h1 {
   border: 1px solid rgba(227, 173, 78, 0.42);
   border-radius: 8px;
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+}
+
+.tutorial-step-content .tutorial-side-character {
+  width: clamp(150px, 25vw, 230px);
+  height: auto;
+  max-height: 330px;
+  margin-top: -18px;
+  margin-bottom: 18px;
+  border: 0;
+  border-radius: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.38));
+  box-shadow: none;
+}
+
+.tutorial-step-content .tutorial-side-character.is-right {
+  float: right;
+  margin-right: -18px;
+  margin-left: 28px;
+}
+
+.tutorial-step-content .tutorial-side-character.is-left {
+  float: left;
+  margin-right: 28px;
+  margin-left: -18px;
 }
 
 .tutorial-step-content blockquote {
@@ -3888,6 +3914,16 @@ h1 {
 
   .tutorial-step-content {
     padding-top: 12px;
+  }
+
+  .tutorial-step-content .tutorial-side-character,
+  .tutorial-step-content .tutorial-side-character.is-right,
+  .tutorial-step-content .tutorial-side-character.is-left {
+    float: none;
+    display: block;
+    width: min(60%, 190px);
+    max-height: 260px;
+    margin: 4px auto 20px;
   }
 
   .tutorial-controls {
