@@ -41,7 +41,7 @@ Bewertet werden **Eintrittswahrscheinlichkeit** und **Schadenshöhe** getrennt. 
 
 **Restrisiko: niedrig · Wahrscheinlichkeit: sehr gering bis gering · Schaden: gering bis mittel · Status: bewusst akzeptiert**
 
-Die Datei `Drachenwissen/Allianz/Zukunft_der_Allianz.md` bezeichnet sich ausdrücklich als interne Beratung und wird mit `##HIDDEN` markiert. Der Generator interpretiert das jedoch nur als Darstellungsmerkmal:
+Die Datei `Drachenwissen/Allianz/Allianz_Zukunft.md` bezeichnet sich ausdrücklich als interne Beratung und wird mit `##HIDDEN` markiert. Der Generator interpretiert das jedoch nur als Darstellungsmerkmal:
 
 - `site/scripts/content-visibility.mjs:5-19` erkennt den Marker.
 - `site/scripts/generate-docs.mjs:371-409` nimmt solche Dokumente weiterhin in die Dokumentliste auf.

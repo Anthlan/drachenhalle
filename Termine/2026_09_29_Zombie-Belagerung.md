@@ -1,12 +1,12 @@
 ---
 title: "Zombie-Belagerung"
 date: "2026-09-29"
-time: "20:00"
+time: "21:00"
 category: "Allianz-Event"
-summary: "Ab 20:00 Uhr greifen Zombie-Wellen unsere Basen an. Stellt eure Verteidigung auf – Schilde schützen nicht, Verluste landen im Krankenhaus."
+summary: "Ab 21:00 Uhr greifen Zombie-Wellen unsere Basen an. Stellt eure Verteidigung auf – Schilde schützen nicht, Verluste landen im Krankenhaus."
 ---
 
-Ab **20:00 Uhr** greifen mehrere Zombie-Wellen nacheinander unsere Basen an. Stellt eure Verteidigung rechtzeitig auf und haltet gemeinsam möglichst lange durch.
+Ab **21:00 Uhr** greifen mehrere Zombie-Wellen nacheinander unsere Basen an. Stellt eure Verteidigung rechtzeitig auf und haltet gemeinsam möglichst lange durch.
 
 - **Schilde schützen bei diesem Event nicht.**
 - Verluste landen im **Krankenhaus**; Soldaten sterben nicht.

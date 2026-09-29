@@ -4,7 +4,7 @@
 
 Diese Seite ist als interne Diskussionsgrundlage für den Allianzrat gedacht. Sie soll uns helfen, die möglichen Wege offen und sachlich zu vergleichen. Es geht noch nicht um eine fertige Entscheidung, sondern zunächst um die Frage, welche Allianz wir künftig sein wollen und welches Maß an Aktivität und Teamplay wir dafür voraussetzen.
 
-![Chibi-Anthlan betrachtet am Strategietisch drei mögliche Wege für die Allianz](ZukunftDerAllianz_Ratsberatung.png)
+![Chibi-Anthlan betrachtet am Strategietisch drei mögliche Wege für die Allianz](Allianz_Zukunft_Ratsberatung.png)
 
 ## Die zentrale Frage
 
@@ -16,7 +16,7 @@ Dabei müssen wir nicht nur auf Macht und Ranglistenplätze schauen. Ebenso wich
 
 Wir trennen uns von dauerhaft passiven Mitgliedern und erwarten von den verbleibenden sowie von neuen Mitgliedern eine klar definierte Mindestaktivität. Dazu gehören insbesondere die Beteiligung an wichtigen Allianz-Events, verlässliches Teamplay und die Einhaltung gemeinsamer Absprachen.
 
-![Chibi-Anthlan steht entschlossen vor einer kleinen geschlossenen Schildformation](ZukunftDerAllianz_AktiverKern.png)
+![Chibi-Anthlan steht entschlossen vor einer kleinen geschlossenen Schildformation](Allianz_Zukunft_AktiverKern.png)
 
 ### Chancen
 
@@ -41,7 +41,7 @@ Wir trennen uns von dauerhaft passiven Mitgliedern und erwarten von den verbleib
 
 Wir halten bewusst an einer größeren Mitgliederbasis fest und akzeptieren, dass nicht alle Mitglieder in gleichem Umfang an Events, Kämpfen und Absprachen teilnehmen. Aktivität bleibt erwünscht, wird aber nur in begrenztem Maß vorausgesetzt.
 
-![Chibi-Anthlan versucht aktive, passive und unterstützende Beiträge gleichzeitig zu koordinieren](ZukunftDerAllianz_GrosseGemeinschaft.png)
+![Chibi-Anthlan versucht aktive, passive und unterstützende Beiträge gleichzeitig zu koordinieren](Allianz_Zukunft_GrosseGemeinschaft.png)
 
 ### Chancen
 
@@ -65,7 +65,7 @@ Wir halten bewusst an einer größeren Mitgliederbasis fest und akzeptieren, das
 
 Wir suchen eine ähnlich große Allianz, mit der wir Mitglieder, Führung und Strukturen zusammenführen. Da derzeit keine passende deutsche Allianz zur Verfügung steht, wäre eine Fusion voraussichtlich international und müsste sprachlich sowie kulturell gut vorbereitet werden.
 
-![Chibi-Anthlan verbindet zwei unterschiedliche Allianzbanner und nutzt dabei ein Übersetzungsbuch](ZukunftDerAllianz_Fusion.png)
+![Chibi-Anthlan verbindet zwei unterschiedliche Allianzbanner und nutzt dabei ein Übersetzungsbuch](Allianz_Zukunft_Fusion.png)
 
 ### Chancen
 

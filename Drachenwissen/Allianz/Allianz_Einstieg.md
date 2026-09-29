@@ -46,7 +46,7 @@ Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Über
 
 Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim ersten Regelverstoß folgt eine Verwarnung, die zweite Verwarnung führt zum Ausschluss.
 
-[Alle Allianzregeln mit Beispielen lesen](Allianzregeln.md)
+[Alle Allianzregeln mit Beispielen lesen](Allianz_Regeln.md)
 
 > **Merksatz:** Rangliste und Server prüfen. Einen NAP10-Vorfall melden, nicht selbst beantworten.
 
@@ -104,7 +104,7 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
 
 ### In den ersten 24 Stunden
 
-- [ ] Die [vollständigen Allianzregeln](Allianzregeln.md) lesen.
+- [ ] Die [vollständigen Allianzregeln](Allianz_Regeln.md) lesen.
 - [ ] Einen eigenen Spielernamen festlegen – bitte keinen Namen nach dem Muster **Commander\*\*\*\*** behalten.
 - [ ] Zum **Allianz-Sammelpunkt** umziehen, sofern nichts anderes mit der Führung besprochen ist.
 - [ ] Den Haken **„Transportlastwagen dieses Servers ausschließen“** aktivieren.
