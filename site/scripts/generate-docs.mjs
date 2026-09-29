@@ -62,6 +62,15 @@ const baseDocuments = [
     summary: "Regeln, Rollen und wiederverwendbare Texte der DIE-Allianz.",
   },
   {
+    source: "Drachenwissen/Allianz/Allianz_Einstieg.md",
+    slug: "allianz-einstieg",
+    title: "Neu in der Drachenhalle",
+    section: "Drachenwissen",
+    summary: "Der Schritt-für-Schritt-Einstieg für neue Mitglieder der DIE-Allianz.",
+    parentSlug: "allianz",
+    kind: "onboarding",
+  },
+  {
     source: "Drachenwissen/Allianz/Allianzregeln.md",
     slug: "allianzregeln",
     title: "DIE – Allianzregeln",
@@ -490,10 +499,14 @@ marked.setOptions({
 const splitLevelTwoSections = (markdown) => {
   const headings = [...markdown.matchAll(/^##\s+(.+)$/gm)];
 
-  return headings.map((heading, index) => ({
-    title: plainText(heading[1]).toLowerCase(),
-    markdown: markdown.slice(heading.index, headings[index + 1]?.index ?? markdown.length).trim(),
-  }));
+  return headings.map((heading, index) => {
+    const displayTitle = plainText(heading[1]);
+    return {
+      title: displayTitle.toLowerCase(),
+      displayTitle,
+      markdown: markdown.slice(heading.index, headings[index + 1]?.index ?? markdown.length).trim(),
+    };
+  });
 };
 
 const removeTipMainImage = (markdown, imageUrl) => {
@@ -537,6 +550,9 @@ for (const document of documents) {
     : await marked.parse(articleMarkdown);
   const html = document.hidden ? decorateHiddenConsultation(parsedHtml) : parsedHtml;
   const articleSections = ["tip", "event", "alliance"].includes(document.kind)
+    ? splitLevelTwoSections(articleMarkdown)
+    : [];
+  const onboardingSections = document.kind === "onboarding"
     ? splitLevelTwoSections(articleMarkdown)
     : [];
   const tipSections = ["tip", "event"].includes(document.kind) ? articleSections : [];
@@ -593,6 +609,11 @@ for (const document of documents) {
       ? addHeadingIds(await marked.parse(removeTipMainImage(allianceArticleMarkdown, document.imageUrl)))
       : null,
     allianceCopyHtml: allianceCopyMarkdown ? addHeadingIds(await marked.parse(allianceCopyMarkdown)) : null,
+    onboardingSteps: await Promise.all(onboardingSections.map(async (section, index) => ({
+      id: `tutorial-${index + 1}-${slugify(section.title)}`,
+      title: section.displayTitle,
+      html: addHeadingIds(await marked.parse(section.markdown)),
+    }))),
     url: documentUrl(document),
     repositoryUrl: `${repositoryUrl}/blob/main/${encodedSource}`,
   });

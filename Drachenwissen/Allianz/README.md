@@ -6,6 +6,7 @@ Hier liegen auch fertige Informationsgrafiken für Allianz-Mitteilungen, beispie
 
 ## Verfügbare Mitteilungen
 
+- [Neu in der Drachenhalle](Allianz_Einstieg.md) – schrittweiser Einstieg für neue Mitglieder mit Regeln, Netiquette und wichtigen Spieleinstellungen
 - [DIE – Allianzregeln](Allianzregeln.md) – ausführliche Erläuterung, kompakte Grafik und kopierbare Ingame-Mitteilung
 - [R4-Rollen und Verantwortlichkeiten](R4_Rollen_Verantwortlichkeiten.md) – rollenbasierte Zuständigkeiten ohne personengebundene Zuordnung
 - [DIE Drachenhalle bewerben](Website_Drachenhalle.md) – Website-Vorteile, kopierbarer Ingame-Text und passende Grafik
