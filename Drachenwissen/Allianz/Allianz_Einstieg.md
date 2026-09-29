@@ -14,7 +14,7 @@ Du lernst unsere Gemeinschaft, die verbindlichen Regeln und die wichtigsten Anla
 
 ## Wer wir sind
 
-**DIE ist eine Gemeinschaft, in der klare Absprachen und gemeinsames Handeln zählen.** Regeln schützen die Allianz vor unnötigen Konflikten, feste R4-Bereiche schaffen kurze Wege und unser Drachenwissen hält Erfahrungen für alle fest.
+**DIE ist eine Gemeinschaft, in der klare Absprachen und gemeinsames Handeln zählen.** Wir wollen engagiert und mit Freude gemeinsam wachsen. Regeln schützen die Allianz vor unnötigen Konflikten, feste R4-Bereiche schaffen kurze Wege und unser Drachenwissen hält Erfahrungen für alle fest.
 
 Was dich bei uns erwartet:
 
@@ -25,7 +25,7 @@ Was dich bei uns erwartet:
 
 Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Übersicht der [R4-Rollen und Verantwortlichkeiten](R4_Rollen_Verantwortlichkeiten.md) zeigt dir den passenden Bereich. Wenn du unsicher bist, kannst du dich jederzeit an R5 oder einen verfügbaren R4 wenden.
 
-> **Noch abzustimmen:** Ein verbindlicher kurzer Leitsatz zu Spielweise und gemeinsamem Allianz-Ziel ist bislang nicht öffentlich dokumentiert.
+> **Wofür wir stehen:** Engagiert und mit Freude gemeinsam wachsen.
 
 ## Unsere Regeln
 
@@ -44,34 +44,42 @@ Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim er
 
 ## Unsere Netiquette
 
-**Gute Kommunikation macht Absprachen leichter.** Schreibe im Allianzchat so, dass andere deine Frage oder Meldung schnell einordnen können, und nutze für vertrauliche Anliegen den passenden direkten Weg.
+**Gute Kommunikation macht Absprachen leichter.** Begegne anderen freundlich, beteilige dich gern und trage zu einem entspannten Miteinander bei.
 
+- Behandle andere respektvoll und lass allgemeine Tabuthemen aus dem Allianzchat heraus.
+- Beteilige dich gern an Gesprächen und gemeinsamen Aktionen, ohne andere unter Druck zu setzen.
+- Wir halten besondere Momente gerne mit generierten ChatGPT-Bildern fest oder machen Ideen damit anschaulich.
 - Stelle Fragen frühzeitig. Wenn die zuständige Rolle unklar ist, helfen R5 oder jeder verfügbare R4 weiter.
 - Nenne bei einem gemeldeten Angriff möglichst **Angreifer, Allianz und Zeitpunkt** und teile den Angriffsbericht.
 - Kläre Sorgen, Probleme und Fairness-Themen mit der **Göttin** oder der Allianzführung; vertrauliche Anliegen gehören nicht unnötig in den öffentlichen Allianzchat.
 - Achte während gemeinsamer Aktionen auf die aktuellen Hinweise der zuständigen Event- oder Kampfkoordination.
+- Gib bei Urlaub oder längerer Inaktivität bitte vorher Bescheid. Mitglieder, die sich nicht abmelden, werden in der Regel nach **sieben Tagen Inaktivität** aus der Allianz entfernt.
 
 [Ansprechbereiche der R4 nachschlagen](R4_Rollen_Verantwortlichkeiten.md)
 
-> **Noch abzustimmen:** Konkrete Vorgaben zu Chatsprache, Abmeldungen, Reaktionszeiten und dem Umgang mit Konflikten sind bisher nicht als verbindliche Netiquette dokumentiert.
+> **Kurz gesagt:** Sei freundlich, denk mit und gib Bescheid, wenn du länger nicht da bist.
 
 ## Wichtige Spieleinstellungen
 
-**Für diesen Schritt fehlen noch freigegebene Allianz-Empfehlungen.** Im Repository ist derzeit nicht dokumentiert, welche Benachrichtigungen, Schutz- oder Komforteinstellungen neue Mitglieder aktivieren sollen.
+**Schließe beim Plündern Ziele unseres eigenen Servers aus.** Aktiviere in der Ansicht **„Transportlastwagen anderer“** den Haken bei **„Transportlastwagen dieses Servers ausschließen“**.
 
-Bis diese Angaben abgestimmt sind, ändere bitte keine Einstellung allein aufgrund dieses Tutorials. Aktuelle Eventzeiten und besondere Hinweise findest du bereits unter [Termine](/drachenhalle/termine/).
+![Aktivierter Haken „Transportlastwagen dieses Servers ausschließen“](/drachenhalle/tutorial/01_transportlastwagen_server_ausschliessen.webp)
 
-Für die spätere Ergänzung ist ein gezielter Screenshot der Benachrichtigungseinstellungen vorgesehen. Die genaue Aufnahme-Anleitung steht in der Screenshot-Wunschliste im Arbeitsordner.
+So werden dir beim Plündern nur Transportlastwagen anderer Server angeboten. Das unterstützt die Allianzregel, nach der wir keine Lastwagen unseres eigenen Servers plündern. Prüfe den Server trotzdem vor jeder Aktion noch einmal.
 
-> **Offene Entscheidung:** Welche Einstellungen sind Pflicht, welche nur empfohlen und wie heißen die zugehörigen Menüpunkte in der aktuellen deutschen Spielversion?
+> **Kontrolle:** Der Haken muss grün aktiviert sein. Die Einstellung ersetzt nicht die Prüfung der Servernummer vor dem Plündern.
 
 ## Deine ersten Schritte
 
-**Diese kurze Orientierung bringt dich ohne Informationsflut durch den Einstieg.** Sie fasst vorhandene Regeln und Anlaufstellen zusammen; zusätzliche verbindliche Aufnahmeaufgaben sind noch nicht dokumentiert.
+**Diese kurze Checkliste bringt dich ohne Informationsflut durch deinen Einstieg.**
 
 ### In den ersten 24 Stunden
 
 - [ ] Die [vollständigen Allianzregeln](Allianzregeln.md) lesen.
+- [ ] Einen eigenen Spielernamen festlegen – bitte keinen Namen nach dem Muster **Commander\*\*\*\*** behalten.
+- [ ] Zum **Allianz-Sammelpunkt** umziehen, sofern nichts anderes mit der Führung besprochen ist.
+- [ ] Den Haken **„Transportlastwagen dieses Servers ausschließen“** aktivieren.
+- [ ] Mindestens einen **24-Stunden-Schild** und einen **8-Stunden-Schild** im Inventar bereithalten.
 - [ ] Die [R4-Rollen und Verantwortlichkeiten](R4_Rollen_Verantwortlichkeiten.md) öffnen und die passenden Anlaufstellen merken.
 - [ ] Die nächsten [Termine](/drachenhalle/termine/) und ihre Eventhinweise prüfen.
 - [ ] Vor Angriffen die aktuelle Rangliste und vor Plünderungen die Servernummer kontrollieren.
@@ -82,8 +90,7 @@ Für die spätere Ergänzung ist ein gezielter Screenshot der Benachrichtigungse
 - [ ] Den Tipp zu [Sammelangriffen](../Tipps/Tipp_02_Sammelangriffe.md) lesen, bevor du gemeinsame Angriffe unterstützt.
 - [ ] Bei Events auf die aktuelle Koordination im Allianzchat achten.
 - [ ] Allianzhilfe geben, wenn Mitspieler Unterstützung anfordern.
-
-> **Noch abzustimmen:** Ob es darüber hinaus verbindliche Aufgaben oder Fristen für neue Mitglieder gibt.
+- [ ] Regelmäßig für die priorisierte Allianzforschung spenden – davon profitieren alle.
 
 ## Zusammenspiel in der Allianz
 
