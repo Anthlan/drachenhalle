@@ -50,6 +50,7 @@ const knownPeople = [
   "Skibbi",
   "Somea",
   "Streetjudge",
+  "Thor63",
   "mysteryZ",
 ];
 const canonicalPeople = new Map(knownPeople.map((person) => [person.toLowerCase(), person]));

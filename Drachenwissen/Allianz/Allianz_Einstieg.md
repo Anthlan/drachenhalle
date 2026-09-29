@@ -133,7 +133,7 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
 - **Sammelangriffe bewusst unterstützen:** Stelle starke Teams nach vorn, beachte die Reihenfolge und folge der Kampfkoordination.
 - **Events vorbereitet angehen:** Prüfe Termin, Beschreibung und aktuelle Hinweise, bevor die Aktion beginnt.
 - **Forschung bündeln:** Spende in den vom Forschungsdirektor mit dem Führungsstern priorisierten Knoten.
-- **Fragen richtig adressieren:** Kriegsherr und Hinterhalt-Verantwortlicher koordinieren Kämpfe und Allianz-Hinterhalt; der Güterzug-Verantwortliche organisiert den Zug.
+- **Fragen richtig adressieren:** Kriegsherr und Hinterhaltsbeauftragter koordinieren Kämpfe und Allianz-Hinterhalt; der Zugbeauftragte organisiert den Güterzug.
 
 Mehr dazu findest du hier:
 

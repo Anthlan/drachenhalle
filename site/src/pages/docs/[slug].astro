@@ -4,6 +4,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import docsData from "../../data/docs.generated.json";
+import galleryData from "../../data/gallery.generated.json";
 
 export function getStaticPaths() {
   return docsData.items.map((document) => ({
@@ -45,8 +46,158 @@ const isEventAnnouncementsOverview = document.slug === "eventankuendigungen" && 
 const isAllianceOverview = document.slug === "allianz" && childDocuments.length > 0;
 const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
 const isOnboarding = document.kind === "onboarding";
+const isOfficerRoster = document.kind === "officers";
+const isResponsibilities = document.kind === "responsibilities";
 const isAllianceDocument = document.slug === "allianz" || document.parentSlug === "allianz";
 const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument || document.kind === "alliance";
+
+const latestPersonImage = (category, person) => galleryData.items
+  .filter((item) => item.category === category && item.people?.some((name) => name.toLowerCase() === person.toLowerCase()))
+  .sort((left, right) => `${right.date ?? ""} ${right.time ?? ""}`.localeCompare(`${left.date ?? ""} ${left.time ?? ""}`))[0]
+  ?.webUrl ?? null;
+
+const officerProfiles = [
+  {
+    id: "mysteryz",
+    name: "mysteryZ",
+    subtitle: "R4 · Vize",
+    description: "Vertritt Anthlan bei Bedarf und unterstützt die Führung bei übergreifenden Fragen und diplomatischen Themen.",
+    imageUrl: latestPersonImage("Charaktermodell", "mysteryZ"),
+  },
+  {
+    id: "somea",
+    name: "Somea",
+    subtitle: "R4",
+    description: "Ist eine zentrale Anlaufstelle für Gemeinschaft, Mitgliederverwaltung und ein gutes Miteinander.",
+    imageUrl: latestPersonImage("Charaktermodell", "Somea"),
+  },
+  {
+    id: "davinci1986",
+    name: "DaVinci1986",
+    subtitle: "R4",
+    description: "Begleitet die Aufnahme neuer Mitglieder und unterstützt zusätzlich die Organisation unseres Güterzugs.",
+    imageUrl: latestPersonImage("Charaktermodell", "DaVinci1986"),
+  },
+  {
+    id: "drachenherz",
+    name: "Drachenherz",
+    subtitle: "R4",
+    description: "Unterstützt die Kampf- und Eventkoordination, insbesondere bei PvP-Ereignissen und gemeinsamen Angriffen.",
+    imageUrl: latestPersonImage("Charaktermodell", "Drachenherz"),
+  },
+  {
+    id: "helltrain",
+    name: "Helltrain",
+    subtitle: "R4",
+    description: "Kümmert sich um die Vorbereitung und Koordination des Allianz-Hinterhalts.",
+    imageUrl: latestPersonImage("Charaktermodell", "Helltrain"),
+  },
+  {
+    id: "thor63",
+    name: "Thor63",
+    subtitle: "R4 · neu im Offiziersteam",
+    description: "Verstärkt neu unser Offiziersteam. Ein fester Verantwortungsbereich ist derzeit noch nicht zugeordnet.",
+    imageUrl: latestPersonImage("Charaktermodell", "Thor63"),
+  },
+];
+
+const responsibilityPlayers = [
+  {
+    id: "mysteryz",
+    name: "mysteryZ",
+    imageUrl: latestPersonImage("Avatar", "mysteryZ"),
+  },
+  {
+    id: "somea",
+    name: "Somea",
+    imageUrl: latestPersonImage("Avatar", "Somea"),
+  },
+  {
+    id: "davinci1986",
+    name: "DaVinci1986",
+    imageUrl: latestPersonImage("Avatar", "DaVinci1986"),
+  },
+  {
+    id: "drachenherz",
+    name: "Drachenherz",
+    imageUrl: latestPersonImage("Avatar", "Drachenherz"),
+  },
+  {
+    id: "helltrain",
+    name: "Helltrain",
+    imageUrl: latestPersonImage("Avatar", "Helltrain"),
+  },
+  {
+    id: "thor63",
+    name: "Thor63",
+    imageUrl: latestPersonImage("Avatar", "Thor63"),
+    available: false,
+  },
+  {
+    id: "anthlan",
+    name: "Anthlan",
+    imageUrl: latestPersonImage("Avatar", "Anthlan"),
+  },
+];
+
+const responsibilities = [
+  {
+    id: "butler",
+    icon: "🛡️",
+    title: "Butler und Vize",
+    officerId: "mysteryz",
+    officerLabel: "mysteryZ",
+    description: "Vertretung von Anthlan, übergreifende Entscheidungen und diplomatische Absprachen.",
+  },
+  {
+    id: "goettin",
+    icon: "👑",
+    title: "Göttin",
+    officerId: "somea",
+    officerLabel: "Somea",
+    description: "Gemeinschaft, Mitgliederverwaltung, Sorgen, Fairness und unser Miteinander.",
+  },
+  {
+    id: "rekrutierer",
+    icon: "📣",
+    title: "Rekrutierer",
+    officerId: "davinci1986",
+    officerLabel: "DaVinci1986",
+    description: "Interessenten, Aufnahme und Begleitung neuer Mitglieder.",
+  },
+  {
+    id: "zugbeauftragter",
+    icon: "🚂",
+    title: "Zugbeauftragter",
+    officerId: "davinci1986",
+    officerLabel: "DaVinci1986",
+    description: "Organisation des Güterzugs und Auswahl eines Begleitoffiziers.",
+  },
+  {
+    id: "kriegsherr",
+    icon: "⚔️",
+    title: "Kriegsherr",
+    officerId: "drachenherz",
+    officerLabel: "Drachenherz",
+    description: "PvP-Events, Pandora, Sammelangriffe und übergreifende Kampfkoordination.",
+  },
+  {
+    id: "hinterhalt",
+    icon: "🏰",
+    title: "Hinterhaltsbeauftragter",
+    officerId: "helltrain",
+    officerLabel: "Helltrain",
+    description: "Planung und Koordination des Allianz-Hinterhalts.",
+  },
+  {
+    id: "forschung",
+    icon: "🔬",
+    title: "Forschungsdirektor",
+    officerId: "anthlan",
+    officerLabel: "Offen · derzeit Anthlan",
+    description: "Allianzforschung, priorisierte Forschungsziele und Führungsstern.",
+  },
+];
 ---
 
 <!doctype html>
@@ -111,7 +262,7 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
             )}
           </aside>}
 
-          <article class:list={["document-article", { "is-hidden-consultation": document.hidden, "is-onboarding-document": isOnboarding }]}>
+          <article class:list={["document-article", { "is-hidden-consultation": document.hidden, "is-onboarding-document": isOnboarding, "is-officer-document": isOfficerRoster, "is-responsibility-document": isResponsibilities }]}>
             <header>
               <div class="document-title-row">
                 <div class="document-title-copy">
@@ -298,7 +449,134 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
                 </div>
               </section>
             )}
-            {isOnboarding && document.onboardingSteps?.length > 0 ? (
+            {isOfficerRoster ? (
+              <div class="officer-page">
+                <section class="officer-page-intro">
+                  <p>
+                    Unsere Offiziere unterstützen Anthlan bei der Führung und Organisation der Allianz. Die konkreten
+                    Aufgaben stehen getrennt unter <a href="/drachenhalle/docs/unsere-verantwortlichkeiten/">Unsere Verantwortlichkeiten</a>.
+                  </p>
+                  <span>Stand: 29. September 2026</span>
+                </section>
+                <div class="officer-roster" aria-label="Aktuelle Offiziere der Allianz">
+                  {officerProfiles.map((officer) => (
+                    <article class:list={["officer-card", { "is-pending": !officer.imageUrl }]}>
+                      <div class="officer-portrait">
+                        {officer.imageUrl ? (
+                          <img src={officer.imageUrl} alt={`Charaktermodell von ${officer.name}`} loading="lazy" />
+                        ) : (
+                          <div class="officer-portrait-placeholder" aria-label={`Charaktermodell von ${officer.name} folgt`}>
+                            <span aria-hidden="true">🐉</span>
+                            <strong>Bild folgt</strong>
+                          </div>
+                        )}
+                      </div>
+                      <div class="officer-card-copy">
+                        <span>{officer.subtitle}</span>
+                        <h2>{officer.name}</h2>
+                        <p>{officer.description}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ) : isResponsibilities ? (
+              <div class="responsibility-page">
+                <section class="responsibility-intro">
+                  <p>
+                    Ordne die Avatare den passenden Verantwortlichkeiten zu. Ein Avatar darf mehrere Aufgaben übernehmen.
+                    Wer direkt nachschlagen möchte, kann das Spiel jederzeit auflösen.
+                  </p>
+                </section>
+
+                <section class="responsibility-game" data-responsibility-game aria-labelledby="responsibility-game-title">
+                  <div class="responsibility-game-heading">
+                    <div>
+                      <p class="eyebrow">Wer kümmert sich worum?</p>
+                      <h2 id="responsibility-game-title">Ordne unsere Verantwortlichkeiten zu</h2>
+                    </div>
+                    <div class="responsibility-game-actions">
+                      <button type="button" data-responsibility-reveal>Auflösen</button>
+                      <button type="button" data-responsibility-reset>Neu versuchen</button>
+                    </div>
+                  </div>
+
+                  <p class="responsibility-game-help">
+                    Avatar ziehen oder antippen und anschließend einen Sockel auswählen.
+                  </p>
+
+                  <div class="responsibility-avatar-bank" aria-label="Offiziere auswählen">
+                    {responsibilityPlayers.map((player) => (
+                      <button
+                        type="button"
+                        class:list={["responsibility-avatar", { "is-unassigned": player.available === false }]}
+                        draggable={player.available === false ? "false" : "true"}
+                        data-responsibility-avatar={player.id}
+                        aria-pressed="false"
+                        disabled={player.available === false}
+                        title={player.available === false ? `${player.name} hat noch keinen festen Bereich` : `${player.name} auswählen`}
+                      >
+                        <img src={player.imageUrl} alt="" draggable="false" />
+                        <span>{player.name}</span>
+                        {player.available === false && <small>noch ohne Bereich</small>}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div class="responsibility-sockets" aria-label="Verantwortlichkeiten zuordnen">
+                    {responsibilities.map((role) => {
+                      const player = responsibilityPlayers.find((item) => item.id === role.officerId);
+                      return (
+                        <button
+                          type="button"
+                          class="responsibility-socket"
+                          data-responsibility-socket={role.id}
+                          data-accepts={role.officerId}
+                          aria-label={`${role.title}: Avatar zuordnen`}
+                        >
+                          <span class="responsibility-role-icon" aria-hidden="true">{role.icon}</span>
+                          <span class="responsibility-role-copy">
+                            <strong>{role.title}</strong>
+                            <small>{role.description}</small>
+                          </span>
+                          <span class="responsibility-dropzone">
+                            <span class="responsibility-drop-placeholder" data-responsibility-placeholder aria-hidden="true">+</span>
+                            <span class="responsibility-drop-answer" data-responsibility-answer hidden>
+                              <img src={player?.imageUrl} alt="" />
+                              <span>{role.officerLabel}</span>
+                            </span>
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <p class="responsibility-game-status" data-responsibility-status role="status" aria-live="polite">
+                    Wähle einen Avatar aus und ordne die erste Verantwortung zu.
+                  </p>
+                </section>
+
+                <section class="responsibility-reference" aria-labelledby="responsibility-reference-title">
+                  <div class="tip-catalog-heading">
+                    <p class="eyebrow">Ohne Rätsel</p>
+                    <h2 id="responsibility-reference-title">Alle Aufgaben auf einen Blick</h2>
+                    <p>Die Zuordnung bleibt auch ohne das Spiel vollständig lesbar.</p>
+                  </div>
+                  <div class="responsibility-reference-grid">
+                    {responsibilities.map((role) => (
+                      <article>
+                        <span aria-hidden="true">{role.icon}</span>
+                        <div>
+                          <h3>{role.title}</h3>
+                          <strong>{role.officerLabel}</strong>
+                          <p>{role.description}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            ) : isOnboarding && document.onboardingSteps?.length > 0 ? (
               <div class="tutorial-shell" data-tutorial data-storage-key="die-allianz-einstieg-step-v1">
                 <div class="tutorial-toolbar">
                   <div class="tutorial-progress-copy">
@@ -543,6 +821,150 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
 
     <script>
       import { initializeImageActions } from "../../scripts/image-actions";
+
+      for (const game of document.querySelectorAll("[data-responsibility-game]")) {
+        if (!(game instanceof HTMLElement)) continue;
+
+        const avatars = [...game.querySelectorAll("[data-responsibility-avatar]")];
+        const sockets = [...game.querySelectorAll("[data-responsibility-socket]")];
+        const status = game.querySelector("[data-responsibility-status]");
+        const revealButton = game.querySelector("[data-responsibility-reveal]");
+        const resetButton = game.querySelector("[data-responsibility-reset]");
+        let selectedOfficer = null;
+
+        const setStatus = (message) => {
+          if (status) status.textContent = message;
+        };
+
+        const avatarFor = (officerId) => avatars.find(
+          (avatar) => avatar instanceof HTMLElement && avatar.dataset.responsibilityAvatar === officerId,
+        );
+
+        const selectOfficer = (officerId) => {
+          selectedOfficer = officerId;
+          for (const avatar of avatars) {
+            if (!(avatar instanceof HTMLElement)) continue;
+            const isSelected = avatar.dataset.responsibilityAvatar === officerId;
+            avatar.classList.toggle("is-selected", isSelected);
+            avatar.setAttribute("aria-pressed", String(isSelected));
+          }
+
+          const avatar = avatarFor(officerId);
+          const name = avatar?.querySelector("span")?.textContent?.trim() ?? "Avatar";
+          setStatus(`${name} ausgewählt. Wähle jetzt eine Verantwortung.`);
+        };
+
+        const clearSelection = () => {
+          selectedOfficer = null;
+          for (const avatar of avatars) {
+            avatar.classList.remove("is-selected");
+            avatar.setAttribute("aria-pressed", "false");
+          }
+        };
+
+        const solveSocket = (socket, officerId, options = {}) => {
+          if (!(socket instanceof HTMLButtonElement) || socket.classList.contains("is-solved")) return false;
+
+          const acceptedOfficer = socket.dataset.accepts;
+          const roleName = socket.querySelector(".responsibility-role-copy strong")?.textContent?.trim() ?? "Verantwortung";
+          const sourceAvatar = avatarFor(officerId);
+          const officerName = sourceAvatar?.querySelector("span")?.textContent?.trim() ?? "Dieser Avatar";
+
+          if (officerId !== acceptedOfficer) {
+            socket.classList.add("is-wrong");
+            sourceAvatar?.classList.add("is-rejected");
+            setStatus(`${officerName} passt nicht zu „${roleName}“. Versuch es noch einmal.`);
+            window.setTimeout(() => {
+              socket.classList.remove("is-wrong");
+              sourceAvatar?.classList.remove("is-rejected");
+            }, 620);
+            return false;
+          }
+
+          const placeholder = socket.querySelector("[data-responsibility-placeholder]");
+          const answer = socket.querySelector("[data-responsibility-answer]");
+          if (placeholder instanceof HTMLElement) placeholder.hidden = true;
+          if (answer instanceof HTMLElement) answer.hidden = false;
+          socket.classList.add("is-solved");
+          socket.disabled = true;
+
+          const solvedCount = sockets.filter((item) => item.classList.contains("is-solved")).length;
+          if (solvedCount === sockets.length) {
+            setStatus(options.revealed
+              ? "Alle Verantwortlichkeiten sind aufgelöst."
+              : "Alles richtig zugeordnet – unsere Verantwortlichkeiten sind vollständig besetzt!");
+          } else if (!options.silent) {
+            setStatus(`Richtig: ${officerName} gehört zu „${roleName}“.`);
+          }
+
+          return true;
+        };
+
+        for (const avatar of avatars) {
+          if (!(avatar instanceof HTMLButtonElement)) continue;
+          const officerId = avatar.dataset.responsibilityAvatar;
+          if (!officerId) continue;
+
+          avatar.addEventListener("click", () => selectOfficer(officerId));
+          avatar.addEventListener("dragstart", (event) => {
+            selectOfficer(officerId);
+            event.dataTransfer?.setData("text/plain", officerId);
+            if (event.dataTransfer) event.dataTransfer.effectAllowed = "copy";
+          });
+          avatar.addEventListener("dragend", () => {
+            for (const socket of sockets) socket.classList.remove("is-drag-target");
+          });
+        }
+
+        for (const socket of sockets) {
+          if (!(socket instanceof HTMLButtonElement)) continue;
+
+          socket.addEventListener("click", () => {
+            if (!selectedOfficer) {
+              setStatus("Wähle zuerst oben einen Avatar aus.");
+              return;
+            }
+            solveSocket(socket, selectedOfficer);
+          });
+          socket.addEventListener("dragover", (event) => {
+            if (socket.classList.contains("is-solved")) return;
+            event.preventDefault();
+            socket.classList.add("is-drag-target");
+            if (event.dataTransfer) event.dataTransfer.dropEffect = "copy";
+          });
+          socket.addEventListener("dragleave", () => socket.classList.remove("is-drag-target"));
+          socket.addEventListener("drop", (event) => {
+            event.preventDefault();
+            socket.classList.remove("is-drag-target");
+            const officerId = event.dataTransfer?.getData("text/plain") || selectedOfficer;
+            if (officerId) solveSocket(socket, officerId);
+          });
+        }
+
+        revealButton?.addEventListener("click", () => {
+          sockets.forEach((socket, index) => {
+            if (!(socket instanceof HTMLButtonElement)) return;
+            const officerId = socket.dataset.accepts;
+            if (officerId) solveSocket(socket, officerId, { silent: index < sockets.length - 1, revealed: true });
+          });
+          clearSelection();
+          setStatus("Alle Verantwortlichkeiten sind aufgelöst.");
+        });
+
+        resetButton?.addEventListener("click", () => {
+          for (const socket of sockets) {
+            if (!(socket instanceof HTMLButtonElement)) continue;
+            socket.classList.remove("is-solved", "is-wrong", "is-drag-target");
+            socket.disabled = false;
+            const placeholder = socket.querySelector("[data-responsibility-placeholder]");
+            const answer = socket.querySelector("[data-responsibility-answer]");
+            if (placeholder instanceof HTMLElement) placeholder.hidden = false;
+            if (answer instanceof HTMLElement) answer.hidden = true;
+          }
+          clearSelection();
+          setStatus("Wähle einen Avatar aus und ordne die erste Verantwortung zu.");
+        });
+      }
 
       const tipCatalogs = document.querySelectorAll("[data-tip-catalog]");
 
