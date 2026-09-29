@@ -37,7 +37,7 @@ Ein kleiner Cloudflare Worker zählt die Aufrufe jeder veröffentlichten Seite i
 
 ## Gestaltungsprinzip
 
-Bei Chat- und Reaktionsbildern werden Verwendungszweck und Darstellungsstil getrennt gepflegt. Chatbilder erzählen Szenen, Reaktionsbilder liefern kurze wiederverwendbare Antworten oder Grüße. Beide Kategorien können unabhängig davon in S1, S2 oder S3 gestaltet sein. Die verbindlichen Vorgaben befinden sich unter [`Styleguides`](Styleguides), die Zuordnung im [`Galerie/STILINDEX.md`](Galerie/STILINDEX.md).
+Bei Chat- und Reaktionsbildern werden Verwendungszweck und Darstellungsstil getrennt gepflegt. Chatbilder erzählen Szenen, Reaktionsbilder liefern kurze wiederverwendbare Antworten oder Grüße. Beide Kategorien können unabhängig davon in S1, S2, S3 oder S4 gestaltet sein. Die verbindlichen Vorgaben befinden sich unter [`Styleguides`](Styleguides), die Zuordnung im [`Galerie/STILINDEX.md`](Galerie/STILINDEX.md).
 
 ## Projektstatus
 

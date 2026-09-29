@@ -13,7 +13,7 @@ Der Chibi-Stil S3 ist eine bewusst überzeichnete Ergänzung zur filmischen und 
 - niedliche Überspitzungen eigentlich dramatischer Momente
 - szenische oder erzählerische Chibi-Motive mit einer klaren kleinen Handlung
 
-Ernsthafte Allianzankündigungen und verbindliche Charakterreferenzen bleiben in ihren dafür vorgesehenen Formaten. Bei Chat- und Reaktionsbildern entscheidet das Motiv bewusst zwischen S1, S2 und S3.
+Ernsthafte Allianzankündigungen und verbindliche Charakterreferenzen bleiben in ihren dafür vorgesehenen Formaten. Bei Chat- und Reaktionsbildern entscheidet das Motiv bewusst zwischen S1, S2, S3 und S4.
 
 ## Optik
 

@@ -13,7 +13,7 @@ const dataFile = path.join(siteRoot, "src", "data", "gallery.generated.json");
 const documentImageDataFile = path.join(siteRoot, "src", "data", "document-images.generated.json");
 const styleIndexFile = path.join(repositoryRoot, "Galerie", "STILINDEX.md");
 const imageExtensions = new Set([".png", ".jpg", ".jpeg", ".webp"]);
-const validStyles = new Set(["S1", "S2", "S3"]);
+const validStyles = new Set(["S1", "S2", "S3", "S4"]);
 
 const contentAreas = [
   ["Drachenwissen/Tipps", "Tipp"],
@@ -97,7 +97,7 @@ async function loadStyleIndex() {
     if (heading) {
       const [, value, label] = heading;
       if (!validStyles.has(value)) {
-        throw new Error(`Ungültiger Stil ${value} im STILINDEX.md. Erlaubt sind ausschließlich S1, S2 und S3.`);
+        throw new Error(`Ungültiger Stil ${value} im STILINDEX.md. Erlaubt sind ausschließlich S1, S2, S3 und S4.`);
       }
       if (labels.has(value)) throw new Error(`Stil ${value} ist im STILINDEX.md mehrfach definiert.`);
 

@@ -122,7 +122,7 @@ Hier steht der Zeitstempel zuerst, weil die chronologische Einordnung wichtiger 
 - `Galerie/Chatbilder` enthält szenische oder erzählerische Motive.
 - `Galerie/Reaktionsbilder` enthält kurze, wiederverwendbare Antworten und Grüße.
 
-Die Ordner beschreiben ausschließlich den Verwendungszweck. Die Darstellungsstile S1, S2 und S3 werden unabhängig davon im zentralen `Galerie/STILINDEX.md` zugeordnet. Ein szenisches Chibi-Motiv bleibt deshalb ein Chatbild im Stil S3; ein Reaktionsbild wird nicht allein aufgrund seiner Kategorie automatisch S3.
+Die Ordner beschreiben ausschließlich den Verwendungszweck. Die Darstellungsstile S1, S2, S3 und S4 werden unabhängig davon im zentralen `Galerie/STILINDEX.md` zugeordnet. Ein szenisches Chibi-Motiv bleibt deshalb ein Chatbild im Stil S3; ein Reaktionsbild wird nicht allein aufgrund seiner Kategorie automatisch S3.
 
 Beispiele:
 

@@ -6,11 +6,12 @@ Kurze, wiederverwendbare Antworten und Grüße gehören stattdessen nach [`Galer
 
 ## Stilzuordnung
 
-Chatbilder können unabhängig von ihrem Verwendungszweck einen der drei Darstellungsstile besitzen:
+Chatbilder können unabhängig von ihrem Verwendungszweck einen der vier Darstellungsstile besitzen:
 
 - **S1 – Filmische Allianz-Fantasy:** zusammenhängende, halb-realistische Szene mit erzählerischer Bildkomposition
 - **S2 – Fantasy-Comic & Infografik:** text-, panel- oder UI-betonte Darstellung im gemeinsamen DIE-Look
 - **S3 – Chibi-Fantasy:** stark vereinfachte, niedliche und bewusst überzeichnete Darstellung
+- **S4 – Z-Routes-Postapokalypse:** plakative, körnige Survival-Poster mit Schwarz-Rot-Weiß-Typografie, handschriftlichen Gags und deutlichem „Z Routes Redemption“-Branding
 
 Die verbindliche Zuordnung aller Chat- und Reaktionsbilder steht im zentralen [`Galerie/STILINDEX.md`](../STILINDEX.md). Der Stil wird weder aus dem Ordner noch aus dem Dateinamen abgeleitet. Neue oder umbenannte Bilder ohne genau einen gültigen Stileintrag lassen den Website-Build bewusst fehlschlagen.
 

@@ -1,6 +1,6 @@
 # Stilindex der Chat- und Reaktionsbilder
 
-Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der drei Stilgruppen aus den Bild-Guidelines zu. Die Kategorie beschreibt den Verwendungszweck, während S1, S2 und S3 ausschließlich die Darstellungsform kennzeichnen. Die Zuordnung wird beim Website-Build automatisch als Metadatum übernommen; jeder Bildlink muss deshalb exakt auf die zugehörige Datei zeigen.
+Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgruppen aus den Bild-Guidelines zu. Die Kategorie beschreibt den Verwendungszweck, während S1, S2, S3 und S4 ausschließlich die Darstellungsform kennzeichnen. Die Zuordnung wird beim Website-Build automatisch als Metadatum übernommen; jeder Bildlink muss deshalb exakt auf die zugehörige Datei zeigen.
 
 ## S1 – Filmische Allianz-Fantasy
 
@@ -87,13 +87,16 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der drei Stilgrupp
 - [2026_09_25_1505_Level28_Drachenherz.png](Chatbilder/2026_09_25_1505_Level28_Drachenherz.png)
 - [2026_09_26_2037_BasisLevel26_ButterflySong.png](Chatbilder/2026_09_26_2037_BasisLevel26_ButterflySong.png)
 - [2026_09_28_1011_SiebzigKamele_Somea.png](Chatbilder/2026_09_28_1011_SiebzigKamele_Somea.png)
+- [2026_09_29_0911_GlueckwunschLevel27_Anthlan.png](Chatbilder/2026_09_29_0911_GlueckwunschLevel27_Anthlan.png)
+- [2026_09_29_1215_DankeFuerDieGalerie_Anthlan.png](Chatbilder/2026_09_29_1215_DankeFuerDieGalerie_Anthlan.png)
+- [2026_09_29_1215_KaffeemaschineUndGruenePillen_Streetjudge_Drachenherz_Somea.png](Chatbilder/2026_09_29_1215_KaffeemaschineUndGruenePillen_Streetjudge_Drachenherz_Somea.png)
 - [2026_09_29_0446_BasisLevel26_Odin81.png](Chatbilder/2026_09_29_0446_BasisLevel26_Odin81.png)
 
 ## S3 – Chibi-Fantasy
 
 - [2026_09_23_0751_AngriffsknopfChibi_Somea_Anthlan.png](Chatbilder/2026_09_23_0751_AngriffsknopfChibi_Somea_Anthlan.png)
-- [2026_09_25_2145_JutenMorjen_Somea_Berlin.png](Reaktionsbilder/2026_09_25_2145_JutenMorjen_Somea_Berlin.png)
-- [2026_09_25_2147_JuteNacht_Somea_Berlin.png](Reaktionsbilder/2026_09_25_2147_JuteNacht_Somea_Berlin.png)
+- [2026_09_25_2145_JutenMorjenBerlin_Somea.png](Reaktionsbilder/2026_09_25_2145_JutenMorjenBerlin_Somea.png)
+- [2026_09_25_2147_JuteNachtBerlin_Somea.png](Reaktionsbilder/2026_09_25_2147_JuteNachtBerlin_Somea.png)
 - [2026_09_25_2149_GutenMorgenVomRhein_mysteryZ_Duesseldorf.png](Reaktionsbilder/2026_09_25_2149_GutenMorgenVomRhein_mysteryZ_Duesseldorf.png)
 - [2026_09_25_2150_GuteNachtVomRhein_mysteryZ_Duesseldorf.png](Reaktionsbilder/2026_09_25_2150_GuteNachtVomRhein_mysteryZ_Duesseldorf.png)
 - [2026_09_25_2156_MoinAusHamburg_Anthlan.png](Reaktionsbilder/2026_09_25_2156_MoinAusHamburg_Anthlan.png)
@@ -112,6 +115,14 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der drei Stilgrupp
 - [2026_09_28_1132_IchRegelDas_Somea.png](Reaktionsbilder/2026_09_28_1132_IchRegelDas_Somea.png)
 - [2026_09_28_1132_WieBitte_Somea.png](Reaktionsbilder/2026_09_28_1132_WieBitte_Somea.png)
 - [2026_09_28_2259_GuteNacht_DaVinci1986.png](Reaktionsbilder/2026_09_28_2259_GuteNacht_DaVinci1986.png)
+
+## S4 – Z-Routes-Postapokalypse
+
+- [2026_09_29_1901_KeinHandyZumZocken_Skibbi.png](Chatbilder/2026_09_29_1901_KeinHandyZumZocken_Skibbi.png)
+- [2026_09_29_1905_BratpfannenGerechtigkeit_RuhrpottBlach_Skibbi.png](Chatbilder/2026_09_29_1905_BratpfannenGerechtigkeit_RuhrpottBlach_Skibbi.png)
+- [2026_09_29_1905_MitgliederGesucht.png](Chatbilder/2026_09_29_1905_MitgliederGesucht.png)
+- [2026_09_29_1906_GerechtigkeitImChaos_Streetjudge.png](Chatbilder/2026_09_29_1906_GerechtigkeitImChaos_Streetjudge.png)
+- [2026_09_29_1906_KrebsPower_Streetjudge.png](Chatbilder/2026_09_29_1906_KrebsPower_Streetjudge.png)
 - [2026_09_29_0836_Passt_mysteryZ.png](Reaktionsbilder/2026_09_29_0836_Passt_mysteryZ.png)
 - [2026_09_29_0836_Stark_mysteryZ.png](Reaktionsbilder/2026_09_29_0836_Stark_mysteryZ.png)
 - [2026_09_29_0836_Sicher_mysteryZ.png](Reaktionsbilder/2026_09_29_0836_Sicher_mysteryZ.png)

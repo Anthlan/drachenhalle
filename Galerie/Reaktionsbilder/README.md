@@ -6,7 +6,7 @@ Szenische oder erzählerische Motive gehören nach [`Galerie/Chatbilder`](../Cha
 
 ## Stilzuordnung
 
-„Reaktionsbild“ beschreibt den Verwendungszweck und legt keinen Darstellungsstil fest. Reaktionsbilder können S1, S2 oder S3 besitzen. Ihre verbindliche Zuordnung steht zusammen mit den Chatbildern im zentralen [`Galerie/STILINDEX.md`](../STILINDEX.md).
+„Reaktionsbild“ beschreibt den Verwendungszweck und legt keinen Darstellungsstil fest. Reaktionsbilder können S1, S2, S3 oder S4 besitzen. Ihre verbindliche Zuordnung steht zusammen mit den Chatbildern im zentralen [`Galerie/STILINDEX.md`](../STILINDEX.md).
 
 ## Benennungsregeln
 

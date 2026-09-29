@@ -12,13 +12,13 @@ Die Kategorie ergibt sich aus dem Verwendungszweck, nicht aus dem Stil. Ein Chat
 
 ## Verbindlicher Standardstil
 
-S1-Chatbilder verwenden den ausgereiften DlE-Allianzstil: eine hochwertige, filmische und halb-realistische Fantasyillustration mit stabilen Charaktermodellen, dunkelblau-goldener Grundgestaltung und warmem bernsteinfarbenem Licht. S2 und S3 übertragen dieselbe Wiedererkennbarkeit in stärker erklärende beziehungsweise bewusst überzeichnete Darstellungen.
+S1-Chatbilder verwenden den ausgereiften DlE-Allianzstil: eine hochwertige, filmische und halb-realistische Fantasyillustration mit stabilen Charaktermodellen, dunkelblau-goldener Grundgestaltung und warmem bernsteinfarbenem Licht. S2 und S3 übertragen dieselbe Wiedererkennbarkeit in stärker erklärende beziehungsweise bewusst überzeichnete Darstellungen. S4 bildet daneben eine bewusst eigenständige, postapokalyptische Posterwelt.
 
 Motive im Chibi-Stil folgen zusätzlich der separaten Guideline `DlE-Stil – Chibi-Chatbilder.md`, unabhängig davon, ob sie als Chat- oder Reaktionsbild verwendet werden.
 
 ## Stilgruppen
 
-Alle Chat- und Reaktionsbilder bleiben Teil derselben blau-goldenen DlE-Bildwelt. Für die Darstellungsform werden drei grobe Stilgruppen verwendet:
+Für die Darstellungsform werden vier grobe Stilgruppen verwendet. S1 bis S3 gehören zur blau-goldenen DlE-Bildwelt; S4 besitzt als bewusst eigenständige „Z Routes Redemption“-Reihe eine abweichende Posterästhetik:
 
 ### S1 – Filmische Allianz-Fantasy
 
@@ -31,6 +31,10 @@ Für Motive, bei denen Erklärungen, Running Gags oder Spielmechaniken mehr Raum
 ### S3 – Chibi-Fantasy
 
 Für stark vereinfachte, niedliche und bewusst überzeichnete Darstellungen mit klaren Silhouetten und vereinfachten Proportionen. S3 eignet sich sowohl für kurze Reaktionen als auch für szenische Chibi-Chatbilder.
+
+### S4 – Z-Routes-Postapokalypse
+
+Für plakative Survival- und Charakterposter in einer humorvollen postapokalyptischen Welt. Kennzeichnend sind körnige Materialien, starke Schwarz-Rot-Weiß-Kontraste, warme Sonnenuntergänge, grobe Pinsel- oder Schablonenschrift, handschriftliche Randnotizen und das sichtbare „Z Routes Redemption“-Branding. Die Figuren dürfen stärker karikiert sein als in S1 oder S2, müssen aber anhand ihrer Referenzmodelle und wiederkehrenden Attribute erkennbar bleiben. S4 eignet sich für Einzelposter, Running Gags, Gruppenszenen und Allianzwerbung, die wie Motive derselben rauen Kampagnenserie wirken.
 
 Die Stilgruppe wird im zentralen `Galerie/STILINDEX.md` dokumentiert und nicht in Dateiname oder Ordnerstruktur kodiert. Neue Gruppen werden nur eingeführt, wenn ein Bild keiner bestehenden Gruppe sinnvoll zugeordnet werden kann.
 
