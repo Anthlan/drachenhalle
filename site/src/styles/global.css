@@ -3409,6 +3409,35 @@ h1 {
   margin-top: 0;
 }
 
+.tutorial-step-content h3 {
+  margin: 28px 0 12px;
+  color: var(--gold-pale);
+  font-size: clamp(18px, 2.3vw, 22px);
+}
+
+.tutorial-step-content > p:first-of-type {
+  max-width: 760px;
+  color: var(--ink);
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.65;
+}
+
+.tutorial-step-content li:has(> input[type="checkbox"]) {
+  list-style: none;
+}
+
+.tutorial-step-content li > input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  margin: 0 9px 0 -26px;
+  vertical-align: -3px;
+  accent-color: var(--gold);
+}
+
+.tutorial-step-content a {
+  text-underline-offset: 3px;
+}
+
 .tutorial-step-content blockquote {
   margin: 30px 0 0;
   padding: 18px 20px;
@@ -3491,6 +3520,7 @@ h1 {
   display: grid;
   place-items: center;
   padding: 24px;
+  overflow-x: hidden;
   background: rgba(3, 7, 19, 0.7);
   opacity: 0;
   backdrop-filter: blur(6px);
@@ -3503,9 +3533,10 @@ h1 {
 
 .tutorial-celebration-character {
   width: min(31vw, 380px);
+  height: auto;
   max-height: 88vh;
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   top: 50%;
   object-fit: contain;
   opacity: 0;
@@ -3776,6 +3807,15 @@ h1 {
 }
 
 @media (min-width: 761px) and (max-width: 1100px) {
+  .tutorial-step-nav ol {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 18px;
+  }
+
+  .tutorial-step-nav li:nth-child(4n)::after {
+    display: none;
+  }
+
   .tutorial-celebration-character {
     width: min(28vw, 300px);
   }
