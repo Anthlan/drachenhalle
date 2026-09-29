@@ -1,8 +1,31 @@
 ---
 const repositoryUrl = "https://github.com/Anthlan/drachenhalle";
+const pageViewsApiUrl = import.meta.env.PUBLIC_PAGE_VIEWS_API_URL?.replace(/\/$/, "") ?? "";
 ---
 
 <footer>
-  <p>Inoffizielles Fan- und Community-Projekt · DIE Drachenhalle</p>
+  <div class="footer-copy">
+    <p>Inoffizielles Fan- und Community-Projekt · DIE Drachenhalle</p>
+    {pageViewsApiUrl && (
+      <p
+        class="page-view-count"
+        data-page-views
+        data-endpoint={pageViewsApiUrl}
+        title="Gezählt werden Seitenaufrufe, keine einzelnen Personen."
+        aria-live="polite"
+        hidden
+      >
+        <span data-page-view-current></span> Aufrufe dieser Seite
+        <span aria-hidden="true">·</span>
+        <span data-page-view-total></span> insgesamt
+      </p>
+    )}
+  </div>
   <a href={repositoryUrl}>Auf GitHub ansehen <span aria-hidden="true">↗</span></a>
 </footer>
+
+<script>
+  import { initializePageViews } from "../scripts/page-views";
+
+  initializePageViews();
+</script>

@@ -31,6 +31,10 @@ Bitte im Dateinamen nach Möglichkeit den eigenen Spielernamen und einen kurzen 
 
 Der Pages-Workflow zählt zweimal pro Stunde alle Dateien im freigegebenen Dropbox-Inbox-Ordner und zeigt die Anzahl am Inbox-Symbol. Dateinamen oder andere Metadaten werden nicht auf der Website veröffentlicht. Für die Abfrage benötigt das Repository die GitHub-Actions-Secrets `DROPBOX_APP_KEY`, `DROPBOX_APP_SECRET` und `DROPBOX_REFRESH_TOKEN`. Fehlen sie, wird die Website weiterhin gebaut und das Inbox-Symbol bleibt ohne Zähler.
 
+### Aufrufzahlen der Website
+
+Ein kleiner Cloudflare Worker zählt die Aufrufe jeder veröffentlichten Seite in einer D1-Datenbank und liefert zusätzlich die Gesamtzahl aus. Im Footer werden beide Werte angezeigt. Die Anwendung speichert nur den Seitenpfad und die aggregierten Zählerstände; sie setzt keine Cookies und speichert keine Browser-Kennungen. Die Einrichtung ist unter [`cloudflare/page-views`](cloudflare/page-views/README.md) dokumentiert. Ohne die GitHub-Actions-Variable `PUBLIC_PAGE_VIEWS_API_URL` wird die Website weiterhin normal gebaut; der Zähler bleibt dann ausgeblendet.
+
 ## Gestaltungsprinzip
 
 Bei Chat- und Reaktionsbildern werden Verwendungszweck und Darstellungsstil getrennt gepflegt. Chatbilder erzählen Szenen, Reaktionsbilder liefern kurze wiederverwendbare Antworten oder Grüße. Beide Kategorien können unabhängig davon in S1, S2 oder S3 gestaltet sein. Die verbindlichen Vorgaben befinden sich unter [`Styleguides`](Styleguides), die Zuordnung im [`Galerie/STILINDEX.md`](Galerie/STILINDEX.md).

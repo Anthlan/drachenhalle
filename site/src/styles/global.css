@@ -4005,6 +4005,24 @@ footer p {
   margin: 0;
 }
 
+.footer-copy {
+  display: grid;
+  gap: 7px;
+}
+
+.page-view-count {
+  color: var(--gold-pale);
+  font-variant-numeric: tabular-nums;
+}
+
+.page-view-count > [aria-hidden="true"] {
+  margin-inline: 0.35em;
+}
+
+.page-view-count[hidden] {
+  display: none;
+}
+
 footer a {
   color: var(--gold-pale);
 }
