@@ -126,7 +126,20 @@ const originalMimeType = (item) => {
               </select>
             </div>
 
-            <p class="result-count" id="result-count" aria-live="polite">{galleryItems.length} Bilder</p>
+            <div class="gallery-result-tools">
+              <p class="result-count" id="result-count" aria-live="polite">{galleryItems.length} Bilder</p>
+              <button
+                type="button"
+                class="gallery-action gallery-filter-share"
+                data-share-page
+                data-share-url="/drachenhalle/galerie/"
+                aria-label="Aktuelle Galerieauswahl teilen"
+                title="Aktuelle Auswahl teilen"
+              >
+                <ImageActionIcon type="share" />
+                <span>Auswahl teilen</span>
+              </button>
+            </div>
           </div>
 
           <div class="gallery-grid" id="gallery-grid">
@@ -266,6 +279,7 @@ const originalMimeType = (item) => {
       const peopleFilter = document.querySelector("#people-filter");
       const styleFilter = document.querySelector("#style-filter");
       const resultCount = document.querySelector("#result-count");
+      const filterShare = document.querySelector(".gallery-filter-share");
       const emptyState = document.querySelector("#gallery-empty");
       const dialog = document.querySelector("#gallery-dialog");
       const detailImage = document.querySelector("#detail-image");
@@ -285,7 +299,48 @@ const originalMimeType = (item) => {
       let visibleCards = cards;
       let currentIndex = 0;
 
-      function applyFilters() {
+      function buildGalleryUrl(hash = "") {
+        const url = new URL("/drachenhalle/galerie/", window.location.origin);
+
+        if (selectedCategory !== "all") url.searchParams.set("kategorie", selectedCategory);
+        if (peopleFilter.value !== "all") url.searchParams.set("person", peopleFilter.value);
+        if (styleFilter.value !== "all") url.searchParams.set("stil", styleFilter.value);
+        url.hash = hash;
+
+        return `${url.pathname}${url.search}${url.hash}`;
+      }
+
+      function updateCategoryButtons() {
+        categoryButtons.forEach((button) => {
+          const selected = button.dataset.category === selectedCategory;
+          button.classList.toggle("is-selected", selected);
+          button.setAttribute("aria-pressed", String(selected));
+        });
+      }
+
+      function updateShareTargets(updateAddress = false) {
+        filterShare.dataset.shareUrl = buildGalleryUrl();
+
+        cards.forEach((card) => {
+          const pageUrl = buildGalleryUrl(`#${card.id}`);
+          card.dataset.pageUrl = pageUrl;
+          const shareButton = card.querySelector("[data-share-image]");
+          if (shareButton instanceof HTMLButtonElement) shareButton.dataset.shareUrl = pageUrl;
+        });
+
+        const activeCard = visibleCards[currentIndex];
+        if (dialog.open && activeCard) detailShare.dataset.shareUrl = activeCard.dataset.pageUrl;
+
+        if (updateAddress) {
+          const linkedCard = window.location.hash.startsWith("#bild-")
+            ? document.getElementById(window.location.hash.slice(1))
+            : null;
+          const hash = linkedCard && visibleCards.includes(linkedCard) ? window.location.hash : "";
+          history.replaceState(null, "", buildGalleryUrl(hash));
+        }
+      }
+
+      function applyFilters({ updateAddress = false } = {}) {
         const selectedPerson = peopleFilter.value;
         const selectedStyle = styleFilter.value;
         visibleCards = cards.filter((card) => {
@@ -300,6 +355,7 @@ const originalMimeType = (item) => {
 
         resultCount.textContent = `${visibleCards.length} ${visibleCards.length === 1 ? "Bild" : "Bilder"}`;
         emptyState.hidden = visibleCards.length !== 0;
+        updateShareTargets(updateAddress);
       }
 
       function showCard(card) {
@@ -326,32 +382,47 @@ const originalMimeType = (item) => {
           dialog.showModal();
           document.documentElement.classList.add("dialog-open");
         }
+
+        history.replaceState(null, "", card.dataset.pageUrl);
       }
 
       categoryButtons.forEach((button) => {
         button.addEventListener("click", () => {
           selectedCategory = button.dataset.category;
-          categoryButtons.forEach((item) => {
-            const selected = item === button;
-            item.classList.toggle("is-selected", selected);
-            item.setAttribute("aria-pressed", String(selected));
-          });
-          applyFilters();
+          updateCategoryButtons();
+          applyFilters({ updateAddress: true });
         });
       });
 
-      peopleFilter.addEventListener("change", applyFilters);
-      styleFilter.addEventListener("change", applyFilters);
+      peopleFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
+      styleFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
       cards.forEach((card) => {
         card.querySelector(".gallery-open").addEventListener("click", () => showCard(card));
       });
 
+      const initialParams = new URLSearchParams(window.location.search);
+      const initialCategory = initialParams.get("kategorie");
+      const initialPerson = initialParams.get("person");
+      const initialStyle = initialParams.get("stil");
+
+      if (initialCategory && categoryButtons.some((button) => button.dataset.category === initialCategory)) {
+        selectedCategory = initialCategory;
+      }
+      if (initialPerson && [...peopleFilter.options].some((option) => option.value === initialPerson)) {
+        peopleFilter.value = initialPerson;
+      }
+      if (initialStyle && [...styleFilter.options].some((option) => option.value === initialStyle)) {
+        styleFilter.value = initialStyle;
+      }
+
+      updateCategoryButtons();
+      applyFilters({ updateAddress: true });
       initializeImageActions();
 
       const linkedCard = window.location.hash.startsWith("#bild-")
         ? document.getElementById(window.location.hash.slice(1))
         : null;
-      if (linkedCard?.classList.contains("gallery-card")) showCard(linkedCard);
+      if (linkedCard?.classList.contains("gallery-card") && visibleCards.includes(linkedCard)) showCard(linkedCard);
 
       previousButton.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + visibleCards.length) % visibleCards.length;
@@ -370,6 +441,7 @@ const originalMimeType = (item) => {
       dialog.addEventListener("close", () => {
         document.documentElement.classList.remove("dialog-open");
         detailImage.removeAttribute("src");
+        history.replaceState(null, "", buildGalleryUrl());
       });
 
       dialog.addEventListener("keydown", (event) => {

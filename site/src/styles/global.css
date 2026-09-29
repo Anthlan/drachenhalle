@@ -663,12 +663,25 @@ h1 {
   min-width: 265px;
 }
 
+.gallery-result-tools {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 .result-count {
   min-width: 72px;
-  margin: 0 0 10px;
+  margin: 0;
   color: var(--gold-pale);
   font-size: 13px;
   text-align: right;
+}
+
+.gallery-filter-share {
+  min-height: 38px;
+  white-space: nowrap;
 }
 
 .gallery-grid {
@@ -3127,6 +3140,25 @@ h1 {
   font-size: clamp(38px, 5vw, 64px);
 }
 
+.document-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 36px);
+}
+
+.document-title-copy {
+  min-width: 0;
+}
+
+.document-title-copy > h1 {
+  margin-bottom: 0;
+}
+
+.document-title-row .tip-article-share {
+  margin-top: 2px;
+}
+
 .document-article > header > p:not(.eyebrow) {
   max-width: 710px;
   margin: 22px 0;
@@ -3448,28 +3480,17 @@ h1 {
 }
 
 .tutorial-step-content .tutorial-side-character {
+  float: right;
   width: clamp(150px, 25vw, 230px);
   height: auto;
   max-height: 330px;
-  margin-top: -18px;
-  margin-bottom: 18px;
+  margin: -18px -18px 18px 28px;
   border: 0;
   border-radius: 0;
+  background: transparent;
   object-fit: contain;
   filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.38));
   box-shadow: none;
-}
-
-.tutorial-step-content .tutorial-side-character.is-right {
-  float: right;
-  margin-right: -18px;
-  margin-left: 28px;
-}
-
-.tutorial-step-content .tutorial-side-character.is-left {
-  float: left;
-  margin-right: 28px;
-  margin-left: -18px;
 }
 
 .tutorial-step-content blockquote {
@@ -3916,9 +3937,7 @@ h1 {
     padding-top: 12px;
   }
 
-  .tutorial-step-content .tutorial-side-character,
-  .tutorial-step-content .tutorial-side-character.is-right,
-  .tutorial-step-content .tutorial-side-character.is-left {
+  .tutorial-step-content .tutorial-side-character {
     float: none;
     display: block;
     width: min(60%, 190px);
@@ -4465,6 +4484,10 @@ footer a {
   .result-count {
     margin: 0;
     text-align: left;
+  }
+
+  .gallery-result-tools {
+    justify-content: space-between;
   }
 
   .gallery-grid {

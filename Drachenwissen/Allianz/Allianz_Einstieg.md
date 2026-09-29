@@ -4,7 +4,7 @@
 
 **Schön, dass du da bist!** Dieser Rundgang bringt dich in acht kurzen Schritten sicher durch die wichtigsten Informationen für deinen Start bei DIE.
 
-<img class="tutorial-side-character is-right" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="Anthlan begrüßt neue Mitglieder mit einem Daumen nach oben." decoding="async">
+<img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="Anthlan begrüßt neue Mitglieder mit einem Daumen nach oben." decoding="async">
 
 Du lernst unsere Gemeinschaft, die verbindlichen Regeln und die wichtigsten Anlaufstellen kennen. Für ausführliche Themen führt dich das Tutorial direkt zu den passenden Seiten im Drachenwissen.
 
@@ -35,7 +35,7 @@ Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Über
 
 **Vier Regeln solltest du vor deiner ersten Kampf- oder Plünderungsaktion kennen:**
 
-<img class="tutorial-side-character is-right" src="/drachenhalle/tutorial/04_regeln_mysteryz.webp" alt="mysteryZ zeigt einen Schutzschild und eine geprüfte Regelliste." loading="lazy" decoding="async">
+<img class="tutorial-side-character" src="/drachenhalle/tutorial/04_regeln_mysteryz.webp" alt="mysteryZ zeigt einen Schutzschild und eine geprüfte Regelliste." loading="lazy" decoding="async">
 
 1. **NAP10 respektieren:** Greife keine Mitglieder einer aktuellen NAP10-Allianz an. Prüfe vor jedem Angriff die Rangliste und die Allianzzugehörigkeit erneut.
 2. **Erlaubte Ziele mit Maß angreifen:** Allianzlose Spieler und Spieler mit einem Namen nach dem Muster **Commander\*\*\*\*** dürfen angegriffen, aber nicht vollständig auf **0** gebracht werden.
@@ -52,7 +52,7 @@ Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim er
 
 **Gute Kommunikation macht Absprachen leichter.** Begegne anderen freundlich, beteilige dich gern und trage zu einem entspannten Miteinander bei.
 
-<img class="tutorial-side-character is-left" src="/drachenhalle/tutorial/05_netiquette_somea.webp" alt="Somea lädt mit einer freundlichen Geste zum Austausch ein." loading="lazy" decoding="async">
+<img class="tutorial-side-character" src="/drachenhalle/tutorial/05_netiquette_somea.webp" alt="Somea lädt mit einer freundlichen Geste zum Austausch ein." loading="lazy" decoding="async">
 
 - Geh mit anderen respektvoll um und vermeide Themen, die allgemein als tabu gelten.
 - Beteilige dich gern an Gesprächen und gemeinsamen Aktionen, ohne andere unter Druck zu setzen.
@@ -106,7 +106,7 @@ So werden dir beim Plündern nur Transportlastwagen anderer Server angeboten. Da
 
 **Gemeinsam sind viele Aktionen schneller und wirkungsvoller.** Entscheidend ist, dass du aktuelle Hinweise beachtest und dein Team passend zur gemeinsamen Aktion einsetzt.
 
-<img class="tutorial-side-character is-right" src="/drachenhalle/tutorial/06_zusammenspiel_drachenherz.webp" alt="Drachenherz lädt mit dem Allianzbanner zur Zusammenarbeit ein." loading="lazy" decoding="async">
+<img class="tutorial-side-character" src="/drachenhalle/tutorial/06_zusammenspiel_drachenherz.webp" alt="Drachenherz lädt mit dem Allianzbanner zur Zusammenarbeit ein." loading="lazy" decoding="async">
 
 ### So kannst du direkt helfen
 
@@ -129,7 +129,7 @@ Mehr dazu findest du hier:
 
 **Du kennst jetzt die wichtigsten Wege durch die Drachenhalle.** Für deinen Start brauchst du vor allem drei Dinge im Blick zu behalten:
 
-<img class="tutorial-side-character is-left" src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp" alt="DaVinci begleitet den Abschluss des Rundgangs." loading="lazy" decoding="async">
+<img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp" alt="DaVinci begleitet den Abschluss des Rundgangs." loading="lazy" decoding="async">
 
 - Regeln vor Kampf- und Plünderungsaktionen prüfen.
 - Termine und aktuelle Hinweise vor gemeinsamen Events lesen.

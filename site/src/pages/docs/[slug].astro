@@ -44,7 +44,8 @@ const isEventsOverview = document.slug === "events" && childDocuments.length > 0
 const isAllianceOverview = document.slug === "allianz" && childDocuments.length > 0;
 const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
 const isOnboarding = document.kind === "onboarding";
-const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding;
+const isAllianceDocument = document.slug === "allianz" || document.parentSlug === "allianz";
+const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument;
 ---
 
 <!doctype html>
@@ -111,8 +112,24 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
 
           <article class:list={["document-article", { "is-hidden-consultation": document.hidden, "is-onboarding-document": isOnboarding }]}>
             <header>
-              <p class="eyebrow">{document.section}</p>
-              <h1>{document.title}</h1>
+              <div class="document-title-row">
+                <div class="document-title-copy">
+                  <p class="eyebrow">{document.section}</p>
+                  <h1>{document.title}</h1>
+                </div>
+                {hasShareableArticle && (
+                  <button
+                    type="button"
+                    class="tip-article-share"
+                    data-share-page
+                    data-share-url={document.url}
+                    aria-label={`Artikel ${document.title} teilen`}
+                    title="Artikel teilen"
+                  >
+                    <ImageActionIcon type="share" />
+                  </button>
+                )}
+              </div>
               {!document.hidden && <p>{document.summary}</p>}
               {document.kind === "tip" && (
                 <dl class="tip-taxonomy tip-taxonomy-detail" aria-label="Einordnung des Tipps">
@@ -126,25 +143,11 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
                   </div>
                 </dl>
               )}
-          {(hasShareableArticle || document.section !== "Drachenwissen") && (
+          {!document.hidden && document.section !== "Drachenwissen" && (
             <div class="document-header-actions">
-              {hasShareableArticle && (
-                <button
-                  type="button"
-                  class="tip-article-share"
-                  data-share-page
-                  data-share-url={document.url}
-                  aria-label={`Artikel ${document.title} teilen`}
-                  title="Artikel teilen"
-                >
-                  <ImageActionIcon type="share" />
-                </button>
-              )}
-              {!document.hidden && document.section !== "Drachenwissen" && (
-                <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
-                  Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
-                </a>
-              )}
+              <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
+              </a>
             </div>
           )}
             </header>

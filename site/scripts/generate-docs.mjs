@@ -73,7 +73,7 @@ const baseDocuments = [
   {
     source: "Drachenwissen/Allianz/Allianzregeln.md",
     slug: "allianzregeln",
-    title: "DIE – Allianzregeln",
+    title: "Regeln",
     section: "Drachenwissen",
     summary: "Verbindliche Regeln zu NAP10, erlaubten Angriffen, Plündern und dem Umgang mit Verstößen.",
     parentSlug: "allianz",
