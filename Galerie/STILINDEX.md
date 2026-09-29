@@ -84,7 +84,9 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der drei Stilgrupp
 - [2026_09_24_1503_ZehnWichtigeChats_mysteryZ.png](Chatbilder/2026_09_24_1503_ZehnWichtigeChats_mysteryZ.png)
 - [2026_09_25_1505_Drachenritt_mysteryZ.png](Chatbilder/2026_09_25_1505_Drachenritt_mysteryZ.png)
 - [2026_09_25_1505_Level28_Drachenherz.png](Chatbilder/2026_09_25_1505_Level28_Drachenherz.png)
+- [2026_09_26_2037_BasisLevel26_ButterflySong.png](Chatbilder/2026_09_26_2037_BasisLevel26_ButterflySong.png)
 - [2026_09_28_1011_SiebzigKamele_Somea.png](Chatbilder/2026_09_28_1011_SiebzigKamele_Somea.png)
+- [2026_09_29_0446_BasisLevel26_Odin81.png](Chatbilder/2026_09_29_0446_BasisLevel26_Odin81.png)
 
 ## S3 – Chibi-Fantasy
 
@@ -114,3 +116,10 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der drei Stilgrupp
 - [2026_09_28_1131_Natuerlich_Somea.png](Reaktionsbilder/2026_09_28_1131_Natuerlich_Somea.png)
 - [2026_09_28_1132_IchRegelDas_Somea.png](Reaktionsbilder/2026_09_28_1132_IchRegelDas_Somea.png)
 - [2026_09_28_1132_WieBitte_Somea.png](Reaktionsbilder/2026_09_28_1132_WieBitte_Somea.png)
+- [2026_09_28_2259_GuteNacht_DaVinci1986.png](Reaktionsbilder/2026_09_28_2259_GuteNacht_DaVinci1986.png)
+- [2026_09_29_0836_Passt_mysteryZ.png](Reaktionsbilder/2026_09_29_0836_Passt_mysteryZ.png)
+- [2026_09_29_0836_Stark_mysteryZ.png](Reaktionsbilder/2026_09_29_0836_Stark_mysteryZ.png)
+- [2026_09_29_0836_Sicher_mysteryZ.png](Reaktionsbilder/2026_09_29_0836_Sicher_mysteryZ.png)
+- [2026_09_29_0836_Natuerlich_mysteryZ.png](Reaktionsbilder/2026_09_29_0836_Natuerlich_mysteryZ.png)
+- [2026_09_29_0837_IchRegelDas_mysteryZ.png](Reaktionsbilder/2026_09_29_0837_IchRegelDas_mysteryZ.png)
+- [2026_09_29_0837_WieBitte_mysteryZ.png](Reaktionsbilder/2026_09_29_0837_WieBitte_mysteryZ.png)

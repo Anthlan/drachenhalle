@@ -1,7 +1,7 @@
 {
   "version": 1,
   "dropboxFolder": "/Dateianfragen/Drachenhalle-Inbox",
-  "lastCheckedAt": "2026-09-28T14:26:12+02:00",
+  "lastCheckedAt": "2026-09-29T04:01:34+02:00",
   "processed": [
     {
       "fileId": "id:nTVVCXDkSgcAAAAAAAAADA",
@@ -32,6 +32,12 @@
       "revision": "0165c869bb724fb000000038a389113",
       "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-09-28 - B714d795_4701_475F_9F01_24452F34a772.png",
       "destinationPath": "Galerie/Chatbilder/2026_09_28_1011_SiebzigKamele_Somea.png"
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAAEg",
+      "revision": "0165c9158ea10a2000000038a389113",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-09-28 - 8A35e270_8B8d_4187_868F_B3ab1ddd7e1f.png",
+      "destinationPath": "Galerie/Reaktionsbilder/2026_09_28_2259_GuteNacht_DaVinci1986.png"
     }
   ]
 }

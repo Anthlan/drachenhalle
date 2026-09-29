@@ -27,6 +27,10 @@ Allianzmitglieder können Bilder und Dokumente über die [ZRoute Upload-Inbox](h
 
 Bitte im Dateinamen nach Möglichkeit den eigenen Spielernamen und einen kurzen Inhaltshinweis angeben. Mit dem Upload muss die Aufnahme der Datei in dieses öffentliche Archiv erlaubt sein. Alle Einsendungen werden vor der Übernahme geprüft, passend benannt und in den vorgesehenen Ordner eingeordnet.
 
+### Inbox-Zähler der Website
+
+Der Pages-Workflow zählt zweimal pro Stunde alle Dateien im freigegebenen Dropbox-Inbox-Ordner und zeigt die Anzahl am Inbox-Symbol. Dateinamen oder andere Metadaten werden nicht auf der Website veröffentlicht. Für die Abfrage benötigt das Repository die GitHub-Actions-Secrets `DROPBOX_APP_KEY`, `DROPBOX_APP_SECRET` und `DROPBOX_REFRESH_TOKEN`. Fehlen sie, wird die Website weiterhin gebaut und das Inbox-Symbol bleibt ohne Zähler.
+
 ## Gestaltungsprinzip
 
 Bei Chat- und Reaktionsbildern werden Verwendungszweck und Darstellungsstil getrennt gepflegt. Chatbilder erzählen Szenen, Reaktionsbilder liefern kurze wiederverwendbare Antworten oder Grüße. Beide Kategorien können unabhängig davon in S1, S2 oder S3 gestaltet sein. Die verbindlichen Vorgaben befinden sich unter [`Styleguides`](Styleguides), die Zuordnung im [`Galerie/STILINDEX.md`](Galerie/STILINDEX.md).

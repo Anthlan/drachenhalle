@@ -1,8 +1,7 @@
 ---
-import InboxIcon from "./InboxIcon.astro";
+import InboxLink from "./InboxLink.astro";
 
 const { active = "" } = Astro.props;
-const inboxUrl = "https://www.dropbox.com/scl/fo/l073m5tkhprle70lmyszw/ALC8vEJfILXuKqpmTWKw6Cg?rlkey=03rjgx0hhnzj7t8u4hsxzyr74&st=c6omhyut&dl=0";
 const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
 ---
 
@@ -40,9 +39,7 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
     <button class="upload-help-trigger" type="button" aria-label="Hilfe zum Einreichen von Dateien" aria-haspopup="dialog" aria-controls="upload-help-dialog" title="So funktioniert das Einreichen">
       <span aria-hidden="true">?</span>
     </button>
-    <a class="inbox-link" href={inboxUrl} target="_blank" rel="noopener noreferrer" aria-label="Dropbox-Inbox ansehen (öffnet in neuem Tab)" title="Inbox ansehen">
-      <InboxIcon />
-    </a>
+    <InboxLink />
   </div>
 
   <details class="mobile-menu">
@@ -63,9 +60,7 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
         <button class="upload-help-trigger" type="button" aria-label="Hilfe zum Einreichen von Dateien" aria-haspopup="dialog" aria-controls="upload-help-dialog" title="So funktioniert das Einreichen">
           <span aria-hidden="true">?</span>
         </button>
-        <a class="inbox-link" href={inboxUrl} target="_blank" rel="noopener noreferrer" aria-label="Dropbox-Inbox ansehen (öffnet in neuem Tab)" title="Inbox ansehen">
-          <InboxIcon />
-        </a>
+        <InboxLink />
       </div>
     </div>
   </details>
@@ -107,9 +102,7 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
 
     <div class="upload-help-actions">
       <a class="upload-link" href={uploadUrl} target="_blank" rel="noopener noreferrer">Datei auswählen <span aria-hidden="true">↗</span></a>
-      <a class="inbox-link" href={inboxUrl} target="_blank" rel="noopener noreferrer" aria-label="Dropbox-Inbox ansehen (öffnet in neuem Tab)" title="Inbox ansehen">
-        <InboxIcon />
-      </a>
+      <InboxLink />
     </div>
   </div>
 </dialog>

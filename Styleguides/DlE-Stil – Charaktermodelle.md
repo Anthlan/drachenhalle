@@ -4,7 +4,7 @@
 
 Charaktermodelle sind die verbindliche visuelle Quelle für wiederkehrende Figuren. Sie müssen Gesicht, Körperbau, Kleidung, Farben und charakteristische Details so eindeutig festlegen, dass neue Avatare, Chatbilder und Szenen dieselbe Figur zuverlässig reproduzieren können.
 
-Diese Richtlinie wurde aus allen vierzehn vorhandenen Referenzmodellen in `Galerie/Charaktermodelle` abgeleitet. Alle Modellbögen verwenden das Format 1024 × 1536 Pixel.
+Diese Richtlinie wurde aus allen fünfzehn vorhandenen Referenzmodellen in `Galerie/Charaktermodelle` abgeleitet. Alle Modellbögen verwenden das Format 1024 × 1536 Pixel.
 
 ## Verbindliches Grundformat
 

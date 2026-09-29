@@ -1,0 +1,24 @@
+---
+import inboxStatus from "../data/inbox.generated.json";
+import InboxIcon from "./InboxIcon.astro";
+
+const inboxUrl = "https://www.dropbox.com/scl/fo/l073m5tkhprle70lmyszw/ALC8vEJfILXuKqpmTWKw6Cg?rlkey=03rjgx0hhnzj7t8u4hsxzyr74&st=c6omhyut&dl=0";
+const inboxCount = Math.max(0, Number(inboxStatus.count) || 0);
+const visibleCount = inboxCount > 99 ? "99+" : String(inboxCount);
+const fileLabel = inboxCount === 1 ? "1 Datei" : `${inboxCount} Dateien`;
+const accessibleLabel = inboxCount > 0
+  ? `Dropbox-Inbox ansehen – ${fileLabel} im Inbox-Ordner (öffnet in neuem Tab)`
+  : "Dropbox-Inbox ansehen (öffnet in neuem Tab)";
+---
+
+<a
+  class:list={["inbox-link", { "has-inbox-count": inboxCount > 0 }]}
+  href={inboxUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={accessibleLabel}
+  title={inboxCount > 0 ? `${fileLabel} in der Inbox` : "Inbox ansehen"}
+>
+  <InboxIcon />
+  {inboxCount > 0 && <span class="inbox-count-badge" aria-hidden="true">{visibleCount}</span>}
+</a>

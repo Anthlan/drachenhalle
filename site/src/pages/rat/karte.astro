@@ -6,6 +6,9 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import mapData from "../../data/map.generated.json";
 
 const mapAspect = mapData.width / mapData.height;
+const mapCellSize = mapData.width / 1000;
+const interactiveRegions = mapData.regions.map(({ id, code, cityLevel, center }) => ({ id, code, cityLevel, center }));
+const renderRegions = [...mapData.regions].sort((first, second) => Number(first.manualBoundary) - Number(second.manualBoundary));
 ---
 
 <!doctype html>
@@ -33,7 +36,7 @@ const mapAspect = mapData.width / mapData.height;
           <div>
             <p class="eyebrow">Allianzrat · Planungsinstrument</p>
             <h1>Gebietskarte</h1>
-            <p>Gebiete auswählen, Zuständigkeiten farblich planen und Spielkoordinaten ablesen.</p>
+            <p>Gebietsgrenzen und Stadtlevel prüfen sowie Spielkoordinaten ablesen.</p>
           </div>
           <button
             type="button"
@@ -50,8 +53,7 @@ const mapAspect = mapData.width / mapData.height;
         <section
           class="council-map-workspace"
           data-council-map
-          data-mask-url={mapData.maskUrl}
-          data-regions={JSON.stringify(mapData.regions)}
+          data-regions={JSON.stringify(interactiveRegions)}
           style={`--map-aspect: ${mapAspect}`}
           aria-labelledby="map-workspace-title"
         >
@@ -65,7 +67,7 @@ const mapAspect = mapData.width / mapData.height;
             </div>
             <label class="map-layer-toggle">
               <input type="checkbox" data-map-layer checked />
-              <span>Planungsebene</span>
+              <span>Gebietsgrenzen</span>
             </label>
             <output class="map-coordinate-output" data-map-coordinates aria-live="polite">X 500 · Y 500</output>
           </div>
@@ -78,37 +80,75 @@ const mapAspect = mapData.width / mapData.height;
               aria-label="Interaktive Karte. Mit Pfeiltasten verschieben, mit Plus und Minus zoomen."
             >
               <div class="council-map-stage" data-map-stage>
-                <img src={mapData.baseMapUrl} alt="Neutralisierte Übersichtskarte der Spielwelt" draggable="false" />
-                <canvas
-                  class="council-map-overlay"
-                  data-map-overlay
-                  width={mapData.width}
-                  height={mapData.height}
-                  aria-hidden="true"
-                ></canvas>
-                <div class="council-map-labels" data-map-labels>
-                  {mapData.regions.map((region) => (
-                    <button
-                      type="button"
-                      class="map-region-label"
-                      data-map-region={region.id}
-                      style={`left:${(region.center.pixelX / mapData.width) * 100}%;top:${(region.center.pixelY / mapData.height) * 100}%;--region-color:${region.color}`}
-                      aria-label={`${region.code}: ${region.name}`}
-                      title={`${region.code}: ${region.name}`}
-                    >
-                      {region.id}
-                    </button>
-                  ))}
-                </div>
+                <svg
+                  class="council-map-vector"
+                  data-map-vector
+                  viewBox="0 0 1000 1000"
+                  role="img"
+                  aria-label="Schematische Karte der Spielwelt mit Gebietsgrenzen"
+                >
+                  <defs>
+                    <pattern id="map-grid-cell" width={mapCellSize} height={mapCellSize} patternUnits="userSpaceOnUse">
+                      <path class="map-grid-cell-line" d={`M${mapCellSize} 0H0V${mapCellSize}`} fill="none" />
+                    </pattern>
+                    <pattern id="map-grid-ten" width={mapCellSize * 10} height={mapCellSize * 10} patternUnits="userSpaceOnUse">
+                      <rect width={mapCellSize * 10} height={mapCellSize * 10} fill="url(#map-grid-cell)" />
+                      <path d={`M${mapCellSize * 10} 0H0V${mapCellSize * 10}`} fill="none" stroke="rgba(246, 216, 141, 0.1)" stroke-width="0.8" />
+                    </pattern>
+                    <pattern id="map-grid-major" width={mapCellSize * 100} height={mapCellSize * 100} patternUnits="userSpaceOnUse">
+                      <rect width={mapCellSize * 100} height={mapCellSize * 100} fill="url(#map-grid-ten)" />
+                      <path d={`M${mapCellSize * 100} 0H0V${mapCellSize * 100}`} fill="none" stroke="rgba(246, 216, 141, 0.24)" stroke-width="1.5" />
+                    </pattern>
+                    <radialGradient id="map-field" cx="50%" cy="45%" r="72%">
+                      <stop offset="0%" stop-color="#172441" />
+                      <stop offset="100%" stop-color="#080d1c" />
+                    </radialGradient>
+                  </defs>
+                  <rect width="1000" height="1000" fill="url(#map-field)" />
+                  <rect width="1000" height="1000" fill="url(#map-grid-major)" />
+                  <g class="map-vector-regions" data-map-regions>
+                    <g class="map-vector-region-layer">
+                      {renderRegions.map((region) => (
+                        <g class="map-vector-region" data-map-region-shape={region.id}>
+                          <path class="map-vector-region-fill" d={region.fillPath} />
+                          <path class="map-vector-region-outline" d={region.outlinePath} />
+                        </g>
+                      ))}
+                    </g>
+                    <g class="map-level-markers">
+                      {renderRegions.map((region) => (
+                        <g
+                          class="map-region-label"
+                          data-map-region={region.id}
+                          transform={`translate(${region.center.vectorX} ${region.center.vectorY})`}
+                          role="button"
+                          tabindex="0"
+                          aria-label={`${region.code}: Stadtlevel ${region.cityLevel}`}
+                        >
+                          <circle r="15" />
+                          <text text-anchor="middle" dominant-baseline="central" aria-hidden="true">{region.cityLevel}</text>
+                        </g>
+                      ))}
+                    </g>
+                  </g>
+                  <g class="map-axis-labels" aria-hidden="true">
+                    <text x="14" y="978">1 × 1</text>
+                    <text x="986" y="978" text-anchor="end">999 × 1</text>
+                    <text x="14" y="30">1 × 999</text>
+                    <text x="986" y="30" text-anchor="end">999 × 999</text>
+                    <text x="500" y="978" text-anchor="middle">X 500</text>
+                    <text x="14" y="505">Y 500</text>
+                  </g>
+                </svg>
               </div>
-              <p class="map-gesture-hint">Ziehen zum Verschieben · Mausrad oder Tasten zum Zoomen · Gebiet antippen für Details</p>
+              <p class="map-gesture-hint">Ziehen zum Verschieben · 1×1-Raster erscheint beim Zoomen · Gebiet antippen für Details</p>
             </div>
 
             <aside class="council-map-inspector" aria-live="polite">
               <p class="eyebrow">Auswahl</p>
               <div data-map-selection>
                 <h2>Gebiet wählen</h2>
-                <p>Tippe eine nummerierte Fläche an. Namen, Farben und Notizen stammen aus <code>Karte/GEBIETE.md</code>.</p>
+                <p>Tippe eine Fläche oder einen Levelmarker an. Das Stadtlevel stammt aus <code>Karte/GEBIETE.md</code>.</p>
               </div>
               <dl class="map-coordinate-legend">
                 <div><dt>Unten links</dt><dd>1 × 1</dd></div>
