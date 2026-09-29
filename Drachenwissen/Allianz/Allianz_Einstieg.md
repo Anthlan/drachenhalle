@@ -11,6 +11,8 @@ Du lernst unsere Gemeinschaft, die verbindlichen Regeln und die wichtigsten Anla
 - Plane ungefähr **fünf Minuten** ein.
 - Nutze **Weiter** oder springe über die Schrittübersicht direkt zu einem Thema.
 - Dein Fortschritt bleibt auf diesem Gerät gespeichert.
+- Öffne die verlinkten Detailseiten, wenn du ein Thema gleich genauer nachlesen möchtest.
+- Wenn etwas unklar bleibt, sprich den Anführer (R5) oder einen Offizier (R4) direkt an.
 
 > **Los geht’s:** Du musst dir nicht alles sofort merken. Wichtig ist, dass du weißt, wo du Regeln, Termine und Hilfe wiederfindest.
 
@@ -75,7 +77,24 @@ Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim er
 
 So werden dir beim Plündern nur Transportlastwagen anderer Server angeboten. Das unterstützt die Allianzregel, nach der wir keine Lastwagen unseres eigenen Servers plündern. Prüfe den Server trotzdem vor jeder Aktion noch einmal.
 
-> **Kontrolle:** Der Haken muss grün aktiviert sein. Die Einstellung ersetzt nicht die Prüfung der Servernummer vor dem Plündern.
+### Spezialmissionen und Container
+
+Auch Spezialmissionen – die Container auf der Karte – plündern wir **nur auf fremden Servern**. Prüfe vor dem Start die Anzeige am oberen Bildschirmrand: Auf einem Fremdserver steht dort beispielsweise **„Kriegsgebiet S107“**. Auf unserem eigenen Server **105** wird keine Serverangabe eingeblendet. Fehlt die Anzeige, plündere den Container nicht und wechsle zuerst auf einen Fremdserver.
+
+Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Zahl in den Koordinaten. **`[S:105 …]` ist unser eigener Server und damit tabu.** Im Beispiel **`[S:107 X:686 Y:467]`** liegt die Mission auf einem erlaubten Fremdserver.
+
+<div class="tutorial-image-pair">
+  <figure>
+    <img src="/drachenhalle/tutorial/07_spezialmission_fremdserver_s107.webp" alt="Container einer Spezialmission mit der Fremdserver-Anzeige Kriegsgebiet S107" loading="lazy" decoding="async">
+    <figcaption>Direkt auf der Karte: „Kriegsgebiet S107“ bestätigt den Fremdserver.</figcaption>
+  </figure>
+  <figure>
+    <img src="/drachenhalle/tutorial/08_geteilte_spezialmission_servernummer_s107.webp" alt="Geteilte Spezialeinsatzmission mit den Koordinaten S 107, X 686, Y 467" loading="lazy" decoding="async">
+    <figcaption>Im Chat: Die erste Koordinatenzahl ist der Server – hier S107 statt unseres Servers S105.</figcaption>
+  </figure>
+</div>
+
+> **Kontrolle:** Bei Transportlastwagen muss der Ausschluss-Haken grün aktiviert sein. Bei Spezialmissionen muss ein Fremdserver angezeigt werden beziehungsweise die erste Koordinatenzahl darf nicht **105** sein.
 
 ## Deine ersten Schritte
 
