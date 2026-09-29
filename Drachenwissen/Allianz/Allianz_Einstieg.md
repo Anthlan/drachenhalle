@@ -46,7 +46,7 @@ Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim er
 
 **Gute Kommunikation macht Absprachen leichter.** Begegne anderen freundlich, beteilige dich gern und trage zu einem entspannten Miteinander bei.
 
-- Behandle andere respektvoll und vermeide Themen, die allgemein als tabu gelten.
+- geh mit anderen respektvoll um und vermeide Themen, die allgemein als tabu gelten.
 - Beteilige dich gern an Gesprächen und gemeinsamen Aktionen, ohne andere unter Druck zu setzen.
 - Wir halten besondere Momente gerne mit ChatGPT-generierten Bildern fest oder machen Ideen damit anschaulich.
 - Stelle Fragen frühzeitig. Wenn die zuständige Rolle unklar ist, helfen dir der Anführer (R5) oder jeder verfügbare Offizier (R4) weiter.
