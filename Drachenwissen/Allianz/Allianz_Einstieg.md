@@ -16,6 +16,8 @@ Du lernst unsere Gemeinschaft, die verbindlichen Regeln und die wichtigsten Anla
 
 **DIE ist eine Gemeinschaft, in der klare Absprachen und gemeinsames Handeln zählen.** Wir wollen engagiert und mit Freude gemeinsam wachsen. Regeln schützen die Allianz vor unnötigen Konflikten, feste Verantwortungsbereiche unserer Offiziere (R4) schaffen kurze Wege und unser Drachenwissen hält Erfahrungen für alle fest.
 
+![Anthlan, mysteryZ, DaVinci, Somea und Drachenherz bauen gemeinsam an der Drachenhalle und pflanzen einen jungen Baum](/drachenhalle/tutorial/03_gemeinsam_wachsen_chibi.webp)
+
 Was dich bei uns erwartet:
 
 - Wir koordinieren gemeinsame Events und Kämpfe.
@@ -72,6 +74,8 @@ So werden dir beim Plündern nur Transportlastwagen anderer Server angeboten. Da
 ## Deine ersten Schritte
 
 **Diese kurze Checkliste bringt dich ohne Informationsflut durch deinen Einstieg.**
+
+![Anthlan und DaVinci begleiten ein neues junges Mitglied bei Namenswahl, Sammelpunkt, Schildvorrat und Forschungsspende](/drachenhalle/tutorial/02_erste_schritte_chibi.webp)
 
 ### In den ersten 24 Stunden
 
