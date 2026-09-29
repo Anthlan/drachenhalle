@@ -339,7 +339,7 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
 
                 <div class="tutorial-celebration" data-tutorial-celebration hidden>
                   <div class="tutorial-celebration-particles" aria-hidden="true">
-                    {Array.from({ length: 28 }, (_, index) => <span style={`--particle: ${index}`}></span>)}
+                    {Array.from({ length: 36 }, (_, index) => <span style={`--particle: ${index}`}></span>)}
                   </div>
                   <div class="tutorial-celebration-card" role="status" aria-live="polite" aria-atomic="true">
                     <span class="tutorial-celebration-seal" aria-hidden="true">✓</span>
@@ -713,7 +713,7 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
           } catch {
             // Der Abschluss funktioniert auch, wenn lokale Speicherung blockiert ist.
           }
-          celebrationTimeout = window.setTimeout(hideCelebration, 4200);
+          celebrationTimeout = window.setTimeout(hideCelebration, 5200);
         };
 
         tutorial.classList.add("is-enhanced");
