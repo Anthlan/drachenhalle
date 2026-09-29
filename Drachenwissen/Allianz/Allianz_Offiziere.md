@@ -1,10 +1,10 @@
-# R4-Rollen und Verantwortlichkeiten
+# Unsere Offiziere
 
-Mit unseren R4-Rollen verteilen wir wiederkehrende Aufgaben auf klare Verantwortungsbereiche. Dadurch erkennt ihr schneller, an wen ihr euch mit einem bestimmten Anliegen wenden könnt. Wir verzichten bewusst auf Spielernamen, damit die Zuständigkeiten auch nach einem personellen Wechsel verständlich und aktuell bleiben.
+Unsere Offiziere übernehmen neben der gemeinsamen Allianzführung feste Ansprechbereiche. Dadurch erkennt ihr schneller, an wen ihr euch mit einem bestimmten Anliegen wenden könnt. Wir verzichten bewusst auf Spielernamen, damit die Zuständigkeiten auch nach einem personellen Wechsel verständlich und aktuell bleiben.
 
-![R4-Rollen und Verantwortlichkeiten](R4_Rollen_Verantwortlichkeiten.png)
+![Unsere Offiziere und ihre Verantwortlichkeiten](Allianz_Offiziere.png)
 
-## Wofür gibt es die Rollen?
+## Wofür gibt es feste Ansprechbereiche?
 
 Unsere R4 unterstützen die Allianzführung nicht nur allgemein, sondern übernehmen zusätzlich feste Themenbereiche. Dadurch beantworten wir Fragen schneller, bereiten Veranstaltungen verlässlicher vor und verhindern, dass organisatorische Aufgaben doppelt oder gar nicht erledigt werden.
 
@@ -77,7 +77,7 @@ Der Begleitoffizier unterstützt uns bei der konkreten Durchführung des jeweili
 ## Allianz-Mitteilung zum Kopieren
 
 ```html
-<size=40><color=#FFD700><b>🐉 R4-ROLLEN & VERANTWORTLICHKEITEN</b></color></size>
+<size=40><color=#FFD700><b>🐉 UNSERE OFFIZIERE</b></color></size>
 Damit ihr bei Fragen oder Problemen schnell die richtige Anlaufstelle findet:
 
 <size=34><b>🛡️ Butler</b></size>

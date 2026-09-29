@@ -41,11 +41,12 @@ const tipArtOptions = ["Anleitung", "Strategie", "Optimierung"];
 const tipTopicOptions = ["Allianz", "Events", "Kampf", "Truppen", "Aufbau", "Weltkarte"];
 const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
 const isEventsOverview = document.slug === "events" && childDocuments.length > 0;
+const isEventAnnouncementsOverview = document.slug === "eventankuendigungen" && childDocuments.length > 0;
 const isAllianceOverview = document.slug === "allianz" && childDocuments.length > 0;
 const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
 const isOnboarding = document.kind === "onboarding";
 const isAllianceDocument = document.slug === "allianz" || document.parentSlug === "allianz";
-const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument;
+const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument || document.kind === "alliance";
 ---
 
 <!doctype html>
@@ -235,8 +236,8 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
               <section class="knowledge-children alliance-catalog" aria-labelledby="alliance-children-title">
                 <div class="tip-catalog-heading">
                   <p class="eyebrow">Allianzwissen</p>
-                  <h2 id="alliance-children-title">Regeln &amp; Mitteilungen</h2>
-                  <p>Ausführliche Informationen, passende Grafiken und direkt verwendbare Texte für den Allianzalltag.</p>
+                  <h2 id="alliance-children-title">Gemeinschaft &amp; Organisation</h2>
+                  <p>Der Einstieg bei uns, unsere verbindlichen Regeln und die Ansprechbereiche unserer Offiziere.</p>
                 </div>
                 <div class="knowledge-card-list">
                   {childDocuments.map((item) => (
@@ -268,6 +269,28 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
                         <h3>{item.title}</h3>
                         <p>{item.summary}</p>
                         <strong>Event-Guide öffnen →</strong>
+                      </div>
+                      {item.imageUrl && <img src={item.imageUrl} alt="" loading="lazy" />}
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
+            {isEventAnnouncementsOverview && (
+              <section class="knowledge-children alliance-catalog" aria-labelledby="event-announcement-children-title">
+                <div class="tip-catalog-heading">
+                  <p class="eyebrow">Direkt für den Allianzchat</p>
+                  <h2 id="event-announcement-children-title">Unsere Eventankündigungen</h2>
+                  <p>Kurze Einordnung, passende Grafiken und eine Kopiervorlage für das jeweilige Ereignis.</p>
+                </div>
+                <div class="knowledge-card-list">
+                  {childDocuments.map((item) => (
+                    <a class="knowledge-card" href={item.url}>
+                      <div>
+                        <span>Drachenwissen · Eventankündigung</span>
+                        <h3>{item.title}</h3>
+                        <p>{item.summary}</p>
+                        <strong>Ankündigung öffnen →</strong>
                       </div>
                       {item.imageUrl && <img src={item.imageUrl} alt="" loading="lazy" />}
                     </a>

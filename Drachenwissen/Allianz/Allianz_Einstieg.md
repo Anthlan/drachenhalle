@@ -1,4 +1,4 @@
-# Neu in der Drachenhalle
+# Dein Einstieg bei uns
 
 ## Willkommen in der Drachenhalle
 
@@ -29,7 +29,7 @@ Was dich bei uns erwartet:
 - Der Anführer (R5) und die Offiziere (R4) stimmen übergreifende Themen gemeinsam ab und vertreten einander.
 - Für Gemeinschaft, Kampf, Forschung, Rekrutierung und Güterzug gibt es erkennbare Zuständigkeiten.
 
-Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Übersicht der [Offiziersrollen (R4) und Verantwortlichkeiten](R4_Rollen_Verantwortlichkeiten.md) zeigt dir den passenden Bereich. Wenn du unsicher bist, kannst du dich jederzeit an den Anführer (R5) oder einen verfügbaren Offizier (R4) wenden.
+Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Übersicht [Unsere Offiziere](Allianz_Offiziere.md) zeigt dir den passenden Bereich. Wenn du unsicher bist, kannst du dich jederzeit an den Anführer (R5) oder einen verfügbaren Offizier (R4) wenden.
 
 > **Wofür wir stehen:** Engagiert und mit Freude gemeinsam wachsen.
 
@@ -65,7 +65,7 @@ Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim er
 - Achte während gemeinsamer Aktionen auf die aktuellen Hinweise der zuständigen Event- oder Kampfkoordination.
 - Gib bei Urlaub oder längerer Inaktivität bitte vorher Bescheid. Mitglieder, die sich nicht abmelden, werden in der Regel nach **sieben Tagen Inaktivität** aus der Allianz entfernt.
 
-[Ansprechbereiche der Offiziere (R4) nachschlagen](R4_Rollen_Verantwortlichkeiten.md)
+[Unsere Offiziere und ihre Ansprechbereiche kennenlernen](Allianz_Offiziere.md)
 
 > **Kurz gesagt:** Sei freundlich, denk mit und gib Bescheid, wenn du länger nicht da bist.
 
@@ -109,7 +109,7 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
 - [ ] Zum **Allianz-Sammelpunkt** umziehen, sofern nichts anderes mit der Führung besprochen ist.
 - [ ] Den Haken **„Transportlastwagen dieses Servers ausschließen“** aktivieren.
 - [ ] Mindestens einen **24-Stunden-Schutzschild** und einen **8-Stunden-Schutzschild** im Inventar bereithalten.
-- [ ] Die [Offiziersrollen (R4) und Verantwortlichkeiten](R4_Rollen_Verantwortlichkeiten.md) öffnen und die passenden Anlaufstellen merken.
+- [ ] Die Seite [Unsere Offiziere](Allianz_Offiziere.md) öffnen und die passenden Anlaufstellen merken.
 - [ ] Die nächsten [Termine](/drachenhalle/termine/) und ihre Eventhinweise prüfen.
 - [ ] Vor Angriffen die aktuelle Rangliste und vor Plünderungen die Servernummer kontrollieren.
 
@@ -140,7 +140,7 @@ Mehr dazu findest du hier:
 - [Sammelangriffe verstehen](../Tipps/Tipp_02_Sammelangriffe.md)
 - [Soldaten mit Allianzhilfe schneller heilen](../Tipps/Tipp_08_SoldatenSchnellerHeilen.md)
 - [Event-Guides öffnen](/drachenhalle/docs/events/)
-- [Alle Zuständigkeiten der Offiziere (R4) ansehen](R4_Rollen_Verantwortlichkeiten.md)
+- [Unsere Offiziere und ihre Zuständigkeiten ansehen](Allianz_Offiziere.md)
 
 > **Für gemeinsame Aktionen:** Erst den aktuellen Plan lesen, dann das passende Team losschicken. Bei Unklarheit kurz nachfragen.
 

@@ -18,6 +18,7 @@ const validStyles = new Set(["S1", "S2", "S3"]);
 const contentAreas = [
   ["Drachenwissen/Tipps", "Tipp"],
   ["Drachenwissen/Events", "Event"],
+  ["Drachenwissen/Eventankuendigungen", "Allianz"],
   ["Drachenwissen/Anleitungen", "Anleitung"],
   ["Drachenwissen/Allianz", "Allianz"],
   ["Drachenwissen/Strategien", "Strategie"],
