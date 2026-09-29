@@ -3260,70 +3260,119 @@ h1 {
 }
 
 .tutorial-step-nav {
-  padding: 22px clamp(28px, 5vw, 62px);
+  padding: 26px clamp(28px, 5vw, 62px) 22px;
   border-bottom: 1px solid var(--line);
   background: rgba(11, 17, 38, 0.54);
 }
 
 .tutorial-step-nav ol {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 9px;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+.tutorial-step-nav li {
+  position: relative;
+  min-width: 0;
+}
+
+.tutorial-step-nav li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 18px;
+  left: calc(50% + 18px);
+  width: calc(100% - 36px);
+  height: 1px;
+  background: rgba(227, 173, 78, 0.2);
+}
+
+.tutorial-step-nav li:has(button.is-complete)::after {
+  background: linear-gradient(90deg, var(--gold), rgba(227, 173, 78, 0.42));
+}
+
 .tutorial-step-nav button {
   width: 100%;
-  min-height: 68px;
-  display: grid;
-  grid-template-columns: 30px minmax(0, 1fr);
+  min-height: 82px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  flex-direction: column;
   align-items: center;
   gap: 9px;
-  padding: 10px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: rgba(8, 13, 29, 0.7);
+  padding: 0 5px;
+  border: 0;
+  background: transparent;
   color: var(--muted);
-  text-align: left;
+  text-align: center;
   cursor: pointer;
 }
 
 .tutorial-step-nav button > span {
-  width: 30px;
-  height: 30px;
+  width: 37px;
+  height: 37px;
   display: inline-flex;
+  position: relative;
+  z-index: 2;
+  flex: 0 0 37px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(227, 173, 78, 0.35);
   border-radius: 50%;
+  background: #091027;
   color: var(--gold-pale);
   font: 700 12px/1 Arial, sans-serif;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
 .tutorial-step-nav button > strong {
+  max-width: 112px;
   font-size: 11px;
   line-height: 1.3;
 }
 
 .tutorial-step-nav button:hover,
 .tutorial-step-nav button:focus-visible {
-  border-color: var(--line-bright);
   color: var(--ink);
+}
+
+.tutorial-step-nav button:hover > span,
+.tutorial-step-nav button:focus-visible > span {
+  border-color: var(--gold-pale);
+  transform: translateY(-2px);
+}
+
+.tutorial-step-nav button:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 6px;
 }
 
 .tutorial-step-nav button.is-active {
-  border-color: var(--gold);
-  background: rgba(227, 173, 78, 0.1);
-  color: var(--ink);
-  box-shadow: inset 0 -2px 0 var(--gold);
+  color: var(--gold-pale);
 }
 
-.tutorial-step-nav button.is-active > span {
+.tutorial-step-nav button.is-active > span,
+.tutorial-step-nav button.is-complete > span {
   border-color: var(--gold);
   background: linear-gradient(180deg, #efbd5f, #c98720);
   color: #12101a;
+}
+
+.tutorial-step-nav button.is-active > span {
+  box-shadow: 0 0 0 5px rgba(227, 173, 78, 0.1), 0 0 24px rgba(227, 173, 78, 0.22);
+  transform: scale(1.08);
+}
+
+.tutorial-step-nav button.is-complete:not(.is-active) > span::after {
+  content: "✓";
+  font-size: 13px;
+}
+
+.tutorial-step-nav button.is-complete:not(.is-active) > span {
+  font-size: 0;
 }
 
 .tutorial-step-list {
@@ -3425,9 +3474,161 @@ h1 {
   visibility: hidden;
 }
 
+.tutorial-complete-button {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.tutorial-celebration[hidden] {
+  display: none;
+}
+
+.tutorial-celebration {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(3, 7, 19, 0.7);
+  opacity: 0;
+  backdrop-filter: blur(6px);
+  transition: opacity 220ms ease;
+}
+
+.tutorial-celebration.is-visible {
+  opacity: 1;
+}
+
+.tutorial-celebration-card {
+  width: min(100%, 480px);
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  padding: 42px 34px 32px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 198, 111, 0.68);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(240, 198, 111, 0.2), transparent 42%),
+    linear-gradient(145deg, #111936, #080d20 76%);
+  box-shadow: 0 28px 100px rgba(0, 0, 0, 0.58), 0 0 60px rgba(227, 173, 78, 0.12);
+  text-align: center;
+  transform: translateY(18px) scale(0.94);
+  transition: transform 260ms cubic-bezier(0.2, 0.85, 0.3, 1.1);
+}
+
+.tutorial-celebration.is-visible .tutorial-celebration-card {
+  transform: translateY(0) scale(1);
+}
+
+.tutorial-celebration-seal {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border: 1px solid var(--gold-pale);
+  border-radius: 50%;
+  background: linear-gradient(160deg, #f0c66f, #c8831c);
+  color: #13101a;
+  font: 700 34px/1 Georgia, "Times New Roman", serif;
+  box-shadow: 0 0 0 8px rgba(227, 173, 78, 0.08), 0 0 36px rgba(227, 173, 78, 0.24);
+}
+
+.tutorial-celebration-card .eyebrow {
+  margin: 0 0 10px;
+}
+
+.tutorial-celebration-card > strong {
+  color: var(--ink);
+  font: 500 clamp(28px, 5vw, 40px)/1.1 Georgia, "Times New Roman", serif;
+}
+
+.tutorial-celebration-card > span:not(.tutorial-celebration-seal) {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.tutorial-celebration-card button {
+  min-height: 44px;
+  margin-top: 28px;
+  padding: 10px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--gold-pale);
+  cursor: pointer;
+}
+
+.tutorial-celebration-card button:hover,
+.tutorial-celebration-card button:focus-visible {
+  background: rgba(227, 173, 78, 0.1);
+  color: var(--ink);
+}
+
+.tutorial-celebration-particles {
+  position: fixed;
+  z-index: 1;
+  inset: 50% auto auto 50%;
+  pointer-events: none;
+}
+
+.tutorial-celebration-particles span {
+  --angle: calc(var(--particle) * 30deg);
+  width: 8px;
+  height: 18px;
+  position: absolute;
+  left: -4px;
+  top: -9px;
+  border-radius: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transform: rotate(var(--angle)) translateY(-30px);
+}
+
+.tutorial-celebration-particles span:nth-child(3n) {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8fa4e5;
+}
+
+.tutorial-celebration-particles span:nth-child(3n + 2) {
+  background: var(--gold-pale);
+}
+
+.tutorial-celebration.is-visible .tutorial-celebration-particles span {
+  animation: tutorial-celebrate 900ms cubic-bezier(0.15, 0.75, 0.3, 1) calc(var(--particle) * 24ms) both;
+}
+
+@keyframes tutorial-celebrate {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateY(-38px) scale(0.45);
+  }
+
+  22% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateY(-260px) rotate(160deg) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .tutorial-progress span {
+  .tutorial-progress span,
+  .tutorial-celebration,
+  .tutorial-celebration-card {
     transition: none;
+  }
+
+  .tutorial-celebration.is-visible .tutorial-celebration-particles span {
+    animation: none;
   }
 }
 
@@ -3450,10 +3651,30 @@ h1 {
 
   .tutorial-step-nav ol {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 8px;
   }
 
   .tutorial-step-nav button {
-    min-height: 62px;
+    min-height: 50px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 9px;
+    padding: 0;
+    text-align: left;
+  }
+
+  .tutorial-step-nav button > span {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
+  .tutorial-step-nav button > strong {
+    max-width: none;
+  }
+
+  .tutorial-step-nav li::after {
+    display: none;
   }
 
   .tutorial-step > .eyebrow {
@@ -3478,6 +3699,11 @@ h1 {
   .tutorial-controls button {
     width: 100%;
     min-height: 48px;
+  }
+
+  .tutorial-complete-button {
+    grid-column: 2;
+    grid-row: 2;
   }
 }
 
@@ -4410,6 +4636,7 @@ footer a {
   .tutorial-toolbar,
   .tutorial-step-nav,
   .tutorial-controls,
+  .tutorial-celebration,
   footer {
     display: none !important;
   }

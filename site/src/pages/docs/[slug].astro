@@ -332,6 +332,22 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
                     Schritt 1 von {document.onboardingSteps.length}
                   </span>
                   <button type="button" class="is-primary" data-tutorial-next>Weiter →</button>
+                  <button type="button" class="is-primary tutorial-complete-button" data-tutorial-complete hidden>
+                    Einstieg abschließen ✦
+                  </button>
+                </div>
+
+                <div class="tutorial-celebration" data-tutorial-celebration hidden>
+                  <div class="tutorial-celebration-particles" aria-hidden="true">
+                    {Array.from({ length: 12 }, (_, index) => <span style={`--particle: ${index}`}></span>)}
+                  </div>
+                  <div class="tutorial-celebration-card" role="status" aria-live="polite" aria-atomic="true">
+                    <span class="tutorial-celebration-seal" aria-hidden="true">✓</span>
+                    <p class="eyebrow">Geschafft</p>
+                    <strong>Willkommen in der Drachenhalle!</strong>
+                    <span>Du hast den Einstieg erfolgreich abgeschlossen.</span>
+                    <button type="button" data-tutorial-celebration-close>Schließen</button>
+                  </div>
                 </div>
               </div>
             ) : document.kind === "alliance" && document.allianceArticleHtml && document.allianceCopyHtml ? (
@@ -593,13 +609,17 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
         const stepButtons = [...tutorial.querySelectorAll("[data-tutorial-step-button]")];
         const previousButton = tutorial.querySelector("[data-tutorial-previous]");
         const nextButton = tutorial.querySelector("[data-tutorial-next]");
+        const completeButton = tutorial.querySelector("[data-tutorial-complete]");
         const resetButton = tutorial.querySelector("[data-tutorial-reset]");
+        const celebration = tutorial.querySelector("[data-tutorial-celebration]");
+        const celebrationClose = tutorial.querySelector("[data-tutorial-celebration-close]");
         const currentLabel = tutorial.querySelector("[data-tutorial-current]");
         const positionLabel = tutorial.querySelector("[data-tutorial-position]");
         const progress = tutorial.querySelector("[data-tutorial-progress]");
         const progressBar = progress?.querySelector("span");
         const storageKey = tutorial.dataset.storageKey ?? "die-tutorial-step";
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let celebrationTimeout: number | undefined;
 
         if (steps.length === 0) continue;
 
@@ -635,6 +655,7 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
           for (const [index, button] of stepButtons.entries()) {
             const isActive = index === activeIndex;
             button.classList.toggle("is-active", isActive);
+            button.classList.toggle("is-complete", index < activeIndex);
             button.setAttribute("aria-pressed", String(isActive));
             if (isActive) button.setAttribute("aria-current", "step");
             else button.removeAttribute("aria-current");
@@ -642,6 +663,7 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
 
           if (previousButton instanceof HTMLButtonElement) previousButton.disabled = activeIndex === 0;
           if (nextButton instanceof HTMLButtonElement) nextButton.hidden = activeIndex === steps.length - 1;
+          if (completeButton instanceof HTMLButtonElement) completeButton.hidden = activeIndex !== steps.length - 1;
           if (currentLabel) currentLabel.textContent = String(activeIndex + 1);
           if (positionLabel) positionLabel.textContent = `Schritt ${activeIndex + 1} von ${steps.length}`;
           if (progress) {
@@ -667,8 +689,31 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
               heading.tabIndex = -1;
               heading.focus({ preventScroll: true });
             }
-            tutorial.scrollIntoView({ behavior: prefersReducedMotion.matches ? "auto" : "smooth", block: "start" });
           }
+        };
+
+        const hideCelebration = () => {
+          window.clearTimeout(celebrationTimeout);
+          if (!(celebration instanceof HTMLElement)) return;
+          celebration.classList.remove("is-visible");
+          window.setTimeout(() => {
+            celebration.hidden = true;
+          }, prefersReducedMotion.matches ? 0 : 220);
+        };
+
+        const showCelebration = () => {
+          if (!(celebration instanceof HTMLElement)) return;
+          window.clearTimeout(celebrationTimeout);
+          celebration.hidden = false;
+          requestAnimationFrame(() => celebration.classList.add("is-visible"));
+          tutorial.classList.add("is-complete");
+          for (const button of stepButtons) button.classList.add("is-complete");
+          try {
+            localStorage.setItem(`${storageKey}-complete`, "true");
+          } catch {
+            // Der Abschluss funktioniert auch, wenn lokale Speicherung blockiert ist.
+          }
+          celebrationTimeout = window.setTimeout(hideCelebration, 4200);
         };
 
         tutorial.classList.add("is-enhanced");
@@ -679,7 +724,18 @@ const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnbo
         }
         previousButton?.addEventListener("click", () => showStep(activeIndex - 1, { updateFragment: true, focusContent: true }));
         nextButton?.addEventListener("click", () => showStep(activeIndex + 1, { updateFragment: true, focusContent: true }));
-        resetButton?.addEventListener("click", () => showStep(0, { updateFragment: true, focusContent: true }));
+        completeButton?.addEventListener("click", showCelebration);
+        celebrationClose?.addEventListener("click", hideCelebration);
+        resetButton?.addEventListener("click", () => {
+          hideCelebration();
+          tutorial.classList.remove("is-complete");
+          try {
+            localStorage.removeItem(`${storageKey}-complete`);
+          } catch {
+            // Der Neustart funktioniert auch ohne lokale Speicherung.
+          }
+          showStep(0, { updateFragment: true, focusContent: true });
+        });
 
         window.addEventListener("hashchange", () => {
           const fragmentStep = stepFromFragment();
