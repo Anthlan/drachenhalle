@@ -1269,37 +1269,6 @@ h1 {
   line-height: 1.7;
 }
 
-.welcome-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.welcome-links a {
-  padding: 11px 14px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  color: var(--gold-pale);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.welcome-links a:first-child {
-  border-color: rgba(227, 173, 78, 0.52);
-  background: rgba(227, 173, 78, 0.09);
-}
-
-.welcome-links a:hover,
-.welcome-links a:focus-visible {
-  border-color: var(--gold);
-  background: rgba(227, 173, 78, 0.14);
-}
-
-.welcome-copy .archive-stats {
-  margin-top: 42px;
-}
-
 .welcome-visual {
   min-width: 0;
   min-height: 0;
@@ -4711,10 +4680,6 @@ footer a {
 
   .welcome-copy h1 {
     font-size: clamp(42px, 14vw, 58px);
-  }
-
-  .welcome-copy .archive-stats {
-    margin-top: 30px;
   }
 
   .welcome-visual {
