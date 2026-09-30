@@ -4,16 +4,16 @@ Dieser Bereich erklärt, wie wir bei DIE miteinander spielen und wer bei Fragen 
 
 ## Unsere Gemeinschaft
 
-- [Dein Einstieg bei uns](Allianz_Einstieg.md) – ein geführter Rundgang durch Gemeinschaft, Regeln, wichtige Einstellungen und erste Schritte
-- [Unsere Allianzregeln](Allianz_Regeln.md) – verbindliche Regeln, Beispiele, kompakte Grafik und kopierbare Ingame-Mitteilung
+- [Dein Einstieg bei uns](../Tutorials/Allianz_Einstieg.md) – ein geführter Rundgang durch Gemeinschaft, Regeln, wichtige Einstellungen und erste Schritte
+- [Unsere Regeln](Allianz_Regeln.md) – verbindliche Regeln, Beispiele, kompakte Grafik und kopierbare Ingame-Mitteilung
 - [Unsere Offiziere](Allianz_Offiziere.md) – die aktuellen R4 mit Charakterdarstellung und kurzer Vorstellung
-- [Unsere Verantwortlichkeiten](Allianz_Verantwortlichkeiten.md) – feste Aufgabenbereiche, aktuelle Zuordnung und interaktives Zuordnungsspiel
+- [Unsere Verantwortlichen](Allianz_Verantwortlichkeiten.md) – feste Aufgabenbereiche, aktuelle Zuordnung und interaktives Zuordnungsspiel
 
 ## Interne Entwicklung
 
 - [Zukunft der Allianz](Allianz_Zukunft.md) – nicht gelistete Diskussionsgrundlage für den Allianzrat
 
-Wiederverwendbare Hinweise zu bevorstehenden Ereignissen liegen als eigenständige Sammlung unter [Eventankündigungen](../Eventankuendigungen/README.md).
+Wiederverwendbare Hinweise zu bevorstehenden Ereignissen liegen als eigenständige Sammlung unter [Eventankündigungen](../Drachenwissen/Eventankuendigungen/README.md).
 
 ## Benennungsregeln
 

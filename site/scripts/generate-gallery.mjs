@@ -20,7 +20,7 @@ const contentAreas = [
   ["Drachenwissen/Events", "Event"],
   ["Drachenwissen/Eventankuendigungen", "Allianz"],
   ["Drachenwissen/Anleitungen", "Anleitung"],
-  ["Drachenwissen/Allianz", "Allianz"],
+  ["Allianz", "Allianz"],
   ["Drachenwissen/Strategien", "Strategie"],
   ["Drachenwissen/Analysen", "Analyse"],
   ["Galerie/Avatare", "Avatar"],

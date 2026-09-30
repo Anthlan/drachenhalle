@@ -29,7 +29,7 @@ Was dich bei uns erwartet:
 - Der Anführer (R5) und die Offiziere (R4) stimmen übergreifende Themen gemeinsam ab und vertreten einander.
 - Für Gemeinschaft, Kampf, Forschung, Rekrutierung und Güterzug gibt es erkennbare Zuständigkeiten.
 
-Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Übersicht [Unsere Offiziere](Allianz_Offiziere.md) zeigt dir den passenden Bereich. Wenn du unsicher bist, kannst du dich jederzeit an den Anführer (R5) oder einen verfügbaren Offizier (R4) wenden.
+Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Übersicht [Unsere Offiziere](../Allianz/Allianz_Offiziere.md) zeigt dir den passenden Bereich. Wenn du unsicher bist, kannst du dich jederzeit an den Anführer (R5) oder einen verfügbaren Offizier (R4) wenden.
 
 > **Wofür wir stehen:** Engagiert und mit Freude gemeinsam wachsen.
 
@@ -46,7 +46,7 @@ Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Über
 
 Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim ersten Regelverstoß folgt eine Verwarnung, die zweite Verwarnung führt zum Ausschluss.
 
-[Alle Allianzregeln mit Beispielen lesen](Allianz_Regeln.md)
+[Alle Allianzregeln mit Beispielen lesen](../Allianz/Allianz_Regeln.md)
 
 > **Merksatz:** Rangliste und Server prüfen. Einen NAP10-Vorfall melden, nicht selbst beantworten.
 
@@ -65,7 +65,7 @@ Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim er
 - Achte während gemeinsamer Aktionen auf die aktuellen Hinweise der zuständigen Event- oder Kampfkoordination.
 - Gib bei Urlaub oder längerer Inaktivität bitte vorher Bescheid. Mitglieder, die sich nicht abmelden, werden in der Regel nach **sieben Tagen Inaktivität** aus der Allianz entfernt.
 
-[Unsere Offiziere und ihre Ansprechbereiche kennenlernen](Allianz_Offiziere.md)
+[Unsere Offiziere und ihre Ansprechbereiche kennenlernen](../Allianz/Allianz_Offiziere.md)
 
 > **Kurz gesagt:** Sei freundlich, denk mit und gib Bescheid, wenn du länger nicht da bist.
 
@@ -104,12 +104,12 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
 
 ### In den ersten 24 Stunden
 
-- [ ] Die [vollständigen Allianzregeln](Allianz_Regeln.md) lesen.
+- [ ] Die [vollständigen Allianzregeln](../Allianz/Allianz_Regeln.md) lesen.
 - [ ] Einen eigenen Spielernamen festlegen – bitte keinen Namen nach dem Muster **Commander\*\*\*\*** behalten.
 - [ ] Zum **Allianz-Sammelpunkt** umziehen, sofern nichts anderes mit der Führung besprochen ist.
 - [ ] Den Haken **„Transportlastwagen dieses Servers ausschließen“** aktivieren.
 - [ ] Mindestens einen **24-Stunden-Schutzschild** und einen **8-Stunden-Schutzschild** im Inventar bereithalten.
-- [ ] Die Seite [Unsere Offiziere](Allianz_Offiziere.md) öffnen und die passenden Anlaufstellen merken.
+- [ ] Die Seite [Unsere Offiziere](../Allianz/Allianz_Offiziere.md) öffnen und die passenden Anlaufstellen merken.
 - [ ] Die nächsten [Termine](/drachenhalle/termine/) und ihre Eventhinweise prüfen.
 - [ ] Vor Angriffen die aktuelle Rangliste und vor Plünderungen die Servernummer kontrollieren.
 
@@ -117,7 +117,7 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
 
 - [ ] Wenn du ein eigenes Profilbild verwenden möchtest, dem [Profilbild-Tutorial](Profilbild_Tutorial.md) folgen.
 - [ ] Die [Tipps und das Spielwissen](/drachenhalle/docs/tipps/) durchsehen.
-- [ ] Den Tipp zu [Sammelangriffen](../Tipps/Tipp_02_Sammelangriffe.md) lesen, bevor du gemeinsame Angriffe unterstützt.
+- [ ] Den Tipp zu [Sammelangriffen](../Drachenwissen/Tipps/Tipp_02_Sammelangriffe.md) lesen, bevor du gemeinsame Angriffe unterstützt.
 - [ ] Bei Events auf die aktuelle Koordination im Allianzchat achten.
 - [ ] Allianzhilfe geben, wenn Mitspieler Unterstützung anfordern.
 - [ ] Regelmäßig für die priorisierte Allianzforschung spenden – davon profitieren alle.
@@ -138,10 +138,10 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
 
 Mehr dazu findest du hier:
 
-- [Sammelangriffe verstehen](../Tipps/Tipp_02_Sammelangriffe.md)
-- [Soldaten mit Allianzhilfe schneller heilen](../Tipps/Tipp_08_SoldatenSchnellerHeilen.md)
+- [Sammelangriffe verstehen](../Drachenwissen/Tipps/Tipp_02_Sammelangriffe.md)
+- [Soldaten mit Allianzhilfe schneller heilen](../Drachenwissen/Tipps/Tipp_08_SoldatenSchnellerHeilen.md)
 - [Event-Guides öffnen](/drachenhalle/docs/events/)
-- [Unsere Offiziere und ihre Zuständigkeiten ansehen](Allianz_Offiziere.md)
+- [Unsere Offiziere und ihre Zuständigkeiten ansehen](../Allianz/Allianz_Offiziere.md)
 
 > **Für gemeinsame Aktionen:** Erst den aktuellen Plan lesen, dann das passende Team losschicken. Bei Unklarheit kurz nachfragen.
 

@@ -2590,6 +2590,12 @@ h1 {
   margin-inline: auto;
 }
 
+.document-layout.is-hub-overview {
+  max-width: 1180px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-inline: auto;
+}
+
 .document-sidebar {
   position: sticky;
   top: 24px;
@@ -2866,6 +2872,80 @@ h1 {
   background:
     radial-gradient(circle at 92% 18%, rgba(227, 173, 78, 0.22), transparent 28%),
     linear-gradient(135deg, rgba(45, 57, 103, 0.84), rgba(16, 24, 53, 0.96));
+}
+
+.alliance-hub {
+  padding: clamp(30px, 5vw, 62px);
+}
+
+.alliance-hub-heading {
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+
+.alliance-hub-heading h2 {
+  margin: 0;
+  font: 500 clamp(28px, 4vw, 42px)/1.12 Georgia, "Times New Roman", serif;
+}
+
+.alliance-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.alliance-hub-card {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  overflow: hidden;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(145deg, rgba(33, 44, 82, 0.72), rgba(10, 15, 34, 0.9));
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.alliance-hub-card:hover,
+.alliance-hub-card:focus-visible {
+  border-color: var(--line-bright);
+  background:
+    radial-gradient(circle at 92% 12%, rgba(227, 173, 78, 0.15), transparent 34%),
+    linear-gradient(145deg, rgba(39, 52, 96, 0.82), rgba(12, 18, 41, 0.96));
+  transform: translateY(-2px);
+}
+
+.alliance-hub-card > div {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.alliance-hub-card h3 {
+  margin: 0 0 14px;
+  font: 500 27px/1.15 Georgia, "Times New Roman", serif;
+}
+
+.alliance-hub-card p:not(.eyebrow) {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.alliance-hub-card strong {
+  margin-top: auto;
+  color: var(--gold-pale);
+  font-size: 13px;
+}
+
+.alliance-hub-number {
+  position: absolute;
+  right: 16px;
+  bottom: -12px;
+  color: rgba(245, 234, 210, 0.055);
+  font: 700 94px/1 Georgia, "Times New Roman", serif;
 }
 
 .knowledge-card > div {
@@ -3219,6 +3299,12 @@ h1 {
     linear-gradient(135deg, rgba(255, 255, 255, 0.024), transparent 35%),
     rgba(10, 15, 34, 0.72);
   box-shadow: 0 26px 100px rgba(0, 0, 0, 0.22);
+}
+
+.document-article.is-hub-overview {
+  background:
+    radial-gradient(circle at 88% 4%, rgba(227, 173, 78, 0.075), transparent 28%),
+    rgba(10, 15, 34, 0.72);
 }
 
 .document-article.is-hidden-consultation {
@@ -4603,6 +4689,14 @@ footer a {
   .mobile-menu {
     display: block;
     justify-self: end;
+  }
+
+  .alliance-hub-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .alliance-hub-card {
+    min-height: 220px;
   }
 
   .welcome-hero {

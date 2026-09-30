@@ -19,13 +19,15 @@ const topLevelSectionDocuments = publicDocuments.filter(
   (item) => item.section === document.section && !item.parentSlug,
 );
 const activeCollectionSlug = document.parentSlug ?? document.slug;
-const childDocuments = publicDocuments.filter((item) => item.parentSlug === activeCollectionSlug);
+const childDocuments = publicDocuments.filter(
+  (item) => item.parentSlug === activeCollectionSlug && item.section === document.section,
+);
 const sectionDocuments = topLevelSectionDocuments.flatMap((item) =>
   item.slug === activeCollectionSlug ? [item, ...childDocuments] : [item],
 );
-const activeSection = document.kind === "onboarding"
+const activeSection = document.section === "Tutorials"
   ? "tutorials"
-  : document.slug === "allianz" || document.parentSlug === "allianz"
+  : document.section === "Allianz"
     ? "alliance"
     : document.section === "Drachenwissen"
       ? "informationen"
@@ -34,23 +36,29 @@ const overviewUrl = document.hidden
   ? "/drachenhalle/rat/"
   : document.section === "Gestaltung"
     ? "/drachenhalle/docs/styleguides/"
-    : "/drachenhalle/docs/";
+    : document.section === "Tutorials"
+      ? "/drachenhalle/docs/tutorials/"
+      : document.section === "Allianz"
+        ? "/drachenhalle/docs/allianz/"
+        : "/drachenhalle/docs/";
 const overviewLabel = document.hidden
   ? "Allianzrat"
   : document.section === "Gestaltung"
     ? "Styleguides"
-    : "Drachenwissen";
+    : document.section;
 const tipArtOptions = ["Anleitung", "Strategie", "Optimierung"];
 const tipTopicOptions = ["Allianz", "Events", "Kampf", "Truppen", "Aufbau", "Weltkarte"];
 const isTipsOverview = document.slug === "tipps" && childDocuments.length > 0;
 const isEventsOverview = document.slug === "events" && childDocuments.length > 0;
 const isEventAnnouncementsOverview = document.slug === "eventankuendigungen" && childDocuments.length > 0;
 const isAllianceOverview = document.slug === "allianz" && childDocuments.length > 0;
+const isTutorialOverview = document.slug === "tutorials" && childDocuments.length > 0;
+const isCuratedHubOverview = isAllianceOverview || isTutorialOverview;
 const isBriefKnowledgeArticle = ["tip", "event"].includes(document.kind);
 const isOnboarding = document.kind === "onboarding";
 const isOfficerRoster = document.kind === "officers";
 const isResponsibilities = document.kind === "responsibilities";
-const isAllianceDocument = document.slug === "allianz" || document.parentSlug === "allianz";
+const isAllianceDocument = document.section === "Allianz";
 const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument || document.kind === "alliance";
 const tutorialStorageKey = document.tutorialStorageKey ?? `die-${document.slug}-step-v1`;
 const tutorialProgressLabel = document.tutorialProgressLabel ?? "Fortschritt im Einstieg";
@@ -237,14 +245,18 @@ const responsibilities = [
       <main class="document-main" id="main-content">
         <nav class="breadcrumbs" aria-label="Brotkrümelnavigation">
           <a href="/drachenhalle/">Start</a>
-          <span aria-hidden="true">/</span>
-          <a href={overviewUrl}>{overviewLabel}</a>
+          {document.url !== overviewUrl && (
+            <>
+              <span aria-hidden="true">/</span>
+              <a href={overviewUrl}>{overviewLabel}</a>
+            </>
+          )}
           <span aria-hidden="true">/</span>
           <span aria-current="page">{document.title}</span>
         </nav>
 
-        <div class:list={["document-layout", { "is-knowledge-page": document.imageUrl, "is-hidden-document": document.hidden }]}>
-          {!document.hidden && <aside class="document-sidebar">
+        <div class:list={["document-layout", { "is-knowledge-page": document.imageUrl, "is-hidden-document": document.hidden, "is-hub-overview": isCuratedHubOverview }]}>
+          {!document.hidden && !isCuratedHubOverview && <aside class="document-sidebar">
             <p class="eyebrow">{document.section}</p>
             <a class="docs-overview-link" href={overviewUrl}>← {overviewLabel}</a>
             {sectionDocuments.length > 0 && (
@@ -282,7 +294,7 @@ const responsibilities = [
             )}
           </aside>}
 
-          <article class:list={["document-article", { "is-hidden-consultation": document.hidden, "is-onboarding-document": isOnboarding, "is-officer-document": isOfficerRoster, "is-responsibility-document": isResponsibilities }]}>
+          <article class:list={["document-article", { "is-hidden-consultation": document.hidden, "is-onboarding-document": isOnboarding, "is-officer-document": isOfficerRoster, "is-responsibility-document": isResponsibilities, "is-hub-overview": isCuratedHubOverview }]}>
             <header>
               <div class="document-title-row">
                 <div class="document-title-copy">
@@ -315,7 +327,7 @@ const responsibilities = [
                   </div>
                 </dl>
               )}
-          {!document.hidden && document.section !== "Drachenwissen" && (
+          {!document.hidden && !["Drachenwissen", "Allianz", "Tutorials"].includes(document.section) && (
             <div class="document-header-actions">
               <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
                 Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
@@ -404,22 +416,42 @@ const responsibilities = [
               </section>
             )}
             {isAllianceOverview && (
-              <section class="knowledge-children alliance-catalog" aria-labelledby="alliance-children-title">
+              <section class="alliance-hub" aria-labelledby="alliance-children-title">
+                <div class="alliance-hub-heading">
+                  <p class="eyebrow">Orientierung ohne Umwege</p>
+                  <h2 id="alliance-children-title">Was möchtest du nachschlagen?</h2>
+                </div>
+                <div class="alliance-hub-grid">
+                  {childDocuments.map((item, index) => (
+                    <a class="alliance-hub-card" href={item.url}>
+                      <span class="alliance-hub-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                      <div>
+                        <p class="eyebrow">Allianz</p>
+                        <h3>{item.title}</h3>
+                        <p>{item.summary}</p>
+                        <strong>Öffnen →</strong>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
+            {isTutorialOverview && (
+              <section class="knowledge-children alliance-catalog" aria-labelledby="tutorial-children-title">
                 <div class="tip-catalog-heading">
-                  <p class="eyebrow">Allianzwissen</p>
-                  <h2 id="alliance-children-title">Gemeinschaft &amp; Organisation</h2>
-                  <p>Der Einstieg bei uns, unsere verbindlichen Regeln und die Ansprechbereiche unserer Offiziere.</p>
+                  <p class="eyebrow">Schritt für Schritt</p>
+                  <h2 id="tutorial-children-title">Wähle ein Tutorial</h2>
+                  <p>Geführte Abläufe für den Einstieg und wiederkehrende Aufgaben im Spiel.</p>
                 </div>
                 <div class="knowledge-card-list">
                   {childDocuments.map((item) => (
-                    <a class:list={["knowledge-card", { "is-onboarding": item.kind === "onboarding" }]} href={item.url}>
+                    <a class="knowledge-card is-onboarding" href={item.url}>
                       <div>
-                        <span>{item.kind === "onboarding" ? "Drachenwissen · Einstieg" : "Drachenwissen · Allianz"}</span>
+                        <span>Tutorial</span>
                         <h3>{item.title}</h3>
                         <p>{item.summary}</p>
-                        <strong>{item.kind === "onboarding" ? "Tutorial starten →" : "Informationsseite öffnen →"}</strong>
+                        <strong>Tutorial starten →</strong>
                       </div>
-                      {item.imageUrl && <img src={item.imageUrl} alt="" loading="lazy" />}
                     </a>
                   ))}
                 </div>
@@ -469,12 +501,12 @@ const responsibilities = [
                 </div>
               </section>
             )}
-            {isOfficerRoster ? (
+            {isCuratedHubOverview ? null : isOfficerRoster ? (
               <div class="officer-page">
                 <section class="officer-page-intro">
                   <p>
                     Unsere Offiziere unterstützen Anthlan bei der Führung und Organisation der Allianz. Die konkreten
-                    Aufgaben stehen getrennt unter <a href="/drachenhalle/docs/unsere-verantwortlichkeiten/">Unsere Verantwortlichkeiten</a>.
+                    Aufgaben stehen getrennt unter <a href="/drachenhalle/docs/unsere-verantwortlichkeiten/">Unsere Verantwortlichen</a>.
                   </p>
                   <span>Stand: 29. September 2026</span>
                 </section>

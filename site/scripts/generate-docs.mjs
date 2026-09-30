@@ -91,28 +91,35 @@ const baseDocuments = [
     imageSource: "Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png",
   },
   {
-    source: "Drachenwissen/Allianz/README.md",
+    source: "Allianz/README.md",
     slug: "allianz",
     title: "Allianz",
-    section: "Drachenwissen",
-    summary: "Einstieg, Regeln, Offiziere und interne Entwicklung der DIE-Allianz.",
+    section: "Allianz",
+    summary: "Regeln, Offiziere und Zuständigkeiten der DIE-Allianz auf einen Blick.",
   },
   {
-    source: "Drachenwissen/Allianz/Allianz_Einstieg.md",
+    source: "Tutorials/README.md",
+    slug: "tutorials",
+    title: "Tutorials",
+    section: "Tutorials",
+    summary: "Schritt-für-Schritt-Anleitungen für wichtige Abläufe in der Drachenhalle.",
+  },
+  {
+    source: "Tutorials/Allianz_Einstieg.md",
     slug: "dein-einstieg-bei-uns",
     title: "Dein Einstieg bei uns",
-    section: "Drachenwissen",
+    section: "Tutorials",
     summary: "Der Schritt-für-Schritt-Einstieg für neue Mitglieder der DIE-Allianz.",
-    parentSlug: "allianz",
+    parentSlug: "tutorials",
     kind: "onboarding",
   },
   {
-    source: "Drachenwissen/Allianz/Profilbild_Tutorial.md",
+    source: "Tutorials/Profilbild_Tutorial.md",
     slug: "profilbild-im-spiel",
     title: "Profilbild aus der Galerie im Spiel verwenden",
-    section: "Drachenwissen",
+    section: "Tutorials",
     summary: "Vom Galerie-Download über den Bildausschnitt bis zur Prüfung des eigenen Custom-Avatars.",
-    parentSlug: "allianz",
+    parentSlug: "tutorials",
     kind: "onboarding",
     tutorialStorageKey: "die-profilbild-tutorial-step-v1",
     tutorialProgressLabel: "Fortschritt im Profilbild-Tutorial",
@@ -134,29 +141,29 @@ const baseDocuments = [
     ],
   },
   {
-    source: "Drachenwissen/Allianz/Allianz_Regeln.md",
+    source: "Allianz/Allianz_Regeln.md",
     slug: "allianzregeln",
-    title: "Unsere Allianzregeln",
-    section: "Drachenwissen",
+    title: "Unsere Regeln",
+    section: "Allianz",
     summary: "Verbindliche Regeln zu NAP10, erlaubten Angriffen, Plündern und dem Umgang mit Verstößen.",
     parentSlug: "allianz",
     kind: "alliance",
-    imageSource: "Drachenwissen/Allianz/Allianz_Regeln.png",
+    imageSource: "Allianz/Allianz_Regeln.png",
   },
   {
-    source: "Drachenwissen/Allianz/Allianz_Offiziere.md",
+    source: "Allianz/Allianz_Offiziere.md",
     slug: "unsere-offiziere",
     title: "Unsere Offiziere",
-    section: "Drachenwissen",
+    section: "Allianz",
     summary: "Die aktuellen R4 mit Charakterdarstellung und kurzer Vorstellung.",
     parentSlug: "allianz",
     kind: "officers",
   },
   {
-    source: "Drachenwissen/Allianz/Allianz_Verantwortlichkeiten.md",
+    source: "Allianz/Allianz_Verantwortlichkeiten.md",
     slug: "unsere-verantwortlichkeiten",
-    title: "Unsere Verantwortlichkeiten",
-    section: "Drachenwissen",
+    title: "Unsere Verantwortlichen",
+    section: "Allianz",
     summary: "Feste Aufgabenbereiche, aktuelle Zuordnung und ein interaktives Zuordnungsspiel.",
     parentSlug: "allianz",
     kind: "responsibilities",
@@ -425,6 +432,8 @@ const parentDocuments = baseDocuments
   .sort((left, right) => right.directory.length - left.directory.length);
 
 const sectionForSource = (source) => {
+  if (source.startsWith("Allianz/")) return "Allianz";
+  if (source.startsWith("Tutorials/")) return "Tutorials";
   if (source.startsWith("Drachenwissen/")) return "Drachenwissen";
   if (source.startsWith("Styleguides/")) return "Gestaltung";
   if (source.startsWith("Galerie/")) return "Bildarchiv";
@@ -483,6 +492,8 @@ const documentUrlBySource = new Map(documents.map((document) => [document.source
 const sectionDescriptions = {
   Projekt: "Orientierung, Regeln und Hintergrund zum Archiv.",
   Drachenwissen: "Tipps, Strategien und Informationen für den Spiel- und Allianzalltag.",
+  Tutorials: "Schritt-für-Schritt-Anleitungen für wichtige Abläufe.",
+  Allianz: "Regeln, Offiziere und Zuständigkeiten der DIE-Allianz.",
   Gestaltung: "Verbindliche Regeln für Bilder und Texte.",
   Bildarchiv: "Struktur und Pflege der visuellen Inhalte.",
 };
@@ -682,7 +693,7 @@ for (const document of documents) {
   });
 }
 
-const sectionOrder = ["Projekt", "Drachenwissen", "Gestaltung", "Bildarchiv"];
+const sectionOrder = ["Projekt", "Tutorials", "Drachenwissen", "Allianz", "Gestaltung", "Bildarchiv"];
 const sections = sectionOrder.map((name) => ({
   name,
   description: sectionDescriptions[name],
