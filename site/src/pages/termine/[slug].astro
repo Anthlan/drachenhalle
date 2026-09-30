@@ -1,0 +1,160 @@
+---
+import "../../styles/global.css";
+import ImageActionIcon from "../../components/ImageActionIcon.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import eventsData from "../../data/events.generated.json";
+
+export const getStaticPaths = () => eventsData.items.map((event) => ({
+  params: { slug: event.slug },
+  props: { event },
+}));
+
+const { event } = Astro.props;
+const date = new Date(`${event.date}T12:00:00`);
+const longDate = new Intl.DateTimeFormat("de-DE", {
+  weekday: "long",
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+}).format(date);
+const endDateLabel = event.endDate && event.endDate !== event.date
+  ? new Intl.DateTimeFormat("de-DE", {
+      weekday: "long",
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    }).format(new Date(`${event.endDate}T12:00:00`))
+  : null;
+const timeLabel = event.time
+  ? event.end && endDateLabel
+    ? `${event.time} Uhr – ${endDateLabel}, ${event.end} Uhr`
+    : `${event.time}${event.end ? `–${event.end}` : ""} Uhr`
+  : "Ganztägig";
+const eventIndex = eventsData.items.findIndex((item) => item.slug === event.slug);
+const nextEvent = eventsData.items.slice(eventIndex + 1).find((item) => item.date >= event.date) ?? null;
+const nextEventDateLabel = nextEvent
+  ? new Intl.DateTimeFormat("de-DE", { day: "2-digit", month: "long", year: "numeric" })
+      .format(new Date(`${nextEvent.date}T12:00:00`))
+  : null;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={event.summary} />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>{event.title} · Termine · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="events" />
+
+      <main class="event-detail-main" id="main-content">
+        <nav class="event-detail-breadcrumb" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/termine/">← Alle Termine</a>
+        </nav>
+
+        <article class="event-detail-article">
+          <header class="event-detail-hero">
+            <div class="event-detail-heading">
+              <div>
+                <p class="eyebrow">{event.category}</p>
+                <h1>{event.title}</h1>
+              </div>
+              <button
+                type="button"
+                class="tip-article-share event-share-button"
+                data-share-page
+                data-share-url={event.detailUrl}
+                aria-label={`${event.title} teilen`}
+                title="Termin teilen"
+              >
+                <ImageActionIcon type="share" />
+              </button>
+            </div>
+            <p>{event.summary}</p>
+          </header>
+
+          <section class="event-detail-facts" aria-label="Termindaten">
+            <div>
+              <span>Datum</span>
+              <strong>{longDate}</strong>
+            </div>
+            <div>
+              <span>Zeit</span>
+              <strong>{timeLabel}</strong>
+            </div>
+            {event.location && (
+              <div>
+                <span>Ort</span>
+                <strong>{event.location}</strong>
+              </div>
+            )}
+            <a href={event.calendarUrl} download>
+              In Kalender übernehmen <span aria-hidden="true">↓</span>
+            </a>
+          </section>
+
+          <div class="event-detail-layout">
+            <section class="event-detail-copy" aria-labelledby="event-information-title">
+              <p class="eyebrow">Gut vorbereitet</p>
+              <h2 id="event-information-title">Informationen zum Termin</h2>
+              <div class="markdown-content" set:html={event.html} />
+            </section>
+
+            {event.imageUrl && (
+              <figure class="event-detail-visual">
+                <img src={event.imageUrl} alt="" loading="lazy" />
+              </figure>
+            )}
+          </div>
+
+          {event.related?.length > 0 && (
+            <section class="event-related" aria-labelledby="event-related-title">
+              <header class="content-section-heading">
+                <div>
+                  <p class="eyebrow">Direkt weiterlesen</p>
+                  <h2 id="event-related-title">Passend zu diesem Termin</h2>
+                </div>
+                <p>Tipps, ausführliche Informationen und fertige Eventankündigungen an einem Ort.</p>
+              </header>
+              <div class="event-related-grid">
+                {event.related.map((document) => (
+                  <a class="event-related-card" href={document.url}>
+                    {document.imageUrl && <img src={document.imageUrl} alt="" loading="lazy" />}
+                    <div>
+                      <span>{document.label}</span>
+                      <h3>{document.title}</h3>
+                      <p>{document.summary}</p>
+                      <strong>Öffnen →</strong>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {nextEvent && (
+            <aside class="event-next">
+              <span>Nächster Termin</span>
+              <a href={nextEvent.detailUrl}>{nextEvent.title} · {nextEventDateLabel} →</a>
+            </aside>
+          )}
+        </article>
+      </main>
+
+      <p class="share-feedback" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></p>
+
+      <SiteFooter />
+    </div>
+
+    <script>
+      import { initializeImageActions } from "../../scripts/image-actions";
+
+      initializeImageActions();
+    </script>
+  </body>
+</html>

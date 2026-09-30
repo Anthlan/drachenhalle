@@ -2,9 +2,10 @@
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import EventCard from "../components/EventCard.astro";
 import newsData from "../data/news.generated.json";
 import eventsData from "../data/events.generated.json";
+import docsData from "../data/docs.generated.json";
+import galleryData from "../data/gallery.generated.json";
 import changelog from "../data/changelog.generated.json";
 
 const formatDate = (value) => value
@@ -13,6 +14,27 @@ const formatDate = (value) => value
 
 const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Berlin" }).format(new Date());
 const upcomingEvents = eventsData.items.filter((event) => event.date >= today).slice(0, 3);
+const nextEvent = upcomingEvents[0] ?? null;
+const laterEvents = upcomingEvents.slice(1);
+const featuredNews = newsData.items[0] ?? null;
+const secondaryNews = newsData.items.slice(1, 3);
+const featuredNewsDocument = featuredNews
+  ? docsData.items.find((document) => !document.hidden && featuredNews.html.includes(`href="${document.url}"`))
+  : null;
+const latestGalleryItems = galleryData.items
+  .filter((item) => ["Chatbild", "Reaktionsbild", "Avatar", "Charaktermodell"].includes(item.category))
+  .slice(0, 4);
+const fallbackKnowledge = docsData.items.filter((document) => document.kind === "tip" && !document.hidden).reverse();
+const upcomingKnowledge = upcomingEvents.flatMap((event) => event.related ?? []);
+const knowledgeCandidates = upcomingKnowledge.length > 0 ? upcomingKnowledge : fallbackKnowledge;
+const featuredKnowledge = knowledgeCandidates
+  .filter((document, index, items) => items.findIndex((candidate) => candidate.slug === document.slug) === index)
+  .slice(0, 3);
+
+const nextEventDate = nextEvent ? new Date(`${nextEvent.date}T12:00:00`) : null;
+const nextEventDay = nextEventDate ? new Intl.DateTimeFormat("de-DE", { day: "2-digit" }).format(nextEventDate) : null;
+const nextEventMonth = nextEventDate ? new Intl.DateTimeFormat("de-DE", { month: "short" }).format(nextEventDate).replace(".", "") : null;
+const eventTimeLabel = (event) => event.time ? `${event.time}${event.end ? `–${event.end}` : ""} Uhr` : "Ganztägig";
 
 const relativeLabel = (date) => {
   const difference = Math.round((new Date(`${date}T12:00:00Z`) - new Date(`${today}T12:00:00Z`)) / 86400000);
@@ -59,6 +81,50 @@ const relativeLabel = (date) => {
           </figure>
         </section>
 
+        <section class="home-today" aria-labelledby="home-today-title">
+          <header class="content-section-heading">
+            <div>
+              <p class="eyebrow">Jetzt wichtig</p>
+              <h2 id="home-today-title">Heute in der Drachenhalle</h2>
+            </div>
+            <p><a class="section-text-link" href="/drachenhalle/termine/">Alle Termine ansehen →</a></p>
+          </header>
+
+          {nextEvent ? (
+            <div class="home-event-layout">
+              <article class="home-event-feature">
+                <div class="home-event-date" aria-hidden="true">
+                  {relativeLabel(nextEvent.date) && <span>{relativeLabel(nextEvent.date)}</span>}
+                  <strong>{nextEventDay}</strong>
+                  <small>{nextEventMonth}</small>
+                </div>
+                <div class="home-event-copy">
+                  <span>{nextEvent.category} · {eventTimeLabel(nextEvent)}</span>
+                  <h3>{nextEvent.title}</h3>
+                  <p>{nextEvent.summary}</p>
+                  <div>
+                    <a href={nextEvent.detailUrl}>Termin ansehen →</a>
+                    <a href={nextEvent.calendarUrl} download>Kalender ↓</a>
+                  </div>
+                </div>
+              </article>
+              {laterEvents.length > 0 && (
+                <div class="home-event-later" aria-label="Weitere kommende Termine">
+                  {laterEvents.map((event) => (
+                    <a href={event.detailUrl}>
+                      <time datetime={event.date}>{formatDate(`${event.date}T12:00:00+02:00`)}</time>
+                      <strong>{event.title}</strong>
+                      <span>{eventTimeLabel(event)} · Details →</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            <p class="events-empty">Aktuell sind keine kommenden Events eingetragen.</p>
+          )}
+        </section>
+
         <section class="news-section" id="neuigkeiten" aria-labelledby="news-list-title">
           <header class="content-section-heading">
             <div>
@@ -68,76 +134,88 @@ const relativeLabel = (date) => {
             <p>Wichtige Meldungen, neue Inhalte und Hinweise aus der Drachenhalle.</p>
           </header>
 
-          {newsData.items.length > 0 ? (
-            <div class="news-card-grid">
-              {newsData.items.map((item, index) => (
-                <a class:list={["news-card", { "is-featured": item.featured && index === 0 }]} href={item.url}>
+          {featuredNews ? (
+            <div class="home-news-layout">
+              <a class="home-news-feature" href={featuredNews.url}>
+                {featuredNewsDocument?.imageUrl && (
+                  <img src={featuredNewsDocument.imageUrl} alt="" loading="lazy" />
+                )}
+                <div>
                   <div class="news-card-meta">
-                    <span>{item.category}</span>
-                    <time datetime={item.date}>{formatDate(`${item.date}T12:00:00+02:00`)}</time>
+                    <span>{featuredNews.category}</span>
+                    <time datetime={featuredNews.date}>{formatDate(`${featuredNews.date}T12:00:00+02:00`)}</time>
                   </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.summary}</p>
+                  <h3>{featuredNews.title}</h3>
+                  <p>{featuredNews.summary}</p>
                   <strong>Weiterlesen →</strong>
-                </a>
-              ))}
+                </div>
+              </a>
+              {secondaryNews.length > 0 && (
+                <div class="home-news-secondary">
+                  {secondaryNews.map((item) => (
+                    <a href={item.url}>
+                      <div class="news-card-meta">
+                        <span>{item.category}</span>
+                        <time datetime={item.date}>{formatDate(`${item.date}T12:00:00+02:00`)}</time>
+                      </div>
+                      <h3>{item.title}</h3>
+                      <p>{item.summary}</p>
+                      <strong>Weiterlesen →</strong>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           ) : (
             <p class="news-empty">Noch sind keine Neuigkeiten veröffentlicht.</p>
           )}
         </section>
 
-        <section class="events-preview" aria-labelledby="events-preview-title">
+        <section class="home-gallery" aria-labelledby="home-gallery-title">
           <header class="content-section-heading">
             <div>
-              <p class="eyebrow">Allianzplanung</p>
-              <h2 id="events-preview-title">Nächste Termine</h2>
+              <p class="eyebrow">Frisch aus der Bildsammlung</p>
+              <h2 id="home-gallery-title">Neu in der Galerie</h2>
             </div>
-            <p><a class="section-text-link" href="/drachenhalle/termine/">Alle Termine ansehen →</a></p>
+            <p><a class="section-text-link" href="/drachenhalle/galerie/">Alle Bilder entdecken →</a></p>
           </header>
-
-          {upcomingEvents.length > 0 ? (
-            <div class="event-list">
-              {upcomingEvents.map((event) => (
-                <EventCard event={event} compact relativeLabel={relativeLabel(event.date)} />
-              ))}
-            </div>
-          ) : (
-            <p class="events-empty">Aktuell sind keine kommenden Events eingetragen.</p>
-          )}
-        </section>
-
-        <section class="changelog-section" id="letztes-update" aria-labelledby="changelog-title">
-          <header class="content-section-heading">
-            <div>
-              <p class="eyebrow">Automatisch aus Git</p>
-              <h2 id="changelog-title">Letztes Update</h2>
-            </div>
-            <p>Dieser Bereich wird bei jeder Veröffentlichung aus dem neuesten Commit erzeugt.</p>
-          </header>
-
-          <div class="changelog-card">
-            <div class="changelog-summary">
-              <time datetime={changelog.date ?? undefined}>{formatDate(changelog.date)}</time>
-              <h3>{changelog.title}</h3>
-            </div>
-            {changelog.available && changelog.groups.length > 0 ? (
-              <div class="changelog-groups">
-                {changelog.groups.map((group) => (
-                  <section>
-                    <h4>{group.name}</h4>
-                    <ul>
-                      {group.items.map((item) => <li>{item}</li>)}
-                    </ul>
-                  </section>
-                ))}
-              </div>
-            ) : (
-              <p class="changelog-empty">Für diesen Stand konnten keine sichtbaren Änderungen ermittelt werden.</p>
-            )}
+          <div class="home-gallery-grid">
+            {latestGalleryItems.map((item) => (
+              <a href={`/drachenhalle/galerie/#bild-${item.id}`}>
+                <img src={item.thumbnailUrl} alt={item.title} loading="lazy" />
+                <span>{item.category}</span>
+                <strong>{item.title}</strong>
+              </a>
+            ))}
           </div>
         </section>
 
+        <section class="home-knowledge" aria-labelledby="home-knowledge-title">
+          <header class="content-section-heading">
+            <div>
+              <p class="eyebrow">Passend zu den nächsten Einsätzen</p>
+              <h2 id="home-knowledge-title">Drachenwissen für heute</h2>
+            </div>
+            <p>Weiterführende Tipps und Informationen, die gerade besonders hilfreich sind.</p>
+          </header>
+          <div class="home-knowledge-grid">
+            {featuredKnowledge.map((document) => (
+              <a href={document.url}>
+                {document.imageUrl && <img src={document.imageUrl} alt="" loading="lazy" />}
+                <div>
+                  <span>{document.label ?? "Drachenwissen"}</span>
+                  <h3>{document.title}</h3>
+                  <p>{document.summary}</p>
+                  <strong>Öffnen →</strong>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <p class="home-update-note">
+          Stand der Drachenhalle: <time datetime={changelog.date ?? undefined}>{formatDate(changelog.date)}</time>
+        </p>
       </main>
 
       <SiteFooter />

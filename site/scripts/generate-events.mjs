@@ -8,6 +8,7 @@ const siteDirectory = path.resolve(scriptDirectory, "..");
 const repositoryDirectory = path.resolve(siteDirectory, "..");
 const eventsDirectory = path.join(repositoryDirectory, "Termine");
 const outputPath = path.join(siteDirectory, "src", "data", "events.generated.json");
+const documentsPath = path.join(siteDirectory, "src", "data", "docs.generated.json");
 const calendarDirectory = path.join(siteDirectory, "public", "generated", "events");
 const repositoryUrl = "https://github.com/Anthlan/drachenhalle";
 
@@ -33,6 +34,41 @@ const parseValue = (value) => {
     return trimmed.slice(1, -1);
   }
   return trimmed;
+};
+
+const parseList = (value) => String(value ?? "")
+  .split(",")
+  .map((item) => item.trim())
+  .filter(Boolean);
+
+const automaticRelationships = [
+  {
+    matches: (key) => key.includes("allianz-hinterhalt"),
+    slugs: ["tipp-07-allianz-hinterhalt", "eventankuendigung-hinterhalt"],
+  },
+  {
+    matches: (key) => key.includes("raubzug"),
+    slugs: ["eventankuendigung-raubzugkaempfe"],
+  },
+  {
+    matches: (key) => key.includes("zombie-belagerung"),
+    slugs: ["eventankuendigung-zombie-belagerung"],
+  },
+  {
+    matches: (key) => key.includes("hauptstadteroberung"),
+    slugs: ["tipp-13-expeditionswahnsinn-hauptstadteroberung"],
+  },
+  {
+    matches: (key) => key.includes("gefechtsvorbereitung") || key.includes("flugbesatzung"),
+    slugs: ["event-01-gefechtsvorbereitung-flugbesatzung"],
+  },
+];
+
+const relationshipLabel = (document) => {
+  if (document.parentSlug === "eventankuendigungen") return "Eventankündigung";
+  if (document.kind === "tip") return "Tipp";
+  if (document.kind === "event") return "Event-Guide";
+  return document.section ?? "Drachenwissen";
 };
 
 const parseDocument = (source, fileName) => {
@@ -101,6 +137,13 @@ const createCalendar = ({ title, date, time, end, endDate, location, summary, sl
 await mkdir(path.dirname(outputPath), { recursive: true });
 await mkdir(calendarDirectory, { recursive: true });
 
+const documentsData = JSON.parse(await readFile(documentsPath, "utf8"));
+const documentsBySlug = new Map(
+  documentsData.items
+    .filter((document) => !document.hidden)
+    .map((document) => [document.slug, document]),
+);
+
 const fileNames = (await readdir(eventsDirectory, { withFileTypes: true }))
   .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".md") && entry.name.toLowerCase() !== "readme.md")
   .map((entry) => entry.name);
@@ -130,6 +173,29 @@ for (const fileName of fileNames) {
   const summary = plainText(String(metadata.summary ?? firstParagraph));
   const calendarName = `${slug}.ics`;
   const sourceRelativePath = `Termine/${fileName}`;
+  const eventKey = slugify(title);
+  const automaticRelatedSlugs = automaticRelationships
+    .filter((relationship) => relationship.matches(eventKey))
+    .flatMap((relationship) => relationship.slugs);
+  const configuredRelatedSlugs = parseList(metadata.related);
+  const relatedSlugs = [...new Set([...configuredRelatedSlugs, ...automaticRelatedSlugs])];
+  const missingRelatedSlugs = configuredRelatedSlugs.filter((relatedSlug) => !documentsBySlug.has(relatedSlug));
+
+  if (missingRelatedSlugs.length > 0) {
+    throw new Error(`${fileName}: Unbekannte related-Einträge: ${missingRelatedSlugs.join(", ")}`);
+  }
+
+  const related = relatedSlugs
+    .map((relatedSlug) => documentsBySlug.get(relatedSlug))
+    .filter(Boolean)
+    .map((document) => ({
+      slug: document.slug,
+      title: document.title,
+      summary: document.summary,
+      url: document.url,
+      label: relationshipLabel(document),
+      imageUrl: document.imageUrl ?? null,
+    }));
 
   await writeFile(
     path.join(calendarDirectory, calendarName),
@@ -149,6 +215,9 @@ for (const fileName of fileNames) {
     location: String(metadata.location ?? "").trim() || null,
     summary,
     html: await marked.parse(markdown.replaceAll("DlE", "DIE").replaceAll("dle", "die")),
+    detailUrl: `/drachenhalle/termine/${slug}/`,
+    related,
+    imageUrl: related.find((document) => document.imageUrl)?.imageUrl ?? null,
     calendarUrl: `/drachenhalle/generated/events/${calendarName}`,
     repositoryUrl: `${repositoryUrl}/blob/main/${sourceRelativePath.split("/").map(encodeURIComponent).join("/")}`,
   });

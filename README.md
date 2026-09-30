@@ -14,7 +14,7 @@ Jeder Fachordner enthält eine eigene `README.md` mit seinem Zweck, seiner vorge
 | Ordner | Inhalt |
 | --- | --- |
 | [`Aktuelles`](Aktuelles/README.md) | Manuell gepflegte Neuigkeiten für die Startseite |
-| [`Termine`](Termine/README.md) | Kommende und vergangene Allianz-Events mit Kalender-Download |
+| [`Termine`](Termine/README.md) | Kommende und vergangene Allianz-Events mit Detailseite, passenden Wissensinhalten und Kalender-Download |
 | [`Galerie`](Galerie/README.md) | Chatbilder, Reaktionsbilder, Avatare und Charaktermodelle |
 | [`Drachenwissen`](Drachenwissen/README.md) | Tipps, Strategien und Informationen für den Spiel- und Allianzalltag |
 | [`Tutorials`](Tutorials/README.md) | Geführte Schritt-für-Schritt-Anleitungen für wichtige Abläufe |

@@ -62,13 +62,13 @@ const relativeLabel = (date) => {
 
           {upcomingEvents.length > 0 ? (
             <>
-              <div class="event-list">
+              <div class="event-card-grid">
                 {visibleUpcomingEvents.map((event) => <EventCard event={event} relativeLabel={relativeLabel(event.date)} />)}
               </div>
               {remainingUpcomingEvents.length > 0 && (
                 <details class="more-events">
                   <summary>{remainingUpcomingEvents.length} weitere Termine anzeigen</summary>
-                  <div class="event-list">
+                  <div class="event-card-grid">
                     {remainingUpcomingEvents.map((event) => <EventCard event={event} relativeLabel={relativeLabel(event.date)} />)}
                   </div>
                 </details>
@@ -90,7 +90,7 @@ const relativeLabel = (date) => {
             </header>
             <details class="more-events">
               <summary>{pastEvents.length} vergangene {pastEvents.length === 1 ? "Veranstaltung" : "Veranstaltungen"} anzeigen</summary>
-              <div class="event-list">
+              <div class="event-card-grid">
                 {pastEvents.map((event) => <EventCard event={event} />)}
               </div>
             </details>

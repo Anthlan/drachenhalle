@@ -6,6 +6,7 @@ const calendarEvents = events.map((event) => ({
   date: event.date,
   time: event.time,
   category: event.category,
+  detailUrl: event.detailUrl,
 }));
 ---
 
@@ -88,7 +89,7 @@ const calendarEvents = events.map((event) => ({
         for (const event of dayEvents) {
           const link = document.createElement("a");
           link.className = "calendar-event";
-          link.href = `#event-${event.slug}`;
+          link.href = event.detailUrl;
           link.setAttribute("aria-label", `${event.title}${event.time ? ` um ${event.time} Uhr` : ""}`);
           link.title = event.title;
 
