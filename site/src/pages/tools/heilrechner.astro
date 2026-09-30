@@ -32,9 +32,8 @@ import SiteHeader from "../../components/SiteHeader.astro";
             <p class="eyebrow">Allianzhilfe richtig ausnutzen</p>
             <h1>Heilrechner</h1>
             <p>
-              Berechne zuerst, wie viel Heilzeit deine aktiven Helfer sofort abziehen können.
-              Mit einer kurzen persönlichen Kalibrierung ermittelst du anschließend die passende
-              Soldatenzahl für genau dein Profil.
+              Berechne für T1 bis T10, wie viele Soldaten deine aktiven Helfer sofort heilen können.
+              Für gemischte Gruppen steht weiterhin eine persönliche Kalibrierung bereit.
             </p>
           </div>
           <div class="tool-hero-seal" aria-hidden="true">✚</div>
@@ -45,26 +44,25 @@ import SiteHeader from "../../components/SiteHeader.astro";
             <div class="healing-form-intro">
               <p class="eyebrow">Schritt 1</p>
               <h2 id="healing-form-title">Deine Allianzhilfe</h2>
-              <p>Die Beispielwerte stammen aus Tipp 8. Ersetze sie durch deine aktuellen Buffwerte.</p>
+              <p>Trage die Werte so ein, wie sie in deinen Kampfwerten angezeigt werden.</p>
+              <button
+                class="healing-help-trigger"
+                type="button"
+                aria-label="Anleitung: Wo finde ich die Werte?"
+                aria-haspopup="dialog"
+                aria-controls="healing-help-dialog"
+                title="Wo finde ich die Werte?"
+                data-healing-help-open
+              >?</button>
             </div>
 
             <fieldset>
-              <legend>Hilfszeit je Unterstützung</legend>
-              <div class="healing-field-grid is-time">
-                <label>
-                  <span>Minuten</span>
-                  <input name="helpMinutes" type="number" min="0" max="59" step="1" value="12" inputmode="numeric" />
-                </label>
-                <label>
-                  <span>Sekunden</span>
-                  <input name="helpSeconds" type="number" min="0" max="59" step="1" value="22" inputmode="numeric" />
-                </label>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend>Verfügbare Hilfen</legend>
+              <legend>Hilfen &amp; Reserve</legend>
               <div class="healing-field-grid">
+                <label>
+                  <span>Hilfszeit (Sekunden)</span>
+                  <input name="helpSeconds" type="number" min="1" max="999999" step="1" value="742" inputmode="numeric" />
+                </label>
                 <label>
                   <span>Persönliches Hilfslimit</span>
                   <input name="helpLimit" type="number" min="1" max="100" step="1" value="25" inputmode="numeric" />
@@ -85,29 +83,80 @@ import SiteHeader from "../../components/SiteHeader.astro";
               </div>
             </fieldset>
 
-            <fieldset class="healing-calibration">
-              <legend>Persönliche Kalibrierung · optional</legend>
-              <p class="healing-field-help">
-                Wähle im Krankenhaus eine einheitliche Truppengruppe und trage Anzahl sowie angezeigte
-                Heilzeit ein. Ohne diese Werte berechnet das Tool nur dein sicheres Zeitfenster.
-              </p>
-              <div class="healing-field-grid is-calibration">
-                <label>
-                  <span>Ausgewählte Soldaten</span>
-                  <input name="calibrationSoldiers" type="number" min="1" max="99999999" step="1" inputmode="numeric" placeholder="z. B. 40" />
+            <fieldset>
+              <legend>Berechnungsart</legend>
+              <div class="healing-method-grid">
+                <label class="healing-method-option">
+                  <input type="radio" name="calculationMode" value="tier" checked />
+                  <span>
+                    <strong>Nach Truppenstufe</strong>
+                    <small>T5–T9 gemessen, äußere Stufen hochgerechnet</small>
+                  </span>
                 </label>
-                <label>
-                  <span>Heilzeit · Stunden</span>
-                  <input name="calibrationHours" type="number" min="0" max="999" step="1" inputmode="numeric" placeholder="0" />
+                <label class="healing-method-option">
+                  <input type="radio" name="calculationMode" value="calibration" />
+                  <span>
+                    <strong>Eigene Kalibrierung</strong>
+                    <small>Für andere Stufen oder gemischte Truppen</small>
+                  </span>
                 </label>
-                <label>
-                  <span>Heilzeit · Minuten</span>
-                  <input name="calibrationMinutes" type="number" min="0" max="59" step="1" inputmode="numeric" placeholder="z. B. 30" />
-                </label>
-                <label>
-                  <span>Heilzeit · Sekunden</span>
-                  <input name="calibrationSeconds" type="number" min="0" max="59" step="1" inputmode="numeric" placeholder="0" />
-                </label>
+              </div>
+
+              <div class="healing-mode-panel" data-healing-mode-panel="tier">
+                <div class="healing-field-grid is-tier">
+                  <label>
+                    <span>Truppenstufe</span>
+                    <select name="troopTier">
+                      <option value="t1">T1 · 20 Sekunden (hochgerechnet)</option>
+                      <option value="t2">T2 · 30 Sekunden (hochgerechnet)</option>
+                      <option value="t3">T3 · 40 Sekunden (hochgerechnet)</option>
+                      <option value="t4">T4 · 50 Sekunden (hochgerechnet)</option>
+                      <option value="t5">T5 · 60 Sekunden</option>
+                      <option value="t6">T6 · 70 Sekunden</option>
+                      <option value="t7">T7 · 80 Sekunden</option>
+                      <option value="t8" selected>T8 · 90 Sekunden</option>
+                      <option value="t9">T9 · 100 Sekunden</option>
+                      <option value="t10">T10 · 110 Sekunden (hochgerechnet)</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Heilungsgeschwindigkeit (%)</span>
+                    <input name="healingSpeed" type="number" min="0" max="9999" step="0.01" value="100.90" inputmode="decimal" />
+                  </label>
+                  <div class="healing-known-value">
+                    <span>Grundheilzeiten je Soldat</span>
+                    <strong>T1: 20 · T2: 30 · … · T9: 100 · T10: 110 Sekunden</strong>
+                    <small>Gemessen: T5–T9 · Hochgerechnet: T1–T4 und T10</small>
+                  </div>
+                </div>
+                <p class="healing-field-help">
+                  Der angezeigte Prozentwert wird als Bonus auf die Grundgeschwindigkeit gerechnet.
+                </p>
+              </div>
+
+              <div class="healing-mode-panel" data-healing-mode-panel="calibration" hidden>
+                <p class="healing-field-help">
+                  Wähle im Krankenhaus eine einheitliche Truppengruppe und trage Anzahl sowie die
+                  dort angezeigte Heilzeit ein. Deine aktuellen Boni sind darin bereits enthalten.
+                </p>
+                <div class="healing-field-grid is-calibration">
+                  <label>
+                    <span>Ausgewählte Soldaten</span>
+                    <input name="calibrationSoldiers" type="number" min="1" max="99999999" step="1" inputmode="numeric" placeholder="z. B. 100" />
+                  </label>
+                  <label>
+                    <span>Heilzeit · Stunden</span>
+                    <input name="calibrationHours" type="number" min="0" max="999" step="1" inputmode="numeric" placeholder="1" />
+                  </label>
+                  <label>
+                    <span>Heilzeit · Minuten</span>
+                    <input name="calibrationMinutes" type="number" min="0" max="59" step="1" inputmode="numeric" placeholder="14" />
+                  </label>
+                  <label>
+                    <span>Heilzeit · Sekunden</span>
+                    <input name="calibrationSeconds" type="number" min="0" max="59" step="1" inputmode="numeric" placeholder="40" />
+                  </label>
+                </div>
               </div>
             </fieldset>
 
@@ -144,7 +193,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
         <section class="tool-reference" aria-labelledby="healing-reference-title">
           <header>
             <p class="eyebrow">Grundlage & Genauigkeit</p>
-            <h2 id="healing-reference-title">Warum die Kalibrierung wichtig ist</h2>
+            <h2 id="healing-reference-title">Zwei Wege zur passenden Soldatenzahl</h2>
           </header>
           <div class="tool-reference-grid">
             <article>
@@ -163,10 +212,21 @@ import SiteHeader from "../../components/SiteHeader.astro";
             <article>
               <span aria-hidden="true">⏱️</span>
               <div>
-                <h3>Dein Profil ist der Maßstab</h3>
+                <h3>Basiswerte für T1 bis T10</h3>
                 <p>
-                  Truppenstufe, Zusammensetzung und persönliche Boni beeinflussen die Heilzeit.
-                  Die Soldatenzahl gilt deshalb nur für dieselbe Auswahl wie bei der Kalibrierung.
+                  Mehrere Messungen ergeben eine saubere Staffelung von 60 Sekunden für T5 bis
+                  100 Sekunden für T9. Daraus werden T1 bis T4 und T10 in Zehn-Sekunden-Schritten
+                  hochgerechnet; der T6-Wert wurde zusätzlich unabhängig bestätigt.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span aria-hidden="true">🧪</span>
+              <div>
+                <h3>Andere Truppen kalibrieren</h3>
+                <p>
+                  Solange weitere Basiswerte fehlen, übersetzt eine eigene Messung das sichere
+                  Zeitfenster für jede andere Stufe oder Truppenzusammensetzung.
                 </p>
               </div>
             </article>
@@ -177,6 +237,39 @@ import SiteHeader from "../../components/SiteHeader.astro";
             Gebäuden, Überlebenden oder Allianz-Technologie können das Ergebnis verändern.
           </p>
         </section>
+
+        <dialog class="healing-help-dialog" id="healing-help-dialog" aria-labelledby="healing-help-title">
+          <div class="healing-help-content">
+            <header class="healing-help-heading">
+              <div>
+                <p class="eyebrow">Werte im Spiel finden</p>
+                <h2 id="healing-help-title">Hilfszeit und Heilungsgeschwindigkeit</h2>
+              </div>
+              <button type="button" class="healing-help-close" aria-label="Anleitung schließen" title="Schließen" data-healing-help-close>×</button>
+            </header>
+
+            <ol class="healing-help-steps">
+              <li>
+                <figure>
+                  <img src="/drachenhalle/tutorial/heilrechner/01-basis-buff.png" alt="Eigene Basis mit markiertem Schild-Symbol" loading="lazy" />
+                  <figcaption><strong>1. Buffs öffnen</strong><span>Tippe deine eigene Basis an und öffne das Schild-Symbol.</span></figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="/drachenhalle/tutorial/heilrechner/02-hilflimit-hilfszeit.png" alt="Wirtschaftstyp mit markiertem Hilfslimit und markierter Hilfszeit" loading="lazy" />
+                  <figcaption><strong>2. Hilfswerte ablesen</strong><span>Öffne „Wirtschaftstyp“ und übernimm Hilfslimit sowie Hilfszeit.</span></figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="/drachenhalle/tutorial/heilrechner/03-heilungsgeschwindigkeit.png" alt="Wirtschaftstyp mit markierter Heilungsgeschwindigkeit" loading="lazy" />
+                  <figcaption><strong>3. Heilungsgeschwindigkeit</strong><span>Scrolle im selben Bereich zur Heilungsgeschwindigkeit und trage den Prozentwert ein.</span></figcaption>
+                </figure>
+              </li>
+            </ol>
+          </div>
+        </dialog>
       </main>
 
       <SiteFooter />
@@ -186,6 +279,18 @@ import SiteHeader from "../../components/SiteHeader.astro";
       import { initializeHealingCalculator } from "../../scripts/healing-calculator";
 
       initializeHealingCalculator();
+
+      const healingHelpDialog = document.querySelector("#healing-help-dialog");
+      const healingHelpOpen = document.querySelector("[data-healing-help-open]");
+      const healingHelpClose = document.querySelector("[data-healing-help-close]");
+
+      if (healingHelpDialog instanceof HTMLDialogElement) {
+        healingHelpOpen?.addEventListener("click", () => healingHelpDialog.showModal());
+        healingHelpClose?.addEventListener("click", () => healingHelpDialog.close());
+        healingHelpDialog.addEventListener("click", (event) => {
+          if (event.target === healingHelpDialog) healingHelpDialog.close();
+        });
+      }
     </script>
   </body>
 </html>

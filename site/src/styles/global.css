@@ -4944,8 +4944,139 @@ h1 {
   margin-top: 0;
 }
 
+.shield-inventory-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .shield-plan-fields {
   grid-template-columns: 1fr;
+}
+
+.shield-field-help {
+  max-width: 620px;
+  clear: both;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.shield-field-help + .shield-plan-fields {
+  margin-top: 18px;
+}
+
+.shield-combat-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.shield-raid-windows {
+  clear: both;
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.shield-raid-windows-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.shield-raid-windows-heading > div {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.shield-raid-windows-heading strong {
+  color: var(--ivory);
+  font-size: 13px;
+}
+
+.shield-raid-windows-heading span,
+.shield-raid-window-empty,
+.shield-window-status {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.shield-secondary-button {
+  min-height: 38px;
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--line-bright);
+  border-radius: 4px;
+  background: rgba(227, 173, 78, 0.07);
+  color: var(--gold-pale);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.shield-secondary-button:hover,
+.shield-secondary-button:focus-visible {
+  border-color: var(--gold);
+  background: rgba(227, 173, 78, 0.13);
+}
+
+.shield-secondary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.shield-raid-window-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.shield-raid-window {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  align-items: end;
+  gap: 10px;
+  padding: 14px;
+  border-left: 2px solid var(--gold);
+  background: rgba(227, 173, 78, 0.055);
+}
+
+.shield-window-remove {
+  width: 42px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(183, 83, 73, 0.58);
+  border-radius: 4px;
+  background: rgba(164, 64, 58, 0.09);
+  color: #ffbbb4;
+  font: 400 24px/1 Georgia, "Times New Roman", serif;
+  cursor: pointer;
+}
+
+.shield-window-remove:hover,
+.shield-window-remove:focus-visible {
+  border-color: #d16b61;
+  background: rgba(164, 64, 58, 0.18);
+}
+
+.shield-raid-window-empty {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px dashed var(--line);
+}
+
+.shield-raid-window-empty[hidden] {
+  display: none;
+}
+
+.shield-window-status {
+  min-height: 1.5em;
+  margin: 10px 0 0;
+  color: var(--gold-pale);
 }
 
 .shield-form label {
@@ -5146,6 +5277,16 @@ h1 {
   background: rgba(227, 173, 78, 0.065);
 }
 
+.shield-schedule li.is-active-window {
+  border-left-color: #b75349;
+  background: rgba(164, 64, 58, 0.1);
+}
+
+.shield-schedule li.is-active-window time,
+.shield-schedule li.is-active-window strong {
+  color: #ffbbb4;
+}
+
 .shield-schedule time {
   grid-row: 1 / span 2;
   align-self: center;
@@ -5201,9 +5342,35 @@ h1 {
 }
 
 .healing-form-intro {
+  position: relative;
   padding: 28px 30px;
+  padding-right: 88px;
   border-bottom: 1px solid var(--line);
   background: linear-gradient(145deg, rgba(227, 173, 78, 0.09), transparent 72%);
+}
+
+.healing-help-trigger {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line-bright);
+  border-radius: 50%;
+  background: rgba(227, 173, 78, 0.07);
+  color: var(--gold-pale);
+  font: 700 19px/1 Georgia, "Times New Roman", serif;
+  cursor: pointer;
+}
+
+.healing-help-trigger:hover,
+.healing-help-trigger:focus-visible {
+  border-color: var(--gold);
+  background: rgba(227, 173, 78, 0.15);
+  outline: 2px solid rgba(227, 173, 78, 0.18);
 }
 
 .healing-form-intro h2 {
@@ -5247,16 +5414,218 @@ h1 {
   margin-top: 0;
 }
 
-.healing-field-grid.is-time {
-  max-width: 360px;
-}
-
 .healing-field-grid.is-calibration {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .healing-field-help + .healing-field-grid {
   margin-top: 16px;
+}
+
+.healing-method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  clear: both;
+  gap: 12px;
+}
+
+.healing-method-option {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: flex-start;
+  gap: 11px !important;
+  padding: 15px;
+  border: 1px solid var(--line-bright);
+  border-radius: 4px;
+  background: rgba(9, 14, 34, 0.78);
+  cursor: pointer;
+}
+
+.healing-method-option:has(input:checked) {
+  border-color: var(--gold);
+  background: rgba(227, 173, 78, 0.09);
+  box-shadow: inset 0 0 0 1px rgba(227, 173, 78, 0.15);
+}
+
+.healing-form .healing-method-option input {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  flex: 0 0 18px;
+  margin: 2px 0 0;
+  padding: 0;
+  accent-color: var(--gold);
+}
+
+.healing-method-option > span {
+  display: grid;
+  gap: 5px;
+}
+
+.healing-method-option strong {
+  color: var(--ivory);
+  font-size: 13px;
+}
+
+.healing-method-option small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.healing-mode-panel {
+  clear: both;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.healing-mode-panel[hidden] {
+  display: none;
+}
+
+.healing-field-grid.is-tier {
+  align-items: stretch;
+}
+
+.healing-known-value {
+  grid-column: 1 / -1;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  min-height: 70px;
+  padding: 12px 14px;
+  border-left: 2px solid var(--gold);
+  background: rgba(227, 173, 78, 0.07);
+}
+
+.healing-known-value span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.healing-known-value strong {
+  color: var(--gold-pale);
+  font-size: 14px;
+}
+
+.healing-known-value small {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.healing-mode-panel > .healing-field-help:last-child {
+  margin-top: 14px;
+}
+
+.healing-help-dialog {
+  width: min(1180px, calc(100vw - 40px));
+  max-height: calc(100vh - 40px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--line-bright);
+  border-radius: 6px;
+  background: #090e22;
+  color: var(--text);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.66);
+}
+
+.healing-help-dialog::backdrop {
+  background: rgba(2, 5, 16, 0.84);
+  backdrop-filter: blur(4px);
+}
+
+.healing-help-content {
+  padding: 30px;
+}
+
+.healing-help-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.healing-help-heading h2 {
+  margin: 5px 0 0;
+  color: var(--ivory);
+  font: 500 clamp(25px, 3vw, 38px)/1.08 Georgia, "Times New Roman", serif;
+}
+
+.healing-help-close {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line-bright);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ivory);
+  font: 300 26px/1 Arial, sans-serif;
+  cursor: pointer;
+}
+
+.healing-help-close:hover,
+.healing-help-close:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold-pale);
+}
+
+.healing-help-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.healing-help-steps li,
+.healing-help-steps figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.healing-help-steps figure {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  background: rgba(15, 22, 47, 0.78);
+}
+
+.healing-help-steps img {
+  width: 100%;
+  max-height: 520px;
+  display: block;
+  object-fit: contain;
+  background: #060a18;
+}
+
+.healing-help-steps figcaption {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.healing-help-steps figcaption strong {
+  color: var(--gold-pale);
+  font-size: 13px;
+}
+
+.healing-help-steps figcaption span {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
 }
 
 .healing-form label {
@@ -5692,6 +6061,38 @@ h1 {
     padding: 24px 20px;
   }
 
+  .healing-form-intro {
+    padding-right: 72px;
+  }
+
+  .healing-help-trigger {
+    top: 22px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .healing-help-dialog {
+    width: calc(100vw - 16px);
+    max-height: calc(100vh - 16px);
+  }
+
+  .healing-help-content {
+    padding: 20px 16px;
+  }
+
+  .healing-help-heading {
+    gap: 14px;
+  }
+
+  .healing-help-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .healing-help-steps img {
+    max-height: none;
+  }
+
   .shield-form fieldset,
   .healing-form fieldset {
     padding: 24px 20px 26px;
@@ -5705,6 +6106,29 @@ h1 {
   .shield-form-error,
   .healing-form-error {
     margin: -10px 20px 26px;
+  }
+
+  .shield-inventory-grid,
+  .shield-combat-options {
+    grid-template-columns: 1fr;
+  }
+
+  .shield-raid-windows-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .shield-secondary-button {
+    width: 100%;
+  }
+
+  .shield-raid-window {
+    grid-template-columns: 1fr;
+  }
+
+  .shield-window-remove {
+    width: 100%;
+    height: 40px;
   }
 
   .shield-result {
@@ -5759,7 +6183,8 @@ h1 {
   }
 
   .healing-field-grid,
-  .healing-field-grid.is-calibration {
+  .healing-field-grid.is-calibration,
+  .healing-method-grid {
     grid-template-columns: 1fr;
   }
 

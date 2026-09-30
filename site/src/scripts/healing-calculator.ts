@@ -9,6 +9,21 @@ const wholeNumber = (value: number | null, min: number, max: number) => (
   value !== null && Number.isInteger(value) && value >= min && value <= max
 );
 
+const TIER_BASE_SECONDS = {
+  t1: 20,
+  t2: 30,
+  t3: 40,
+  t4: 50,
+  t5: 60,
+  t6: 70,
+  t7: 80,
+  t8: 90,
+  t9: 100,
+  t10: 110,
+} as const;
+
+type TroopTier = keyof typeof TIER_BASE_SECONDS;
+
 const formatDuration = (totalSeconds: number) => {
   const seconds = Math.max(0, Math.floor(totalSeconds));
   const hours = Math.floor(seconds / 3600);
@@ -39,27 +54,47 @@ export const initializeHealingCalculator = () => {
   const facts = root?.querySelector<HTMLElement>("[data-healing-facts]");
   const soldiers = root?.querySelector<HTMLElement>("[data-healing-soldiers]");
   const detail = root?.querySelector<HTMLElement>("[data-healing-detail]");
+  const modeInputs = [...(root?.querySelectorAll<HTMLInputElement>('input[name="calculationMode"]') ?? [])];
+  const modePanels = [...(root?.querySelectorAll<HTMLElement>("[data-healing-mode-panel]") ?? [])];
 
   if (!root || !form || !result || !error || !kicker || !title || !summary || !facts || !soldiers || !detail) return;
+
+  const updateMode = () => {
+    const selectedMode = modeInputs.find((input) => input.checked)?.value ?? "tier";
+    modePanels.forEach((panel) => {
+      const active = panel.dataset.healingModePanel === selectedMode;
+      panel.hidden = !active;
+      panel.querySelectorAll<HTMLInputElement>("input").forEach((input) => {
+        input.disabled = !active;
+      });
+    });
+  };
+
+  modeInputs.forEach((input) => input.addEventListener("change", updateMode));
+  updateMode();
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     error.hidden = true;
 
     const data = new FormData(form);
-    const helpMinutes = getNumber(data, "helpMinutes");
     const helpSeconds = getNumber(data, "helpSeconds");
     const helpLimit = getNumber(data, "helpLimit");
     const activeHelpers = getNumber(data, "activeHelpers");
     const reservePercent = getNumber(data, "reservePercent");
+    const calculationMode = String(data.get("calculationMode") ?? "tier");
+    const requestedTier = String(data.get("troopTier") ?? "t8");
+    const troopTier: TroopTier = requestedTier in TIER_BASE_SECONDS
+      ? requestedTier as TroopTier
+      : "t8";
+    const healingSpeed = getNumber(data, "healingSpeed");
     const calibrationSoldiers = getNumber(data, "calibrationSoldiers");
     const calibrationHours = getNumber(data, "calibrationHours");
     const calibrationMinutes = getNumber(data, "calibrationMinutes");
     const calibrationSeconds = getNumber(data, "calibrationSeconds");
 
     if (
-      !wholeNumber(helpMinutes, 0, 59)
-      || !wholeNumber(helpSeconds, 0, 59)
+      !wholeNumber(helpSeconds, 1, 999999)
       || !wholeNumber(helpLimit, 1, 100)
       || !wholeNumber(activeHelpers, 0, 100)
       || reservePercent === null
@@ -71,18 +106,12 @@ export const initializeHealingCalculator = () => {
       return;
     }
 
-    const calibrationFieldsFilled = [
-      calibrationSoldiers,
-      calibrationHours,
-      calibrationMinutes,
-      calibrationSeconds,
-    ].some((value) => value !== null);
     const calibrationDuration = (calibrationHours ?? 0) * 3600
       + (calibrationMinutes ?? 0) * 60
       + (calibrationSeconds ?? 0);
 
     if (
-      calibrationFieldsFilled
+      calculationMode === "calibration"
       && (
         !wholeNumber(calibrationSoldiers, 1, 99999999)
         || !wholeNumber(calibrationHours ?? 0, 0, 999)
@@ -96,17 +125,19 @@ export const initializeHealingCalculator = () => {
       return;
     }
 
-    const secondsPerHelp = helpMinutes * 60 + helpSeconds;
-    if (secondsPerHelp <= 0) {
-      error.textContent = "Die Hilfszeit muss größer als null sein.";
+    if (
+      calculationMode === "tier"
+      && (healingSpeed === null || healingSpeed < 0 || healingSpeed > 9999)
+    ) {
+      error.textContent = "Bitte trage eine gültige Heilungsgeschwindigkeit ein.";
       error.hidden = false;
       return;
     }
 
+    const secondsPerHelp = helpSeconds;
     const usableHelpers = Math.min(activeHelpers, helpLimit);
     const theoreticalSeconds = secondsPerHelp * usableHelpers;
     const safeSeconds = Math.floor(theoreticalSeconds * (1 - reservePercent / 100));
-    const helpersCapped = activeHelpers > helpLimit;
 
     facts.replaceChildren();
     addFact(facts, "Hilfszeit je Hilfe", formatDuration(secondsPerHelp));
@@ -124,17 +155,13 @@ export const initializeHealingCalculator = () => {
       return;
     }
 
-    if (!calibrationFieldsFilled) {
-      result.dataset.state = "warning";
-      kicker.textContent = "Zeitfenster berechnet";
-      title.textContent = "Dein sicherer Heilblock";
-      summary.textContent = `Plane einen Heilblock von höchstens ${formatDuration(safeSeconds)} ${helpersCapped ? `Dein Hilfslimit begrenzt die Berechnung auf ${helpLimit} Helfer.` : ""}`.trim();
-      soldiers.textContent = "Soldatenzahl noch offen";
-      detail.textContent = "Trage links einen echten Heilblock ein, damit der Rechner dieses Zeitfenster in eine persönliche Soldatenzahl übersetzt.";
-      return;
-    }
-
-    const secondsPerSoldier = calibrationDuration / (calibrationSoldiers as number);
+    const usesTierBase = calculationMode === "tier";
+    const tierLabel = troopTier.toUpperCase();
+    const baseSeconds = TIER_BASE_SECONDS[troopTier];
+    const speedMultiplier = usesTierBase ? 1 + (healingSpeed as number) / 100 : 1;
+    const secondsPerSoldier = usesTierBase
+      ? baseSeconds / speedMultiplier
+      : calibrationDuration / (calibrationSoldiers as number);
     const recommendedSoldiers = Math.floor(safeSeconds / secondsPerSoldier);
     const expectedDuration = recommendedSoldiers * secondsPerSoldier;
     result.dataset.state = recommendedSoldiers > 0 ? "success" : "danger";
@@ -148,11 +175,16 @@ export const initializeHealingCalculator = () => {
       return;
     }
 
-    kicker.textContent = "Persönlich kalibriert";
+    kicker.textContent = usesTierBase ? `Für ${tierLabel} berechnet` : "Persönlich kalibriert";
     title.textContent = "Dieser Heilblock sollte passen";
     summary.textContent = `Mit ${usableHelpers} sofortigen Hilfen und ${reservePercent} % Reserve bleibt der berechnete Block innerhalb deines sicheren Zeitfensters.`;
-    soldiers.textContent = `${recommendedSoldiers.toLocaleString("de-DE")} Soldaten`;
-    detail.textContent = `Geschätzte Heilzeit: ${formatDuration(expectedDuration)} Gültig für dieselbe Truppenstufe und Zusammensetzung wie deine Kalibrierung mit ${(calibrationSoldiers as number).toLocaleString("de-DE")} Soldaten.`;
+    const soldierLabel = recommendedSoldiers === 1
+      ? usesTierBase ? `${tierLabel}-Soldat` : "Soldat"
+      : usesTierBase ? `${tierLabel}-Soldaten` : "Soldaten";
+    soldiers.textContent = `${recommendedSoldiers.toLocaleString("de-DE")} ${soldierLabel}`;
+    detail.textContent = usesTierBase
+      ? `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Grundlage: ${baseSeconds} Sekunden je ${tierLabel} bei ${(healingSpeed as number).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % Heilungsgeschwindigkeit.`
+      : `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Gültig für dieselbe Truppenstufe und Zusammensetzung wie deine Kalibrierung mit ${(calibrationSoldiers as number).toLocaleString("de-DE")} Soldaten.`;
   });
 
   form.requestSubmit();

@@ -23,7 +23,7 @@ Jeder Fachordner enthält eine eigene `README.md` mit seinem Zweck, seiner vorge
 | [`Archiv`](Archiv/README.md) | Ersetzte, veraltete oder historisch relevante Inhalte |
 | [`site`](site) | Technische Quellen der automatisch erzeugten Website |
 
-Unter **Tools** stellt die Website kleine interaktive Werkzeuge bereit. Der Schildrechner liest den nächsten Raubzug und eine mögliche parallele Hauptstadteroberung direkt aus den Termindaten und erzeugt auf Wunsch persönliche Kalendererinnerungen. Der Heilrechner berechnet aus Hilfszeit, Hilfslimit und aktiven Helfern ein sicheres Instant-Heal-Zeitfenster; über eine persönliche Ingame-Kalibrierung kann er zusätzlich eine passende Soldatenzahl schätzen.
+Unter **Tools** stellt die Website kleine interaktive Werkzeuge bereit. Der Schildrechner liest den nächsten Raubzug und eine mögliche parallele Hauptstadteroberung direkt aus den Termindaten, plant mit 24-, 12- und 8-Stunden-Schilden sowie frei wählbaren aktiven Kampfzeiten und erzeugt auf Wunsch persönliche Kalendererinnerungen. Der Heilrechner berechnet aus Hilfszeit, Hilfslimit und aktiven Helfern ein sicheres Instant-Heal-Zeitfenster. Für T5 bis T9 nutzt er aus Ingame-Messungen abgeleitete Basiswerte von 60 bis 100 Sekunden je Soldat; T1 bis T4 sowie T10 werden aus der erkannten Zehn-Sekunden-Staffelung hochgerechnet. Zusammen mit der persönlichen Heilungsgeschwindigkeit entsteht daraus eine Soldatenempfehlung, während für gemischte Truppen eine eigene Ingame-Kalibrierung verfügbar bleibt.
 
 ## Inhalte einreichen
 
