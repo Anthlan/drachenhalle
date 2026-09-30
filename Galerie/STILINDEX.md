@@ -41,6 +41,7 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_09_28_2042_KaffeemaschineMeine_Somea_Drachenherz.png](Chatbilder/2026_09_28_2042_KaffeemaschineMeine_Somea_Drachenherz.png)
 - [2026_09_29_1957_KeineRohstoffe_Anthlan_Somea_Boshos_RuhrpottBlach_mysteryZ.png](Chatbilder/2026_09_29_1957_KeineRohstoffe_Anthlan_Somea_Boshos_RuhrpottBlach_mysteryZ.png)
 - [2026_09_30_1125_KaylaniUndZoi_Kaylani.png](Chatbilder/2026_09_30_1125_KaylaniUndZoi_Kaylani.png)
+- [2026_09_30_1631_WartenAufZahlung_Somea.png](Chatbilder/2026_09_30_1631_WartenAufZahlung_Somea.png)
 
 ## S2 – Fantasy-Comic & Infografik
 
