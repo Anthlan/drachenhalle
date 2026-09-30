@@ -59,6 +59,7 @@ const isOnboarding = document.kind === "onboarding";
 const isOfficerRoster = document.kind === "officers";
 const isResponsibilities = document.kind === "responsibilities";
 const isAllianceDocument = document.section === "Allianz";
+const isHealingTip = document.slug === "tipp-08-soldaten-schneller-heilen";
 const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument || document.kind === "alliance";
 const tutorialStorageKey = document.tutorialStorageKey ?? `die-${document.slug}-step-v1`;
 const tutorialProgressLabel = document.tutorialProgressLabel ?? "Fortschritt im Einstieg";
@@ -326,6 +327,12 @@ const responsibilities = [
                     <dd>{document.topicTags.map((tag) => <span class="tip-tag is-topic">{tag}</span>)}</dd>
                   </div>
                 </dl>
+              )}
+              {isHealingTip && (
+                <a class="document-tool-link" href="/drachenhalle/tools/heilrechner/">
+                  <span aria-hidden="true">✚</span>
+                  Persönlichen Heilblock berechnen →
+                </a>
               )}
           {!document.hidden && !["Drachenwissen", "Allianz", "Tutorials"].includes(document.section) && (
             <div class="document-header-actions">

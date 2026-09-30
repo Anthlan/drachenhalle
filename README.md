@@ -23,7 +23,7 @@ Jeder Fachordner enthält eine eigene `README.md` mit seinem Zweck, seiner vorge
 | [`Archiv`](Archiv/README.md) | Ersetzte, veraltete oder historisch relevante Inhalte |
 | [`site`](site) | Technische Quellen der automatisch erzeugten Website |
 
-Unter **Tools** stellt die Website kleine interaktive Werkzeuge bereit. Der Schildrechner liest den nächsten Raubzug und eine mögliche parallele Hauptstadteroberung direkt aus den Termindaten und erzeugt auf Wunsch persönliche Kalendererinnerungen. Der Heilrechner wird auf Grundlage von Tipp 8 ergänzt.
+Unter **Tools** stellt die Website kleine interaktive Werkzeuge bereit. Der Schildrechner liest den nächsten Raubzug und eine mögliche parallele Hauptstadteroberung direkt aus den Termindaten und erzeugt auf Wunsch persönliche Kalendererinnerungen. Der Heilrechner berechnet aus Hilfszeit, Hilfslimit und aktiven Helfern ein sicheres Instant-Heal-Zeitfenster; über eine persönliche Ingame-Kalibrierung kann er zusätzlich eine passende Soldatenzahl schätzen.
 
 ## Inhalte einreichen
 

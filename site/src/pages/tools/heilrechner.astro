@@ -9,35 +9,183 @@ import SiteHeader from "../../components/SiteHeader.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Geplanter Heilrechner auf Grundlage von Tipp 8 der DIE Drachenhalle." />
+    <meta
+      name="description"
+      content="Berechne dein persönliches Instant-Heal-Zeitfenster und eine passende Soldatenzahl für die Allianzhilfe."
+    />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Heilrechner · Tools · DIE Drachenhalle</title>
   </head>
   <body>
     <div class="page-shell">
       <SiteHeader active="tools" />
+
       <main class="tool-main" id="main-content">
         <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation">
           <a href="/drachenhalle/tools/">Tools</a>
           <span aria-hidden="true">/</span>
           <span>Heilrechner</span>
         </nav>
-        <section class="tool-placeholder" aria-labelledby="healing-tool-title">
+
+        <header class="tool-hero">
           <div>
-            <p class="eyebrow">Als nächstes Werkzeug</p>
-            <h1 id="healing-tool-title">Heilrechner</h1>
+            <p class="eyebrow">Allianzhilfe richtig ausnutzen</p>
+            <h1>Heilrechner</h1>
             <p>
-              Der Rechner wird Hilfszeit, Hilfslimit, aktive Unterstützer und eine persönliche
-              Ingame-Kalibrierung zu einem passenden Instant-Heal-Block verbinden.
+              Berechne zuerst, wie viel Heilzeit deine aktiven Helfer sofort abziehen können.
+              Mit einer kurzen persönlichen Kalibrierung ermittelst du anschließend die passende
+              Soldatenzahl für genau dein Profil.
             </p>
-            <a class="tool-primary-button" href="/drachenhalle/docs/tipp-08-soldaten-schneller-heilen/">
-              Bis dahin Tipp 8 öffnen →
-            </a>
           </div>
-          <span class="tool-placeholder-icon" aria-hidden="true">🏥</span>
+          <div class="tool-hero-seal" aria-hidden="true">✚</div>
+        </header>
+
+        <section class="healing-calculator" data-healing-calculator aria-labelledby="healing-form-title">
+          <form class="healing-form" data-healing-form>
+            <div class="healing-form-intro">
+              <p class="eyebrow">Schritt 1</p>
+              <h2 id="healing-form-title">Deine Allianzhilfe</h2>
+              <p>Die Beispielwerte stammen aus Tipp 8. Ersetze sie durch deine aktuellen Buffwerte.</p>
+            </div>
+
+            <fieldset>
+              <legend>Hilfszeit je Unterstützung</legend>
+              <div class="healing-field-grid is-time">
+                <label>
+                  <span>Minuten</span>
+                  <input name="helpMinutes" type="number" min="0" max="59" step="1" value="12" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>Sekunden</span>
+                  <input name="helpSeconds" type="number" min="0" max="59" step="1" value="22" inputmode="numeric" />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Verfügbare Hilfen</legend>
+              <div class="healing-field-grid">
+                <label>
+                  <span>Persönliches Hilfslimit</span>
+                  <input name="helpLimit" type="number" min="1" max="100" step="1" value="25" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>Aktive Helfer</span>
+                  <input name="activeHelpers" type="number" min="0" max="100" step="1" value="5" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>Sicherheitsreserve</span>
+                  <select name="reservePercent">
+                    <option value="0">Keine Reserve</option>
+                    <option value="5" selected>5 % empfohlen</option>
+                    <option value="10">10 % vorsichtig</option>
+                    <option value="15">15 % sehr vorsichtig</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="healing-calibration">
+              <legend>Persönliche Kalibrierung · optional</legend>
+              <p class="healing-field-help">
+                Wähle im Krankenhaus eine einheitliche Truppengruppe und trage Anzahl sowie angezeigte
+                Heilzeit ein. Ohne diese Werte berechnet das Tool nur dein sicheres Zeitfenster.
+              </p>
+              <div class="healing-field-grid is-calibration">
+                <label>
+                  <span>Ausgewählte Soldaten</span>
+                  <input name="calibrationSoldiers" type="number" min="1" max="99999999" step="1" inputmode="numeric" placeholder="z. B. 40" />
+                </label>
+                <label>
+                  <span>Heilzeit · Stunden</span>
+                  <input name="calibrationHours" type="number" min="0" max="999" step="1" inputmode="numeric" placeholder="0" />
+                </label>
+                <label>
+                  <span>Heilzeit · Minuten</span>
+                  <input name="calibrationMinutes" type="number" min="0" max="59" step="1" inputmode="numeric" placeholder="z. B. 30" />
+                </label>
+                <label>
+                  <span>Heilzeit · Sekunden</span>
+                  <input name="calibrationSeconds" type="number" min="0" max="59" step="1" inputmode="numeric" placeholder="0" />
+                </label>
+              </div>
+            </fieldset>
+
+            <button class="tool-primary-button" type="submit">Heilblock berechnen</button>
+            <p class="healing-form-error" role="alert" data-healing-error hidden></p>
+          </form>
+
+          <section class="healing-result" data-healing-result data-state="warning" aria-live="polite" aria-atomic="false">
+            <div class="healing-result-heading">
+              <div class="healing-result-icon" aria-hidden="true">✚</div>
+              <div>
+                <p class="eyebrow" data-healing-kicker>Zeitfenster berechnet</p>
+                <h2 data-healing-title>Dein sicherer Heilblock</h2>
+                <p data-healing-summary></p>
+              </div>
+            </div>
+
+            <div class="healing-result-facts" data-healing-facts></div>
+
+            <div class="healing-recommendation" data-healing-recommendation>
+              <p class="eyebrow">Empfehlung</p>
+              <strong data-healing-soldiers>Soldatenzahl noch offen</strong>
+              <p data-healing-detail></p>
+            </div>
+
+            <ol class="healing-steps" aria-label="Empfohlener Ablauf">
+              <li><span>1</span><p>Passenden Heilblock auswählen.</p></li>
+              <li><span>2</span><p>Heilung starten und im Allianzchat um Hilfe bitten.</p></li>
+              <li><span>3</span><p>Nach den Hilfen den nächsten kleinen Block starten.</p></li>
+            </ol>
+          </section>
+        </section>
+
+        <section class="tool-reference" aria-labelledby="healing-reference-title">
+          <header>
+            <p class="eyebrow">Grundlage & Genauigkeit</p>
+            <h2 id="healing-reference-title">Warum die Kalibrierung wichtig ist</h2>
+          </header>
+          <div class="tool-reference-grid">
+            <article>
+              <span aria-hidden="true">🤝</span>
+              <div>
+                <h3>Hilfszeit × Helfer</h3>
+                <p>
+                  Das sichere Zeitfenster basiert auf deiner persönlichen Hilfszeit und höchstens
+                  so vielen Helfern, wie dein Hilfslimit zulässt.
+                </p>
+                <a href="/drachenhalle/docs/tipp-08-soldaten-schneller-heilen/">
+                  Tipp 8 vollständig lesen →
+                </a>
+              </div>
+            </article>
+            <article>
+              <span aria-hidden="true">⏱️</span>
+              <div>
+                <h3>Dein Profil ist der Maßstab</h3>
+                <p>
+                  Truppenstufe, Zusammensetzung und persönliche Boni beeinflussen die Heilzeit.
+                  Die Soldatenzahl gilt deshalb nur für dieselbe Auswahl wie bei der Kalibrierung.
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="tool-disclaimer">
+            Der Rechner ist eine Planungshilfe. Prüfe den Heil-Timer vor dem Start im Spiel und
+            plane nur Helfer ein, die voraussichtlich sofort reagieren. Änderungen an Truppen,
+            Gebäuden, Überlebenden oder Allianz-Technologie können das Ergebnis verändern.
+          </p>
         </section>
       </main>
+
       <SiteFooter />
     </div>
+
+    <script>
+      import { initializeHealingCalculator } from "../../scripts/healing-calculator";
+
+      initializeHealingCalculator();
+    </script>
   </body>
 </html>
