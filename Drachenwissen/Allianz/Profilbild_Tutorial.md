@@ -24,7 +24,7 @@ Es zählt die Bedingung, die zuerst eintritt. Zusätzlich gelten diese Einschrä
 
 **Öffne die Drachenhalle und wechsle über das Menü zur Galerie.** Auf einem Smartphone findest du den Menüknopf oben rechts und anschließend den Eintrag **„Galerie“**.
 
-<img class="tutorial-process-shot" src="/drachenhalle/tutorial/profilbild/01_galerie_oeffnen_markiert.webp" alt="Geöffnetes Mobilmenü der Drachenhalle mit markiertem Eintrag Galerie" loading="lazy" decoding="async">
+<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/16_galerie_im_smartphone.webp" alt="Anthlan zeigt auf einem Smartphone den markierten Menüeintrag Galerie" loading="lazy" decoding="async">
 
 [Galerie direkt öffnen](/drachenhalle/galerie/?kategorie=Avatar)
 
@@ -34,10 +34,7 @@ Es zählt die Bedingung, die zuerst eintritt. Zusätzlich gelten diese Einschrä
 
 Tippe beim gewünschten Avatar auf die Schaltfläche mit dem **Pfeil nach unten**. Verwende den Download des Originals und keinen Screenshot der Galerieansicht.
 
-<div class="tutorial-avatar-download-visual">
-  <img class="tutorial-process-shot" src="/drachenhalle/tutorial/profilbild/02_avatar_filtern_markiert.webp" alt="Galerie mit hervorgehobenen Avatarfiltern und markiertem Downloadknopf des linken Avatarbildes" loading="lazy" decoding="async">
-  <img class="tutorial-avatar-download-character" src="/drachenhalle/tutorial/profilbild/11_anthlan_download_chibi.webp" alt="Anthlan zeigt auf den Download des Avatarbildes." loading="lazy" decoding="async">
-</div>
+<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/17_avatarwahl_im_smartphone.webp" alt="Anthlan zeigt auf einem Smartphone die hervorgehobenen Avatarfilter und den markierten Downloadknopf des linken Avatarbildes" loading="lazy" decoding="async">
 
 ## Original auf dem Gerät sichern
 
@@ -51,7 +48,7 @@ Das Original liegt danach in deiner Foto- beziehungsweise Bildergalerie und kann
 
 **Wechsle zurück ins Spiel und öffne dein Profil über dein Avatarbild.** Tippe anschließend auf den kleinen Bearbeitungsstift am Profilbild.
 
-<img class="tutorial-process-shot is-detail" src="/drachenhalle/tutorial/profilbild/04_profil_oeffnen_markiert.webp" alt="Profilkarte mit deutlich markiertem Bearbeitungsstift oben rechts am Avatarbild" loading="lazy" decoding="async">
+<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/18_profil_im_smartphone.webp" alt="Anthlan zeigt auf einem Smartphone das passend zugeschnittene Profil mit markiertem Bearbeitungsstift am Avatarbild" loading="lazy" decoding="async">
 
 Damit öffnest du die Ansicht **„Avatar ändern“**.
 
@@ -59,7 +56,7 @@ Damit öffnest du die Ansicht **„Avatar ändern“**.
 
 **Im Spiel kann immer nur ein eigener Custom-Avatar gespeichert sein.** Ist bereits ein eigenes Bild vorhanden, erkennst du es an dem kleinen roten Löschenknopf.
 
-<img class="tutorial-process-shot is-comparison" src="/drachenhalle/tutorial/profilbild/14_custom_avatar_workflow.webp" alt="Zweiteilige Anleitung im Drachenhallen-Stil: vorhandenen Custom-Avatar über den roten Knopf löschen und danach das markierte Kamerasymbol antippen" loading="lazy" decoding="async">
+<img class="tutorial-process-shot is-comparison" src="/drachenhalle/tutorial/profilbild/14_custom_avatar_workflow_v2.webp" alt="Zweiteilige Anleitung im Drachenhallen-Stil: vorhandenen Custom-Avatar über den roten Knopf löschen und danach das markierte Kamerasymbol antippen; die unteren Verwenden-Schaltflächen sind vollständig sichtbar" loading="lazy" decoding="async">
 
 Tippe anschließend auf das **Kamerasymbol**, um einen neuen eigenen Avatar hochzuladen.
 
@@ -67,7 +64,7 @@ Tippe anschließend auf das **Kamerasymbol**, um einen neuen eigenen Avatar hoch
 
 **Lies den Hinweis des Spiels aufmerksam und wähle danach „Album ansehen“.** Das Spiel weist hier auch darauf hin, dass der Avatar geprüft wird und währenddessen kein weiterer Upload möglich ist.
 
-<img class="tutorial-process-shot" src="/drachenhalle/tutorial/profilbild/07_upload_hinweise_album.webp" alt="Uploadhinweis des Spiels mit der Schaltfläche Album ansehen" loading="lazy" decoding="async">
+<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/19_uploadhinweis_im_smartphone.webp" alt="Anthlan zeigt auf einem Smartphone den zugeschnittenen Uploadhinweis mit vollständig sichtbaren Schaltflächen und markierter Aktion Album ansehen" loading="lazy" decoding="async">
 
 Die aufgelisteten Inhaltsregeln sind verbindlich. Da die genaue Arbeitsweise des automatischen Filters nicht bekannt ist, solltest du ein eindeutig unproblematisches Bild verwenden.
 
@@ -85,7 +82,7 @@ Tippe oben rechts auf **„Bestätigen“**, wenn der Ausschnitt passt.
 
 **Kontrolliere in der Avatar-Vorschau noch einmal das Ergebnis.** Mit **„Bestätigen“** reichst du den Avatar verbindlich zur Prüfung ein.
 
-<img class="tutorial-process-shot is-wide" src="/drachenhalle/tutorial/profilbild/10_avatar_einreichen_korrigiert.webp" alt="Vollständige Avatar-Vorschau mit deutlich sichtbarer und markierter Schaltfläche Bestätigen" loading="lazy" decoding="async">
+<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/20_einreichen_im_smartphone.webp" alt="Anthlan präsentiert auf einem Smartphone die vollständige Avatar-Vorschau mit deutlich sichtbarer und markierter Schaltfläche Bestätigen" loading="lazy" decoding="async">
 
 Die Prüfung kann bis zu **eine Stunde** dauern. Während dieser Zeit kannst du kein weiteres Bild hochladen. Nach erfolgreicher Prüfung erscheint der Avatar in deinem Profil. Wird er abgelehnt, bleibt die einstündige Uploadsperre bestehen und du kannst erst danach einen neuen Versuch starten.
 
