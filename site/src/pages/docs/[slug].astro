@@ -23,11 +23,13 @@ const childDocuments = publicDocuments.filter((item) => item.parentSlug === acti
 const sectionDocuments = topLevelSectionDocuments.flatMap((item) =>
   item.slug === activeCollectionSlug ? [item, ...childDocuments] : [item],
 );
-const activeSection = document.section === "Gestaltung"
-  ? "gestaltung"
-  : document.section === "Drachenwissen"
-    ? "informationen"
-    : "";
+const activeSection = document.kind === "onboarding"
+  ? "tutorials"
+  : document.slug === "allianz" || document.parentSlug === "allianz"
+    ? "alliance"
+    : document.section === "Drachenwissen"
+      ? "informationen"
+      : "";
 const overviewUrl = document.hidden
   ? "/drachenhalle/rat/"
   : document.section === "Gestaltung"

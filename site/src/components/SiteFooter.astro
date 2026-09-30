@@ -21,7 +21,10 @@ const pageViewsApiUrl = import.meta.env.PUBLIC_PAGE_VIEWS_API_URL?.replace(/\/$/
       </p>
     )}
   </div>
-  <a href={repositoryUrl}>Auf GitHub ansehen <span aria-hidden="true">↗</span></a>
+  <nav class="footer-links" aria-label="Weiterführende Links">
+    <a href="/drachenhalle/docs/styleguides/">Styleguides</a>
+    <a href={repositoryUrl}>Auf GitHub ansehen <span aria-hidden="true">↗</span></a>
+  </nav>
 </footer>
 
 <script>

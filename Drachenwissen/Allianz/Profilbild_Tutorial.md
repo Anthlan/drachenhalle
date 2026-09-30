@@ -48,7 +48,7 @@ Das Original liegt danach in deiner Foto- beziehungsweise Bildergalerie und kann
 
 **Wechsle zurück ins Spiel und öffne dein Profil über dein Avatarbild.** Tippe anschließend auf den kleinen Bearbeitungsstift am Profilbild.
 
-<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/18_profil_im_smartphone.webp" alt="Anthlan zeigt auf einem Smartphone das passend zugeschnittene Profil mit markiertem Bearbeitungsstift am Avatarbild" loading="lazy" decoding="async">
+<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/18_profil_im_smartphone_id_geschuetzt.webp" alt="Anthlan zeigt auf einem Smartphone das passend zugeschnittene Profil mit markiertem Bearbeitungsstift am Avatarbild; die Spieler-ID ist vollständig verdeckt" loading="lazy" decoding="async">
 
 Damit öffnest du die Ansicht **„Avatar ändern“**.
 
@@ -56,7 +56,7 @@ Damit öffnest du die Ansicht **„Avatar ändern“**.
 
 **Im Spiel kann immer nur ein eigener Custom-Avatar gespeichert sein.** Ist bereits ein eigenes Bild vorhanden, erkennst du es an dem kleinen roten Löschenknopf.
 
-<img class="tutorial-process-shot is-comparison" src="/drachenhalle/tutorial/profilbild/14_custom_avatar_workflow_v2.webp" alt="Zweiteilige Anleitung im Drachenhallen-Stil: vorhandenen Custom-Avatar über den roten Knopf löschen und danach das markierte Kamerasymbol antippen; die unteren Verwenden-Schaltflächen sind vollständig sichtbar" loading="lazy" decoding="async">
+<img class="tutorial-process-shot is-comparison" src="/drachenhalle/tutorial/profilbild/14_custom_avatar_workflow_v3.webp" alt="Zweiteilige Anleitung im Drachenhallen-Stil: vorhandenen Custom-Avatar über den korrekt markierten roten Knopf löschen und danach das markierte Kamerasymbol antippen; die unteren Verwenden-Schaltflächen sind vollständig sichtbar" loading="lazy" decoding="async">
 
 Tippe anschließend auf das **Kamerasymbol**, um einen neuen eigenen Avatar hochzuladen.
 
@@ -64,7 +64,7 @@ Tippe anschließend auf das **Kamerasymbol**, um einen neuen eigenen Avatar hoch
 
 **Lies den Hinweis des Spiels aufmerksam und wähle danach „Album ansehen“.** Das Spiel weist hier auch darauf hin, dass der Avatar geprüft wird und währenddessen kein weiterer Upload möglich ist.
 
-<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/19_uploadhinweis_im_smartphone.webp" alt="Anthlan zeigt auf einem Smartphone den zugeschnittenen Uploadhinweis mit vollständig sichtbaren Schaltflächen und markierter Aktion Album ansehen" loading="lazy" decoding="async">
+<img class="tutorial-process-shot is-phone-composite" src="/drachenhalle/tutorial/profilbild/19_uploadhinweis_im_smartphone_v2.webp" alt="Anthlan zeigt auf einem Smartphone den zugeschnittenen Uploadhinweis mit vollständig sichtbaren Schaltflächen und einer mittig über Album ansehen liegenden Markierung" loading="lazy" decoding="async">
 
 Die aufgelisteten Inhaltsregeln sind verbindlich. Da die genaue Arbeitsweise des automatischen Filters nicht bekannt ist, solltest du ein eindeutig unproblematisches Bild verwenden.
 

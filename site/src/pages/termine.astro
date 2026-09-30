@@ -51,7 +51,7 @@ const relativeLabel = (date) => {
 
         <MonthlyCalendar events={eventsData.items} />
 
-        <section class="events-section" aria-labelledby="upcoming-events-title">
+        <section class="events-section" id="kommende-termine" aria-labelledby="upcoming-events-title">
           <header class="content-section-heading">
             <div>
               <p class="eyebrow">Nicht verpassen</p>
@@ -80,7 +80,7 @@ const relativeLabel = (date) => {
         </section>
 
         {pastEvents.length > 0 && (
-          <section class="events-section past-events" aria-labelledby="past-events-title">
+          <section class="events-section past-events" id="vergangene-termine" aria-labelledby="past-events-title">
             <header class="content-section-heading">
               <div>
                 <p class="eyebrow">Rückblick</p>

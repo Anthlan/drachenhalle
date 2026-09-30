@@ -3,6 +3,69 @@ import InboxLink from "./InboxLink.astro";
 
 const { active = "" } = Astro.props;
 const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
+const currentPath = Astro.url.pathname;
+const navigationItems = [
+  {
+    key: "news",
+    label: "Aktuelles",
+    links: [
+      { label: "Übersicht", href: "/drachenhalle/" },
+      { label: "Neuigkeiten", href: "/drachenhalle/#neuigkeiten" },
+      { label: "Letztes Update", href: "/drachenhalle/#letztes-update" },
+    ],
+  },
+  {
+    key: "tutorials",
+    label: "Tutorials",
+    links: [
+      { label: "Neu in der Drachenhalle", href: "/drachenhalle/docs/dein-einstieg-bei-uns/" },
+      { label: "Profilbild im Spiel", href: "/drachenhalle/docs/profilbild-im-spiel/" },
+    ],
+  },
+  {
+    key: "informationen",
+    label: "Drachenwissen",
+    links: [
+      { label: "Übersicht", href: "/drachenhalle/docs/" },
+      { label: "Tipps", href: "/drachenhalle/docs/tipps/" },
+      { label: "Event-Guides", href: "/drachenhalle/docs/events/" },
+      { label: "Eventankündigungen", href: "/drachenhalle/docs/eventankuendigungen/" },
+    ],
+  },
+  {
+    key: "alliance",
+    label: "Allianz",
+    links: [
+      { label: "Übersicht", href: "/drachenhalle/docs/allianz/" },
+      { label: "Unsere Regeln", href: "/drachenhalle/docs/allianzregeln/" },
+      { label: "Unsere Offiziere", href: "/drachenhalle/docs/unsere-offiziere/" },
+      { label: "Unsere Verantwortlichkeiten", href: "/drachenhalle/docs/unsere-verantwortlichkeiten/" },
+    ],
+  },
+  {
+    key: "events",
+    label: "Termine",
+    links: [
+      { label: "Übersicht", href: "/drachenhalle/termine/" },
+      { label: "Monatskalender", href: "/drachenhalle/termine/#kalender" },
+      { label: "Kommende Events", href: "/drachenhalle/termine/#kommende-termine" },
+      { label: "Vergangene Events", href: "/drachenhalle/termine/#vergangene-termine" },
+    ],
+  },
+  {
+    key: "gallery",
+    label: "Galerie",
+    links: [
+      { label: "Alle Bilder", href: "/drachenhalle/galerie/" },
+      { label: "Chatbilder", href: "/drachenhalle/galerie/?kategorie=Chatbild" },
+      { label: "Reaktionsbilder", href: "/drachenhalle/galerie/?kategorie=Reaktionsbild" },
+      { label: "Avatare", href: "/drachenhalle/galerie/?kategorie=Avatar" },
+      { label: "Charaktermodelle", href: "/drachenhalle/galerie/?kategorie=Charaktermodell" },
+    ],
+  },
+];
+
+const isCurrentLink = (href) => !href.includes("#") && !href.includes("?") && href === currentPath;
 ---
 
 <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
@@ -23,11 +86,19 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
   </a>
 
   <nav class="desktop-nav" aria-label="Hauptnavigation">
-    <a class:list={[{ "is-active": active === "news" }]} href="/drachenhalle/">Aktuelles</a>
-    <a class:list={[{ "is-active": active === "informationen" }]} href="/drachenhalle/docs/">Drachenwissen</a>
-    <a class:list={[{ "is-active": active === "events" }]} href="/drachenhalle/termine/">Termine</a>
-    <a class:list={[{ "is-active": active === "gallery" }]} href="/drachenhalle/galerie/">Galerie</a>
-    <a class:list={[{ "is-active": active === "gestaltung" }]} href="/drachenhalle/docs/styleguides/">Styleguides</a>
+    {navigationItems.map((item) => (
+      <details class:list={["nav-group", { "is-active": active === item.key }]}>
+        <summary aria-label={`${item.label}: Untermenü öffnen`}>
+          <span>{item.label}</span>
+          <span class="nav-chevron" aria-hidden="true">⌄</span>
+        </summary>
+        <div class="nav-dropdown">
+          {item.links.map((link) => (
+            <a href={link.href} aria-current={isCurrentLink(link.href) ? "page" : undefined}>{link.label}</a>
+          ))}
+        </div>
+      </details>
+    ))}
   </nav>
 
   <div class="header-actions">
@@ -48,12 +119,20 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
       <span>Menü</span>
     </summary>
     <div class="mobile-menu-panel">
-      <nav aria-label="Mobile Hauptnavigation">
-        <a class:list={[{ "is-active": active === "news" }]} href="/drachenhalle/">Aktuelles</a>
-        <a class:list={[{ "is-active": active === "informationen" }]} href="/drachenhalle/docs/">Drachenwissen</a>
-        <a class:list={[{ "is-active": active === "events" }]} href="/drachenhalle/termine/">Termine</a>
-        <a class:list={[{ "is-active": active === "gallery" }]} href="/drachenhalle/galerie/">Galerie</a>
-        <a class:list={[{ "is-active": active === "gestaltung" }]} href="/drachenhalle/docs/styleguides/">Styleguides</a>
+      <nav class="mobile-nav" aria-label="Mobile Hauptnavigation">
+        {navigationItems.map((item) => (
+          <details class:list={["mobile-nav-group", { "is-active": active === item.key }]}>
+            <summary>
+              <span>{item.label}</span>
+              <span class="nav-chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div>
+              {item.links.map((link) => (
+                <a href={link.href} aria-current={isCurrentLink(link.href) ? "page" : undefined}>{link.label}</a>
+              ))}
+            </div>
+          </details>
+        ))}
       </nav>
       <div class="mobile-menu-actions">
         <a class="upload-link" href={uploadUrl} target="_blank" rel="noopener noreferrer">Datei einreichen <span aria-hidden="true">↗</span></a>
@@ -108,6 +187,29 @@ const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
 </dialog>
 
 <script>
+  const navigationGroups = document.querySelectorAll(".desktop-nav .nav-group");
+
+  navigationGroups.forEach((group) => {
+    group.addEventListener("toggle", () => {
+      if (!group.hasAttribute("open")) return;
+      navigationGroups.forEach((otherGroup) => {
+        if (otherGroup !== group) otherGroup.removeAttribute("open");
+      });
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Node)) return;
+    navigationGroups.forEach((group) => {
+      if (!group.contains(event.target)) group.removeAttribute("open");
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    navigationGroups.forEach((group) => group.removeAttribute("open"));
+  });
+
   const uploadHelpDialog = document.querySelector("#upload-help-dialog");
   const uploadHelpTriggers = document.querySelectorAll(".upload-help-trigger");
   const uploadHelpClose = document.querySelector("[data-upload-help-close]");
