@@ -6,7 +6,7 @@ Dieser Bereich erklärt, wie wir bei DIE miteinander spielen und wer bei Fragen 
 
 - [Dein Einstieg bei uns](../Tutorials/Allianz_Einstieg.md) – ein geführter Rundgang durch Gemeinschaft, Regeln, wichtige Einstellungen und erste Schritte
 - [Unsere Regeln](Allianz_Regeln.md) – verbindliche Regeln, Beispiele, kompakte Grafik und kopierbare Ingame-Mitteilung
-- [Unsere Offiziere](Allianz_Offiziere.md) – die aktuellen R4 mit Charakterdarstellung und kurzer Vorstellung
+- [Unser Führungsteam](Allianz_Offiziere.md) – Anthlan und unsere aktuellen R4 auf einen Blick
 - [Unsere Verantwortlichen](Allianz_Verantwortlichkeiten.md) – feste Aufgabenbereiche, aktuelle Zuordnung und interaktives Zuordnungsspiel
 
 ## Interne Entwicklung

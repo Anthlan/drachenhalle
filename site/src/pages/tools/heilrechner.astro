@@ -1,5 +1,6 @@
 ---
 import "../../styles/global.css";
+import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 ---
@@ -29,8 +30,22 @@ import SiteHeader from "../../components/SiteHeader.astro";
 
         <header class="tool-hero">
           <div>
-            <p class="eyebrow">Allianzhilfe richtig ausnutzen</p>
-            <h1>Heilrechner</h1>
+            <div class="tool-hero-title-row">
+              <div>
+                <p class="eyebrow">Allianzhilfe richtig ausnutzen</p>
+                <h1>Heilrechner</h1>
+              </div>
+              <button
+                type="button"
+                class="tip-article-share tool-share-button"
+                data-share-page
+                data-share-url="/drachenhalle/tools/heilrechner/"
+                aria-label="Heilrechner teilen"
+                title="Heilrechner teilen"
+              >
+                <ImageActionIcon type="share" />
+              </button>
+            </div>
             <p>
               Berechne für T1 bis T10, wie viele Soldaten deine aktiven Helfer sofort heilen können.
               Für gemischte Gruppen steht weiterhin eine persönliche Kalibrierung bereit.
@@ -275,10 +290,14 @@ import SiteHeader from "../../components/SiteHeader.astro";
       <SiteFooter />
     </div>
 
+    <p class="share-feedback" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></p>
+
     <script>
+      import { initializeImageActions } from "../../scripts/image-actions";
       import { initializeHealingCalculator } from "../../scripts/healing-calculator";
 
       initializeHealingCalculator();
+      initializeImageActions();
 
       const healingHelpDialog = document.querySelector("#healing-help-dialog");
       const healingHelpOpen = document.querySelector("[data-healing-help-open]");

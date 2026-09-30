@@ -1,5 +1,6 @@
 ---
 import "../../styles/global.css";
+import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import eventsData from "../../data/events.generated.json";
@@ -38,8 +39,22 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
 
         <header class="tool-hero">
           <div>
-            <p class="eyebrow">Raubzug-Planung</p>
-            <h1>Schildrechner</h1>
+            <div class="tool-hero-title-row">
+              <div>
+                <p class="eyebrow">Raubzug-Planung</p>
+                <h1>Schildrechner</h1>
+              </div>
+              <button
+                type="button"
+                class="tip-article-share tool-share-button"
+                data-share-page
+                data-share-url="/drachenhalle/tools/schildrechner/"
+                aria-label="Schildrechner teilen"
+                title="Schildrechner teilen"
+              >
+                <ImageActionIcon type="share" />
+              </button>
+            </div>
             <p>
               Trage deinen Schildbestand, den gewünschten Start und deine aktiven Kampfzeiten ein.
               Der Rechner prüft den nächsten Raubzug, erkennt eine parallele Hauptstadteroberung
@@ -127,22 +142,34 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                   <span>Erstes Schild setzen</span>
                   <input name="firstShield" type="datetime-local" required />
                 </label>
-                <label>
-                  <span>Optimierung</span>
-                  <select name="strategy">
-                    <option value="fewest">Möglichst wenige Schilde</option>
-                    <option value="least-waste">Möglichst wenig Laufzeit verschenken</option>
-                    <option value="cost">Diamanten vermeiden &amp; Allianzmünzen sparen</option>
-                  </select>
-                </label>
+                <div class="shield-control-with-help">
+                  <label>
+                    <span>Optimierung</span>
+                    <select name="strategy" aria-describedby="shield-optimization-help-title">
+                      <option value="fewest">Möglichst wenige Schilde</option>
+                      <option value="least-waste">Möglichst wenig Laufzeit verschenken</option>
+                      <option value="cost">Diamanten vermeiden &amp; Allianzmünzen sparen</option>
+                    </select>
+                  </label>
+                  <button
+                    class="shield-help-trigger"
+                    type="button"
+                    aria-label="Tipp: Unterschiede der Optimierungen"
+                    aria-haspopup="dialog"
+                    aria-controls="shield-optimization-help-dialog"
+                    title="Optimierungen erklärt"
+                    data-shield-optimization-help-open
+                  >?</button>
+                </div>
               </div>
             </fieldset>
 
             <fieldset class="shield-combat-fieldset">
               <legend>Aktive Kampfzeiten</legend>
               <p class="shield-field-help">
-                Während dieser Zeitfenster planst du bewusst ohne Schild. Danach berücksichtigt
-                der Rechner 15 Minuten Battle Frenzy, bevor der Schutz neu beginnt.
+                Plane jedes Zeitfenster vom ersten bis zum letzten beabsichtigten Angriff. Ab dem
+                letzten Angriff laufen 15 Minuten Battle Frenzy – unabhängig davon, auf welchem
+                Server du angreifst. Erst danach kann der Schutz neu beginnen.
               </p>
               <div class="shield-plan-fields shield-combat-options">
                 <label data-capital-mode-field hidden>
@@ -154,7 +181,7 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                   </select>
                 </label>
                 <label>
-                  <span>Zusätzlicher Rückkehrpuffer</span>
+                  <span>Zusätzlicher Sicherheitspuffer</span>
                   <select name="returnBuffer">
                     <option value="0" selected>Kein zusätzlicher Puffer</option>
                     <option value="5">5 Minuten</option>
@@ -235,6 +262,47 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
 
         <dialog
           class="healing-help-dialog shield-help-dialog"
+          id="shield-optimization-help-dialog"
+          aria-labelledby="shield-optimization-help-title"
+        >
+          <div class="healing-help-content">
+            <header class="healing-help-heading">
+              <div>
+                <p class="eyebrow">Schildkombination auswählen</p>
+                <h2 id="shield-optimization-help-title">Was bedeutet „Optimierung“?</h2>
+              </div>
+              <button
+                type="button"
+                class="healing-help-close"
+                aria-label="Erklärung schließen"
+                title="Schließen"
+                data-shield-optimization-help-close
+              >×</button>
+            </header>
+
+            <ul class="shield-optimization-help-list">
+              <li>
+                <strong>Möglichst wenige Schilde</strong>
+                <span>Minimiert die Anzahl der Schildwechsel. Bei Gleichstand gewinnt der Plan mit weniger überschüssiger Laufzeit.</span>
+              </li>
+              <li>
+                <strong>Möglichst wenig Laufzeit verschenken</strong>
+                <span>Deckt die Schutzphasen möglichst passgenau ab und minimiert zuerst ungenutzte Schildstunden.</span>
+              </li>
+              <li>
+                <strong>Diamanten vermeiden &amp; Allianzmünzen sparen</strong>
+                <span>Vermeidet zuerst diamantpflichtige Schilde und vergleicht danach die bekannten Wiederbeschaffungskosten im Allianzshop.</span>
+              </li>
+            </ul>
+            <p class="shield-help-copy">
+              Die wöchentlichen Shoplimits werden im Ergebnis als Warnung angezeigt. Bereits angesparte
+              Schilde kannst du unabhängig davon in deinen Bestand eintragen.
+            </p>
+          </div>
+        </dialog>
+
+        <dialog
+          class="healing-help-dialog shield-help-dialog"
           id="shield-basis-help-dialog"
           aria-labelledby="shield-basis-help-title"
         >
@@ -304,7 +372,8 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                 <p>
                   Aktive Angriffe können den Schild beenden. Bei aktiver Teilnahme plant das Tool
                   deshalb getrennte Schutzphasen, 15 Minuten Battle Frenzy und auf Wunsch einen
-                  zusätzlichen Rückkehrpuffer ein.
+                  zusätzlichen Sicherheitspuffer ein. Entscheidend ist immer dein letzter Angriff,
+                  unabhängig vom besuchten Server.
                 </p>
                 <a href="/drachenhalle/docs/tipp-13-expeditionswahnsinn-hauptstadteroberung/">
                   Tipp zur Hauptstadteroberung öffnen →
@@ -322,14 +391,16 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
       <SiteFooter />
     </div>
 
+    <p class="share-feedback" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></p>
+
     <template id="shield-raid-window-template">
       <div class="shield-raid-window" data-raid-window>
         <label>
-          <span>Aktiv ab</span>
+          <span>Erster geplanter Angriff</span>
           <input type="datetime-local" data-window-start required />
         </label>
         <label>
-          <span>Aktiv bis</span>
+          <span>Letzter geplanter Angriff</span>
           <input type="datetime-local" data-window-end required />
         </label>
         <button type="button" class="shield-window-remove" data-remove-raid-window aria-label="Plünderfenster entfernen" title="Plünderfenster entfernen">
@@ -340,32 +411,46 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
 
     <script type="application/json" id="shield-events-data" set:html={calculatorData}></script>
     <script>
+      import { initializeImageActions } from "../../scripts/image-actions";
       import { initializeShieldCalculator } from "../../scripts/shield-calculator";
 
       initializeShieldCalculator();
+      initializeImageActions();
 
-      const shieldHelpDialog = document.querySelector("#shield-basis-help-dialog");
-      const shieldHelpOpen = document.querySelector("[data-shield-help-open]");
-      const shieldHelpClose = document.querySelector("[data-shield-help-close]");
+      const connectShieldHelpDialog = (dialogSelector: string, openSelector: string, closeSelector: string) => {
+        const helpDialog = document.querySelector(dialogSelector);
+        const helpOpen = document.querySelector(openSelector);
+        const helpClose = document.querySelector(closeSelector);
+        if (!(helpDialog instanceof HTMLElement)) return;
 
-      if (shieldHelpDialog instanceof HTMLElement) {
-        const openShieldHelp = () => {
-          const dialog = shieldHelpDialog as HTMLDialogElement;
+        const openHelp = () => {
+          const dialog = helpDialog as HTMLDialogElement;
           if (typeof dialog.showModal === "function") dialog.showModal();
           else dialog.setAttribute("open", "");
         };
-        const closeShieldHelp = () => {
-          const dialog = shieldHelpDialog as HTMLDialogElement;
+        const closeHelp = () => {
+          const dialog = helpDialog as HTMLDialogElement;
           if (typeof dialog.close === "function") dialog.close();
           else dialog.removeAttribute("open");
         };
 
-        shieldHelpOpen?.addEventListener("click", openShieldHelp);
-        shieldHelpClose?.addEventListener("click", closeShieldHelp);
-        shieldHelpDialog.addEventListener("click", (event) => {
-          if (event.target === shieldHelpDialog) closeShieldHelp();
+        helpOpen?.addEventListener("click", openHelp);
+        helpClose?.addEventListener("click", closeHelp);
+        helpDialog.addEventListener("click", (event) => {
+          if (event.target === helpDialog) closeHelp();
         });
-      }
+      };
+
+      connectShieldHelpDialog(
+        "#shield-basis-help-dialog",
+        "[data-shield-help-open]",
+        "[data-shield-help-close]",
+      );
+      connectShieldHelpDialog(
+        "#shield-optimization-help-dialog",
+        "[data-shield-optimization-help-open]",
+        "[data-shield-optimization-help-close]",
+      );
     </script>
   </body>
 </html>

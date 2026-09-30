@@ -153,11 +153,12 @@ const baseDocuments = [
   {
     source: "Allianz/Allianz_Offiziere.md",
     slug: "unsere-offiziere",
-    title: "Unsere Offiziere",
+    title: "Unser Führungsteam",
     section: "Allianz",
-    summary: "Die aktuellen R4 mit Charakterdarstellung und kurzer Vorstellung.",
+    summary: "Anthlan und unsere aktuellen R4 auf einen Blick.",
     parentSlug: "allianz",
     kind: "officers",
+    imageSource: "Allianz/Allianz_Fuehrungsteam.png",
   },
   {
     source: "Allianz/Allianz_Verantwortlichkeiten.md",

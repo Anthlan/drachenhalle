@@ -85,48 +85,49 @@ const latestPersonImage = (category, person) => galleryData.items
   .sort((left, right) => `${right.date ?? ""} ${right.time ?? ""}`.localeCompare(`${left.date ?? ""} ${left.time ?? ""}`))[0]
   ?.webUrl ?? null;
 
-const officerProfiles = [
+const leadershipProfiles = [
+  {
+    id: "anthlan",
+    name: "Anthlan",
+    subtitle: "R5 · Allianzleitung",
+    imageUrl: latestPersonImage("Avatar", "Anthlan"),
+    isLeader: true,
+  },
   {
     id: "mysteryz",
     name: "mysteryZ",
     subtitle: "R4 · Vize",
-    description: "Vertritt Anthlan bei Bedarf und unterstützt die Führung bei übergreifenden Fragen und diplomatischen Themen.",
-    imageUrl: latestPersonImage("Charaktermodell", "mysteryZ"),
+    imageUrl: latestPersonImage("Avatar", "mysteryZ"),
   },
   {
     id: "somea",
     name: "Somea",
     subtitle: "R4",
-    description: "Ist eine zentrale Anlaufstelle für Gemeinschaft, Mitgliederverwaltung und ein gutes Miteinander.",
-    imageUrl: latestPersonImage("Charaktermodell", "Somea"),
+    imageUrl: latestPersonImage("Avatar", "Somea"),
   },
   {
     id: "davinci1986",
     name: "DaVinci1986",
     subtitle: "R4",
-    description: "Begleitet die Aufnahme neuer Mitglieder und unterstützt zusätzlich die Organisation unseres Güterzugs.",
-    imageUrl: latestPersonImage("Charaktermodell", "DaVinci1986"),
+    imageUrl: latestPersonImage("Avatar", "DaVinci1986"),
   },
   {
     id: "drachenherz",
     name: "Drachenherz",
     subtitle: "R4",
-    description: "Unterstützt die Kampf- und Eventkoordination, insbesondere bei PvP-Ereignissen und gemeinsamen Angriffen.",
-    imageUrl: latestPersonImage("Charaktermodell", "Drachenherz"),
+    imageUrl: latestPersonImage("Avatar", "Drachenherz"),
   },
   {
     id: "helltrain",
     name: "Helltrain",
     subtitle: "R4",
-    description: "Kümmert sich um die Vorbereitung und Koordination des Allianz-Hinterhalts.",
-    imageUrl: latestPersonImage("Charaktermodell", "Helltrain"),
+    imageUrl: latestPersonImage("Avatar", "Helltrain"),
   },
   {
     id: "thor63",
     name: "Thor63",
-    subtitle: "R4 · neu im Offiziersteam",
-    description: "Verstärkt neu unser Offiziersteam. Ein fester Verantwortungsbereich ist derzeit noch nicht zugeordnet.",
-    imageUrl: latestPersonImage("Charaktermodell", "Thor63"),
+    subtitle: "R4",
+    imageUrl: latestPersonImage("Avatar", "Thor63"),
   },
 ];
 
@@ -510,21 +511,30 @@ const responsibilities = [
             )}
             {isCuratedHubOverview ? null : isOfficerRoster ? (
               <div class="officer-page">
+                {document.imageUrl && (
+                  <figure class="officer-team-hero">
+                    <img src={document.imageUrl} alt="Unser siebenköpfiges Führungsteam berät gemeinsam am Kartentisch" />
+                    <figcaption>
+                      <strong>Eine Allianz. Ein Führungsteam.</strong>
+                      <span>Wir beraten, entscheiden und tragen gemeinsam Verantwortung.</span>
+                    </figcaption>
+                  </figure>
+                )}
                 <section class="officer-page-intro">
                   <p>
-                    Unsere Offiziere unterstützen Anthlan bei der Führung und Organisation der Allianz. Die konkreten
-                    Aufgaben stehen getrennt unter <a href="/drachenhalle/docs/unsere-verantwortlichkeiten/">Unsere Verantwortlichen</a>.
+                    Unsere Allianzführung besteht aus Anthlan als R5 und unseren sechs R4. Hier seht ihr, wer aktuell
+                    zu unserem Führungsteam gehört. Wir stimmen uns gemeinsam ab und sind für euch ansprechbar.
                   </p>
-                  <span>Stand: 29. September 2026</span>
+                  <span>Stand: 30. September 2026</span>
                 </section>
-                <div class="officer-roster" aria-label="Aktuelle Offiziere der Allianz">
-                  {officerProfiles.map((officer) => (
-                    <article class:list={["officer-card", { "is-pending": !officer.imageUrl }]}>
-                      <div class="officer-portrait">
+                <div class="officer-roster" aria-label="Aktuelles Führungsteam der Allianz">
+                  {leadershipProfiles.map((officer) => (
+                    <article class:list={["officer-card", { "is-leader": officer.isLeader, "is-pending": !officer.imageUrl }]}>
+                      <div class="officer-avatar">
                         {officer.imageUrl ? (
-                          <img src={officer.imageUrl} alt={`Charaktermodell von ${officer.name}`} loading="lazy" />
+                          <img src={officer.imageUrl} alt={`Avatar von ${officer.name}`} />
                         ) : (
-                          <div class="officer-portrait-placeholder" aria-label={`Charaktermodell von ${officer.name} folgt`}>
+                          <div class="officer-portrait-placeholder" aria-label={`Avatar von ${officer.name} folgt`}>
                             <span aria-hidden="true">🐉</span>
                             <strong>Bild folgt</strong>
                           </div>
@@ -533,11 +543,14 @@ const responsibilities = [
                       <div class="officer-card-copy">
                         <span>{officer.subtitle}</span>
                         <h2>{officer.name}</h2>
-                        <p>{officer.description}</p>
                       </div>
                     </article>
                   ))}
                 </div>
+                <a class="officer-responsibility-link" href="/drachenhalle/docs/unsere-verantwortlichkeiten/">
+                  <span>Wer kümmert sich worum?</span>
+                  <strong>Zu unseren Verantwortlichkeiten <span aria-hidden="true">→</span></strong>
+                </a>
               </div>
             ) : isResponsibilities ? (
               <div class="responsibility-page">

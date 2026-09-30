@@ -661,14 +661,14 @@ export const initializeShieldCalculator = () => {
       const end = new Date(endInput?.value ?? "");
       if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
         if (formError) {
-          formError.textContent = `Bitte fülle Start und Ende für Plünderfenster ${index + 1} vollständig aus.`;
+          formError.textContent = `Bitte trage den ersten und letzten geplanten Angriff für Plünderfenster ${index + 1} ein.`;
           formError.hidden = false;
         }
         return;
       }
       if (start < raidStart || end > raidEnd || end <= start) {
         if (formError) {
-          formError.textContent = `Plünderfenster ${index + 1} muss vollständig im Raubzug liegen und nach seinem Start enden.`;
+          formError.textContent = `Plünderfenster ${index + 1} muss vollständig im Raubzug liegen; der letzte Angriff muss nach dem ersten liegen.`;
           formError.hidden = false;
         }
         return;
@@ -716,7 +716,7 @@ export const initializeShieldCalculator = () => {
       summary = activeWindows.length === 1
         ? `Dein Bestand deckt alle ${segments.length} Schutzphasen rund um ein aktives Zeitfenster ab.`
         : `Dein Bestand deckt alle ${segments.length} Schutzphasen rund um ${activeWindows.length} aktive Zeitfenster ab.`;
-      note = `Während der markierten Kampfzeiten bist du bewusst ungeschützt. Neuer Schutz beginnt jeweils frühestens nach ${BATTLE_FRENZY_MINUTES} Minuten Battle Frenzy${returnBuffer ? ` und ${returnBuffer} Minuten Rückkehrpuffer` : ""}.`;
+      note = `Während der markierten Kampfzeiten bist du bewusst ungeschützt. Nach dem jeweils letzten geplanten Angriff laufen serverunabhängig ${BATTLE_FRENZY_MINUTES} Minuten Battle Frenzy${returnBuffer ? ` und zusätzlich ${returnBuffer} Minuten Sicherheitspuffer` : ""}.`;
     } else if (complete) {
       kicker = hasUnclearCapital ? "Plan passt – Rolle noch offen" : "Gut vorbereitet";
       title = hasUnclearCapital ? "Fast alles geklärt" : "Dein Schildplan passt";
