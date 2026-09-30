@@ -4869,8 +4869,8 @@ h1 {
   display: grid;
   grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
   align-items: start;
-  gap: 18px;
-  margin-top: 18px;
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .shield-form,
@@ -4880,7 +4880,7 @@ h1 {
 }
 
 .shield-next-event {
-  padding: 24px;
+  padding: 28px 30px;
   border-bottom: 1px solid var(--line);
   background:
     linear-gradient(145deg, rgba(227, 173, 78, 0.09), transparent 70%),
@@ -4919,13 +4919,15 @@ h1 {
 .shield-form fieldset {
   min-width: 0;
   margin: 0;
-  padding: 22px 24px 24px;
+  padding: 28px 30px 30px;
   border: 0;
   border-bottom: 1px solid var(--line);
 }
 
 .shield-form legend {
-  padding: 0;
+  width: 100%;
+  float: left;
+  padding: 0 0 18px;
   color: var(--gold);
   font-size: 11px;
   font-weight: 900;
@@ -4937,8 +4939,9 @@ h1 {
 .shield-plan-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 14px;
+  clear: both;
+  gap: 18px;
+  margin-top: 0;
 }
 
 .shield-plan-fields {
@@ -4996,7 +4999,7 @@ h1 {
 }
 
 .shield-form > .tool-primary-button {
-  margin: 22px 24px 24px;
+  margin: 28px 30px 30px;
 }
 
 .tool-primary-button:hover,
@@ -5011,7 +5014,7 @@ h1 {
 }
 
 .shield-form-error {
-  margin: -10px 24px 24px;
+  margin: -14px 30px 30px;
   color: #ffada4;
   font-size: 12px;
   line-height: 1.5;
@@ -5187,8 +5190,8 @@ h1 {
   display: grid;
   grid-template-columns: minmax(380px, 0.92fr) minmax(0, 1.08fr);
   align-items: start;
-  gap: 18px;
-  margin-top: 18px;
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .healing-form,
@@ -5198,7 +5201,7 @@ h1 {
 }
 
 .healing-form-intro {
-  padding: 24px;
+  padding: 28px 30px;
   border-bottom: 1px solid var(--line);
   background: linear-gradient(145deg, rgba(227, 173, 78, 0.09), transparent 72%);
 }
@@ -5220,13 +5223,15 @@ h1 {
 .healing-form fieldset {
   min-width: 0;
   margin: 0;
-  padding: 22px 24px 24px;
+  padding: 28px 30px 30px;
   border: 0;
   border-bottom: 1px solid var(--line);
 }
 
 .healing-form legend {
-  padding: 0;
+  width: 100%;
+  float: left;
+  padding: 0 0 18px;
   color: var(--gold);
   font-size: 11px;
   font-weight: 900;
@@ -5237,8 +5242,9 @@ h1 {
 .healing-field-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 14px;
+  clear: both;
+  gap: 18px;
+  margin-top: 0;
 }
 
 .healing-field-grid.is-time {
@@ -5247,6 +5253,10 @@ h1 {
 
 .healing-field-grid.is-calibration {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.healing-field-help + .healing-field-grid {
+  margin-top: 16px;
 }
 
 .healing-form label {
@@ -5280,11 +5290,11 @@ h1 {
 }
 
 .healing-form > .tool-primary-button {
-  margin: 22px 24px 24px;
+  margin: 28px 30px 30px;
 }
 
 .healing-form-error {
-  margin: -10px 24px 24px;
+  margin: -14px 30px 30px;
   color: #ffada4;
   font-size: 12px;
   line-height: 1.5;
@@ -5292,7 +5302,7 @@ h1 {
 
 .healing-result {
   position: sticky;
-  top: 18px;
+  top: 24px;
   overflow: hidden;
   border-color: rgba(227, 173, 78, 0.58);
   background:
@@ -5448,8 +5458,8 @@ h1 {
 }
 
 .tool-reference {
-  margin-top: 56px;
-  padding-top: 28px;
+  margin-top: 68px;
+  padding-top: 34px;
   border-top: 1px solid var(--line);
 }
 
@@ -5669,6 +5679,32 @@ h1 {
   .tool-hero-seal {
     width: 88px;
     font-size: 42px;
+  }
+
+  .shield-calculator,
+  .healing-calculator {
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .shield-next-event,
+  .healing-form-intro {
+    padding: 24px 20px;
+  }
+
+  .shield-form fieldset,
+  .healing-form fieldset {
+    padding: 24px 20px 26px;
+  }
+
+  .shield-form > .tool-primary-button,
+  .healing-form > .tool-primary-button {
+    margin: 24px 20px 26px;
+  }
+
+  .shield-form-error,
+  .healing-form-error {
+    margin: -10px 20px 26px;
   }
 
   .shield-result {
