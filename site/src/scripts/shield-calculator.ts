@@ -9,12 +9,13 @@ type ShieldEvent = {
 };
 
 type ShieldCounts = {
+  shields72: number;
   shields24: number;
   shields12: number;
   shields8: number;
 };
 
-type ShieldHours = 8 | 12 | 24;
+type ShieldHours = 8 | 12 | 24 | 72;
 
 type ShieldStep = {
   at: Date;
@@ -64,7 +65,14 @@ const MINUTE = 60 * 1000;
 const BATTLE_FRENZY_MINUTES = 15;
 const MAX_RAID_WINDOWS = 5;
 
-const emptyCounts = (): ShieldCounts => ({ shields24: 0, shields12: 0, shields8: 0 });
+const SHIELD_COSTS = {
+  72: { allianceCoins: null, weeklyShopLimit: 0, diamonds: 12000 },
+  24: { allianceCoins: 20000, weeklyShopLimit: 3, diamonds: null },
+  12: { allianceCoins: 10000, weeklyShopLimit: 3, diamonds: 2500 },
+  8: { allianceCoins: 7500, weeklyShopLimit: 8, diamonds: 1500 },
+} as const;
+
+const emptyCounts = (): ShieldCounts => ({ shields72: 0, shields24: 0, shields12: 0, shields8: 0 });
 
 const parseEventDate = (event: ShieldEvent, boundary: "start" | "end") => {
   const date = boundary === "end" ? event.endDate ?? event.date : event.date;
@@ -130,29 +138,67 @@ const boundedCount = (value: FormDataEntryValue | null) => {
   return Number.isFinite(parsed) ? Math.min(20, Math.max(0, parsed)) : 0;
 };
 
-const countShields = (counts: ShieldCounts) => counts.shields24 + counts.shields12 + counts.shields8;
+const formatNumber = (value: number) => value.toLocaleString("de-DE");
+
+const countShields = (counts: ShieldCounts) => (
+  counts.shields72 + counts.shields24 + counts.shields12 + counts.shields8
+);
 
 const durationForCounts = (counts: ShieldCounts) => (
-  (counts.shields24 * 24 + counts.shields12 * 12 + counts.shields8 * 8) * HOUR
+  (counts.shields72 * 72 + counts.shields24 * 24 + counts.shields12 * 12 + counts.shields8 * 8) * HOUR
 );
 
 const addCounts = (left: ShieldCounts, right: ShieldCounts): ShieldCounts => ({
+  shields72: left.shields72 + right.shields72,
   shields24: left.shields24 + right.shields24,
   shields12: left.shields12 + right.shields12,
   shields8: left.shields8 + right.shields8,
 });
 
 const fitsInventory = (used: ShieldCounts, inventory: ShieldCounts) => (
-  used.shields24 <= inventory.shields24
+  used.shields72 <= inventory.shields72
+  && used.shields24 <= inventory.shields24
   && used.shields12 <= inventory.shields12
   && used.shields8 <= inventory.shields8
 );
 
-const stateKey = (counts: ShieldCounts) => `${counts.shields24}:${counts.shields12}:${counts.shields8}`;
+const stateKey = (counts: ShieldCounts) => `${counts.shields72}:${counts.shields24}:${counts.shields12}:${counts.shields8}`;
+
+const replacementCost = (counts: ShieldCounts) => ({
+  allianceCoins:
+    counts.shields24 * SHIELD_COSTS[24].allianceCoins
+    + counts.shields12 * SHIELD_COSTS[12].allianceCoins
+    + counts.shields8 * SHIELD_COSTS[8].allianceCoins,
+  diamonds: counts.shields72 * SHIELD_COSTS[72].diamonds,
+});
+
+const exceedsWeeklyShopLimit = (counts: ShieldCounts) => (
+  counts.shields24 > SHIELD_COSTS[24].weeklyShopLimit
+  || counts.shields12 > SHIELD_COSTS[12].weeklyShopLimit
+  || counts.shields8 > SHIELD_COSTS[8].weeklyShopLimit
+);
+
+const formatReplacementCost = (counts: ShieldCounts) => {
+  const cost = replacementCost(counts);
+  const parts = [
+    cost.allianceCoins > 0 ? `${formatNumber(cost.allianceCoins)} Allianzmünzen` : "",
+    cost.diamonds > 0 ? `${formatNumber(cost.diamonds)} Diamanten` : "",
+  ].filter(Boolean);
+  const value = parts.join(" + ") || "Keine Schilde verbraucht";
+  return exceedsWeeklyShopLimit(counts) ? `${value} · über Wochenlimit` : value;
+};
 
 const compareCompleteStates = (left: PlanState, right: PlanState, strategy: string) => {
   const countDifference = countShields(left.used) - countShields(right.used);
   const excessDifference = left.excessMs - right.excessMs;
+  if (strategy === "cost") {
+    const leftCost = replacementCost(left.used);
+    const rightCost = replacementCost(right.used);
+    return leftCost.diamonds - rightCost.diamonds
+      || leftCost.allianceCoins - rightCost.allianceCoins
+      || excessDifference
+      || countDifference;
+  }
   return strategy === "least-waste"
     ? excessDifference || countDifference
     : countDifference || excessDifference;
@@ -183,14 +229,20 @@ const isBetterForSameInventory = (
 
 const allocationCandidates = (requiredMs: number, inventory: ShieldCounts) => {
   const candidates: Allocation[] = [];
-  const upperDuration = requiredMs + 24 * HOUR;
+  const upperDuration = requiredMs + 72 * HOUR;
+  const max72 = Math.min(inventory.shields72, Math.ceil(upperDuration / (72 * HOUR)));
+  const max24 = Math.min(inventory.shields24, Math.ceil(upperDuration / (24 * HOUR)));
+  const max12 = Math.min(inventory.shields12, Math.ceil(upperDuration / (12 * HOUR)));
+  const max8 = Math.min(inventory.shields8, Math.ceil(upperDuration / (8 * HOUR)));
 
-  for (let shields24 = 0; shields24 <= inventory.shields24; shields24 += 1) {
-    for (let shields12 = 0; shields12 <= inventory.shields12; shields12 += 1) {
-      for (let shields8 = 0; shields8 <= inventory.shields8; shields8 += 1) {
-        const counts = { shields24, shields12, shields8 };
-        const durationMs = durationForCounts(counts);
-        if (durationMs <= upperDuration) candidates.push({ counts, durationMs });
+  for (let shields72 = 0; shields72 <= max72; shields72 += 1) {
+    for (let shields24 = 0; shields24 <= max24; shields24 += 1) {
+      for (let shields12 = 0; shields12 <= max12; shields12 += 1) {
+        for (let shields8 = 0; shields8 <= max8; shields8 += 1) {
+          const counts = { shields72, shields24, shields12, shields8 };
+          const durationMs = durationForCounts(counts);
+          if (durationMs <= upperDuration) candidates.push({ counts, durationMs });
+        }
       }
     }
   }
@@ -202,6 +254,7 @@ const buildSteps = (segment: ProtectionSegment, allocation: Allocation) => {
   const steps: ShieldStep[] = [];
   const cursor = new Date(segment.start);
   const durations: ShieldHours[] = [
+    ...Array.from({ length: allocation.counts.shields72 }, () => 72 as const),
     ...Array.from({ length: allocation.counts.shields24 }, () => 24 as const),
     ...Array.from({ length: allocation.counts.shields12 }, () => 12 as const),
     ...Array.from({ length: allocation.counts.shields8 }, () => 8 as const),
@@ -573,6 +626,7 @@ export const initializeShieldCalculator = () => {
 
     const formData = new FormData(form);
     const inventory: ShieldCounts = {
+      shields72: boundedCount(formData.get("shields72")),
       shields24: boundedCount(formData.get("shields24")),
       shields12: boundedCount(formData.get("shields12")),
       shields8: boundedCount(formData.get("shields8")),
@@ -693,7 +747,8 @@ export const initializeShieldCalculator = () => {
     if (resultFacts) {
       resultFacts.replaceChildren();
       addFact(resultFacts, "Raubzug", formatEventWindow(raidStart, raidEnd));
-      addFact(resultFacts, "Bestand", `${inventory.shields24} × 24h · ${inventory.shields12} × 12h · ${inventory.shields8} × 8h`);
+      addFact(resultFacts, "Verbrauch", `${plan.used.shields72} × 72h · ${plan.used.shields24} × 24h · ${plan.used.shields12} × 12h · ${plan.used.shields8} × 8h`);
+      addFact(resultFacts, "Wiederbeschaffung", formatReplacementCost(plan.used));
       addFact(
         resultFacts,
         activeWindows.length > 0 ? "Aktive Zeitfenster" : complete ? "Abgedeckt bis" : "Noch offen",

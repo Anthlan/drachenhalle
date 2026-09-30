@@ -63,6 +63,10 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
               <legend>Dein Schildbestand</legend>
               <div class="shield-inventory-grid">
                 <label>
+                  <span>72-Stunden-Schilde</span>
+                  <input name="shields72" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" />
+                </label>
+                <label>
                   <span>24-Stunden-Schilde</span>
                   <input name="shields24" type="number" min="0" max="20" step="1" value="1" inputmode="numeric" />
                 </label>
@@ -74,6 +78,45 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                   <span>8-Stunden-Schilde</span>
                   <input name="shields8" type="number" min="0" max="20" step="1" value="1" inputmode="numeric" />
                 </label>
+              </div>
+
+              <div class="shield-price-overview" aria-label="Preise und wöchentliche Verfügbarkeit der Schilde">
+                <article>
+                  <strong>72h</strong>
+                  <span>Allianzshop: nicht erhältlich</span>
+                  <span>Basis-Buff: 12.000 Diamanten</span>
+                </article>
+                <article>
+                  <strong>24h</strong>
+                  <span>20.000 Allianzmünzen · 3 pro Woche</span>
+                  <span>Basis-Buff: Preis unbekannt</span>
+                </article>
+                <article>
+                  <strong>12h</strong>
+                  <span>10.000 Allianzmünzen · 3 pro Woche</span>
+                  <span>Basis-Buff: 2.500 Diamanten</span>
+                </article>
+                <article>
+                  <strong>8h</strong>
+                  <span>7.500 Allianzmünzen · 8 pro Woche</span>
+                  <span>Basis-Buff: 1.500 Diamanten</span>
+                </article>
+              </div>
+              <div class="shield-price-note-row">
+                <p class="shield-price-note">
+                  Die Auswertung bewertet 24h-, 12h- und 8h-Schilde über den Allianzshop und
+                  72h-Schilde über den Basis-Buff. Für das 24h-Schild ist der Diamantpreis noch unbekannt
+                  und wird nicht geschätzt.
+                </p>
+                <button
+                  class="shield-help-trigger"
+                  type="button"
+                  aria-label="Tipp: Was ist der Basis-Buff?"
+                  aria-haspopup="dialog"
+                  aria-controls="shield-basis-help-dialog"
+                  title="Was ist der Basis-Buff?"
+                  data-shield-help-open
+                >?</button>
               </div>
             </fieldset>
 
@@ -89,6 +132,7 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                   <select name="strategy">
                     <option value="fewest">Möglichst wenige Schilde</option>
                     <option value="least-waste">Möglichst wenig Laufzeit verschenken</option>
+                    <option value="cost">Diamanten vermeiden &amp; Allianzmünzen sparen</option>
                   </select>
                 </label>
               </div>
@@ -189,6 +233,50 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
           </section>
         </section>
 
+        <dialog
+          class="healing-help-dialog shield-help-dialog"
+          id="shield-basis-help-dialog"
+          aria-labelledby="shield-basis-help-title"
+        >
+          <div class="healing-help-content">
+            <header class="healing-help-heading">
+              <div>
+                <p class="eyebrow">Tipp im Spiel</p>
+                <h2 id="shield-basis-help-title">Was ist der Basis-Buff?</h2>
+              </div>
+              <button
+                type="button"
+                class="healing-help-close"
+                aria-label="Tipp schließen"
+                title="Schließen"
+                data-shield-help-close
+              >×</button>
+            </header>
+
+            <p class="shield-help-copy">
+              Als Basis-Buffs bezeichnen wir die zeitlich begrenzten Verstärkungen deiner Basis.
+              In diesem Menü findest du auch die Friedensschilde, die direkt mit Diamanten gekauft
+              und aktiviert werden können.
+            </p>
+
+            <ol class="healing-help-steps shield-basis-help-steps">
+              <li>
+                <figure>
+                  <img
+                    src="/drachenhalle/tutorial/heilrechner/01-basis-buff.png"
+                    alt="Eigene Basis mit markiertem Schild-Symbol zum Öffnen der Basis-Buffs"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <strong>Basis-Buffs öffnen</strong>
+                    <span>Tippe deine eigene Basis an und öffne anschließend das markierte Schild-Symbol.</span>
+                  </figcaption>
+                </figure>
+              </li>
+            </ol>
+          </div>
+        </dialog>
+
         <section class="tool-reference" aria-labelledby="shield-reference-title">
           <header>
             <p class="eyebrow">Grundlage & Grenzen</p>
@@ -201,7 +289,8 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                 <h3>Der gemeinsame Schildplan</h3>
                 <p>
                   Der Rechner verwendet den im Allianztext beschriebenen Gefahrenzeitraum und
-                  plant mit 24-, 12- und 8-Stunden-Schilden.
+                  plant mit 72-, 24-, 12- und 8-Stunden-Schilden. Bekannte Shoppreise und
+                  wöchentliche Verfügbarkeiten fließen in die Kostenübersicht ein.
                 </p>
                 <a href="/drachenhalle/docs/eventankuendigung-raubzugkaempfe/">
                   Raubzug-Ankündigung lesen →
@@ -254,6 +343,29 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
       import { initializeShieldCalculator } from "../../scripts/shield-calculator";
 
       initializeShieldCalculator();
+
+      const shieldHelpDialog = document.querySelector("#shield-basis-help-dialog");
+      const shieldHelpOpen = document.querySelector("[data-shield-help-open]");
+      const shieldHelpClose = document.querySelector("[data-shield-help-close]");
+
+      if (shieldHelpDialog instanceof HTMLElement) {
+        const openShieldHelp = () => {
+          const dialog = shieldHelpDialog as HTMLDialogElement;
+          if (typeof dialog.showModal === "function") dialog.showModal();
+          else dialog.setAttribute("open", "");
+        };
+        const closeShieldHelp = () => {
+          const dialog = shieldHelpDialog as HTMLDialogElement;
+          if (typeof dialog.close === "function") dialog.close();
+          else dialog.removeAttribute("open");
+        };
+
+        shieldHelpOpen?.addEventListener("click", openShieldHelp);
+        shieldHelpClose?.addEventListener("click", closeShieldHelp);
+        shieldHelpDialog.addEventListener("click", (event) => {
+          if (event.target === shieldHelpDialog) closeShieldHelp();
+        });
+      }
     </script>
   </body>
 </html>
