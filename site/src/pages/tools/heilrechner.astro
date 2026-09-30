@@ -1,0 +1,43 @@
+---
+import "../../styles/global.css";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Geplanter Heilrechner auf Grundlage von Tipp 8 der DIE Drachenhalle." />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Heilrechner · Tools · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="tools" />
+      <main class="tool-main" id="main-content">
+        <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/tools/">Tools</a>
+          <span aria-hidden="true">/</span>
+          <span>Heilrechner</span>
+        </nav>
+        <section class="tool-placeholder" aria-labelledby="healing-tool-title">
+          <div>
+            <p class="eyebrow">Als nächstes Werkzeug</p>
+            <h1 id="healing-tool-title">Heilrechner</h1>
+            <p>
+              Der Rechner wird Hilfszeit, Hilfslimit, aktive Unterstützer und eine persönliche
+              Ingame-Kalibrierung zu einem passenden Instant-Heal-Block verbinden.
+            </p>
+            <a class="tool-primary-button" href="/drachenhalle/docs/tipp-08-soldaten-schneller-heilen/">
+              Bis dahin Tipp 8 öffnen →
+            </a>
+          </div>
+          <span class="tool-placeholder-icon" aria-hidden="true">🏥</span>
+        </section>
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>

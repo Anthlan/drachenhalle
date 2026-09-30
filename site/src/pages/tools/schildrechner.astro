@@ -1,0 +1,201 @@
+---
+import "../../styles/global.css";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import eventsData from "../../data/events.generated.json";
+
+const raidEvents = eventsData.items
+  .filter((event) => /raubzug/i.test(event.title))
+  .map(({ slug, title, date, time, end, endDate, detailUrl }) => ({ slug, title, date, time, end, endDate, detailUrl }));
+const capitalEvents = eventsData.items
+  .filter((event) => /hauptstadteroberung/i.test(event.title))
+  .map(({ title, date, time, end, endDate, detailUrl }) => ({ title, date, time, end, endDate, detailUrl }));
+const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll("<", "\\u003c");
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Plane deine Friedensschilde für den nächsten Raubzug und lade passende Kalendererinnerungen herunter."
+    />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Schildrechner · Tools · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="tools" />
+
+      <main class="tool-main" id="main-content">
+        <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/tools/">Tools</a>
+          <span aria-hidden="true">/</span>
+          <span>Schildrechner</span>
+        </nav>
+
+        <header class="tool-hero">
+          <div>
+            <p class="eyebrow">Raubzug-Planung</p>
+            <h1>Schildrechner</h1>
+            <p>
+              Trage deinen Schildbestand und den gewünschten Start ein. Der Rechner prüft den
+              nächsten Raubzug, erkennt eine parallele Hauptstadteroberung und erstellt einen
+              möglichst passenden Schutzplan.
+            </p>
+          </div>
+          <div class="tool-hero-seal" aria-hidden="true">🛡️</div>
+        </header>
+
+        <section class="shield-calculator" data-shield-calculator aria-labelledby="shield-form-title">
+          <form class="shield-form" data-shield-form>
+            <div class="shield-next-event" data-next-event>
+              <p class="eyebrow">Automatisch aus den Terminen</p>
+              <h2 id="shield-form-title">Nächster Raubzug</h2>
+              <p data-raid-date>Der nächste Raubzug wird geladen …</p>
+              <a data-raid-link href="/drachenhalle/termine/" hidden>Termindetails öffnen →</a>
+              <p class="shield-capital-hint" data-capital-hint hidden></p>
+            </div>
+
+            <fieldset>
+              <legend>Dein Schildbestand</legend>
+              <div class="shield-inventory-grid">
+                <label>
+                  <span>24-Stunden-Schilde</span>
+                  <input name="shields24" type="number" min="0" max="20" step="1" value="1" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>8-Stunden-Schilde</span>
+                  <input name="shields8" type="number" min="0" max="20" step="1" value="1" inputmode="numeric" />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Dein Plan</legend>
+              <div class="shield-plan-fields">
+                <label>
+                  <span>Erstes Schild setzen</span>
+                  <input name="firstShield" type="datetime-local" required />
+                </label>
+                <label>
+                  <span>Optimierung</span>
+                  <select name="strategy">
+                    <option value="fewest">Möglichst wenige Schilde</option>
+                    <option value="least-waste">Möglichst wenig Laufzeit verschenken</option>
+                  </select>
+                </label>
+                <label data-capital-mode-field hidden>
+                  <span>Teilnahme an der Hauptstadteroberung</span>
+                  <select name="capitalMode">
+                    <option value="passive">Ich bleibe unter Schild</option>
+                    <option value="active">Ich kämpfe aktiv</option>
+                    <option value="unclear">Noch unklar</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <button class="tool-primary-button" type="submit" data-calculate-button>
+              Schildplan berechnen
+            </button>
+            <p class="shield-form-error" role="alert" data-form-error hidden></p>
+          </form>
+
+          <section class="shield-result" data-shield-result aria-live="polite" aria-atomic="false" hidden>
+            <div class="shield-result-character" aria-hidden="true">
+              <img
+                class="shield-character shield-character-calm"
+                src="/drachenhalle/brand/tutorial-chibi-anthlan.webp"
+                width="696"
+                height="1072"
+                alt=""
+                data-character-calm
+              />
+              <img
+                class="shield-character shield-character-concerned"
+                src="/drachenhalle/brand/tool-shield-anthlan-concerned.webp"
+                width="696"
+                height="1044"
+                alt=""
+                data-character-concerned
+                hidden
+              />
+            </div>
+            <div class="shield-result-copy">
+              <p class="eyebrow" data-result-kicker>Auswertung</p>
+              <h2 data-result-title>Dein Schildplan</h2>
+              <p data-result-summary></p>
+
+              <div class="shield-result-facts" data-result-facts></div>
+
+              <div class="shield-schedule">
+                <h3>Empfohlene Zeitpunkte</h3>
+                <ol data-schedule-list></ol>
+              </div>
+
+              <p class="shield-result-note" data-result-note></p>
+
+              <div class="shield-result-actions">
+                <button class="tool-primary-button" type="button" data-download-plan disabled>
+                  Erinnerungen als ICS laden ↓
+                </button>
+                <a data-result-event-link href="/drachenhalle/termine/">Raubzugtermin öffnen →</a>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="tool-reference" aria-labelledby="shield-reference-title">
+          <header>
+            <p class="eyebrow">Grundlage & Grenzen</p>
+            <h2 id="shield-reference-title">Was der Rechner berücksichtigt</h2>
+          </header>
+          <div class="tool-reference-grid">
+            <article>
+              <span aria-hidden="true">🛡️</span>
+              <div>
+                <h3>Der gemeinsame Schildplan</h3>
+                <p>
+                  Der Rechner verwendet den im Allianztext beschriebenen Gefahrenzeitraum und
+                  plant ausschließlich mit 24- und 8-Stunden-Schilden.
+                </p>
+                <a href="/drachenhalle/docs/eventankuendigung-raubzugkaempfe/">
+                  Raubzug-Ankündigung lesen →
+                </a>
+              </div>
+            </article>
+            <article>
+              <span aria-hidden="true">⚔️</span>
+              <div>
+                <h3>Hauptstadt und Battle Frenzy</h3>
+                <p>
+                  Aktive Angriffe können den Schild beenden. Bei aktiver Teilnahme plant das Tool
+                  deshalb getrennte Schutzphasen und 15 Minuten Battle Frenzy ein.
+                </p>
+                <a href="/drachenhalle/docs/tipp-13-expeditionswahnsinn-hauptstadteroberung/">
+                  Tipp zur Hauptstadteroberung öffnen →
+                </a>
+              </div>
+            </article>
+          </div>
+          <p class="tool-disclaimer">
+            Der Rechner ist eine Planungshilfe. Prüfe vor jeder Aktion die aktuelle Ingame-Anzeige:
+            Spielupdates, offensive Aktionen oder abweichende Eventzeiten können einen Schildplan verändern.
+          </p>
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
+
+    <script type="application/json" id="shield-events-data" set:html={calculatorData}></script>
+    <script>
+      import { initializeShieldCalculator } from "../../scripts/shield-calculator";
+
+      initializeShieldCalculator();
+    </script>
+  </body>
+</html>

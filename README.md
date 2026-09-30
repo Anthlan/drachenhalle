@@ -23,6 +23,8 @@ Jeder Fachordner enthält eine eigene `README.md` mit seinem Zweck, seiner vorge
 | [`Archiv`](Archiv/README.md) | Ersetzte, veraltete oder historisch relevante Inhalte |
 | [`site`](site) | Technische Quellen der automatisch erzeugten Website |
 
+Unter **Tools** stellt die Website kleine interaktive Werkzeuge bereit. Der Schildrechner liest den nächsten Raubzug und eine mögliche parallele Hauptstadteroberung direkt aus den Termindaten und erzeugt auf Wunsch persönliche Kalendererinnerungen. Der Heilrechner wird auf Grundlage von Tipp 8 ergänzt.
+
 ## Inhalte einreichen
 
 Allianzmitglieder können Bilder und Dokumente über die [ZRoute Upload-Inbox](https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g) einreichen. Für den Upload ist kein Dropbox-Konto erforderlich.

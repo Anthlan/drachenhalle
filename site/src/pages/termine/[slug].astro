@@ -11,6 +11,7 @@ export const getStaticPaths = () => eventsData.items.map((event) => ({
 }));
 
 const { event } = Astro.props;
+const isRaid = /raubzug/i.test(event.title);
 const date = new Date(`${event.date}T12:00:00`);
 const longDate = new Intl.DateTimeFormat("de-DE", {
   weekday: "long",
@@ -96,6 +97,11 @@ const nextEventDateLabel = nextEvent
             <a href={event.calendarUrl} download>
               In Kalender übernehmen <span aria-hidden="true">↓</span>
             </a>
+            {isRaid && (
+              <a class="event-tool-link" href={`/drachenhalle/tools/schildrechner/?event=${event.slug}`}>
+                Schildplan berechnen <span aria-hidden="true">→</span>
+              </a>
+            )}
           </section>
 
           <div class="event-detail-layout">

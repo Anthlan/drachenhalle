@@ -1,0 +1,49 @@
+---
+import "../../styles/global.css";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Interaktive Planungshilfen der DIE Drachenhalle." />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Tools · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="tools" />
+      <main class="tool-main" id="main-content">
+        <header class="tools-overview-hero">
+          <p class="eyebrow">Praktisch, schnell und ein bisschen verspielt</p>
+          <h1>Tools der Drachenhalle</h1>
+          <p>Kleine Rechner für wiederkehrende Entscheidungen im Allianzalltag.</p>
+        </header>
+        <section class="tools-overview-grid" aria-label="Verfügbare Tools">
+          <a href="/drachenhalle/tools/schildrechner/">
+            <span aria-hidden="true">🛡️</span>
+            <div>
+              <p class="eyebrow">Einsatzbereit</p>
+              <h2>Schildrechner</h2>
+              <p>Prüft deinen Bestand gegen den nächsten Raubzug und erstellt Kalendererinnerungen.</p>
+              <strong>Plan erstellen →</strong>
+            </div>
+          </a>
+          <a href="/drachenhalle/tools/heilrechner/">
+            <span aria-hidden="true">🏥</span>
+            <div>
+              <p class="eyebrow">Als Nächstes</p>
+              <h2>Heilrechner</h2>
+              <p>Berechnet künftig einen passenden Instant-Heal-Block aus Hilfszeit und Helfern.</p>
+              <strong>Grundlage ansehen →</strong>
+            </div>
+          </a>
+        </section>
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
