@@ -115,6 +115,7 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
 
 ### In deiner ersten Woche
 
+- [ ] Wenn du ein eigenes Profilbild verwenden möchtest, dem [Profilbild-Tutorial](Profilbild_Tutorial.md) folgen.
 - [ ] Die [Tipps und das Spielwissen](/drachenhalle/docs/tipps/) durchsehen.
 - [ ] Den Tipp zu [Sammelangriffen](../Tipps/Tipp_02_Sammelangriffe.md) lesen, bevor du gemeinsame Angriffe unterstützt.
 - [ ] Bei Events auf die aktuelle Koordination im Allianzchat achten.

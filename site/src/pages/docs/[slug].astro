@@ -50,6 +50,24 @@ const isOfficerRoster = document.kind === "officers";
 const isResponsibilities = document.kind === "responsibilities";
 const isAllianceDocument = document.slug === "allianz" || document.parentSlug === "allianz";
 const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument || document.kind === "alliance";
+const tutorialStorageKey = document.tutorialStorageKey ?? `die-${document.slug}-step-v1`;
+const tutorialProgressLabel = document.tutorialProgressLabel ?? "Fortschritt im Einstieg";
+const tutorialNavLabel = document.tutorialNavLabel ?? "Schritte des Einstiegs";
+const tutorialCompleteLabel = document.tutorialCompleteLabel ?? "Einstieg abschließen ✦";
+const tutorialCompletionTitle = document.tutorialCompletionTitle ?? "Willkommen in der Drachenhalle!";
+const tutorialCompletionText = document.tutorialCompletionText ?? "Du hast den Einstieg erfolgreich abgeschlossen.";
+const tutorialCharacters = document.tutorialCharacters ?? [
+  {
+    position: "left",
+    src: "/drachenhalle/brand/tutorial-chibi-davinci1986.webp",
+    alt: "DaVinci1986 als Chibi-Figur, zwinkernd und mit einladender Geste",
+  },
+  {
+    position: "right",
+    src: "/drachenhalle/brand/tutorial-chibi-anthlan.webp",
+    alt: "Anthlan als Chibi-Figur, zwinkernd und mit Daumen nach oben",
+  },
+];
 
 const latestPersonImage = (category, person) => galleryData.items
   .filter((item) => item.category === category && item.people?.some((name) => name.toLowerCase() === person.toLowerCase()))
@@ -577,7 +595,7 @@ const responsibilities = [
                 </section>
               </div>
             ) : isOnboarding && document.onboardingSteps?.length > 0 ? (
-              <div class="tutorial-shell" data-tutorial data-storage-key="die-allianz-einstieg-step-v1">
+              <div class="tutorial-shell" data-tutorial data-storage-key={tutorialStorageKey}>
                 <div class="tutorial-toolbar">
                   <div class="tutorial-progress-copy">
                     <p>
@@ -586,7 +604,7 @@ const responsibilities = [
                     <div
                       class="tutorial-progress"
                       role="progressbar"
-                      aria-label="Fortschritt im Einstieg"
+                      aria-label={tutorialProgressLabel}
                       aria-valuemin="1"
                       aria-valuemax={document.onboardingSteps.length}
                       aria-valuenow="1"
@@ -598,7 +616,7 @@ const responsibilities = [
                   <button type="button" class="tutorial-reset" data-tutorial-reset>Von vorn beginnen</button>
                 </div>
 
-                <nav class="tutorial-step-nav" aria-label="Schritte des Einstiegs">
+                <nav class="tutorial-step-nav" aria-label={tutorialNavLabel}>
                   <ol>
                     {document.onboardingSteps.map((step, index) => (
                       <li>
@@ -637,7 +655,7 @@ const responsibilities = [
                   </span>
                   <button type="button" class="is-primary" data-tutorial-next>Weiter →</button>
                   <button type="button" class="is-primary tutorial-complete-button" data-tutorial-complete hidden>
-                    Einstieg abschließen ✦
+                    {tutorialCompleteLabel}
                   </button>
                 </div>
 
@@ -645,29 +663,25 @@ const responsibilities = [
                   <div class="tutorial-celebration-particles" aria-hidden="true">
                     {Array.from({ length: 36 }, (_, index) => <span style={`--particle: ${index}`}></span>)}
                   </div>
-                  <img
-                    class="tutorial-celebration-character tutorial-character-davinci"
-                    src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp"
-                    width="720"
-                    height="1080"
-                    loading="lazy"
-                    decoding="async"
-                    alt="DaVinci1986 als Chibi-Figur, zwinkernd und mit einladender Geste"
-                  />
-                  <img
-                    class="tutorial-celebration-character tutorial-character-anthlan"
-                    src="/drachenhalle/brand/tutorial-chibi-anthlan.webp"
-                    width="720"
-                    height="1080"
-                    loading="lazy"
-                    decoding="async"
-                    alt="Anthlan als Chibi-Figur, zwinkernd und mit Daumen nach oben"
-                  />
+                  {tutorialCharacters.map((character) => (
+                    <img
+                      class:list={[
+                        "tutorial-celebration-character",
+                        character.position === "left" ? "tutorial-character-davinci" : "tutorial-character-anthlan",
+                      ]}
+                      src={character.src}
+                      width="720"
+                      height="1080"
+                      loading="lazy"
+                      decoding="async"
+                      alt={character.alt}
+                    />
+                  ))}
                   <div class="tutorial-celebration-card" role="status" aria-live="polite" aria-atomic="true">
                     <span class="tutorial-celebration-seal" aria-hidden="true">✓</span>
                     <p class="eyebrow">Geschafft</p>
-                    <strong>Willkommen in der Drachenhalle!</strong>
-                    <span>Du hast den Einstieg erfolgreich abgeschlossen.</span>
+                    <strong>{tutorialCompletionTitle}</strong>
+                    <span>{tutorialCompletionText}</span>
                     <button type="button" data-tutorial-celebration-close>Schließen</button>
                   </div>
                 </div>

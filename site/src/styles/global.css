@@ -3531,6 +3531,28 @@ h1 {
   line-height: 1.55;
 }
 
+.tutorial-step-content .tutorial-process-shot {
+  width: min(100%, 430px);
+  max-height: min(68vh, 720px);
+  object-fit: contain;
+}
+
+.tutorial-step-content .tutorial-process-shot.is-wide {
+  width: min(100%, 760px);
+}
+
+.tutorial-step-content .tutorial-process-shot.is-detail {
+  width: min(100%, 500px);
+}
+
+.tutorial-image-pair.is-phone-pair figure {
+  grid-template-rows: minmax(360px, 640px) auto;
+}
+
+.tutorial-clear {
+  clear: both;
+}
+
 .tutorial-step-content blockquote {
   margin: 30px 0 0;
   padding: 18px 20px;
@@ -3991,9 +4013,17 @@ h1 {
     grid-template-rows: auto auto;
   }
 
+  .tutorial-image-pair.is-phone-pair figure {
+    grid-template-rows: auto auto;
+  }
+
   .tutorial-step-content .tutorial-image-pair img {
     height: auto;
     max-height: 320px;
+  }
+
+  .tutorial-step-content .tutorial-image-pair.is-phone-pair img {
+    max-height: 72vh;
   }
 
   .tutorial-controls {
@@ -4565,28 +4595,38 @@ footer a {
     width: 100%;
     max-height: 100vh;
     height: 100vh;
+    max-height: 100dvh;
+    height: 100dvh;
+    margin: 0;
     border: 0;
     border-radius: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   .dialog-layout {
-    min-height: 100%;
+    min-height: 0;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(45vh, 1fr) auto;
-    overflow-y: auto;
+    grid-template-rows: auto auto;
+    overflow: visible;
   }
 
   .dialog-stage {
     min-height: 52vh;
+    min-height: 52dvh;
     padding: 18px 18px 64px;
   }
 
   .dialog-stage img {
     height: 48vh;
+    height: 48dvh;
   }
 
   .dialog-details {
-    min-height: 330px;
+    min-height: 0;
+    padding-bottom: max(36px, calc(24px + env(safe-area-inset-bottom)));
     border-top: 1px solid var(--line);
     border-left: 0;
   }

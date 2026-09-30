@@ -107,6 +107,33 @@ const baseDocuments = [
     kind: "onboarding",
   },
   {
+    source: "Drachenwissen/Allianz/Profilbild_Tutorial.md",
+    slug: "profilbild-im-spiel",
+    title: "Profilbild aus der Galerie im Spiel verwenden",
+    section: "Drachenwissen",
+    summary: "Vom Galerie-Download über den Bildausschnitt bis zur Prüfung des eigenen Custom-Avatars.",
+    parentSlug: "allianz",
+    kind: "onboarding",
+    tutorialStorageKey: "die-profilbild-tutorial-step-v1",
+    tutorialProgressLabel: "Fortschritt im Profilbild-Tutorial",
+    tutorialNavLabel: "Schritte des Profilbild-Tutorials",
+    tutorialCompleteLabel: "Tutorial abschließen ✦",
+    tutorialCompletionTitle: "Dein Avatar ist auf dem Weg!",
+    tutorialCompletionText: "Du hast das Profilbild zur Prüfung eingereicht.",
+    tutorialCharacters: [
+      {
+        position: "left",
+        src: "/drachenhalle/tutorial/profilbild/12_somea_pruefung_chibi.webp",
+        alt: "Somea als Chibi-Figur mit Sanduhr und Prüfzeichen",
+      },
+      {
+        position: "right",
+        src: "/drachenhalle/tutorial/profilbild/11_anthlan_download_chibi.webp",
+        alt: "Anthlan als Chibi-Figur mit Smartphone und Downloadsymbol",
+      },
+    ],
+  },
+  {
     source: "Drachenwissen/Allianz/Allianz_Regeln.md",
     slug: "allianzregeln",
     title: "Unsere Allianzregeln",
