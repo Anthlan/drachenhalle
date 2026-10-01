@@ -46,9 +46,10 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                 type="button"
                 class="tip-article-share tool-share-button"
                 data-share-page
+                data-share-shield-plan
                 data-share-url="/drachenhalle/tools/schildrechner/"
-                aria-label="Schildplaner teilen"
-                title="Schildplaner teilen"
+                aria-label="Konfigurierten Schildplan teilen"
+                title="Aktuellen Schildbestand, Zeiten und Einstellungen teilen"
               >
                 <ImageActionIcon type="share" />
               </button>
@@ -112,6 +113,18 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                   <span>8h-Schilde</span>
                   <input name="shields8" type="number" min="0" max="20" step="1" value="1" inputmode="numeric" />
                 </label>
+              </div>
+
+              <div class="tool-memory-actions">
+                <button type="button" class="tool-memory-button" data-shield-save-inventory>
+                  Schildbestand speichern
+                </button>
+                <button type="button" class="tool-memory-reset" data-shield-clear-inventory hidden>
+                  Gespeicherten Bestand löschen
+                </button>
+                <p class="tool-memory-status" role="status" aria-live="polite" data-shield-storage-status>
+                  Nur auf diesem Gerät. Nach Käufen oder Einsätzen bitte erneut speichern.
+                </p>
               </div>
 
               <button

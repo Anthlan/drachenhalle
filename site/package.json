@@ -12,9 +12,10 @@
     "content": "pnpm run gallery && pnpm run docs && pnpm run news && pnpm run events && pnpm run changelog && pnpm run map",
     "predev": "pnpm run content",
     "dev": "astro dev",
-    "prebuild": "pnpm run content",
+    "prebuild": "pnpm test && pnpm run content",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "node --test tests/*.test.ts"
   },
   "devDependencies": {
     "astro": "7.3.4",

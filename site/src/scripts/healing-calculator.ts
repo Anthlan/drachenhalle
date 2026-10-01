@@ -24,6 +24,20 @@ const TIER_BASE_SECONDS = {
 
 type TroopTier = keyof typeof TIER_BASE_SECONDS;
 
+export const TACTICAL_MINISTER_HEALING_BONUS = 20;
+
+export const effectiveHealingSpeed = (baseHealingSpeed: number, tacticalMinister: boolean) => (
+  baseHealingSpeed + (tacticalMinister ? TACTICAL_MINISTER_HEALING_BONUS : 0)
+);
+
+export const tierSecondsPerSoldier = (
+  troopTier: TroopTier,
+  baseHealingSpeed: number,
+  tacticalMinister: boolean,
+) => TIER_BASE_SECONDS[troopTier] / (1 + effectiveHealingSpeed(baseHealingSpeed, tacticalMinister) / 100);
+
+const HEALING_VALUES_STORAGE_KEY = "drachenhalle-healing-values-v1";
+
 const formatDuration = (totalSeconds: number) => {
   const seconds = Math.max(0, Math.floor(totalSeconds));
   const hours = Math.floor(seconds / 3600);
@@ -58,10 +72,54 @@ export const initializeHealingCalculator = () => {
   const concernedCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-concerned]");
   const unsureCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-unsure]");
   const overLimitCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-over-limit]");
+  const saveValuesButton = root?.querySelector<HTMLButtonElement>("[data-healing-save-values]");
+  const clearValuesButton = root?.querySelector<HTMLButtonElement>("[data-healing-clear-values]");
+  const storageStatus = root?.querySelector<HTMLElement>("[data-healing-storage-status]");
   const modeInputs = [...(root?.querySelectorAll<HTMLInputElement>('input[name="calculationMode"]') ?? [])];
   const modePanels = [...(root?.querySelectorAll<HTMLElement>("[data-healing-mode-panel]") ?? [])];
 
   if (!root || !form || !result || !error || !kicker || !title || !summary || !facts || !soldiers || !detail) return;
+
+  const setFieldValue = (name: string, value: unknown) => {
+    if (typeof value !== "string") return;
+    const field = form.elements.namedItem(name);
+    if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) field.value = value;
+  };
+  const getFieldValue = (name: string) => {
+    const field = form.elements.namedItem(name);
+    return field instanceof HTMLInputElement || field instanceof HTMLSelectElement ? field.value : "";
+  };
+
+  const restoreStoredValues = () => {
+    try {
+      const raw = localStorage.getItem(HEALING_VALUES_STORAGE_KEY);
+      if (!raw) return false;
+      const stored = JSON.parse(raw) as Record<string, unknown>;
+      [
+        "helpSeconds",
+        "helpLimit",
+        "reservePercent",
+        "troopTier",
+        "healingSpeed",
+        "calibrationSoldiers",
+        "calibrationHours",
+        "calibrationMinutes",
+        "calibrationSeconds",
+      ].forEach((name) => setFieldValue(name, stored[name]));
+      if (stored.calculationMode === "tier" || stored.calculationMode === "calibration") {
+        const mode = modeInputs.find((input) => input.value === stored.calculationMode);
+        if (mode) mode.checked = true;
+      }
+      if (clearValuesButton) clearValuesButton.hidden = false;
+      if (storageStatus) storageStatus.textContent = "Deine gespeicherten persönlichen Werte wurden geladen. Aktive Helfer und Amtsbonus bleiben absichtlich offen.";
+      return true;
+    } catch {
+      if (storageStatus) storageStatus.textContent = "Gespeicherte Werte konnten nicht gelesen werden.";
+      return false;
+    }
+  };
+
+  restoreStoredValues();
 
   const updateMode = () => {
     const selectedMode = modeInputs.find((input) => input.checked)?.value ?? "tier";
@@ -76,6 +134,39 @@ export const initializeHealingCalculator = () => {
 
   modeInputs.forEach((input) => input.addEventListener("change", updateMode));
   updateMode();
+
+  saveValuesButton?.addEventListener("click", () => {
+    const data = new FormData(form);
+    const stored = {
+      helpSeconds: getFieldValue("helpSeconds"),
+      helpLimit: getFieldValue("helpLimit"),
+      reservePercent: getFieldValue("reservePercent"),
+      calculationMode: String(data.get("calculationMode") ?? "tier"),
+      troopTier: getFieldValue("troopTier"),
+      healingSpeed: getFieldValue("healingSpeed"),
+      calibrationSoldiers: getFieldValue("calibrationSoldiers"),
+      calibrationHours: getFieldValue("calibrationHours"),
+      calibrationMinutes: getFieldValue("calibrationMinutes"),
+      calibrationSeconds: getFieldValue("calibrationSeconds"),
+    };
+    try {
+      localStorage.setItem(HEALING_VALUES_STORAGE_KEY, JSON.stringify(stored));
+      if (clearValuesButton) clearValuesButton.hidden = false;
+      if (storageStatus) storageStatus.textContent = "Persönliche Werte gespeichert. Aktive Helfer und Taktischer Minister werden nicht gespeichert.";
+    } catch {
+      if (storageStatus) storageStatus.textContent = "Die Werte konnten in diesem Browser nicht gespeichert werden.";
+    }
+  });
+
+  clearValuesButton?.addEventListener("click", () => {
+    try {
+      localStorage.removeItem(HEALING_VALUES_STORAGE_KEY);
+      clearValuesButton.hidden = true;
+      if (storageStatus) storageStatus.textContent = "Gespeicherte Werte gelöscht. Die aktuellen Eingaben bleiben bis zum Neuladen erhalten.";
+    } catch {
+      if (storageStatus) storageStatus.textContent = "Die gespeicherten Werte konnten nicht gelöscht werden.";
+    }
+  });
 
   type HealingReaction = "success" | "danger" | "uncertain" | "over-limit";
 
@@ -101,6 +192,7 @@ export const initializeHealingCalculator = () => {
       ? requestedTier as TroopTier
       : "t8";
     const healingSpeed = getNumber(data, "healingSpeed");
+    const tacticalMinister = data.get("tacticalMinister") === "yes";
     const calibrationSoldiers = getNumber(data, "calibrationSoldiers");
     const calibrationHours = getNumber(data, "calibrationHours");
     const calibrationMinutes = getNumber(data, "calibrationMinutes");
@@ -151,12 +243,25 @@ export const initializeHealingCalculator = () => {
     const usableHelpers = Math.min(activeHelpers, helpLimit);
     const theoreticalSeconds = secondsPerHelp * usableHelpers;
     const safeSeconds = Math.floor(theoreticalSeconds * (1 - reservePercent / 100));
+    const usesTierBase = calculationMode === "tier";
+    const effectiveSpeed = usesTierBase
+      ? effectiveHealingSpeed(healingSpeed as number, tacticalMinister)
+      : 0;
 
     facts.replaceChildren();
     addFact(facts, "Hilfszeit je Hilfe", formatDuration(secondsPerHelp));
     addFact(facts, "Nutzbare Helfer", `${usableHelpers} von ${activeHelpers}`);
     addFact(facts, "Theoretisch instant", formatDuration(theoreticalSeconds));
     addFact(facts, `Sicher mit ${reservePercent} % Reserve`, formatDuration(safeSeconds));
+    if (usesTierBase) {
+      addFact(
+        facts,
+        "Heilungsgeschwindigkeit",
+        tacticalMinister
+          ? `${effectiveSpeed.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % (${(healingSpeed as number).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % + 20)`
+          : `${effectiveSpeed.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %`,
+      );
+    }
 
     if (usableHelpers === 0) {
       result.dataset.state = "danger";
@@ -169,12 +274,10 @@ export const initializeHealingCalculator = () => {
       return;
     }
 
-    const usesTierBase = calculationMode === "tier";
     const tierLabel = troopTier.toUpperCase();
     const baseSeconds = TIER_BASE_SECONDS[troopTier];
-    const speedMultiplier = usesTierBase ? 1 + (healingSpeed as number) / 100 : 1;
     const secondsPerSoldier = usesTierBase
-      ? baseSeconds / speedMultiplier
+      ? tierSecondsPerSoldier(troopTier, healingSpeed as number, tacticalMinister)
       : calibrationDuration / (calibrationSoldiers as number);
     const recommendedSoldiers = Math.floor(safeSeconds / secondsPerSoldier);
     const expectedDuration = recommendedSoldiers * secondsPerSoldier;
@@ -218,7 +321,7 @@ export const initializeHealingCalculator = () => {
       : usesTierBase ? `${tierLabel}-Soldaten` : "Soldaten";
     soldiers.textContent = `${recommendedSoldiers.toLocaleString("de-DE")} ${soldierLabel}`;
     detail.textContent = usesTierBase
-      ? `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Grundlage: ${baseSeconds} Sekunden je ${tierLabel} bei ${(healingSpeed as number).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % Heilungsgeschwindigkeit.`
+      ? `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Grundlage: ${baseSeconds} Sekunden je ${tierLabel} bei ${effectiveSpeed.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % wirksamer Heilungsgeschwindigkeit${tacticalMinister ? ` (${(healingSpeed as number).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % Basiswert + 20 Prozentpunkte Taktischer Minister)` : ""}.`
       : `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Gültig für dieselbe Truppenstufe und Zusammensetzung wie deine Kalibrierung mit ${(calibrationSoldiers as number).toLocaleString("de-DE")} Soldaten.`;
   });
 

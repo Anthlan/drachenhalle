@@ -5347,6 +5347,50 @@ h1 {
   margin-top: 20px;
 }
 
+.tool-memory-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px 12px;
+  clear: both;
+  margin-top: 16px;
+}
+
+.tool-memory-button,
+.tool-memory-reset {
+  min-height: 34px;
+  padding: 8px 12px;
+  border: 1px solid var(--line-bright);
+  border-radius: 3px;
+  background: rgba(227, 173, 78, 0.07);
+  color: var(--gold-pale);
+  font: 800 11px/1.2 Arial, sans-serif;
+  cursor: pointer;
+}
+
+.tool-memory-reset {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+.tool-memory-button:hover,
+.tool-memory-button:focus-visible,
+.tool-memory-reset:hover,
+.tool-memory-reset:focus-visible {
+  border-color: var(--gold);
+  color: var(--ivory);
+  outline: 2px solid rgba(227, 173, 78, 0.14);
+}
+
+.tool-memory-status {
+  flex: 1 1 230px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
 .shield-help-trigger {
   width: 30px;
   height: 30px;
@@ -5945,6 +5989,8 @@ h1 {
 }
 
 .shield-raid-cheer {
+  --cheer-enter-x: 24px;
+  --cheer-enter-y: 24px;
   position: fixed;
   z-index: 120;
   right: clamp(16px, 3vw, 42px);
@@ -5955,8 +6001,42 @@ h1 {
   justify-content: flex-end;
   pointer-events: none;
   opacity: 0;
-  transform: translate3d(24px, 24px, 0) scale(0.84);
+  transform: translate3d(var(--cheer-enter-x), var(--cheer-enter-y), 0) scale(0.84);
   transition: opacity 240ms ease, transform 320ms cubic-bezier(0.2, 0.9, 0.25, 1.2);
+}
+
+.shield-raid-cheer.is-top-left,
+.shield-raid-cheer.is-middle-left,
+.shield-raid-cheer.is-bottom-left {
+  --cheer-enter-x: -24px;
+  right: auto;
+  left: clamp(16px, 3vw, 42px);
+}
+
+.shield-raid-cheer.is-top-left,
+.shield-raid-cheer.is-top-right {
+  --cheer-enter-y: -20px;
+  top: clamp(92px, 13vh, 150px);
+  bottom: auto;
+}
+
+.shield-raid-cheer.is-top-right,
+.shield-raid-cheer.is-middle-right,
+.shield-raid-cheer.is-bottom-right {
+  right: clamp(16px, 3vw, 42px);
+  left: auto;
+}
+
+.shield-raid-cheer.is-middle-left,
+.shield-raid-cheer.is-middle-right {
+  top: clamp(260px, 42vh, 470px);
+  bottom: auto;
+}
+
+.shield-raid-cheer.is-bottom-left,
+.shield-raid-cheer.is-bottom-right {
+  top: auto;
+  bottom: clamp(16px, 3vw, 34px);
 }
 
 .shield-raid-cheer[hidden] {
@@ -6290,6 +6370,50 @@ h1 {
   color: var(--muted);
   font-size: 11px;
   font-weight: 500;
+  line-height: 1.45;
+}
+
+.healing-role-option {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: flex-start;
+  gap: 11px !important;
+  margin-top: 14px;
+  padding: 14px 15px;
+  border: 1px solid var(--line-bright);
+  border-radius: 4px;
+  background: rgba(9, 14, 34, 0.72);
+  cursor: pointer;
+}
+
+.healing-role-option:has(input:checked) {
+  border-color: var(--gold);
+  background: rgba(227, 173, 78, 0.09);
+}
+
+.healing-form .healing-role-option input {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  flex: 0 0 18px;
+  margin: 2px 0 0;
+  padding: 0;
+  accent-color: var(--gold);
+}
+
+.healing-role-option > span {
+  display: grid;
+  gap: 4px;
+}
+
+.healing-role-option strong {
+  color: var(--ivory);
+  font-size: 13px;
+}
+
+.healing-role-option small {
+  color: var(--muted);
+  font-size: 11px;
   line-height: 1.45;
 }
 
@@ -7146,12 +7270,12 @@ h1 {
   .healing-hero-title-line,
   .shield-hero-title-line {
     align-items: flex-end;
-    gap: 14px;
+    gap: 8px;
   }
 
   .healing-tool-hero .healing-hero-title-line h1,
   .shield-tool-hero .shield-hero-title-line h1 {
-    font-size: clamp(36px, 12vw, 48px);
+    font-size: clamp(32px, 10vw, 42px);
   }
 
   .healing-hero-flow,
@@ -7255,6 +7379,15 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .tool-memory-actions {
+    align-items: stretch;
+  }
+
+  .tool-memory-button,
+  .tool-memory-reset {
+    flex: 1 1 100%;
+  }
+
   .shield-raid-windows-heading {
     align-items: stretch;
     flex-direction: column;
@@ -7346,6 +7479,38 @@ h1 {
     right: 8px;
     bottom: max(8px, env(safe-area-inset-bottom));
     width: min(270px, calc(100vw - 16px));
+  }
+
+  .shield-raid-cheer.is-top-left,
+  .shield-raid-cheer.is-middle-left,
+  .shield-raid-cheer.is-bottom-left {
+    right: auto;
+    left: 8px;
+  }
+
+  .shield-raid-cheer.is-top-right,
+  .shield-raid-cheer.is-middle-right,
+  .shield-raid-cheer.is-bottom-right {
+    right: 8px;
+    left: auto;
+  }
+
+  .shield-raid-cheer.is-top-left,
+  .shield-raid-cheer.is-top-right {
+    top: max(82px, env(safe-area-inset-top));
+    bottom: auto;
+  }
+
+  .shield-raid-cheer.is-middle-left,
+  .shield-raid-cheer.is-middle-right {
+    top: 36vh;
+    bottom: auto;
+  }
+
+  .shield-raid-cheer.is-bottom-left,
+  .shield-raid-cheer.is-bottom-right {
+    top: auto;
+    bottom: max(8px, env(safe-area-inset-bottom));
   }
 
   .shield-raid-cheer img {

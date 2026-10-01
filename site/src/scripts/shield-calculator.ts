@@ -80,7 +80,16 @@ const HOUR = 60 * 60 * 1000;
 const MINUTE = 60 * 1000;
 const BATTLE_FRENZY_MINUTES = 15;
 const MAX_RAID_WINDOWS = 5;
-const RAID_CHEER_SESSION_KEY = "drachenhalle-shield-raid-cheer-shown";
+const SHIELD_INVENTORY_STORAGE_KEY = "drachenhalle-shield-inventory-v1";
+const RAID_CHEER_SESSION_KEY = "drachenhalle-shield-raid-cheer-shown-v2";
+const RAID_CHEER_POSITIONS = [
+  "is-top-left",
+  "is-top-right",
+  "is-middle-left",
+  "is-middle-right",
+  "is-bottom-left",
+  "is-bottom-right",
+] as const;
 
 const SHIELD_COSTS = {
   72: { allianceCoins: null, weeklyShopLimit: 0, diamonds: 12000 },
@@ -309,7 +318,7 @@ const buildSteps = (segment: ProtectionSegment, allocation: Allocation) => {
   return { steps, coverageEnd: cursor };
 };
 
-const optimizeProtectionPlan = (
+export const optimizeProtectionPlan = (
   segments: ProtectionSegment[],
   inventory: ShieldCounts,
   strategy: string,
@@ -387,7 +396,7 @@ const optimizeProtectionPlan = (
   };
 };
 
-const mergeActiveWindows = (
+export const mergeActiveWindows = (
   windows: ActiveWindow[],
   rangeStart: Date,
   rangeEnd: Date,
@@ -417,7 +426,7 @@ const mergeActiveWindows = (
   return merged;
 };
 
-const buildProtectionSegments = (
+export const buildProtectionSegments = (
   firstStart: Date,
   raidEnd: Date,
   windows: ActiveWindow[],
@@ -448,7 +457,7 @@ const buildProtectionSegments = (
   return segments;
 };
 
-const findProtectionGaps = (
+export const findProtectionGaps = (
   segments: ProtectionSegment[],
   steps: ShieldStep[],
   raidStart: Date,
@@ -489,7 +498,7 @@ const findProtectionGaps = (
   return gaps;
 };
 
-const buildTimelinePhases = (
+export const buildTimelinePhases = (
   raidStart: Date,
   raidEnd: Date,
   steps: ShieldStep[],
@@ -686,7 +695,8 @@ export const initializeShieldCalculator = () => {
   const raidEvents = data.raidEvents ?? [];
   const capitalEvents = data.capitalEvents ?? [];
   const now = new Date();
-  const requestedSlug = new URLSearchParams(window.location.search).get("event");
+  const pageParams = new URLSearchParams(window.location.search);
+  const requestedSlug = pageParams.get("event");
   const requestedRaid = requestedSlug
     ? raidEvents.find((event) => event.slug === requestedSlug && parseEventDate(event, "end") > now) ?? null
     : null;
@@ -729,6 +739,10 @@ export const initializeShieldCalculator = () => {
   const emptyWindowHint = root.querySelector<HTMLElement>("[data-raid-window-empty]");
   const windowStatus = root.querySelector<HTMLElement>("[data-window-status]");
   const raidCheer = document.querySelector<HTMLElement>("[data-raid-cheer]");
+  const shareButton = document.querySelector<HTMLButtonElement>("[data-share-shield-plan]");
+  const saveInventoryButton = root.querySelector<HTMLButtonElement>("[data-shield-save-inventory]");
+  const clearInventoryButton = root.querySelector<HTMLButtonElement>("[data-shield-clear-inventory]");
+  const storageStatus = root.querySelector<HTMLElement>("[data-shield-storage-status]");
 
   if (!form || !firstShieldInput || !result || !raidDate || !raidLink || !calculateButton) return;
 
@@ -744,7 +758,52 @@ export const initializeShieldCalculator = () => {
   const raidEnd = parseEventDate(raid, "end");
   const capital = capitalEvents.find((event) => event.date === raid.date) ?? null;
   const suggestedStart = new Date(raidStart.getTime() - 8 * HOUR);
-  firstShieldInput.value = toInputValue(suggestedStart);
+  const hasSharedPlan = pageParams.get("plan") === "1";
+  const inventoryNames = ["shields72", "shields24", "shields12", "shields8"] as const;
+  const setNamedValue = (name: string, value: string | null) => {
+    if (value === null) return;
+    const field = form.elements.namedItem(name);
+    if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) field.value = value;
+  };
+  const applyInventory = (values: Partial<Record<(typeof inventoryNames)[number], unknown>>) => {
+    inventoryNames.forEach((name) => {
+      const parsed = Number.parseInt(String(values[name] ?? ""), 10);
+      if (Number.isInteger(parsed) && parsed >= 0 && parsed <= 20) setNamedValue(name, String(parsed));
+    });
+  };
+
+  if (!hasSharedPlan) {
+    try {
+      const raw = localStorage.getItem(SHIELD_INVENTORY_STORAGE_KEY);
+      if (raw) {
+        applyInventory(JSON.parse(raw) as Record<string, unknown>);
+        if (clearInventoryButton) clearInventoryButton.hidden = false;
+        if (storageStatus) storageStatus.textContent = "Dein gespeicherter Schildbestand wurde geladen. Nach Käufen oder Einsätzen bitte aktualisieren.";
+      }
+    } catch {
+      if (storageStatus) storageStatus.textContent = "Der gespeicherte Schildbestand konnte nicht gelesen werden.";
+    }
+  } else {
+    applyInventory({
+      shields72: pageParams.get("s72"),
+      shields24: pageParams.get("s24"),
+      shields12: pageParams.get("s12"),
+      shields8: pageParams.get("s8"),
+    });
+  }
+
+  const sharedStart = hasSharedPlan ? pageParams.get("start") : null;
+  firstShieldInput.value = sharedStart && !Number.isNaN(new Date(sharedStart).getTime())
+    ? sharedStart
+    : toInputValue(suggestedStart);
+  if (hasSharedPlan) {
+    const sharedStrategy = pageParams.get("strategy");
+    if (["fewest", "least-waste", "cost"].includes(sharedStrategy ?? "")) setNamedValue("strategy", sharedStrategy);
+    const sharedBuffer = pageParams.get("buffer");
+    if (["0", "5", "10", "15"].includes(sharedBuffer ?? "")) setNamedValue("returnBuffer", sharedBuffer);
+    const sharedCapital = pageParams.get("capital");
+    if (["passive", "active", "unclear"].includes(sharedCapital ?? "")) setNamedValue("capitalMode", sharedCapital);
+  }
   raidDate.textContent = formatEventWindow(raidStart, raidEnd);
   raidLink.href = raid.detailUrl;
   raidLink.hidden = false;
@@ -764,6 +823,29 @@ export const initializeShieldCalculator = () => {
     if (addWindowButton) addWindowButton.disabled = count >= MAX_RAID_WINDOWS;
   };
 
+  const updateShareUrl = () => {
+    if (!shareButton) return;
+    const values = new FormData(form);
+    const params = new URLSearchParams({
+      plan: "1",
+      s72: String(boundedCount(values.get("shields72"))),
+      s24: String(boundedCount(values.get("shields24"))),
+      s12: String(boundedCount(values.get("shields12"))),
+      s8: String(boundedCount(values.get("shields8"))),
+      start: String(values.get("firstShield") ?? ""),
+      strategy: String(values.get("strategy") ?? "fewest"),
+      buffer: String(values.get("returnBuffer") ?? "0"),
+    });
+    if (raid.slug) params.set("event", raid.slug);
+    if (capital) params.set("capital", String(values.get("capitalMode") ?? "passive"));
+    windowList?.querySelectorAll<HTMLElement>("[data-raid-window]").forEach((row) => {
+      const start = row.querySelector<HTMLInputElement>("[data-window-start]")?.value ?? "";
+      const end = row.querySelector<HTMLInputElement>("[data-window-end]")?.value ?? "";
+      if (start && end) params.append("window", `${start}|${end}`);
+    });
+    shareButton.dataset.shareUrl = `/drachenhalle/tools/schildrechner/?${params.toString()}`;
+  };
+
   let raidCheerTimer: number | undefined;
   const showRaidCheerOnce = () => {
     if (!raidCheer) return;
@@ -776,6 +858,9 @@ export const initializeShieldCalculator = () => {
     }
 
     window.clearTimeout(raidCheerTimer);
+    raidCheer.classList.remove(...RAID_CHEER_POSITIONS);
+    const randomPosition = RAID_CHEER_POSITIONS[Math.floor(Math.random() * RAID_CHEER_POSITIONS.length)];
+    raidCheer.classList.add(randomPosition);
     raidCheer.hidden = false;
     requestAnimationFrame(() => raidCheer.classList.add("is-visible"));
     raidCheerTimer = window.setTimeout(() => {
@@ -786,7 +871,7 @@ export const initializeShieldCalculator = () => {
     }, 3800);
   };
 
-  const addRaidWindow = () => {
+  const addRaidWindow = (initialStart?: string, initialEnd?: string, silent = false) => {
     if (!windowTemplate || !windowList) return;
     const count = windowList.querySelectorAll("[data-raid-window]").length;
     if (count >= MAX_RAID_WINDOWS) return;
@@ -808,22 +893,73 @@ export const initializeShieldCalculator = () => {
     startInput.max = max;
     endInput.min = min;
     endInput.max = max;
-    startInput.value = toInputValue(start);
-    endInput.value = toInputValue(end);
+    const parsedInitialStart = initialStart ? new Date(initialStart) : null;
+    const parsedInitialEnd = initialEnd ? new Date(initialEnd) : null;
+    const hasValidInitialWindow = parsedInitialStart
+      && parsedInitialEnd
+      && !Number.isNaN(parsedInitialStart.getTime())
+      && !Number.isNaN(parsedInitialEnd.getTime())
+      && parsedInitialStart >= raidStart
+      && parsedInitialEnd <= raidEnd
+      && parsedInitialEnd > parsedInitialStart;
+    startInput.value = hasValidInitialWindow ? initialStart as string : toInputValue(start);
+    endInput.value = hasValidInitialWindow ? initialEnd as string : toInputValue(end);
     removeButton.addEventListener("click", () => {
       row.remove();
       updateWindowControls();
+      updateShareUrl();
       if (windowStatus) windowStatus.textContent = "Plünderfenster entfernt. Plan bitte neu berechnen.";
     });
     windowList.append(fragment);
     updateWindowControls();
-    showRaidCheerOnce();
-    startInput.focus();
-    if (windowStatus) windowStatus.textContent = "Plünderfenster ergänzt. Zeiten prüfen und Schildplan neu berechnen.";
+    updateShareUrl();
+    if (!silent) {
+      showRaidCheerOnce();
+      startInput.focus();
+      if (windowStatus) windowStatus.textContent = "Plünderfenster ergänzt. Zeiten prüfen und Schildplan neu berechnen.";
+    }
   };
 
-  addWindowButton?.addEventListener("click", addRaidWindow);
+  if (hasSharedPlan) {
+    pageParams.getAll("window").slice(0, MAX_RAID_WINDOWS).forEach((value) => {
+      const [start, end] = value.split("|");
+      if (start && end) addRaidWindow(start, end, true);
+    });
+    if (windowStatus) windowStatus.textContent = "Geteilter Schildplan geladen. Bitte prüfe die Zeiten und berechne ihn neu.";
+  }
+
+  addWindowButton?.addEventListener("click", () => addRaidWindow());
+  form.addEventListener("input", updateShareUrl);
+  form.addEventListener("change", updateShareUrl);
   updateWindowControls();
+  updateShareUrl();
+
+  saveInventoryButton?.addEventListener("click", () => {
+    const values = new FormData(form);
+    const inventory = {
+      shields72: boundedCount(values.get("shields72")),
+      shields24: boundedCount(values.get("shields24")),
+      shields12: boundedCount(values.get("shields12")),
+      shields8: boundedCount(values.get("shields8")),
+    };
+    try {
+      localStorage.setItem(SHIELD_INVENTORY_STORAGE_KEY, JSON.stringify(inventory));
+      if (clearInventoryButton) clearInventoryButton.hidden = false;
+      if (storageStatus) storageStatus.textContent = "Schildbestand gespeichert. Nach Käufen oder Einsätzen bitte erneut speichern.";
+    } catch {
+      if (storageStatus) storageStatus.textContent = "Der Schildbestand konnte in diesem Browser nicht gespeichert werden.";
+    }
+  });
+
+  clearInventoryButton?.addEventListener("click", () => {
+    try {
+      localStorage.removeItem(SHIELD_INVENTORY_STORAGE_KEY);
+      clearInventoryButton.hidden = true;
+      if (storageStatus) storageStatus.textContent = "Gespeicherten Schildbestand gelöscht. Die aktuellen Eingaben bleiben erhalten.";
+    } catch {
+      if (storageStatus) storageStatus.textContent = "Der gespeicherte Schildbestand konnte nicht gelöscht werden.";
+    }
+  });
 
   let currentCalendar = "";
 

@@ -118,6 +118,17 @@ import SiteHeader from "../../components/SiteHeader.astro";
                   </select>
                 </label>
               </div>
+              <div class="tool-memory-actions">
+                <button type="button" class="tool-memory-button" data-healing-save-values>
+                  Persönliche Werte speichern
+                </button>
+                <button type="button" class="tool-memory-reset" data-healing-clear-values hidden>
+                  Gespeicherte Werte löschen
+                </button>
+                <p class="tool-memory-status" role="status" aria-live="polite" data-healing-storage-status>
+                  Nur auf diesem Gerät. Aktive Helfer werden bewusst nicht gespeichert.
+                </p>
+              </div>
             </fieldset>
 
             <fieldset>
@@ -157,16 +168,23 @@ import SiteHeader from "../../components/SiteHeader.astro";
                     </select>
                   </label>
                   <label>
-                    <span>Heilungsgeschwindigkeit (%)</span>
+                    <span>Heilungsgeschwindigkeit ohne Rollenbonus (%)</span>
                     <input name="healingSpeed" type="number" min="0" max="9999" step="0.01" value="100.90" inputmode="decimal" />
                   </label>
                 </div>
+                <label class="healing-role-option">
+                  <input name="tacticalMinister" type="checkbox" value="yes" />
+                  <span>
+                    <strong>Taktischer Minister aktiv</strong>
+                    <small>Der Planer addiert für diese Berechnung 20 Prozentpunkte.</small>
+                  </span>
+                </label>
                 <aside class="healing-tier-notice">
                   <span aria-hidden="true">!</span>
-                  <p><strong>Mehrere Truppenstufen?</strong> Wähle immer die höchste Stufe, die in deinem Heilblock vorkommt. So plant der Planer vorsichtig und überschätzt die mögliche Soldatenzahl nicht.</p>
+                  <p><strong>Mehrere Truppenstufen?</strong> Wähle immer die höchste Stufe, die in deinem Heilblock vorkommt. So plant der Planer vorsichtig und überschätzt die mögliche Soldatenzahl nicht. Trage bei der Heilungsgeschwindigkeit immer den Wert <strong>ohne</strong> den Bonus des Taktischen Ministers ein.</p>
                 </aside>
                 <p class="healing-field-help">
-                  Der angezeigte Prozentwert wird als Bonus auf die Grundgeschwindigkeit gerechnet.
+                  Der eingegebene Prozentwert wird als Bonus auf die Grundgeschwindigkeit gerechnet. Das Amt erhöht ihn optional um 20 Prozentpunkte.
                 </p>
               </div>
 
@@ -330,7 +348,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
               <li>
                 <figure class="tool-guide-card">
                   <img src="/drachenhalle/tutorial/heilrechner/03-heilungsgeschwindigkeit.png" alt="Wirtschaftstyp mit markierter Heilungsgeschwindigkeit" loading="lazy" />
-                  <figcaption><strong>3. Heilungsgeschwindigkeit</strong><span>Scrolle im selben Bereich zur Heilungsgeschwindigkeit und trage den Prozentwert ein.</span></figcaption>
+                  <figcaption><strong>3. Heilungsgeschwindigkeit</strong><span>Scrolle im selben Bereich zur Heilungsgeschwindigkeit und trage den Wert ohne den Rollenbonus des Taktischen Ministers ein.</span></figcaption>
                 </figure>
               </li>
               </ol>
@@ -355,13 +373,13 @@ import SiteHeader from "../../components/SiteHeader.astro";
                     <span>Sicheres Zeitfenster</span>
                     <code>Hilfszeit × nutzbare Helfer × (1 − Reserve)</code>
                     <span>Sekunden je Soldat</span>
-                    <code>Grundzeit ÷ (1 + Heilungsgeschwindigkeit ÷ 100)</code>
+                    <code>Grundzeit ÷ (1 + (Basiswert + ggf. 20) ÷ 100)</code>
                     <span>Empfohlene Soldaten</span>
                     <code>⌊ sicheres Zeitfenster ÷ Sekunden je Soldat ⌋</code>
                   </div>
                 </article>
               </div>
-              <p class="tool-info-footnote">Der Planer rundet die Soldatenzahl immer ab. Bei mehreren Truppenstufen gilt zur sicheren Planung die höchste vorhandene Stufe.</p>
+              <p class="tool-info-footnote">Der Planer rundet die Soldatenzahl immer ab. Bei mehreren Truppenstufen gilt zur sicheren Planung die höchste vorhandene Stufe. Für „Taktischer Minister“ muss die eingegebene Heilungsgeschwindigkeit den Rollenbonus noch nicht enthalten.</p>
             </section>
           </div>
         </dialog>
