@@ -155,6 +155,30 @@ const addCounts = (left: ShieldCounts, right: ShieldCounts): ShieldCounts => ({
   shields8: left.shields8 + right.shields8,
 });
 
+const subtractCounts = (left: ShieldCounts, right: ShieldCounts): ShieldCounts => ({
+  shields72: Math.max(0, left.shields72 - right.shields72),
+  shields24: Math.max(0, left.shields24 - right.shields24),
+  shields12: Math.max(0, left.shields12 - right.shields12),
+  shields8: Math.max(0, left.shields8 - right.shields8),
+});
+
+const inventoryWithWeeklyShop = (inventory: ShieldCounts): ShieldCounts => ({
+  shields72: inventory.shields72,
+  shields24: inventory.shields24 + SHIELD_COSTS[24].weeklyShopLimit,
+  shields12: inventory.shields12 + SHIELD_COSTS[12].weeklyShopLimit,
+  shields8: inventory.shields8 + SHIELD_COSTS[8].weeklyShopLimit,
+});
+
+const formatShieldSelection = (counts: ShieldCounts) => ([
+  [72, counts.shields72],
+  [24, counts.shields24],
+  [12, counts.shields12],
+  [8, counts.shields8],
+] as const)
+  .filter(([, count]) => count > 0)
+  .map(([hours, count]) => `${count} × ${hours}h-${count === 1 ? "Schild" : "Schilde"}`)
+  .join(" · ");
+
 const fitsInventory = (used: ShieldCounts, inventory: ShieldCounts) => (
   used.shields72 <= inventory.shields72
   && used.shields24 <= inventory.shields24
@@ -535,6 +559,10 @@ export const initializeShieldCalculator = () => {
   const resultTitle = root.querySelector<HTMLElement>("[data-result-title]");
   const resultSummary = root.querySelector<HTMLElement>("[data-result-summary]");
   const resultFacts = root.querySelector<HTMLElement>("[data-result-facts]");
+  const purchaseRecommendation = root.querySelector<HTMLElement>("[data-purchase-recommendation]");
+  const purchaseTitle = root.querySelector<HTMLElement>("[data-purchase-title]");
+  const purchaseSummary = root.querySelector<HTMLElement>("[data-purchase-summary]");
+  const purchaseFacts = root.querySelector<HTMLElement>("[data-purchase-facts]");
   const resultNote = root.querySelector<HTMLElement>("[data-result-note]");
   const scheduleList = root.querySelector<HTMLOListElement>("[data-schedule-list]");
   const calmCharacter = root.querySelector<HTMLImageElement>("[data-character-calm]");
@@ -700,6 +728,27 @@ export const initializeShieldCalculator = () => {
     const plan = optimizeProtectionPlan(segments, inventory, strategy);
     const startsLate = firstStart > raidStart;
     const lateMs = Math.max(0, firstStart.getTime() - raidStart.getTime());
+    const shopPlan = optimizeProtectionPlan(segments, inventoryWithWeeklyShop(inventory), "cost");
+    const purchases = subtractCounts(shopPlan.used, inventory);
+    const heldBack = subtractCounts(plan.used, shopPlan.used);
+    const currentCost = replacementCost(plan.used);
+    const shopPlanCost = replacementCost(shopPlan.used);
+    const coinSavings = currentCost.allianceCoins - shopPlanCost.allianceCoins;
+    const diamondSavings = currentCost.diamonds - shopPlanCost.diamonds;
+    const excessSavings = Math.max(
+      0,
+      durationForCounts(plan.used) - plan.requiredMs
+        - Math.max(0, durationForCounts(shopPlan.used) - shopPlan.requiredMs),
+    );
+    const hasRecommendedPurchase = countShields(purchases) > 0;
+    const recommendationImprovesPlan = shopPlan.complete
+      && hasRecommendedPurchase
+      && !startsLate
+      && (
+        !plan.complete
+        || diamondSavings > 0
+        || (diamondSavings === 0 && coinSavings > 0)
+      );
     const missingMs = plan.missingMs + lateMs;
     const complete = plan.complete && !startsLate;
     const hasUnclearCapital = Boolean(capital && capitalMode === "unclear");
@@ -758,6 +807,49 @@ export const initializeShieldCalculator = () => {
             ? formatDateTime(plan.coverageEnd)
             : formatDuration(missingMs),
       );
+    }
+
+    if (purchaseRecommendation) {
+      purchaseRecommendation.hidden = !recommendationImprovesPlan;
+      if (recommendationImprovesPlan) {
+        const purchaseLabel = formatShieldSelection(purchases);
+        const heldBackLabel = formatShieldSelection(heldBack);
+        if (purchaseTitle) {
+          purchaseTitle.textContent = plan.complete
+            ? coinSavings > 0
+              ? `${formatNumber(coinSavings)} Allianzmünzen sparen`
+              : `${formatNumber(diamondSavings)} Diamanten vermeiden`
+            : "Fehlenden Schutz gezielt ergänzen";
+        }
+        if (purchaseSummary) {
+          purchaseSummary.textContent = plan.complete
+            ? `Besorge ${purchaseLabel} im Allianzshop${heldBackLabel ? ` und halte ${heldBackLabel} aus deinem Bestand zurück` : ""}. Der alternative Plan deckt dieselben Schutzphasen günstiger ab. Trage den Kauf anschließend oben ein und berechne neu.`
+            : `Mit ${purchaseLabel} aus dem Allianzshop lässt sich der Schutz vollständig planen. Trage den Kauf anschließend oben in deinen Bestand ein und berechne neu.`;
+        }
+        if (purchaseFacts) {
+          purchaseFacts.replaceChildren();
+          const purchaseCost = document.createElement("span");
+          purchaseCost.textContent = `Kauf: ${formatReplacementCost(purchases)}`;
+          purchaseFacts.append(purchaseCost);
+          if (coinSavings > 0) {
+            const saving = document.createElement("span");
+            saving.textContent = `Ersparnis: ${formatNumber(coinSavings)} Allianzmünzen`;
+            purchaseFacts.append(saving);
+          }
+          if (diamondSavings > 0) {
+            const saving = document.createElement("span");
+            saving.textContent = `Vermeidet: ${formatNumber(diamondSavings)} Diamanten`;
+            purchaseFacts.append(saving);
+          }
+          if (excessSavings >= HOUR) {
+            const runtime = document.createElement("span");
+            runtime.textContent = `${formatDuration(excessSavings)} weniger überschüssige Laufzeit`;
+            purchaseFacts.append(runtime);
+          }
+        }
+      } else {
+        purchaseFacts?.replaceChildren();
+      }
     }
 
     if (scheduleList) {

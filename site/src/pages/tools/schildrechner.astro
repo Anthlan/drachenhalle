@@ -37,13 +37,11 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
           <span>Schildplaner</span>
         </nav>
 
-        <header class="tool-hero">
-          <div>
-            <div class="tool-hero-title-row">
-              <div>
-                <p class="eyebrow">Raubzug-Planung</p>
-                <h1>Schildplaner</h1>
-              </div>
+        <header class="tool-hero shield-tool-hero">
+          <div class="shield-hero-copy">
+            <p class="eyebrow">Raubzug-Planung</p>
+            <div class="shield-hero-title-line">
+              <h1>Schildplaner</h1>
               <button
                 type="button"
                 class="tip-article-share tool-share-button"
@@ -61,7 +59,28 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
               und erstellt einen passenden Ablauf aus Schutz- und Plünderphasen.
             </p>
           </div>
-          <div class="tool-hero-seal" aria-hidden="true">🛡️</div>
+          <div class="shield-hero-flow" aria-label="Vom Schildbestand zum fertigen Schildplan">
+            <div>
+              <b class="shield-flow-icon" aria-hidden="true">🛡️</b>
+              <span>01</span>
+              <strong>Bestand</strong>
+              <small>72h, 24h, 12h und 8h</small>
+            </div>
+            <i aria-hidden="true">→</i>
+            <div>
+              <b class="shield-flow-icon" aria-hidden="true">⚔️</b>
+              <span>02</span>
+              <strong>Kampfzeiten</strong>
+              <small>Schutz- und Plünderfenster</small>
+            </div>
+            <i aria-hidden="true">→</i>
+            <div class="is-result">
+              <b class="shield-flow-icon" aria-hidden="true">✓</b>
+              <span>03</span>
+              <strong>Schildplan</strong>
+              <small>mit Kalendererinnerungen</small>
+            </div>
+          </div>
         </header>
 
         <section class="shield-calculator" data-shield-calculator aria-labelledby="shield-form-title">
@@ -77,20 +96,20 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
             <fieldset>
               <legend>Dein Schildbestand</legend>
               <div class="shield-inventory-grid">
-                <label>
-                  <span>72-Stunden-Schilde</span>
+                <label class="shield-inventory-item">
+                  <span>72h-Schilde</span>
                   <input name="shields72" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" />
                 </label>
-                <label>
-                  <span>24-Stunden-Schilde</span>
+                <label class="shield-inventory-item">
+                  <span>24h-Schilde</span>
                   <input name="shields24" type="number" min="0" max="20" step="1" value="1" inputmode="numeric" />
                 </label>
-                <label>
-                  <span>12-Stunden-Schilde</span>
+                <label class="shield-inventory-item">
+                  <span>12h-Schilde</span>
                   <input name="shields12" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" />
                 </label>
-                <label>
-                  <span>8-Stunden-Schilde</span>
+                <label class="shield-inventory-item">
+                  <span>8h-Schilde</span>
                   <input name="shields8" type="number" min="0" max="20" step="1" value="1" inputmode="numeric" />
                 </label>
               </div>
@@ -214,11 +233,23 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
               />
             </div>
             <div class="shield-result-copy">
-              <p class="eyebrow" data-result-kicker>Auswertung</p>
-              <h2 data-result-title>Dein Schildplan</h2>
-              <p data-result-summary></p>
+              <div class="shield-result-intro">
+                <p class="eyebrow" data-result-kicker>Auswertung</p>
+                <h2 data-result-title>Dein Schildplan</h2>
+                <p data-result-summary></p>
+              </div>
 
               <div class="shield-result-facts" data-result-facts></div>
+
+              <aside class="shield-purchase-recommendation" data-purchase-recommendation hidden>
+                <div class="shield-purchase-icon" aria-hidden="true">🛒</div>
+                <div>
+                  <p class="eyebrow">Einkaufsempfehlung</p>
+                  <h3 data-purchase-title>Günstiger planen</h3>
+                  <p data-purchase-summary></p>
+                  <div class="shield-purchase-facts" data-purchase-facts></div>
+                </div>
+              </aside>
 
               <div class="shield-schedule">
                 <h3>Empfohlene Zeitpunkte</h3>
