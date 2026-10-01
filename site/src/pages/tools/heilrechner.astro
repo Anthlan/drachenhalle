@@ -28,13 +28,11 @@ import SiteHeader from "../../components/SiteHeader.astro";
           <span>Heilungsplaner</span>
         </nav>
 
-        <header class="tool-hero">
-          <div>
-            <div class="tool-hero-title-row">
-              <div>
-                <p class="eyebrow">Allianzhilfe richtig ausnutzen</p>
-                <h1>Heilungsplaner</h1>
-              </div>
+        <header class="tool-hero healing-tool-hero">
+          <div class="healing-hero-copy">
+            <p class="eyebrow">Allianzhilfe richtig ausnutzen</p>
+            <div class="healing-hero-title-line">
+              <h1>Heilungsplaner</h1>
               <button
                 type="button"
                 class="tip-article-share tool-share-button"
@@ -51,7 +49,25 @@ import SiteHeader from "../../components/SiteHeader.astro";
               Bei gemischten Heilblöcken orientierst du dich sicherheitshalber an der höchsten Truppenstufe.
             </p>
           </div>
-          <div class="tool-hero-seal" aria-hidden="true">✚</div>
+          <div class="healing-hero-flow" aria-label="Vom Spielwert zum sicheren Heilblock">
+            <div>
+              <span>01</span>
+              <strong>Werte</strong>
+              <small>Hilfszeit und Limit</small>
+            </div>
+            <i aria-hidden="true">→</i>
+            <div>
+              <span>02</span>
+              <strong>Helfer</strong>
+              <small>aktive Unterstützung</small>
+            </div>
+            <i aria-hidden="true">→</i>
+            <div class="is-result">
+              <span>03</span>
+              <strong>Heilblock</strong>
+              <small>sicher abgerundet</small>
+            </div>
+          </div>
         </header>
 
         <section class="healing-calculator" data-healing-calculator aria-labelledby="healing-form-title">
@@ -199,6 +215,22 @@ import SiteHeader from "../../components/SiteHeader.astro";
                 width="696"
                 height="1044"
                 data-healing-character-concerned
+                hidden
+              />
+              <img
+                src="/drachenhalle/brand/tool-healing-anthlan-unsure.webp"
+                alt=""
+                width="696"
+                height="1044"
+                data-healing-character-unsure
+                hidden
+              />
+              <img
+                src="/drachenhalle/brand/tool-healing-anthlan-over-limit.webp"
+                alt=""
+                width="696"
+                height="1044"
+                data-healing-character-over-limit
                 hidden
               />
             </div>

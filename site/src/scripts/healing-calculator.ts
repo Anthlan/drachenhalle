@@ -56,6 +56,8 @@ export const initializeHealingCalculator = () => {
   const detail = root?.querySelector<HTMLElement>("[data-healing-detail]");
   const happyCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-happy]");
   const concernedCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-concerned]");
+  const unsureCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-unsure]");
+  const overLimitCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-over-limit]");
   const modeInputs = [...(root?.querySelectorAll<HTMLInputElement>('input[name="calculationMode"]') ?? [])];
   const modePanels = [...(root?.querySelectorAll<HTMLElement>("[data-healing-mode-panel]") ?? [])];
 
@@ -75,9 +77,13 @@ export const initializeHealingCalculator = () => {
   modeInputs.forEach((input) => input.addEventListener("change", updateMode));
   updateMode();
 
-  const updateCharacter = (state: "success" | "danger") => {
+  type HealingReaction = "success" | "danger" | "uncertain" | "over-limit";
+
+  const updateCharacter = (state: HealingReaction) => {
     if (happyCharacter) happyCharacter.hidden = state !== "success";
     if (concernedCharacter) concernedCharacter.hidden = state !== "danger";
+    if (unsureCharacter) unsureCharacter.hidden = state !== "uncertain";
+    if (overLimitCharacter) overLimitCharacter.hidden = state !== "over-limit";
   };
 
   form.addEventListener("submit", (event) => {
@@ -172,10 +178,9 @@ export const initializeHealingCalculator = () => {
       : calibrationDuration / (calibrationSoldiers as number);
     const recommendedSoldiers = Math.floor(safeSeconds / secondsPerSoldier);
     const expectedDuration = recommendedSoldiers * secondsPerSoldier;
-    result.dataset.state = recommendedSoldiers > 0 ? "success" : "danger";
-    updateCharacter(recommendedSoldiers > 0 ? "success" : "danger");
-
     if (recommendedSoldiers <= 0) {
+      result.dataset.state = "danger";
+      updateCharacter("danger");
       kicker.textContent = "Kalibrierung geprüft";
       title.textContent = "Der sichere Block ist sehr klein";
       summary.textContent = `Dein sicheres Zeitfenster beträgt ${formatDuration(safeSeconds)}, liegt aber unter der kalibrierten Heilzeit eines Soldaten.`;
@@ -184,9 +189,30 @@ export const initializeHealingCalculator = () => {
       return;
     }
 
-    kicker.textContent = usesTierBase ? `Für ${tierLabel} berechnet` : "Persönlich kalibriert";
-    title.textContent = "Dieser Heilblock sollte passen";
-    summary.textContent = `Mit ${usableHelpers} sofortigen Hilfen und ${reservePercent} % Reserve bleibt der berechnete Block innerhalb deines sicheren Zeitfensters.`;
+    const exceedsLimit = activeHelpers > helpLimit;
+    const helperRatio = activeHelpers / helpLimit;
+    const approachesLimit = !exceedsLimit && helperRatio >= 0.8;
+    const reaction: HealingReaction = exceedsLimit
+      ? "over-limit"
+      : approachesLimit
+        ? "uncertain"
+        : "success";
+    result.dataset.state = reaction;
+    updateCharacter(reaction);
+
+    if (exceedsLimit) {
+      kicker.textContent = "Mehr Helfer als Hilfslimit";
+      title.textContent = "Wenn du meinst …";
+      summary.textContent = `Du hast ${activeHelpers} aktive Helfer eingetragen, aber pro Heilung wirken höchstens ${helpLimit}. Der Plan rechnet deshalb nur mit ${usableHelpers} Hilfen.`;
+    } else if (approachesLimit) {
+      kicker.textContent = activeHelpers === helpLimit ? "Hilfslimit vollständig eingeplant" : "Nahe am Hilfslimit";
+      title.textContent = "Sicher? Das ist knapp geplant";
+      summary.textContent = `Du planst mit ${activeHelpers} von höchstens ${helpLimit} Hilfen. Der Heilblock passt rechnerisch, setzt aber voraus, dass fast alle eingeplanten Helfer sofort reagieren.`;
+    } else {
+      kicker.textContent = usesTierBase ? `Für ${tierLabel} berechnet` : "Persönlich kalibriert";
+      title.textContent = "Dieser Heilblock sollte passen";
+      summary.textContent = `Mit ${usableHelpers} sofortigen Hilfen und ${reservePercent} % Reserve bleibt der berechnete Block innerhalb deines sicheren Zeitfensters.`;
+    }
     const soldierLabel = recommendedSoldiers === 1
       ? usesTierBase ? `${tierLabel}-Soldat` : "Soldat"
       : usesTierBase ? `${tierLabel}-Soldaten` : "Soldaten";
