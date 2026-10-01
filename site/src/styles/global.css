@@ -5800,6 +5800,221 @@ h1 {
   font-weight: 800;
 }
 
+.shield-purchase-apply {
+  margin-top: 14px;
+}
+
+.shield-timeflow {
+  margin: 30px clamp(28px, 4vw, 48px) 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.shield-timeflow[hidden] {
+  display: none;
+}
+
+.shield-timeflow-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.shield-timeflow-heading h3 {
+  margin: 5px 0 0;
+  color: var(--ivory);
+  font: 500 24px/1.2 Georgia, "Times New Roman", serif;
+}
+
+.shield-timeflow-heading > p {
+  max-width: 390px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: right;
+}
+
+.shield-timeflow-track {
+  min-height: 42px;
+  display: flex;
+  margin-top: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line-bright);
+  border-radius: 4px;
+  background: rgba(5, 8, 19, 0.72);
+}
+
+.shield-timeflow-segment {
+  min-width: 5px;
+  flex-basis: 0;
+  border-right: 1px solid rgba(5, 8, 19, 0.75);
+}
+
+.shield-timeflow-segment:last-child {
+  border-right: 0;
+}
+
+.shield-timeflow-segment.is-protected,
+.shield-timeflow-marker.is-protected,
+.shield-timeflow-phases .is-protected .shield-timeflow-marker {
+  background: linear-gradient(180deg, #f0bd58, #c98522);
+}
+
+.shield-timeflow-segment.is-extra,
+.shield-timeflow-phases .is-extra .shield-timeflow-marker {
+  background: repeating-linear-gradient(135deg, #725d2d 0 5px, #b38a38 5px 10px);
+}
+
+.shield-timeflow-segment.is-active,
+.shield-timeflow-phases .is-active .shield-timeflow-marker {
+  background: #d96161;
+}
+
+.shield-timeflow-segment.is-frenzy,
+.shield-timeflow-phases .is-frenzy .shield-timeflow-marker {
+  background: #a66bd3;
+}
+
+.shield-timeflow-segment.is-gap,
+.shield-timeflow-phases .is-gap .shield-timeflow-marker {
+  background: repeating-linear-gradient(135deg, #7e252b 0 5px, #e06666 5px 10px);
+}
+
+.shield-timeflow-segment.is-outside,
+.shield-timeflow-phases .is-outside .shield-timeflow-marker {
+  background: #596078;
+}
+
+.shield-timeflow-range {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.shield-timeflow-range span:last-child {
+  text-align: right;
+}
+
+.shield-timeflow-phases {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 18px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shield-timeflow-phases li {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px 0;
+  border-top: 1px solid rgba(227, 173, 78, 0.16);
+}
+
+.shield-timeflow-marker {
+  width: 10px;
+  height: 10px;
+  margin-top: 3px;
+  border-radius: 2px;
+}
+
+.shield-timeflow-phases li > div {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.shield-timeflow-phases strong {
+  color: var(--ivory);
+  font-size: 12px;
+}
+
+.shield-timeflow-phases li > div > span {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.shield-raid-cheer {
+  position: fixed;
+  z-index: 120;
+  right: clamp(16px, 3vw, 42px);
+  bottom: clamp(16px, 3vw, 34px);
+  width: min(310px, calc(100vw - 32px));
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(24px, 24px, 0) scale(0.84);
+  transition: opacity 240ms ease, transform 320ms cubic-bezier(0.2, 0.9, 0.25, 1.2);
+}
+
+.shield-raid-cheer[hidden] {
+  display: none;
+}
+
+.shield-raid-cheer.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.shield-raid-cheer img {
+  position: relative;
+  z-index: 2;
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-right: -8px;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.5));
+  transform-origin: 50% 100%;
+  animation: shield-raid-cheer-bounce 560ms 120ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+
+.shield-raid-cheer-bubble {
+  position: relative;
+  z-index: 1;
+  min-width: 154px;
+  margin: 0 0 72px -22px;
+  padding: 13px 15px 12px 25px;
+  border: 1px solid var(--gold);
+  border-radius: 15px 15px 15px 3px;
+  background: rgba(11, 17, 38, 0.96);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.42);
+}
+
+.shield-raid-cheer-bubble strong,
+.shield-raid-cheer-bubble span {
+  display: block;
+}
+
+.shield-raid-cheer-bubble strong {
+  color: var(--gold-pale);
+  font: 700 20px/1 Georgia, "Times New Roman", serif;
+}
+
+.shield-raid-cheer-bubble span {
+  margin-top: 5px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+@keyframes shield-raid-cheer-bounce {
+  0% { transform: translateY(22px) rotate(4deg) scale(0.88); }
+  58% { transform: translateY(-9px) rotate(-2deg) scale(1.04); }
+  100% { transform: translateY(0) rotate(0) scale(1); }
+}
+
 .shield-schedule {
   margin: 0;
   padding: 28px clamp(28px, 4vw, 48px) 0;
@@ -7105,6 +7320,46 @@ h1 {
     width: 42px;
     height: 42px;
     font-size: 20px;
+  }
+
+  .shield-timeflow {
+    margin: 26px 20px 30px;
+    padding-top: 24px;
+  }
+
+  .shield-timeflow-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .shield-timeflow-heading > p {
+    max-width: none;
+    text-align: left;
+  }
+
+  .shield-timeflow-phases {
+    grid-template-columns: 1fr;
+  }
+
+  .shield-raid-cheer {
+    right: 8px;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    width: min(270px, calc(100vw - 16px));
+  }
+
+  .shield-raid-cheer img {
+    width: 122px;
+  }
+
+  .shield-raid-cheer-bubble {
+    min-width: 142px;
+    margin-bottom: 56px;
+    padding: 11px 12px 10px 23px;
+  }
+
+  .shield-raid-cheer-bubble strong {
+    font-size: 18px;
   }
 
   .shield-result-facts,
@@ -9562,6 +9817,12 @@ body.has-officer-dialog {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .shield-raid-cheer,
+  .shield-raid-cheer img {
+    animation: none;
+    transition: none;
   }
 
   *,

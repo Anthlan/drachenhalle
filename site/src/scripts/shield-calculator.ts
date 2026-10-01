@@ -44,6 +44,15 @@ type ProtectionGap = {
   reason: "late-start" | "insufficient-stock";
 };
 
+type TimelinePhaseKind = "protected" | "active" | "frenzy" | "gap" | "extra" | "outside";
+
+type TimelinePhase = {
+  start: Date;
+  end: Date;
+  kind: TimelinePhaseKind;
+  label: string;
+};
+
 type Allocation = {
   counts: ShieldCounts;
   durationMs: number;
@@ -71,6 +80,7 @@ const HOUR = 60 * 60 * 1000;
 const MINUTE = 60 * 1000;
 const BATTLE_FRENZY_MINUTES = 15;
 const MAX_RAID_WINDOWS = 5;
+const RAID_CHEER_SESSION_KEY = "drachenhalle-shield-raid-cheer-shown";
 
 const SHIELD_COSTS = {
   72: { allianceCoins: null, weeklyShopLimit: 0, diamonds: 12000 },
@@ -479,6 +489,96 @@ const findProtectionGaps = (
   return gaps;
 };
 
+const buildTimelinePhases = (
+  raidStart: Date,
+  raidEnd: Date,
+  steps: ShieldStep[],
+  activeWindows: ActiveWindow[],
+) => {
+  const shieldIntervals = steps.map((step) => {
+    const nominalEnd = new Date(step.at.getTime() + step.hours * HOUR);
+    const interruptedBy = activeWindows
+      .filter((window) => window.start > step.at && window.start < nominalEnd)
+      .sort((left, right) => left.start.getTime() - right.start.getTime())[0];
+    return {
+      step,
+      start: step.at,
+      end: interruptedBy ? new Date(interruptedBy.start) : nominalEnd,
+    };
+  });
+  const timelineStart = new Date(Math.min(
+    raidStart.getTime(),
+    ...shieldIntervals.map((interval) => interval.start.getTime()),
+  ));
+  const timelineEnd = new Date(Math.max(
+    raidEnd.getTime(),
+    ...shieldIntervals.map((interval) => interval.end.getTime()),
+  ));
+  const boundaries = [...new Set([
+    timelineStart.getTime(),
+    timelineEnd.getTime(),
+    raidStart.getTime(),
+    raidEnd.getTime(),
+    ...shieldIntervals.flatMap((interval) => [interval.start.getTime(), interval.end.getTime()]),
+    ...activeWindows.flatMap((window) => [
+      window.start.getTime(),
+      window.end.getTime(),
+      window.restartAt.getTime(),
+    ]),
+  ])]
+    .filter((value) => value >= timelineStart.getTime() && value <= timelineEnd.getTime())
+    .sort((left, right) => left - right);
+
+  const phases: TimelinePhase[] = [];
+  for (let index = 0; index < boundaries.length - 1; index += 1) {
+    const start = new Date(boundaries[index]);
+    const end = new Date(boundaries[index + 1]);
+    if (end <= start) continue;
+    const midpoint = start.getTime() + (end.getTime() - start.getTime()) / 2;
+    const activeWindow = activeWindows.find((window) => (
+      midpoint >= window.start.getTime() && midpoint < window.end.getTime()
+    ));
+    const frenzyWindow = activeWindows.find((window) => (
+      midpoint >= window.end.getTime() && midpoint < window.restartAt.getTime()
+    ));
+    const activeShield = shieldIntervals
+      .filter((interval) => midpoint >= interval.start.getTime() && midpoint < interval.end.getTime())
+      .sort((left, right) => right.start.getTime() - left.start.getTime())[0];
+    const duringRaid = midpoint >= raidStart.getTime() && midpoint < raidEnd.getTime();
+
+    let kind: TimelinePhaseKind;
+    let label: string;
+    if (activeWindow) {
+      kind = "active";
+      label = activeWindow.label;
+    } else if (frenzyWindow) {
+      kind = "frenzy";
+      label = `Battle Frenzy nach ${frenzyWindow.label}`;
+    } else if (duringRaid && activeShield) {
+      kind = "protected";
+      label = `${activeShield.step.hours}h-Schildschutz`;
+    } else if (duringRaid) {
+      kind = "gap";
+      label = "Ungeschützte Schutzlücke";
+    } else if (activeShield) {
+      kind = "extra";
+      label = "Zusätzliche Schildlaufzeit";
+    } else {
+      kind = "outside";
+      label = midpoint < raidStart.getTime() ? "Vor dem Raubzug" : "Nach dem Raubzug";
+    }
+
+    const previous = phases.at(-1);
+    if (previous && previous.kind === kind && previous.label === label && previous.end.getTime() === start.getTime()) {
+      previous.end = end;
+    } else {
+      phases.push({ start, end, kind, label });
+    }
+  }
+
+  return { phases, timelineStart, timelineEnd };
+};
+
 const escapeCalendarText = (value: string) => value
   .replaceAll("\\", "\\\\")
   .replaceAll("\n", "\\n")
@@ -608,19 +708,27 @@ export const initializeShieldCalculator = () => {
   const resultSummary = root.querySelector<HTMLElement>("[data-result-summary]");
   const resultFacts = root.querySelector<HTMLElement>("[data-result-facts]");
   const purchaseRecommendation = root.querySelector<HTMLElement>("[data-purchase-recommendation]");
+  const purchaseKicker = root.querySelector<HTMLElement>("[data-purchase-kicker]");
   const purchaseTitle = root.querySelector<HTMLElement>("[data-purchase-title]");
   const purchaseSummary = root.querySelector<HTMLElement>("[data-purchase-summary]");
   const purchaseFacts = root.querySelector<HTMLElement>("[data-purchase-facts]");
+  const useCostPlanButton = root.querySelector<HTMLButtonElement>("[data-use-cost-plan]");
   const resultNote = root.querySelector<HTMLElement>("[data-result-note]");
   const scheduleList = root.querySelector<HTMLOListElement>("[data-schedule-list]");
   const calmCharacter = root.querySelector<HTMLImageElement>("[data-character-calm]");
   const concernedCharacter = root.querySelector<HTMLImageElement>("[data-character-concerned]");
   const downloadButton = root.querySelector<HTMLButtonElement>("[data-download-plan]");
   const resultEventLink = root.querySelector<HTMLAnchorElement>("[data-result-event-link]");
+  const timeline = root.querySelector<HTMLElement>("[data-shield-timeline]");
+  const timelineTrack = root.querySelector<HTMLElement>("[data-shield-timeline-track]");
+  const timelineStartLabel = root.querySelector<HTMLElement>("[data-shield-timeline-start]");
+  const timelineEndLabel = root.querySelector<HTMLElement>("[data-shield-timeline-end]");
+  const timelinePhases = root.querySelector<HTMLOListElement>("[data-shield-timeline-phases]");
   const addWindowButton = root.querySelector<HTMLButtonElement>("[data-add-raid-window]");
   const windowList = root.querySelector<HTMLElement>("[data-raid-window-list]");
   const emptyWindowHint = root.querySelector<HTMLElement>("[data-raid-window-empty]");
   const windowStatus = root.querySelector<HTMLElement>("[data-window-status]");
+  const raidCheer = document.querySelector<HTMLElement>("[data-raid-cheer]");
 
   if (!form || !firstShieldInput || !result || !raidDate || !raidLink || !calculateButton) return;
 
@@ -656,6 +764,28 @@ export const initializeShieldCalculator = () => {
     if (addWindowButton) addWindowButton.disabled = count >= MAX_RAID_WINDOWS;
   };
 
+  let raidCheerTimer: number | undefined;
+  const showRaidCheerOnce = () => {
+    if (!raidCheer) return;
+    try {
+      if (sessionStorage.getItem(RAID_CHEER_SESSION_KEY) === "1") return;
+      sessionStorage.setItem(RAID_CHEER_SESSION_KEY, "1");
+    } catch {
+      if (raidCheer.dataset.shown === "true") return;
+      raidCheer.dataset.shown = "true";
+    }
+
+    window.clearTimeout(raidCheerTimer);
+    raidCheer.hidden = false;
+    requestAnimationFrame(() => raidCheer.classList.add("is-visible"));
+    raidCheerTimer = window.setTimeout(() => {
+      raidCheer.classList.remove("is-visible");
+      raidCheerTimer = window.setTimeout(() => {
+        raidCheer.hidden = true;
+      }, 280);
+    }, 3800);
+  };
+
   const addRaidWindow = () => {
     if (!windowTemplate || !windowList) return;
     const count = windowList.querySelectorAll("[data-raid-window]").length;
@@ -687,6 +817,7 @@ export const initializeShieldCalculator = () => {
     });
     windowList.append(fragment);
     updateWindowControls();
+    showRaidCheerOnce();
     startInput.focus();
     if (windowStatus) windowStatus.textContent = "Plünderfenster ergänzt. Zeiten prüfen und Schildplan neu berechnen.";
   };
@@ -695,6 +826,12 @@ export const initializeShieldCalculator = () => {
   updateWindowControls();
 
   let currentCalendar = "";
+
+  useCostPlanButton?.addEventListener("click", () => {
+    const strategySelect = form.elements.namedItem("strategy") as HTMLSelectElement | null;
+    if (strategySelect) strategySelect.value = "cost";
+    form.requestSubmit();
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -777,27 +914,45 @@ export const initializeShieldCalculator = () => {
     const protectionGaps = findProtectionGaps(segments, plan.steps, raidStart, firstStart);
     const startsLate = firstStart > raidStart;
     const lateMs = Math.max(0, firstStart.getTime() - raidStart.getTime());
+    const inventoryCostPlan = optimizeProtectionPlan(segments, inventory, "cost");
     const shopPlan = optimizeProtectionPlan(segments, inventoryWithWeeklyShop(inventory), "cost");
     const purchases = subtractCounts(shopPlan.used, inventory);
-    const heldBack = subtractCounts(plan.used, shopPlan.used);
     const currentCost = replacementCost(plan.used);
-    const shopPlanCost = replacementCost(shopPlan.used);
-    const coinSavings = currentCost.allianceCoins - shopPlanCost.allianceCoins;
-    const diamondSavings = currentCost.diamonds - shopPlanCost.diamonds;
-    const excessSavings = Math.max(
-      0,
-      durationForCounts(plan.used) - plan.requiredMs
-        - Math.max(0, durationForCounts(shopPlan.used) - shopPlan.requiredMs),
-    );
+    const inventoryPlanCost = replacementCost(inventoryCostPlan.used);
+    const hasInventoryCostImprovement = plan.complete
+      && inventoryCostPlan.complete
+      && !startsLate
+      && (
+        inventoryPlanCost.diamonds < currentCost.diamonds
+        || (
+          inventoryPlanCost.diamonds === currentCost.diamonds
+          && inventoryPlanCost.allianceCoins < currentCost.allianceCoins
+        )
+      );
     const hasRecommendedPurchase = countShields(purchases) > 0;
-    const recommendationImprovesPlan = shopPlan.complete
+    const shopPlanCost = replacementCost(shopPlan.used);
+    const purchaseImprovesPlan = shopPlan.complete
       && hasRecommendedPurchase
       && !startsLate
       && (
         !plan.complete
-        || diamondSavings > 0
-        || (diamondSavings === 0 && coinSavings > 0)
+        || shopPlanCost.diamonds < currentCost.diamonds
+        || (
+          shopPlanCost.diamonds === currentCost.diamonds
+          && shopPlanCost.allianceCoins < currentCost.allianceCoins
+        )
       );
+    const recommendedPlan = purchaseImprovesPlan ? shopPlan : inventoryCostPlan;
+    const recommendedCost = replacementCost(recommendedPlan.used);
+    const heldBack = subtractCounts(plan.used, recommendedPlan.used);
+    const coinSavings = currentCost.allianceCoins - recommendedCost.allianceCoins;
+    const diamondSavings = currentCost.diamonds - recommendedCost.diamonds;
+    const excessSavings = Math.max(
+      0,
+      durationForCounts(plan.used) - plan.requiredMs
+        - Math.max(0, durationForCounts(recommendedPlan.used) - recommendedPlan.requiredMs),
+    );
+    const recommendationImprovesPlan = purchaseImprovesPlan || hasInventoryCostImprovement;
     const missingMs = plan.missingMs + lateMs;
     const complete = plan.complete && !startsLate;
     const hasUnclearCapital = Boolean(capital && capitalMode === "unclear");
@@ -863,6 +1018,10 @@ export const initializeShieldCalculator = () => {
       if (recommendationImprovesPlan) {
         const purchaseLabel = formatShieldSelection(purchases);
         const heldBackLabel = formatShieldSelection(heldBack);
+        const inventoryPlanLabel = formatShieldSelection(inventoryCostPlan.used);
+        if (purchaseKicker) {
+          purchaseKicker.textContent = purchaseImprovesPlan ? "Einkaufsempfehlung" : "Bestandsoptimierung";
+        }
         if (purchaseTitle) {
           purchaseTitle.textContent = plan.complete
             ? coinSavings > 0
@@ -871,15 +1030,19 @@ export const initializeShieldCalculator = () => {
             : "Fehlenden Schutz gezielt ergänzen";
         }
         if (purchaseSummary) {
-          purchaseSummary.textContent = plan.complete
-            ? `Besorge ${purchaseLabel} im Allianzshop${heldBackLabel ? ` und halte ${heldBackLabel} aus deinem Bestand zurück` : ""}. Der alternative Plan deckt dieselben Schutzphasen günstiger ab. Trage den Kauf anschließend oben ein und berechne neu.`
-            : `Mit ${purchaseLabel} aus dem Allianzshop lässt sich der Schutz vollständig planen. Trage den Kauf anschließend oben in deinen Bestand ein und berechne neu.`;
+          purchaseSummary.textContent = purchaseImprovesPlan
+            ? plan.complete
+              ? `Besorge zusätzlich ${purchaseLabel} im Allianzshop${heldBackLabel ? ` und halte ${heldBackLabel} aus deinem Bestand zurück` : ""}. Trage den Kauf oben ein; anschließend kannst du den günstigeren Plan direkt übernehmen.`
+              : `Mit zusätzlich ${purchaseLabel} aus dem Allianzshop lässt sich der Schutz vollständig planen. Trage den Kauf anschließend oben in deinen Bestand ein und berechne neu.`
+            : `Die günstigere Kombination ist bereits in deinem Bestand: ${inventoryPlanLabel}. Übernimm sie direkt für deinen Schildplan.`;
         }
         if (purchaseFacts) {
           purchaseFacts.replaceChildren();
-          const purchaseCost = document.createElement("span");
-          purchaseCost.textContent = `Kauf: ${formatReplacementCost(purchases)}`;
-          purchaseFacts.append(purchaseCost);
+          const planFact = document.createElement("span");
+          planFact.textContent = purchaseImprovesPlan
+            ? `Kauf: ${formatReplacementCost(purchases)}`
+            : "Kein Einkauf nötig";
+          purchaseFacts.append(planFact);
           if (coinSavings > 0) {
             const saving = document.createElement("span");
             saving.textContent = `Ersparnis: ${formatNumber(coinSavings)} Allianzmünzen`;
@@ -896,8 +1059,10 @@ export const initializeShieldCalculator = () => {
             purchaseFacts.append(runtime);
           }
         }
+        if (useCostPlanButton) useCostPlanButton.hidden = purchaseImprovesPlan;
       } else {
         purchaseFacts?.replaceChildren();
+        if (useCostPlanButton) useCostPlanButton.hidden = true;
       }
     }
 
@@ -947,6 +1112,44 @@ export const initializeShieldCalculator = () => {
       ? createCalendar(raid, plan.steps, activeWindows, capital, capitalMode)
       : "";
     if (downloadButton) downloadButton.disabled = !currentCalendar;
+
+    if (timeline && timelineTrack && timelinePhases) {
+      const timelineData = buildTimelinePhases(raidStart, raidEnd, plan.steps, activeWindows);
+      timelineTrack.replaceChildren();
+      timelinePhases.replaceChildren();
+      timeline.hidden = timelineData.phases.length === 0;
+      const totalDuration = Math.max(MINUTE, timelineData.timelineEnd.getTime() - timelineData.timelineStart.getTime());
+      timelineTrack.setAttribute(
+        "aria-label",
+        `Schildplan von ${formatDateTime(timelineData.timelineStart)} Uhr bis ${formatDateTime(timelineData.timelineEnd)} Uhr`,
+      );
+      if (timelineStartLabel) timelineStartLabel.textContent = `${formatDateTime(timelineData.timelineStart)} Uhr`;
+      if (timelineEndLabel) timelineEndLabel.textContent = `${formatDateTime(timelineData.timelineEnd)} Uhr`;
+
+      timelineData.phases.forEach((phase) => {
+        const duration = phase.end.getTime() - phase.start.getTime();
+        const segment = document.createElement("span");
+        segment.className = `shield-timeflow-segment is-${phase.kind}`;
+        segment.style.flexGrow = String(duration / totalDuration);
+        segment.title = `${phase.label}: ${formatDateTime(phase.start)} bis ${formatDateTime(phase.end)} Uhr`;
+        timelineTrack.append(segment);
+
+        const item = document.createElement("li");
+        item.className = `is-${phase.kind}`;
+        const marker = document.createElement("span");
+        marker.className = "shield-timeflow-marker";
+        marker.setAttribute("aria-hidden", "true");
+        const copy = document.createElement("div");
+        const label = document.createElement("strong");
+        const times = document.createElement("span");
+        label.textContent = phase.label;
+        times.textContent = `${formatDateTime(phase.start)} bis ${formatDateTime(phase.end)} Uhr · ${formatDuration(duration)}`;
+        copy.append(label, times);
+        item.append(marker, copy);
+        timelinePhases.append(item);
+      });
+    }
+
     if (windowStatus) windowStatus.textContent = activeWindows.length > 0
       ? activeWindows.length === 1
         ? "Ein aktives Zeitfenster im Plan berücksichtigt."

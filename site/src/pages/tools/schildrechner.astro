@@ -244,10 +244,16 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
               <aside class="shield-purchase-recommendation" data-purchase-recommendation hidden>
                 <div class="shield-purchase-icon" aria-hidden="true">🛒</div>
                 <div>
-                  <p class="eyebrow">Einkaufsempfehlung</p>
+                  <p class="eyebrow" data-purchase-kicker>Einkaufsempfehlung</p>
                   <h3 data-purchase-title>Günstiger planen</h3>
                   <p data-purchase-summary></p>
                   <div class="shield-purchase-facts" data-purchase-facts></div>
+                  <button
+                    class="shield-secondary-button shield-purchase-apply"
+                    type="button"
+                    data-use-cost-plan
+                    hidden
+                  >Günstigen Plan verwenden →</button>
                 </div>
               </aside>
 
@@ -269,9 +275,44 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
                 </button>
                 <a data-result-event-link href="/drachenhalle/termine/">Raubzugtermin öffnen →</a>
               </div>
+
+              <section class="shield-timeflow" data-shield-timeline hidden aria-labelledby="shield-timeflow-title">
+                <div class="shield-timeflow-heading">
+                  <div>
+                    <p class="eyebrow">Zeitstrahl</p>
+                    <h3 id="shield-timeflow-title">So wirken sich deine Zeitspannen aus</h3>
+                  </div>
+                  <p>Von deinem ersten geplanten Schild bis zum Ende der letzten Schildlaufzeit.</p>
+                </div>
+                <div
+                  class="shield-timeflow-track"
+                  data-shield-timeline-track
+                  role="img"
+                  aria-label="Zeitlicher Verlauf des Schildplans"
+                ></div>
+                <div class="shield-timeflow-range" aria-hidden="true">
+                  <span data-shield-timeline-start></span>
+                  <span data-shield-timeline-end></span>
+                </div>
+                <ol class="shield-timeflow-phases" data-shield-timeline-phases></ol>
+              </section>
             </div>
           </section>
         </section>
+
+        <div class="shield-raid-cheer" data-raid-cheer hidden role="status" aria-live="polite" aria-atomic="true">
+          <img
+            src="/drachenhalle/brand/tool-shield-anthlan-battlecry.webp"
+            width="480"
+            height="720"
+            alt=""
+            aria-hidden="true"
+          />
+          <div class="shield-raid-cheer-bubble">
+            <strong>Für DIE!</strong>
+            <span>Auf zum Raubzug!</span>
+          </div>
+        </div>
 
         <dialog
           class="healing-help-dialog shield-help-dialog tool-info-dialog"
