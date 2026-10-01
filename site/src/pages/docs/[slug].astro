@@ -91,14 +91,17 @@ const leadershipProfiles = [
     name: "Anthlan",
     subtitle: "R5 · Allianzleitung",
     imageUrl: latestPersonImage("Avatar", "Anthlan"),
-    characterImageUrl: latestPersonImage("Charaktermodell", "Anthlan"),
+    characterImageUrl: "/drachenhalle/brand/officer-anthlan-world.webp",
+    characterImageAlt: "Anthlans Alter Ego in seiner Sternwarte über den verbundenen Welten",
     isLeader: true,
+    cardTheme: "anthlan",
     alterEgo: {
-      title: "Der drachenblütige Stratege",
-      summary: "Ein charismatischer Drachenblütiger, der Karten, Wege und Möglichkeiten liest, bevor andere überhaupt das Ziel erkennen.",
-      archetype: "Drachenblütiger Taktiker",
-      hallmark: "Blaue Schuppen, goldene Hörner und ein nachtblauer Mantel",
-      presence: "Ruhig, verbindlich und vorausschauend",
+      title: "Der Architekt der Gemeinschaft",
+      summary: "Ein astraler Gastgeber, der Menschen, Orte und Ideen über goldene Wege verbindet. Zwischen Karten, Spielfiguren und Kaffeetasse behält er den Überblick – meistens jedenfalls.",
+      archetype: "Drachenblütiger Gastgeber und Stratege",
+      hallmark: "Sternwarte, Strategietisch, goldene Verbindungswege und Kaffee",
+      presence: "Vorausschauend, zugänglich und leicht schelmisch",
+      world: "Die Sternwarte der verbundenen Wege",
     },
   },
   {
@@ -614,7 +617,7 @@ const responsibilities = [
                 {leadershipProfiles.map((officer) => (
                   <dialog
                     id={`officer-dialog-${officer.id}`}
-                    class="officer-dialog"
+                    class:list={["officer-dialog", { "is-anthlan": officer.cardTheme === "anthlan" }]}
                     data-officer-dialog
                     aria-labelledby={`officer-dialog-title-${officer.id}`}
                     aria-describedby={`officer-dialog-summary-${officer.id}`}
@@ -625,7 +628,10 @@ const responsibilities = [
                       </form>
                       <div class="officer-dialog-visual">
                         {officer.characterImageUrl ? (
-                          <img src={officer.characterImageUrl} alt={`Charaktermodell des Alter Egos von ${officer.name}`} />
+                          <img
+                            src={officer.characterImageUrl}
+                            alt={officer.characterImageAlt ?? `Charaktermodell des Alter Egos von ${officer.name}`}
+                          />
                         ) : (
                           <div class="officer-dialog-placeholder">Charaktermodell folgt</div>
                         )}
@@ -634,6 +640,12 @@ const responsibilities = [
                         <span>{officer.subtitle} · Alter Ego</span>
                         <h2 id={`officer-dialog-title-${officer.id}`}>{officer.name}</h2>
                         <h3>{officer.alterEgo.title}</h3>
+                        {officer.alterEgo.world && (
+                          <p class="officer-dialog-world">
+                            <span>Seine Welt</span>
+                            <strong>{officer.alterEgo.world}</strong>
+                          </p>
+                        )}
                         <p id={`officer-dialog-summary-${officer.id}`}>{officer.alterEgo.summary}</p>
                         <dl>
                           <div>

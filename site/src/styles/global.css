@@ -9065,13 +9065,32 @@ footer a {
 }
 
 .officer-card.is-leader {
+  position: relative;
   width: min(100%, 480px);
   grid-column: 1 / -1;
   justify-self: center;
+  overflow: hidden;
   border-color: rgba(227, 173, 78, 0.5);
   background:
-    radial-gradient(circle at 12% 16%, rgba(227, 173, 78, 0.2), transparent 38%),
+    radial-gradient(circle at 12% 16%, rgba(75, 137, 255, 0.2), transparent 34%),
+    radial-gradient(circle at 90% 120%, rgba(227, 173, 78, 0.23), transparent 48%),
     linear-gradient(135deg, rgba(29, 37, 69, 0.98), rgba(10, 15, 34, 0.98));
+  box-shadow: 0 22px 52px rgba(11, 32, 77, 0.34);
+}
+
+.officer-card.is-leader::after {
+  content: "✦";
+  position: absolute;
+  right: 18px;
+  color: rgba(116, 169, 255, 0.42);
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: -26px 17px 0 rgba(227, 173, 78, 0.2);
+}
+
+.officer-card.is-leader > * {
+  position: relative;
+  z-index: 1;
 }
 
 .officer-avatar {
@@ -9283,7 +9302,7 @@ body.has-officer-dialog {
   font-weight: 500;
 }
 
-.officer-dialog-copy > p:not(.officer-dialog-note) {
+.officer-dialog-copy > p:not(.officer-dialog-note):not(.officer-dialog-world) {
   margin: 22px 0 0;
   color: var(--muted);
   font-size: 16px;
@@ -9327,6 +9346,119 @@ body.has-officer-dialog {
   font-style: italic;
   line-height: 1.5;
   opacity: 0.76;
+}
+
+.officer-dialog.is-anthlan {
+  border-color: rgba(106, 160, 255, 0.78);
+  background: #071026;
+  box-shadow:
+    0 0 0 1px rgba(227, 173, 78, 0.2),
+    0 36px 110px rgba(0, 0, 0, 0.72),
+    0 0 70px rgba(53, 105, 203, 0.2);
+}
+
+.officer-dialog.is-anthlan .officer-dialog-shell {
+  grid-template-columns: minmax(370px, 48%) minmax(0, 1fr);
+}
+
+.officer-dialog.is-anthlan .officer-dialog-visual {
+  position: relative;
+  border-right-color: rgba(106, 160, 255, 0.34);
+  background: #050c20;
+}
+
+.officer-dialog.is-anthlan .officer-dialog-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset -28px 0 52px rgba(4, 10, 27, 0.42);
+}
+
+.officer-dialog.is-anthlan .officer-dialog-visual img {
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.officer-dialog.is-anthlan .officer-dialog-copy {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 85% 8%, rgba(72, 136, 255, 0.2), transparent 32%),
+    radial-gradient(circle at 18% 96%, rgba(227, 173, 78, 0.17), transparent 40%),
+    linear-gradient(145deg, #111d40, #070d20 78%);
+  padding: clamp(34px, 4vw, 52px);
+}
+
+.officer-dialog.is-anthlan .officer-dialog-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.28;
+  background-image:
+    radial-gradient(circle at 18% 16%, #dce9ff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 78% 22%, #e3ad4e 0 1px, transparent 1.5px),
+    radial-gradient(circle at 60% 66%, #dce9ff 0 1px, transparent 1.5px),
+    linear-gradient(122deg, transparent 48%, rgba(106, 160, 255, 0.18) 49%, transparent 50%);
+  background-size: 84px 84px, 112px 112px, 138px 138px, 100% 100%;
+}
+
+.officer-dialog.is-anthlan .officer-dialog-copy h2 {
+  color: #f7f1df;
+  font-size: clamp(38px, 4.4vw, 52px);
+  text-shadow: 0 0 28px rgba(80, 143, 255, 0.32);
+}
+
+.officer-dialog.is-anthlan .officer-dialog-copy h3 {
+  margin-top: 12px;
+  color: #8bb8ff;
+  font-size: clamp(20px, 2.2vw, 26px);
+}
+
+.officer-dialog.is-anthlan .officer-dialog-copy > p:not(.officer-dialog-note):not(.officer-dialog-world) {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.officer-dialog.is-anthlan .officer-dialog-copy dl {
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.officer-dialog.is-anthlan .officer-dialog-copy dl div {
+  padding: 10px 14px;
+}
+
+.officer-dialog.is-anthlan .officer-dialog-note {
+  margin-top: 16px;
+}
+
+.officer-dialog-world {
+  display: grid;
+  gap: 4px;
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  border-left: 2px solid #6aa0ff;
+  color: var(--muted);
+  background: linear-gradient(90deg, rgba(70, 128, 234, 0.13), transparent);
+}
+
+.officer-dialog-world span {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.officer-dialog-world strong {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .officer-responsibility-link {
@@ -9709,6 +9841,10 @@ body.has-officer-dialog {
     min-height: 0;
     max-height: calc(100dvh - 24px);
     overflow-y: auto;
+  }
+
+  .officer-dialog.is-anthlan .officer-dialog-shell {
+    display: block;
   }
 
   .officer-dialog-visual {
