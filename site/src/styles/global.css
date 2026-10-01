@@ -7797,6 +7797,10 @@ footer a {
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 16px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
   background:
     radial-gradient(circle at 14% 14%, rgba(227, 173, 78, 0.11), transparent 34%),
     linear-gradient(135deg, rgba(18, 27, 57, 0.96), rgba(8, 13, 31, 0.98));
@@ -7808,6 +7812,11 @@ footer a {
   transform: translateY(-3px);
   border-color: rgba(227, 173, 78, 0.48);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.26);
+}
+
+.officer-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
 }
 
 .officer-card.is-leader {
@@ -7866,6 +7875,8 @@ footer a {
 
 .officer-card-copy {
   min-width: 0;
+  display: grid;
+  justify-items: start;
 }
 
 .officer-card-copy > span {
@@ -7876,11 +7887,201 @@ footer a {
   text-transform: uppercase;
 }
 
-.officer-card-copy h2 {
+.officer-card-name {
+  display: block;
   margin: 5px 0 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(19px, 1.7vw, 26px);
+  line-height: 1.1;
+}
+
+.officer-card-copy small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.78;
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.officer-card:hover .officer-card-copy small,
+.officer-card:focus-visible .officer-card-copy small {
+  color: var(--gold-pale);
+  opacity: 1;
+}
+
+@media (min-width: 901px) {
+  .officer-page-intro,
+  .officer-roster,
+  .officer-responsibility-link {
+    margin-inline: clamp(26px, 3.2vw, 42px);
+  }
+}
+
+body.has-officer-dialog {
+  overflow: hidden;
+}
+
+.officer-dialog {
+  width: min(1020px, calc(100vw - 48px));
+  max-width: none;
+  max-height: min(88dvh, 860px);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(227, 173, 78, 0.58);
+  border-radius: 20px;
+  color: var(--ink);
+  background: #080d1d;
+  box-shadow: 0 36px 100px rgba(0, 0, 0, 0.68);
+}
+
+.officer-dialog::backdrop {
+  background: rgba(2, 4, 12, 0.84);
+  backdrop-filter: blur(7px);
+}
+
+.officer-dialog-shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(310px, 42%) minmax(0, 1fr);
+  min-height: min(76dvh, 720px);
+  max-height: min(88dvh, 860px);
+}
+
+.officer-dialog-shell > form {
+  display: contents;
+}
+
+.officer-dialog-close {
+  position: absolute;
+  z-index: 3;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(227, 173, 78, 0.58);
+  border-radius: 50%;
+  color: var(--ink);
+  font: 300 28px/1 Arial, sans-serif;
+  cursor: pointer;
+  background: rgba(6, 10, 24, 0.9);
+}
+
+.officer-dialog-close:hover,
+.officer-dialog-close:focus-visible {
+  color: #081021;
+  background: var(--gold-pale);
+}
+
+.officer-dialog-visual {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 50% 28%, rgba(227, 173, 78, 0.18), transparent 40%),
+    #050814;
+}
+
+.officer-dialog-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+  object-fit: contain;
+}
+
+.officer-dialog-placeholder {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.officer-dialog-copy {
+  min-width: 0;
+  overflow-y: auto;
+  padding: clamp(34px, 5vw, 66px);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(227, 173, 78, 0.14), transparent 42%),
+    linear-gradient(145deg, rgba(18, 27, 57, 0.98), rgba(8, 13, 31, 0.99));
+}
+
+.officer-dialog-copy > span {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.officer-dialog-copy h2 {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1;
+}
+
+.officer-dialog-copy h3 {
+  margin: 16px 0 0;
+  color: var(--gold-pale);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 500;
+}
+
+.officer-dialog-copy > p:not(.officer-dialog-note) {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.officer-dialog-copy dl {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 0;
+}
+
+.officer-dialog-copy dl div {
+  display: grid;
+  gap: 5px;
+  padding: 14px 16px;
+  border: 1px solid rgba(227, 173, 78, 0.2);
+  border-radius: 11px;
+  background: rgba(5, 8, 20, 0.42);
+}
+
+.officer-dialog-copy dt {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.officer-dialog-copy dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.officer-dialog-note {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.5;
+  opacity: 0.76;
 }
 
 .officer-responsibility-link {
@@ -8249,6 +8450,35 @@ footer a {
   .responsibility-sockets,
   .responsibility-reference-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .officer-dialog {
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .officer-dialog-shell {
+    display: block;
+    min-height: 0;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+  }
+
+  .officer-dialog-visual {
+    height: min(52dvh, 470px);
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .officer-dialog-copy {
+    overflow: visible;
+    padding: 30px 22px 34px;
+  }
+
+  .officer-dialog-copy h2 {
+    font-size: 38px;
   }
 }
 

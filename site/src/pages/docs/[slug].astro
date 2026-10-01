@@ -91,43 +91,99 @@ const leadershipProfiles = [
     name: "Anthlan",
     subtitle: "R5 · Allianzleitung",
     imageUrl: latestPersonImage("Avatar", "Anthlan"),
+    characterImageUrl: latestPersonImage("Charaktermodell", "Anthlan"),
     isLeader: true,
+    alterEgo: {
+      title: "Der drachenblütige Stratege",
+      summary: "Ein charismatischer Drachenblütiger, der Karten, Wege und Möglichkeiten liest, bevor andere überhaupt das Ziel erkennen.",
+      archetype: "Drachenblütiger Taktiker",
+      hallmark: "Blaue Schuppen, goldene Hörner und ein nachtblauer Mantel",
+      presence: "Ruhig, verbindlich und vorausschauend",
+    },
   },
   {
     id: "mysteryz",
     name: "mysteryZ",
     subtitle: "R4 · Vize",
     imageUrl: latestPersonImage("Avatar", "mysteryZ"),
+    characterImageUrl: latestPersonImage("Charaktermodell", "mysteryZ"),
+    alterEgo: {
+      title: "Die verhüllte Schattenstrategin",
+      summary: "Eine lautlose Beobachterin, die lieber den entscheidenden Weg vorbereitet, als im Rampenlicht zu stehen.",
+      archetype: "Schattenläuferin",
+      hallmark: "Kapuze, Drachenmaske und schwarze Rüstung mit roten Akzenten",
+      presence: "Wachsam, präzise und geheimnisvoll",
+    },
   },
   {
     id: "somea",
     name: "Somea",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "Somea"),
+    characterImageUrl: latestPersonImage("Charaktermodell", "Somea"),
+    alterEgo: {
+      title: "Die Sternenweberin",
+      summary: "Eine arkane Planerin, die Wissen und Intuition verbindet und selbst in unruhigen Zeiten den klaren Blick bewahrt.",
+      archetype: "Arkane Strategin",
+      hallmark: "Nachtblaues Haar, Saphirschmuck und eine schwarze Begleitkatze",
+      presence: "Klug, gefasst und aufmerksam",
+    },
   },
   {
     id: "davinci1986",
     name: "DaVinci1986",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "DaVinci1986"),
+    characterImageUrl: latestPersonImage("Charaktermodell", "DaVinci1986"),
+    alterEgo: {
+      title: "Die rubinrote Hofstrategin",
+      summary: "Eine elegante Taktikerin, deren ruhiges Auftreten scharfe Beobachtung und entschlossene Planung verbirgt.",
+      archetype: "Drachenbotin und Taktikerin",
+      hallmark: "Rubinschmuck, sternengeschmücktes Haar und schwarz-roter Mantel",
+      presence: "Elegant, analytisch und entschlossen",
+    },
   },
   {
     id: "drachenherz",
     name: "Drachenherz",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "Drachenherz"),
+    characterImageUrl: latestPersonImage("Charaktermodell", "Drachenherz"),
+    alterEgo: {
+      title: "Der smaragdgezeichnete Ritter",
+      summary: "Ein erfahrener Ritter, dessen Drachenmal für Standfestigkeit, Weitblick und die Kraft gemeinsamer Taten steht.",
+      archetype: "Drachengezeichneter Ritter",
+      hallmark: "Smaragdgrüne Schuppen und weiß-grüne Gewänder",
+      presence: "Besonnen, standfest und tatkräftig",
+    },
   },
   {
     id: "helltrain",
     name: "Helltrain",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "Helltrain"),
+    characterImageUrl: latestPersonImage("Charaktermodell", "Helltrain"),
+    alterEgo: {
+      title: "Der eiserne Feldkoch",
+      summary: "Ein bodenständiger Veteran, der Wärme an das Feuer und Verlässlichkeit in jede noch so raue Lage bringt.",
+      archetype: "Feldkoch und Veteran",
+      hallmark: "Lederschürze, eiserne Beinprothese und dampfende Pfanne",
+      presence: "Pragmatisch, robust und herzlich",
+    },
   },
   {
     id: "thor63",
     name: "Thor63",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "Thor63"),
+    characterImageUrl: latestPersonImage("Charaktermodell", "Thor63"),
+    alterEgo: {
+      title: "Der runengebundene Wächter",
+      summary: "Ein ehrwürdiger Hüter alter Pfade, der mit ruhiger Stimme und schwerem Hammer über die Halle wacht.",
+      archetype: "Runenwächter",
+      hallmark: "Dunkelblauer Mantel, weißer Bart und Runenhammer",
+      presence: "Ruhig, würdevoll und unbeirrbar",
+    },
   },
 ];
 
@@ -523,30 +579,81 @@ const responsibilities = [
                 <section class="officer-page-intro">
                   <p>
                     Unsere Allianzführung besteht aus Anthlan als R5 und unseren sechs R4. Hier seht ihr, wer aktuell
-                    zu unserem Führungsteam gehört. Wir stimmen uns gemeinsam ab und sind für euch ansprechbar.
+                    zu unserem Führungsteam gehört. Klickt oder tippt auf ein Porträt, um das Alter Ego dahinter kennenzulernen.
                   </p>
-                  <span>Stand: 30. September 2026</span>
+                  <span>Stand: 1. Oktober 2026</span>
                 </section>
                 <div class="officer-roster" aria-label="Aktuelles Führungsteam der Allianz">
                   {leadershipProfiles.map((officer) => (
-                    <article class:list={["officer-card", { "is-leader": officer.isLeader, "is-pending": !officer.imageUrl }]}>
-                      <div class="officer-avatar">
+                    <button
+                      type="button"
+                      class:list={["officer-card", { "is-leader": officer.isLeader, "is-pending": !officer.imageUrl }]}
+                      data-officer-open={`officer-dialog-${officer.id}`}
+                      aria-haspopup="dialog"
+                      aria-controls={`officer-dialog-${officer.id}`}
+                      aria-label={`Alter Ego von ${officer.name} ansehen`}
+                    >
+                      <span class="officer-avatar">
                         {officer.imageUrl ? (
                           <img src={officer.imageUrl} alt={`Avatar von ${officer.name}`} />
                         ) : (
-                          <div class="officer-portrait-placeholder" aria-label={`Avatar von ${officer.name} folgt`}>
+                          <span class="officer-portrait-placeholder" aria-label={`Avatar von ${officer.name} folgt`}>
                             <span aria-hidden="true">🐉</span>
                             <strong>Bild folgt</strong>
-                          </div>
+                          </span>
                         )}
-                      </div>
-                      <div class="officer-card-copy">
+                      </span>
+                      <span class="officer-card-copy">
                         <span>{officer.subtitle}</span>
-                        <h2>{officer.name}</h2>
-                      </div>
-                    </article>
+                        <strong class="officer-card-name">{officer.name}</strong>
+                        <small>Alter Ego ansehen <span aria-hidden="true">↗</span></small>
+                      </span>
+                    </button>
                   ))}
                 </div>
+                {leadershipProfiles.map((officer) => (
+                  <dialog
+                    id={`officer-dialog-${officer.id}`}
+                    class="officer-dialog"
+                    data-officer-dialog
+                    aria-labelledby={`officer-dialog-title-${officer.id}`}
+                    aria-describedby={`officer-dialog-summary-${officer.id}`}
+                  >
+                    <div class="officer-dialog-shell">
+                      <form method="dialog">
+                        <button class="officer-dialog-close" type="submit" aria-label="Steckbrief schließen">×</button>
+                      </form>
+                      <div class="officer-dialog-visual">
+                        {officer.characterImageUrl ? (
+                          <img src={officer.characterImageUrl} alt={`Charaktermodell des Alter Egos von ${officer.name}`} />
+                        ) : (
+                          <div class="officer-dialog-placeholder">Charaktermodell folgt</div>
+                        )}
+                      </div>
+                      <section class="officer-dialog-copy">
+                        <span>{officer.subtitle} · Alter Ego</span>
+                        <h2 id={`officer-dialog-title-${officer.id}`}>{officer.name}</h2>
+                        <h3>{officer.alterEgo.title}</h3>
+                        <p id={`officer-dialog-summary-${officer.id}`}>{officer.alterEgo.summary}</p>
+                        <dl>
+                          <div>
+                            <dt>Archetyp</dt>
+                            <dd>{officer.alterEgo.archetype}</dd>
+                          </div>
+                          <div>
+                            <dt>Kennzeichen</dt>
+                            <dd>{officer.alterEgo.hallmark}</dd>
+                          </div>
+                          <div>
+                            <dt>Auftreten</dt>
+                            <dd>{officer.alterEgo.presence}</dd>
+                          </div>
+                        </dl>
+                        <p class="officer-dialog-note">Dieser Steckbrief beschreibt ausschließlich das fiktive Spiel-Alter-Ego.</p>
+                      </section>
+                    </div>
+                  </dialog>
+                ))}
                 <a class="officer-responsibility-link" href="/drachenhalle/docs/unsere-verantwortlichkeiten/">
                   <span>Wer kümmert sich worum?</span>
                   <strong>Zu unseren Verantwortlichkeiten <span aria-hidden="true">→</span></strong>
@@ -889,6 +996,26 @@ const responsibilities = [
 
     <script>
       import { initializeImageActions } from "../../scripts/image-actions";
+
+      for (const openButton of document.querySelectorAll("[data-officer-open]")) {
+        if (!(openButton instanceof HTMLButtonElement)) continue;
+        const dialogId = openButton.dataset.officerOpen;
+        const dialog = dialogId ? document.getElementById(dialogId) : null;
+        if (!(dialog instanceof HTMLDialogElement)) continue;
+
+        openButton.addEventListener("click", () => {
+          dialog.showModal();
+          document.body.classList.add("has-officer-dialog");
+        });
+
+        dialog.addEventListener("close", () => {
+          document.body.classList.remove("has-officer-dialog");
+        });
+
+        dialog.addEventListener("click", (event) => {
+          if (event.target === dialog) dialog.close();
+        });
+      }
 
       for (const game of document.querySelectorAll("[data-responsibility-game]")) {
         if (!(game instanceof HTMLElement)) continue;
