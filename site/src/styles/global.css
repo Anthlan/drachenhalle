@@ -4622,6 +4622,155 @@ h1 {
   color: var(--gold-pale);
 }
 
+/* Event colors: shared by calendar, cards, homepage and detail pages */
+.event-theme-standard {
+  --event-accent: #91a8d8;
+  --event-accent-rgb: 145, 168, 216;
+  --event-accent-text: #dce6ff;
+}
+
+.event-theme-hinterhalt {
+  --event-accent: #b994ff;
+  --event-accent-rgb: 185, 148, 255;
+  --event-accent-text: #edddff;
+}
+
+.event-theme-pandora {
+  --event-accent: #62c7ff;
+  --event-accent-rgb: 98, 199, 255;
+  --event-accent-text: #d9f3ff;
+}
+
+.event-theme-raubzug {
+  --event-accent: #ff7b6e;
+  --event-accent-rgb: 255, 123, 110;
+  --event-accent-text: #ffe0dc;
+}
+
+.event-theme-hauptstadt {
+  --event-accent: #e3ad4e;
+  --event-accent-rgb: 227, 173, 78;
+  --event-accent-text: #f6d88d;
+}
+
+.event-theme-zombie {
+  --event-accent: #70d69b;
+  --event-accent-rgb: 112, 214, 155;
+  --event-accent-text: #d9ffe7;
+}
+
+.calendar-event[class*="event-theme-"] {
+  border-color: rgba(var(--event-accent-rgb), 0.42);
+  background: rgba(var(--event-accent-rgb), 0.13);
+  color: var(--event-accent-text);
+}
+
+.calendar-event[class*="event-theme-"]:hover,
+.calendar-event[class*="event-theme-"]:focus-visible {
+  border-color: var(--event-accent);
+  background: rgba(var(--event-accent-rgb), 0.22);
+}
+
+.calendar-event[class*="event-theme-"] .calendar-event-dot {
+  background: var(--event-accent);
+  box-shadow: 0 0 9px rgba(var(--event-accent-rgb), 0.58);
+}
+
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 14px;
+}
+
+.calendar-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.calendar-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--event-accent);
+  box-shadow: 0 0 8px rgba(var(--event-accent-rgb), 0.48);
+}
+
+.event-card[class*="event-theme-"] {
+  border-color: rgba(var(--event-accent-rgb), 0.3);
+  background:
+    linear-gradient(145deg, rgba(var(--event-accent-rgb), 0.13), transparent 54%),
+    rgba(10, 15, 34, 0.7);
+}
+
+.event-card[class*="event-theme-"] .event-date {
+  border-right-color: rgba(var(--event-accent-rgb), 0.3);
+  background: rgba(var(--event-accent-rgb), 0.045);
+  color: var(--event-accent-text);
+  box-shadow: inset 3px 0 0 var(--event-accent);
+}
+
+.event-card[class*="event-theme-"] .event-date > span:first-child:not(:last-child),
+.event-card[class*="event-theme-"] .event-meta > span,
+.event-card[class*="event-theme-"] .event-related-count {
+  color: var(--event-accent);
+}
+
+.event-card[class*="event-theme-"] .event-actions {
+  border-top-color: rgba(var(--event-accent-rgb), 0.24);
+}
+
+.event-card[class*="event-theme-"] .event-actions .event-detail-link {
+  border-color: rgba(var(--event-accent-rgb), 0.55);
+  color: var(--event-accent-text);
+}
+
+.home-event-feature[class*="event-theme-"] {
+  background: linear-gradient(135deg, rgba(var(--event-accent-rgb), 0.14), transparent 58%);
+  box-shadow: inset 4px 0 0 var(--event-accent);
+}
+
+.home-event-feature[class*="event-theme-"] .home-event-date {
+  border-right-color: rgba(var(--event-accent-rgb), 0.32);
+  color: var(--event-accent-text);
+}
+
+.home-event-feature[class*="event-theme-"] .home-event-date > span,
+.home-event-feature[class*="event-theme-"] .home-event-copy > span {
+  color: var(--event-accent);
+}
+
+.home-event-later a[class*="event-theme-"] {
+  box-shadow: inset 3px 0 0 var(--event-accent);
+}
+
+.home-event-later a[class*="event-theme-"] time {
+  color: var(--event-accent);
+}
+
+.home-event-later a[class*="event-theme-"]:hover,
+.home-event-later a[class*="event-theme-"]:focus-visible {
+  background: rgba(var(--event-accent-rgb), 0.1);
+}
+
+.event-detail-article[class*="event-theme-"] {
+  border-color: rgba(var(--event-accent-rgb), 0.34);
+}
+
+.event-detail-article[class*="event-theme-"] .event-detail-hero {
+  border-top: 4px solid var(--event-accent);
+  background:
+    radial-gradient(circle at 88% 16%, rgba(var(--event-accent-rgb), 0.18), transparent 32%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.025), transparent 42%);
+}
+
+.event-detail-article[class*="event-theme-"] .event-detail-heading .eyebrow {
+  color: var(--event-accent);
+}
+
 .event-detail-main {
   width: min(1180px, 100%);
   margin-inline: auto;

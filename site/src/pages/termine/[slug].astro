@@ -58,7 +58,7 @@ const nextEventDateLabel = nextEvent
           <a href="/drachenhalle/termine/">← Alle Termine</a>
         </nav>
 
-        <article class="event-detail-article">
+        <article class:list={["event-detail-article", `event-theme-${event.theme ?? "standard"}`]}>
           <header class="event-detail-hero">
             <div class="event-detail-heading">
               <div>

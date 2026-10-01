@@ -28,7 +28,7 @@ const timeLabel = event.time
   : "Ganztägig";
 ---
 
-<article id={`event-${event.slug}`} class="event-card">
+<article id={`event-${event.slug}`} class:list={["event-card", `event-theme-${event.theme ?? "standard"}`]}>
   <div class="event-date" aria-hidden="true">
     {relativeLabel && <span>{relativeLabel}</span>}
     <strong>{day}</strong>

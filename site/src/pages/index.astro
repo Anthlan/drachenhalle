@@ -106,7 +106,7 @@ const relativeLabel = (date) => {
 
           {nextEvent ? (
             <div class="home-event-layout">
-              <article class="home-event-feature">
+              <article class:list={["home-event-feature", `event-theme-${nextEvent.theme ?? "standard"}`]}>
                 <div class="home-event-date" aria-hidden="true">
                   {relativeLabel(nextEvent.date) && <span>{relativeLabel(nextEvent.date)}</span>}
                   <strong>{nextEventDay}</strong>
@@ -125,7 +125,7 @@ const relativeLabel = (date) => {
               {laterEvents.length > 0 && (
                 <div class="home-event-later" aria-label="Weitere kommende Termine">
                   {laterEvents.map((event) => (
-                    <a href={event.detailUrl}>
+                    <a class={`event-theme-${event.theme ?? "standard"}`} href={event.detailUrl}>
                       <time datetime={event.date}>{formatDate(`${event.date}T12:00:00+02:00`)}</time>
                       <strong>{event.title}</strong>
                       <span>{eventTimeLabel(event)} · Details →</span>

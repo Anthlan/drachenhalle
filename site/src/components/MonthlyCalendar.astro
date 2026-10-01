@@ -6,8 +6,20 @@ const calendarEvents = events.map((event) => ({
   date: event.date,
   time: event.time,
   category: event.category,
+  theme: event.theme ?? "standard",
   detailUrl: event.detailUrl,
 }));
+const themeLabels = {
+  hinterhalt: "Hinterhalt",
+  pandora: "Pandora",
+  raubzug: "Raubzug",
+  hauptstadt: "Hauptstadteroberung",
+  zombie: "Zombie-Belagerung",
+  standard: "Weitere Termine",
+};
+const calendarLegend = ["hinterhalt", "pandora", "raubzug", "hauptstadt", "zombie", "standard"]
+  .filter((theme) => calendarEvents.some((event) => event.theme === theme))
+  .map((theme) => ({ theme, label: themeLabels[theme] }));
 ---
 
 <section class="month-calendar" id="kalender" aria-labelledby="month-calendar-title" data-events={JSON.stringify(calendarEvents)}>
@@ -33,6 +45,11 @@ const calendarEvents = events.map((event) => ({
     <span>So</span>
   </div>
   <div class="calendar-grid" data-calendar-grid role="grid" aria-label="Terminkalender"></div>
+  <div class="calendar-legend" aria-label="Farblegende der Termine">
+    {calendarLegend.map((item) => (
+      <span class={`event-theme-${item.theme}`}><i aria-hidden="true"></i>{item.label}</span>
+    ))}
+  </div>
   <p class="calendar-hint">Ein Termin im Kalender führt direkt zu seinen vollständigen Informationen.</p>
 </section>
 
@@ -88,7 +105,7 @@ const calendarEvents = events.map((event) => ({
         eventList.className = "calendar-day-events";
         for (const event of dayEvents) {
           const link = document.createElement("a");
-          link.className = "calendar-event";
+          link.className = `calendar-event event-theme-${event.theme ?? "standard"}`;
           link.href = event.detailUrl;
           link.setAttribute("aria-label", `${event.title}${event.time ? ` um ${event.time} Uhr` : ""}`);
           link.title = event.title;

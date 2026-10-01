@@ -64,6 +64,16 @@ const automaticRelationships = [
   },
 ];
 
+const eventThemes = [
+  { matches: (key) => key.includes("allianz-hinterhalt"), name: "hinterhalt" },
+  { matches: (key) => key.includes("schlachtfeld-pandora"), name: "pandora" },
+  { matches: (key) => key.includes("raubzug"), name: "raubzug" },
+  { matches: (key) => key.includes("hauptstadteroberung"), name: "hauptstadt" },
+  { matches: (key) => key.includes("zombie-belagerung"), name: "zombie" },
+];
+
+const eventTheme = (key) => eventThemes.find((theme) => theme.matches(key))?.name ?? "standard";
+
 const relationshipLabel = (document) => {
   if (document.parentSlug === "eventankuendigungen") return "Eventankündigung";
   if (document.kind === "tip") return "Tipp";
@@ -211,6 +221,7 @@ for (const fileName of fileNames) {
     time,
     end,
     endDate,
+    theme: eventTheme(eventKey),
     category: String(metadata.category ?? "Allianz-Event"),
     location: String(metadata.location ?? "").trim() || null,
     summary,
