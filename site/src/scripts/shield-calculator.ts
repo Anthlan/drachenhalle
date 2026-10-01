@@ -37,6 +37,13 @@ type ProtectionSegment = {
   label: string;
 };
 
+type ProtectionGap = {
+  start: Date;
+  end: Date;
+  label: string;
+  reason: "late-start" | "insufficient-stock";
+};
+
 type Allocation = {
   counts: ShieldCounts;
   durationMs: number;
@@ -431,6 +438,47 @@ const buildProtectionSegments = (
   return segments;
 };
 
+const findProtectionGaps = (
+  segments: ProtectionSegment[],
+  steps: ShieldStep[],
+  raidStart: Date,
+  firstStart: Date,
+) => {
+  const gaps: ProtectionGap[] = [];
+
+  if (firstStart > raidStart) {
+    gaps.push({
+      start: new Date(raidStart),
+      end: new Date(firstStart),
+      label: "Vor deinem ersten Schild",
+      reason: "late-start",
+    });
+  }
+
+  segments.forEach((segment) => {
+    const matchingSteps = steps
+      .filter((step) => step.phaseLabel === segment.label && step.at >= segment.start && step.at < segment.end)
+      .sort((left, right) => left.at.getTime() - right.at.getTime());
+    let coveredUntil = new Date(segment.start);
+
+    matchingSteps.forEach((step) => {
+      const stepEnd = new Date(step.at.getTime() + step.hours * HOUR);
+      if (step.at <= coveredUntil && stepEnd > coveredUntil) coveredUntil = stepEnd;
+    });
+
+    if (coveredUntil < segment.end) {
+      gaps.push({
+        start: new Date(coveredUntil),
+        end: new Date(segment.end),
+        label: segment.label,
+        reason: "insufficient-stock",
+      });
+    }
+  });
+
+  return gaps;
+};
+
 const escapeCalendarText = (value: string) => value
   .replaceAll("\\", "\\\\")
   .replaceAll("\n", "\\n")
@@ -726,6 +774,7 @@ export const initializeShieldCalculator = () => {
     const activeWindows = mergeActiveWindows(combatWindows, firstStart, raidEnd);
     const segments = buildProtectionSegments(firstStart, raidEnd, activeWindows);
     const plan = optimizeProtectionPlan(segments, inventory, strategy);
+    const protectionGaps = findProtectionGaps(segments, plan.steps, raidStart, firstStart);
     const startsLate = firstStart > raidStart;
     const lateMs = Math.max(0, firstStart.getTime() - raidStart.getTime());
     const shopPlan = optimizeProtectionPlan(segments, inventoryWithWeeklyShop(inventory), "cost");
@@ -857,6 +906,7 @@ export const initializeShieldCalculator = () => {
       const timeline = [
         ...plan.steps.map((step) => ({ at: step.at, kind: "shield" as const, step })),
         ...activeWindows.map((window) => ({ at: window.start, kind: "active" as const, window })),
+        ...protectionGaps.map((gap) => ({ at: gap.start, kind: "gap" as const, gap })),
       ].sort((left, right) => left.at.getTime() - right.at.getTime());
 
       if (timeline.length === 0) {
@@ -874,11 +924,18 @@ export const initializeShieldCalculator = () => {
             time.textContent = `${formatDateTime(entry.step.at)} Uhr`;
             label.textContent = `${entry.step.hours}-Stunden-Schild setzen`;
             phase.textContent = entry.step.phaseLabel;
-          } else {
+          } else if (entry.kind === "active") {
             item.classList.add("is-active-window");
             time.textContent = `${formatDateTime(entry.window.start)} bis ${formatTime(entry.window.end)} Uhr`;
-            label.textContent = `Aktiv: ${entry.window.label}`;
-            phase.textContent = `Bewusst ohne Schild · neuer Schutz ab ${formatTime(entry.window.restartAt)} Uhr`;
+            label.textContent = `⚔ Bewusst ungeschützt: ${entry.window.label}`;
+            phase.textContent = `Letzter Angriff um ${formatTime(entry.window.end)} Uhr · neuer Schutz ab ${formatTime(entry.window.restartAt)} Uhr`;
+          } else {
+            item.classList.add("is-protection-gap");
+            time.textContent = `${formatDateTime(entry.gap.start)} bis ${formatTime(entry.gap.end)} Uhr`;
+            label.textContent = `⚠ Schutzlücke: ${formatDuration(entry.gap.end.getTime() - entry.gap.start.getTime())} ungeschützt`;
+            phase.textContent = entry.gap.reason === "late-start"
+              ? "Der Raubzug läuft bereits, bevor dein erstes Schild beginnt."
+              : `Kein Schild mehr verfügbar · ${entry.gap.label}`;
           }
           item.append(time, label, phase);
           scheduleList.append(item);
