@@ -1,6 +1,6 @@
 ---
 title: "Allianz-Hinterhalt"
-date: "2026-11-02"
+date: "2026-10-30"
 time: "21:00"
 category: "Allianz-Event"
 summary: "Startet fünf eigene Versammlungen, tretet mindestens fünf weiteren bei und arbeitet gemeinsam auf den x10-Bonus hin."

@@ -481,7 +481,7 @@ const createCalendar = (
   return [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//DIE Drachenhalle//Schildrechner//DE",
+    "PRODID:-//DIE Drachenhalle//Schildplaner//DE",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "X-WR-TIMEZONE:Europe/Berlin",

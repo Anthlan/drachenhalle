@@ -54,6 +54,8 @@ export const initializeHealingCalculator = () => {
   const facts = root?.querySelector<HTMLElement>("[data-healing-facts]");
   const soldiers = root?.querySelector<HTMLElement>("[data-healing-soldiers]");
   const detail = root?.querySelector<HTMLElement>("[data-healing-detail]");
+  const happyCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-happy]");
+  const concernedCharacter = root?.querySelector<HTMLImageElement>("[data-healing-character-concerned]");
   const modeInputs = [...(root?.querySelectorAll<HTMLInputElement>('input[name="calculationMode"]') ?? [])];
   const modePanels = [...(root?.querySelectorAll<HTMLElement>("[data-healing-mode-panel]") ?? [])];
 
@@ -72,6 +74,11 @@ export const initializeHealingCalculator = () => {
 
   modeInputs.forEach((input) => input.addEventListener("change", updateMode));
   updateMode();
+
+  const updateCharacter = (state: "success" | "danger") => {
+    if (happyCharacter) happyCharacter.hidden = state !== "success";
+    if (concernedCharacter) concernedCharacter.hidden = state !== "danger";
+  };
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -147,6 +154,7 @@ export const initializeHealingCalculator = () => {
 
     if (usableHelpers === 0) {
       result.dataset.state = "danger";
+      updateCharacter("danger");
       kicker.textContent = "Noch keine Hilfe eingeplant";
       title.textContent = "So wird der Block nicht instant";
       summary.textContent = "Ohne aktive Helfer wird keine Heilzeit durch Allianzhilfe abgezogen.";
@@ -165,6 +173,7 @@ export const initializeHealingCalculator = () => {
     const recommendedSoldiers = Math.floor(safeSeconds / secondsPerSoldier);
     const expectedDuration = recommendedSoldiers * secondsPerSoldier;
     result.dataset.state = recommendedSoldiers > 0 ? "success" : "danger";
+    updateCharacter(recommendedSoldiers > 0 ? "success" : "danger");
 
     if (recommendedSoldiers <= 0) {
       kicker.textContent = "Kalibrierung geprüft";
