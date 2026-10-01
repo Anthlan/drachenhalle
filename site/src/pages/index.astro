@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import HallAtmosphere from "../components/HallAtmosphere.astro";
 import newsData from "../data/news.generated.json";
 import eventsData from "../data/events.generated.json";
 import docsData from "../data/docs.generated.json";
@@ -77,6 +78,7 @@ const relativeLabel = (date) => {
               alt="Von links stehen Somea, mysteryZ, Leader Anthlan, Drachenherz und DaVinci1986 am Strategietisch der Drachenhalle."
               fetchpriority="high"
             />
+            <HallAtmosphere />
             <figcaption>Anthlan und die vier offiziellen Offiziere der Drachenritter.</figcaption>
           </figure>
         </section>

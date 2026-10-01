@@ -1,0 +1,128 @@
+---
+const embers = [12, 23, 35, 47, 59, 68, 79, 88];
+---
+
+<div class="hall-atmosphere" aria-hidden="true">
+  <div class="hall-light"></div>
+  <div class="hall-mist"></div>
+  {embers.map((left, index) => (
+    <span class="hall-ember" style={`--left:${left}%;--delay:${-index * 2.7}s;--duration:${14 + index % 4 * 3}s;--drift:${index % 2 ? 24 : -18}px`}></span>
+  ))}
+</div>
+<button class="hall-motion-toggle" type="button" aria-pressed="false" hidden>
+  Animation pausieren
+</button>
+
+<style>
+  .hall-atmosphere {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hall-light {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 52% 76%, rgb(255 168 61 / 16%), transparent 58%);
+    mix-blend-mode: screen;
+    animation: hall-glow 9s ease-in-out infinite alternate;
+  }
+
+  .hall-mist {
+    position: absolute;
+    inset: 48% -20% -12%;
+    background:
+      radial-gradient(ellipse at 30% 72%, rgb(169 181 205 / 11%), transparent 48%),
+      radial-gradient(ellipse at 70% 90%, rgb(210 179 128 / 9%), transparent 45%);
+    animation: hall-drift 24s ease-in-out infinite alternate;
+  }
+
+  .hall-ember {
+    position: absolute;
+    bottom: 8%;
+    left: var(--left);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #ffd093;
+    box-shadow: 0 0 7px 2px rgb(238 146 51 / 40%);
+    opacity: 0;
+    animation: hall-rise var(--duration) linear var(--delay) infinite;
+  }
+
+  .hall-motion-toggle {
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    right: 12px;
+    padding: 8px 11px;
+    min-height: 44px;
+    border: 1px solid rgb(246 216 141 / 35%);
+    border-radius: 4px;
+    background: rgb(6 9 20 / 82%);
+    color: var(--gold-pale);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .hall-motion-toggle:hover { background: var(--navy); }
+  .hall-motion-toggle:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 3px; }
+  .hall-atmosphere[data-paused] > div,
+  .hall-atmosphere[data-paused] > span { animation-play-state: paused; }
+
+  @keyframes hall-glow {
+    from { opacity: .45; }
+    to { opacity: 1; }
+  }
+
+  @keyframes hall-drift {
+    from { transform: translateX(-4%); opacity: .5; }
+    to { transform: translateX(4%); opacity: 1; }
+  }
+
+  @keyframes hall-rise {
+    0% { transform: translate(0, 0); opacity: 0; }
+    15% { opacity: .55; }
+    75% { opacity: .3; }
+    100% { transform: translate(var(--drift), -150px); opacity: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .hall-ember:nth-of-type(even) { display: none; }
+    .hall-motion-toggle { top: 8px; right: 8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hall-light, .hall-mist, .hall-ember { animation: none; }
+    .hall-light { opacity: .5; }
+    .hall-mist { opacity: .5; }
+    .hall-ember, .hall-motion-toggle { display: none; }
+  }
+</style>
+
+<script>
+  const atmosphere = document.querySelector<HTMLElement>(".hall-atmosphere");
+  const toggle = document.querySelector<HTMLButtonElement>(".hall-motion-toggle");
+  if (atmosphere && toggle) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let paused = false;
+    let visible = true;
+    const update = () => {
+      atmosphere.toggleAttribute("data-paused", paused || !visible || document.hidden || reducedMotion.matches);
+      toggle.hidden = reducedMotion.matches;
+      toggle.setAttribute("aria-pressed", String(paused));
+      toggle.textContent = paused ? "Animation fortsetzen" : "Animation pausieren";
+    };
+    toggle.addEventListener("click", () => { paused = !paused; update(); });
+    reducedMotion.addEventListener("change", update);
+    document.addEventListener("visibilitychange", update);
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      update();
+    });
+    observer.observe(atmosphere);
+    update();
+  }
+</script>
