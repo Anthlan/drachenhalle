@@ -1,0 +1,232 @@
+---
+import MapBase from "./MapBase.astro";
+const items = [
+  { id: "random", icon: "❓", title: "Zufällig", cost: "2.500", hint: "Das Spiel wählt einen Ort am Kartenrand." },
+  { id: "alliance", icon: "🚩", title: "Allianz", cost: "2.500", hint: "Das Spiel wählt einen Platz bei der Allianz." },
+  { id: "advanced", icon: "📍", title: "Fortgeschritten", cost: "7.500", hint: "Du wählst einen freien Platz gezielt aus." },
+];
+---
+
+<section class="teleport-demo" aria-labelledby="teleport-demo-title" data-teleport-demo>
+  <header>
+    <p class="eyebrow">Ausprobieren & verstehen</p>
+    <h2 id="teleport-demo-title">Ein Teleport. Drei verschiedene Ziele.</h2>
+    <p>Wähle einen Versetzer und beobachte, wo deine Basis landet.</p>
+  </header>
+  <div class="teleport-options" aria-label="Versetzer auswählen">
+    {items.map((item) => (
+      <button type="button" data-mode={item.id} aria-pressed={item.id === "random" ? "true" : "false"}>
+        <span class="item-seal" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            {item.id === "random" ? <><path d="M5 8h4c7 0 7 16 14 16h4M5 24h4c7 0 7-16 14-16h4M23 4l4 4-4 4M23 20l4 4-4 4" /></> : item.id === "alliance" ? <><path d="M9 28V5m0 1c7-5 9 6 17 1v14c-8 5-10-6-17-1" /></> : <><circle cx="16" cy="16" r="9" /><circle cx="16" cy="16" r="3" /><path d="M16 2v6m0 16v6M2 16h6m16 0h6" /></>}
+          </svg>
+        </span>
+        <strong>{item.title}</strong>
+        <small>{item.cost} Allianzmünzen</small>
+        <span class="option-hint">{item.hint}</span>
+      </button>
+    ))}
+  </div>
+  <div class="teleport-map" aria-label="Schematische Weltkarte mit deiner Basis und einer Allianzgruppe">
+    <svg class="map-terrain" viewBox="0 0 800 420" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <pattern id="teleport-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#a6b7c0" stroke-opacity=".09" /></pattern>
+        <radialGradient id="teleport-land"><stop stop-color="#2a4547" /><stop offset="1" stop-color="#0b1c2a" /></radialGradient>
+      </defs>
+      <rect width="800" height="420" fill="url(#teleport-land)" />
+      <path d="M-20 270Q120 160 230 260T440 270T820 125" fill="none" stroke="#071520" stroke-opacity=".65" stroke-width="32" />
+      <path d="M-20 270Q120 160 230 260T440 270T820 125" fill="none" stroke="#497789" stroke-opacity=".6" stroke-width="19" />
+      <path d="M-20 267Q120 157 230 257T440 267T820 122" fill="none" stroke="#91c5c3" stroke-opacity=".3" stroke-width="2" />
+      <g fill="#3c5559" stroke="#7b9090" stroke-opacity=".25">
+        <path d="m98 137 47-81 47 81Z" /><path d="m157 137 48-101 57 101Z" /><path d="m368 372 40-67 46 67Z" />
+      </g>
+      <g fill="#b8c5bc" opacity=".35"><path d="m133 77 12-21 15 26-14-7-6 5Z" /><path d="m190 67 15-31 18 34-18-9-6 10Z" /></g>
+      <g fill="#62837a" opacity=".35">
+        {[{x:72,y:332},{x:101,y:345},{x:125,y:318},{x:324,y:92},{x:352,y:112},{x:370,y:79},{x:492,y:352},{x:520,y:368}].map(p => <path d={`M${p.x} ${p.y}l-10 18h5l-8 12h26l-8-12h5Z`} />)}
+      </g>
+      <path d="M295 32q-45 55 15 110t-22 75M480 314q30 48 105 58" stroke="#8da797" stroke-opacity=".12" stroke-width="2" fill="none" />
+      <rect width="800" height="420" fill="url(#teleport-grid)" />
+      <rect x="16" y="16" width="768" height="388" rx="12" fill="none" stroke="#e3ad4e" stroke-opacity=".45" stroke-dasharray="6 8" />
+    </svg>
+    <span class="map-edge">Kartenrand</span>
+    <div class="alliance-area" aria-hidden="true"></div>
+    <span class="alliance-label">Deine Allianz</span>
+    {[{x:44,y:37},{x:56,y:37},{x:44,y:64},{x:56,y:64}].map((point) => (
+      <span class="ally-base" style={`left:${point.x}%;top:${point.y}%`} aria-hidden="true"><MapBase /></span>
+    ))}
+    <div class="player-base" data-player style="left:25%;top:58%">
+      <span class="base-ring" aria-hidden="true"></span>
+      <span class="base-icon" aria-hidden="true"><MapBase /></span>
+      <strong>Deine Basis</strong>
+    </div>
+    <div class="target-spots" data-targets hidden aria-label="Freien Zielplatz auswählen">
+      {[{x:32,y:50},{x:50,y:50},{x:65,y:69}].map((point,index) => (
+        <button type="button" data-target={index} data-x={point.x} data-y={point.y} style={`left:${point.x}%;top:${point.y}%`} aria-label={`Freier Platz ${index + 1}`} aria-pressed={index === 0 ? "true" : "false"}>{index + 1}</button>
+      ))}
+    </div>
+    <span class="map-caption">Schematische Darstellung</span>
+  </div>
+  <div class="teleport-controls">
+    <p data-explanation>Das Ziel ist zufällig: Du kannst den Ort am Kartenrand nicht selbst bestimmen.</p>
+    <div class="teleport-actions">
+      <button type="button" class="teleport-play" data-play>Teleport zeigen</button>
+      <button type="button" data-reset>Zurücksetzen</button>
+    </div>
+  </div>
+  <p class="teleport-status" data-status role="status" aria-live="polite">Deine Basis wartet am Ausgangspunkt.</p>
+  <p class="teleport-note">Drei eigenständige Items, keine Aufwertungsstufen. Während eines Kampfes ist Teleportieren gesperrt. Preise laut Artikel; maßgeblich ist der aktuelle Allianz-Shop.</p>
+  <noscript>Die interaktive Karte benötigt JavaScript. Die Unterschiede findest du im Artikel darunter.</noscript>
+</section>
+
+<style>
+  .teleport-demo { margin: 0 0 32px; padding: clamp(16px, 3vw, 28px); border: 1px solid var(--line-bright); background: linear-gradient(135deg, #111a2b, #090f1d); border-radius: 8px; }
+  header h2 { margin: 0; color: var(--ink); font: 500 clamp(24px, 3vw, 34px)/1.15 Georgia, serif; }
+  header > p:last-child { color: var(--muted); line-height: 1.6; }
+  .teleport-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 22px 0 16px; }
+  button { font: inherit; cursor: pointer; color: var(--ink); }
+  button:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
+  .teleport-options button { display: grid; gap: 7px; padding: 14px; text-align: left; border: 1px solid var(--line); border-radius: 6px; background: #0c1424; }
+  .teleport-options button > span:first-child { font-size: 22px; }
+  .teleport-options button[aria-pressed="true"] { border-color: var(--gold); background: #29251e; box-shadow: inset 0 0 0 1px var(--gold); }
+  .teleport-options small { color: var(--gold-pale); }
+  .option-hint { font-size: 12px; line-height: 1.5; color: var(--muted); }
+  .teleport-map { position: relative; width: 100%; min-width: 0; aspect-ratio: 800 / 420; min-height: 240px; overflow: hidden; border: 1px solid #34444a; border-radius: 6px; isolation: isolate; }
+  .map-terrain { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .map-edge, .map-caption { position: absolute; left: 20px; font-size: 11px; color: #b6c4cf; }
+  .map-edge { top: 18px; }
+  .map-caption { bottom: 12px; }
+  .alliance-area { position: absolute; left: 33.5%; top: 21%; width: 33%; height: 59%; border: 1px dashed #79b6b0; border-radius: 45%; background: rgb(66 153 130 / 10%); }
+  .alliance-label { position: absolute; top: 12%; left: 50%; transform: translateX(-50%); color: #a6d7c7; font-size: 13px; }
+  .ally-base { position: absolute; transform: translate(-50%, -50%); color: #92b8b2; font-size: clamp(24px, 4vw, 38px); }
+  .player-base { position: absolute; width: 58px; height: 58px; transform: translate(-50%, -50%); display: grid; place-items: center; z-index: 2; }
+  .base-icon { position: relative; font-size: 40px; line-height: 1; color: var(--gold-pale); text-shadow: 0 0 15px #e3ad4e80; }
+  .base-ring { position: absolute; inset: 0; border: 2px solid var(--gold); border-radius: 50%; background: #e3ad4e14; }
+  .player-base strong { position: absolute; top: 100%; white-space: nowrap; padding: 3px 6px; background: #07111fe6; border-radius: 3px; color: var(--gold-pale); font-size: 11px; }
+  .target-spots button { position: absolute; transform: translate(-50%, -50%); width: 44px; height: 44px; border: 1px dashed var(--gold-pale); border-radius: 50%; background: #08101de6; color: var(--gold-pale); }
+  .target-spots button[aria-pressed="true"] { border: 2px solid var(--gold); background: #514024; }
+  .teleport-controls { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-top: 18px; }
+  .teleport-controls p { flex: 1; margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink); }
+  .teleport-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .teleport-actions button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--line-bright); border-radius: 4px; background: #131e31; }
+  .teleport-actions .teleport-play { background: var(--gold); color: #17130a; font-weight: 700; }
+  button:disabled { opacity: .5; cursor: default; }
+  .teleport-status { min-height: 3em; margin: 16px 0 0; color: var(--gold-pale); font-size: 14px; line-height: 1.5; }
+  .teleport-note { border-top: 1px solid var(--line); padding-top: 14px; margin-bottom: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+  .teleport-demo { background: radial-gradient(ellipse at 0 0, #22304780, transparent 55%), linear-gradient(135deg, #111a2b, #090f1d); border-radius: 14px; box-shadow: 0 18px 48px #0003, inset 0 1px #ffe3a518; }
+  .teleport-options { gap: 12px; }
+  .teleport-options button { position: relative; padding: 18px; border-radius: 9px; background: linear-gradient(145deg, #182438, #0b1424); box-shadow: inset 0 1px #ffffff08; transition: border-color .18s, background .18s; }
+  .teleport-options button:hover { border-color: var(--gold-pale); }
+  .teleport-options button[aria-pressed="true"] { background: radial-gradient(ellipse at top left, #b6863430, transparent 85%), #1c2028; box-shadow: inset 0 0 0 1px #e3ad4e40, 0 4px 20px #0003; }
+  .teleport-options button[aria-pressed="true"]::after { content: "✓"; position: absolute; right: 12px; top: 12px; color: var(--gold-pale); font-size: 13px; }
+  .item-seal { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 5px; color: var(--gold-pale); background: linear-gradient(135deg, #e3ad4e1a, #e3ad4e05); border: 1px solid #e3ad4e40; border-radius: 12px; }
+  .item-seal svg { width: 27px; height: 27px; }
+  .teleport-map { border-color: #798d7955; border-radius: 10px; box-shadow: inset 0 0 40px #0008, 0 8px 24px #0003; }
+  .teleport-map::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 55px #040c1780; border-radius: inherit; pointer-events: none; }
+  .map-edge, .map-caption { padding: 4px 8px; background: #091724b3; border: 1px solid #809d8a26; border-radius: 4px; font-size: 10px; letter-spacing: .04em; }
+  .alliance-area { background: radial-gradient(ellipse, #5fb89a20, #5fb89a05); box-shadow: 0 0 28px #4dbf9e14, inset 0 0 25px #4dbf9e14; border-color: #86cdb780; }
+  .alliance-label { padding: 5px 10px; background: #12332fcc; border: 1px solid #87c5ae40; border-radius: 4px; font-size: 11px; letter-spacing: .06em; }
+  .ally-base { width: 46px; height: 46px; color: #8fc7b6; filter: drop-shadow(0 4px 3px #0008); }
+  .ally-base :global(svg), .base-icon :global(svg) { display: block; width: 100%; height: 100%; }
+  .base-icon { display: block; width: 48px; height: 48px; color: #f8d88c; filter: drop-shadow(0 2px 4px #e3ad4e70); }
+  .base-ring { border-width: 1px; box-shadow: 0 0 0 5px #e3ad4e0b, 0 0 20px #e3ad4e30; }
+  .player-base strong { padding: 4px 8px; border: 1px solid #e3ad4e40; font-size: 10px; }
+  .target-spots button { box-shadow: 0 0 0 4px #e3ad4e0a; }
+  .teleport-actions button { border-radius: 6px; }
+  .teleport-actions .teleport-play { background: linear-gradient(135deg, #f5ce7a, #dca140); box-shadow: 0 3px 12px #e3ad4e20, inset 0 1px #fff6; }
+  .teleport-status { padding: 12px 14px; border-left: 2px solid var(--gold); background: #e3ad4e08; border-radius: 0 5px 5px 0; }
+  @media(max-width: 600px) {
+    .teleport-options { gap: 6px; }
+    .teleport-options button { padding: 10px 7px; font-size: 12px; }
+    .teleport-options small { font-size: 10px; }
+    .option-hint { display: none; }
+    .teleport-controls { flex-direction: column; align-items: stretch; gap: 12px; }
+    .player-base { width: 44px; height: 44px; }
+    .base-icon { font-size: 32px; }
+    .base-icon { width: 38px; height: 38px; }
+    .ally-base { width: 34px; height: 34px; }
+    .item-seal { width: 36px; height: 36px; border-radius: 9px; }
+    .item-seal svg { width: 23px; height: 23px; }
+    .teleport-options button[aria-pressed="true"]::after { right: 6px; top: 6px; font-size: 11px; }
+    .alliance-label { font-size: 11px; }
+  }
+</style>
+
+<script>
+  const demo = document.querySelector<HTMLElement>("[data-teleport-demo]");
+  if (demo) {
+    const player = demo.querySelector<HTMLElement>("[data-player]")!;
+    const play = demo.querySelector<HTMLButtonElement>("[data-play]")!;
+    const status = demo.querySelector<HTMLElement>("[data-status]")!;
+    const explanation = demo.querySelector<HTMLElement>("[data-explanation]")!;
+    const targets = demo.querySelector<HTMLElement>("[data-targets]")!;
+    const modes = demo.querySelectorAll<HTMLButtonElement>("[data-mode]");
+    const spots = demo.querySelectorAll<HTMLButtonElement>("[data-target]");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let mode = "random";
+    let target = 0;
+    let run = 0;
+    let active: Animation | null = null;
+    const reset = () => {
+      run++;
+      active?.cancel();
+      active = null;
+      player.style.left = "25%";
+      player.style.top = "58%";
+      targets.hidden = mode !== "advanced";
+      play.disabled = false;
+      play.textContent = "Teleport zeigen";
+      status.textContent = "Deine Basis wartet am Ausgangspunkt.";
+    };
+    modes.forEach(button => button.addEventListener("click", () => {
+      mode = button.dataset.mode!;
+      modes.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+      explanation.textContent = mode === "random"
+        ? "Das Ziel ist zufällig: Du kannst den Ort am Kartenrand nicht selbst bestimmen."
+        : mode === "alliance"
+          ? "Du landest bei der Allianz. Den genauen freien Platz bestimmt das Spiel."
+          : "Wähle einen der drei markierten freien Beispielplätze auf der Karte. Genau dort landet deine Basis.";
+      reset();
+    }));
+    spots.forEach((button, index) => button.addEventListener("click", () => {
+      target = index;
+      spots.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+      status.textContent = `Platz ${index + 1} ausgewählt. Bereit für den gezielten Teleport.`;
+    }));
+    demo.querySelector("[data-reset]")!.addEventListener("click", reset);
+    play.addEventListener("click", async () => {
+      reset();
+      const currentRun = run;
+      play.disabled = true;
+      targets.hidden = true;
+      const candidates = mode === "random"
+        ? [[10, 22], [90, 25], [12, 78], [48, 12], [89, 86]]
+        : [[32, 39], [64, 48], [34, 69]];
+      const destination = mode === "advanced"
+        ? [Number(spots[target].dataset.x), Number(spots[target].dataset.y)]
+        : candidates[Math.floor(Math.random() * candidates.length)];
+      status.textContent = "Teleport wird ausgeführt …";
+      try {
+        if (!reduced.matches) {
+          active = player.animate([{ opacity: 1, filter: "brightness(1)", scale: "1" }, { opacity: 0, filter: "brightness(3)", scale: ".25" }], {duration: 650, easing: "ease-in", fill: "forwards"});
+          await active.finished;
+        }
+        if (currentRun !== run) return;
+        player.style.left = `${destination[0]}%`;
+        player.style.top = `${destination[1]}%`;
+        active?.cancel();
+        if (!reduced.matches) {
+          active = player.animate([{ opacity: 0, filter: "brightness(3)", scale: ".25" }, { opacity: 1, filter: "brightness(1)", scale: "1" }], {duration: 800, easing: "ease-out"});
+          await active.finished;
+        }
+        if (currentRun !== run) return;
+        status.textContent = mode === "random"
+          ? "Am zufälligen Kartenrand angekommen · 2.500 Allianzmünzen. Ein erneuter Versuch kann ein anderes Ziel zeigen."
+          : mode === "alliance"
+            ? "Bei der Allianz angekommen · 2.500 Allianzmünzen. Der genaue Platz wurde vom Spiel gewählt."
+            : `Genau auf Platz ${target + 1} angekommen · 7.500 Allianzmünzen. Du bestimmst die Zielposition.`;
+        play.disabled = false;
+        play.textContent = "Erneut zeigen";
+      } catch { /* A new selection or reset cancels the current animation. */ }
+    });
+  }
+</script>

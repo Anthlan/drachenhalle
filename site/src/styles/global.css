@@ -9093,6 +9093,44 @@ footer a {
   z-index: 1;
 }
 
+.officer-card.is-mysteryz {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(173, 49, 53, 0.56);
+  background:
+    radial-gradient(circle at 10% 18%, rgba(190, 44, 52, 0.24), transparent 34%),
+    radial-gradient(circle at 94% 110%, rgba(198, 137, 64, 0.14), transparent 46%),
+    linear-gradient(135deg, rgba(31, 16, 28, 0.98), rgba(8, 11, 23, 0.99));
+  box-shadow: 0 22px 46px rgba(37, 4, 13, 0.3);
+}
+
+.officer-card.is-mysteryz::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.42;
+  background:
+    radial-gradient(circle at 88% 28%, rgba(236, 92, 87, 0.7) 0 2px, transparent 3px),
+    linear-gradient(145deg, transparent 57%, rgba(177, 47, 54, 0.2) 58%, transparent 59%);
+}
+
+.officer-card.is-mysteryz > * {
+  position: relative;
+  z-index: 1;
+}
+
+.officer-card.is-mysteryz .officer-avatar {
+  border-color: rgba(208, 71, 69, 0.76);
+  box-shadow:
+    0 0 0 5px rgba(173, 49, 53, 0.08),
+    0 0 28px rgba(173, 49, 53, 0.2);
+}
+
+.officer-card.is-mysteryz .officer-card-copy > span {
+  color: #e58f78;
+}
+
 .officer-avatar {
   width: 76px;
   height: 76px;
@@ -9434,6 +9472,108 @@ body.has-officer-dialog {
 
 .officer-dialog.is-anthlan .officer-dialog-note {
   margin-top: 16px;
+}
+
+.officer-dialog.is-mysteryz {
+  border-color: rgba(201, 68, 67, 0.78);
+  background: #11080d;
+  box-shadow:
+    0 0 0 1px rgba(214, 151, 69, 0.18),
+    0 36px 110px rgba(0, 0, 0, 0.74),
+    0 0 72px rgba(150, 25, 36, 0.22);
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-shell {
+  grid-template-columns: minmax(370px, 48%) minmax(0, 1fr);
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-visual {
+  position: relative;
+  border-right-color: rgba(201, 68, 67, 0.34);
+  background: #0a080d;
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow:
+    inset -30px 0 54px rgba(15, 4, 9, 0.46),
+    inset 0 -60px 76px rgba(8, 4, 8, 0.24);
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-visual img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-copy {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(34px, 4vw, 52px);
+  background:
+    radial-gradient(circle at 86% 8%, rgba(190, 45, 51, 0.21), transparent 33%),
+    radial-gradient(circle at 12% 96%, rgba(202, 137, 58, 0.14), transparent 42%),
+    linear-gradient(145deg, #25101b, #090b16 78%);
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.31;
+  background-image:
+    radial-gradient(circle at 18% 16%, #f0a079 0 2px, transparent 2.5px),
+    radial-gradient(circle at 79% 24%, #bc3740 0 2px, transparent 2.5px),
+    radial-gradient(circle at 62% 72%, #d79d4f 0 1px, transparent 2px),
+    linear-gradient(126deg, transparent 48%, rgba(190, 45, 51, 0.24) 49%, transparent 50%);
+  background-size: 112px 112px, 146px 146px, 178px 178px, 100% 100%;
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-copy > span,
+.officer-dialog.is-mysteryz .officer-dialog-copy dt {
+  color: #e58f78;
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-copy h2 {
+  color: #f8eee4;
+  font-size: clamp(38px, 4.4vw, 52px);
+  text-shadow: 0 0 28px rgba(196, 50, 57, 0.34);
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-copy h3 {
+  margin-top: 12px;
+  color: #efa27f;
+  font-size: clamp(20px, 2.2vw, 26px);
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-copy > p:not(.officer-dialog-note):not(.officer-dialog-world) {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-copy dl {
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-copy dl div {
+  padding: 10px 14px;
+  border-color: rgba(207, 80, 74, 0.22);
+  background: rgba(8, 7, 14, 0.48);
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-note {
+  margin-top: 16px;
+}
+
+.officer-dialog.is-mysteryz .officer-dialog-world {
+  border-left-color: #c64348;
+  background: linear-gradient(90deg, rgba(190, 45, 51, 0.15), transparent);
 }
 
 .officer-dialog-world {
@@ -9844,6 +9984,10 @@ body.has-officer-dialog {
   }
 
   .officer-dialog.is-anthlan .officer-dialog-shell {
+    display: block;
+  }
+
+  .officer-dialog.is-mysteryz .officer-dialog-shell {
     display: block;
   }
 

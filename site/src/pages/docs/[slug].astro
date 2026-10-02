@@ -3,6 +3,7 @@ import "../../styles/global.css";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
+import TeleportDemo from "../../components/TeleportDemo.astro";
 import docsData from "../../data/docs.generated.json";
 import galleryData from "../../data/gallery.generated.json";
 
@@ -109,13 +110,16 @@ const leadershipProfiles = [
     name: "mysteryZ",
     subtitle: "R4 · Vize",
     imageUrl: latestPersonImage("Avatar", "mysteryZ"),
-    characterImageUrl: latestPersonImage("Charaktermodell", "mysteryZ"),
+    characterImageUrl: "/drachenhalle/brand/officer-mysteryz-world-v3.webp",
+    characterImageAlt: "mysteryZ als Gesandte in ihrer Kanzlei der roten Wege, während ein blauer Drache über der fantastischen Rheinmetropole kreist",
+    cardTheme: "mysteryz",
     alterEgo: {
-      title: "Die verhüllte Schattenstrategin",
-      summary: "Eine lautlose Beobachterin, die lieber den entscheidenden Weg vorbereitet, als im Rampenlicht zu stehen.",
-      archetype: "Schattenläuferin",
-      hallmark: "Kapuze, Drachenmaske und schwarze Rüstung mit roten Akzenten",
-      presence: "Wachsam, präzise und geheimnisvoll",
+      title: "Die Gesandte im Schatten",
+      summary: "Zwischen versiegelten Botschaften, leuchtenden Routen und einer niemals ganz leeren Kaffeetasse hält sie die Verbindungen der Allianz zusammen. Ruhig, schlagfertig und bestens vorbereitet findet sie den richtigen Weg – bis etwas ganz eindeutig nicht ihr Job ist.",
+      archetype: "Diplomatische Einsatzleiterin und Schattenbotin",
+      hallmark: "Drachenmaske, rote Siegel, Karten und ein Netz verborgener Wege",
+      presence: "Ruhig, schlagfertig und mit trockenem Humor",
+      world: "Die Kanzlei der roten Wege am Rhein",
     },
   },
   {
@@ -402,6 +406,7 @@ const responsibilities = [
             </div>
           )}
             </header>
+            {document.slug === "tipp-04-richtig-teleportieren" && <TeleportDemo />}
             {isTipsOverview && (
               <section class="knowledge-children tip-catalog" aria-labelledby="knowledge-children-title" data-tip-catalog>
                 <div class="tip-catalog-heading">
@@ -590,7 +595,14 @@ const responsibilities = [
                   {leadershipProfiles.map((officer) => (
                     <button
                       type="button"
-                      class:list={["officer-card", { "is-leader": officer.isLeader, "is-pending": !officer.imageUrl }]}
+                      class:list={[
+                        "officer-card",
+                        {
+                          "is-leader": officer.isLeader,
+                          "is-pending": !officer.imageUrl,
+                          "is-mysteryz": officer.cardTheme === "mysteryz",
+                        },
+                      ]}
                       data-officer-open={`officer-dialog-${officer.id}`}
                       aria-haspopup="dialog"
                       aria-controls={`officer-dialog-${officer.id}`}
@@ -617,7 +629,13 @@ const responsibilities = [
                 {leadershipProfiles.map((officer) => (
                   <dialog
                     id={`officer-dialog-${officer.id}`}
-                    class:list={["officer-dialog", { "is-anthlan": officer.cardTheme === "anthlan" }]}
+                    class:list={[
+                      "officer-dialog",
+                      {
+                        "is-anthlan": officer.cardTheme === "anthlan",
+                        "is-mysteryz": officer.cardTheme === "mysteryz",
+                      },
+                    ]}
                     data-officer-dialog
                     aria-labelledby={`officer-dialog-title-${officer.id}`}
                     aria-describedby={`officer-dialog-summary-${officer.id}`}
@@ -642,7 +660,7 @@ const responsibilities = [
                         <h3>{officer.alterEgo.title}</h3>
                         {officer.alterEgo.world && (
                           <p class="officer-dialog-world">
-                            <span>Seine Welt</span>
+                            <span>Eigene Welt</span>
                             <strong>{officer.alterEgo.world}</strong>
                           </p>
                         )}
