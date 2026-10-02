@@ -145,13 +145,16 @@ const leadershipProfiles = [
     name: "DaVinci1986",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "DaVinci1986"),
-    characterImageUrl: latestPersonImage("Charaktermodell", "DaVinci1986"),
+    characterImageUrl: "/drachenhalle/brand/officer-davinci1986-world.webp",
+    characterImageAlt: "DaVinci1986 als Hüterin der offenen Wege in ihrem morgendlichen Haus über einer alpinen Seenlandschaft",
+    cardTheme: "davinci1986",
     alterEgo: {
-      title: "Die rubinrote Hofstrategin",
-      summary: "Eine elegante Taktikerin, deren ruhiges Auftreten scharfe Beobachtung und entschlossene Planung verbirgt.",
-      archetype: "Drachenbotin und Taktikerin",
-      hallmark: "Rubinschmuck, sternengeschmücktes Haar und schwarz-roter Mantel",
-      presence: "Elegant, analytisch und entschlossen",
+      title: "Die Hüterin der offenen Wege",
+      summary: "DaVinci1986 wartet nicht, bis jemand um Hilfe bittet. Sie schaut aufmerksam hin, erkennt, wo Unterstützung gebraucht wird, und bringt sich dort ein, wo sie etwas bewirken kann. Dabei begegnet sie jedem mit Respekt und bewahrt sich hinter ihrer erwachsenen Gelassenheit ein warmes, verspieltes inneres Kind.",
+      archetype: "Bedachte Helferin und gute Seele unserer Gemeinschaft",
+      hallmark: "Rubinrote Weglichter, offene Einladungen und ein kleiner Morgenglücksbringer",
+      presence: "Bedacht, herzlich, respektvoll und zurückhaltend verspielt",
+      world: "Das Haus der offenen Wege",
     },
   },
   {
@@ -612,6 +615,7 @@ const responsibilities = [
                           "is-pending": !officer.imageUrl,
                           "is-mysteryz": officer.cardTheme === "mysteryz",
                           "is-somea": officer.cardTheme === "somea",
+                          "is-davinci1986": officer.cardTheme === "davinci1986",
                         },
                       ]}
                       data-officer-open={`officer-dialog-${officer.id}`}
@@ -646,6 +650,7 @@ const responsibilities = [
                         "is-anthlan": officer.cardTheme === "anthlan",
                         "is-mysteryz": officer.cardTheme === "mysteryz",
                         "is-somea": officer.cardTheme === "somea",
+                        "is-davinci1986": officer.cardTheme === "davinci1986",
                       },
                     ]}
                     data-officer-dialog

@@ -51,8 +51,16 @@ import SiteHeader from "../../components/SiteHeader.astro";
             </p>
             <div class="flight-hero-actions">
               <a href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Event-Guide öffnen →</a>
-              <button type="button" data-flight-info-open aria-haspopup="dialog" aria-controls="flight-info-dialog">
-                Daten &amp; Methodik
+              <button
+                class="flight-method-icon"
+                type="button"
+                data-flight-info-open
+                aria-label="Daten und Methodik anzeigen"
+                aria-haspopup="dialog"
+                aria-controls="flight-info-dialog"
+                title="Daten und Methodik"
+              >
+                <span aria-hidden="true">i</span>
               </button>
             </div>
           </div>
@@ -87,17 +95,28 @@ import SiteHeader from "../../components/SiteHeader.astro";
               <div class="flight-field-grid is-three">
                 <label>
                   <span>Fliegende-Stern-Münzen</span>
-                  <input name="currentCoins" type="number" min="0" max="100000" step="1" value="0" inputmode="numeric" />
+                  <input name="currentCoins" type="number" min="0" max="99999" step="1" value="0" inputmode="numeric" />
                 </label>
                 <label>
                   <span>Vorratsgutscheine</span>
-                  <input name="currentVouchers" type="number" min="0" max="1000000" step="1" value="0" inputmode="numeric" />
+                  <input name="currentVouchers" type="number" min="0" max="99999" step="1" value="0" inputmode="numeric" />
                 </label>
-                <label>
-                  <span>Gutscheinziel</span>
-                  <input name="targetVouchers" type="number" min="1" max="1000000" step="1" value="4000" inputmode="numeric" />
-                  <small>Zum Beispiel 4.000 für die Vibranium-Verteidigungslinie.</small>
-                </label>
+                <div class="flight-target-field">
+                  <div class="flight-target-label">
+                    <label for="flight-target-vouchers">Gutscheinziel</label>
+                    <button
+                      type="button"
+                      data-flight-target-open
+                      aria-label="Vordefiniertes Gutscheinziel auswählen"
+                      aria-haspopup="dialog"
+                      aria-controls="flight-target-dialog"
+                      title="Ziel auswählen"
+                    >
+                      <span aria-hidden="true">◎</span>
+                    </button>
+                  </div>
+                  <input id="flight-target-vouchers" name="targetVouchers" type="number" min="1" max="99999" step="1" value="4000" inputmode="numeric" />
+                </div>
               </div>
             </fieldset>
 
@@ -292,6 +311,39 @@ import SiteHeader from "../../components/SiteHeader.astro";
             </section>
           </div>
         </dialog>
+
+        <dialog class="healing-help-dialog tool-info-dialog flight-target-dialog" id="flight-target-dialog" aria-labelledby="flight-target-title">
+          <div class="healing-help-content tool-info-dialog-shell">
+            <header class="healing-help-heading tool-info-dialog-header">
+              <div>
+                <p class="eyebrow">Zielvorgabe</p>
+                <h2 id="flight-target-title">Was möchtest du erreichen?</h2>
+                <p>Wähle ein dokumentiertes Einzelziel. Der Wert wird direkt in den Planer übernommen.</p>
+              </div>
+              <button class="healing-help-close" type="button" aria-label="Zielauswahl schließen" title="Schließen" data-flight-target-close>×</button>
+            </header>
+
+            <div class="flight-target-options">
+              <button type="button" data-flight-target-value="60">
+                <span class="flight-target-cost">60</span>
+                <strong>10 UR-Omni-Heldensplitter</strong>
+                <small>Einmaliges Tagesangebot</small>
+              </button>
+              <button type="button" data-flight-target-value="100">
+                <span class="flight-target-cost">100</span>
+                <strong>Optionale Deluxe-Truhe</strong>
+                <small>Einmaliges Tagesangebot</small>
+              </button>
+              <button type="button" data-flight-target-value="4000" class="is-premium">
+                <span class="flight-target-cost">4.000</span>
+                <strong>Vibranium-Verteidigungslinie</strong>
+                <small>Exklusive Eventbelohnung</small>
+              </button>
+            </div>
+
+            <p class="flight-target-future"><strong>Nächster Ausbauschritt:</strong> mehrere Belohnungen und Tageskäufe kombinieren; das Gesamtziel wird anschließend automatisch summiert.</p>
+          </div>
+        </dialog>
       </main>
 
       <SiteFooter />
@@ -309,12 +361,34 @@ import SiteHeader from "../../components/SiteHeader.astro";
       const dialog = document.querySelector("#flight-info-dialog");
       const openButton = document.querySelector("[data-flight-info-open]");
       const closeButton = document.querySelector("[data-flight-info-close]");
+      const targetDialog = document.querySelector("#flight-target-dialog");
+      const targetOpenButton = document.querySelector("[data-flight-target-open]");
+      const targetCloseButton = document.querySelector("[data-flight-target-close]");
+      const targetInput = document.querySelector("input[name='targetVouchers']");
+      const flightForm = document.querySelector("[data-flight-event-form]");
 
       if (dialog instanceof HTMLDialogElement) {
         openButton?.addEventListener("click", () => dialog.showModal());
         closeButton?.addEventListener("click", () => dialog.close());
         dialog.addEventListener("click", (event) => {
           if (event.target === dialog) dialog.close();
+        });
+      }
+
+      if (targetDialog instanceof HTMLDialogElement) {
+        targetOpenButton?.addEventListener("click", () => targetDialog.showModal());
+        targetCloseButton?.addEventListener("click", () => targetDialog.close());
+        targetDialog.addEventListener("click", (event) => {
+          if (event.target === targetDialog) targetDialog.close();
+        });
+        targetDialog.querySelectorAll("[data-flight-target-value]").forEach((button) => {
+          button.addEventListener("click", () => {
+            if (targetInput instanceof HTMLInputElement && button instanceof HTMLButtonElement) {
+              targetInput.value = button.dataset.flightTargetValue ?? targetInput.value;
+              targetDialog.close();
+              if (flightForm instanceof HTMLFormElement) flightForm.requestSubmit();
+            }
+          });
         });
       }
     </script>

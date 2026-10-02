@@ -9,6 +9,7 @@ Die Aussagen beziehen sich ausschließlich auf die fiktive Darstellung innerhalb
 - [Anthlan](Anthlan.md)
 - [mysteryZ](mysteryZ.md)
 - [Somea](Somea.md)
+- [DaVinci1986](DaVinci1986.md)
 
 ## Empfohlene Struktur für weitere Profile
 
@@ -20,4 +21,3 @@ Die Aussagen beziehen sich ausschließlich auf die fiktive Darstellung innerhalb
 6. Spannungsfelder der Figur
 7. Verdichteter Steckbrief für die Website
 8. Bildrichtung für die Personenkarte
-
