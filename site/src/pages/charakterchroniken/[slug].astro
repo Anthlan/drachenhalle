@@ -52,10 +52,17 @@ const themeStyle = `--chronicle-accent:${chronicle.theme.accent};--chronicle-acc
         </header>
 
         <div class="chronicle-reading-shell">
+          {chronicle.slug === "anthlan" && (
+            <div class="chronicle-edge-figures" aria-hidden="true">
+              <img class="chronicle-edge-figure is-coffee" src="/drachenhalle/brand/chronicle-anthlan-edge-coffee.png" alt="" width="767" height="1150" loading="lazy" />
+              <img class="chronicle-edge-figure is-map" src="/drachenhalle/brand/chronicle-anthlan-edge-map.png" alt="" width="767" height="1150" loading="lazy" />
+            </div>
+          )}
           <aside class="chronicle-route" aria-label="Kapitel dieser Chronik">
             <span>Reiseroute</span>
             <a href="#chronicle-opening">Ankunft</a>
             {chronicle.chapters.map((chapter, index) => <a href={`#chapter-${index + 1}`}>{chapter.eyebrow}</a>)}
+            {chronicle.reality && <a href="#chronicle-reality">Bewohnte Welt</a>}
             <a href="#chronicle-world">Die eigene Welt</a>
             <a href="#chronicle-connections">Verbindungen</a>
           </aside>
@@ -93,6 +100,20 @@ const themeStyle = `--chronicle-accent:${chronicle.theme.accent};--chronicle-acc
               <h2>{chronicle.chapters[1].title}</h2>
               {chronicle.chapters[1].paragraphs.map((paragraph) => <p>{paragraph}</p>)}
             </section>
+
+            {chronicle.reality && (
+              <section class="chronicle-reality" id="chronicle-reality">
+                <figure>
+                  <img src={chronicle.reality.image} alt={chronicle.reality.imageAlt} width="1672" height="941" loading="lazy" />
+                  <figcaption>{chronicle.reality.caption}</figcaption>
+                </figure>
+                <div class="chronicle-reality-copy">
+                  <p class="eyebrow">{chronicle.reality.eyebrow}</p>
+                  <h2>{chronicle.reality.title}</h2>
+                  {chronicle.reality.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                </div>
+              </section>
+            )}
 
             <section class="chronicle-world" id="chronicle-world">
               <div>

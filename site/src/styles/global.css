@@ -12725,36 +12725,31 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
 }
 
 .character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span:nth-child(1) {
-  opacity: 0.75;
+  opacity: 0.34;
   background-image:
     radial-gradient(circle, rgba(255, 244, 194, 0.95) 0 1px, transparent 1.6px),
     radial-gradient(circle, rgba(132, 180, 255, 0.9) 0 1px, transparent 1.8px),
     radial-gradient(circle, rgba(255, 213, 123, 0.65) 0 1.5px, transparent 2.2px);
   background-position: 0 0, 37px 63px, 91px 24px;
   background-size: 113px 137px, 179px 211px, 263px 307px;
-  filter: drop-shadow(0 0 4px rgba(121, 171, 255, 0.6));
-  animation: anthlan-star-drift 38s linear infinite;
+  filter: drop-shadow(0 0 3px rgba(121, 171, 255, 0.35));
 }
 
 .character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span:nth-child(2) {
-  inset: 120px 0 auto;
-  height: 74%;
-  opacity: 0.22;
+  inset: 140px 0 auto;
+  height: 68%;
+  opacity: 0.16;
   background:
-    linear-gradient(122deg, transparent 18%, rgba(104, 159, 255, 0.42) 18.15%, transparent 18.3%),
-    linear-gradient(38deg, transparent 64%, rgba(227, 173, 78, 0.42) 64.15%, transparent 64.3%),
-    radial-gradient(circle at 18% 20%, transparent 0 84px, rgba(110, 163, 255, 0.34) 85px 86px, transparent 87px),
-    radial-gradient(circle at 86% 62%, transparent 0 132px, rgba(227, 173, 78, 0.27) 133px 134px, transparent 135px);
-  background-size: 100% 520px, 100% 710px, 620px 620px, 820px 820px;
+    radial-gradient(circle at -3% 20%, transparent 0 150px, rgba(110, 163, 255, 0.34) 151px 152px, transparent 153px),
+    radial-gradient(circle at 103% 62%, transparent 0 196px, rgba(227, 173, 78, 0.24) 197px 198px, transparent 199px);
 }
 
 .character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span:nth-child(3) {
-  opacity: 0.45;
+  opacity: 0.22;
   background:
     radial-gradient(circle at 12% 28%, rgba(120, 174, 255, 0.24), transparent 9%),
     radial-gradient(circle at 88% 16%, rgba(227, 173, 78, 0.18), transparent 8%),
     radial-gradient(circle at 74% 72%, rgba(94, 133, 226, 0.2), transparent 10%);
-  animation: anthlan-glimmer 6s ease-in-out infinite alternate;
 }
 
 .character-chronicle[data-chronicle="anthlan"] .chronicle-breadcrumbs {
@@ -12844,6 +12839,38 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
   box-shadow: inset 0 30px 80px rgba(3, 8, 23, 0.38);
 }
 
+.character-chronicle[data-chronicle="anthlan"] .chronicle-edge-figures {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-edge-figure {
+  position: absolute;
+  width: clamp(180px, 17vw, 245px);
+  height: auto;
+  opacity: 0.94;
+  filter: drop-shadow(0 24px 26px rgba(0, 0, 0, 0.52));
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-edge-figure.is-coffee {
+  top: 740px;
+  right: clamp(-150px, -10vw, -105px);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-edge-figure.is-map {
+  top: 2470px;
+  left: clamp(-158px, -11vw, -112px);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-route,
+.character-chronicle[data-chronicle="anthlan"] .chronicle-story {
+  position: relative;
+  z-index: 1;
+}
+
 .character-chronicle[data-chronicle="anthlan"] .chronicle-reading-shell::before {
   content: "✦";
   position: absolute;
@@ -12906,12 +12933,89 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
 }
 
 .character-chronicle[data-chronicle="anthlan"] .chronicle-world {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   border-color: rgba(116, 169, 255, 0.4);
   background:
     radial-gradient(circle at 12% 15%, rgba(75, 135, 255, 0.25), transparent 34%),
     radial-gradient(circle at 90% 84%, rgba(227, 173, 78, 0.12), transparent 32%),
     linear-gradient(145deg, rgba(17, 38, 83, 0.96), rgba(5, 12, 31, 0.98));
   box-shadow: 0 28px 68px rgba(0, 0, 0, 0.34), inset 0 0 48px rgba(84, 139, 248, 0.06);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-world > div {
+  min-width: 0;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-world h2 {
+  max-width: 12ch;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.04;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.chronicle-reality {
+  margin: 72px 0;
+  overflow: hidden;
+  border: 1px solid rgba(118, 169, 255, 0.38);
+  border-radius: 24px;
+  background: rgba(6, 15, 34, 0.92);
+  box-shadow: 0 30px 72px rgba(0, 0, 0, 0.36);
+}
+
+.chronicle-reality figure {
+  position: relative;
+  margin: 0;
+}
+
+.chronicle-reality figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 58%, rgba(4, 10, 24, 0.86));
+}
+
+.chronicle-reality img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+  object-fit: cover;
+}
+
+.chronicle-reality figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 24px;
+  bottom: 18px;
+  left: 24px;
+  color: rgba(239, 244, 255, 0.82);
+  font-size: 13px;
+}
+
+.chronicle-reality-copy {
+  padding: clamp(28px, 5vw, 52px);
+  background: linear-gradient(135deg, rgba(20, 38, 70, 0.78), rgba(7, 16, 35, 0.98));
+}
+
+.chronicle-reality-copy h2 {
+  margin: 10px 0 22px;
+  color: var(--chronicle-accent-soft);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.4vw, 50px);
+  line-height: 1.08;
+}
+
+.chronicle-reality-copy > p:not(.eyebrow) {
+  max-width: 72ch;
+  color: rgba(235, 240, 252, 0.87);
+  font-size: 17px;
+  line-height: 1.82;
+}
+
+.chronicle-reality-copy > p:not(.eyebrow) + p {
+  margin-top: 17px;
 }
 
 .character-chronicle[data-chronicle="anthlan"] .chronicle-connections article,
@@ -12923,28 +13027,15 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
   backdrop-filter: blur(10px);
 }
 
-@keyframes anthlan-star-drift {
-  from { background-position: 0 0, 37px 63px, 91px 24px; }
-  to { background-position: 113px 137px, -142px 274px, 354px -283px; }
-}
-
-@keyframes anthlan-glimmer {
-  from { opacity: 0.25; filter: brightness(0.9); }
-  to { opacity: 0.62; filter: brightness(1.25); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span {
-    animation: none;
-  }
-}
-
 @media (max-width: 900px) {
   .chronicle-card-grid { grid-template-columns: 1fr; }
   .chronicle-card { min-height: 500px; }
   .chronicle-reading-shell { grid-template-columns: 1fr; }
   .chronicle-route { display: none; }
   .chronicle-world { grid-template-columns: 1fr; }
+  .character-chronicle[data-chronicle="anthlan"] .chronicle-world { grid-template-columns: 1fr; }
+  .character-chronicle[data-chronicle="anthlan"] .chronicle-world h2 { max-width: 16ch; }
+  .character-chronicle[data-chronicle="anthlan"] .chronicle-edge-figures { display: none; }
   .chronicle-connections > div { grid-template-columns: 1fr; }
 }
 
@@ -12962,6 +13053,9 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
   .chronicle-scene img { aspect-ratio: 4 / 3; }
   .chronicle-scene figcaption { position: relative; width: 100%; border-left: 0; }
   .chronicle-world { padding: 28px 23px; }
+  .chronicle-reality { margin: 48px 0; border-radius: 18px; }
+  .chronicle-reality img { aspect-ratio: 4 / 3; }
+  .chronicle-reality figcaption { right: 18px; bottom: 14px; left: 18px; }
   .chronicle-next { grid-template-columns: 1fr 1fr; }
   .chronicle-next a:nth-child(2) { display: none; }
   .officer-dialog.is-helltrain .officer-dialog-shell { display: block; }

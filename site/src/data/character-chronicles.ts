@@ -22,6 +22,14 @@ export type CharacterChronicle = {
   traits: Array<{ icon: string; title: string; text: string }>;
   chapters: Array<{ eyebrow: string; title: string; paragraphs: string[] }>;
   worldText: string[];
+  reality?: {
+    image: string;
+    imageAlt: string;
+    eyebrow: string;
+    title: string;
+    paragraphs: string[];
+    caption: string;
+  };
   connectionTitle: string;
   connections: Array<{ name: string; text: string }>;
   closing: string;
@@ -73,6 +81,17 @@ export const characterChronicles: CharacterChronicle[] = [
       "Unter dem gläsernen Dach ziehen Sternbilder ihre Bahnen. Darunter verbinden goldene Linien Städte, Inseln und Menschen. Manche Wege sind sauber geplant, andere entstehen erst, wenn jemand den Mut hat, den ersten Schritt zu machen.",
       "Die vielen Stühle sind wichtiger als das große Teleskop: Sie zeigen, dass diese Welt nicht für einen Herrscher gebaut wurde, sondern für eine Gemeinschaft, die gemeinsam weitersehen möchte.",
     ],
+    reality: {
+      image: "/drachenhalle/brand/chronicle-anthlan-lived-world.webp",
+      imageAlt: "Anthlan im Gespräch mit Bewohnern an einem gemeinsamen Tisch in der belebten Stadt unter seiner Sternwarte",
+      eyebrow: "Unter der Sternwarte",
+      title: "Wo aus Wegen gemeinsames Leben wird",
+      paragraphs: [
+        "Unter der Sternwarte liegen keine stillen Modellstädte. An den goldenen Wegen wird gearbeitet, gestritten, gelacht und gemeinsam gegessen. Reisende kommen an, Werkstätten bleiben länger offen als geplant und an den Tischen entstehen aus zufälligen Begegnungen neue Verbindungen.",
+        "Hier wird sichtbar, wofür Anthlan Karten zeichnet: nicht für perfekte Linien, sondern damit wir einander erreichen können. Er betrachtet dieses Leben nicht aus der Ferne. Er sitzt mit am Tisch, hört zu und hilft dabei, aus vielen einzelnen Wegen einen gemeinsamen Ort zu machen.",
+      ],
+      caption: "Unterhalb der Sternwarte zeigt sich, ob aus einem guten Plan auch ein gemeinsamer Ort wird.",
+    },
     connectionTitle: "Wer an seinem Tisch Spuren hinterlässt",
     connections: [
       { name: "Somea", text: "bringt Gefühl, Energie und beherzte Abkürzungen in seine sorgfältig gezeichneten Pläne." },
