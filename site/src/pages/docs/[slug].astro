@@ -519,6 +519,10 @@ const responsibilities = [
                   <h2 id="alliance-children-title">Was möchtest du nachschlagen?</h2>
                 </div>
                 <div class="alliance-hub-grid">
+                  <a class="alliance-hub-card" href="/drachenhalle/ruhmeshalle/">
+                    <span class="alliance-hub-number" aria-hidden="true">🏆</span>
+                    <div><p class="eyebrow">Unsere gemeinsamen Siege</p><h3>Ruhmeshalle</h3><p>Entdeckt unsere ersten Wächtertötungen und die Geschichten hinter den Trophäen.</p><strong>Öffnen →</strong></div>
+                  </a>
                   {childDocuments.map((item, index) => (
                     <a class="alliance-hub-card" href={item.url}>
                       <span class="alliance-hub-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>

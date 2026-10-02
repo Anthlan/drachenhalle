@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import gallery from "../data/gallery.generated.json";
+const victory = gallery.items.find(item => item.sourcePath.endsWith("2026_09_08_0951_WaechterSieg_Boshos_Drachenherz_Anthlan.png"));
+if (!victory) throw new Error("Das Wächter-Siegesbild fehlt in der Galerie.");
+// 03.10.2026 als Spieltag 83 ergibt einen angenommenen Start am 13.07.2026.
+// Frühere Siege sind bestätigt, ihre Datierungen und die Zehnerschritte angenommen.
+const estimatedDates = ["2026-07-14", "2026-07-15", "2026-07-17", "2026-07-19", "2026-07-22", "2026-07-25", "2026-07-29", "2026-08-02", "2026-08-07", "2026-08-13", "2026-08-20", "2026-08-28", "2026-09-05"];
+const estimatedTrophies = estimatedDates.map((date, index) => ({
+  level: (index + 1) * 10,
+  date,
+  label: new Intl.DateTimeFormat("de-DE", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T12:00:00Z`)),
+  title: `Unser erster ${ (index + 1) * 10 }er`,
+  story: "Diese Wächterstufe haben wir bereits bezwungen. Das genaue Datum des ersten Sieges ist nicht überliefert. Die Datierung ist rückblickend geschätzt: aus unseren 83 Spieltagen und dem bestätigten Sieg über Stufe 140 und 150 am 08. September 2026.",
+  image: false,
+  estimated: true,
+}));
+const confirmedTrophies = [
+  { level: 140, date: "2026-09-08", label: "08. September 2026", title: "Der erste Durchbruch", story: "Unser erster Wächter auf Stufe 140 fällt. Ein gemeinsamer Meilenstein – und noch am selben Tag gehen wir einen Schritt weiter.", image: true },
+  { level: 150, date: "2026-09-08", label: "08. September 2026", title: "Gemeinsam immer weiter", story: "Am selben Tag bezwingen wir zum ersten Mal einen Wächter auf Stufe 150. Das Siegesbild mit Boshos, Drachenherz und Anthlan hält diesen Moment fest: Geschafft! Teamwork!", image: true },
+  { level: 160, date: "2026-10-02", label: "02. Oktober 2026", title: "Ein neuer Höhepunkt", story: "Zum ersten Mal besiegt unsere Allianz einen Wächter auf Stufe 160. Die nächste Trophäe gehört uns – ein weiterer Erfolg unserer Gemeinschaft.", image: false },
+];
+const trophies = [...estimatedTrophies, ...confirmedTrophies.map(trophy => ({ ...trophy, estimated: false }))];
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Unsere gemeinsamen Wächter-Siege: die interaktive Ruhmeshalle der DIE Drachenhalle." />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Ruhmeshalle · DIE Drachenhalle</title>
+  </head>
+  <body><div class="page-shell">
+    <SiteHeader active="alliance" />
+    <main id="main-content" class="trophy-hall">
+      <nav class="breadcrumbs" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/">Start</a><span>/</span><a href="/drachenhalle/docs/allianz/">Allianz</a><span>/</span><span aria-current="page">Ruhmeshalle</span></nav>
+      <header class="hall-intro"><p class="eyebrow">Gemeinsam stärker · Unsere Wächtertötungen</p><h1>Ruhmeshalle</h1><p>Jede Trophäe erzählt von einem gemeinsamen Sieg. Hier bewahren wir die Momente, in denen wir zum ersten Mal eine neue Wächterstufe bezwungen haben.</p><div class="hall-record"><span>🏆 Höchste bezwungene Stufe <strong>160</strong></span><span>{trophies.length} gemeinsame Meilensteine</span></div><p class="trophy-note">83 Spieltage am 03.10.2026: Unser angenommener Start liegt am 13.07.2026. Die früheren Siege sind in Zehnerschritten ergänzt; ihre Daten sind geschätzt, mit kürzeren Abständen am Anfang und längeren später. Für Stufe 140, 150 und 160 sind die Tage bestätigt.</p></header>
+      <section aria-label="Wächter-Trophäen" class="trophy-grid">
+        {trophies.map(trophy => (
+          <details class="trophy" open={trophy.level === 160}>
+            <summary><span class="trophy-icon" aria-hidden="true">🏆</span><span class="eyebrow">Wächter besiegt</span><strong class="trophy-level">{trophy.level}</strong><time datetime={trophy.date}>{trophy.label}</time><span class="trophy-note">{trophy.estimated ? "Datum geschätzt" : "Datum bestätigt"}</span><span class="trophy-prompt">Geschichte öffnen <span aria-hidden="true">＋</span></span></summary>
+            <div class="trophy-story"><h2>{trophy.title}</h2><p>{trophy.story}</p>{trophy.image ? <a href="#siegesbild">Zum gemeinsamen Siegesbild →</a> : !trophy.estimated && <p class="trophy-note">Der Sieg ist festgehalten. Ein eigenes Erinnerungsbild folgt, sobald es in der Galerie liegt.</p>}</div>
+          </details>
+        ))}
+      </section>
+      <section id="siegesbild" class="hall-memory" aria-labelledby="memory-title">
+        <div><p class="eyebrow">08. September 2026 · 140 &amp; 150</p><h2 id="memory-title">Zwei Meilensteine an einem Tag</h2><p>Zwei neue Wächterstufen an einem Tag. Unser Chatbild zum Sieg über Stufe 150 erinnert an diesen gemeinsamen Durchbruch.</p><p>Öffne das Bild, um den Moment in voller Größe anzusehen.</p></div>
+        <button class="memory-image" aria-label="Siegesbild vergrößern" data-open-memory><img src={victory.webUrl} width={victory.width} height={victory.height} alt="Boshos, Drachenherz und Anthlan feiern den Sieg über einen Wächter auf Stufe 150." loading="lazy" /><span>Siegesbild vergrößern ↗</span></button>
+      </section>
+      <dialog class="memory-dialog" aria-label="Siegesbild vom 08. September 2026"><form method="dialog"><button autofocus>Schließen ×</button></form><img src={victory.webUrl} width={victory.width} height={victory.height} alt="Wächter besiegt! Stufe 150 – unser gemeinsames Siegesbild vom 08. September 2026." /></dialog>
+    </main><SiteFooter />
+  </div></body>
+</html>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>(".memory-dialog");
+  document.querySelector("[data-open-memory]")?.addEventListener("click", () => dialog?.showModal());
+  dialog?.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
+</script>
+<style>
+  .trophy-hall{max-width:1200px;margin:auto;padding:2rem 1.2rem 4rem}.hall-intro{padding:3rem 0;text-align:center}.hall-intro h1{font-size:clamp(2.5rem,7vw,5rem);margin:.5rem 0;color:#efd19a}.hall-intro>p{max-width:720px;margin:1rem auto}.hall-record{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2rem;margin-top:2rem;color:#efd19a}.hall-record strong{font-size:1.8rem;margin-left:.5rem}.trophy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;align-items:start}.trophy{border:1px solid #a87b3f;border-radius:18px;background:radial-gradient(ellipse at top,#50391f80,transparent 70%),#171c24;overflow:hidden;box-shadow:0 16px 40px #0003}.trophy summary{cursor:pointer;list-style:none;display:flex;align-items:center;flex-direction:column;padding:2rem 1rem;gap:.7rem}.trophy summary::-webkit-details-marker{display:none}.trophy summary:hover,.trophy summary:focus-visible{background:#d4ad6420}.trophy-icon{font-size:3.5rem;filter:drop-shadow(0 0 18px #d4ad6460)}.trophy-level{font-size:4rem;line-height:1;color:#efd19a}.trophy time{font-size:.9rem;color:#c5c6ca}.trophy-prompt{margin-top:1rem;color:#efd19a}.trophy[open] .trophy-prompt{font-size:0}.trophy[open] .trophy-prompt::after{content:"Geschichte schließen −";font-size:1rem}.trophy-story{padding:0 1.5rem 1.7rem;border-top:1px solid #a87b3f44}.trophy-story h2{font-size:1.2rem;margin-top:1.3rem}.trophy-note{font-size:.85rem;color:#c5c6ca}.hall-memory{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-top:3rem;padding:2rem;background:#171c24;border:1px solid #a87b3f55;border-radius:18px;scroll-margin-top:6rem}.hall-memory h2{font-size:2rem;color:#efd19a}.memory-image{padding:0;background:transparent;color:#efd19a;border:1px solid #a87b3f;border-radius:12px;overflow:hidden;cursor:zoom-in}.memory-image img{display:block;width:100%;height:auto}.memory-image span{display:block;padding:.8rem}.memory-dialog{padding:1rem;background:#171c24;border:1px solid #a87b3f;border-radius:12px;max-width:95vw;max-height:95dvh}.memory-dialog::backdrop{background:#000c}.memory-dialog form{text-align:right;margin-bottom:.5rem}.memory-dialog button{padding:.6rem 1rem;cursor:pointer}.memory-dialog img{display:block;max-width:100%;width:auto;height:auto;max-height:80dvh;margin:auto}@media(max-width:700px){.trophy-grid,.hall-memory{grid-template-columns:1fr}.hall-memory{padding:1.2rem}.hall-intro{padding:2rem 0}.trophy summary{padding:1.5rem}}
+</style>

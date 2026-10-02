@@ -112,3 +112,5 @@ $ astro dev "--host" "127.0.0.1" "--force"
 {"message":"/src/styles/global.css","label":"watch","level":"info"}
 {"message":"[200] /charakterchroniken/anthlan/ 119ms","label":null,"level":"info"}
 {"message":"[200] /charakterchroniken/anthlan/ 4ms","label":null,"level":"info"}
+{"message":"src/components/SiteHeader.astro","label":"watch","level":"info"}
+{"message":"src/pages/docs/[slug].astro","label":"watch","level":"info"}
