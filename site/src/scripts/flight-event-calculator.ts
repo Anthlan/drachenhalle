@@ -234,7 +234,7 @@ export const initializeFlightEventCalculator = () => {
 
   const fields = [
     "currentCoins", "currentVouchers", "targetVouchers", "remainingDays", "remainingHours",
-    "remainingTaskDays", "confidence", "includeFree", "includeDiamonds", "includeMilestones",
+    "remainingFreeVouchers", "confidence", "includeFree", "includeDiamonds", "includeMilestones",
   ];
 
   const applyValues = (values: Record<string, unknown>) => {
@@ -308,7 +308,7 @@ export const initializeFlightEventCalculator = () => {
     const targetVouchers = wholeNumber(data.get("targetVouchers"), 4000);
     const remainingDays = wholeNumber(data.get("remainingDays"));
     const remainingHours = Math.min(23, wholeNumber(data.get("remainingHours")));
-    const remainingTaskDays = Math.min(5, wholeNumber(data.get("remainingTaskDays")));
+    const remainingFreeVouchers = Math.min(99, wholeNumber(data.get("remainingFreeVouchers")));
     const confidence = Number(data.get("confidence") ?? 0.8);
     const includeFree = data.get("includeFree") === "yes";
     const includeDiamonds = data.get("includeDiamonds") === "yes";
@@ -321,8 +321,8 @@ export const initializeFlightEventCalculator = () => {
     }
 
     const windows = remainingPurchaseWindows(remainingDays, remainingHours);
-    const futureCoins = includeFree ? windows + remainingTaskDays * 15 : 0;
-    const futureVouchers = includeFree ? windows : 0;
+    const futureCoins = includeFree ? windows : 0;
+    const futureVouchers = remainingFreeVouchers;
     const diamondVouchers = includeDiamonds ? windows : 0;
     const availableCoins = currentCoins + futureCoins;
     const securedVouchers = currentVouchers + futureVouchers + diamondVouchers;

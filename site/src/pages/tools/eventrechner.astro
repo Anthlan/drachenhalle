@@ -102,8 +102,9 @@ import SiteHeader from "../../components/SiteHeader.astro";
                   <input name="currentVouchers" type="number" min="0" max="99999" step="1" value="0" inputmode="numeric" />
                 </label>
                 <div class="flight-target-field">
-                  <div class="flight-target-label">
-                    <label for="flight-target-vouchers">Gutscheinziel</label>
+                  <label for="flight-target-vouchers">Gutscheinziel</label>
+                  <div class="flight-target-control">
+                    <input id="flight-target-vouchers" name="targetVouchers" type="number" min="1" max="99999" step="1" value="4000" inputmode="numeric" />
                     <button
                       type="button"
                       data-flight-target-open
@@ -115,7 +116,6 @@ import SiteHeader from "../../components/SiteHeader.astro";
                       <span aria-hidden="true">◎</span>
                     </button>
                   </div>
-                  <input id="flight-target-vouchers" name="targetVouchers" type="number" min="1" max="99999" step="1" value="4000" inputmode="numeric" />
                 </div>
               </div>
             </fieldset>
@@ -132,8 +132,8 @@ import SiteHeader from "../../components/SiteHeader.astro";
                   <input name="remainingHours" type="number" min="0" max="23" step="1" value="0" inputmode="numeric" />
                 </label>
                 <label>
-                  <span>Offene Eventtage mit je 15 Münzen</span>
-                  <input name="remainingTaskDays" type="number" min="0" max="5" step="1" value="0" inputmode="numeric" />
+                  <span>Noch offene Gratisgutscheine</span>
+                  <input name="remainingFreeVouchers" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" />
                 </label>
               </div>
               <p class="flight-field-note">Aus der Restlaufzeit werden angefangene tägliche Kaufperioden ermittelt. Prüfe vor dem Kauf trotzdem den Ingame-Timer.</p>
@@ -144,7 +144,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
               <div class="flight-option-grid">
                 <label>
                   <input name="includeFree" type="checkbox" value="yes" checked />
-                  <span><strong>Gratisabholungen einplanen</strong><small>1 Münze und 1 Gutschein je erreichbarer Kaufperiode.</small></span>
+                  <span><strong>Gratis-Münzen einplanen</strong><small>1 Münze je erreichbarer Kaufperiode.</small></span>
                 </label>
                 <label>
                   <input name="includeDiamonds" type="checkbox" value="yes" />
@@ -152,7 +152,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
                 </label>
                 <label>
                   <input name="includeMilestones" type="checkbox" value="yes" checked />
-                  <span><strong>300/500-Punkte-Stufen noch offen</strong><small>Bei gebündelten Ziehungen 200 beziehungsweise 400 sichere Gutscheine.</small></span>
+                  <span><strong>Meilenstein-Gutscheine noch offen</strong><small>200 bei 300 Punkten und weitere 200 bei 500 Punkten.</small></span>
                 </label>
                 <label>
                   <span class="flight-select-label"><strong>Gewünschte Planungssicherheit</strong><small>Für die obere Grenze des Casino-Korridors.</small></span>
@@ -167,8 +167,12 @@ import SiteHeader from "../../components/SiteHeader.astro";
 
             <div class="flight-form-footer">
               <div class="tool-memory-actions flight-memory-actions">
-                <button type="button" class="tool-memory-button" data-flight-save>Eventstand speichern</button>
-                <button type="button" class="tool-memory-reset" data-flight-clear hidden>Gespeicherte Werte löschen</button>
+                <button type="button" class="tool-memory-button" data-flight-save aria-label="Eventstand speichern" title="Eventstand speichern">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12l2 2v16H5V3Zm3 0v6h8V3M8 21v-8h8v8" /></svg>
+                </button>
+                <button type="button" class="tool-memory-reset" data-flight-clear hidden aria-label="Gespeicherte Werte löschen" title="Gespeicherte Werte löschen">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 3h6l1 4H8l1-4Zm-2 4 1 14h8l1-14M10 11v6m4-6v6" /></svg>
+                </button>
                 <p class="tool-memory-status" role="status" aria-live="polite" data-flight-storage-status>Nur auf diesem Gerät gespeichert.</p>
               </div>
               <div class="flight-form-submit-group">
@@ -306,7 +310,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
             <section class="flight-info-section">
               <h3>Wie ist der Korridor zu lesen?</h3>
               <p>Der Rechner verwendet Erwartungswert und statistische Streuung aller dokumentierten Gutschein-Ausgänge. Der gewählte Sicherheitswert erhöht die geplante Münzmenge. Seltene Glückstreffer können trotzdem außerhalb des dargestellten Korridors liegen.</p>
-              <p>Die 300- und 500-Punkte-Stufen werden nur berücksichtigt, wenn sie als offen markiert sind und alle geplanten Münzen gebündelt eingesetzt werden. Nicht eindeutig bezifferte Kisten und weitere Nebenbelohnungen bleiben konservativ außen vor.</p>
+              <p>Der sichtbare Meilensteinpfad enthält bei 300 Punkten 200 und bei 500 Punkten weitere 200 Vorratsgutscheine. Der Planer berücksichtigt sie nur, wenn die Stufen als offen markiert sind und die geplanten Ziehungen die jeweilige Schwelle erreichen. Nicht eindeutig bezifferte Kisten und weitere Nebenbelohnungen bleiben konservativ außen vor.</p>
               <a class="flight-info-guide-link" href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Vollständigen Event-Guide lesen →</a>
             </section>
           </div>

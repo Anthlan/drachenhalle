@@ -10764,7 +10764,7 @@ body.has-officer-dialog {
 .flight-form fieldset {
   min-width: 0;
   margin-bottom: 0;
-  padding: 24px 30px 28px;
+  padding: 28px 30px 30px;
   border: 0;
   border-top: 1px solid var(--line);
 }
@@ -10773,7 +10773,8 @@ body.has-officer-dialog {
 .flight-form fieldset:nth-of-type(2) { border-right: 0; }
 
 .flight-form legend {
-  padding: 0;
+  margin-left: -10px;
+  padding: 0 10px;
   color: var(--gold);
   font-size: 12px;
   font-weight: 800;
@@ -10784,14 +10785,17 @@ body.has-officer-dialog {
 .flight-field-grid {
   display: grid;
   gap: 16px;
-  margin-top: 18px;
+  margin-top: 22px;
 }
 
 .flight-field-grid.is-three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   max-width: none;
 }
-.flight-field-grid.is-time { grid-template-columns: minmax(78px, 0.55fr) minmax(78px, 0.55fr) minmax(180px, 1.45fr); }
+.flight-field-grid.is-time {
+  grid-template-columns: minmax(78px, 96px) minmax(78px, 96px) minmax(128px, 158px);
+  justify-content: start;
+}
 .flight-field-grid.is-time label:last-child { grid-column: auto; }
 
 .flight-field-grid label,
@@ -10809,33 +10813,29 @@ body.has-officer-dialog {
   font-weight: 700;
 }
 
-.flight-target-label {
-  display: flex;
+.flight-target-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
-  min-height: 28px;
 }
 
-.flight-target-label label { color: #d9d8e6; font-size: 12px; font-weight: 700; }
-
-.flight-target-label button {
-  width: 28px;
-  height: 28px;
+.flight-target-control button {
+  width: 32px;
+  height: 48px;
   display: grid;
   place-items: center;
-  flex: 0 0 28px;
   padding: 0;
   border: 1px solid var(--line-bright);
-  border-radius: 50%;
+  border-radius: 3px;
   background: rgba(227, 173, 78, 0.08);
   color: var(--gold-pale);
   font: 800 15px/1 Georgia, serif;
   cursor: pointer;
 }
 
-.flight-target-label button:hover,
-.flight-target-label button:focus-visible {
+.flight-target-control button:hover,
+.flight-target-control button:focus-visible {
   border-color: var(--gold);
   background: rgba(227, 173, 78, 0.16);
   outline: 2px solid rgba(227, 173, 78, 0.15);
@@ -10888,11 +10888,39 @@ body.has-officer-dialog {
 .flight-select-label { min-height: 45px; }
 
 .flight-memory-actions {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
   min-width: 0;
   margin: 0;
   padding: 0;
   border: 0;
 }
+
+.flight-memory-actions .tool-memory-button,
+.flight-memory-actions .tool-memory-reset {
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.flight-memory-actions button[hidden] { display: none; }
+
+.flight-memory-actions svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flight-memory-actions .tool-memory-status { margin: 0 0 0 4px; }
 
 .flight-form-footer {
   display: grid;
