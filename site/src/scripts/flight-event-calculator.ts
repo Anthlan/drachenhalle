@@ -71,27 +71,18 @@ export const remainingPurchaseWindows = (days: number, hours: number) => {
   return totalHours === 0 ? 0 : Math.ceil(totalHours / 24);
 };
 
-export const milestoneVoucherBonus = (coins: number, enabled = true) => {
-  if (!enabled) return 0;
-  if (coins >= 500) return 400;
-  if (coins >= 300) return 200;
-  return 0;
-};
-
-export const casinoProjection = (coins: number, milestones = true, centralConfidence = 0.8) => {
+export const casinoProjection = (coins: number, centralConfidence = 0.8) => {
   const safeCoins = Math.max(0, Math.floor(coins));
-  const bonus = milestoneVoucherBonus(safeCoins, milestones);
-  const expected = safeCoins * EVENT_VOUCHERS_PER_COIN + bonus;
+  const expected = safeCoins * EVENT_VOUCHERS_PER_COIN;
   const standardDeviation = Math.sqrt(safeCoins * EVENT_VARIANCE_PER_COIN);
   const z = centralConfidence >= 0.95 ? 1.96 : centralConfidence >= 0.9 ? 1.645 : 1.282;
-  const guaranteed = safeCoins * GUARANTEED_VOUCHERS_PER_COIN + bonus;
+  const guaranteed = safeCoins * GUARANTEED_VOUCHERS_PER_COIN;
   return {
     expected,
     standardDeviation,
     guaranteed,
     low: Math.max(guaranteed, expected - z * standardDeviation),
     high: expected + z * standardDeviation,
-    milestoneBonus: bonus,
   };
 };
 
@@ -99,10 +90,9 @@ export const expectedVoucherGap = (
   targetVouchers: number,
   securedVouchers: number,
   availableCoins: number,
-  milestones = true,
 ) => Math.max(
   0,
-  Math.ceil(targetVouchers - securedVouchers - casinoProjection(availableCoins, milestones).expected),
+  Math.ceil(targetVouchers - securedVouchers - casinoProjection(availableCoins).expected),
 );
 
 const erf = (value: number) => {
@@ -121,9 +111,9 @@ const erf = (value: number) => {
 
 const normalCdf = (value: number) => 0.5 * (1 + erf(value / Math.sqrt(2)));
 
-export const probabilityToReach = (neededVouchers: number, coins: number, milestones = true) => {
+export const probabilityToReach = (neededVouchers: number, coins: number) => {
   if (neededVouchers <= 0) return 1;
-  const projection = casinoProjection(coins, milestones);
+  const projection = casinoProjection(coins);
   if (neededVouchers <= projection.guaranteed) return 1;
   if (coins <= 0 || projection.standardDeviation <= 0) return 0;
   const z = (neededVouchers - 0.5 - projection.expected) / projection.standardDeviation;
@@ -133,12 +123,11 @@ export const probabilityToReach = (neededVouchers: number, coins: number, milest
 export const requiredCoinsForChance = (
   neededVouchers: number,
   chance: number,
-  milestones = true,
   maxCoins = 10000,
 ) => {
   if (neededVouchers <= 0) return 0;
   for (let coins = 1; coins <= maxCoins; coins += 1) {
-    if (probabilityToReach(neededVouchers, coins, milestones) >= chance) return coins;
+    if (probabilityToReach(neededVouchers, coins) >= chance) return coins;
   }
   return null;
 };
@@ -234,7 +223,7 @@ export const initializeFlightEventCalculator = () => {
 
   const fields = [
     "currentCoins", "currentVouchers", "targetVouchers", "remainingDays", "remainingHours",
-    "remainingFreeVouchers", "confidence", "includeFree", "includeDiamonds", "includeMilestones",
+    "remainingFreeVouchers", "confidence", "includeFree", "includeDiamonds",
   ];
 
   const applyValues = (values: Record<string, unknown>) => {
@@ -312,7 +301,6 @@ export const initializeFlightEventCalculator = () => {
     const confidence = Number(data.get("confidence") ?? 0.8);
     const includeFree = data.get("includeFree") === "yes";
     const includeDiamonds = data.get("includeDiamonds") === "yes";
-    const includeMilestones = data.get("includeMilestones") === "yes";
 
     if (targetVouchers <= 0 || remainingDays > 30) {
       error.textContent = "Bitte prüfe Zielwert und Restlaufzeit.";
@@ -327,12 +315,12 @@ export const initializeFlightEventCalculator = () => {
     const availableCoins = currentCoins + futureCoins;
     const securedVouchers = currentVouchers + futureVouchers + diamondVouchers;
     const neededFromCasino = Math.max(0, targetVouchers - securedVouchers);
-    const currentProjection = casinoProjection(availableCoins, includeMilestones, confidence);
+    const currentProjection = casinoProjection(availableCoins, confidence);
     const currentTotalExpected = securedVouchers + currentProjection.expected;
-    const currentProbability = probabilityToReach(neededFromCasino, availableCoins, includeMilestones);
+    const currentProbability = probabilityToReach(neededFromCasino, availableCoins);
 
-    const meanCoinTarget = requiredCoinsForChance(neededFromCasino, 0.5, includeMilestones);
-    const confidenceCoinTarget = requiredCoinsForChance(neededFromCasino, confidence, includeMilestones);
+    const meanCoinTarget = requiredCoinsForChance(neededFromCasino, 0.5);
+    const confidenceCoinTarget = requiredCoinsForChance(neededFromCasino, confidence);
     const meanCoinPlan = meanCoinTarget === null
       ? null
       : optimizePackagePurchase(COIN_PACKAGES, windows, Math.max(0, meanCoinTarget - availableCoins));
@@ -344,13 +332,12 @@ export const initializeFlightEventCalculator = () => {
       targetVouchers,
       securedVouchers,
       availableCoins,
-      includeMilestones,
     );
     const directPlan = optimizePackagePurchase(VOUCHER_PACKAGES, windows, directGap);
 
     const plannedCasinoCoins = availableCoins + (confidenceCoinPlan?.units ?? 0);
-    const plannedProjection = casinoProjection(plannedCasinoCoins, includeMilestones, confidence);
-    const plannedProbability = probabilityToReach(neededFromCasino, plannedCasinoCoins, includeMilestones);
+    const plannedProjection = casinoProjection(plannedCasinoCoins, confidence);
+    const plannedProbability = probabilityToReach(neededFromCasino, plannedCasinoCoins);
 
     setText(result, "[data-flight-result-kicker]", currentProbability >= confidence ? "Ziel bereits realistisch" : "Dein Kurs zum Ziel");
     setText(

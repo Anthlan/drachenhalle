@@ -150,10 +150,10 @@ import SiteHeader from "../../components/SiteHeader.astro";
                   <input name="includeDiamonds" type="checkbox" value="yes" />
                   <span><strong>500-Diamanten-Gutschein einplanen</strong><small>1 zusätzlicher Gutschein je Kaufperiode.</small></span>
                 </label>
-                <label>
-                  <input name="includeMilestones" type="checkbox" value="yes" checked />
-                  <span><strong>Meilenstein-Gutscheine noch offen</strong><small>200 bei 300 Punkten und weitere 200 bei 500 Punkten.</small></span>
-                </label>
+                <div class="flight-task-box-note">
+                  <strong>Zusatzbelohnungen nicht eingerechnet</strong>
+                  <small>Punkte-Fortschritt und tägliche Aufgaben lassen sich mit den belegten Daten noch nicht verlässlich aus der Münzzahl ableiten.</small>
+                </div>
                 <label>
                   <span class="flight-select-label"><strong>Gewünschte Planungssicherheit</strong><small>Für die obere Grenze des Casino-Korridors.</small></span>
                   <select name="confidence">
@@ -310,7 +310,8 @@ import SiteHeader from "../../components/SiteHeader.astro";
             <section class="flight-info-section">
               <h3>Wie ist der Korridor zu lesen?</h3>
               <p>Der Rechner verwendet Erwartungswert und statistische Streuung aller dokumentierten Gutschein-Ausgänge. Der gewählte Sicherheitswert erhöht die geplante Münzmenge. Seltene Glückstreffer können trotzdem außerhalb des dargestellten Korridors liegen.</p>
-              <p>Der sichtbare Meilensteinpfad enthält bei 300 Punkten 200 und bei 500 Punkten weitere 200 Vorratsgutscheine. Der Planer berücksichtigt sie nur, wenn die Stufen als offen markiert sind und die geplanten Ziehungen die jeweilige Schwelle erreichen. Nicht eindeutig bezifferte Kisten und weitere Nebenbelohnungen bleiben konservativ außen vor.</p>
+              <p>Die separate Punkte-Fortschrittsleiste zeigt feste Belohnungen von 200 Vorratsgutscheinen bei 300 Punkten und weiteren 200 bei 500 Punkten. Die vorliegenden Bilder belegen jedoch nicht, wie viele Punkte eine Ziehung bringt. Diese 400 Gutscheine werden daher nicht automatisch aus der Münzzahl abgeleitet.</p>
+              <p>Zusätzlich enthalten die täglichen zeitbegrenzten Aufgaben Zufallsboxen. Die zwei dokumentierten Gutscheinboxen liefern im Mittel 4 beziehungsweise rund 10,01 Gutscheine. Weil die Anforderungen der späteren Aufgabenstufen verborgen sind, bleiben auch diese Boxen außerhalb der automatischen Planung.</p>
               <a class="flight-info-guide-link" href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Vollständigen Event-Guide lesen →</a>
             </section>
           </div>

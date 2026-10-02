@@ -7,7 +7,6 @@ import {
   VOUCHER_PACKAGES,
   casinoProjection,
   expectedVoucherGap,
-  milestoneVoucherBonus,
   optimizePackagePurchase,
   probabilityToReach,
   remainingPurchaseWindows,
@@ -16,11 +15,11 @@ import {
 
 test("berechnet den vollständigen Erwartungswert inklusive Spielautomaten-Luftabwurf", () => {
   assert.ok(Math.abs(EVENT_VOUCHERS_PER_COIN - 15.0831) < 0.001);
-  assert.ok(Math.abs(casinoProjection(100, false).expected - 1508.31) < 0.1);
+  assert.ok(Math.abs(casinoProjection(100).expected - 1508.31) < 0.1);
 });
 
 test("ignoriert den Versorgungsabwurf und nutzt nur dokumentierte Gutschein-Ausgänge", () => {
-  const projection = casinoProjection(1, false);
+  const projection = casinoProjection(1);
   assert.equal(projection.guaranteed, 5);
   assert.ok(projection.expected > 15 && projection.expected < 15.2);
 });
@@ -32,11 +31,10 @@ test("zählt angefangene Kaufperioden", () => {
   assert.equal(remainingPurchaseWindows(7, 17), 8);
 });
 
-test("berücksichtigt die expliziten Gutschein-Meilensteine", () => {
-  assert.equal(milestoneVoucherBonus(299), 0);
-  assert.equal(milestoneVoucherBonus(300), 200);
-  assert.equal(milestoneVoucherBonus(500), 400);
-  assert.equal(milestoneVoucherBonus(500, false), 0);
+test("leitet Punkte- und Aufgabenbelohnungen nicht aus der Münzanzahl ab", () => {
+  const projection = casinoProjection(300);
+  assert.ok(Math.abs(projection.expected - 300 * EVENT_VOUCHERS_PER_COIN) < 0.001);
+  assert.equal(projection.guaranteed, 300 * 5);
 });
 
 test("findet den sicheren günstigsten Direktkauf für 60 Gutscheine", () => {
@@ -49,9 +47,9 @@ test("findet den sicheren günstigsten Direktkauf für 60 Gutscheine", () => {
 });
 
 test("kauft direkt nur die Restlücke nach Bestand und erwartetem Münzertrag", () => {
-  const expected = casinoProjection(100, false).expected;
-  assert.equal(expectedVoucherGap(2000, 110, 100, false), Math.ceil(2000 - 110 - expected));
-  assert.equal(expectedVoucherGap(1500, 110, 100, false), 0);
+  const expected = casinoProjection(100).expected;
+  assert.equal(expectedVoucherGap(2000, 110, 100), Math.ceil(2000 - 110 - expected));
+  assert.equal(expectedVoucherGap(1500, 110, 100), 0);
 });
 
 test("respektiert verbleibende Tageslimits", () => {
@@ -65,9 +63,9 @@ test("respektiert verbleibende Tageslimits", () => {
 });
 
 test("mehr Münzen erhöhen die Zielchance und die geforderte Sicherheit den Bedarf", () => {
-  assert.ok(probabilityToReach(1000, 100, false) > probabilityToReach(1000, 50, false));
-  const realistic = requiredCoinsForChance(4000, 0.8, true);
-  const cautious = requiredCoinsForChance(4000, 0.95, true);
+  assert.ok(probabilityToReach(1000, 100) > probabilityToReach(1000, 50));
+  const realistic = requiredCoinsForChance(4000, 0.8);
+  const cautious = requiredCoinsForChance(4000, 0.95);
   assert.ok(realistic !== null && cautious !== null);
   assert.ok((cautious as number) >= (realistic as number));
 });

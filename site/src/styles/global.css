@@ -10880,11 +10880,23 @@ body.has-officer-dialog {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.flight-task-box-note {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--gold);
+  background: rgba(227, 173, 78, 0.055);
+}
+
 .flight-option-grid > label:last-child { grid-template-columns: 1fr; }
 .flight-option-grid input { margin-top: 3px; accent-color: var(--gold); }
 .flight-option-grid span { display: grid; gap: 4px; }
-.flight-option-grid strong { color: var(--ink); font-size: 12px; }
-.flight-option-grid small { color: var(--muted); font-size: 10px; line-height: 1.45; }
+.flight-option-grid strong,
+.flight-task-box-note strong { color: var(--ink); font-size: 12px; }
+.flight-option-grid small,
+.flight-task-box-note small { color: var(--muted); font-size: 10px; line-height: 1.45; }
 .flight-select-label { min-height: 45px; }
 
 .flight-memory-actions {
