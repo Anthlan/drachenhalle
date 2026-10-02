@@ -12159,7 +12159,13 @@ body.has-officer-dialog {
 }
 
 .character-chronicle {
+  position: relative;
+  isolation: isolate;
   padding: 0 clamp(14px, 3vw, 42px) 86px;
+}
+
+.chronicle-cosmos {
+  display: none;
 }
 
 .chronicle-breadcrumbs {
@@ -12226,17 +12232,18 @@ body.has-officer-dialog {
   color: #fff8e8;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(52px, 8vw, 96px);
-  line-height: 0.92;
+  line-height: 1;
   text-shadow: 0 5px 30px rgba(0, 0, 0, 0.55);
 }
 
 .chronicle-hero-copy h2 {
-  margin: 7px 0 0;
+  margin: 18px 0 0;
   color: var(--chronicle-accent-soft);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(22px, 3vw, 38px);
   font-weight: 500;
-  line-height: 1.16;
+  line-height: 1.24;
+  text-wrap: balance;
 }
 
 .chronicle-hero-copy > span {
@@ -12669,6 +12676,269 @@ body.has-officer-dialog {
   background: linear-gradient(90deg, rgba(194, 83, 43, 0.17), transparent);
 }
 
+/* Anthlans Chronik: die Sternwarte reicht über den gesamten Leseraum. */
+.character-chronicle[data-chronicle="anthlan"] {
+  --anthlan-night: #050a1b;
+  --anthlan-blue: #0a1a3c;
+  z-index: 0;
+}
+
+html:has(.character-chronicle[data-chronicle="anthlan"]),
+body:has(.character-chronicle[data-chronicle="anthlan"]) {
+  overflow-x: clip;
+}
+
+.character-chronicle[data-chronicle="anthlan"]::before {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  top: -110px;
+  bottom: -80px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 8% 18%, rgba(45, 95, 194, 0.3), transparent 34%),
+    radial-gradient(ellipse at 94% 42%, rgba(112, 62, 165, 0.18), transparent 35%),
+    radial-gradient(ellipse at 48% 78%, rgba(22, 69, 142, 0.22), transparent 38%),
+    linear-gradient(180deg, #090f27 0%, var(--anthlan-night) 42%, #071129 74%, #050916 100%);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos {
+  position: absolute;
+  z-index: -2;
+  top: -80px;
+  bottom: -40px;
+  left: 50%;
+  width: 100vw;
+  display: block;
+  overflow: hidden;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span:nth-child(1) {
+  opacity: 0.75;
+  background-image:
+    radial-gradient(circle, rgba(255, 244, 194, 0.95) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(132, 180, 255, 0.9) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255, 213, 123, 0.65) 0 1.5px, transparent 2.2px);
+  background-position: 0 0, 37px 63px, 91px 24px;
+  background-size: 113px 137px, 179px 211px, 263px 307px;
+  filter: drop-shadow(0 0 4px rgba(121, 171, 255, 0.6));
+  animation: anthlan-star-drift 38s linear infinite;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span:nth-child(2) {
+  inset: 120px 0 auto;
+  height: 74%;
+  opacity: 0.22;
+  background:
+    linear-gradient(122deg, transparent 18%, rgba(104, 159, 255, 0.42) 18.15%, transparent 18.3%),
+    linear-gradient(38deg, transparent 64%, rgba(227, 173, 78, 0.42) 64.15%, transparent 64.3%),
+    radial-gradient(circle at 18% 20%, transparent 0 84px, rgba(110, 163, 255, 0.34) 85px 86px, transparent 87px),
+    radial-gradient(circle at 86% 62%, transparent 0 132px, rgba(227, 173, 78, 0.27) 133px 134px, transparent 135px);
+  background-size: 100% 520px, 100% 710px, 620px 620px, 820px 820px;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span:nth-child(3) {
+  opacity: 0.45;
+  background:
+    radial-gradient(circle at 12% 28%, rgba(120, 174, 255, 0.24), transparent 9%),
+    radial-gradient(circle at 88% 16%, rgba(227, 173, 78, 0.18), transparent 8%),
+    radial-gradient(circle at 74% 72%, rgba(94, 133, 226, 0.2), transparent 10%);
+  animation: anthlan-glimmer 6s ease-in-out infinite alternate;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-breadcrumbs {
+  position: relative;
+  z-index: 2;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero {
+  overflow: hidden;
+  border-color: rgba(121, 171, 255, 0.62);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(227, 173, 78, 0.16),
+    0 0 90px rgba(56, 112, 224, 0.3);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero > img {
+  object-position: center 22%;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero::before,
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero::before {
+  inset: 14px;
+  border: 1px solid rgba(237, 199, 117, 0.22);
+  border-radius: 18px;
+  box-shadow: inset 0 0 36px rgba(89, 144, 255, 0.12);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero::after {
+  top: 18px;
+  right: 7%;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(227, 173, 78, 0.42);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 224, 145, 0.78) 0 2px, transparent 3px),
+    radial-gradient(circle, transparent 0 24px, rgba(110, 163, 255, 0.42) 25px 26px, transparent 27px);
+  box-shadow: 0 0 32px rgba(92, 149, 255, 0.24);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero-vignette {
+  background:
+    radial-gradient(circle at 73% 18%, rgba(117, 169, 255, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(2, 6, 19, 0.02) 22%, rgba(3, 7, 20, 0.42) 62%, rgba(3, 7, 20, 0.97) 100%),
+    linear-gradient(90deg, rgba(3, 7, 20, 0.56), transparent 66%);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy {
+  gap: 0;
+  padding-bottom: clamp(42px, 6vw, 78px);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy h1 {
+  display: block;
+  margin: 0;
+  line-height: 0.95;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy h2 {
+  display: block;
+  max-width: 700px;
+  margin: clamp(20px, 2.4vw, 30px) 0 0;
+  line-height: 1.3;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy > span {
+  margin-top: 20px;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-reading-shell {
+  position: relative;
+  margin-top: 42px;
+  padding: clamp(58px, 8vw, 94px) clamp(22px, 4vw, 54px) 20px;
+  border-right: 1px solid rgba(105, 158, 255, 0.1);
+  border-left: 1px solid rgba(227, 173, 78, 0.12);
+  background:
+    linear-gradient(90deg, transparent, rgba(10, 22, 52, 0.48) 14%, rgba(7, 15, 38, 0.52) 84%, transparent),
+    radial-gradient(circle at 50% 12%, rgba(77, 132, 243, 0.13), transparent 34%);
+  box-shadow: inset 0 30px 80px rgba(3, 8, 23, 0.38);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-reading-shell::before {
+  content: "✦";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(72%, 620px);
+  height: 1px;
+  color: #e3ad4e;
+  line-height: 1px;
+  text-align: center;
+  background: linear-gradient(90deg, transparent, rgba(227, 173, 78, 0.62), transparent);
+  transform: translateX(-50%);
+  text-shadow: 0 0 12px #e3ad4e;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-route {
+  padding: 18px 16px 18px 24px;
+  border: 1px solid rgba(104, 159, 255, 0.2);
+  border-left: 2px solid #76a9ff;
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(145deg, rgba(12, 27, 63, 0.82), rgba(5, 12, 31, 0.72));
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22), inset 0 0 24px rgba(84, 139, 248, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-opening,
+.character-chronicle[data-chronicle="anthlan"] .chronicle-chapter {
+  position: relative;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-opening::before,
+.character-chronicle[data-chronicle="anthlan"] .chronicle-chapter::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: -22px;
+  width: 84px;
+  height: 84px;
+  border-top: 1px solid rgba(118, 169, 255, 0.18);
+  border-right: 1px solid rgba(227, 173, 78, 0.14);
+  border-radius: 0 28px 0 0;
+  pointer-events: none;
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-traits article {
+  border-color: rgba(116, 169, 255, 0.34);
+  background:
+    radial-gradient(circle at 85% 5%, rgba(227, 173, 78, 0.14), transparent 36%),
+    radial-gradient(circle at 10% 90%, rgba(84, 139, 248, 0.18), transparent 44%),
+    linear-gradient(145deg, rgba(18, 37, 81, 0.94), rgba(5, 12, 31, 0.96));
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.25), inset 0 0 30px rgba(93, 147, 255, 0.05);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-scene {
+  border-color: rgba(116, 169, 255, 0.56);
+  box-shadow:
+    0 36px 78px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(227, 173, 78, 0.14),
+    0 0 66px rgba(62, 117, 230, 0.25);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-world {
+  border-color: rgba(116, 169, 255, 0.4);
+  background:
+    radial-gradient(circle at 12% 15%, rgba(75, 135, 255, 0.25), transparent 34%),
+    radial-gradient(circle at 90% 84%, rgba(227, 173, 78, 0.12), transparent 32%),
+    linear-gradient(145deg, rgba(17, 38, 83, 0.96), rgba(5, 12, 31, 0.98));
+  box-shadow: 0 28px 68px rgba(0, 0, 0, 0.34), inset 0 0 48px rgba(84, 139, 248, 0.06);
+}
+
+.character-chronicle[data-chronicle="anthlan"] .chronicle-connections article,
+.character-chronicle[data-chronicle="anthlan"] .chronicle-next a {
+  border-color: rgba(116, 169, 255, 0.26);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(227, 173, 78, 0.09), transparent 36%),
+    rgba(8, 19, 47, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes anthlan-star-drift {
+  from { background-position: 0 0, 37px 63px, 91px 24px; }
+  to { background-position: 113px 137px, -142px 274px, 354px -283px; }
+}
+
+@keyframes anthlan-glimmer {
+  from { opacity: 0.25; filter: brightness(0.9); }
+  to { opacity: 0.62; filter: brightness(1.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .character-chronicle[data-chronicle="anthlan"] .chronicle-cosmos > span {
+    animation: none;
+  }
+}
+
 @media (max-width: 900px) {
   .chronicle-card-grid { grid-template-columns: 1fr; }
   .chronicle-card { min-height: 500px; }
@@ -12695,6 +12965,10 @@ body.has-officer-dialog {
   .chronicle-next { grid-template-columns: 1fr 1fr; }
   .chronicle-next a:nth-child(2) { display: none; }
   .officer-dialog.is-helltrain .officer-dialog-shell { display: block; }
+  .character-chronicle[data-chronicle="anthlan"] .chronicle-hero::after { width: 58px; height: 58px; right: 8%; }
+  .character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy { padding-bottom: 142px; }
+  .character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy h2 { margin-top: 18px; line-height: 1.28; }
+  .character-chronicle[data-chronicle="anthlan"] .chronicle-reading-shell { margin-top: 28px; padding-right: 10px; padding-left: 10px; border-right: 0; border-left: 0; }
 }
 
 @media (max-width: 480px) {

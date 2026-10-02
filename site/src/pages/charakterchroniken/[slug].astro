@@ -27,7 +27,10 @@ const themeStyle = `--chronicle-accent:${chronicle.theme.accent};--chronicle-acc
   <body>
     <div class="page-shell">
       <SiteHeader active="alliance" />
-      <main class="character-chronicle" id="main-content" style={themeStyle}>
+      <main class="character-chronicle" id="main-content" style={themeStyle} data-chronicle={chronicle.slug}>
+        <div class="chronicle-cosmos" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
         <nav class="breadcrumbs chronicle-breadcrumbs" aria-label="Brotkrümelnavigation">
           <a href="/drachenhalle/">Start</a><span aria-hidden="true">/</span>
           <a href="/drachenhalle/charakterchroniken/">Charakterchroniken</a><span aria-hidden="true">/</span>

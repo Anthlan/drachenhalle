@@ -89,3 +89,16 @@ $ astro dev "--host" "127.0.0.1" "--force"
 {"message":"[200] /charakterchroniken/drachenherz/ 2ms","label":null,"level":"info"}
 {"message":"[200] /docs/unsere-offiziere/ 69ms","label":null,"level":"info"}
 {"message":"[200] /charakterchroniken/ 1ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /charakterchroniken/anthlan/ 81ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/anthlan/ 1ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/anthlan/ 1ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /charakterchroniken/anthlan/ 82ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /charakterchroniken/anthlan/ 118ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/anthlan/ 2ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /charakterchroniken/anthlan/ 61ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/anthlan/ 1ms","label":null,"level":"info"}
