@@ -25,7 +25,10 @@ Diese Richtlinie wurde aus den vorhandenen Referenzmodellen in `Galerie/Charakte
 - Das Grundformat darf **2:3 oder quadratisch** sein. Ein quadratischer Bogen ist besonders geeignet, wenn rechts eine zusätzliche Outfit- oder Ausrüstungsvariante dokumentiert wird.
 - Der szenische Weltbereich und die sachlichen Referenzmodule bleiben klar lesbar, bilden aber eine gemeinsame Umgebung statt zwei gestalterisch getrennte Tafeln.
 - Größere und detailreichere Enddateien sind ausdrücklich erwünscht. Entscheidend sind eine belastbare Gesichtsreferenz, Ganzkörperansichten, reproduzierbare Ausrüstung sowie lesbare Material- und Farbdetails.
-- Ein alternatives Outfit muss dieselbe Person, Anatomie, Farbwelt und Symbolik bewahren. Es erweitert den Charakter glaubwürdig, ohne eine neue Identität oder unverbundene Stilrichtung einzuführen.
+- **Jedes M2-Modell enthält ein charakterbezogenes Alternativoutfit.** Das Hauptoutfit zeigt die bekannte Kernrolle der Figur; das Alternativoutfit macht bewusst eine andere, im Profil belegte Seite sichtbar, etwa Alltag statt Repräsentation, Fürsorge statt Kampf, Handwerk statt Führung oder Reise statt Hofleben.
+- Das Alternativoutfit ist ein erzählerischer Gegenpol und kein bloßer Farbwechsel. Schnitt, Materialien, Ausrüstung und Körperhaltung müssen erklären, welche andere Seite der Figur gezeigt wird.
+- Beide Outfits zeigen eindeutig dieselbe Person. Gesicht, Anatomie, Alter, Haut, Haare, Augen, Hörner, Schuppen und andere unverwechselbare Merkmale bleiben identisch. Wiederkehrende Farben, Materialien oder Symbole verbinden beide Ausstattungen, ohne sie gleichförmig zu machen.
+- Die alternative Ausstattung wird mit mindestens einer gut lesbaren Ganzkörperansicht sowie geeigneten Detail- oder Porträtansichten auf demselben M2-Bogen dokumentiert.
 - Die verbindliche Hauptfassung trägt den Namen `Spielername_Modell_Weltserie.png`. Zusätzliche Fassungen erhalten einen beschreibenden Suffix.
 
 ## Verbindliches Seitenraster
@@ -203,6 +206,8 @@ Ein neues Charaktermodell wird erst abgelegt, wenn alle Fragen mit Ja beantworte
 14. Besitzen Rahmen, Flächen und Materialien glaubwürdige Patina und räumliche Tiefe?
 15. Sind Hero-Szene und Referenzmodule durch Licht, Farbe oder Umgebung sichtbar miteinander verbunden?
 16. Ist die Merkmalliste zurückhaltend gestaltet und frei von großen Icon-Schaltflächen?
+17. Zeigt das M2-Alternativoutfit eine andere belegte Charakterseite statt lediglich eine umgefärbte Variante?
+18. Bleibt die Figur in Haupt- und Alternativoutfit anhand aller Identitätsmerkmale eindeutig dieselbe Person?
 
 ## Vermeiden
 

@@ -697,7 +697,7 @@ h1 {
 
 .gallery-toolbar {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  grid-template-columns: minmax(180px, 0.75fr) repeat(2, minmax(220px, 1fr)) auto;
   align-items: end;
   gap: 18px;
   margin-bottom: 24px;
@@ -710,6 +710,10 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
+}
+
+.gallery-toolbar > .category-list {
+  grid-column: 1 / -1;
 }
 
 .category-chip {
@@ -772,6 +776,17 @@ h1 {
 
 .gallery-select-filter select {
   min-width: 265px;
+}
+
+.gallery-toolbar .people-filter,
+.gallery-toolbar .gallery-select-filter {
+  min-width: 0;
+}
+
+.gallery-toolbar .people-filter select,
+.gallery-toolbar .gallery-select-filter select {
+  width: 100%;
+  min-width: 0;
 }
 
 .gallery-result-tools {
@@ -8276,10 +8291,14 @@ footer a {
   }
 
   .gallery-toolbar {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .category-list {
+    grid-column: 1 / -1;
+  }
+
+  .gallery-result-tools {
     grid-column: 1 / -1;
   }
 
@@ -8450,6 +8469,7 @@ footer a {
   }
 
   .gallery-result-tools {
+    grid-column: auto;
     justify-content: space-between;
   }
 
@@ -11498,12 +11518,13 @@ body.has-officer-dialog {
 }
 
 .flight-shop-item-art {
+  width: 100%;
+  height: 76px;
   min-height: 76px;
   border: 1px solid rgba(227, 173, 78, 0.46);
-  background-image: linear-gradient(rgba(8, 12, 25, 0.08), rgba(8, 12, 25, 0.18)), var(--shop-image);
-  background-repeat: no-repeat;
-  background-size: 520% auto;
-  background-position: var(--shop-x) var(--shop-y);
+  background: #10162a;
+  object-fit: cover;
+  object-position: center;
   box-shadow: inset 0 0 18px rgba(5, 9, 22, 0.45);
 }
 
@@ -11747,7 +11768,7 @@ body.has-officer-dialog {
   .flight-shop-tabs button > strong { font-size: 14px; }
   .flight-shop-tabs button > span { font-size: 9px; }
   .flight-shop-item { grid-template-columns: 58px minmax(0, 1fr) 58px; gap: 8px; padding: 8px; }
-  .flight-shop-item-art { min-height: 64px; }
+  .flight-shop-item-art { height: 64px; min-height: 64px; }
   .flight-shop-item-copy strong { font-size: 13px; }
   .flight-shop-total-actions { grid-template-columns: 1fr; }
   .flight-shop-total-actions button { width: 100%; }

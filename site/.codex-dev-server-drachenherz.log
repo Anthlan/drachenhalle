@@ -51,3 +51,10 @@ $ astro dev "--host" "127.0.0.1" "--force"
 {"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
 {"message":"[200] /tools/eventrechner/ 51ms","label":null,"level":"info"}
 {"message":"[200] /tools/eventrechner/ 3ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 49ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 2ms","label":null,"level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}

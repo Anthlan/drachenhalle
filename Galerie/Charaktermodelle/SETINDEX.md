@@ -5,10 +5,11 @@ Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie besch
 ## M2 – Individuelle Charakterwelten (Weltserie)
 
 - **Status:** Aktive neue Serie
-- **Beschreibung:** Erweiterte Referenzmodelle, die neben der Figur auch deren typische Welt verbindlich zeigen: Architektur, Schauplätze, Requisiten, Lichtstimmung, Farben und persönliche Symbolik. Die Figur bleibt eindeutig reproduzierbar, erhält aber eine deutlich individuellere visuelle Heimat.
+- **Beschreibung:** Erweiterte Referenzmodelle, die neben der Figur auch deren typische Welt verbindlich zeigen: Architektur, Schauplätze, Requisiten, Lichtstimmung, Farben und persönliche Symbolik. Jedes Modell ergänzt die bekannte Kernrolle um ein charakterbezogenes Alternativoutfit, das eine andere im Profil belegte Seite sichtbar macht. Die Figur bleibt in beiden Ausstattungen eindeutig reproduzierbar.
 
 ### Bilder
 
+- [Anthlan_Modell_Weltserie.png](Anthlan_Modell_Weltserie.png)
 - [Drachenherz_Modell_Weltserie.png](Drachenherz_Modell_Weltserie.png)
 
 ## M1 – Einheitliche Referenztafeln

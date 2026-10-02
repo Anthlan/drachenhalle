@@ -57,7 +57,13 @@ const shopPages = [
       { id: "versorgungskisten", name: "Versorgungskisten", unit: "10 Kisten", price: 40, max: 1000, limit: "Maximal 1.000", x: 10, y: 85 },
     ],
   },
-];
+].map((page) => ({
+  ...page,
+  rewards: page.rewards.map((reward) => ({
+    ...reward,
+    image: `/drachenhalle/brand/event-shop/items/${reward.id}.webp`,
+  })),
+}));
 ---
 
 <!doctype html>
@@ -187,7 +193,7 @@ const shopPages = [
                   <input name="remainingHours" type="number" min="0" max="23" step="1" value="0" inputmode="numeric" />
                 </label>
                 <label>
-                  <span>Noch offene Gratisgutscheine</span>
+                  <span>Offene Gutscheine</span>
                   <input name="remainingFreeVouchers" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" />
                 </label>
               </div>
@@ -456,11 +462,15 @@ const shopPages = [
                   <div class="flight-shop-grid">
                     {page.rewards.map((reward) => (
                       <article class:list={["flight-shop-item", reward.premium && "is-premium"]}>
-                        <div
+                        <img
                           class="flight-shop-item-art"
-                          style={`--shop-image: url('${page.image}'); --shop-x: ${reward.x}%; --shop-y: ${reward.y}%;`}
+                          src={reward.image}
+                          alt=""
+                          width="240"
+                          height="240"
+                          loading="lazy"
                           aria-hidden="true"
-                        ></div>
+                        />
                         <div class="flight-shop-item-copy">
                           <span>{reward.unit}</span>
                           <strong>{reward.name}</strong>
