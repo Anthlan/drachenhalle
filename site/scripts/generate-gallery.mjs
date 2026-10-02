@@ -13,6 +13,7 @@ const dataFile = path.join(siteRoot, "src", "data", "gallery.generated.json");
 const documentImageDataFile = path.join(siteRoot, "src", "data", "document-images.generated.json");
 const styleIndexFile = path.join(repositoryRoot, "Galerie", "STILINDEX.md");
 const avatarSetIndexFile = path.join(repositoryRoot, "Galerie", "Avatare", "SETINDEX.md");
+const modelSetIndexFile = path.join(repositoryRoot, "Galerie", "Charaktermodelle", "SETINDEX.md");
 const imageExtensions = new Set([".png", ".jpg", ".jpeg", ".webp"]);
 const validStyles = new Set(["S1", "S2", "S3", "S4"]);
 
@@ -129,18 +130,19 @@ async function loadStyleIndex() {
   return { assignments, labels, styles };
 }
 
-async function loadAvatarSetIndex() {
-  const content = await readFile(avatarSetIndexFile, "utf8");
+async function loadSetIndex({ indexFile, codePrefix, sourceDirectory, seriesName }) {
+  const content = await readFile(indexFile, "utf8");
   const sets = [];
   const assignments = new Map();
   let currentSet = null;
+  const headingPattern = new RegExp(`^##\\s+(${codePrefix}\\d+)\\s+[–-]\\s+(.+?)\\s*$`);
 
   for (const line of content.split(/\r?\n/)) {
-    const heading = line.match(/^##\s+(A\d+)\s+[–-]\s+(.+?)\s*$/);
+    const heading = line.match(headingPattern);
     if (heading) {
       const [, value, label] = heading;
       if (sets.some((set) => set.value === value)) {
-        throw new Error(`Avatar-Serie ${value} ist im SETINDEX.md mehrfach definiert.`);
+        throw new Error(`${seriesName} ${value} ist im SETINDEX.md mehrfach definiert.`);
       }
 
       currentSet = { value, label, status: "", description: "" };
@@ -166,9 +168,9 @@ async function loadAvatarSetIndex() {
     if (!imageLink) continue;
 
     const linkedPath = decodeURIComponent(imageLink[1]).replaceAll("\\", "/");
-    const sourcePath = path.posix.normalize(`Galerie/Avatare/${linkedPath}`);
-    if (!sourcePath.startsWith("Galerie/Avatare/") || path.posix.dirname(sourcePath) !== "Galerie/Avatare") {
-      throw new Error(`Ungültiger Avatarpfad im SETINDEX.md: ${linkedPath}`);
+    const sourcePath = path.posix.normalize(`${sourceDirectory}/${linkedPath}`);
+    if (!sourcePath.startsWith(`${sourceDirectory}/`) || path.posix.dirname(sourcePath) !== sourceDirectory) {
+      throw new Error(`Ungültiger Bildpfad im SETINDEX.md für ${seriesName}: ${linkedPath}`);
     }
     if (assignments.has(sourcePath)) {
       throw new Error(`${sourcePath} ist im SETINDEX.md mehrfach zugeordnet.`);
@@ -176,10 +178,10 @@ async function loadAvatarSetIndex() {
     assignments.set(sourcePath, currentSet.value);
   }
 
-  if (!sets.length) throw new Error("Im SETINDEX.md sind keine Avatar-Serien definiert.");
+  if (!sets.length) throw new Error(`Im SETINDEX.md sind keine Einträge für ${seriesName} definiert.`);
   for (const set of sets) {
     if (!set.status || !set.description) {
-      throw new Error(`Avatar-Serie ${set.value} benötigt Status und Beschreibung.`);
+      throw new Error(`${seriesName} ${set.value} benötigt Status und Beschreibung.`);
     }
   }
 
@@ -299,7 +301,18 @@ await mkdir(path.dirname(dataFile), { recursive: true });
 const previousItems = await loadPreviousItems();
 const previousDocumentImages = await loadPreviousDocumentImages();
 const styleIndex = await loadStyleIndex();
-const avatarSetIndex = await loadAvatarSetIndex();
+const avatarSetIndex = await loadSetIndex({
+  indexFile: avatarSetIndexFile,
+  codePrefix: "A",
+  sourceDirectory: "Galerie/Avatare",
+  seriesName: "Avatar-Serie",
+});
+const modelSetIndex = await loadSetIndex({
+  indexFile: modelSetIndexFile,
+  codePrefix: "M",
+  sourceDirectory: "Galerie/Charaktermodelle",
+  seriesName: "Modell-Serie",
+});
 const contentVisibility = await loadContentVisibility(repositoryRoot);
 const sources = [];
 
@@ -357,6 +370,24 @@ if (missingAvatarSetAssignments.length || orphanedAvatarSetAssignments.length) {
   throw new Error(`SETINDEX.md ist nicht vollständig:\n${issues.map((issue) => `- ${issue}`).join("\n")}`);
 }
 
+const modelSourcePaths = new Set(
+  sources.filter(({ category }) => category === "Charaktermodell").map(({ relativePath }) => relativePath),
+);
+const missingModelSetAssignments = [...modelSourcePaths].filter(
+  (sourcePath) => !modelSetIndex.assignments.has(sourcePath),
+);
+const orphanedModelSetAssignments = [...modelSetIndex.assignments.keys()].filter(
+  (sourcePath) => !modelSourcePaths.has(sourcePath),
+);
+
+if (missingModelSetAssignments.length || orphanedModelSetAssignments.length) {
+  const issues = [
+    ...missingModelSetAssignments.map((sourcePath) => `Modell-Serie fehlt: ${sourcePath}`),
+    ...orphanedModelSetAssignments.map((sourcePath) => `Charaktermodell fehlt: ${sourcePath}`),
+  ];
+  throw new Error(`SETINDEX.md der Charaktermodelle ist nicht vollständig:\n${issues.map((issue) => `- ${issue}`).join("\n")}`);
+}
+
 const items = await mapWithConcurrency(sources, 3, async ({ absolutePath, category, relativePath }) => {
   const fileStats = await stat(absolutePath);
   const fingerprint = `${fileStats.size}-${Math.trunc(fileStats.mtimeMs)}`;
@@ -366,6 +397,13 @@ const items = await mapWithConcurrency(sources, 3, async ({ absolutePath, catego
   const avatarSet = avatarSetIndex.assignments.get(relativePath) ?? null;
   const avatarSetLabel = avatarSet ? avatarSetIndex.labels.get(avatarSet) : null;
   const avatarSetStatus = avatarSet ? avatarSetIndex.statuses.get(avatarSet) : null;
+  const modelSet = modelSetIndex.assignments.get(relativePath) ?? null;
+  const modelSetLabel = modelSet ? modelSetIndex.labels.get(modelSet) : null;
+  const modelSetStatus = modelSet ? modelSetIndex.statuses.get(modelSet) : null;
+  const series = avatarSet ?? modelSet;
+  const seriesLabel = avatarSetLabel ?? modelSetLabel;
+  const seriesStatus = avatarSetStatus ?? modelSetStatus;
+  const seriesType = avatarSet ? "Avatar-Serie" : modelSet ? "Modell-Serie" : null;
   const hash = crypto.createHash("sha1").update(relativePath).digest("hex").slice(0, 8);
   const id = `${slugify(metadata.title) || "bild"}-${hash}`;
   const thumbnailName = `${id}-thumb.webp`;
@@ -405,6 +443,13 @@ const items = await mapWithConcurrency(sources, 3, async ({ absolutePath, catego
     avatarSet,
     avatarSetLabel,
     avatarSetStatus,
+    modelSet,
+    modelSetLabel,
+    modelSetStatus,
+    series,
+    seriesLabel,
+    seriesStatus,
+    seriesType,
     width,
     height,
     fingerprint,
@@ -496,6 +541,22 @@ const galleryData = {
     ...set,
     count: items.filter((item) => item.avatarSet === set.value).length,
   })),
+  modelSets: modelSetIndex.sets.map((set) => ({
+    ...set,
+    count: items.filter((item) => item.modelSet === set.value).length,
+  })),
+  series: [
+    ...avatarSetIndex.sets.map((set) => ({
+      ...set,
+      type: "Avatar-Serie",
+      count: items.filter((item) => item.avatarSet === set.value).length,
+    })),
+    ...modelSetIndex.sets.map((set) => ({
+      ...set,
+      type: "Modell-Serie",
+      count: items.filter((item) => item.modelSet === set.value).length,
+    })),
+  ],
   items,
 };
 

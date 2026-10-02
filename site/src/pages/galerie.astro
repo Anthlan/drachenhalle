@@ -29,7 +29,11 @@ const people = [...new Set(galleryItems.flatMap((item) => item.people))].sort((l
   left.localeCompare(right, "de"),
 );
 const styles = galleryData.styles;
-const avatarSets = galleryData.avatarSets ?? [];
+const imageSeries = (galleryData.series ?? []).filter((series) => series.count > 0);
+const seriesGroups = [...new Set(imageSeries.map((series) => series.type))].map((type) => ({
+  type,
+  items: imageSeries.filter((series) => series.type === type),
+}));
 const chatAndReactionImageCount = galleryItems.filter((item) =>
   ["Chatbild", "Reaktionsbild"].includes(item.category),
 ).length;
@@ -128,11 +132,15 @@ const originalMimeType = (item) => {
             </div>
 
             <div class="gallery-select-filter">
-              <label for="avatar-set-filter">Avatar-Serie</label>
-              <select id="avatar-set-filter">
+              <label for="series-filter">Serie</label>
+              <select id="series-filter">
                 <option value="all">Alle Serien</option>
-                {avatarSets.map((set) => (
-                  <option value={set.value}>{set.label} ({set.count})</option>
+                {seriesGroups.map((group) => (
+                  <optgroup label={group.type === "Avatar-Serie" ? "Avatar-Serien" : "Modell-Serien"}>
+                    {group.items.map((series) => (
+                      <option value={series.value}>{series.label} ({series.count})</option>
+                    ))}
+                  </optgroup>
                 ))}
               </select>
             </div>
@@ -162,9 +170,10 @@ const originalMimeType = (item) => {
                 data-people={item.people.join("|")}
                 data-style={item.style ?? ""}
                 data-style-label={item.styleLabel ?? ""}
-                data-avatar-set={item.avatarSet ?? ""}
-                data-avatar-set-label={item.avatarSetLabel ?? ""}
-                data-avatar-set-status={item.avatarSetStatus ?? ""}
+                data-series={item.series ?? ""}
+                data-series-label={item.seriesLabel ?? ""}
+                data-series-status={item.seriesStatus ?? ""}
+                data-series-type={item.seriesType ?? ""}
                 data-title={item.title}
                 data-date={item.date ?? ""}
                 data-date-label={formatDate(item.date)}
@@ -186,7 +195,7 @@ const originalMimeType = (item) => {
                     <span class="gallery-badges">
                       <span class="category-badge">{item.category}</span>
                       {item.style && <span class="style-badge" title={item.styleLabel}>{item.style}</span>}
-                      {item.avatarSet && <span class="style-badge" title={item.avatarSetLabel}>{item.avatarSet}</span>}
+                      {item.series && <span class="style-badge" title={item.seriesLabel}>{item.series}</span>}
                     </span>
                   </div>
                   <div class="card-copy">
@@ -265,7 +274,7 @@ const originalMimeType = (item) => {
               <div><dt>Personen</dt><dd id="detail-people"></dd></div>
               <div><dt>Datum</dt><dd id="detail-date"></dd></div>
               <div id="detail-style-row"><dt>Stil</dt><dd id="detail-style"></dd></div>
-              <div id="detail-avatar-set-row"><dt>Avatar-Serie</dt><dd id="detail-avatar-set"></dd></div>
+              <div id="detail-series-row"><dt>Serie</dt><dd id="detail-series"></dd></div>
             </dl>
             <div class="dialog-image-actions" aria-label="Bildaktionen">
               <button class="detail-share" id="detail-share" type="button" data-share-image aria-label="Bild teilen" title="Teilen">
@@ -294,7 +303,7 @@ const originalMimeType = (item) => {
       const categoryButtons = [...document.querySelectorAll(".category-chip[data-category]")];
       const peopleFilter = document.querySelector("#people-filter");
       const styleFilter = document.querySelector("#style-filter");
-      const avatarSetFilter = document.querySelector("#avatar-set-filter");
+      const seriesFilter = document.querySelector("#series-filter");
       const resultCount = document.querySelector("#result-count");
       const filterShare = document.querySelector(".gallery-filter-share");
       const emptyState = document.querySelector("#gallery-empty");
@@ -306,8 +315,8 @@ const originalMimeType = (item) => {
       const detailDate = document.querySelector("#detail-date");
       const detailStyle = document.querySelector("#detail-style");
       const detailStyleRow = document.querySelector("#detail-style-row");
-      const detailAvatarSet = document.querySelector("#detail-avatar-set");
-      const detailAvatarSetRow = document.querySelector("#detail-avatar-set-row");
+      const detailSeries = document.querySelector("#detail-series");
+      const detailSeriesRow = document.querySelector("#detail-series-row");
       const detailOriginal = document.querySelector("#detail-original");
       const detailShare = document.querySelector("#detail-share");
       const detailDownload = document.querySelector("#detail-download");
@@ -324,7 +333,7 @@ const originalMimeType = (item) => {
         if (selectedCategory !== "all") url.searchParams.set("kategorie", selectedCategory);
         if (peopleFilter.value !== "all") url.searchParams.set("person", peopleFilter.value);
         if (styleFilter.value !== "all") url.searchParams.set("stil", styleFilter.value);
-        if (avatarSetFilter.value !== "all") url.searchParams.set("serie", avatarSetFilter.value);
+        if (seriesFilter.value !== "all") url.searchParams.set("serie", seriesFilter.value);
         url.hash = hash;
 
         return `${url.pathname}${url.search}${url.hash}`;
@@ -368,8 +377,8 @@ const originalMimeType = (item) => {
           const people = (card.dataset.people ?? "").split("|").filter(Boolean);
           const personMatches = selectedPerson === "all" || people.includes(selectedPerson);
           const styleMatches = selectedStyle === "all" || card.dataset.style === selectedStyle;
-          const avatarSetMatches = avatarSetFilter.value === "all" || card.dataset.avatarSet === avatarSetFilter.value;
-          const visible = categoryMatches && personMatches && styleMatches && avatarSetMatches;
+          const seriesMatches = seriesFilter.value === "all" || card.dataset.series === seriesFilter.value;
+          const visible = categoryMatches && personMatches && styleMatches && seriesMatches;
           card.hidden = !visible;
           return visible;
         });
@@ -390,10 +399,10 @@ const originalMimeType = (item) => {
         const hasStyle = Boolean(card.dataset.style);
         detailStyleRow.hidden = !hasStyle;
         detailStyle.textContent = hasStyle ? `${card.dataset.style} – ${card.dataset.styleLabel}` : "";
-        const hasAvatarSet = Boolean(card.dataset.avatarSet);
-        detailAvatarSetRow.hidden = !hasAvatarSet;
-        detailAvatarSet.textContent = hasAvatarSet
-          ? `${card.dataset.avatarSetLabel} · ${card.dataset.avatarSetStatus}`
+        const hasSeries = Boolean(card.dataset.series);
+        detailSeriesRow.hidden = !hasSeries;
+        detailSeries.textContent = hasSeries
+          ? `${card.dataset.seriesLabel} · ${card.dataset.seriesStatus}`
           : "";
         detailOriginal.href = card.dataset.original;
         detailShare.dataset.shareUrl = card.dataset.pageUrl;
@@ -422,7 +431,7 @@ const originalMimeType = (item) => {
 
       peopleFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
       styleFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
-      avatarSetFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
+      seriesFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
       cards.forEach((card) => {
         card.querySelector(".gallery-open").addEventListener("click", () => showCard(card));
       });
@@ -431,7 +440,7 @@ const originalMimeType = (item) => {
       const initialCategory = initialParams.get("kategorie");
       const initialPerson = initialParams.get("person");
       const initialStyle = initialParams.get("stil");
-      const initialAvatarSet = initialParams.get("serie");
+      const initialSeries = initialParams.get("serie");
 
       if (initialCategory && categoryButtons.some((button) => button.dataset.category === initialCategory)) {
         selectedCategory = initialCategory;
@@ -442,8 +451,8 @@ const originalMimeType = (item) => {
       if (initialStyle && [...styleFilter.options].some((option) => option.value === initialStyle)) {
         styleFilter.value = initialStyle;
       }
-      if (initialAvatarSet && [...avatarSetFilter.options].some((option) => option.value === initialAvatarSet)) {
-        avatarSetFilter.value = initialAvatarSet;
+      if (initialSeries && [...seriesFilter.options].some((option) => option.value === initialSeries)) {
+        seriesFilter.value = initialSeries;
       }
 
       updateCategoryButtons();

@@ -47,7 +47,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
             </div>
             <p>
               Prüfe, was dein Münz- und Gutscheinbestand statistisch wert ist, und vergleiche den
-              Casino-Weg mit einem garantierten Direktkauf.
+              Casino-Weg mit einem gezielten Nachkauf der erwarteten Restlücke.
             </p>
             <div class="flight-hero-actions">
               <a href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Event-Guide öffnen →</a>
@@ -70,7 +70,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
             <i aria-hidden="true">→</i>
             <div><span>02</span><strong>Prognose</strong><small>Chance &amp; Streuung</small></div>
             <i aria-hidden="true">→</i>
-            <div class="is-result"><span>03</span><strong>Kaufplan</strong><small>Casino oder sicher</small></div>
+            <div class="is-result"><span>03</span><strong>Kaufplan</strong><small>Casino oder direkt</small></div>
           </div>
         </header>
 
@@ -146,14 +146,17 @@ import SiteHeader from "../../components/SiteHeader.astro";
               </div>
             </fieldset>
 
-            <div class="tool-memory-actions flight-memory-actions">
-              <button type="button" class="tool-memory-button" data-flight-save>Eventstand speichern</button>
-              <button type="button" class="tool-memory-reset" data-flight-clear hidden>Gespeicherte Werte löschen</button>
-              <p class="tool-memory-status" role="status" aria-live="polite" data-flight-storage-status>Nur auf diesem Gerät gespeichert.</p>
+            <div class="flight-form-footer">
+              <div class="tool-memory-actions flight-memory-actions">
+                <button type="button" class="tool-memory-button" data-flight-save>Eventstand speichern</button>
+                <button type="button" class="tool-memory-reset" data-flight-clear hidden>Gespeicherte Werte löschen</button>
+                <p class="tool-memory-status" role="status" aria-live="polite" data-flight-storage-status>Nur auf diesem Gerät gespeichert.</p>
+              </div>
+              <div class="flight-form-submit-group">
+                <p class="tool-error" role="alert" data-flight-event-error hidden></p>
+                <button class="tool-primary-button flight-submit" type="submit">Flugplan berechnen →</button>
+              </div>
             </div>
-
-            <p class="tool-error" role="alert" data-flight-event-error hidden></p>
-            <button class="tool-submit flight-submit" type="submit">Flugplan berechnen →</button>
           </form>
 
           <section class="flight-result" data-flight-event-result data-state="concerned" aria-live="polite">
@@ -177,14 +180,21 @@ import SiteHeader from "../../components/SiteHeader.astro";
             </div>
 
             <article class="flight-inventory-projection">
-              <div>
-                <p class="eyebrow">Ohne Echtgeld</p>
-                <h3>Dein vorhandener Flugplan</h3>
+              <div class="flight-inventory-copy">
+                <p class="eyebrow">Deine Basis ohne Nachkauf</p>
+                <h3>Was dein Bestand voraussichtlich erreicht</h3>
+                <p class="flight-basis-equation">
+                  <span><strong data-flight-current-vouchers>0</strong> vorhandene Gutscheine</span>
+                  <b aria-hidden="true">+</b>
+                  <span><strong data-flight-coin-expected>0</strong> erwartbar aus Münzen</span>
+                  <b aria-hidden="true">=</b>
+                  <span class="is-total"><strong data-flight-current-expected>0</strong> erwartbarer Endstand</span>
+                </p>
               </div>
               <dl>
-                <div><dt>Erwartet</dt><dd data-flight-current-expected>0</dd></div>
                 <div><dt>Typischer Korridor</dt><dd data-flight-current-range>0–0</dd></div>
                 <div><dt>Zielchance</dt><dd data-flight-current-chance>0 %</dd></div>
+                <div><dt>Erwartete Restlücke</dt><dd data-flight-direct-gap>0 Gutscheine</dd></div>
               </dl>
             </article>
 
@@ -204,11 +214,12 @@ import SiteHeader from "../../components/SiteHeader.astro";
 
               <article class="flight-route-card is-direct">
                 <div class="flight-route-icon" aria-hidden="true">🎟️</div>
-                <p class="eyebrow">Planbar bis zum Ziel</p>
-                <h3>Direkter Gutscheinweg</h3>
+                <p class="eyebrow">Erwartete Restlücke schließen</p>
+                <h3>Gutschein-Nachkauf</h3>
                 <strong class="flight-route-price" data-flight-direct-cost>–</strong>
                 <p data-flight-direct-outcome></p>
                 <p class="flight-package-plan" data-flight-direct-plan></p>
+                <p class="flight-route-note">Die Rechnung nutzt deinen erwartbaren Münzertrag. Drehe vorhandene Münzen zuerst und kaufe anschließend nur die tatsächlich verbliebene Differenz.</p>
               </article>
             </div>
 

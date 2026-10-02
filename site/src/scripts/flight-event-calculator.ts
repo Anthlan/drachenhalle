@@ -95,6 +95,16 @@ export const casinoProjection = (coins: number, milestones = true, centralConfid
   };
 };
 
+export const expectedVoucherGap = (
+  targetVouchers: number,
+  securedVouchers: number,
+  availableCoins: number,
+  milestones = true,
+) => Math.max(
+  0,
+  Math.ceil(targetVouchers - securedVouchers - casinoProjection(availableCoins, milestones).expected),
+);
+
 const erf = (value: number) => {
   const sign = value < 0 ? -1 : 1;
   const x = Math.abs(value);
@@ -330,8 +340,12 @@ export const initializeFlightEventCalculator = () => {
       ? null
       : optimizePackagePurchase(COIN_PACKAGES, windows, Math.max(0, confidenceCoinTarget - availableCoins));
 
-    const guaranteedFromAvailableCoins = casinoProjection(availableCoins, includeMilestones).guaranteed;
-    const directGap = Math.max(0, targetVouchers - securedVouchers - guaranteedFromAvailableCoins);
+    const directGap = expectedVoucherGap(
+      targetVouchers,
+      securedVouchers,
+      availableCoins,
+      includeMilestones,
+    );
     const directPlan = optimizePackagePurchase(VOUCHER_PACKAGES, windows, directGap);
 
     const plannedCasinoCoins = availableCoins + (confidenceCoinPlan?.units ?? 0);
@@ -357,9 +371,12 @@ export const initializeFlightEventCalculator = () => {
     setText(result, "[data-flight-windows]", `${windows}`);
     setText(result, "[data-flight-free-coins]", `${futureCoins}`);
     setText(result, "[data-flight-free-vouchers]", `${futureVouchers + diamondVouchers}`);
+    setText(result, "[data-flight-current-vouchers]", formatInteger(securedVouchers));
+    setText(result, "[data-flight-coin-expected]", formatInteger(currentProjection.expected));
     setText(result, "[data-flight-current-expected]", formatInteger(currentTotalExpected));
     setText(result, "[data-flight-current-range]", `${formatInteger(securedVouchers + currentProjection.low)}–${formatInteger(securedVouchers + currentProjection.high)}`);
     setText(result, "[data-flight-current-chance]", formatPercent(currentProbability));
+    setText(result, "[data-flight-direct-gap]", `${formatInteger(directGap)} Gutscheine`);
 
     const casinoRange = meanCoinPlan && confidenceCoinPlan
       ? `${formatEuro(meanCoinPlan.costCents)}–${formatEuro(confidenceCoinPlan.costCents)}`
@@ -381,17 +398,21 @@ export const initializeFlightEventCalculator = () => {
       result,
       "[data-flight-direct-outcome]",
       directPlan
-        ? `${formatInteger(securedVouchers + guaranteedFromAvailableCoins + directPlan.units)} Gutscheine sicher`
-        : "Die verbleibenden Tageslimits reichen für eine Garantie nicht aus.",
+        ? directGap > 0
+          ? `${formatInteger(directGap)} Gutscheine fehlen nach dem erwartbaren Ertrag.`
+          : "Dein erwartbarer Ertrag erreicht das Ziel bereits."
+        : "Die erwartete Restlücke lässt sich innerhalb der verbleibenden Tageslimits nicht vollständig kaufen.",
     );
     setText(result, "[data-flight-direct-plan]", describePlan(directPlan, VOUCHER_PACKAGES));
 
     const recommendation = currentProbability >= confidence
       ? "Nutze zuerst deine vorhandenen und kostenlosen Münzen. Ein Echtgeldkauf ist für die gewählte Sicherheit aktuell nicht nötig."
+      : directGap === 0
+        ? "Der Erwartungswert reicht bereits für dein Ziel. Drehe zuerst deine vorhandenen Münzen und prüfe danach, ob überhaupt noch eine Restlücke besteht."
       : confidenceCoinPlan && (!directPlan || confidenceCoinPlan.costCents < directPlan.costCents)
         ? "Münzen bieten den günstigeren statistischen Kurs. Drehe sie zuerst und kaufe erst danach eine tatsächlich verbliebene Gutscheinlücke direkt."
         : directPlan
-          ? "Für dieses Ziel ist der direkte Gutscheinweg planbarer. Casino-Münzen können die Kosten senken, ersetzen aber keine Garantie."
+          ? "Für dieses Ziel ist der direkte Nachkauf der erwarteten Restlücke planbarer. Drehe vorhandene Münzen zuerst, denn die tatsächliche Lücke kann kleiner oder größer ausfallen."
           : "Mit den verbleibenden Kaufperioden ist das Ziel weder statistisch vorsichtig noch garantiert vollständig planbar.";
     setText(result, "[data-flight-recommendation]", recommendation);
 

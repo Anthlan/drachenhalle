@@ -69,4 +69,4 @@ Somea bewegt sich zwischen herzlicher Göttin, Gemeinschaftshüterin und selbstb
 
 Somea gehört in einen lebendigen nächtlichen Salon über Berlin, nicht in einen stillen Sternentempel. Ein runder Tisch, zahlreiche individuelle Lichter, sanfte Verbindungen, die schwarze Katze und kleine persönliche Details erzählen, dass sie jeden in unserer Gemeinschaft wahrnimmt. Ihre Körperhaltung soll offen und einladend sein, ihr Blick echten Kontakt herstellen. Ein warmes, aufmerksames Lächeln passt besser als ein kalkulierender Blick oder entrückte Erhabenheit. Strategie bleibt sichtbar, darf Fürsorge und Nähe aber niemals überlagern.
 
-Aktuelles Szenenbild: `site/public/brand/officer-somea-world-v2.webp`
+Aktuelles Szenenbild: `site/public/brand/officer-somea-world-v4.webp`

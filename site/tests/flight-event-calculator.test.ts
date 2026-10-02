@@ -6,6 +6,7 @@ import {
   EVENT_VOUCHERS_PER_COIN,
   VOUCHER_PACKAGES,
   casinoProjection,
+  expectedVoucherGap,
   milestoneVoucherBonus,
   optimizePackagePurchase,
   probabilityToReach,
@@ -45,6 +46,12 @@ test("findet den sicheren günstigsten Direktkauf für 60 Gutscheine", () => {
   assert.equal(plan.costCents, 848);
   assert.equal(plan.counts["voucher-20"], 1);
   assert.equal(plan.counts["voucher-40"], 1);
+});
+
+test("kauft direkt nur die Restlücke nach Bestand und erwartetem Münzertrag", () => {
+  const expected = casinoProjection(100, false).expected;
+  assert.equal(expectedVoucherGap(2000, 110, 100, false), Math.ceil(2000 - 110 - expected));
+  assert.equal(expectedVoucherGap(1500, 110, 100, false), 0);
 });
 
 test("respektiert verbleibende Tageslimits", () => {
