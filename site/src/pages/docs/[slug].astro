@@ -162,13 +162,16 @@ const leadershipProfiles = [
     name: "Drachenherz",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "Drachenherz"),
-    characterImageUrl: latestPersonImage("Charaktermodell", "Drachenherz"),
+    characterImageUrl: "/drachenhalle/brand/officer-drachenherz-world.webp",
+    characterImageAlt: "Drachenherz als Drachenstimme des grünen Schildes im schützenden Hain seiner lebenden Bastion",
+    cardTheme: "drachenherz",
     alterEgo: {
-      title: "Der smaragdgezeichnete Ritter",
-      summary: "Ein erfahrener Ritter, dessen Drachenmal für Standfestigkeit, Weitblick und die Kraft gemeinsamer Taten steht.",
-      archetype: "Drachengezeichneter Ritter",
-      hallmark: "Smaragdgrüne Schuppen und weiß-grüne Gewänder",
-      presence: "Besonnen, standfest und tatkräftig",
+      title: "Die Drachenstimme des grünen Schildes",
+      summary: "Drachenherz trägt die Stimme der Drachen als Versprechen: Er tritt vor, wenn andere Schutz benötigen, stärkt seine Gefährten und hilft, ohne nach dem eigenen Vorteil zu fragen. Hinter seiner ruhigen Stärke lebt eine warmherzige, naturverbundene Seele, die lieber gemeinsam handelt als sich selbst in den Mittelpunkt zu stellen.",
+      archetype: "Standhafter Schutzkleriker und gute Seele unserer Gemeinschaft",
+      hallmark: "Dunkelgrüne Schuppenrüstung, Drachenknochenschwert, Kräutertasche und smaragdener Schutzsegen",
+      presence: "Ruhig, beschützend, selbstlos und warmherzig",
+      world: "Der Hain der Drachenstimme",
     },
   },
   {
@@ -616,6 +619,7 @@ const responsibilities = [
                           "is-mysteryz": officer.cardTheme === "mysteryz",
                           "is-somea": officer.cardTheme === "somea",
                           "is-davinci1986": officer.cardTheme === "davinci1986",
+                          "is-drachenherz": officer.cardTheme === "drachenherz",
                         },
                       ]}
                       data-officer-open={`officer-dialog-${officer.id}`}
@@ -651,6 +655,7 @@ const responsibilities = [
                         "is-mysteryz": officer.cardTheme === "mysteryz",
                         "is-somea": officer.cardTheme === "somea",
                         "is-davinci1986": officer.cardTheme === "davinci1986",
+                        "is-drachenherz": officer.cardTheme === "drachenherz",
                       },
                     ]}
                     data-officer-dialog

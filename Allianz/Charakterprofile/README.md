@@ -10,6 +10,7 @@ Die Aussagen beziehen sich ausschließlich auf die fiktive Darstellung innerhalb
 - [mysteryZ](mysteryZ.md)
 - [Somea](Somea.md)
 - [DaVinci1986](DaVinci1986.md)
+- [Drachenherz](Drachenherz.md)
 
 ## Empfohlene Struktur für weitere Profile
 

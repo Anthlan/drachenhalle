@@ -1,0 +1,33 @@
+$ pnpm run content
+$ pnpm run gallery && pnpm run docs && pnpm run news && pnpm run events && pnpm run changelog && pnpm run map
+$ node scripts/generate-gallery.mjs
+Gallery ready: 198 originals (504.5 MB) → 396 web assets (62.7 MB); 4 hidden document assets
+$ node scripts/generate-docs.mjs
+Generated 42 documentation pages.
+$ node scripts/generate-news.mjs
+Generated 3 news articles.
+$ node scripts/generate-events.mjs
+Generated 68 events.
+$ node scripts/generate-changelog.mjs
+Changelog ready: Remove milestone voucher assumptions
+$ node scripts/generate-map.mjs
+Durch bestätigte Grenzen vollständig ersetzte Automatikgebiete: G068, G069
+Vektor-Ratskarte erzeugt: 10 bestätigte Gebiete
+$ astro dev "--host" "127.0.0.1" "--force"
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Generated 2ms","label":"types","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Re-optimizing dependencies because vite config has changed","label":"vite","level":"info"}
+{"message":" astro  v7.3.4 ready in 727 ms\n┃ Local    http://127.0.0.1:4321/drachenhalle","label":"SKIP_FORMAT","level":"info"}
+{"message":"watching for file changes...","label":null,"level":"info"}
+{"message":"[200] /docs/unsere-offiziere/ 111ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 68ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 3ms","label":null,"level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 60ms","label":null,"level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 49ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 2ms","label":null,"level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 53ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 3ms","label":null,"level":"info"}

@@ -3,6 +3,61 @@ import "../../styles/global.css";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+
+const shopPages = [
+  {
+    id: "exklusiv",
+    label: "Exklusiv",
+    eyebrow: "Tagesangebote & Sammlerstücke",
+    image: "/drachenhalle/brand/event-shop/vorratsdepot-exklusiv.png",
+    imageAlt: "Ingame-Vorratsdepot mit exklusiven Belohnungen und Tagesangeboten",
+    rewards: [
+      { id: "ur-splitter", name: "UR-Omni-Heldensplitter", unit: "10 Splitter", price: 60, max: 1, limit: "Heute übrig: 1", x: 17, y: 46 },
+      { id: "deluxe-truhe", name: "Optionale Deluxe-Truhe", unit: "1 Truhe", price: 100, max: 1, limit: "Heute übrig: 1", x: 50, y: 46 },
+      { id: "vibranium", name: "Vibranium-Verteidigungslinie", unit: "1 Skin", price: 4000, max: 1, limit: "Maximal 1", x: 83, y: 46, premium: true },
+      { id: "hologramm", name: "Holografische Dekoration", unit: "1 Dekoration", price: 2000, max: 1, limit: "Maximal 1", x: 17, y: 64 },
+      { id: "flugzeug-deko", name: "Flugzeug-Dekoration", unit: "1 Dekoration", price: 2000, max: 1, limit: "Maximal 1", x: 50, y: 64 },
+      { id: "avatarrahmen", name: "Event-Avatarrahmen", unit: "1 Rahmen", price: 800, max: 1, limit: "Maximal 1", x: 83, y: 64 },
+      { id: "namensschild", name: "Event-Namensschild", unit: "1 Namensschild", price: 200, max: 1, limit: "Maximal 1", x: 17, y: 81 },
+      { id: "gebaeudeteil-a", name: "Gebäudeteil A", unit: "1 Teil", price: 100, max: 80, limit: "Maximal 80", x: 50, y: 81 },
+      { id: "gebaeudeteil-b", name: "Gebäudeteil B", unit: "1 Teil", price: 100, max: 80, limit: "Maximal 80", x: 83, y: 81 },
+    ],
+  },
+  {
+    id: "ausbau",
+    label: "Ausbau",
+    eyebrow: "Fragmente, Baupläne & Ressourcen",
+    image: "/drachenhalle/brand/event-shop/vorratsdepot-ausbau.png",
+    imageAlt: "Ingame-Vorratsdepot mit Ausbaugegenständen und Ressourcen",
+    rewards: [
+      { id: "gebaeudeteil-c", name: "Gebäudeteil C", unit: "1 Teil", price: 40, max: 80, limit: "Maximal 80", x: 17, y: 43 },
+      { id: "event-zufallstruhe", name: "Event-Zufallstruhe", unit: "1 Truhe", price: 100, max: 30, limit: "Maximal 30", x: 50, y: 43 },
+      { id: "deko-gutscheine", name: "Dekorationsgutscheine", unit: "100 Gutscheine", price: 80, max: 100, limit: "Maximal 100", x: 83, y: 43 },
+      { id: "puzzleteil", name: "Goldenes Puzzleteil", unit: "1 Teil", price: 16, max: 300, limit: "Maximal 300", x: 17, y: 61 },
+      { id: "bauplan-rot", name: "Roter Bauplan", unit: "1 Bauplan", price: 300, max: 10, limit: "Maximal 10", x: 50, y: 61 },
+      { id: "bauplan-gold", name: "Goldener Bauplan", unit: "1 Bauplan", price: 60, max: 100, limit: "Maximal 100", x: 83, y: 61 },
+      { id: "ur-truhe", name: "UR-Auswahltruhe", unit: "1 Truhe", price: 300, max: 5, limit: "Maximal 5", x: 17, y: 79 },
+      { id: "holz", name: "Holz", unit: "100 Holz", price: 60, max: 200, limit: "Maximal 200", x: 50, y: 79 },
+      { id: "fortschrittsbuch", name: "Fortschrittsbücher", unit: "100 Bücher", price: 40, max: 200, limit: "Maximal 200", x: 83, y: 79 },
+    ],
+  },
+  {
+    id: "material",
+    label: "Material",
+    eyebrow: "Beschleuniger & Verbrauchsmaterial",
+    image: "/drachenhalle/brand/event-shop/vorratsdepot-material.png",
+    imageAlt: "Ingame-Vorratsdepot mit Beschleunigern, Kisten und Verbrauchsmaterial",
+    rewards: [
+      { id: "beschleuniger-3h", name: "3-Stunden-Beschleuniger", unit: "1 Beschleuniger", price: 16, max: 200, limit: "Maximal 200", x: 17, y: 44 },
+      { id: "flugmaterial", name: "Flugmaterial", unit: "10.000 Material", price: 16, max: 100, limit: "Maximal 100", x: 50, y: 44 },
+      { id: "fortschrittskiste-a", name: "Fortschrittskiste A", unit: "1 Truhe", price: 8, max: 1000, limit: "Maximal 1.000", x: 83, y: 44 },
+      { id: "fortschrittskiste-b", name: "Fortschrittskiste B", unit: "1 Truhe", price: 8, max: 1000, limit: "Maximal 1.000", x: 17, y: 64 },
+      { id: "metallspulen", name: "Metallspulen", unit: "100 Spulen", price: 4, max: 1000, limit: "Maximal 1.000", x: 50, y: 64 },
+      { id: "handbuecher", name: "Trainingshandbücher", unit: "100 Bücher", price: 4, max: 1000, limit: "Maximal 1.000", x: 83, y: 64 },
+      { id: "versorgungskisten", name: "Versorgungskisten", unit: "10 Kisten", price: 40, max: 1000, limit: "Maximal 1.000", x: 17, y: 83 },
+    ],
+  },
+];
 ---
 
 <!doctype html>
@@ -104,7 +159,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
                 <div class="flight-target-field">
                   <label for="flight-target-vouchers">Gutscheinziel</label>
                   <div class="flight-target-control">
-                    <input id="flight-target-vouchers" name="targetVouchers" type="number" min="1" max="99999" step="1" value="4000" inputmode="numeric" />
+                    <input id="flight-target-vouchers" name="targetVouchers" type="number" min="1" max="999999" step="1" value="4000" inputmode="numeric" />
                     <button
                       type="button"
                       data-flight-target-open
@@ -322,31 +377,95 @@ import SiteHeader from "../../components/SiteHeader.astro";
             <header class="healing-help-heading tool-info-dialog-header">
               <div>
                 <p class="eyebrow">Zielvorgabe</p>
-                <h2 id="flight-target-title">Was möchtest du erreichen?</h2>
-                <p>Wähle ein dokumentiertes Einzelziel. Der Wert wird direkt in den Planer übernommen.</p>
+                <h2 id="flight-target-title">Stelle dein Ziel zusammen</h2>
+                <p>Wähle deine gewünschten Belohnungen wie im Vorratsdepot. Preis und Kaufmaximum stammen aus den drei dokumentierten Shop-Seiten.</p>
               </div>
               <button class="healing-help-close" type="button" aria-label="Zielauswahl schließen" title="Schließen" data-flight-target-close>×</button>
             </header>
 
-            <div class="flight-target-options">
-              <button type="button" data-flight-target-value="60">
-                <span class="flight-target-cost">60</span>
-                <strong>10 UR-Omni-Heldensplitter</strong>
-                <small>Einmaliges Tagesangebot</small>
-              </button>
-              <button type="button" data-flight-target-value="100">
-                <span class="flight-target-cost">100</span>
-                <strong>Optionale Deluxe-Truhe</strong>
-                <small>Einmaliges Tagesangebot</small>
-              </button>
-              <button type="button" data-flight-target-value="4000" class="is-premium">
-                <span class="flight-target-cost">4.000</span>
-                <strong>Vibranium-Verteidigungslinie</strong>
-                <small>Exklusive Eventbelohnung</small>
-              </button>
+            <div class="flight-shop-tabs" role="tablist" aria-label="Bereiche des Vorratsdepots">
+              {shopPages.map((page, index) => (
+                <button
+                  type="button"
+                  role="tab"
+                  id={`flight-shop-tab-${page.id}`}
+                  aria-controls={`flight-shop-panel-${page.id}`}
+                  aria-selected={index === 0 ? "true" : "false"}
+                  tabindex={index === 0 ? 0 : -1}
+                  data-flight-shop-tab={page.id}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{page.label}</strong>
+                </button>
+              ))}
             </div>
 
-            <p class="flight-target-future"><strong>Nächster Ausbauschritt:</strong> mehrere Belohnungen und Tageskäufe kombinieren; das Gesamtziel wird anschließend automatisch summiert.</p>
+            <div class="flight-shop-pages">
+              {shopPages.map((page, pageIndex) => (
+                <section
+                  class="flight-shop-page"
+                  id={`flight-shop-panel-${page.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`flight-shop-tab-${page.id}`}
+                  data-flight-shop-panel={page.id}
+                  hidden={pageIndex !== 0}
+                >
+                  <figure class="flight-shop-reference">
+                    <img src={page.image} alt={page.imageAlt} width="1170" height="2532" loading="lazy" />
+                    <figcaption>
+                      <span class="eyebrow">Ingame-Referenz</span>
+                      <strong>{page.eyebrow}</strong>
+                      <small>Die Auswahl darunter übernimmt Aufbau, Preise und Limits dieser Shop-Seite.</small>
+                    </figcaption>
+                  </figure>
+
+                  <div class="flight-shop-grid">
+                    {page.rewards.map((reward) => (
+                      <article class:list={["flight-shop-item", reward.premium && "is-premium"]}>
+                        <div
+                          class="flight-shop-item-art"
+                          style={`--shop-image: url('${page.image}'); --shop-x: ${reward.x}%; --shop-y: ${reward.y}%;`}
+                          aria-hidden="true"
+                        ></div>
+                        <div class="flight-shop-item-copy">
+                          <span>{reward.unit}</span>
+                          <strong>{reward.name}</strong>
+                          <small>{reward.limit}</small>
+                        </div>
+                        <label>
+                          <span>Menge</span>
+                          <input
+                            type="number"
+                            min="0"
+                            max={reward.max}
+                            step="1"
+                            value="0"
+                            inputmode="numeric"
+                            data-flight-reward-quantity
+                            data-reward-id={reward.id}
+                            data-price={reward.price}
+                            aria-label={`Gewünschte Menge ${reward.name}`}
+                          />
+                        </label>
+                        <p><strong>{reward.price.toLocaleString("de-DE")}</strong><span>Gutscheine je Kauf</span></p>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+
+            <footer class="flight-shop-total">
+              <div>
+                <span>Dein zusammengestelltes Gutscheinziel</span>
+                <strong><output data-flight-target-total>0</output> Vorratsgutscheine</strong>
+                <small data-flight-target-selection>Noch keine Belohnung ausgewählt.</small>
+              </div>
+              <div class="flight-shop-total-actions">
+                <button type="button" class="tool-memory-reset" data-flight-target-reset>Auswahl leeren</button>
+                <button type="button" class="tool-primary-button" data-flight-target-apply disabled>Ziel übernehmen →</button>
+              </div>
+            </footer>
           </div>
         </dialog>
       </main>
@@ -371,6 +490,13 @@ import SiteHeader from "../../components/SiteHeader.astro";
       const targetCloseButton = document.querySelector("[data-flight-target-close]");
       const targetInput = document.querySelector("input[name='targetVouchers']");
       const flightForm = document.querySelector("[data-flight-event-form]");
+      const shopTabs = Array.from(document.querySelectorAll("[data-flight-shop-tab]"));
+      const shopPanels = Array.from(document.querySelectorAll("[data-flight-shop-panel]"));
+      const rewardInputs = Array.from(document.querySelectorAll("[data-flight-reward-quantity]"));
+      const targetTotal = document.querySelector("[data-flight-target-total]");
+      const targetSelection = document.querySelector("[data-flight-target-selection]");
+      const targetApplyButton = document.querySelector("[data-flight-target-apply]");
+      const targetResetButton = document.querySelector("[data-flight-target-reset]");
 
       if (dialog instanceof HTMLDialogElement) {
         openButton?.addEventListener("click", () => dialog.showModal());
@@ -381,20 +507,82 @@ import SiteHeader from "../../components/SiteHeader.astro";
       }
 
       if (targetDialog instanceof HTMLDialogElement) {
-        targetOpenButton?.addEventListener("click", () => targetDialog.showModal());
+        const activateShopPage = (pageId: string) => {
+          shopTabs.forEach((tab) => {
+            if (!(tab instanceof HTMLButtonElement)) return;
+            const active = tab.dataset.flightShopTab === pageId;
+            tab.setAttribute("aria-selected", active ? "true" : "false");
+            tab.tabIndex = active ? 0 : -1;
+          });
+          shopPanels.forEach((panel) => {
+            if (panel instanceof HTMLElement) panel.hidden = panel.dataset.flightShopPanel !== pageId;
+          });
+        };
+
+        const updateTargetTotal = () => {
+          let total = 0;
+          let selectedRewards = 0;
+          let selectedPurchases = 0;
+
+          rewardInputs.forEach((field) => {
+            if (!(field instanceof HTMLInputElement)) return;
+            const maximum = Number(field.max || 0);
+            const amount = Math.max(0, Math.min(maximum, Math.floor(Number(field.value) || 0)));
+            if (String(amount) !== field.value) field.value = String(amount);
+            if (amount > 0) {
+              selectedRewards += 1;
+              selectedPurchases += amount;
+              total += amount * Number(field.dataset.price || 0);
+            }
+          });
+
+          if (targetTotal instanceof HTMLOutputElement) targetTotal.value = total.toLocaleString("de-DE");
+          if (targetSelection instanceof HTMLElement) {
+            targetSelection.textContent = selectedRewards > 0
+              ? `${selectedRewards} Belohnungsarten · ${selectedPurchases.toLocaleString("de-DE")} Käufe ausgewählt`
+              : "Noch keine Belohnung ausgewählt.";
+          }
+          if (targetApplyButton instanceof HTMLButtonElement) targetApplyButton.disabled = total <= 0;
+          return total;
+        };
+
+        shopTabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            if (tab instanceof HTMLButtonElement) activateShopPage(tab.dataset.flightShopTab ?? "exklusiv");
+          });
+        });
+        rewardInputs.forEach((field) => field.addEventListener("input", updateTargetTotal));
+
+        targetOpenButton?.addEventListener("click", () => {
+          const hasSelection = rewardInputs.some((field) => field instanceof HTMLInputElement && Number(field.value) > 0);
+          if (!hasSelection && targetInput instanceof HTMLInputElement) {
+            const currentTarget = Number(targetInput.value);
+            const matchingReward = rewardInputs.find((field) => (
+              field instanceof HTMLInputElement && Number(field.dataset.price) === currentTarget
+            ));
+            if (matchingReward instanceof HTMLInputElement) matchingReward.value = "1";
+          }
+          updateTargetTotal();
+          targetDialog.showModal();
+        });
         targetCloseButton?.addEventListener("click", () => targetDialog.close());
+        targetResetButton?.addEventListener("click", () => {
+          rewardInputs.forEach((field) => {
+            if (field instanceof HTMLInputElement) field.value = "0";
+          });
+          updateTargetTotal();
+        });
+        targetApplyButton?.addEventListener("click", () => {
+          const total = updateTargetTotal();
+          if (total <= 0 || !(targetInput instanceof HTMLInputElement)) return;
+          targetInput.value = String(total);
+          targetDialog.close();
+          if (flightForm instanceof HTMLFormElement) flightForm.requestSubmit();
+        });
         targetDialog.addEventListener("click", (event) => {
           if (event.target === targetDialog) targetDialog.close();
         });
-        targetDialog.querySelectorAll("[data-flight-target-value]").forEach((button) => {
-          button.addEventListener("click", () => {
-            if (targetInput instanceof HTMLInputElement && button instanceof HTMLButtonElement) {
-              targetInput.value = button.dataset.flightTargetValue ?? targetInput.value;
-              targetDialog.close();
-              if (flightForm instanceof HTMLFormElement) flightForm.requestSubmit();
-            }
-          });
-        });
+        updateTargetTotal();
       }
     </script>
   </body>

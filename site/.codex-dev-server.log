@@ -1,0 +1,28 @@
+$ pnpm run content
+$ pnpm run gallery && pnpm run docs && pnpm run news && pnpm run events && pnpm run changelog && pnpm run map
+$ node scripts/generate-gallery.mjs
+Gallery ready: 198 originals (504.5 MB) → 396 web assets (62.7 MB); 4 hidden document assets
+$ node scripts/generate-docs.mjs
+Generated 42 documentation pages.
+$ node scripts/generate-news.mjs
+Generated 3 news articles.
+$ node scripts/generate-events.mjs
+Generated 68 events.
+$ node scripts/generate-changelog.mjs
+Changelog ready: Remove milestone voucher assumptions
+$ node scripts/generate-map.mjs
+Durch bestätigte Grenzen vollständig ersetzte Automatikgebiete: G068, G069
+Vektor-Ratskarte erzeugt: 10 bestätigte Gebiete
+$ astro dev "--host" "127.0.0.1"
+Another astro dev server is already running.
+
+  URL:  http://127.0.0.1:4321
+  PID:  146504
+
+Run `astro dev stop` to stop it, or use `astro dev --force` to replace it.
+  Location:
+    C:\Users\JohannesTausch\OneDrive\Documents\GitHub\zroute_die\site\node_modules\.pnpm\astro@7.3.4_@emnapi+core@1.11.1_@emnapi+runtime@1.11.3\node_modules\astro\dist\cli\dev\index.js:156:13
+  Stack trace:
+    at dev (file:///C:/Users/JohannesTausch/OneDrive/Documents/GitHub/zroute_die/site/node_modules/.pnpm/astro@7.3.4_@emnapi+core@1.11.1_@emnapi+runtime@1.11.3/node_modules/astro/dist/cli/dev/index.js:156:13)
+    at async cli (file:///C:/Users/JohannesTausch/OneDrive/Documents/GitHub/zroute_die/site/node_modules/.pnpm/astro@7.3.4_@emnapi+core@1.11.1_@emnapi+runtime@1.11.3/node_modules/astro/dist/cli/index.js:222:5)
+[ELIFECYCLE] Command failed with exit code 1.
