@@ -5,59 +5,77 @@ import SiteFooter from "../components/SiteFooter.astro";
 import gallery from "../data/gallery.generated.json";
 const victory = gallery.items.find(item => item.sourcePath.endsWith("2026_09_08_0951_WaechterSieg_Boshos_Drachenherz_Anthlan.png"));
 if (!victory) throw new Error("Das Wächter-Siegesbild fehlt in der Galerie.");
-// 03.10.2026 als Spieltag 83 ergibt einen angenommenen Start am 13.07.2026.
-// Frühere Siege sind bestätigt, ihre Datierungen und die Zehnerschritte angenommen.
-const estimatedDates = ["2026-07-14", "2026-07-15", "2026-07-17", "2026-07-19", "2026-07-22", "2026-07-25", "2026-07-29", "2026-08-02", "2026-08-07", "2026-08-13", "2026-08-20", "2026-08-28", "2026-09-05"];
-const estimatedTrophies = estimatedDates.map((date, index) => ({
-  level: (index + 1) * 10,
-  date,
-  label: new Intl.DateTimeFormat("de-DE", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T12:00:00Z`)),
-  title: `Unser erster ${ (index + 1) * 10 }er`,
-  story: "Diese Wächterstufe haben wir bereits bezwungen. Das genaue Datum des ersten Sieges ist nicht überliefert. Die Datierung ist rückblickend geschätzt: aus unseren 83 Spieltagen und dem bestätigten Sieg über Stufe 140 und 150 am 08. September 2026.",
-  image: false,
-  estimated: true,
-}));
-const confirmedTrophies = [
-  { level: 140, date: "2026-09-08", label: "08. September 2026", title: "Der erste Durchbruch", story: "Unser erster Wächter auf Stufe 140 fällt. Ein gemeinsamer Meilenstein – und noch am selben Tag gehen wir einen Schritt weiter.", image: true },
-  { level: 150, date: "2026-09-08", label: "08. September 2026", title: "Gemeinsam immer weiter", story: "Am selben Tag bezwingen wir zum ersten Mal einen Wächter auf Stufe 150. Das Siegesbild mit Boshos, Drachenherz und Anthlan hält diesen Moment fest: Geschafft! Teamwork!", image: true },
-  { level: 160, date: "2026-10-02", label: "02. Oktober 2026", title: "Ein neuer Höhepunkt", story: "Zum ersten Mal besiegt unsere Allianz einen Wächter auf Stufe 160. Die nächste Trophäe gehört uns – ein weiterer Erfolg unserer Gemeinschaft.", image: false },
-];
-const trophies = [...estimatedTrophies, ...confirmedTrophies.map(trophy => ({ ...trophy, estimated: false }))];
+const dates: Record<number, string> = {100:"2026-08-13",110:"2026-08-20",120:"2026-08-28",130:"2026-09-05",140:"2026-09-08",150:"2026-09-08",160:"2026-10-02"};
+const trophies = Array.from({length:11}, (_, index) => {
+  const level = 100 + index * 10;
+  const date = dates[level];
+  return {level,date,won:level<=160,estimated:level<140,label:date ? new Intl.DateTimeFormat("de-DE",{day:"2-digit",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(`${date}T12:00:00Z`)) : "Dieser Ehrenplatz wartet auf uns."};
+});
 ---
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Unsere gemeinsamen Wächter-Siege: die interaktive Ruhmeshalle der DIE Drachenhalle." />
-    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
-    <title>Ruhmeshalle · DIE Drachenhalle</title>
-  </head>
-  <body><div class="page-shell">
-    <SiteHeader active="alliance" />
-    <main id="main-content" class="trophy-hall">
-      <nav class="breadcrumbs" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/">Start</a><span>/</span><a href="/drachenhalle/docs/allianz/">Allianz</a><span>/</span><span aria-current="page">Ruhmeshalle</span></nav>
-      <header class="hall-intro"><p class="eyebrow">Gemeinsam stärker · Unsere Wächtertötungen</p><h1>Ruhmeshalle</h1><p>Jede Trophäe erzählt von einem gemeinsamen Sieg. Hier bewahren wir die Momente, in denen wir zum ersten Mal eine neue Wächterstufe bezwungen haben.</p><div class="hall-record"><span>🏆 Höchste bezwungene Stufe <strong>160</strong></span><span>{trophies.length} gemeinsame Meilensteine</span></div><p class="trophy-note">83 Spieltage am 03.10.2026: Unser angenommener Start liegt am 13.07.2026. Die früheren Siege sind in Zehnerschritten ergänzt; ihre Daten sind geschätzt, mit kürzeren Abständen am Anfang und längeren später. Für Stufe 140, 150 und 160 sind die Tage bestätigt.</p></header>
-      <section aria-label="Wächter-Trophäen" class="trophy-grid">
-        {trophies.map(trophy => (
-          <details class="trophy" open={trophy.level === 160}>
-            <summary><span class="trophy-icon" aria-hidden="true">🏆</span><span class="eyebrow">Wächter besiegt</span><strong class="trophy-level">{trophy.level}</strong><time datetime={trophy.date}>{trophy.label}</time><span class="trophy-note">{trophy.estimated ? "Datum geschätzt" : "Datum bestätigt"}</span><span class="trophy-prompt">Geschichte öffnen <span aria-hidden="true">＋</span></span></summary>
-            <div class="trophy-story"><h2>{trophy.title}</h2><p>{trophy.story}</p>{trophy.image ? <a href="#siegesbild">Zum gemeinsamen Siegesbild →</a> : !trophy.estimated && <p class="trophy-note">Der Sieg ist festgehalten. Ein eigenes Erinnerungsbild folgt, sobald es in der Galerie liegt.</p>}</div>
-          </details>
-        ))}
-      </section>
-      <section id="siegesbild" class="hall-memory" aria-labelledby="memory-title">
-        <div><p class="eyebrow">08. September 2026 · 140 &amp; 150</p><h2 id="memory-title">Zwei Meilensteine an einem Tag</h2><p>Zwei neue Wächterstufen an einem Tag. Unser Chatbild zum Sieg über Stufe 150 erinnert an diesen gemeinsamen Durchbruch.</p><p>Öffne das Bild, um den Moment in voller Größe anzusehen.</p></div>
-        <button class="memory-image" aria-label="Siegesbild vergrößern" data-open-memory><img src={victory.webUrl} width={victory.width} height={victory.height} alt="Boshos, Drachenherz und Anthlan feiern den Sieg über einen Wächter auf Stufe 150." loading="lazy" /><span>Siegesbild vergrößern ↗</span></button>
-      </section>
-      <dialog class="memory-dialog" aria-label="Siegesbild vom 08. September 2026"><form method="dialog"><button autofocus>Schließen ×</button></form><img src={victory.webUrl} width={victory.width} height={victory.height} alt="Wächter besiegt! Stufe 150 – unser gemeinsames Siegesbild vom 08. September 2026." /></dialog>
-    </main><SiteFooter />
-  </div></body>
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+  <meta name="description" content="Betritt die Ruhmeshalle unserer Allianzzentrale: Wächtertrophäen, gemeinsame Siege und die nächsten Herausforderungen bis Stufe 200." />
+  <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" /><title>Ruhmeshalle · DIE Drachenhalle</title>
+</head>
+<body><div class="page-shell"><SiteHeader active="alliance" />
+<main id="main-content" class="hall">
+  <nav class="breadcrumbs" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/">Start</a><span>/</span><a href="/drachenhalle/docs/allianz/">Allianz</a><span>/</span><span aria-current="page">Ruhmeshalle</span></nav>
+  <header class="hall-heading"><div><p class="eyebrow">Allianzzentrale · Der Raum unserer Siege</p><h1>Die Ruhmeshalle</h1><p>Sieben Köpfe an der Wand. Vier Plätze für das, was noch kommt.</p></div><div class="record"><small>Höchster Sieg</small><strong>160</strong><span>Wächterstufe</span></div></header>
+  <div class="room-toolbar"><p>Wähle einen Wächterkopf oder einen leeren Ehrenplatz.</p><div><button data-fire aria-pressed="true">Kaminfeuer an</button><button data-light aria-pressed="false">Abendstimmung</button></div></div>
+  <div class="room-scroll" tabindex="0" aria-label="Trophäenraum; auf kleinen Bildschirmen seitlich verschiebbar">
+    <section class="room" aria-label="Interaktive Trophäenwand in unserer Allianzzentrale">
+      <div class="room-shade"></div><div class="room-heading"><span>DIE</span><strong>Gemeinsam stärker</strong></div>
+      <div class="mounts">
+        {trophies.map(trophy => <button class:list={["mount",{"empty":!trophy.won,"latest":trophy.level===160}]} data-trophy={trophy.level} aria-label={`Wächter Stufe ${trophy.level}: ${trophy.won ? `besiegt, ${trophy.estimated ? "Datum geschätzt" : "Datum bestätigt"}` : "noch offen"}. Details öffnen.`}>
+          <span class="mount-art">{trophy.won ? <img src="/drachenhalle/brand/guardian-trophy-head.webp" alt="" style={`filter:sepia(${(trophy.level-100)/160}) brightness(${.8+(trophy.level-100)/180})`} /> : <span class="empty-shield"><span aria-hidden="true">◇</span></span>}</span>
+          <span class="mount-plaque"><strong>{trophy.level}</strong><small>{trophy.won ? "Besiegt" : "Ehrenplatz frei"}</small></span>
+        </button>)}
+      </div>
+      <div class="fireplace" aria-hidden="true"><div class="fire-glow"></div><div class="flames">{Array.from({length:9},(_,i)=><i style={`--i:${i}`}></i>)}</div><div class="embers"><i></i><i></i><i></i></div></div>
+      <p class="room-motto">Unsere Siege bleiben. Unsere Geschichte wächst.</p>
+    </section>
+  </div>
+  <nav class="trophy-navigation" aria-label="Wächterstufe direkt auswählen">{trophies.map(trophy=><button data-trophy={trophy.level} class:list={[{"unclaimed":!trophy.won}]}>{trophy.level}<span class="sr-only"> {trophy.won?"besiegt":"offen"}</span></button>)}</nav>
+  <p class="hall-note">Stufe 100–130: Siege bestätigt, Daten rückblickend geschätzt anhand von 83 Spieltagen am 03.10.2026 (angenommener Start: 13.07.2026). Stufe 140 und 150: 08.09.2026. Stufe 160: 02.10.2026.</p>
+  <dialog class="trophy-dialog" aria-labelledby="trophy-title">
+    <form method="dialog"><button class="close">Schließen ×</button></form>
+    <p class="eyebrow" data-status></p><h2 id="trophy-title"></h2><p class="victory-date" data-date></p><p data-story></p>
+    <a class="victory-link" href={victory.webUrl} target="_blank" rel="noopener"><img src={victory.thumbnailUrl} width="320" height="292" alt="Boshos, Drachenherz und Anthlan feiern den Sieg über Wächter Stufe 150." /><span>Siegesbild vom 08.09.2026 vergrößern ↗</span></a>
+    <div class="dialog-navigation"><button data-previous>← Vorheriger Platz</button><button data-next>Nächster Platz →</button></div>
+  </dialog>
+</main><SiteFooter /></div></body>
 </html>
-<script>
-  const dialog = document.querySelector<HTMLDialogElement>(".memory-dialog");
-  document.querySelector("[data-open-memory]")?.addEventListener("click", () => dialog?.showModal());
-  dialog?.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
+<script define:vars={{trophies}}>
+  const dialog = document.querySelector('.trophy-dialog');
+  let current = 0;
+  function showTrophy(index) {
+    current = index;
+    const trophy = trophies[index];
+    document.querySelector('#trophy-title').textContent = `Wächter · Stufe ${trophy.level}`;
+    document.querySelector('[data-status]').textContent = trophy.won ? 'Trophäe unserer Gemeinschaft' : 'Unser nächstes Kapitel';
+    document.querySelector('[data-date]').textContent = trophy.won ? `${trophy.label} · Datum ${trophy.estimated ? 'geschätzt' : 'bestätigt'}` : trophy.label;
+    document.querySelector('[data-story]').textContent = !trophy.won ? 'Das Schild ist noch leer. Hier wird der Wächterkopf hängen, wenn wir diese Stufe zum ersten Mal gemeinsam bezwingen.' : trophy.estimated ? 'Diesen Wächter haben wir gemeinsam besiegt. Das genaue Datum ist nicht überliefert; der angezeigte Tag ist eine rückblickende Schätzung innerhalb unserer bisherigen Spielzeit.' : trophy.level === 160 ? 'Am 02. Oktober 2026 fällt unser erster Wächter auf Stufe 160. Ein neuer Höhepunkt für unsere Allianz – und vier Ehrenplätze warten noch auf ihre Trophäen.' : 'Am 08. September 2026 bezwingen wir erstmals die Wächter auf Stufe 140 und 150. Zwei Meilensteine an einem Tag. Das gemeinsame Siegesbild hält den Triumph über Stufe 150 fest.';
+    document.querySelector('.victory-link').hidden = ![140,150].includes(trophy.level);
+    document.querySelector('[data-previous]').disabled = index === 0;
+    document.querySelector('[data-next]').disabled = index === trophies.length - 1;
+    if (!dialog.open) dialog.showModal();
+  }
+  document.querySelectorAll('[data-trophy]').forEach(button => button.addEventListener('click', () => showTrophy(trophies.findIndex(trophy => trophy.level === Number(button.dataset.trophy)))));
+  document.querySelector('[data-previous]').addEventListener('click', () => showTrophy(Math.max(0,current-1)));
+  document.querySelector('[data-next]').addEventListener('click', () => showTrophy(Math.min(trophies.length-1,current+1)));
+  dialog.addEventListener('click', event => { if(event.target===dialog) dialog.close(); });
+  document.querySelector('[data-fire]').addEventListener('click', event => {
+    const off = document.querySelector('.room').classList.toggle('fire-off');
+    event.currentTarget.setAttribute('aria-pressed', String(!off));
+    event.currentTarget.textContent = off ? 'Kaminfeuer aus' : 'Kaminfeuer an';
+  });
+  document.querySelector('[data-light]').addEventListener('click', event => {
+    const dim = document.querySelector('.room').classList.toggle('evening');
+    event.currentTarget.setAttribute('aria-pressed',String(dim));
+  });
 </script>
 <style>
-  .trophy-hall{max-width:1200px;margin:auto;padding:2rem 1.2rem 4rem}.hall-intro{padding:3rem 0;text-align:center}.hall-intro h1{font-size:clamp(2.5rem,7vw,5rem);margin:.5rem 0;color:#efd19a}.hall-intro>p{max-width:720px;margin:1rem auto}.hall-record{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2rem;margin-top:2rem;color:#efd19a}.hall-record strong{font-size:1.8rem;margin-left:.5rem}.trophy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;align-items:start}.trophy{border:1px solid #a87b3f;border-radius:18px;background:radial-gradient(ellipse at top,#50391f80,transparent 70%),#171c24;overflow:hidden;box-shadow:0 16px 40px #0003}.trophy summary{cursor:pointer;list-style:none;display:flex;align-items:center;flex-direction:column;padding:2rem 1rem;gap:.7rem}.trophy summary::-webkit-details-marker{display:none}.trophy summary:hover,.trophy summary:focus-visible{background:#d4ad6420}.trophy-icon{font-size:3.5rem;filter:drop-shadow(0 0 18px #d4ad6460)}.trophy-level{font-size:4rem;line-height:1;color:#efd19a}.trophy time{font-size:.9rem;color:#c5c6ca}.trophy-prompt{margin-top:1rem;color:#efd19a}.trophy[open] .trophy-prompt{font-size:0}.trophy[open] .trophy-prompt::after{content:"Geschichte schließen −";font-size:1rem}.trophy-story{padding:0 1.5rem 1.7rem;border-top:1px solid #a87b3f44}.trophy-story h2{font-size:1.2rem;margin-top:1.3rem}.trophy-note{font-size:.85rem;color:#c5c6ca}.hall-memory{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-top:3rem;padding:2rem;background:#171c24;border:1px solid #a87b3f55;border-radius:18px;scroll-margin-top:6rem}.hall-memory h2{font-size:2rem;color:#efd19a}.memory-image{padding:0;background:transparent;color:#efd19a;border:1px solid #a87b3f;border-radius:12px;overflow:hidden;cursor:zoom-in}.memory-image img{display:block;width:100%;height:auto}.memory-image span{display:block;padding:.8rem}.memory-dialog{padding:1rem;background:#171c24;border:1px solid #a87b3f;border-radius:12px;max-width:95vw;max-height:95dvh}.memory-dialog::backdrop{background:#000c}.memory-dialog form{text-align:right;margin-bottom:.5rem}.memory-dialog button{padding:.6rem 1rem;cursor:pointer}.memory-dialog img{display:block;max-width:100%;width:auto;height:auto;max-height:80dvh;margin:auto}@media(max-width:700px){.trophy-grid,.hall-memory{grid-template-columns:1fr}.hall-memory{padding:1.2rem}.hall-intro{padding:2rem 0}.trophy summary{padding:1.5rem}}
+.hall{max-width:1400px;margin:auto;padding:1.6rem 1.2rem 3rem}.hall-heading{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.8rem 0}.hall-heading h1{font-size:clamp(2rem,5vw,3.8rem);color:#efd19a;margin:.3rem 0}.hall-heading p{margin:.4rem 0}.record{display:flex;flex-direction:column;text-align:center;padding:1rem 2rem;border-left:1px solid #bd965c;color:#efd19a}.record strong{font-size:3rem;line-height:1.2}.record small,.record span{font-size:.8rem}.room-toolbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}.room-toolbar p{font-size:.9rem}.room-toolbar>div{display:flex;gap:.6rem}button{color:#efd19a;cursor:pointer}.room-toolbar button,.dialog-navigation button,.close{background:#20232b;border:1px solid #8e7046;border-radius:6px;padding:.6rem .9rem}.room-toolbar button[aria-pressed=true]{background:#51351d}.room-scroll{overflow-x:auto;border:1px solid #8e7046;border-radius:12px;box-shadow:0 20px 60px #0008}.room{position:relative;isolation:isolate;min-width:880px;aspect-ratio:3/2;background:#211b17 url('/drachenhalle/brand/guardian-trophy-room.webp') center/100% 100% no-repeat;overflow:hidden}.room-shade{position:absolute;inset:0;background:linear-gradient(#0002,#0000 55%,#0005);pointer-events:none;transition:background 1s;z-index:-1}.evening .room-shade{background:#050b1b77}.room-heading{position:absolute;top:3%;left:0;width:100%;text-align:center;color:#f0d3a1;text-shadow:0 2px 8px #000;display:flex;flex-direction:column}.room-heading>span{font-size:1.7rem;letter-spacing:.4em}.room-heading strong{font-weight:400;font-size:.9rem;letter-spacing:.15em}.mounts{position:absolute;top:18%;left:23%;width:54%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1.1rem .7rem}.mount{background:none;border:0;display:flex;flex-direction:column;align-items:center;padding:0;transition:transform .2s;position:relative}.mount:hover,.mount:focus-visible{transform:translateY(-5px) scale(1.08);z-index:2;outline:2px solid #efd19a;outline-offset:3px;border-radius:10px}.mount-art{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1}.mount-art img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 10px #000a)}.mount-plaque{min-width:72%;display:flex;flex-direction:column;align-items:center;background:linear-gradient(120deg,#352719,#161512,#463421);border:1px solid #a47c42;padding:.2rem .3rem;box-shadow:0 5px 8px #0009;border-radius:3px}.mount-plaque strong{font-size:1.15rem;letter-spacing:.12em}.mount-plaque small{font-size:.58rem;text-transform:uppercase;letter-spacing:.05em}.latest .mount-plaque{border-color:#f2d094;box-shadow:0 0 16px #edb35070}.empty-shield{width:70%;height:83%;display:grid;place-items:center;background:linear-gradient(125deg,#392a1de0,#17130fee);border:2px solid #6e563a;clip-path:polygon(8% 0,92% 0,100% 70%,50% 100%,0 70%);box-shadow:inset 0 0 30px #000}.empty-shield span{font-size:2.8rem;color:#927c5a66}.empty .mount-plaque{color:#baaa91;border-color:#71604c}.fireplace{position:absolute;left:44%;top:67%;width:12%;height:12%;pointer-events:none}.fire-glow{position:absolute;inset:-100%;background:radial-gradient(ellipse,#f8952340,transparent 65%);animation:glow 3s ease-in-out infinite alternate;mix-blend-mode:screen}.flames{position:absolute;inset:10% 5% 4%;filter:blur(1.4px);transform-origin:bottom}.flames i{position:absolute;bottom:0;left:calc(7% + var(--i)*9%);width:23%;height:calc(42% + var(--i)*4%);background:linear-gradient(0deg,#fff3ba,#ffbd32 35%,#e94b0b 75%,transparent);border-radius:70% 30% 45% 45%;transform-origin:bottom;mix-blend-mode:screen;animation:flame calc(.65s + var(--i)*.11s) ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.31s)}.embers i{position:absolute;bottom:10%;left:35%;width:3px;height:3px;background:#ffd075;border-radius:50%;animation:ember 3s linear infinite}.embers i:nth-child(2){left:65%;animation-delay:-1s}.embers i:nth-child(3){left:50%;animation-delay:-2s}.fire-off .fireplace{opacity:0}.room-motto{position:absolute;bottom:2%;width:100%;text-align:center;color:#e6cfa2;font-size:.85rem;text-shadow:0 2px 6px #000}.trophy-navigation{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}.trophy-navigation button{border:1px solid #a47c42;background:#34271c;border-radius:5px;padding:.6rem .8rem}.trophy-navigation .unclaimed{background:#171c24;border-style:dashed;color:#ada397}.hall-note{max-width:900px;margin:1rem auto;text-align:center;color:#aeb2bb;font-size:.85rem}.trophy-dialog{background:linear-gradient(135deg,#30251e,#151c26);color:#eee5d7;border:1px solid #a47c42;border-radius:14px;padding:1.7rem;max-width:560px;width:calc(100% - 2rem);max-height:90dvh}.trophy-dialog::backdrop{background:#05080bdd;backdrop-filter:blur(5px)}.trophy-dialog form{text-align:right}.trophy-dialog h2{font-size:2rem;color:#efd19a}.victory-date{color:#e2bd80}.victory-link{display:flex;flex-direction:column;align-items:center;gap:.6rem}.victory-link[hidden]{display:none}.victory-link img{max-width:100%;height:auto;border-radius:8px}.dialog-navigation{display:flex;justify-content:space-between;gap:1rem;margin-top:1.4rem}.dialog-navigation button:disabled{opacity:.35;cursor:default}@keyframes flame{from{transform:scaleX(.8) scaleY(.65) rotate(-7deg);opacity:.7}to{transform:scaleX(1.05) scaleY(1) rotate(8deg);opacity:1}}@keyframes glow{from{opacity:.5;transform:scale(.9)}to{opacity:.95;transform:scale(1.08)}}@keyframes ember{from{transform:translate(0,0);opacity:0}20%{opacity:1}to{transform:translate(15px,-100px);opacity:0}}@media(prefers-reduced-motion:reduce){.flames i,.fire-glow,.embers i{animation:none}.embers{display:none}.mount,.room-shade{transition:none}}@media(max-width:600px){.hall{padding:1rem .7rem 2rem}.record{padding:.5rem .8rem}.record strong{font-size:2rem}.hall-heading{align-items:start}.room-toolbar{gap:.3rem}.room-toolbar p{margin:.4rem 0}.dialog-navigation{gap:.5rem}.dialog-navigation button{font-size:.8rem}}
 </style>

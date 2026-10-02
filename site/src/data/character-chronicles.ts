@@ -45,19 +45,19 @@ export const characterChronicles: CharacterChronicle[] = [
     sigil: "✦",
     heroImage: "/drachenhalle/brand/officer-anthlan-world.webp",
     heroAlt: "Anthlan in seiner Sternwarte über den miteinander verbundenen Welten",
-    chapterImage: "/drachenhalle/brand/chronicle-anthlan-table.webp",
-    chapterImageAlt: "Anthlan mit Kaffee über einem lebendigen Strategietisch voller verbundener Orte",
+    chapterImage: "/drachenhalle/brand/chronicle-anthlan-table-v2.webp",
+    chapterImageAlt: "Anthlan mit einem Instrument der verbundenen Wege über einem lebendigen Strategietisch",
     chapterCaption: "Wo viele Wege zusammenlaufen, bleibt selten alles genau dort, wo Anthlan es eingezeichnet hat.",
     invitation: "Folgt den goldenen Wegen hinauf in eine Sternwarte, die zugleich Kartenraum, Treffpunkt und Ausgangspunkt für das nächste gemeinsame Abenteuer ist.",
     opening: [
-      "Wer Anthlans Sternwarte zum ersten Mal betritt, erwartet vielleicht einen einsamen Weltenlenker. Stattdessen findet man offene Karten, verschobene Spielfiguren, mehrere benutzte Stühle und irgendwo dazwischen eine Kaffeetasse, die ganz sicher eben noch voll war.",
+      "Wer Anthlans Sternwarte zum ersten Mal betritt, erwartet vielleicht einen einsamen Weltenlenker. Stattdessen findet man offene Karten, verschobene Spielfiguren, mehrere benutzte Stühle und irgendwo dazwischen eine Notiz, die ganz sicher eben noch an einem anderen Platz lag.",
       "Anthlan führt nicht von einem Thron aus. Er schafft Verbindungen. Zwischen Menschen, Ideen und Orten sucht er nach dem Weg, auf dem aus vielen Einzelnen eine Gemeinschaft werden kann. Seine Autorität entsteht dabei weniger aus Abstand als aus der Gewissheit, dass er bleibt, erklärt und Verantwortung übernimmt.",
     ],
     quote: "Ich habe einen Plan. Wahrscheinlich sogar mehrere. Jetzt müssen sie sich nur noch miteinander vertragen.",
     traits: [
       { icon: "⌘", title: "Überblick", text: "Er sieht Wege, Abhängigkeiten und Möglichkeiten, bevor sie für andere sichtbar werden." },
       { icon: "◇", title: "Verbindung", text: "Seine stärkste Strategie besteht darin, unterschiedliche Menschen miteinander ins Gespräch zu bringen." },
-      { icon: "☕", title: "Bodenhaftung", text: "Kaffee, Selbstironie und ein leicht schelmischer Blick bewahren ihn vor zu viel Erhabenheit." },
+      { icon: "✦", title: "Bodenhaftung", text: "Selbstironie, Neugier und ein leicht schelmischer Blick bewahren ihn vor zu viel Erhabenheit." },
     ],
     chapters: [
       {
@@ -73,7 +73,7 @@ export const characterChronicles: CharacterChronicle[] = [
         title: "Ein Gastgeber über den Wolken",
         paragraphs: [
           "Die Sternwarte ist nie wirklich abgeschlossen. Goldene Wege führen zu bewohnten Inseln, zur Elbe und weit darüber hinaus. Ankommende finden keinen Audienzsaal, sondern einen Platz am Tisch.",
-          "Hier werden Reisen geplant, Streitpunkte entwirrt und gelegentlich Katastrophen verwaltet, die fünf Minuten zuvor noch als harmlose Idee begonnen haben. Anthlan hält den Raum zusammen – meistens mit Übersicht, manchmal mit Improvisation und fast immer mit Kaffee.",
+          "Hier werden Reisen geplant, Streitpunkte entwirrt und gelegentlich Katastrophen verwaltet, die fünf Minuten zuvor noch als harmlose Idee begonnen haben. Anthlan hält den Raum zusammen – meistens mit Übersicht, manchmal mit Improvisation und immer mit einem offenen Platz für andere.",
         ],
       },
     ],
