@@ -31,3 +31,23 @@ $ astro dev "--host" "127.0.0.1" "--force"
 {"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
 {"message":"[200] /tools/eventrechner/ 53ms","label":null,"level":"info"}
 {"message":"[200] /tools/eventrechner/ 3ms","label":null,"level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 93ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 4ms","label":null,"level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 12ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 4ms","label":null,"level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 103ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 89ms","label":null,"level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 51ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 3ms","label":null,"level":"info"}

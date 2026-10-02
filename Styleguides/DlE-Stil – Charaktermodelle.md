@@ -4,9 +4,9 @@
 
 Charaktermodelle sind die verbindliche visuelle Quelle für wiederkehrende Figuren. Sie müssen Gesicht, Körperbau, Kleidung, Farben und charakteristische Details so eindeutig festlegen, dass neue Avatare, Chatbilder und Szenen dieselbe Figur zuverlässig reproduzieren können.
 
-Diese Richtlinie wurde aus allen fünfzehn vorhandenen Referenzmodellen in `Galerie/Charaktermodelle` abgeleitet. Alle Modellbögen verwenden das Format 1024 × 1536 Pixel.
+Diese Richtlinie wurde aus den vorhandenen Referenzmodellen in `Galerie/Charaktermodelle` abgeleitet. Die ursprüngliche M1-Grundserie verwendet das Format 1024 × 1536 Pixel. Mit M2 kommt eine individuellere Weltserie hinzu, deren Format vom benötigten Referenzumfang abhängt.
 
-## Verbindliches Grundformat
+## Verbindliches Grundformat der M1-Grundserie
 
 - Hochformat im Verhältnis **2:3**, bevorzugt **1024 × 1536 Pixel** oder größer im exakt gleichen Verhältnis.
 - Dunkle, filmische Charaktertafel mit zwei deutlich lesbaren Bereichen:
@@ -18,6 +18,15 @@ Diese Richtlinie wurde aus allen fünfzehn vorhandenen Referenzmodellen in `Gale
 - Schmaler, optisch ruhiger Mittelsteg von ungefähr 12–20 Pixeln.
 - Alle Inhalte bleiben innerhalb einer sicheren Randzone. Hörner, Haare, Waffen, Name und Fußspitzen dürfen nicht angeschnitten werden.
 - Feine Linien, Rahmen und Modulabstände bilden ein gemeinsames Raster. Sie dürfen durch Patina, Schatten, Stoff, Architektur oder Licht teilweise in die Bildwelt übergehen. Freie Fläche ist erwünscht; Module werden nicht bis zur Unlesbarkeit verdichtet.
+
+## M2 – Individuelle Charakterwelten (Weltserie)
+
+- M2 individualisiert die Modelle stärker anhand ihrer eigenen Welt. Schauplatz, Architektur, Requisiten, Licht, Materialien und persönliche Symbolik werden ebenso verbindlich wie das Aussehen der Figur.
+- Das Grundformat darf **2:3 oder quadratisch** sein. Ein quadratischer Bogen ist besonders geeignet, wenn rechts eine zusätzliche Outfit- oder Ausrüstungsvariante dokumentiert wird.
+- Der szenische Weltbereich und die sachlichen Referenzmodule bleiben klar lesbar, bilden aber eine gemeinsame Umgebung statt zwei gestalterisch getrennte Tafeln.
+- Größere und detailreichere Enddateien sind ausdrücklich erwünscht. Entscheidend sind eine belastbare Gesichtsreferenz, Ganzkörperansichten, reproduzierbare Ausrüstung sowie lesbare Material- und Farbdetails.
+- Ein alternatives Outfit muss dieselbe Person, Anatomie, Farbwelt und Symbolik bewahren. Es erweitert den Charakter glaubwürdig, ohne eine neue Identität oder unverbundene Stilrichtung einzuführen.
+- Die verbindliche Hauptfassung trägt den Namen `Spielername_Modell_Weltserie.png`. Zusätzliche Fassungen erhalten einen beschreibenden Suffix.
 
 ## Verbindliches Seitenraster
 
@@ -178,7 +187,7 @@ Fehlende Angaben werden nicht durch zufällige komplexe Tattoos, Wappen, Waffen 
 
 Ein neues Charaktermodell wird erst abgelegt, wenn alle Fragen mit Ja beantwortet sind:
 
-1. Verwendet der Bogen das Format 2:3 und das gemeinsame Zweispaltenraster?
+1. Verwendet M1 das Format 2:3 beziehungsweise M2 ein begründetes 2:3- oder Quadratformat mit klarer Modulordnung?
 2. Ist die Figur in Hero-Pose und Ansichten dieselbe Person mit identischem Körperbau?
 3. Stimmen Gesicht, Haut, Augen, Haare, Narben, Tattoos, Hörner und Ohren in allen Feldern überein?
 4. Sind Kleidung, Rüstung, Emblem, Schmuck und Waffen konstruktiv konsistent?
@@ -197,7 +206,7 @@ Ein neues Charaktermodell wird erst abgelegt, wenn alle Fragen mit Ja beantworte
 
 ## Vermeiden
 
-- quadratische oder freie Formate für den eigentlichen Modellbogen
+- quadratische oder freie Formate ohne funktionalen Grund; in M2 ist das Quadrat für zusätzliche Welt- oder Outfitmodule ausdrücklich zulässig
 - eine reine Heldenszene ohne sachliche Ansichten
 - wechselnde Gesichter, Frisuren, Körperformen oder Altersstufen innerhalb eines Bogens
 - unterschiedliche Kleidung zwischen Hero-Pose, Ansichten und Details
@@ -218,6 +227,7 @@ Finale Referenzmodelle werden unter `Galerie/Charaktermodelle` abgelegt.
 
 ```text
 Spielername_Referenzmodell.Dateiendung
+Spielername_Modell_Weltserie.Dateiendung
 ```
 
 Weitere Ansichten und charakterbezogene Szenen folgen den Benennungsregeln in `Galerie/Charaktermodelle/README.md`. Als Endformat wird PNG empfohlen; JPEG ist nur für bewusst kleinere Dateien ohne Transparenz und ohne feine Textartefakte sinnvoll.

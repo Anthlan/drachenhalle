@@ -7,6 +7,7 @@ import {
   VOUCHER_PACKAGES,
   casinoProjection,
   expectedVoucherGap,
+  optimizeHybridPurchase,
   optimizePackagePurchase,
   probabilityToReach,
   remainingPurchaseWindows,
@@ -68,4 +69,28 @@ test("mehr Münzen erhöhen die Zielchance und die geforderte Sicherheit den Bed
   const cautious = requiredCoinsForChance(4000, 0.95);
   assert.ok(realistic !== null && cautious !== null);
   assert.ok((cautious as number) >= (realistic as number));
+});
+
+test("kombiniert Münz- und Gutscheinpakete für große Ziele", () => {
+  const common = {
+    windows: 4,
+    targetVouchers: 8192,
+    securedVouchers: 114,
+    availableCoins: 109,
+    confidence: 0.8,
+  };
+  const casinoFirst = optimizeHybridPurchase({ ...common, strategy: "casino-first" });
+  const voucherFirst = optimizeHybridPurchase({ ...common, strategy: "voucher-first" });
+  const optimized = optimizeHybridPurchase({ ...common, strategy: "cost-optimized" });
+
+  assert.ok(casinoFirst);
+  assert.ok(voucherFirst);
+  assert.ok(optimized);
+  assert.ok(casinoFirst.coinPlan.units > 0);
+  assert.ok(voucherFirst.coinPlan.units > 0 && voucherFirst.voucherPlan.units > 0);
+  assert.ok(casinoFirst.probability >= 0.8);
+  assert.ok(voucherFirst.probability >= 0.8);
+  assert.ok(optimized.probability >= 0.8);
+  assert.ok(optimized.totalCostCents <= casinoFirst.totalCostCents);
+  assert.ok(optimized.totalCostCents <= voucherFirst.totalCostCents);
 });

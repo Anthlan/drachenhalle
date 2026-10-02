@@ -11016,6 +11016,40 @@ body.has-officer-dialog {
   margin-top: 18px;
 }
 
+.flight-strategy-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.flight-strategy-options label {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.018);
+  cursor: pointer;
+}
+
+.flight-strategy-options label:has(input:checked) {
+  border-color: var(--line-bright);
+  background: linear-gradient(100deg, rgba(227, 173, 78, 0.11), rgba(227, 173, 78, 0.025));
+  box-shadow: inset 3px 0 0 var(--gold);
+}
+
+.flight-strategy-options input {
+  margin-top: 3px;
+  accent-color: var(--gold);
+}
+
+.flight-strategy-options span { display: grid; gap: 4px; }
+.flight-strategy-options strong { color: var(--ink); font-size: 12px; }
+.flight-strategy-options small { color: var(--muted); font-size: 10px; line-height: 1.45; }
+
 .flight-option-grid > label {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -11272,8 +11306,46 @@ body.has-officer-dialog {
 }
 
 .flight-route-card.is-direct { background: linear-gradient(145deg, rgba(38, 32, 44, 0.84), rgba(17, 19, 34, 0.9)); }
+.flight-route-card.is-hybrid {
+  grid-column: 1 / -1;
+  min-height: 0;
+  border-color: rgba(227, 173, 78, 0.78);
+  background:
+    radial-gradient(circle at 94% 12%, rgba(227, 173, 78, 0.14), transparent 14rem),
+    linear-gradient(145deg, rgba(30, 35, 63, 0.96), rgba(31, 24, 30, 0.96));
+}
 .flight-route-icon { position: absolute; top: 18px; right: 18px; font-size: 28px; opacity: 0.72; }
 .flight-route-card h3 { padding-right: 34px; }
+
+.flight-hybrid-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.flight-hybrid-steps p {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 9px;
+  margin: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  background: rgba(6, 10, 24, 0.54);
+}
+
+.flight-hybrid-steps span {
+  color: var(--gold);
+  font: 800 10px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.flight-hybrid-steps strong {
+  color: #d7daea;
+  font-size: 10px;
+  line-height: 1.5;
+}
 
 .flight-route-price {
   display: block;
@@ -11430,7 +11502,7 @@ body.has-officer-dialog {
   border: 1px solid rgba(227, 173, 78, 0.46);
   background-image: linear-gradient(rgba(8, 12, 25, 0.08), rgba(8, 12, 25, 0.18)), var(--shop-image);
   background-repeat: no-repeat;
-  background-size: 300% auto;
+  background-size: 520% auto;
   background-position: var(--shop-x) var(--shop-y);
   box-shadow: inset 0 0 18px rgba(5, 9, 22, 0.45);
 }
@@ -11636,6 +11708,7 @@ body.has-officer-dialog {
 
   .flight-field-grid.is-time { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .flight-field-grid.is-time label:last-child { grid-column: 1 / -1; }
+  .flight-hybrid-steps { grid-template-columns: 1fr; }
   .flight-result { padding: 26px 20px 34px; }
   .flight-result-intro { min-height: 175px; padding-right: 105px; }
   .flight-result-character { width: 120px; height: 175px; }

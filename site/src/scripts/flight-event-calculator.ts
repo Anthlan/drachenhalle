@@ -47,6 +47,21 @@ export type PackagePlan = {
   counts: Record<string, number>;
 } | null;
 
+export type HybridStrategy = "casino-first" | "voucher-first" | "cost-optimized";
+
+export type HybridPlan = {
+  strategy: HybridStrategy;
+  coinPlan: Exclude<PackagePlan, null>;
+  voucherPlan: Exclude<PackagePlan, null>;
+  totalCostCents: number;
+  totalCoins: number;
+  directVouchers: number;
+  expectedTotal: number;
+  lowTotal: number;
+  highTotal: number;
+  probability: number;
+} | null;
+
 export const COIN_PACKAGES: readonly EventPackage[] = [
   { id: "coin-2", label: "2 Münzen", units: 2, priceCents: 119, perWindowLimit: 1 },
   { id: "coin-4", label: "4 Münzen", units: 4, priceCents: 249, perWindowLimit: 1 },
@@ -176,6 +191,192 @@ export const optimizePackagePurchase = (
   return { units: bestUnits, costCents: bestCost, counts: plans[bestUnits] ?? {} };
 };
 
+const buildExactPackagePlans = (
+  packages: readonly EventPackage[],
+  windows: number,
+) => {
+  const copies = packages.flatMap((pack) => (
+    Array.from({ length: Math.max(0, windows) * pack.perWindowLimit }, () => pack)
+  ));
+  const maximum = copies.reduce((sum, pack) => sum + pack.units, 0);
+  const costs = new Array<number>(maximum + 1).fill(Number.POSITIVE_INFINITY);
+  const counts = new Array<Record<string, number> | null>(maximum + 1).fill(null);
+  costs[0] = 0;
+  counts[0] = {};
+
+  for (const pack of copies) {
+    for (let units = maximum - pack.units; units >= 0; units -= 1) {
+      if (!Number.isFinite(costs[units])) continue;
+      const nextUnits = units + pack.units;
+      const nextCost = costs[units] + pack.priceCents;
+      if (nextCost >= costs[nextUnits]) continue;
+      costs[nextUnits] = nextCost;
+      counts[nextUnits] = {
+        ...(counts[units] ?? {}),
+        [pack.id]: ((counts[units] ?? {})[pack.id] ?? 0) + 1,
+      };
+    }
+  }
+
+  return { maximum, costs, counts };
+};
+
+type PackageTable = ReturnType<typeof buildExactPackagePlans>;
+
+const bestPlanAtLeast = (table: PackageTable, requiredUnits: number): Exclude<PackagePlan, null> | null => {
+  const need = Math.max(0, Math.ceil(requiredUnits));
+  let bestUnits = -1;
+  let bestCost = Number.POSITIVE_INFINITY;
+  for (let units = need; units <= table.maximum; units += 1) {
+    if (table.costs[units] < bestCost) {
+      bestUnits = units;
+      bestCost = table.costs[units];
+    }
+  }
+  if (bestUnits < 0 || !table.counts[bestUnits]) return null;
+  return { units: bestUnits, costCents: bestCost, counts: table.counts[bestUnits] ?? {} };
+};
+
+const reliableCasinoYield = (coins: number, chance: number) => {
+  if (coins <= 0) return 0;
+  const projection = casinoProjection(coins);
+  let low = 0;
+  let high = Math.ceil(projection.high + projection.standardDeviation * 4 + 500);
+  while (low < high) {
+    const middle = Math.ceil((low + high) / 2);
+    if (probabilityToReach(middle, coins) >= chance) low = middle;
+    else high = middle - 1;
+  }
+  return low;
+};
+
+const completeHybridPlan = (
+  strategy: HybridStrategy,
+  coinPlan: Exclude<PackagePlan, null>,
+  voucherPlan: Exclude<PackagePlan, null>,
+  availableCoins: number,
+  securedVouchers: number,
+  targetVouchers: number,
+  confidence: number,
+): Exclude<HybridPlan, null> => {
+  const totalCoins = availableCoins + coinPlan.units;
+  const directVouchers = voucherPlan.units;
+  const projection = casinoProjection(totalCoins, confidence);
+  const neededFromCasino = Math.max(0, targetVouchers - securedVouchers - directVouchers);
+  return {
+    strategy,
+    coinPlan,
+    voucherPlan,
+    totalCostCents: coinPlan.costCents + voucherPlan.costCents,
+    totalCoins,
+    directVouchers,
+    expectedTotal: securedVouchers + directVouchers + projection.expected,
+    lowTotal: securedVouchers + directVouchers + projection.low,
+    highTotal: securedVouchers + directVouchers + projection.high,
+    probability: probabilityToReach(neededFromCasino, totalCoins),
+  };
+};
+
+export const optimizeHybridPurchase = ({
+  strategy,
+  windows,
+  targetVouchers,
+  securedVouchers,
+  availableCoins,
+  confidence,
+}: {
+  strategy: HybridStrategy;
+  windows: number;
+  targetVouchers: number;
+  securedVouchers: number;
+  availableCoins: number;
+  confidence: number;
+}): HybridPlan => {
+  const coinTable = buildExactPackagePlans(COIN_PACKAGES, windows);
+  const voucherTable = buildExactPackagePlans(VOUCHER_PACKAGES, windows);
+  const emptyPlan = { units: 0, costCents: 0, counts: {} };
+  const totalGap = Math.max(0, targetVouchers - securedVouchers);
+  const planCoinsForNeed = (neededFromCasino: number) => {
+    const requiredTotal = requiredCoinsForChance(
+      Math.max(0, neededFromCasino),
+      confidence,
+      availableCoins + coinTable.maximum,
+    );
+    if (requiredTotal === null) return null;
+    return bestPlanAtLeast(coinTable, Math.max(0, requiredTotal - availableCoins));
+  };
+
+  if (strategy === "casino-first") {
+    const casinoOnlyPlan = planCoinsForNeed(totalGap);
+    const coinPlan = casinoOnlyPlan ?? bestPlanAtLeast(coinTable, coinTable.maximum);
+    if (!coinPlan) return null;
+    const directNeed = casinoOnlyPlan
+      ? 0
+      : Math.max(0, totalGap - reliableCasinoYield(availableCoins + coinPlan.units, confidence));
+    const voucherPlan = bestPlanAtLeast(voucherTable, directNeed);
+    if (!voucherPlan) return null;
+    return completeHybridPlan(
+      strategy,
+      coinPlan,
+      voucherPlan,
+      availableCoins,
+      securedVouchers,
+      targetVouchers,
+      confidence,
+    );
+  }
+
+  if (strategy === "voucher-first") {
+    const directNeed = Math.min(totalGap, voucherTable.maximum);
+    const voucherPlan = bestPlanAtLeast(voucherTable, directNeed);
+    if (!voucherPlan) return null;
+    const coinPlan = planCoinsForNeed(Math.max(0, totalGap - voucherPlan.units));
+    if (!coinPlan) return null;
+    return completeHybridPlan(
+      strategy,
+      coinPlan,
+      voucherPlan,
+      availableCoins,
+      securedVouchers,
+      targetVouchers,
+      confidence,
+    );
+  }
+
+  let best: Exclude<HybridPlan, null> | null = null;
+  for (let directUnits = 0; directUnits <= voucherTable.maximum; directUnits += 1) {
+    const counts = voucherTable.counts[directUnits];
+    if (!counts || !Number.isFinite(voucherTable.costs[directUnits])) continue;
+    const voucherPlan = {
+      units: directUnits,
+      costCents: voucherTable.costs[directUnits],
+      counts,
+    };
+    const coinPlan = planCoinsForNeed(Math.max(0, totalGap - directUnits));
+    if (!coinPlan) continue;
+    const candidate = completeHybridPlan(
+      strategy,
+      coinPlan,
+      voucherPlan,
+      availableCoins,
+      securedVouchers,
+      targetVouchers,
+      confidence,
+    );
+    if (
+      !best
+      || candidate.totalCostCents < best.totalCostCents
+      || (
+        candidate.totalCostCents === best.totalCostCents
+        && candidate.expectedTotal < best.expectedTotal
+      )
+    ) best = candidate;
+  }
+  return best ?? (totalGap === 0
+    ? completeHybridPlan(strategy, emptyPlan, emptyPlan, availableCoins, securedVouchers, targetVouchers, confidence)
+    : null);
+};
+
 const wholeNumber = (value: FormDataEntryValue | null, fallback = 0) => {
   const parsed = Number(String(value ?? ""));
   return Number.isFinite(parsed) ? Math.max(0, Math.floor(parsed)) : fallback;
@@ -223,14 +424,16 @@ export const initializeFlightEventCalculator = () => {
 
   const fields = [
     "currentCoins", "currentVouchers", "targetVouchers", "remainingDays", "remainingHours",
-    "remainingFreeVouchers", "confidence", "includeFree", "includeDiamonds",
+    "remainingFreeVouchers", "confidence", "purchaseStrategy", "includeFree", "includeDiamonds",
   ];
 
   const applyValues = (values: Record<string, unknown>) => {
     fields.forEach((name) => {
       const field = form.elements.namedItem(name);
       const value = values[name];
-      if (field instanceof HTMLInputElement && field.type === "checkbox") {
+      if (field instanceof RadioNodeList && typeof value === "string") {
+        field.value = value;
+      } else if (field instanceof HTMLInputElement && field.type === "checkbox") {
         if (typeof value === "boolean") field.checked = value;
       } else if ((field instanceof HTMLInputElement || field instanceof HTMLSelectElement) && typeof value === "string") {
         field.value = value;
@@ -266,7 +469,8 @@ export const initializeFlightEventCalculator = () => {
     const values: Record<string, string | boolean> = {};
     fields.forEach((name) => {
       const field = form.elements.namedItem(name);
-      if (field instanceof HTMLInputElement && field.type === "checkbox") values[name] = field.checked;
+      if (field instanceof RadioNodeList) values[name] = field.value;
+      else if (field instanceof HTMLInputElement && field.type === "checkbox") values[name] = field.checked;
       else if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) values[name] = field.value;
     });
     return values;
@@ -299,6 +503,11 @@ export const initializeFlightEventCalculator = () => {
     const remainingHours = Math.min(23, wholeNumber(data.get("remainingHours")));
     const remainingFreeVouchers = Math.min(99, wholeNumber(data.get("remainingFreeVouchers")));
     const confidence = Number(data.get("confidence") ?? 0.8);
+    const purchaseStrategyValue = String(data.get("purchaseStrategy") ?? "cost-optimized");
+    const purchaseStrategy: HybridStrategy = purchaseStrategyValue === "casino-first"
+      || purchaseStrategyValue === "voucher-first"
+      ? purchaseStrategyValue
+      : "cost-optimized";
     const includeFree = data.get("includeFree") === "yes";
     const includeDiamonds = data.get("includeDiamonds") === "yes";
 
@@ -334,6 +543,14 @@ export const initializeFlightEventCalculator = () => {
       availableCoins,
     );
     const directPlan = optimizePackagePurchase(VOUCHER_PACKAGES, windows, directGap);
+    const hybridPlan = optimizeHybridPurchase({
+      strategy: purchaseStrategy,
+      windows,
+      targetVouchers,
+      securedVouchers,
+      availableCoins,
+      confidence,
+    });
 
     const plannedCasinoCoins = availableCoins + (confidenceCoinPlan?.units ?? 0);
     const plannedProjection = casinoProjection(plannedCasinoCoins, confidence);
@@ -392,8 +609,60 @@ export const initializeFlightEventCalculator = () => {
     );
     setText(result, "[data-flight-direct-plan]", describePlan(directPlan, VOUCHER_PACKAGES));
 
+    const hybridLabels: Record<HybridStrategy, string> = {
+      "casino-first": "Erst Casino, dann Gutscheine",
+      "voucher-first": "Erst Gutscheine, dann Casino",
+      "cost-optimized": "Geldoptimierte Kombination",
+    };
+    setText(result, "[data-flight-hybrid-kicker]", hybridLabels[purchaseStrategy]);
+    setText(
+      result,
+      "[data-flight-hybrid-cost]",
+      hybridPlan ? formatEuro(hybridPlan.totalCostCents) : "nicht verfügbar",
+    );
+    setText(
+      result,
+      "[data-flight-hybrid-outcome]",
+      hybridPlan
+        ? `${formatInteger(hybridPlan.expectedTotal)} erwartet · ${formatInteger(hybridPlan.lowTotal)}–${formatInteger(hybridPlan.highTotal)} im Korridor · Zielchance ${formatPercent(hybridPlan.probability)}`
+        : "Das Ziel lässt sich mit den verbleibenden Münz- und Gutscheinlimits nicht vollständig planen.",
+    );
+    setText(
+      result,
+      "[data-flight-hybrid-coins]",
+      hybridPlan
+        ? `${hybridPlan.coinPlan.units.toLocaleString("de-DE")} Münzen nachkaufen`
+        : "Münzlimit ausgeschöpft",
+    );
+    setText(
+      result,
+      "[data-flight-hybrid-vouchers]",
+      hybridPlan
+        ? `${hybridPlan.directVouchers.toLocaleString("de-DE")} Gutscheine direkt`
+        : "Gutscheinlimit ausgeschöpft",
+    );
+
+    const coinStep = hybridPlan
+      ? hybridPlan.coinPlan.units > 0
+        ? `Casino: ${describePlan(hybridPlan.coinPlan, COIN_PACKAGES)}`
+        : "Casino: vorhandene und kostenlose Münzen einsetzen"
+      : "Casino-Anteil nicht verfügbar";
+    const voucherStep = hybridPlan
+      ? hybridPlan.voucherPlan.units > 0
+        ? `Gutscheine: ${describePlan(hybridPlan.voucherPlan, VOUCHER_PACKAGES)}`
+        : purchaseStrategy === "casino-first"
+          ? "Gutscheine: nach dem Drehen nur eine tatsächliche Restlücke direkt schließen"
+          : "Gutscheine: kein Direktkauf eingeplant"
+      : "Gutschein-Anteil nicht verfügbar";
+    const firstHybridStep = purchaseStrategy === "voucher-first" ? voucherStep : coinStep;
+    const secondHybridStep = purchaseStrategy === "voucher-first" ? coinStep : voucherStep;
+    setText(result, "[data-flight-hybrid-step-one]", firstHybridStep);
+    setText(result, "[data-flight-hybrid-step-two]", secondHybridStep);
+
     const recommendation = currentProbability >= confidence
       ? "Nutze zuerst deine vorhandenen und kostenlosen Münzen. Ein Echtgeldkauf ist für die gewählte Sicherheit aktuell nicht nötig."
+      : hybridPlan && hybridPlan.coinPlan.units > 0 && hybridPlan.voucherPlan.units > 0
+        ? `${hybridLabels[purchaseStrategy]}: Der Kombi-Plan erweitert die einzeln begrenzten Wege und erreicht dein Ziel mit ${formatEuro(hybridPlan.totalCostCents)} geplanter Kaufsumme.`
       : directGap === 0
         ? "Der Erwartungswert reicht bereits für dein Ziel. Drehe zuerst deine vorhandenen Münzen und prüfe danach, ob überhaupt noch eine Restlücke besteht."
       : confidenceCoinPlan && (!directPlan || confidenceCoinPlan.costCents < directPlan.costCents)

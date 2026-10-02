@@ -1,15 +1,15 @@
 # Charaktermodell-Serien
 
-Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie beschreibt Aufbau und Zweck der Referenz, nicht nur ihren Zeichenstil. Die klassischen Referenztafeln sichern vor allem das Aussehen einer Figur; die geplanten Charakterwelten ergänzen diese Grundlage um ihre individuelle Umgebung und Bildsprache.
+Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie beschreibt Aufbau und Zweck der Referenz, nicht nur ihren Zeichenstil. Die klassischen Referenztafeln sichern vor allem das Aussehen einer Figur; die Weltserie ergänzt diese Grundlage um ihre individuelle Umgebung und Bildsprache.
 
-## M2 – Individuelle Charakterwelten
+## M2 – Individuelle Charakterwelten (Weltserie)
 
-- **Status:** Geplant
+- **Status:** Aktive neue Serie
 - **Beschreibung:** Erweiterte Referenzmodelle, die neben der Figur auch deren typische Welt verbindlich zeigen: Architektur, Schauplätze, Requisiten, Lichtstimmung, Farben und persönliche Symbolik. Die Figur bleibt eindeutig reproduzierbar, erhält aber eine deutlich individuellere visuelle Heimat.
 
 ### Bilder
 
-Noch keine Modelle zugeordnet.
+- [Drachenherz_Modell_Weltserie.png](Drachenherz_Modell_Weltserie.png)
 
 ## M1 – Einheitliche Referenztafeln
 
