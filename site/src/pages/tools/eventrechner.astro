@@ -1,0 +1,311 @@
+---
+import "../../styles/global.css";
+import ImageActionIcon from "../../components/ImageActionIcon.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Plane Münzen, Vorratsgutscheine und Echtgeldpakete für das aktuelle Flügelevent."
+    />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Flügelevent-Planer · Tools · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="tools" />
+
+      <main class="tool-main" id="main-content">
+        <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/tools/">Tools</a>
+          <span aria-hidden="true">/</span>
+          <span>Flügelevent-Planer</span>
+        </nav>
+
+        <header class="tool-hero flight-tool-hero">
+          <div class="flight-hero-copy">
+            <p class="eyebrow">Gefechtsvorbereitung der Flugbesatzung</p>
+            <div class="flight-hero-title-line">
+              <h1>Flügelevent-Planer</h1>
+              <button
+                type="button"
+                class="tip-article-share tool-share-button"
+                data-share-page
+                data-flight-share
+                data-share-url="/drachenhalle/tools/eventrechner/"
+                aria-label="Flügelevent-Planer teilen"
+                title="Flügelevent-Planer teilen"
+              >
+                <ImageActionIcon type="share" />
+              </button>
+            </div>
+            <p>
+              Prüfe, was dein Münz- und Gutscheinbestand statistisch wert ist, und vergleiche den
+              Casino-Weg mit einem garantierten Direktkauf.
+            </p>
+            <div class="flight-hero-actions">
+              <a href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Event-Guide öffnen →</a>
+              <button type="button" data-flight-info-open aria-haspopup="dialog" aria-controls="flight-info-dialog">
+                Daten &amp; Methodik
+              </button>
+            </div>
+          </div>
+          <div class="flight-hero-character" aria-hidden="true">
+            <span class="flight-propeller">✦</span>
+            <img
+              src="/drachenhalle/brand/tool-flight-anthlan-navigator.webp"
+              alt=""
+              width="480"
+              height="720"
+            />
+          </div>
+          <div class="flight-hero-route" aria-label="Vom Bestand zum Kaufplan">
+            <div><span>01</span><strong>Bestand</strong><small>Münzen &amp; Gutscheine</small></div>
+            <i aria-hidden="true">→</i>
+            <div><span>02</span><strong>Prognose</strong><small>Chance &amp; Streuung</small></div>
+            <i aria-hidden="true">→</i>
+            <div class="is-result"><span>03</span><strong>Kaufplan</strong><small>Casino oder sicher</small></div>
+          </div>
+        </header>
+
+        <section class="flight-calculator" data-flight-event-calculator aria-labelledby="flight-form-title">
+          <form class="flight-form" data-flight-event-form>
+            <div class="flight-form-heading">
+              <p class="eyebrow">Deine Ausgangslage</p>
+              <h2 id="flight-form-title">Was hast du – und wohin willst du?</h2>
+              <p>Der Planer rechnet nur mit Münzen und Vorratsgutscheinen. Hilfsgüter aus dem Versorgungsabwurf bleiben außen vor.</p>
+            </div>
+
+            <fieldset>
+              <legend>Bestand &amp; Ziel</legend>
+              <div class="flight-field-grid is-three">
+                <label>
+                  <span>Fliegende-Stern-Münzen</span>
+                  <input name="currentCoins" type="number" min="0" max="100000" step="1" value="0" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>Vorratsgutscheine</span>
+                  <input name="currentVouchers" type="number" min="0" max="1000000" step="1" value="0" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>Gutscheinziel</span>
+                  <input name="targetVouchers" type="number" min="1" max="1000000" step="1" value="4000" inputmode="numeric" />
+                  <small>Zum Beispiel 4.000 für die Vibranium-Verteidigungslinie.</small>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Restlaufzeit</legend>
+              <div class="flight-field-grid is-time">
+                <label>
+                  <span>Noch Tage</span>
+                  <input name="remainingDays" type="number" min="0" max="30" step="1" value="3" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>Noch Stunden</span>
+                  <input name="remainingHours" type="number" min="0" max="23" step="1" value="0" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>Offene Eventtage mit je 15 Münzen</span>
+                  <input name="remainingTaskDays" type="number" min="0" max="5" step="1" value="0" inputmode="numeric" />
+                </label>
+              </div>
+              <p class="flight-field-note">Aus der Restlaufzeit werden angefangene tägliche Kaufperioden ermittelt. Prüfe vor dem Kauf trotzdem den Ingame-Timer.</p>
+            </fieldset>
+
+            <fieldset>
+              <legend>Planungsannahmen</legend>
+              <div class="flight-option-grid">
+                <label>
+                  <input name="includeFree" type="checkbox" value="yes" checked />
+                  <span><strong>Gratisabholungen einplanen</strong><small>1 Münze und 1 Gutschein je erreichbarer Kaufperiode.</small></span>
+                </label>
+                <label>
+                  <input name="includeDiamonds" type="checkbox" value="yes" />
+                  <span><strong>500-Diamanten-Gutschein einplanen</strong><small>1 zusätzlicher Gutschein je Kaufperiode.</small></span>
+                </label>
+                <label>
+                  <input name="includeMilestones" type="checkbox" value="yes" checked />
+                  <span><strong>300/500-Punkte-Stufen noch offen</strong><small>Bei gebündelten Ziehungen 200 beziehungsweise 400 sichere Gutscheine.</small></span>
+                </label>
+                <label>
+                  <span class="flight-select-label"><strong>Gewünschte Planungssicherheit</strong><small>Für die obere Grenze des Casino-Korridors.</small></span>
+                  <select name="confidence">
+                    <option value="0.8" selected>80 % – realistisch</option>
+                    <option value="0.9">90 % – vorsichtig</option>
+                    <option value="0.95">95 % – sehr vorsichtig</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="tool-memory-actions flight-memory-actions">
+              <button type="button" class="tool-memory-button" data-flight-save>Eventstand speichern</button>
+              <button type="button" class="tool-memory-reset" data-flight-clear hidden>Gespeicherte Werte löschen</button>
+              <p class="tool-memory-status" role="status" aria-live="polite" data-flight-storage-status>Nur auf diesem Gerät gespeichert.</p>
+            </div>
+
+            <p class="tool-error" role="alert" data-flight-event-error hidden></p>
+            <button class="tool-submit flight-submit" type="submit">Flugplan berechnen →</button>
+          </form>
+
+          <section class="flight-result" data-flight-event-result data-state="concerned" aria-live="polite">
+            <div class="flight-result-intro">
+              <div>
+                <p class="eyebrow" data-flight-result-kicker>Dein Kurs zum Ziel</p>
+                <h2 data-flight-result-title>Noch Nachschub einplanen</h2>
+                <p data-flight-result-summary></p>
+              </div>
+              <div class="flight-result-character" aria-hidden="true">
+                <img data-flight-character="navigator" src="/drachenhalle/brand/tool-flight-anthlan-navigator.webp" alt="" hidden />
+                <img data-flight-character="concerned" src="/drachenhalle/brand/tool-flight-anthlan-concerned.webp" alt="" />
+                <img data-flight-character="success" src="/drachenhalle/brand/tool-flight-anthlan-success.webp" alt="" hidden />
+              </div>
+            </div>
+
+            <div class="flight-result-facts" aria-label="Planungsgrundlage">
+              <div><span>Kaufperioden</span><strong data-flight-windows>0</strong></div>
+              <div><span>Künftige Gratismünzen</span><strong data-flight-free-coins>0</strong></div>
+              <div><span>Künftige Direktgutscheine</span><strong data-flight-free-vouchers>0</strong></div>
+            </div>
+
+            <article class="flight-inventory-projection">
+              <div>
+                <p class="eyebrow">Ohne Echtgeld</p>
+                <h3>Dein vorhandener Flugplan</h3>
+              </div>
+              <dl>
+                <div><dt>Erwartet</dt><dd data-flight-current-expected>0</dd></div>
+                <div><dt>Typischer Korridor</dt><dd data-flight-current-range>0–0</dd></div>
+                <div><dt>Zielchance</dt><dd data-flight-current-chance>0 %</dd></div>
+              </dl>
+            </article>
+
+            <div class="flight-route-comparison">
+              <article class="flight-route-card is-casino">
+                <div class="flight-route-icon" aria-hidden="true">🎰</div>
+                <p class="eyebrow">Mehr Ertrag, mehr Zufall</p>
+                <h3>Casino-Weg</h3>
+                <strong class="flight-route-price" data-flight-casino-cost>–</strong>
+                <p data-flight-casino-outcome></p>
+                <div class="flight-route-meta">
+                  <span data-flight-casino-coins></span>
+                  <span data-flight-casino-chance></span>
+                </div>
+                <p class="flight-package-plan" data-flight-casino-plan></p>
+              </article>
+
+              <article class="flight-route-card is-direct">
+                <div class="flight-route-icon" aria-hidden="true">🎟️</div>
+                <p class="eyebrow">Planbar bis zum Ziel</p>
+                <h3>Direkter Gutscheinweg</h3>
+                <strong class="flight-route-price" data-flight-direct-cost>–</strong>
+                <p data-flight-direct-outcome></p>
+                <p class="flight-package-plan" data-flight-direct-plan></p>
+              </article>
+            </div>
+
+            <aside class="flight-recommendation">
+              <span aria-hidden="true">✦</span>
+              <div>
+                <p class="eyebrow">Anthlans Empfehlung</p>
+                <p data-flight-recommendation></p>
+              </div>
+            </aside>
+          </section>
+        </section>
+
+        <aside class="flight-tool-disclaimer">
+          <strong>Kein Kaufversprechen:</strong>
+          Wahrscheinlichkeiten sind keine Garantie. Regionale Preise und Angebotslimits können abweichen. Der Planer verwendet die am 28.09.2026 in Deutschland dokumentierten Ingame-Angebote.
+        </aside>
+
+        <dialog class="healing-help-dialog tool-info-dialog flight-info-dialog" id="flight-info-dialog" aria-labelledby="flight-info-title">
+          <div class="healing-help-content tool-info-dialog-shell">
+            <header class="healing-help-heading tool-info-dialog-header">
+              <div>
+                <p class="eyebrow">Daten &amp; Methodik</p>
+                <h2 id="flight-info-title">So rechnet der Flügelevent-Planer</h2>
+              </div>
+              <button class="healing-help-close" type="button" aria-label="Information schließen" title="Schließen" data-flight-info-close>×</button>
+            </header>
+
+            <section class="flight-info-section">
+              <h3>Erwartungswert je Münze</h3>
+              <div class="flight-method-grid">
+                <article><strong>10,01</strong><span>Grundbelohnung</span><small>5, 50, 250 oder 500 Gutscheine.</small></article>
+                <article><strong>2,77</strong><span>Symbolkombinationen</span><small>Direkte Gutschein-Kombinationen.</small></article>
+                <article><strong>2,31</strong><span>Spielautomaten-Luftabwurf</span><small>40-%-Gutscheinpool der Truhenziehung.</small></article>
+                <article class="is-total"><strong>15,08</strong><span>Gesamt erwartet</span><small>Je eingesetzter Münze, nicht garantiert.</small></article>
+              </div>
+              <p>Der eigenständige Bereich <strong>Versorgungsabwurf</strong> mit Hilfsgütern bringt weder Münzen noch Vorratsgutscheine und wird ausdrücklich nicht eingerechnet.</p>
+            </section>
+
+            <section class="flight-info-section">
+              <h3>Paketdaten</h3>
+              <div class="flight-package-tables">
+                <table>
+                  <caption>Münzpakete</caption>
+                  <thead><tr><th>Münzen</th><th>Preis</th><th>Limit je Periode</th></tr></thead>
+                  <tbody>
+                    <tr><td>2</td><td>1,19 €</td><td>1</td></tr><tr><td>4</td><td>2,49 €</td><td>1</td></tr>
+                    <tr><td>5</td><td>5,99 €</td><td>1</td></tr><tr><td>10</td><td>11,99 €</td><td>1</td></tr>
+                    <tr><td>20</td><td>23,99 €</td><td>1</td></tr><tr><td>50</td><td>59,99 €</td><td>1</td></tr>
+                    <tr><td>100</td><td>119,99 €</td><td>20</td></tr>
+                  </tbody>
+                </table>
+                <table>
+                  <caption>Direkte Gutscheinpakete</caption>
+                  <thead><tr><th>Gutscheine</th><th>Preis</th><th>Limit je Periode</th></tr></thead>
+                  <tbody>
+                    <tr><td>20</td><td>2,49 €</td><td>1</td></tr><tr><td>40</td><td>5,99 €</td><td>1</td></tr>
+                    <tr><td>80</td><td>11,99 €</td><td>1</td></tr><tr><td>160</td><td>23,99 €</td><td>1</td></tr>
+                    <tr><td>400</td><td>59,99 €</td><td>1</td></tr><tr><td>800</td><td>119,99 €</td><td>1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="flight-info-section">
+              <h3>Wie ist der Korridor zu lesen?</h3>
+              <p>Der Rechner verwendet Erwartungswert und statistische Streuung aller dokumentierten Gutschein-Ausgänge. Der gewählte Sicherheitswert erhöht die geplante Münzmenge. Seltene Glückstreffer können trotzdem außerhalb des dargestellten Korridors liegen.</p>
+              <p>Die 300- und 500-Punkte-Stufen werden nur berücksichtigt, wenn sie als offen markiert sind und alle geplanten Münzen gebündelt eingesetzt werden. Nicht eindeutig bezifferte Kisten und weitere Nebenbelohnungen bleiben konservativ außen vor.</p>
+              <a class="flight-info-guide-link" href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Vollständigen Event-Guide lesen →</a>
+            </section>
+          </div>
+        </dialog>
+      </main>
+
+      <SiteFooter />
+    </div>
+
+    <p class="share-feedback" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></p>
+
+    <script>
+      import { initializeFlightEventCalculator } from "../../scripts/flight-event-calculator";
+      import { initializeImageActions } from "../../scripts/image-actions";
+
+      initializeFlightEventCalculator();
+      initializeImageActions();
+
+      const dialog = document.querySelector("#flight-info-dialog");
+      const openButton = document.querySelector("[data-flight-info-open]");
+      const closeButton = document.querySelector("[data-flight-info-close]");
+
+      if (dialog instanceof HTMLDialogElement) {
+        openButton?.addEventListener("click", () => dialog.showModal());
+        closeButton?.addEventListener("click", () => dialog.close());
+        dialog.addEventListener("click", (event) => {
+          if (event.target === dialog) dialog.close();
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -12,6 +12,7 @@ const documentOutputDirectory = path.join(siteRoot, "public", "generated", "docu
 const dataFile = path.join(siteRoot, "src", "data", "gallery.generated.json");
 const documentImageDataFile = path.join(siteRoot, "src", "data", "document-images.generated.json");
 const styleIndexFile = path.join(repositoryRoot, "Galerie", "STILINDEX.md");
+const avatarSetIndexFile = path.join(repositoryRoot, "Galerie", "Avatare", "SETINDEX.md");
 const imageExtensions = new Set([".png", ".jpg", ".jpeg", ".webp"]);
 const validStyles = new Set(["S1", "S2", "S3", "S4"]);
 
@@ -128,6 +129,68 @@ async function loadStyleIndex() {
   return { assignments, labels, styles };
 }
 
+async function loadAvatarSetIndex() {
+  const content = await readFile(avatarSetIndexFile, "utf8");
+  const sets = [];
+  const assignments = new Map();
+  let currentSet = null;
+
+  for (const line of content.split(/\r?\n/)) {
+    const heading = line.match(/^##\s+(A\d+)\s+[–-]\s+(.+?)\s*$/);
+    if (heading) {
+      const [, value, label] = heading;
+      if (sets.some((set) => set.value === value)) {
+        throw new Error(`Avatar-Serie ${value} ist im SETINDEX.md mehrfach definiert.`);
+      }
+
+      currentSet = { value, label, status: "", description: "" };
+      sets.push(currentSet);
+      continue;
+    }
+
+    if (!currentSet) continue;
+
+    const status = line.match(/^-\s+\*\*Status:\*\*\s+(.+?)\s*$/);
+    if (status) {
+      currentSet.status = status[1];
+      continue;
+    }
+
+    const description = line.match(/^-\s+\*\*Beschreibung:\*\*\s+(.+?)\s*$/);
+    if (description) {
+      currentSet.description = description[1];
+      continue;
+    }
+
+    const imageLink = line.match(/^\s*-\s+\[[^\]]+\]\(([^)]+)\)\s*$/);
+    if (!imageLink) continue;
+
+    const linkedPath = decodeURIComponent(imageLink[1]).replaceAll("\\", "/");
+    const sourcePath = path.posix.normalize(`Galerie/Avatare/${linkedPath}`);
+    if (!sourcePath.startsWith("Galerie/Avatare/") || path.posix.dirname(sourcePath) !== "Galerie/Avatare") {
+      throw new Error(`Ungültiger Avatarpfad im SETINDEX.md: ${linkedPath}`);
+    }
+    if (assignments.has(sourcePath)) {
+      throw new Error(`${sourcePath} ist im SETINDEX.md mehrfach zugeordnet.`);
+    }
+    assignments.set(sourcePath, currentSet.value);
+  }
+
+  if (!sets.length) throw new Error("Im SETINDEX.md sind keine Avatar-Serien definiert.");
+  for (const set of sets) {
+    if (!set.status || !set.description) {
+      throw new Error(`Avatar-Serie ${set.value} benötigt Status und Beschreibung.`);
+    }
+  }
+
+  return {
+    assignments,
+    sets,
+    labels: new Map(sets.map((set) => [set.value, set.label])),
+    statuses: new Map(sets.map((set) => [set.value, set.status])),
+  };
+}
+
 function humanize(value) {
   let normalized = value;
   for (const [source, replacement] of transliterations) normalized = normalized.replaceAll(source, replacement);
@@ -236,6 +299,7 @@ await mkdir(path.dirname(dataFile), { recursive: true });
 const previousItems = await loadPreviousItems();
 const previousDocumentImages = await loadPreviousDocumentImages();
 const styleIndex = await loadStyleIndex();
+const avatarSetIndex = await loadAvatarSetIndex();
 const contentVisibility = await loadContentVisibility(repositoryRoot);
 const sources = [];
 
@@ -275,12 +339,33 @@ if (missingStyleAssignments.length || orphanedStyleAssignments.length) {
   throw new Error(`STILINDEX.md ist nicht vollständig:\n${issues.map((issue) => `- ${issue}`).join("\n")}`);
 }
 
+const avatarSourcePaths = new Set(
+  sources.filter(({ category }) => category === "Avatar").map(({ relativePath }) => relativePath),
+);
+const missingAvatarSetAssignments = [...avatarSourcePaths].filter(
+  (sourcePath) => !avatarSetIndex.assignments.has(sourcePath),
+);
+const orphanedAvatarSetAssignments = [...avatarSetIndex.assignments.keys()].filter(
+  (sourcePath) => !avatarSourcePaths.has(sourcePath),
+);
+
+if (missingAvatarSetAssignments.length || orphanedAvatarSetAssignments.length) {
+  const issues = [
+    ...missingAvatarSetAssignments.map((sourcePath) => `Avatar-Serie fehlt: ${sourcePath}`),
+    ...orphanedAvatarSetAssignments.map((sourcePath) => `Avatar fehlt: ${sourcePath}`),
+  ];
+  throw new Error(`SETINDEX.md ist nicht vollständig:\n${issues.map((issue) => `- ${issue}`).join("\n")}`);
+}
+
 const items = await mapWithConcurrency(sources, 3, async ({ absolutePath, category, relativePath }) => {
   const fileStats = await stat(absolutePath);
   const fingerprint = `${fileStats.size}-${Math.trunc(fileStats.mtimeMs)}`;
   const metadata = parseMetadata(relativePath, category);
   const style = styleIndex.assignments.get(relativePath) ?? null;
   const styleLabel = style ? styleIndex.labels.get(style) : null;
+  const avatarSet = avatarSetIndex.assignments.get(relativePath) ?? null;
+  const avatarSetLabel = avatarSet ? avatarSetIndex.labels.get(avatarSet) : null;
+  const avatarSetStatus = avatarSet ? avatarSetIndex.statuses.get(avatarSet) : null;
   const hash = crypto.createHash("sha1").update(relativePath).digest("hex").slice(0, 8);
   const id = `${slugify(metadata.title) || "bild"}-${hash}`;
   const thumbnailName = `${id}-thumb.webp`;
@@ -317,6 +402,9 @@ const items = await mapWithConcurrency(sources, 3, async ({ absolutePath, catego
     ...metadata,
     style,
     styleLabel,
+    avatarSet,
+    avatarSetLabel,
+    avatarSetStatus,
     width,
     height,
     fingerprint,
@@ -403,6 +491,10 @@ const galleryData = {
   styles: styleIndex.styles.map((style) => ({
     ...style,
     count: items.filter((item) => item.style === style.value).length,
+  })),
+  avatarSets: avatarSetIndex.sets.map((set) => ({
+    ...set,
+    count: items.filter((item) => item.avatarSet === set.value).length,
   })),
   items,
 };

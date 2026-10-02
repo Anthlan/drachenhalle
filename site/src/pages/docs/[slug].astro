@@ -61,6 +61,7 @@ const isOfficerRoster = document.kind === "officers";
 const isResponsibilities = document.kind === "responsibilities";
 const isAllianceDocument = document.section === "Allianz";
 const isHealingTip = document.slug === "tipp-08-soldaten-schneller-heilen";
+const isFlightEvent = document.slug === "event-01-gefechtsvorbereitung-flugbesatzung";
 const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument || document.kind === "alliance";
 const tutorialStorageKey = document.tutorialStorageKey ?? `die-${document.slug}-step-v1`;
 const tutorialProgressLabel = document.tutorialProgressLabel ?? "Fortschritt im Einstieg";
@@ -127,13 +128,16 @@ const leadershipProfiles = [
     name: "Somea",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "Somea"),
-    characterImageUrl: latestPersonImage("Charaktermodell", "Somea"),
+    characterImageUrl: "/drachenhalle/brand/officer-somea-world-v2.webp",
+    characterImageAlt: "Somea als zugewandte Göttin der tausend Stimmen in ihrem warm erleuchteten Salon über Berlin",
+    cardTheme: "somea",
     alterEgo: {
-      title: "Die Sternenweberin",
-      summary: "Eine arkane Planerin, die Wissen und Intuition verbindet und selbst in unruhigen Zeiten den klaren Blick bewahrt.",
-      archetype: "Arkane Strategin",
-      hallmark: "Nachtblaues Haar, Saphirschmuck und eine schwarze Begleitkatze",
-      presence: "Klug, gefasst und aufmerksam",
+      title: "Die Göttin der tausend Stimmen",
+      summary: "Somea sieht nicht zuerst Rang, Stärke oder Rolle, sondern den Menschen dahinter. Sie hört hin, merkt, wenn jemand leiser wird, und sorgt dafür, dass niemand am Rand bleibt. Mit Wärme, Klarheit und ihrem unverwechselbaren Temperament macht sie aus vielen Einzelnen unser gemeinsames Zuhause.",
+      archetype: "Zugewandte Göttin und Herz unserer Gemeinschaft",
+      hallmark: "Persönliche Lichter, verbindende Saphirfäden, schwarze Katze und Berliner Nachtsalon",
+      presence: "Aufmerksam, herzlich, direkt und schützend",
+      world: "Der Salon der tausend Stimmen",
     },
   },
   {
@@ -398,6 +402,12 @@ const responsibilities = [
                   Persönlichen Heilblock berechnen →
                 </a>
               )}
+              {isFlightEvent && (
+                <a class="document-tool-link" href="/drachenhalle/tools/eventrechner/">
+                  <span aria-hidden="true">✈</span>
+                  Persönliches Eventziel planen →
+                </a>
+              )}
           {!document.hidden && !["Drachenwissen", "Allianz", "Tutorials"].includes(document.section) && (
             <div class="document-header-actions">
               <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
@@ -601,6 +611,7 @@ const responsibilities = [
                           "is-leader": officer.isLeader,
                           "is-pending": !officer.imageUrl,
                           "is-mysteryz": officer.cardTheme === "mysteryz",
+                          "is-somea": officer.cardTheme === "somea",
                         },
                       ]}
                       data-officer-open={`officer-dialog-${officer.id}`}
@@ -634,6 +645,7 @@ const responsibilities = [
                       {
                         "is-anthlan": officer.cardTheme === "anthlan",
                         "is-mysteryz": officer.cardTheme === "mysteryz",
+                        "is-somea": officer.cardTheme === "somea",
                       },
                     ]}
                     data-officer-dialog
