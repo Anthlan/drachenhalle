@@ -19,7 +19,7 @@ Ernsthafte Allianzankündigungen und verbindliche Charakterreferenzen bleiben in
 
 - hochwertige, polierte 2D-Chibi-Fantasyillustration
 - große Köpfe, kleine Körper und klar überzeichnete Mimik
-- niedlich und verspielt, aber nicht kindlich oder beliebig
+- grundsätzlich verspielt und häufig niedlich, aber nicht kindlich oder beliebig; bestätigte charakterbezogene Grenzen aus den Charakterprofilen gehen dieser Grundwirkung vor
 - klare Silhouetten und gut lesbare Gesten
 - vereinfachte Umgebung mit wenigen gezielt eingesetzten Details
 - keine Vermischung mit fotorealistischen Körperproportionen
@@ -30,6 +30,7 @@ Ernsthafte Allianzankündigungen und verbindliche Charakterreferenzen bleiben in
 - Gesicht, Frisur, Hautfarbe, Hörner, Ohren und andere körperliche Merkmale eindeutig übernehmen
 - charakteristische Kleidung, Farben, Schmuckstücke und Accessoires vereinfacht, aber wiedererkennbar darstellen
 - Chibi-Proportionen dürfen die Figur überzeichnen, aber nicht neu gestalten
+- Charakterprofile legen auch den Grad der Niedlichkeit fest. Figuren, die keine süße oder knuddelige Darstellung wünschen, erhalten eine kantigere Chibi-Auslegung mit klarerer Silhouette, schlankeren Formen und trockenerer Mimik.
 - bevorzugt eine bis drei Hauptfiguren pro Bild
 
 ## Farbwelt und DlE-Wiedererkennung

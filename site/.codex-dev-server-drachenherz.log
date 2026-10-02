@@ -58,3 +58,25 @@ $ astro dev "--host" "127.0.0.1" "--force"
 {"message":"[200] /tools/eventrechner/ 49ms","label":null,"level":"info"}
 {"message":"[200] /tools/eventrechner/ 2ms","label":null,"level":"info"}
 {"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 108ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 3ms","label":null,"level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 61ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 2ms","label":null,"level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"src/pages/tools/eventrechner.astro","label":"watch","level":"info"}
+{"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
+{"message":"[200] /tools/eventrechner/ 77ms","label":null,"level":"info"}
+{"message":"[200] /tools/eventrechner/ 4ms","label":null,"level":"info"}

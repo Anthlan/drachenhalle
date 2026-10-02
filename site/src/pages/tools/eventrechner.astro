@@ -300,6 +300,49 @@ const shopPages = [
               </dl>
             </article>
 
+            <article class="flight-f2p-plan">
+              <header>
+                <div>
+                  <p class="eyebrow">Ohne Echtgeld</p>
+                  <h3>Das meiste aus deinen Gutscheinen holen</h3>
+                  <p>Die Empfehlung plant bewusst mit der vorsichtigen Untergrenze deines erwartbaren Gutscheinbestands.</p>
+                </div>
+                <div class="flight-f2p-budget">
+                  <span>Planbarer Rahmen</span>
+                  <strong data-flight-f2p-budget>0 Gutscheine</strong>
+                  <small><b data-flight-f2p-spent>0 verplant</b> · <b data-flight-f2p-remaining>0 übrig</b></small>
+                </div>
+              </header>
+              <fieldset class="flight-f2p-direction">
+                <legend>Was ist dir wichtiger?</legend>
+                <label>
+                  <input type="radio" name="f2pPreference" value="lasting" data-flight-f2p-preference checked />
+                  <span><strong>Dauerhafter Fortschritt</strong><small>Seltene, langfristig wertvolle Ausbauteile zuerst</small></span>
+                </label>
+                <label>
+                  <input type="radio" name="f2pPreference" value="speed" data-flight-f2p-preference />
+                  <span><strong>Schneller vorankommen</strong><small>Beschleuniger und sofort nutzbare Ressourcen zuerst</small></span>
+                </label>
+                <label>
+                  <input type="radio" name="f2pPreference" value="hero" data-flight-f2p-preference />
+                  <span><strong>Helden &amp; Auswahltruhen</strong><small>UR-Splitter und gezielte Truhen priorisieren</small></span>
+                </label>
+                <label>
+                  <input type="radio" name="f2pPreference" value="construction" data-flight-f2p-preference />
+                  <span><strong>Basis &amp; Flugzeug</strong><small>Baupläne, Gebäudeteile und Flugmaterial zuerst</small></span>
+                </label>
+              </fieldset>
+              <div class="flight-f2p-method" data-flight-f2p-method>
+                <span>45 % Seltenheit &amp; Limit</span>
+                <span>35 % dauerhafter Fortschritt</span>
+                <span>20 % Preis-Leistung</span>
+              </div>
+              <ol class="flight-f2p-list" data-flight-f2p-list></ol>
+              <p class="flight-f2p-goal-note">
+                <strong>Sammlerziel:</strong> Möchtest du unbedingt die Vibranium-Verteidigungslinie, reserviere zuerst 4.000 Gutscheine. Sie ist bewusst nicht in der allgemeinen Fortschrittswertung enthalten.
+              </p>
+            </article>
+
             <div class="flight-route-comparison">
               <article class="flight-route-card is-casino">
                 <div class="flight-route-icon" aria-hidden="true">🎰</div>
@@ -396,7 +439,7 @@ const shopPages = [
                   <tbody>
                     <tr><td>20</td><td>2,49 €</td><td>1</td></tr><tr><td>40</td><td>5,99 €</td><td>1</td></tr>
                     <tr><td>80</td><td>11,99 €</td><td>1</td></tr><tr><td>160</td><td>23,99 €</td><td>1</td></tr>
-                    <tr><td>400</td><td>59,99 €</td><td>1</td></tr><tr><td>800</td><td>119,99 €</td><td>1</td></tr>
+                    <tr><td>400</td><td>59,99 €</td><td>1</td></tr><tr><td>800</td><td>119,99 €</td><td>10</td></tr>
                   </tbody>
                 </table>
               </div>

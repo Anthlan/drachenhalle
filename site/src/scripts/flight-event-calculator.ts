@@ -78,8 +78,282 @@ export const VOUCHER_PACKAGES: readonly EventPackage[] = [
   { id: "voucher-80", label: "80 Gutscheine", units: 80, priceCents: 1199, perWindowLimit: 1 },
   { id: "voucher-160", label: "160 Gutscheine", units: 160, priceCents: 2399, perWindowLimit: 1 },
   { id: "voucher-400", label: "400 Gutscheine", units: 400, priceCents: 5999, perWindowLimit: 1 },
-  { id: "voucher-800", label: "800 Gutscheine", units: 800, priceCents: 11999, perWindowLimit: 1 },
+  { id: "voucher-800", label: "800 Gutscheine", units: 800, priceCents: 11999, perWindowLimit: 10 },
 ] as const;
+
+export const F2P_SHOP_PRIORITIES = [
+  {
+    id: "ur-splitter",
+    name: "UR-Omni-Heldensplitter",
+    unit: "10 Splitter",
+    price: 60,
+    max: 1,
+    perWindow: true,
+    score: 98,
+    reason: "Sehr selten, universell einsetzbar und täglich stark limitiert.",
+  },
+  {
+    id: "deluxe-truhe",
+    name: "Optionale Deluxe-Truhe",
+    unit: "1 Truhe",
+    price: 100,
+    max: 1,
+    perWindow: true,
+    score: 94,
+    reason: "Hohe Auswahlfreiheit für einen kleinen täglichen Gutscheinbetrag.",
+  },
+  {
+    id: "ur-truhe",
+    name: "UR-Auswahltruhe",
+    unit: "1 Truhe",
+    price: 300,
+    max: 5,
+    perWindow: false,
+    score: 91,
+    reason: "Gezielter UR-Fortschritt ist für kostenlose Spieler besonders wertvoll.",
+  },
+  {
+    id: "bauplan-rot",
+    name: "Roter Bauplan",
+    unit: "1 Bauplan",
+    price: 300,
+    max: 10,
+    perWindow: false,
+    score: 87,
+    reason: "Engpassmaterial mit dauerhaftem Ausbauwert.",
+  },
+  {
+    id: "puzzleteil",
+    name: "Goldenes Puzzleteil",
+    unit: "1 Teil",
+    price: 16,
+    max: 300,
+    perWindow: false,
+    score: 82,
+    reason: "Guter Lückenfüller: günstig, dauerhaft nützlich und fein dosierbar.",
+  },
+  {
+    id: "gebaeudeteil-c",
+    name: "Gebäudeteil C",
+    unit: "1 Teil",
+    price: 40,
+    max: 80,
+    perWindow: false,
+    score: 76,
+    reason: "Solider Ausbaufortschritt, wenn die seltenen Käufe bereits gedeckt sind.",
+  },
+] as const;
+
+export const F2P_SPEED_PRIORITIES = [
+  {
+    id: "beschleuniger-3h",
+    name: "3-Stunden-Beschleuniger",
+    unit: "1 Beschleuniger",
+    price: 16,
+    max: 200,
+    perWindow: false,
+    score: 100,
+    reason: "Der klarste direkte Zeitgewinn: Jeder Kauf überspringt drei Stunden Wartezeit.",
+  },
+  {
+    id: "flugmaterial",
+    name: "Flugmaterial",
+    unit: "10.000 Material",
+    price: 16,
+    max: 100,
+    perWindow: false,
+    score: 88,
+    reason: "Sofort nutzbares Material, wenn der Ausbau sonst auf Ressourcen wartet.",
+  },
+  {
+    id: "versorgungskisten",
+    name: "Versorgungskisten",
+    unit: "10 Kisten",
+    price: 40,
+    max: 1000,
+    perWindow: false,
+    score: 80,
+    reason: "Flexible Soforthilfe, sobald Beschleuniger und Flugmaterial gedeckt sind.",
+  },
+  {
+    id: "fortschrittskiste-a",
+    name: "Fortschrittskiste A",
+    unit: "1 Truhe",
+    price: 8,
+    max: 1000,
+    perWindow: false,
+    score: 74,
+    reason: "Günstiger Lückenfüller für unmittelbar einsetzbare Fortschrittsressourcen.",
+  },
+] as const;
+
+export const F2P_HERO_PRIORITIES = [
+  {
+    id: "ur-splitter",
+    name: "UR-Omni-Heldensplitter",
+    unit: "10 Splitter",
+    price: 60,
+    max: 1,
+    perWindow: true,
+    score: 100,
+    reason: "Universell einsetzbare UR-Splitter mit strengem Tageslimit zuerst sichern.",
+  },
+  {
+    id: "deluxe-truhe",
+    name: "Optionale Deluxe-Truhe",
+    unit: "1 Truhe",
+    price: 100,
+    max: 1,
+    perWindow: true,
+    score: 95,
+    reason: "Die Auswahlmöglichkeit macht die tägliche Truhe planbarer als Zufallsbelohnungen.",
+  },
+  {
+    id: "ur-truhe",
+    name: "UR-Auswahltruhe",
+    unit: "1 Truhe",
+    price: 300,
+    max: 5,
+    perWindow: false,
+    score: 92,
+    reason: "Gezielte UR-Auswahl für den Helden, den du tatsächlich weiterentwickelst.",
+  },
+  {
+    id: "event-zufallstruhe",
+    name: "Event-Zufallstruhe",
+    unit: "1 Truhe",
+    price: 100,
+    max: 30,
+    perWindow: false,
+    score: 70,
+    reason: "Ergänzung mit Zufallsfaktor, wenn die gezielten Auswahlkäufe ausgeschöpft sind.",
+  },
+  {
+    id: "puzzleteil",
+    name: "Goldenes Puzzleteil",
+    unit: "1 Teil",
+    price: 16,
+    max: 300,
+    perWindow: false,
+    score: 66,
+    reason: "Günstiger Lückenfüller für kleine Gutscheinreste.",
+  },
+] as const;
+
+export const F2P_CONSTRUCTION_PRIORITIES = [
+  {
+    id: "bauplan-rot",
+    name: "Roter Bauplan",
+    unit: "1 Bauplan",
+    price: 300,
+    max: 10,
+    perWindow: false,
+    score: 100,
+    reason: "Seltenes Engpassmaterial für hochwertige Ausbauvorhaben.",
+  },
+  {
+    id: "bauplan-gold",
+    name: "Goldener Bauplan",
+    unit: "1 Bauplan",
+    price: 60,
+    max: 100,
+    perWindow: false,
+    score: 90,
+    reason: "Breit nutzbarer Bauplanvorrat für die nächsten Ausbauschritte.",
+  },
+  {
+    id: "gebaeudeteil-c",
+    name: "Gebäudeteil C",
+    unit: "1 Teil",
+    price: 40,
+    max: 80,
+    perWindow: false,
+    score: 84,
+    reason: "Der günstigste Einstieg in die drei angebotenen Gebäudeteile.",
+  },
+  {
+    id: "gebaeudeteil-a",
+    name: "Gebäudeteil A",
+    unit: "1 Teil",
+    price: 100,
+    max: 80,
+    perWindow: false,
+    score: 80,
+    reason: "Gezielter Gebäudefortschritt, sobald Baupläne ausreichend vorhanden sind.",
+  },
+  {
+    id: "gebaeudeteil-b",
+    name: "Gebäudeteil B",
+    unit: "1 Teil",
+    price: 100,
+    max: 80,
+    perWindow: false,
+    score: 80,
+    reason: "Alternative für Ausbauten, bei denen speziell Teil B fehlt.",
+  },
+  {
+    id: "flugmaterial",
+    name: "Flugmaterial",
+    unit: "10.000 Material",
+    price: 16,
+    max: 100,
+    perWindow: false,
+    score: 74,
+    reason: "Preiswerter Resteverwerter für den unmittelbaren Flugzeugausbau.",
+  },
+] as const;
+
+export type F2PPreference = "lasting" | "speed" | "hero" | "construction";
+
+export type F2PRecommendation = {
+  id: string;
+  name: string;
+  unit: string;
+  quantity: number;
+  cost: number;
+  score: number;
+  reason: string;
+};
+
+export const recommendF2PShopping = (
+  voucherBudget: number,
+  windows: number,
+  preference: F2PPreference = "lasting",
+) => {
+  let remaining = Math.max(0, Math.floor(voucherBudget));
+  const recommendations: F2PRecommendation[] = [];
+  const priorities = preference === "speed"
+    ? F2P_SPEED_PRIORITIES
+    : preference === "hero"
+      ? F2P_HERO_PRIORITIES
+      : preference === "construction"
+        ? F2P_CONSTRUCTION_PRIORITIES
+        : F2P_SHOP_PRIORITIES;
+
+  for (const item of priorities) {
+    const maximum = item.perWindow ? item.max * Math.max(0, windows) : item.max;
+    const quantity = Math.min(maximum, Math.floor(remaining / item.price));
+    if (quantity <= 0) continue;
+    const cost = quantity * item.price;
+    recommendations.push({
+      id: item.id,
+      name: item.name,
+      unit: item.unit,
+      quantity,
+      cost,
+      score: item.score,
+      reason: item.reason,
+    });
+    remaining -= cost;
+  }
+
+  return {
+    budget: Math.max(0, Math.floor(voucherBudget)),
+    spent: Math.max(0, Math.floor(voucherBudget)) - remaining,
+    remaining,
+    recommendations,
+  };
+};
 
 export const remainingPurchaseWindows = (days: number, hours: number) => {
   const totalHours = Math.max(0, days * 24 + hours);
@@ -403,6 +677,53 @@ const setText = (root: ParentNode, selector: string, value: string) => {
   if (element) element.textContent = value;
 };
 
+const renderF2PPlan = (
+  root: HTMLElement,
+  plan: ReturnType<typeof recommendF2PShopping>,
+) => {
+  const list = root.querySelector<HTMLOListElement>("[data-flight-f2p-list]");
+  if (!list) return;
+  list.replaceChildren();
+
+  if (plan.recommendations.length === 0) {
+    const empty = document.createElement("li");
+    empty.className = "flight-f2p-empty";
+    empty.textContent = "Noch kein sinnvoller Kauf innerhalb des vorsichtigen Gutscheinrahmens. Gutscheine zunächst aufheben.";
+    list.append(empty);
+    return;
+  }
+
+  plan.recommendations.forEach((item, index) => {
+    const row = document.createElement("li");
+    const image = document.createElement("img");
+    image.src = `/drachenhalle/brand/event-shop/items/${item.id}.webp`;
+    image.alt = "";
+    image.width = 240;
+    image.height = 240;
+    image.loading = "lazy";
+
+    const copy = document.createElement("div");
+    const heading = document.createElement("p");
+    const rank = document.createElement("span");
+    rank.textContent = String(index + 1).padStart(2, "0");
+    const title = document.createElement("strong");
+    title.textContent = item.name;
+    heading.append(rank, title);
+
+    const amount = document.createElement("b");
+    amount.textContent = `${item.quantity.toLocaleString("de-DE")}× ${item.unit} · ${item.cost.toLocaleString("de-DE")} Gutscheine`;
+    const reason = document.createElement("small");
+    reason.textContent = item.reason;
+    copy.append(heading, amount, reason);
+
+    const score = document.createElement("em");
+    score.textContent = `${item.score}/100`;
+    score.title = "Gewichteter Nutzwert";
+    row.append(image, copy, score);
+    list.append(row);
+  });
+};
+
 const setCharacter = (root: HTMLElement, state: "navigator" | "concerned" | "success") => {
   root.querySelectorAll<HTMLImageElement>("[data-flight-character]").forEach((image) => {
     image.hidden = image.dataset.flightCharacter !== state;
@@ -421,6 +742,47 @@ export const initializeFlightEventCalculator = () => {
   const clearButton = root?.querySelector<HTMLButtonElement>("[data-flight-clear]");
   const storageStatus = root?.querySelector<HTMLElement>("[data-flight-storage-status]");
   if (!root || !form || !result || !error) return;
+
+  const f2pPreferenceInputs = Array.from(
+    root.querySelectorAll<HTMLInputElement>("[data-flight-f2p-preference]"),
+  );
+  let latestF2PBudget = 0;
+  let latestF2PWindows = 0;
+
+  const currentF2PPreference = (): F2PPreference => {
+    const value = f2pPreferenceInputs.find((input) => input.checked)?.value;
+    return value === "speed" || value === "hero" || value === "construction" ? value : "lasting";
+  };
+
+  const renderF2PRecommendation = () => {
+    const preference = currentF2PPreference();
+    const plan = recommendF2PShopping(latestF2PBudget, latestF2PWindows, preference);
+    setText(result, "[data-flight-f2p-budget]", `${formatInteger(plan.budget)} Gutscheine`);
+    setText(result, "[data-flight-f2p-spent]", `${formatInteger(plan.spent)} verplant`);
+    setText(result, "[data-flight-f2p-remaining]", `${formatInteger(plan.remaining)} übrig`);
+
+    const method = result.querySelector<HTMLElement>("[data-flight-f2p-method]");
+    if (method) {
+      const labels = preference === "speed"
+        ? ["60 % direkter Zeitgewinn", "25 % sofort nutzbar", "15 % Preis-Leistung"]
+        : preference === "hero"
+          ? ["50 % gezielte Auswahl", "35 % Seltenheit & Limit", "15 % Preis-Leistung"]
+          : preference === "construction"
+            ? ["50 % Ausbau-Engpass", "30 % langfristiger Bedarf", "20 % Preis-Leistung"]
+            : ["45 % Seltenheit & Limit", "35 % dauerhafter Fortschritt", "20 % Preis-Leistung"];
+      method.replaceChildren(...labels.map((label) => {
+        const chip = document.createElement("span");
+        chip.textContent = label;
+        return chip;
+      }));
+    }
+
+    renderF2PPlan(result, plan);
+  };
+
+  f2pPreferenceInputs.forEach((input) => {
+    input.addEventListener("change", renderF2PRecommendation);
+  });
 
   const fields = [
     "currentCoins", "currentVouchers", "targetVouchers", "remainingDays", "remainingHours",
@@ -581,6 +943,10 @@ export const initializeFlightEventCalculator = () => {
     setText(result, "[data-flight-current-range]", `${formatInteger(securedVouchers + currentProjection.low)}–${formatInteger(securedVouchers + currentProjection.high)}`);
     setText(result, "[data-flight-current-chance]", formatPercent(currentProbability));
     setText(result, "[data-flight-direct-gap]", `${formatInteger(directGap)} Gutscheine`);
+
+    latestF2PBudget = Math.floor(securedVouchers + currentProjection.low);
+    latestF2PWindows = windows;
+    renderF2PRecommendation();
 
     const casinoRange = meanCoinPlan && confidenceCoinPlan
       ? `${formatEuro(meanCoinPlan.costCents)}–${formatEuro(confidenceCoinPlan.costCents)}`

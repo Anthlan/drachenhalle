@@ -10,6 +10,7 @@ import {
   optimizeHybridPurchase,
   optimizePackagePurchase,
   probabilityToReach,
+  recommendF2PShopping,
   remainingPurchaseWindows,
   requiredCoinsForChance,
 } from "../src/scripts/flight-event-calculator.ts";
@@ -54,13 +55,20 @@ test("kauft direkt nur die Restlücke nach Bestand und erwartetem Münzertrag", 
 });
 
 test("respektiert verbleibende Tageslimits", () => {
-  const impossible = optimizePackagePurchase(VOUCHER_PACKAGES, 1, 2000);
+  const impossible = optimizePackagePurchase(VOUCHER_PACKAGES, 1, 8701);
   assert.equal(impossible, null);
 
   const coinPlan = optimizePackagePurchase(COIN_PACKAGES, 1, 6);
   assert.ok(coinPlan);
   assert.equal(coinPlan.units, 6);
   assert.equal(coinPlan.costCents, 368);
+});
+
+test("berücksichtigt zehn 800er-Gutscheinpakete je Kaufperiode", () => {
+  const plan = optimizePackagePurchase(VOUCHER_PACKAGES, 1, 8000);
+  assert.ok(plan);
+  assert.equal(plan.counts["voucher-800"], 10);
+  assert.equal(plan.units, 8000);
 });
 
 test("mehr Münzen erhöhen die Zielchance und die geforderte Sicherheit den Bedarf", () => {
@@ -87,10 +95,63 @@ test("kombiniert Münz- und Gutscheinpakete für große Ziele", () => {
   assert.ok(voucherFirst);
   assert.ok(optimized);
   assert.ok(casinoFirst.coinPlan.units > 0);
-  assert.ok(voucherFirst.coinPlan.units > 0 && voucherFirst.voucherPlan.units > 0);
+  assert.equal(voucherFirst.coinPlan.units, 0);
+  assert.ok(voucherFirst.voucherPlan.units > 0);
   assert.ok(casinoFirst.probability >= 0.8);
   assert.ok(voucherFirst.probability >= 0.8);
   assert.ok(optimized.probability >= 0.8);
   assert.ok(optimized.totalCostCents <= casinoFirst.totalCostCents);
   assert.ok(optimized.totalCostCents <= voucherFirst.totalCostCents);
+});
+
+test("plant eine gewichtete Einkaufsliste ohne Echtgeld innerhalb des Gutscheinrahmens", () => {
+  const plan = recommendF2PShopping(1475, 4);
+  assert.ok(plan.spent <= plan.budget);
+  assert.equal(plan.remaining, plan.budget - plan.spent);
+  assert.deepEqual(
+    plan.recommendations.map((item) => [item.id, item.quantity]),
+    [
+      ["ur-splitter", 4],
+      ["deluxe-truhe", 4],
+      ["ur-truhe", 2],
+      ["puzzleteil", 14],
+    ],
+  );
+});
+
+test("priorisiert auf Wunsch direkten Zeitgewinn", () => {
+  const plan = recommendF2PShopping(4000, 4, "speed");
+  assert.deepEqual(
+    plan.recommendations.map((item) => [item.id, item.quantity]),
+    [
+      ["beschleuniger-3h", 200],
+      ["flugmaterial", 50],
+    ],
+  );
+  assert.equal(plan.spent, 4000);
+  assert.equal(plan.remaining, 0);
+});
+
+test("bietet getrennte Empfehlungen für Helden und Ausbau", () => {
+  const heroPlan = recommendF2PShopping(1475, 4, "hero");
+  assert.deepEqual(
+    heroPlan.recommendations.map((item) => [item.id, item.quantity]),
+    [
+      ["ur-splitter", 4],
+      ["deluxe-truhe", 4],
+      ["ur-truhe", 2],
+      ["event-zufallstruhe", 2],
+      ["puzzleteil", 2],
+    ],
+  );
+
+  const constructionPlan = recommendF2PShopping(1475, 4, "construction");
+  assert.deepEqual(
+    constructionPlan.recommendations.map((item) => [item.id, item.quantity]),
+    [
+      ["bauplan-rot", 4],
+      ["bauplan-gold", 4],
+      ["flugmaterial", 2],
+    ],
+  );
 });
