@@ -12,8 +12,10 @@ Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie besch
 - [Anthlan_Modell_Weltserie.png](Anthlan_Modell_Weltserie.png)
 - [DaVinci1986_Modell_Weltserie.png](DaVinci1986_Modell_Weltserie.png)
 - [Drachenherz_Modell_Weltserie.png](Drachenherz_Modell_Weltserie.png)
+- [Helltrain_Modell_Weltserie.png](Helltrain_Modell_Weltserie.png)
 - [mysteryZ_Modell_Weltserie.png](mysteryZ_Modell_Weltserie.png)
 - [Somea_Modell_Weltserie.png](Somea_Modell_Weltserie.png)
+- [Thor63_Modell_Weltserie.png](Thor63_Modell_Weltserie.png)
 
 ## M1 – Einheitliche Referenztafeln
 

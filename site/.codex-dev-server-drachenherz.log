@@ -80,3 +80,12 @@ $ astro dev "--host" "127.0.0.1" "--force"
 {"message":"src/scripts/flight-event-calculator.ts","label":"watch","level":"info"}
 {"message":"[200] /tools/eventrechner/ 77ms","label":null,"level":"info"}
 {"message":"[200] /tools/eventrechner/ 4ms","label":null,"level":"info"}
+{"message":"src/components/SiteHeader.astro","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /charakterchroniken/ 74ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/ 2ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/ 1ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/drachenherz/ 68ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/drachenherz/ 2ms","label":null,"level":"info"}
+{"message":"[200] /docs/unsere-offiziere/ 69ms","label":null,"level":"info"}
+{"message":"[200] /charakterchroniken/ 1ms","label":null,"level":"info"}

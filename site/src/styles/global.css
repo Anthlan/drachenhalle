@@ -11961,3 +11961,749 @@ body.has-officer-dialog {
   .flight-shop-total-actions { grid-template-columns: 1fr; }
   .flight-shop-total-actions button { width: 100%; }
 }
+
+/* Charakterchroniken */
+.chronicle-index,
+.character-chronicle {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+}
+
+.chronicle-index {
+  padding: 0 clamp(18px, 4vw, 58px) 80px;
+}
+
+.chronicle-index-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: clamp(58px, 8vw, 104px) clamp(22px, 6vw, 84px);
+  overflow: hidden;
+  border: 1px solid rgba(227, 173, 78, 0.34);
+  border-radius: 24px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(80, 137, 239, 0.22), transparent 34%),
+    radial-gradient(circle at 85% 78%, rgba(174, 61, 76, 0.18), transparent 36%),
+    linear-gradient(145deg, #18264e, #090e22 66%);
+  box-shadow: 0 34px 70px rgba(0, 0, 0, 0.28);
+}
+
+.chronicle-index-hero::before,
+.chronicle-index-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.chronicle-index-hero::before {
+  inset: 0;
+  opacity: 0.3;
+  background-image:
+    radial-gradient(circle at 20% 20%, #f1d18a 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 34%, #8ab5ff 0 1px, transparent 1.5px),
+    linear-gradient(126deg, transparent 48%, rgba(227, 173, 78, 0.2) 49%, transparent 50%);
+  background-size: 93px 93px, 137px 137px, 100% 100%;
+}
+
+.chronicle-index-hero::after {
+  width: 48%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(227, 173, 78, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 42px rgba(227, 173, 78, 0.03), 0 0 0 84px rgba(227, 173, 78, 0.02);
+}
+
+.chronicle-index-hero h1 {
+  margin: 0;
+  color: #fff4d7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 0.95;
+}
+
+.chronicle-index-hero > p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 6px 0 0;
+  color: #d1d8ef;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.75;
+}
+
+.chronicle-index-hero > span {
+  margin-top: 18px;
+  color: var(--gold-pale);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.chronicle-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.chronicle-card {
+  position: relative;
+  min-height: 540px;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 52%);
+  border-radius: 22px;
+  color: #fff;
+  text-decoration: none;
+  background: var(--chronicle-surface);
+  box-shadow: 0 28px 58px rgba(0, 0, 0, 0.28);
+  transform: translateZ(0);
+}
+
+.chronicle-card > img,
+.chronicle-card-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.chronicle-card > img {
+  object-fit: cover;
+  transition: transform 650ms cubic-bezier(.2, .8, .2, 1), filter 450ms ease;
+}
+
+.chronicle-card-shade {
+  background:
+    linear-gradient(180deg, rgba(4, 7, 18, 0.02) 18%, rgba(4, 7, 18, 0.3) 48%, rgba(4, 7, 18, 0.96) 88%),
+    radial-gradient(circle at 20% 90%, var(--chronicle-glow), transparent 44%);
+}
+
+.chronicle-card-number {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  padding: 8px 11px;
+  border: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 44%);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(5, 8, 18, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.chronicle-card-copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 7px;
+  padding: 34px;
+}
+
+.chronicle-card-copy small {
+  color: var(--chronicle-accent);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.chronicle-card-copy strong {
+  color: #fff8e8;
+  font: 600 clamp(35px, 4vw, 52px)/1 Georgia, "Times New Roman", serif;
+}
+
+.chronicle-card-copy > span {
+  color: #d5d9e8;
+  font: 500 clamp(18px, 2vw, 23px)/1.25 Georgia, "Times New Roman", serif;
+}
+
+.chronicle-card-copy b {
+  width: fit-content;
+  margin-top: 13px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--chronicle-accent);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.chronicle-card:hover > img,
+.chronicle-card:focus-visible > img {
+  transform: scale(1.045);
+  filter: saturate(1.08) brightness(1.05);
+}
+
+.chronicle-card:focus-visible {
+  outline: 3px solid var(--chronicle-accent);
+  outline-offset: 4px;
+}
+
+.chronicle-fiction-note {
+  max-width: 720px;
+  margin: 34px auto 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.character-chronicle {
+  padding: 0 clamp(14px, 3vw, 42px) 86px;
+}
+
+.chronicle-breadcrumbs {
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+.chronicle-hero {
+  position: relative;
+  min-height: min(78vh, 840px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 48%);
+  border-radius: 26px;
+  background: var(--chronicle-surface);
+  box-shadow: 0 34px 80px rgba(0, 0, 0, 0.34), 0 0 70px var(--chronicle-glow);
+}
+
+.chronicle-hero > img,
+.chronicle-hero-vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.chronicle-hero > img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.chronicle-hero-vignette {
+  background:
+    linear-gradient(180deg, rgba(4, 7, 16, 0.04) 28%, rgba(4, 7, 16, 0.48) 66%, rgba(4, 7, 16, 0.96) 100%),
+    linear-gradient(90deg, rgba(4, 7, 16, 0.48), transparent 62%);
+}
+
+.chronicle-hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(790px, 86%);
+  display: grid;
+  gap: 8px;
+  padding: clamp(34px, 6vw, 80px);
+}
+
+.chronicle-hero-copy > p {
+  margin: 0 0 5px;
+  color: var(--chronicle-accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.chronicle-hero-copy > p span {
+  margin-right: 7px;
+  color: var(--chronicle-accent-soft);
+}
+
+.chronicle-hero-copy h1 {
+  margin: 0;
+  color: #fff8e8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(52px, 8vw, 96px);
+  line-height: 0.92;
+  text-shadow: 0 5px 30px rgba(0, 0, 0, 0.55);
+}
+
+.chronicle-hero-copy h2 {
+  margin: 7px 0 0;
+  color: var(--chronicle-accent-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 500;
+  line-height: 1.16;
+}
+
+.chronicle-hero-copy > span {
+  margin-top: 12px;
+  color: #d7dcec;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.chronicle-descend {
+  position: absolute;
+  z-index: 2;
+  right: clamp(22px, 5vw, 62px);
+  bottom: clamp(28px, 5vw, 62px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.chronicle-descend b {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--chronicle-accent);
+  border-radius: 50%;
+  background: rgba(4, 7, 16, 0.58);
+}
+
+.chronicle-reading-shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: clamp(30px, 5vw, 70px);
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding-top: clamp(54px, 8vw, 100px);
+}
+
+.chronicle-route {
+  position: sticky;
+  top: 94px;
+  align-self: start;
+  display: grid;
+  gap: 0;
+  padding-left: 18px;
+  border-left: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 65%);
+}
+
+.chronicle-route > span {
+  margin-bottom: 12px;
+  color: var(--chronicle-accent);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.chronicle-route a {
+  position: relative;
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.chronicle-route a::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -22px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--chronicle-accent);
+  border-radius: 50%;
+  background: #090f21;
+}
+
+.chronicle-route a:hover,
+.chronicle-route a:focus-visible {
+  color: var(--chronicle-accent-soft);
+}
+
+.chronicle-story {
+  min-width: 0;
+}
+
+.chronicle-opening,
+.chronicle-chapter,
+.chronicle-connections {
+  width: min(780px, 100%);
+  margin: 0 auto;
+}
+
+.chronicle-invitation {
+  margin: 0 0 34px;
+  color: var(--chronicle-accent-soft);
+  font: 500 clamp(25px, 3.5vw, 38px)/1.38 Georgia, "Times New Roman", serif;
+}
+
+.chronicle-opening > p:not(.chronicle-invitation),
+.chronicle-chapter > p:not(.eyebrow),
+.chronicle-world p,
+.chronicle-connections article p {
+  color: #cbd1e4;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.chronicle-opening blockquote,
+.chronicle-closing {
+  position: relative;
+  margin: 46px 0 0;
+  padding: 28px 30px 28px 54px;
+  border: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 62%);
+  border-left: 3px solid var(--chronicle-accent);
+  color: #fff4dc;
+  font: italic 500 clamp(20px, 2.8vw, 29px)/1.45 Georgia, "Times New Roman", serif;
+  background: linear-gradient(110deg, color-mix(in srgb, var(--chronicle-surface), transparent 5%), rgba(8, 12, 28, 0.64));
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.18);
+}
+
+.chronicle-opening blockquote > span {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  color: var(--chronicle-accent);
+  font-size: 54px;
+  font-style: normal;
+  line-height: 1;
+}
+
+.chronicle-traits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: clamp(54px, 8vw, 90px) 0;
+}
+
+.chronicle-traits article {
+  min-width: 0;
+  padding: 24px 22px;
+  border: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 68%);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 90% 0%, var(--chronicle-glow), transparent 50%),
+    linear-gradient(145deg, color-mix(in srgb, var(--chronicle-surface), #10162d 28%), rgba(8, 13, 29, 0.96));
+}
+
+.chronicle-traits article > span {
+  color: var(--chronicle-accent);
+  font-size: 24px;
+}
+
+.chronicle-traits h3,
+.chronicle-connections h3 {
+  margin: 13px 0 0;
+  color: #fff4dc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+}
+
+.chronicle-traits p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.chronicle-chapter {
+  scroll-margin-top: 100px;
+  padding: 20px 0 clamp(54px, 7vw, 82px);
+}
+
+.chronicle-chapter h2,
+.chronicle-world h2,
+.chronicle-connections > h2 {
+  margin: 8px 0 26px;
+  color: #fff4dc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.08;
+}
+
+.chronicle-scene {
+  position: relative;
+  margin: 0 0 clamp(64px, 9vw, 112px);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 50%);
+  border-radius: 20px;
+  background: var(--chronicle-surface);
+  box-shadow: 0 32px 66px rgba(0, 0, 0, 0.32), 0 0 48px var(--chronicle-glow);
+}
+
+.chronicle-scene img {
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+  display: block;
+  object-fit: cover;
+}
+
+.chronicle-scene figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(560px, 82%);
+  padding: 22px 25px;
+  border-top: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 58%);
+  border-left: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 58%);
+  color: #eef0f7;
+  font: italic 500 14px/1.6 Georgia, "Times New Roman", serif;
+  background: rgba(5, 9, 20, 0.86);
+  backdrop-filter: blur(12px);
+}
+
+.chronicle-world {
+  scroll-margin-top: 100px;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(28px, 5vw, 64px);
+  margin: 10px 0 clamp(70px, 10vw, 118px);
+  padding: clamp(34px, 6vw, 66px);
+  border: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 58%);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 10% 10%, var(--chronicle-glow), transparent 38%),
+    linear-gradient(145deg, color-mix(in srgb, var(--chronicle-surface), #111a34 20%), rgba(7, 12, 27, 0.98));
+}
+
+.chronicle-world h2 {
+  margin-bottom: 0;
+  color: var(--chronicle-accent-soft);
+}
+
+.chronicle-world p:first-child {
+  margin-top: 0;
+}
+
+.chronicle-connections {
+  scroll-margin-top: 100px;
+}
+
+.chronicle-connections > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.chronicle-connections article {
+  padding: 22px;
+  border-top: 2px solid var(--chronicle-accent);
+  background: rgba(12, 18, 38, 0.66);
+}
+
+.chronicle-connections h3 {
+  margin-top: 0;
+  color: var(--chronicle-accent-soft);
+}
+
+.chronicle-connections article p {
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.chronicle-closing {
+  width: min(820px, 100%);
+  margin: clamp(64px, 9vw, 110px) auto 0;
+  padding: clamp(28px, 5vw, 48px);
+  border-left-width: 1px;
+  text-align: center;
+}
+
+.chronicle-next {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  margin-top: clamp(54px, 8vw, 90px);
+}
+
+.chronicle-next a {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+  padding: 18px 20px;
+  border: 1px solid color-mix(in srgb, var(--chronicle-accent), transparent 66%);
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(11, 17, 35, 0.76);
+}
+
+.chronicle-next a:last-child {
+  text-align: right;
+}
+
+.chronicle-next a:nth-child(2) {
+  text-align: center;
+}
+
+.chronicle-next a span {
+  color: var(--chronicle-accent);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.chronicle-next a strong {
+  overflow: hidden;
+  color: #fff3da;
+  font: 500 19px/1.2 Georgia, "Times New Roman", serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chronicle-next a:hover,
+.chronicle-next a:focus-visible {
+  border-color: var(--chronicle-accent);
+  background: color-mix(in srgb, var(--chronicle-surface), #10172f 38%);
+}
+
+.officer-chronicle-link {
+  display: grid;
+  gap: 4px;
+  margin-top: 22px;
+  padding: 15px 17px;
+  border: 1px solid currentColor;
+  border-radius: 11px;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(5, 9, 20, 0.3);
+}
+
+.officer-chronicle-link > span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.officer-chronicle-link > strong {
+  color: var(--gold-pale);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.officer-chronicle-link:hover,
+.officer-chronicle-link:focus-visible {
+  border-color: var(--gold);
+  background: rgba(227, 173, 78, 0.09);
+}
+
+.officer-card.is-helltrain {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(190, 95, 53, 0.6);
+  background:
+    radial-gradient(circle at 13% 14%, rgba(222, 112, 57, 0.23), transparent 35%),
+    radial-gradient(circle at 92% 108%, rgba(211, 168, 85, 0.13), transparent 46%),
+    linear-gradient(135deg, rgba(49, 28, 21, 0.98), rgba(15, 15, 18, 0.99));
+}
+
+.officer-card.is-helltrain .officer-avatar {
+  border-color: rgba(209, 108, 59, 0.82);
+  box-shadow: 0 0 0 5px rgba(190, 82, 43, 0.09), 0 0 28px rgba(214, 102, 55, 0.22);
+}
+
+.officer-card.is-helltrain .officer-card-copy > span {
+  color: #e28e65;
+}
+
+.officer-dialog.is-helltrain {
+  border-color: rgba(209, 108, 59, 0.8);
+  background: #160d0a;
+  box-shadow: 0 0 0 1px rgba(222, 174, 87, 0.18), 0 36px 110px rgba(0, 0, 0, 0.74), 0 0 72px rgba(162, 58, 31, 0.22);
+}
+
+.officer-dialog.is-helltrain .officer-dialog-shell {
+  grid-template-columns: minmax(370px, 48%) minmax(0, 1fr);
+}
+
+.officer-dialog.is-helltrain .officer-dialog-visual {
+  border-right-color: rgba(209, 108, 59, 0.32);
+  background: #100a08;
+}
+
+.officer-dialog.is-helltrain .officer-dialog-visual img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.officer-dialog.is-helltrain .officer-dialog-copy {
+  padding: clamp(34px, 4vw, 52px);
+  background:
+    radial-gradient(circle at 88% 7%, rgba(225, 117, 57, 0.2), transparent 34%),
+    radial-gradient(circle at 8% 98%, rgba(215, 165, 78, 0.13), transparent 40%),
+    linear-gradient(145deg, #3a2118, #21140f 54%, #100b09 88%);
+}
+
+.officer-dialog.is-helltrain .officer-dialog-copy > span,
+.officer-dialog.is-helltrain .officer-dialog-copy dt {
+  color: #e8956b;
+}
+
+.officer-dialog.is-helltrain .officer-dialog-copy h2 {
+  color: #fff1db;
+  font-size: clamp(38px, 4.4vw, 52px);
+  text-shadow: 0 0 28px rgba(201, 76, 38, 0.32);
+}
+
+.officer-dialog.is-helltrain .officer-dialog-copy h3 {
+  color: #edc188;
+}
+
+.officer-dialog.is-helltrain .officer-dialog-copy dl div {
+  border-color: rgba(210, 101, 56, 0.22);
+  background: rgba(20, 10, 7, 0.48);
+}
+
+.officer-dialog.is-helltrain .officer-dialog-world {
+  border-left-color: #d36e43;
+  background: linear-gradient(90deg, rgba(194, 83, 43, 0.17), transparent);
+}
+
+@media (max-width: 900px) {
+  .chronicle-card-grid { grid-template-columns: 1fr; }
+  .chronicle-card { min-height: 500px; }
+  .chronicle-reading-shell { grid-template-columns: 1fr; }
+  .chronicle-route { display: none; }
+  .chronicle-world { grid-template-columns: 1fr; }
+  .chronicle-connections > div { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .chronicle-index { padding-right: 14px; padding-left: 14px; }
+  .chronicle-index-hero { border-radius: 18px; }
+  .chronicle-card { min-height: 460px; border-radius: 17px; }
+  .chronicle-card-copy { padding: 26px 22px; }
+  .chronicle-hero { min-height: 680px; border-radius: 18px; }
+  .chronicle-hero > img { object-position: center 35%; }
+  .chronicle-hero-copy { width: 100%; padding: 30px 24px 90px; }
+  .chronicle-descend { right: auto; bottom: 28px; left: 24px; }
+  .chronicle-reading-shell { padding-top: 48px; }
+  .chronicle-traits { grid-template-columns: 1fr; }
+  .chronicle-scene img { aspect-ratio: 4 / 3; }
+  .chronicle-scene figcaption { position: relative; width: 100%; border-left: 0; }
+  .chronicle-world { padding: 28px 23px; }
+  .chronicle-next { grid-template-columns: 1fr 1fr; }
+  .chronicle-next a:nth-child(2) { display: none; }
+  .officer-dialog.is-helltrain .officer-dialog-shell { display: block; }
+}
+
+@media (max-width: 480px) {
+  .chronicle-card { min-height: 420px; }
+  .chronicle-card-copy strong { font-size: 36px; }
+  .chronicle-hero { min-height: 620px; }
+  .chronicle-hero-copy h1 { font-size: 50px; }
+  .chronicle-invitation { font-size: 25px; }
+  .chronicle-opening blockquote { padding: 26px 22px 26px 42px; }
+  .chronicle-next a { padding: 15px 13px; }
+  .chronicle-next a strong { font-size: 16px; }
+}

@@ -1,0 +1,140 @@
+---
+import "../../styles/global.css";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import { characterChronicles } from "../../data/character-chronicles";
+
+export function getStaticPaths() {
+  return characterChronicles.map((chronicle) => ({ params: { slug: chronicle.slug }, props: { chronicle } }));
+}
+
+const { chronicle } = Astro.props;
+const currentIndex = characterChronicles.findIndex((item) => item.slug === chronicle.slug);
+const previousChronicle = characterChronicles[(currentIndex - 1 + characterChronicles.length) % characterChronicles.length];
+const nextChronicle = characterChronicles[(currentIndex + 1) % characterChronicles.length];
+const themeStyle = `--chronicle-accent:${chronicle.theme.accent};--chronicle-accent-soft:${chronicle.theme.accentSoft};--chronicle-glow:${chronicle.theme.glow};--chronicle-surface:${chronicle.theme.surface}`;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={`${chronicle.name}: ${chronicle.invitation}`} />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>{chronicle.name} · Charakterchronik · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="alliance" />
+      <main class="character-chronicle" id="main-content" style={themeStyle}>
+        <nav class="breadcrumbs chronicle-breadcrumbs" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/">Start</a><span aria-hidden="true">/</span>
+          <a href="/drachenhalle/charakterchroniken/">Charakterchroniken</a><span aria-hidden="true">/</span>
+          <span aria-current="page">{chronicle.name}</span>
+        </nav>
+
+        <header class="chronicle-hero">
+          <img src={chronicle.heroImage} alt={chronicle.heroAlt} />
+          <div class="chronicle-hero-vignette"></div>
+          <div class="chronicle-hero-copy">
+            <p><span aria-hidden="true">{chronicle.sigil}</span> Charakterchronik</p>
+            <h1>{chronicle.name}</h1>
+            <h2>{chronicle.title}</h2>
+            <span>{chronicle.world}</span>
+          </div>
+          <a class="chronicle-descend" href="#chronicle-opening">
+            <span>Welt betreten</span><b aria-hidden="true">↓</b>
+          </a>
+        </header>
+
+        <div class="chronicle-reading-shell">
+          <aside class="chronicle-route" aria-label="Kapitel dieser Chronik">
+            <span>Reiseroute</span>
+            <a href="#chronicle-opening">Ankunft</a>
+            {chronicle.chapters.map((chapter, index) => <a href={`#chapter-${index + 1}`}>{chapter.eyebrow}</a>)}
+            <a href="#chronicle-world">Die eigene Welt</a>
+            <a href="#chronicle-connections">Verbindungen</a>
+          </aside>
+
+          <article class="chronicle-story">
+            <section class="chronicle-opening" id="chronicle-opening">
+              <p class="chronicle-invitation">{chronicle.invitation}</p>
+              {chronicle.opening.map((paragraph) => <p>{paragraph}</p>)}
+              <blockquote><span aria-hidden="true">“</span>{chronicle.quote}</blockquote>
+            </section>
+
+            <section class="chronicle-traits" aria-label={`Wesenszüge von ${chronicle.name}`}>
+              {chronicle.traits.map((trait) => (
+                <article>
+                  <span aria-hidden="true">{trait.icon}</span>
+                  <h3>{trait.title}</h3>
+                  <p>{trait.text}</p>
+                </article>
+              ))}
+            </section>
+
+            <section class="chronicle-chapter" id="chapter-1">
+              <p class="eyebrow">{chronicle.chapters[0].eyebrow}</p>
+              <h2>{chronicle.chapters[0].title}</h2>
+              {chronicle.chapters[0].paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </section>
+
+            <figure class="chronicle-scene">
+              <img src={chronicle.chapterImage} alt={chronicle.chapterImageAlt} loading="lazy" />
+              <figcaption>{chronicle.chapterCaption}</figcaption>
+            </figure>
+
+            <section class="chronicle-chapter" id="chapter-2">
+              <p class="eyebrow">{chronicle.chapters[1].eyebrow}</p>
+              <h2>{chronicle.chapters[1].title}</h2>
+              {chronicle.chapters[1].paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </section>
+
+            <section class="chronicle-world" id="chronicle-world">
+              <div>
+                <p class="eyebrow">Eigene Welt</p>
+                <h2>{chronicle.world}</h2>
+              </div>
+              <div>
+                {chronicle.worldText.map((paragraph) => <p>{paragraph}</p>)}
+              </div>
+            </section>
+
+            <section class="chronicle-connections" id="chronicle-connections">
+              <p class="eyebrow">Verbindungen</p>
+              <h2>{chronicle.connectionTitle}</h2>
+              <div>
+                {chronicle.connections.map((connection) => (
+                  <article>
+                    <h3>{connection.name}</h3>
+                    <p>{connection.text}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <blockquote class="chronicle-closing">{chronicle.closing}</blockquote>
+
+            <nav class="chronicle-next" aria-label="Weitere Charakterchroniken">
+              <a href={`/drachenhalle/charakterchroniken/${previousChronicle.slug}/`}>
+                <span>← Vorherige Welt</span><strong>{previousChronicle.name}</strong>
+              </a>
+              <a href="/drachenhalle/charakterchroniken/">
+                <span>Alle</span><strong>Chroniken</strong>
+              </a>
+              <a href={`/drachenhalle/charakterchroniken/${nextChronicle.slug}/`}>
+                <span>Nächste Welt →</span><strong>{nextChronicle.name}</strong>
+              </a>
+            </nav>
+
+            <p class="chronicle-fiction-note">
+              Diese Chronik beschreibt ausschließlich das fiktive Spiel-Alter-Ego innerhalb der Bildwelt der Drachenritter.
+            </p>
+          </article>
+        </div>
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>

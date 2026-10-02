@@ -95,6 +95,7 @@ const leadershipProfiles = [
     imageUrl: latestPersonImage("Avatar", "Anthlan"),
     characterImageUrl: "/drachenhalle/brand/officer-anthlan-world.webp",
     characterImageAlt: "Anthlans Alter Ego in seiner Sternwarte über den verbundenen Welten",
+    chronicleUrl: "/drachenhalle/charakterchroniken/anthlan/",
     isLeader: true,
     cardTheme: "anthlan",
     alterEgo: {
@@ -113,6 +114,7 @@ const leadershipProfiles = [
     imageUrl: latestPersonImage("Avatar", "mysteryZ"),
     characterImageUrl: "/drachenhalle/brand/officer-mysteryz-world-v3.webp",
     characterImageAlt: "mysteryZ als Gesandte in ihrer Kanzlei der roten Wege, während ein blauer Drache über der fantastischen Rheinmetropole kreist",
+    chronicleUrl: "/drachenhalle/charakterchroniken/mysteryz/",
     cardTheme: "mysteryz",
     alterEgo: {
       title: "Die Gesandte im Schatten",
@@ -130,6 +132,7 @@ const leadershipProfiles = [
     imageUrl: latestPersonImage("Avatar", "Somea"),
     characterImageUrl: "/drachenhalle/brand/officer-somea-world-v4.webp",
     characterImageAlt: "Somea als zugewandte Göttin der tausend Stimmen in ihrem warm erleuchteten Salon über Berlin",
+    chronicleUrl: "/drachenhalle/charakterchroniken/somea/",
     cardTheme: "somea",
     alterEgo: {
       title: "Die Göttin der tausend Stimmen",
@@ -147,6 +150,7 @@ const leadershipProfiles = [
     imageUrl: latestPersonImage("Avatar", "DaVinci1986"),
     characterImageUrl: "/drachenhalle/brand/officer-davinci1986-world.webp",
     characterImageAlt: "DaVinci1986 als Hüterin der offenen Wege in ihrem morgendlichen Haus über einer alpinen Seenlandschaft",
+    chronicleUrl: "/drachenhalle/charakterchroniken/davinci1986/",
     cardTheme: "davinci1986",
     alterEgo: {
       title: "Die Hüterin der offenen Wege",
@@ -164,6 +168,7 @@ const leadershipProfiles = [
     imageUrl: latestPersonImage("Avatar", "Drachenherz"),
     characterImageUrl: "/drachenhalle/brand/officer-drachenherz-world.webp",
     characterImageAlt: "Drachenherz als Drachenstimme des grünen Schildes im schützenden Hain seiner lebenden Bastion",
+    chronicleUrl: "/drachenhalle/charakterchroniken/drachenherz/",
     cardTheme: "drachenherz",
     alterEgo: {
       title: "Die Drachenstimme des grünen Schildes",
@@ -179,13 +184,17 @@ const leadershipProfiles = [
     name: "Helltrain",
     subtitle: "R4",
     imageUrl: latestPersonImage("Avatar", "Helltrain"),
-    characterImageUrl: latestPersonImage("Charaktermodell", "Helltrain"),
+    characterImageUrl: "/drachenhalle/brand/chronicle-helltrain-house.webp",
+    characterImageAlt: "Helltrain zwischen Feldküche, Werkstatt und Einsatzkarte im Haus der stillen Glut",
+    chronicleUrl: "/drachenhalle/charakterchroniken/helltrain/",
+    cardTheme: "helltrain",
     alterEgo: {
       title: "Der eiserne Feldkoch",
-      summary: "Ein bodenständiger Veteran, der Wärme an das Feuer und Verlässlichkeit in jede noch so raue Lage bringt.",
-      archetype: "Feldkoch und Veteran",
-      hallmark: "Lederschürze, eiserne Beinprothese und dampfende Pfanne",
-      presence: "Pragmatisch, robust und herzlich",
+      summary: "Helltrain redet nicht viel, aber er lässt Verantwortung nicht liegen. Er kocht, plant, repariert und verteilt Aufgaben so, dass andere sicher weiterarbeiten können. Seine Aufmerksamkeit zeigt sich nicht in großen Worten, sondern in Wärme, Vorbereitung und verlässlicher Arbeit.",
+      archetype: "Pflichtbewusster Veteran, Feldkoch und stiller Wiederaufbauer",
+      hallmark: "Gebrauchte Lederschürze, linke Beinprothese, Glutofen, Werkzeug und Hinterhaltskarte",
+      presence: "Wortkarg, pragmatisch, verlässlich und still aufmerksam",
+      world: "Das Haus der stillen Glut",
     },
   },
   {
@@ -620,6 +629,7 @@ const responsibilities = [
                           "is-somea": officer.cardTheme === "somea",
                           "is-davinci1986": officer.cardTheme === "davinci1986",
                           "is-drachenherz": officer.cardTheme === "drachenherz",
+                          "is-helltrain": officer.cardTheme === "helltrain",
                         },
                       ]}
                       data-officer-open={`officer-dialog-${officer.id}`}
@@ -640,7 +650,7 @@ const responsibilities = [
                       <span class="officer-card-copy">
                         <span>{officer.subtitle}</span>
                         <strong class="officer-card-name">{officer.name}</strong>
-                        <small>Alter Ego ansehen <span aria-hidden="true">↗</span></small>
+                        <small>{officer.chronicleUrl ? "Chronik entdecken" : "Alter Ego ansehen"} <span aria-hidden="true">↗</span></small>
                       </span>
                     </button>
                   ))}
@@ -656,6 +666,7 @@ const responsibilities = [
                         "is-somea": officer.cardTheme === "somea",
                         "is-davinci1986": officer.cardTheme === "davinci1986",
                         "is-drachenherz": officer.cardTheme === "drachenherz",
+                        "is-helltrain": officer.cardTheme === "helltrain",
                       },
                     ]}
                     data-officer-dialog
@@ -702,6 +713,12 @@ const responsibilities = [
                           </div>
                         </dl>
                         <p class="officer-dialog-note">Dieser Steckbrief beschreibt ausschließlich das fiktive Spiel-Alter-Ego.</p>
+                        {officer.chronicleUrl && (
+                          <a class="officer-chronicle-link" href={officer.chronicleUrl}>
+                            <span>Die ganze Welt von {officer.name}</span>
+                            <strong>Charakterchronik betreten <span aria-hidden="true">→</span></strong>
+                          </a>
+                        )}
                       </section>
                     </div>
                   </dialog>

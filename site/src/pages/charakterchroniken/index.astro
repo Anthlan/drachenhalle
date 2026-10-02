@@ -1,0 +1,64 @@
+---
+import "../../styles/global.css";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import { characterChronicles } from "../../data/character-chronicles";
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Entdeckt die Alter Egos, eigenen Welten und Geschichten unserer Drachenritter." />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>Unsere Charakterchroniken · DIE Drachenhalle</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="alliance" />
+      <main class="chronicle-index" id="main-content">
+        <nav class="breadcrumbs" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/">Start</a><span aria-hidden="true">/</span>
+          <a href="/drachenhalle/docs/allianz/">Allianz</a><span aria-hidden="true">/</span>
+          <span aria-current="page">Charakterchroniken</span>
+        </nav>
+
+        <header class="chronicle-index-hero">
+          <p class="eyebrow">Die Welten hinter unseren Namen</p>
+          <h1>Unsere Charakterchroniken</h1>
+          <p>
+            Hinter jedem Avatar beginnt eine eigene Geschichte. Öffnet die Türen unserer Sternwarten, Salons,
+            Kanzleien und Schutzorte – und entdeckt, was unsere Alter Egos im Innersten ausmacht.
+          </p>
+          <span>{characterChronicles.length} Welten warten darauf, erkundet zu werden</span>
+        </header>
+
+        <section class="chronicle-card-grid" aria-label="Verfügbare Charakterchroniken">
+          {characterChronicles.map((chronicle, index) => (
+            <a
+              class="chronicle-card"
+              href={`/drachenhalle/charakterchroniken/${chronicle.slug}/`}
+              style={`--chronicle-accent:${chronicle.theme.accent};--chronicle-glow:${chronicle.theme.glow};--chronicle-surface:${chronicle.theme.surface}`}
+            >
+              <img src={chronicle.heroImage} alt="" loading={index < 2 ? "eager" : "lazy"} />
+              <span class="chronicle-card-shade"></span>
+              <span class="chronicle-card-number">Chronik {String(index + 1).padStart(2, "0")}</span>
+              <span class="chronicle-card-copy">
+                <small>{chronicle.world}</small>
+                <strong>{chronicle.name}</strong>
+                <span>{chronicle.title}</span>
+                <b>Welt betreten <span aria-hidden="true">→</span></b>
+              </span>
+            </a>
+          ))}
+        </section>
+
+        <p class="chronicle-fiction-note">
+          Unsere Chroniken erzählen ausschließlich von den fiktiven Spiel-Alter-Egos innerhalb der Bildwelt der Drachenritter.
+        </p>
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
