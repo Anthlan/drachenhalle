@@ -15,6 +15,7 @@ Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie besch
 - [Helltrain_Modell_Weltserie.png](Helltrain_Modell_Weltserie.png)
 - [mysteryZ_Modell_Weltserie.png](mysteryZ_Modell_Weltserie.png)
 - [Somea_Modell_Weltserie.png](Somea_Modell_Weltserie.png)
+- [Streetjudge_Modell_Weltserie.png](Streetjudge_Modell_Weltserie.png)
 - [Thor63_Modell_Weltserie.png](Thor63_Modell_Weltserie.png)
 
 ## M1 – Einheitliche Referenztafeln

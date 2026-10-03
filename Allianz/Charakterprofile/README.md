@@ -11,6 +11,9 @@ Die Aussagen beziehen sich ausschließlich auf die fiktive Darstellung innerhalb
 - [Somea](Somea.md)
 - [DaVinci1986](DaVinci1986.md)
 - [Drachenherz](Drachenherz.md)
+- [Helltrain](Helltrain.md)
+- [Streetjudge](Streetjudge.md)
+- [Thor63](Thor63.md)
 
 ## Empfohlene Struktur für weitere Profile
 

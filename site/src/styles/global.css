@@ -12692,6 +12692,320 @@ body.has-officer-dialog {
   background: linear-gradient(90deg, rgba(194, 83, 43, 0.17), transparent);
 }
 
+/* Drachenherzens Chronik: ein geschützter, lebendiger Hain statt einer neutralen Lesefläche. */
+.character-chronicle[data-chronicle="drachenherz"] {
+  --grove-deep: #07130b;
+  --grove-shadow: #0b1d11;
+  --grove-moss: #284c2e;
+  --grove-leaf: #79bd75;
+  --grove-sun: #e3c57b;
+  z-index: 0;
+}
+
+html:has(.character-chronicle[data-chronicle="drachenherz"]),
+body:has(.character-chronicle[data-chronicle="drachenherz"]) {
+  overflow-x: clip;
+  background: var(--grove-deep);
+}
+
+.character-chronicle[data-chronicle="drachenherz"]::before {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  top: -120px;
+  bottom: -90px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5, 14, 8, 0.08) 0 760px, rgba(5, 14, 8, 0.72) 1540px, var(--grove-deep) 2450px),
+    linear-gradient(90deg, rgba(4, 12, 7, 0.68), rgba(7, 21, 11, 0.18) 28%, rgba(7, 21, 11, 0.18) 72%, rgba(4, 12, 7, 0.68)),
+    url("/drachenhalle/brand/chronicle-drachenherz-grove-bg.webp") center top / max(100vw, 1180px) auto no-repeat,
+    radial-gradient(ellipse at 18% 60%, rgba(54, 111, 59, 0.3), transparent 36%),
+    radial-gradient(ellipse at 82% 82%, rgba(118, 102, 49, 0.18), transparent 34%),
+    linear-gradient(180deg, #102719, #07130b 52%, #0c1d11);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos {
+  position: absolute;
+  z-index: -1;
+  top: 520px;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  display: block;
+  overflow: hidden;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(145px, 17vw, 260px);
+  opacity: 0.82;
+  background-image: url("/drachenhalle/brand/chronicle-drachenherz-ivy-edge.png");
+  background-position: left top;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.42));
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span:nth-child(1) {
+  left: max(-62px, calc(50vw - 770px));
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span:nth-child(2) {
+  right: max(-62px, calc(50vw - 770px));
+  transform: scaleX(-1);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span:nth-child(3) {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: auto;
+  height: 880px;
+  opacity: 0.36;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(229, 202, 125, 0.28), transparent 42%),
+    radial-gradient(circle at 18% 46%, rgba(105, 168, 93, 0.2), transparent 24%),
+    radial-gradient(circle at 82% 68%, rgba(67, 124, 67, 0.18), transparent 24%);
+  filter: none;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-breadcrumbs {
+  position: relative;
+  z-index: 2;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-hero {
+  border: 2px solid rgba(154, 197, 111, 0.62);
+  border-radius: 34px 18px 38px 20px;
+  box-shadow:
+    0 38px 90px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(227, 197, 123, 0.2),
+    0 0 84px rgba(69, 139, 74, 0.26);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-hero::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 14px;
+  border: 1px solid rgba(221, 202, 143, 0.2);
+  border-radius: 25px 12px 29px 14px;
+  pointer-events: none;
+  box-shadow: inset 0 0 40px rgba(25, 75, 38, 0.18);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-hero > img {
+  object-position: center 34%;
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-hero-vignette {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(213, 226, 155, 0.13), transparent 28%),
+    linear-gradient(180deg, rgba(3, 12, 7, 0.02) 24%, rgba(4, 14, 8, 0.42) 61%, rgba(4, 13, 8, 0.96) 100%),
+    linear-gradient(90deg, rgba(4, 13, 8, 0.64), transparent 68%);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-hero-copy > p,
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-descend,
+.character-chronicle[data-chronicle="drachenherz"] .eyebrow {
+  color: #a8d18b;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-hero-copy h1 {
+  color: #fff8df;
+  text-shadow: 0 5px 34px rgba(0, 0, 0, 0.72), 0 0 24px rgba(104, 172, 98, 0.2);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-hero-copy h2 {
+  color: #e7db9f;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-descend b {
+  border-color: rgba(162, 205, 117, 0.8);
+  background: rgba(9, 30, 16, 0.76);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-reading-shell {
+  width: min(1180px, 100%);
+  margin-top: 40px;
+  padding: clamp(64px, 8vw, 96px) clamp(20px, 4vw, 54px) 28px;
+  border: 1px solid rgba(123, 166, 96, 0.16);
+  border-radius: 34px 34px 12px 12px;
+  background:
+    linear-gradient(90deg, rgba(7, 20, 11, 0.4), rgba(12, 31, 17, 0.72) 18%, rgba(8, 23, 13, 0.76) 82%, rgba(7, 20, 11, 0.4)),
+    radial-gradient(circle at 52% 4%, rgba(159, 187, 107, 0.16), transparent 31%);
+  box-shadow: inset 0 34px 90px rgba(4, 12, 7, 0.42), 0 20px 70px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(3px);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-reading-shell::before {
+  content: "❧";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: min(72%, 620px);
+  color: #c9bf76;
+  font-size: 30px;
+  line-height: 32px;
+  text-align: center;
+  background: linear-gradient(90deg, transparent, rgba(132, 180, 104, 0.68) 28%, rgba(218, 194, 116, 0.72) 50%, rgba(132, 180, 104, 0.68) 72%, transparent) center / 100% 1px no-repeat;
+  transform: translateX(-50%);
+  text-shadow: 0 0 18px rgba(196, 207, 118, 0.45);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-route {
+  padding: 22px 18px 22px 28px;
+  border: 1px solid rgba(125, 171, 98, 0.28);
+  border-left: 3px solid #71b66c;
+  border-radius: 8px 22px 22px 8px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(190, 176, 91, 0.12), transparent 42%),
+    linear-gradient(145deg, rgba(19, 47, 26, 0.93), rgba(6, 19, 10, 0.9));
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.3), inset 0 0 28px rgba(96, 151, 80, 0.08);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-route a::before {
+  border-color: #8fc780;
+  background: #173720;
+  box-shadow: 0 0 0 3px rgba(105, 168, 93, 0.08);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-opening,
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-chapter {
+  position: relative;
+  padding-right: clamp(0px, 3vw, 24px);
+  padding-left: clamp(0px, 3vw, 24px);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-invitation {
+  color: #e8dda7;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-opening > p:not(.chronicle-invitation),
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-chapter > p:not(.eyebrow),
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-world p,
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-connections article p {
+  color: #d5dfd0;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-opening blockquote,
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-closing {
+  border-color: rgba(137, 182, 105, 0.34);
+  border-left-color: #7fc377;
+  background:
+    radial-gradient(circle at 95% 0%, rgba(213, 190, 105, 0.13), transparent 38%),
+    linear-gradient(110deg, rgba(26, 61, 34, 0.94), rgba(7, 21, 11, 0.92));
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.3), inset 0 0 34px rgba(93, 151, 79, 0.06);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-traits article {
+  border-color: rgba(133, 179, 101, 0.38);
+  border-radius: 24px 10px 24px 10px;
+  background:
+    radial-gradient(circle at 84% 8%, rgba(226, 195, 108, 0.13), transparent 34%),
+    radial-gradient(circle at 8% 92%, rgba(86, 150, 78, 0.22), transparent 42%),
+    linear-gradient(145deg, rgba(29, 65, 35, 0.96), rgba(7, 22, 12, 0.96));
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28), inset 0 0 30px rgba(113, 179, 94, 0.06);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-traits article > span {
+  color: #a9cf84;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-chapter::after {
+  content: "❧   ❦   ❧";
+  display: block;
+  margin: 54px auto -24px;
+  color: rgba(193, 186, 105, 0.62);
+  font-size: 19px;
+  letter-spacing: 0.38em;
+  text-align: center;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-scene {
+  border: 2px solid rgba(131, 177, 98, 0.55);
+  border-radius: 34px 14px 34px 14px;
+  box-shadow:
+    0 38px 82px rgba(0, 0, 0, 0.44),
+    0 0 0 1px rgba(218, 192, 111, 0.14),
+    0 0 60px rgba(65, 133, 70, 0.2);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-scene figcaption {
+  border-color: rgba(138, 181, 102, 0.4);
+  background: rgba(7, 23, 12, 0.9);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-world {
+  position: relative;
+  overflow: hidden;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  border: 1px solid rgba(151, 190, 111, 0.56);
+  border-radius: 34px 12px 34px 12px;
+  background:
+    linear-gradient(110deg, rgba(10, 31, 16, 0.96), rgba(10, 29, 15, 0.82)),
+    url("/drachenhalle/brand/chronicle-drachenherz-grove-bg.webp") center 58% / cover;
+  box-shadow: 0 34px 78px rgba(0, 0, 0, 0.4), inset 0 0 70px rgba(88, 145, 74, 0.12);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-world::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -24px;
+  width: 190px;
+  height: 260px;
+  pointer-events: none;
+  background: url("/drachenhalle/brand/chronicle-drachenherz-ivy-edge.png") right bottom / contain no-repeat;
+  transform: rotate(-8deg);
+  opacity: 0.42;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-world > * {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-world h2 {
+  max-width: 13ch;
+  color: #eee4aa;
+  font-size: clamp(31px, 2.55vw, 35px);
+  line-height: 1.04;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.64);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-connections article {
+  border: 1px solid rgba(120, 168, 92, 0.24);
+  border-top: 3px solid #73b56d;
+  border-radius: 6px 6px 20px 20px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(212, 190, 105, 0.1), transparent 38%),
+    rgba(12, 37, 19, 0.86);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-next a {
+  border-color: rgba(127, 174, 96, 0.3);
+  background: rgba(8, 27, 13, 0.86);
+}
+
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-next a:hover,
+.character-chronicle[data-chronicle="drachenherz"] .chronicle-next a:focus-visible {
+  border-color: #82be75;
+  background: rgba(22, 55, 28, 0.94);
+}
+
 /* Anthlans Chronik: die Sternwarte reicht über den gesamten Leseraum. */
 .character-chronicle[data-chronicle="anthlan"] {
   --anthlan-night: #050a1b;
@@ -13052,6 +13366,13 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
   .character-chronicle[data-chronicle="anthlan"] .chronicle-world { grid-template-columns: 1fr; }
   .character-chronicle[data-chronicle="anthlan"] .chronicle-world h2 { max-width: 16ch; }
   .character-chronicle[data-chronicle="anthlan"] .chronicle-edge-figures { display: none; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-world { grid-template-columns: 1fr; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-world h2 { max-width: 100%; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos { top: 610px; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span { width: 105px; opacity: 0.34; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span:nth-child(1) { left: -46px; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span:nth-child(2) { right: -46px; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span:nth-child(3) { width: auto; opacity: 0.2; }
   .chronicle-connections > div { grid-template-columns: 1fr; }
 }
 
@@ -13088,6 +13409,11 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
   .character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy { padding-bottom: 142px; }
   .character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy h2 { margin-top: 18px; line-height: 1.28; }
   .character-chronicle[data-chronicle="anthlan"] .chronicle-reading-shell { margin-top: 28px; padding-right: 10px; padding-left: 10px; border-right: 0; border-left: 0; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-hero { border-radius: 22px 12px 24px 12px; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-reading-shell { margin-top: 28px; padding: 56px 10px 20px; border-right: 0; border-left: 0; border-radius: 22px 22px 8px 8px; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-opening,
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-chapter { padding-right: 0; padding-left: 0; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-world::after { right: -62px; width: 150px; opacity: 0.3; }
 }
 
 @media (max-width: 480px) {
