@@ -12871,6 +12871,11 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
   filter: drop-shadow(0 24px 26px rgba(0, 0, 0, 0.52));
 }
 
+.character-chronicle[data-chronicle="anthlan"] .chronicle-edge-figure.is-coffee {
+  top: 740px;
+  right: clamp(-150px, -10vw, -105px);
+}
+
 .character-chronicle[data-chronicle="anthlan"] .chronicle-edge-figure.is-map {
   top: 2470px;
   left: clamp(-158px, -11vw, -112px);

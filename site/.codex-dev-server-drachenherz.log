@@ -130,3 +130,4 @@ $ astro dev "--host" "127.0.0.1" "--force"
 {"message":"[200] /charakterchroniken/ 60ms","label":null,"level":"info"}
 {"message":"[200] /charakterchroniken/ 2ms","label":null,"level":"info"}
 {"message":"[200] /ruhmeshalle/ 85ms","label":null,"level":"info"}
+{"message":"[200] /ruhmeshalle/ 328ms","label":null,"level":"info"}
