@@ -13410,10 +13410,120 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
   .character-chronicle[data-chronicle="anthlan"] .chronicle-hero-copy h2 { margin-top: 18px; line-height: 1.28; }
   .character-chronicle[data-chronicle="anthlan"] .chronicle-reading-shell { margin-top: 28px; padding-right: 10px; padding-left: 10px; border-right: 0; border-left: 0; }
   .character-chronicle[data-chronicle="drachenherz"] .chronicle-hero { border-radius: 22px 12px 24px 12px; }
-  .character-chronicle[data-chronicle="drachenherz"] .chronicle-reading-shell { margin-top: 28px; padding: 56px 10px 20px; border-right: 0; border-left: 0; border-radius: 22px 22px 8px 8px; }
+  .character-chronicle[data-chronicle="drachenherz"]::before {
+    background:
+      linear-gradient(180deg, rgba(4, 13, 7, 0.02) 0 610px, rgba(5, 16, 9, 0.5) 1250px, rgba(5, 17, 9, 0.72) 100%),
+      linear-gradient(90deg, rgba(3, 12, 6, 0.28), transparent 24%, transparent 76%, rgba(3, 12, 6, 0.28)),
+      url("/drachenhalle/brand/chronicle-drachenherz-grove-bg.webp") 50% top / auto 1540px no-repeat,
+      linear-gradient(180deg, #102719, #07130b 58%, #0c1d11);
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span { width: 118px; opacity: 0.58; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span:nth-child(1) { left: -36px; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-cosmos > span:nth-child(2) { right: -36px; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-reading-shell {
+    margin-top: 28px;
+    padding: 56px 10px 20px;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 22px 22px 8px 8px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(180, 205, 119, 0.18), transparent 24%),
+      linear-gradient(90deg, rgba(7, 22, 12, 0.48), rgba(8, 25, 13, 0.83) 14%, rgba(8, 25, 13, 0.83) 86%, rgba(7, 22, 12, 0.48));
+    backdrop-filter: blur(1.5px);
+  }
   .character-chronicle[data-chronicle="drachenherz"] .chronicle-opening,
-  .character-chronicle[data-chronicle="drachenherz"] .chronicle-chapter { padding-right: 0; padding-left: 0; }
-  .character-chronicle[data-chronicle="drachenherz"] .chronicle-world::after { right: -62px; width: 150px; opacity: 0.3; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-chapter {
+    isolation: isolate;
+    overflow: hidden;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding: 34px 25px 42px;
+    border: 1px solid rgba(129, 181, 100, 0.28);
+    border-radius: 34px 12px 34px 12px;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(128, 183, 95, 0.16), transparent 34%),
+      linear-gradient(145deg, rgba(10, 34, 17, 0.91), rgba(5, 19, 10, 0.84));
+    box-shadow: inset 0 0 42px rgba(91, 151, 75, 0.08), 0 20px 50px rgba(0, 0, 0, 0.24);
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-opening::before,
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-chapter::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -34px;
+    left: -27px;
+    width: 112px;
+    height: 292px;
+    pointer-events: none;
+    background: url("/drachenhalle/brand/chronicle-drachenherz-ivy-edge.png") left top / contain no-repeat;
+    opacity: 0.72;
+    filter: drop-shadow(0 8px 13px rgba(0, 0, 0, 0.42));
+    transform: rotate(3deg);
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-opening::before {
+    top: auto;
+    right: -30px;
+    bottom: -30px;
+    left: auto;
+    transform: scaleX(-1) rotate(7deg);
+  }
+  .character-chronicle[data-chronicle="drachenherz"] #chapter-2::before {
+    right: -29px;
+    left: auto;
+    transform: scaleX(-1) rotate(6deg);
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-opening > *,
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-chapter > * {
+    position: relative;
+    z-index: 1;
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-opening blockquote {
+    border-radius: 5px 20px 20px 5px;
+    background:
+      radial-gradient(circle at 100% 100%, rgba(126, 177, 91, 0.2), transparent 43%),
+      linear-gradient(110deg, rgba(24, 65, 33, 0.95), rgba(7, 23, 12, 0.94));
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-traits article {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-traits article::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -28px;
+    right: -31px;
+    width: 92px;
+    height: 230px;
+    pointer-events: none;
+    background: url("/drachenhalle/brand/chronicle-drachenherz-ivy-edge.png") right top / contain no-repeat;
+    opacity: 0.33;
+    transform: scaleX(-1) rotate(5deg);
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-traits article > * {
+    position: relative;
+    z-index: 1;
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-scene {
+    margin-right: -2px;
+    margin-left: -2px;
+    box-shadow: 0 30px 64px rgba(0, 0, 0, 0.48), 0 0 46px rgba(88, 151, 75, 0.28);
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-world {
+    border-radius: 32px 10px 32px 10px;
+    background:
+      linear-gradient(145deg, rgba(7, 27, 13, 0.84), rgba(7, 24, 12, 0.66)),
+      url("/drachenhalle/brand/chronicle-drachenherz-grove-bg.webp") 54% 58% / cover;
+    box-shadow: 0 30px 65px rgba(0, 0, 0, 0.42), inset 0 0 52px rgba(113, 171, 90, 0.14);
+  }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-world::after { right: -42px; bottom: -18px; width: 180px; height: 330px; opacity: 0.62; }
+  .character-chronicle[data-chronicle="drachenherz"] .chronicle-connections article {
+    border-color: rgba(126, 179, 96, 0.42);
+    background:
+      radial-gradient(circle at 100% 0%, rgba(157, 190, 96, 0.17), transparent 42%),
+      linear-gradient(145deg, rgba(18, 55, 27, 0.94), rgba(7, 25, 13, 0.92));
+  }
 }
 
 @media (max-width: 480px) {

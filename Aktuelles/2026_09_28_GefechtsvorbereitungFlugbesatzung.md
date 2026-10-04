@@ -14,4 +14,6 @@ Free2Play-Spieler sammeln ihre Münzen am besten bis zum letzten sicheren Nutzun
 
 Der vollständige Guide vergleicht jetzt beide Kaufwege: Münzen bieten den besseren Erwartungswert, direkte Vorratsgutscheine garantieren dagegen das gewünschte Tagesziel. Für den Skin liegt der reine Münz-Erwartungswert bei ungefähr 250 €, während der vollständig sichere Direktkauf rund 596 € kosten würde. Am sinnvollsten ist meist die Mischstrategie: erst drehen, anschließend nur die verbleibende Gutscheinlücke direkt schließen.
 
+**Nachtrag vom 04.10.2026:** Neue Screenshots bestätigen für die ersten sechs Stufen der täglichen zeitbegrenzten Aufgaben die Anforderungen 5, 5, 10, 10, 15 und 20. Der Guide dokumentiert diese Werte und kennzeichnet die vorsichtige Hochrechnung für Stufe 7 bis 9 ausdrücklich als unbestätigt.
+
 [Vollständigen Event-Guide öffnen](/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/)

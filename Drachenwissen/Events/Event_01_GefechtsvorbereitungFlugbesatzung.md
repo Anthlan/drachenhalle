@@ -10,6 +10,7 @@ status: Zeitlich begrenzt
 - In der **Startsequenz sind 15 Fliegende-Stern-Münzen pro Eventtag** erspielbar. Über fünf Eventtage sind das **75 Münzen**.
 - Dazu kommt **eine kostenlose Münze je Shop-Reset**. Bei acht erreichbaren Reset-Fenstern sind damit insgesamt bis zu **83 kostenlose Münzen** möglich.
 - Münzen nicht sofort einzeln ausgeben: Der Punktefortschritt des Spielautomaten wird täglich zurückgesetzt. Erst sammeln, dann gezielt einen Tagesmeilenstein bei **30, 50, 100, 300, 500, 1.000 oder 1.500 Punkten** erreichen.
+- Die separate Kette der **täglichen zeitbegrenzten Aufgaben** besitzt neun Stufen. Für die ersten sechs sind Anforderungen von **5, 5, 10, 10, 15 und 20** belegt; Stufe 7 bis 9 sind bislang nur vorsichtig abschätzbar.
 - Das sinnvolle Hauptziel für Free2Play und **Gezielte Käufer** sind dauerhafte Progressionsmaterialien. Die täglich limitierte **Optionale Deluxe-Truhe** ist besonders stark, wenn daraus 5.000 Veredelte Steine gewählt werden.
 - **Free2Play** sammelt Münzen und bündelt die Ziehungen möglichst auf den letzten sicheren Nutzungstag. **Gezielte Käufer** können dagegen täglich UR-Omni-Heldensplitter oder die Optionale Deluxe-Truhe sichern.
 - Die **Vibranium-Verteidigungslinie für 4.000 Vorratsgutscheine** ist stark, aber realistisch eine exklusive Belohnung für Großspender – kein vernünftiges Hauptziel für 0 bis 100 € Budget.
@@ -55,6 +56,35 @@ Deshalb gilt:
 5. Stoppt nach dem geplanten Meilenstein. Nicht wegen bereits ausgegebener Münzen unkontrolliert nachkaufen.
 
 Nicht verbrauchte Münzen werden nach Eventende laut Eventregel umgewandelt. **Eine Münze entspricht 30 Beschleunigern zu je fünf Minuten**, also 150 Minuten. Das verhindert einen vollständigen Verlust, ist aber meist schwächer als gezielt erreichte Tagesstufen und Ziehungsbelohnungen.
+
+### Tägliche zeitbegrenzte Aufgaben: bekannte Anforderungen
+
+Die neuen Screenshots zeigen eine **neunstufige tägliche Aufgabenkette** mit eigenem Countdown. Eine Stufe schaltet jeweils die nächste frei. Für die ersten sechs Stufen sind folgende Anforderungen sichtbar:
+
+| Stufe | Belegte Anforderung |
+| ---: | ---: |
+| 1 | 5 |
+| 2 | 5 |
+| 3 | 10 |
+| 4 | 10 |
+| 5 | 15 |
+| 6 | 20 |
+
+Damit sind für die ersten sechs Aufgaben zusammen **65 geforderte Einheiten beziehungsweise Aktionen** sichtbar. Die Symbole wechseln zwischen den Stufen; aus den Screenshots allein lässt sich deshalb nicht sicher ableiten, welche konkrete Aktivität jede Zahl verlangt. Die Summe ist nur ein grober Belastungswert und darf nicht als 65 Münzen oder 65 Slot-Drehungen gelesen werden.
+
+#### Vorsichtige Hochrechnung für Stufe 7 bis 9
+
+Die bekannte Reihe steigt nicht vollkommen gleichmäßig, bewegt sich aber überwiegend in Fünferschritten. Wenn dieser Verlauf fortgesetzt wird, ist folgende Bandbreite plausibel:
+
+| Stufe | Vorsichtige Schätzung | Verlässlichkeit |
+| ---: | ---: | --- |
+| 7 | ca. 20–25 | niedrig |
+| 8 | ca. 25–30 | niedrig |
+| 9 | ca. 25–35 | sehr niedrig |
+
+Als mittlere Arbeitsannahme wären **20, 25 und 30** denkbar. Damit läge die gesamte neunstufige Kette rechnerisch bei etwa **140 Anforderungen**; eine vorsichtige Bandbreite wären ungefähr **135 bis 155**. Diese Werte sind ausdrücklich keine bestätigten Schwellen. Für Käufe oder den Einsatz seltener Ressourcen sollten weiterhin nur die im Spiel tatsächlich eingeblendeten Anforderungen verwendet werden.
+
+Die neuen Angaben ändern die Empfehlung zum Münzsammeln noch nicht: Die Screenshots belegen eine tägliche Aufgabenkette, aber nicht, dass alle Aufgaben durch Slot-Drehungen oder Fliegende-Stern-Münzen erfüllt werden. Sobald die Texte oder Anforderungen der Stufen 7 bis 9 sichtbar sind, kann die Hochrechnung ersetzt werden.
 
 ![Spielautomat, Tagesstufen und täglicher Reset im Drachenhallen-Design](Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
 
@@ -270,20 +300,22 @@ Der kostenlose Tagesgutschein und bereits erspielte Vorratsgutscheine reduzieren
 - Die voraussichtlich acht kostenlosen Shop-Münzen setzen voraus, dass jedes Reset-Fenster des sichtbaren Eventtimers genutzt wird.
 - Wahrscheinlichkeiten liefern Erwartungswerte, aber kein garantiertes Ergebnis für einen einzelnen Account.
 - Die genaue Qualität einzelner Baupläne, Fragmente und Kisten ist ohne Detailansicht nicht sicher vergleichbar. Deshalb werden sie nur bedingt gerankt.
-- Ob eine einzige tiefe Slot-Serie oder mehrfach erreichte kleine Tagesstufen den höchsten Gesamtwert liefert, lässt sich ohne alle verdeckten Aufgabenanforderungen und Stufeninhalte nicht exakt berechnen.
+- Für die täglichen zeitbegrenzten Aufgaben sind bisher nur die Anforderungen der Stufen 1 bis 6 bestätigt. Stufe 7 bis 9 und die exakten Aufgabenarten bleiben offen; die angegebenen Werte sind lediglich eine vorsichtige Extrapolation.
+- Ob eine einzige tiefe Slot-Serie oder mehrfach erreichte kleine Tagesstufen den höchsten Gesamtwert liefert, lässt sich ohne alle Aufgabenarten und Stufeninhalte nicht exakt berechnen.
 - Ob alle Spieler dieselben Pakete und regionalen Preise sehen, ist nicht bestätigt.
 - Die Bewertung der Echtgeldpakete verwendet die am 28.09.2026 in Deutschland sichtbaren Preise.
 
 ## Quellen und Verlässlichkeit
 
 - Ingame-Screenshots des Events, der Startsequenz und der deutschen Angebote vom 28.09.2026
+- Screenshots der täglichen zeitbegrenzten Aufgaben, Stufe 1 bis 6, vom 04.10.2026
 - Detailansicht der Vibranium-Verteidigungslinie vom 28.09.2026
 - Detailansicht der Optionalen Deluxe-Truhe vom 28.09.2026
 - Direkte Vorratsgutschein-Pakete und tägliche Gratis-/Diamantangebote vom 28.09.2026
 - Interne Preis- und Wertreferenz mit Stand 28.09.2026
 - Alle Kaufempfehlungen beruhen auf sichtbaren Inhalten; unbekannte Mengen oder Effekte wurden nicht geschätzt.
 
-**Stand:** 28.09.2026
+**Stand:** 04.10.2026
 
 ## Allianz-Mitteilung zum Kopieren
 
