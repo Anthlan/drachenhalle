@@ -10,14 +10,15 @@ status: Zeitlich begrenzt
 - In der **Startsequenz sind 15 Fliegende-Stern-Münzen pro Eventtag** erspielbar. Über fünf Eventtage sind das **75 Münzen**.
 - Dazu kommt **eine kostenlose Münze je Shop-Reset**. Bei acht erreichbaren Reset-Fenstern sind damit insgesamt bis zu **83 kostenlose Münzen** möglich.
 - Münzen nicht sofort einzeln ausgeben: Der Punktefortschritt des Spielautomaten wird täglich zurückgesetzt. Erst sammeln, dann gezielt einen Tagesmeilenstein bei **30, 50, 100, 300, 500, 1.000 oder 1.500 Punkten** erreichen.
-- Die separate Kette der **täglichen zeitbegrenzten Aufgaben** besitzt neun Stufen. Für die ersten sechs sind Anforderungen von **5, 5, 10, 10, 15 und 20** belegt; Stufe 7 bis 9 sind bislang nur vorsichtig abschätzbar.
+- Die separate Kette der **täglichen zeitbegrenzten Aufgaben** besitzt 15 Stufen. Für die ersten sechs sind Anforderungen von **5, 5, 10, 10, 15 und 20** belegt; die Belohnungen sind inzwischen bis Stufe 15 sichtbar.
 - Das sinnvolle Hauptziel für Free2Play und **Gezielte Käufer** sind dauerhafte Progressionsmaterialien. Die täglich limitierte **Optionale Deluxe-Truhe** ist besonders stark, wenn daraus 5.000 Veredelte Steine gewählt werden.
 - **Free2Play** sammelt Münzen und bündelt die Ziehungen möglichst auf den letzten sicheren Nutzungstag. **Gezielte Käufer** können dagegen täglich UR-Omni-Heldensplitter oder die Optionale Deluxe-Truhe sichern.
 - Die **Vibranium-Verteidigungslinie für 4.000 Vorratsgutscheine** ist stark, aber realistisch eine exklusive Belohnung für Großspender – kein vernünftiges Hauptziel für 0 bis 100 € Budget.
 - Bei den direkten Vorratsgutschein-Paketen bietet **2,49 € für 20 Gutscheine** den besten Kurs. Von 5,99 € bis 119,99 € bleibt der Kurs mit etwa 0,15 € je Gutschein praktisch konstant.
 - **Münzen bieten den besseren Erwartungswert, direkte Vorratsgutscheine die höhere Planungssicherheit.** Wer ein tägliches Angebot unbedingt kaufen möchte, sichert zuerst die fehlenden Gutscheine; bei einem Gesamtziel ohne Tageslimit wird zuerst gedreht und erst danach die Restlücke gekauft.
+- Bei einem großen Münzbestand und dem Ziel **maximale Vorratsgutscheine** sind mehrere Tagesläufe bis Stufe 7 beziehungsweise 9 sinnvoller als ein einzelner Lauf bis Stufe 15, weil alle sichtbar mit Gutscheinen markierten Aufgabenbelohnungen bereits bis Stufe 7 vergeben werden.
 
-> **Kurzempfehlung:** F2P sammelt Münzen bis zum letzten sicheren Nutzungstag und entscheidet danach über die Vorratsgutscheine. Gezielte Käufer sichern täglich nur die gewünschten UR-Omni-Heldensplitter oder Deluxe-Truhen. Beim Skin-Ziel zuerst alle Ziehungen abschließen und erst danach die verbleibende Gutscheinlücke kaufen.
+> **Kurzempfehlung:** Kleine F2P-Bestände werden für einen sicheren Tagesmeilenstein gesammelt. Bei großen Beständen und Gutschein-Fokus die frühen Gutscheinboxen an mehreren Tagen bis Stufe 7 oder 9 wiederholen. Gezielte Käufer sichern nur gewünschte Tagesangebote; beim Skin-Ziel nach allen Ziehungen lediglich die verbleibende Gutscheinlücke direkt kaufen.
 
 ![Event-Guide – Gefechtsvorbereitung der Flugbesatzung](Event_01_GefechtsvorbereitungFlugbesatzung.png)
 
@@ -57,34 +58,45 @@ Deshalb gilt:
 
 Nicht verbrauchte Münzen werden nach Eventende laut Eventregel umgewandelt. **Eine Münze entspricht 30 Beschleunigern zu je fünf Minuten**, also 150 Minuten. Das verhindert einen vollständigen Verlust, ist aber meist schwächer als gezielt erreichte Tagesstufen und Ziehungsbelohnungen.
 
-### Tägliche zeitbegrenzte Aufgaben: bekannte Anforderungen
+### Tägliche zeitbegrenzte Aufgaben: 15 Stufen
 
-Die neuen Screenshots zeigen eine **neunstufige tägliche Aufgabenkette** mit eigenem Countdown. Eine Stufe schaltet jeweils die nächste frei. Für die ersten sechs Stufen sind folgende Anforderungen sichtbar:
+Die Screenshots zeigen eine **15-stufige tägliche Aufgabenkette** mit eigenem Countdown. Eine Stufe schaltet jeweils die nächste frei. Die Anforderungen der ersten sechs Stufen sind bestätigt; die Belohnungen sind bis Stufe 15 sichtbar:
 
-| Stufe | Belegte Anforderung |
-| ---: | ---: |
-| 1 | 5 |
-| 2 | 5 |
-| 3 | 10 |
-| 4 | 10 |
-| 5 | 15 |
-| 6 | 20 |
-
-Damit sind für die ersten sechs Aufgaben zusammen **65 geforderte Einheiten beziehungsweise Aktionen** sichtbar. Die Symbole wechseln zwischen den Stufen; aus den Screenshots allein lässt sich deshalb nicht sicher ableiten, welche konkrete Aktivität jede Zahl verlangt. Die Summe ist nur ein grober Belastungswert und darf nicht als 65 Münzen oder 65 Slot-Drehungen gelesen werden.
-
-#### Vorsichtige Hochrechnung für Stufe 7 bis 9
-
-Die bekannte Reihe steigt nicht vollkommen gleichmäßig, bewegt sich aber überwiegend in Fünferschritten. Wenn dieser Verlauf fortgesetzt wird, ist folgende Bandbreite plausibel:
-
-| Stufe | Vorsichtige Schätzung | Verlässlichkeit |
+| Stufe | Anforderung | Sichtbare Belohnung |
 | ---: | ---: | --- |
-| 7 | ca. 20–25 | niedrig |
-| 8 | ca. 25–30 | niedrig |
-| 9 | ca. 25–35 | sehr niedrig |
+| 1 | **5 bestätigt** | 2 violette Boxen mit Gutscheinsymbol |
+| 2 | **5 bestätigt** | 1 violettes Gebäudeteil |
+| 3 | **10 bestätigt** | 1 goldene Box mit Gutscheinsymbol |
+| 4 | **10 bestätigt** | 1 helles Gebäudeteil |
+| 5 | **15 bestätigt** | 2 goldene Boxen mit Gutscheinsymbol |
+| 6 | **20 bestätigt** | 1 helles Gebäudeteil |
+| 7 | unbekannt | 4 goldene Boxen mit Gutscheinsymbol |
+| 8 | unbekannt | 1 helles Gebäudeteil |
+| 9 | unbekannt | 1 rot-graues Gebäudeteil |
+| 10 | unbekannt | 1 helles Gebäudeteil |
+| 11 | unbekannt | 1 rot-graues Gebäudeteil |
+| 12 | unbekannt | 1 helles Gebäudeteil |
+| 13 | unbekannt | 3 Event-Zufallstruhen |
+| 14 | unbekannt | 3 Event-Zufallstruhen |
+| 15 | unbekannt | 3 Event-Zufallstruhen |
 
-Als mittlere Arbeitsannahme wären **20, 25 und 30** denkbar. Damit läge die gesamte neunstufige Kette rechnerisch bei etwa **140 Anforderungen**; eine vorsichtige Bandbreite wären ungefähr **135 bis 155**. Diese Werte sind ausdrücklich keine bestätigten Schwellen. Für Käufe oder den Einsatz seltener Ressourcen sollten weiterhin nur die im Spiel tatsächlich eingeblendeten Anforderungen verwendet werden.
+Für die ersten sechs Aufgaben sind zusammen **65 geforderte Einheiten beziehungsweise Aktionen** sichtbar. Die Aufgaben verwenden wechselnde Symbole. Deshalb darf diese Summe nicht automatisch als 65 Münzen oder 65 Ziehungen gelesen werden: Wie schnell eine Münze den jeweiligen Fortschritt erhöht, hängt vom Ziehungsergebnis ab.
 
-Die neuen Angaben ändern die Empfehlung zum Münzsammeln noch nicht: Die Screenshots belegen eine tägliche Aufgabenkette, aber nicht, dass alle Aufgaben durch Slot-Drehungen oder Fliegende-Stern-Münzen erfüllt werden. Sobald die Texte oder Anforderungen der Stufen 7 bis 9 sichtbar sind, kann die Hochrechnung ersetzt werden.
+#### Vorsichtige Extrapolation der Anforderungen
+
+Eine lineare Fortsetzung der bestätigten Reihe 5, 5, 10, 10, 15, 20 ergibt als grobe Arbeitsannahme etwa **140 Fortschrittseinheiten bis Stufe 9** und ungefähr **360 bis Stufe 15**. Wegen der wechselnden Aufgabensymbole ist das keine belastbare Münzprognose. Als Planungsbandbreite sind ungefähr **130 bis 155 bis Stufe 9** und **330 bis 400 bis Stufe 15** vernünftiger als ein einzelner exakter Wert.
+
+#### 280 Münzen: zweimal Stufe 9 oder einmal Stufe 15?
+
+Wer **Vorratsgutscheine maximieren** möchte, sollte die Kette nach einem Reset erneut von vorne spielen, statt die letzten Stufen um jeden Preis zu erzwingen:
+
+- Ein Durchlauf bis Stufe 7 beziehungsweise 9 liefert **2 violette und 7 goldene Boxen mit Gutscheinsymbol**.
+- **Zweimal bis Stufe 9** liefert entsprechend **4 violette und 14 goldene Gutscheinboxen**.
+- **Einmal bis Stufe 15** liefert weiterhin nur **2 violette und 7 goldene Gutscheinboxen**. Die Stufen 8 bis 15 zeigen keine weitere ausdrücklich mit einem Gutscheinsymbol markierte Belohnung.
+
+Damit ist deine Vermutung für das Ziel **maximale Gutscheinausbeute** richtig: Wenn 280 Münzen in der Praxis für zwei vollständige Läufe bis Stufe 9 reichen, ist diese Aufteilung klar attraktiver als ein einzelner tiefer Lauf. Rein aus den bestätigten Anforderungen lässt sich die Reichweite der 280 Münzen jedoch nicht garantieren, weil eine Ziehung unterschiedlich viele passende Symbole liefern kann.
+
+Für den **gesamten Gegenwert** ist die Entscheidung weniger eindeutig. Die Stufen 10 bis 12 liefern drei weitere Gebäudeteile; die Stufen 13 bis 15 zusammen neun Event-Zufallstruhen. Diese Belohnungen können wertvoll sein, erhöhen aber nicht die Zahl der sichtbar ausgewiesenen Gutscheinboxen. Praktisch gilt daher: am ersten Tag Stufe 9 erreichen, den tatsächlichen Münzverbrauch notieren und nur dann am zweiten Tag erneut Stufe 9 anpeilen, wenn der Restbestand mit Sicherheitsreserve ausreicht.
 
 ![Spielautomat, Tagesstufen und täglicher Reset im Drachenhallen-Design](Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
 
@@ -290,17 +302,18 @@ Der kostenlose Tagesgutschein und bereits erspielte Vorratsgutscheine reduzieren
 
 1. Nur hier die 4.000 Vorratsgutscheine für den Skin als echtes Ziel setzen.
 2. Täglich die günstigen, limitierten Münz- und Gutscheinpakete kaufen, wenn der Skin fest eingeplant ist. Verpasste Tagespakete können später nicht zum gleichen Kurs nachgekauft werden.
-3. Die Münzen trotzdem bis zum letzten sicheren Nutzungstag sammeln und dann konzentriert drehen.
-4. Erst nach den Ziehungen den endgültigen Stand der Vorratsgutscheine prüfen und nur die verbleibende Lücke direkt zukaufen.
-5. Beim Skin-Ziel nicht gleichzeitig täglich Deluxe-Truhen oder Splitter kaufen, außer das Budget deckt ausdrücklich beide Ziele.
-6. Nach dem Skin überschüssige Vorratsgutscheine in Deluxe-Truhen, Veredelte Steine und gezielte permanente Materialien investieren.
+3. Bei Gutschein-Fokus die Aufgabenbelohnungen bis Stufe 7 oder 9 über mehrere Tages-Resets wiederholen. Mit 280 Münzen ist zweimal Stufe 9 voraussichtlich sinnvoller als ein erzwungener Lauf bis Stufe 15.
+4. Nach dem ersten Lauf den tatsächlichen Münzverbrauch prüfen. Nur mit ausreichender Reserve einen zweiten gleich tiefen Lauf planen.
+5. Erst nach allen geplanten Ziehungen den endgültigen Stand der Vorratsgutscheine prüfen und nur die verbleibende Lücke direkt zukaufen.
+6. Beim Skin-Ziel nicht gleichzeitig täglich Deluxe-Truhen oder Splitter kaufen, außer das Budget deckt ausdrücklich beide Ziele.
+7. Nach dem Skin überschüssige Vorratsgutscheine in Deluxe-Truhen, Veredelte Steine und gezielte permanente Materialien investieren.
 
 ## Grenzen und offene Punkte
 
 - Die voraussichtlich acht kostenlosen Shop-Münzen setzen voraus, dass jedes Reset-Fenster des sichtbaren Eventtimers genutzt wird.
 - Wahrscheinlichkeiten liefern Erwartungswerte, aber kein garantiertes Ergebnis für einen einzelnen Account.
 - Die genaue Qualität einzelner Baupläne, Fragmente und Kisten ist ohne Detailansicht nicht sicher vergleichbar. Deshalb werden sie nur bedingt gerankt.
-- Für die täglichen zeitbegrenzten Aufgaben sind bisher nur die Anforderungen der Stufen 1 bis 6 bestätigt. Stufe 7 bis 9 und die exakten Aufgabenarten bleiben offen; die angegebenen Werte sind lediglich eine vorsichtige Extrapolation.
+- Für die täglichen zeitbegrenzten Aufgaben sind bisher nur die Anforderungen der Stufen 1 bis 6 bestätigt. Die Anforderungen der Stufen 7 bis 15 und die exakten Aufgabenarten bleiben offen; die angegebenen Reichweiten sind lediglich eine vorsichtige Extrapolation.
 - Ob eine einzige tiefe Slot-Serie oder mehrfach erreichte kleine Tagesstufen den höchsten Gesamtwert liefert, lässt sich ohne alle Aufgabenarten und Stufeninhalte nicht exakt berechnen.
 - Ob alle Spieler dieselben Pakete und regionalen Preise sehen, ist nicht bestätigt.
 - Die Bewertung der Echtgeldpakete verwendet die am 28.09.2026 in Deutschland sichtbaren Preise.
@@ -308,7 +321,7 @@ Der kostenlose Tagesgutschein und bereits erspielte Vorratsgutscheine reduzieren
 ## Quellen und Verlässlichkeit
 
 - Ingame-Screenshots des Events, der Startsequenz und der deutschen Angebote vom 28.09.2026
-- Screenshots der täglichen zeitbegrenzten Aufgaben, Stufe 1 bis 6, vom 04.10.2026
+- Screenshots der täglichen zeitbegrenzten Aufgaben: Anforderungen Stufe 1 bis 6 und Belohnungen Stufe 1 bis 15, vom 04.10.2026
 - Detailansicht der Vibranium-Verteidigungslinie vom 28.09.2026
 - Detailansicht der Optionalen Deluxe-Truhe vom 28.09.2026
 - Direkte Vorratsgutschein-Pakete und tägliche Gratis-/Diamantangebote vom 28.09.2026

@@ -3,13 +3,21 @@ import "../styles/global.css";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import gallery from "../data/gallery.generated.json";
-const victory = gallery.items.find(item => item.sourcePath.endsWith("2026_09_08_0951_WaechterSieg_Boshos_Drachenherz_Anthlan.png"));
-if (!victory) throw new Error("Das Wächter-Siegesbild fehlt in der Galerie.");
+const victory = gallery.items.find(item => item.sourcePath.endsWith("2026_10_04_2204_Waechter140_Drachenherz_Anthlan.png"));
+if (!victory) throw new Error("Das Erinnerungsbild zum Wächter auf Stufe 140 fehlt in der Galerie.");
+const victory150 = gallery.items.find(item => item.sourcePath.endsWith("2026_10_04_2204_Waechter150_Drachenherz_Anthlan_Boshos.png"));
+if (!victory150) throw new Error("Das neue Erinnerungsbild zum Wächter auf Stufe 150 fehlt in der Galerie.");
 const victory160 = gallery.items.find(item => item.sourcePath.endsWith("2026_10_04_2113_Waechter160_Drachenherz_Anthlan_Killergruppe_Hulkster666.png"));
 if (!victory160) throw new Error("Das Erinnerungsbild zum Wächter auf Stufe 160 fehlt in der Galerie.");
 const victoryImages = {
-  150: { url: victory.webUrl, thumbnail: victory.thumbnailUrl, alt: "Boshos, Drachenherz und Anthlan feiern den Sieg über Wächter Stufe 150.", caption: "Siegesbild vom 08.09.2026 vergrößern ↗" },
+  140: { url: victory.webUrl, thumbnail: victory.webUrl, alt: "Drachenherz und Anthlan in ihren M2-Ausstattungen beim ersten Sieg über einen Wächter auf Stufe 140.", caption: "Erinnerungsbild zum 140er vergrößern ↗" },
+  150: { url: victory150.webUrl, thumbnail: victory150.webUrl, alt: "Drachenherz und Anthlan stehen beim besiegten Wächter auf Stufe 150 im Mittelpunkt. Boshos unterstützt im Hintergrund nach seinem finalen Schlag.", caption: "Neues Erinnerungsbild zum 150er vergrößern ↗" },
   160: { url: victory160.webUrl, thumbnail: victory160.webUrl, alt: "Drachenherz und Anthlan stehen gemeinsam im Mittelpunkt beim gefallenen Wächter auf Stufe 160. Killergruppe und Hulkster666 unterstützen sie im Hintergrund.", caption: "Erinnerungsbild zum 02.10.2026 vergrößern ↗" },
+};
+const battleIntroductions = {
+  140: "Eine fixe Idee von Drachenherz und Anthlan: einfach die nächste Stufe versuchen. Nach 60 % Schaden im ersten Anlauf fällt der 140er im zweiten – und macht Mut auf mehr.",
+  150: "Vom Erfolg beim 140er beflügelt, gehen Drachenherz und Anthlan die nächste Stufe an. Nur 40 % Schaden im ersten Versuch. Doch mit Unterstützung fällt der 150er schon im zweiten Anlauf.",
+  160: "Was als Feier für Anthlans neue T9 begann, wurde zu einer Schlacht, die wir so schnell nicht vergessen. Zwei Angriffe. Sechs Mitstreiter. Ein hart erkämpfter Meilenstein.",
 };
 const dates: Record<number, string> = {100:"2026-08-13",110:"2026-08-20",120:"2026-08-28",130:"2026-09-05",140:"2026-09-08",150:"2026-09-08",160:"2026-10-02"};
 const trophies = Array.from({length:11}, (_, index) => {
@@ -48,8 +56,30 @@ const trophies = Array.from({length:11}, (_, index) => {
   <dialog class="trophy-dialog" aria-labelledby="trophy-title">
     <form method="dialog"><button class="close">Schließen ×</button></form>
     <p class="eyebrow" data-status></p><h2 id="trophy-title"></h2><p class="victory-date" data-date></p><p data-story></p>
-    <a class="victory-link" href={victory.webUrl} target="_blank" rel="noopener"><img src={victory.thumbnailUrl} width="320" height="292" alt="Boshos, Drachenherz und Anthlan feiern den Sieg über Wächter Stufe 150." /><span>Siegesbild vom 08.09.2026 vergrößern ↗</span></a>
-    <section class="battle-chronicle" hidden aria-label="Chronik unserer ersten Wächtertötung auf Stufe 160">
+    <a class="victory-link" href={victory.webUrl} target="_blank" rel="noopener"><img src={victory.webUrl} width="640" height="427" alt="Drachenherz und Anthlan beim Sieg über Wächter Stufe 140." /><span>Erinnerungsbild zum 140er vergrößern ↗</span></a>
+    <section class="battle-chronicle" data-chronicle="140" hidden aria-label="Chronik unserer ersten Wächtertötung auf Stufe 140">
+      <p class="battle-credit">Rückblick nach der Erinnerung von Anthlan. Der genaue damalige Kampfbericht ist nicht mehr vorhanden.</p>
+      <h3>Eine fixe Idee, zwei Mitstreiter</h3>
+      <p>Drachenherz und Anthlan wollten wissen, was gemeinsam schon möglich war. Eine neue Wächterstufe ausprobieren – warum eigentlich nicht? Aus der fixen Idee wurde kurzerhand eine Jagd auf einen 140er.</p>
+      <h3>60 % im ersten Anlauf</h3>
+      <p>Schon der erste Angriff machte Mut: 60 % Schaden. Der Wächter stand noch, aber der neue Gegner ließ sich erstaunlich gut bezwingen. Ein zweiter Anlauf musste trotzdem her.</p>
+      <p>Dann fiel der 140er. Drachenherz und Anthlan hatten den nächsten Meilenstein geschafft – und der Erfolg fühlte sich gut genug an, um gleich die nächste Frage zu stellen: Was geht wohl beim 150er?</p>
+      <p class="battle-closing">Eine fixe Idee. Zwei Anläufe. Ein neuer Meilenstein – und plötzlich war die nächste Stufe zum Greifen nah.</p>
+      <p class="battle-credit">Im Mittelpunkt dieser Jagd: Drachenherz und Anthlan.</p>
+    </section>
+    <section class="battle-chronicle" data-chronicle="150" hidden aria-label="Chronik unserer ersten Wächtertötung auf Stufe 150">
+      <p class="battle-credit">Rückblick nach der Erinnerung von Anthlan. Der genaue damalige Kampfbericht ist nicht mehr vorhanden.</p>
+      <h3>Nach dem 140er ist vor dem 150er</h3>
+      <p>Der überraschend gute Erfolg beim 140er hatte Drachenherz und Anthlan auf eine Idee gebracht: weitergehen. Die beiden suchten einen Wächter auf Stufe 150 und legten los.</p>
+      <h3>40 % – das wird kein Spaziergang</h3>
+      <p>Der erste Angriff zeigte den Unterschied zur vorherigen Stufe deutlich. Nur 40 % Schaden. Drachenherz und Anthlan stellten sich auf drei Anläufe und viele Verluste ein. Dieser Wächter würde ihnen mehr abverlangen.</p>
+      <h3>Unterstützung macht den Unterschied</h3>
+      <p>Die Hauptaufgabe lag wieder bei Drachenherz und Anthlan. Doch diesmal machte die Unterstützung ihrer Mitstreiter den Unterschied: Schon beim zweiten Versuch konnte der Wächter besiegt werden.</p>
+      <p>Boshos setzte den finalen Schlag. Er brachte damit zu Ende, was Drachenherz und Anthlan begonnen und mit ihren Kämpfen vorangetrieben hatten. Ein gemeinsamer Sieg – früher als nach dem ersten Anlauf erwartet.</p>
+      <p class="battle-closing">Drei Anläufe befürchtet. Zwei gebraucht. Drachenherz und Anthlan gingen voran, ihre Unterstützer halfen, den nächsten Meilenstein nach Hause zu bringen.</p>
+      <p class="battle-credit">Drachenherz und Anthlan trugen die Hauptaufgabe. Boshos setzte mit der Unterstützung der Mitstreiter den Schlusspunkt.</p>
+    </section>
+    <section class="battle-chronicle" data-chronicle="160" hidden aria-label="Chronik unserer ersten Wächtertötung auf Stufe 160">
       <h3>Neue T9. Ein großer Plan.</h3>
       <p>Anthlans neue T9-Soldaten waren ein guter Grund zum Feiern. Drachenherz und Anthlan hatten dafür eine Idee, die deutlich größer war als ein gemütlicher Abend: eine Wächterjagd. Ein neuer Meilenstein sollte her. Stufe 160.</p>
       <h3>Erster Angriff: zu groß für einen Happen</h3>
@@ -66,7 +96,7 @@ const trophies = Array.from({length:11}, (_, index) => {
   </dialog>
 </main><SiteFooter /></div></body>
 </html>
-<script define:vars={{trophies, victoryImages}}>
+<script define:vars={{trophies, victoryImages, battleIntroductions}}>
   const dialog = document.querySelector('.trophy-dialog');
   let current = 0;
   function showTrophy(index) {
@@ -75,9 +105,9 @@ const trophies = Array.from({length:11}, (_, index) => {
     document.querySelector('#trophy-title').textContent = `Wächter · Stufe ${trophy.level}`;
     document.querySelector('[data-status]').textContent = trophy.won ? 'Trophäe unserer Gemeinschaft' : 'Unser nächstes Kapitel';
     document.querySelector('[data-date]').textContent = trophy.won ? `${trophy.label} · Datum ${trophy.estimated ? 'geschätzt' : 'bestätigt'}` : trophy.label;
-    document.querySelector('[data-story]').textContent = !trophy.won ? 'Das Schild ist noch leer. Hier wird der Wächterkopf hängen, wenn wir diese Stufe zum ersten Mal gemeinsam bezwingen.' : trophy.estimated ? 'Diesen Wächter haben wir gemeinsam besiegt. Das genaue Datum ist nicht überliefert; der angezeigte Tag ist eine rückblickende Schätzung innerhalb unserer bisherigen Spielzeit.' : trophy.level === 160 ? 'Was als Feier für Anthlans neue T9 begann, wurde zu einer Schlacht, die wir so schnell nicht vergessen. Zwei Angriffe. Sechs Mitstreiter. Ein hart erkämpfter Meilenstein.' : 'Am 08. September 2026 bezwingen wir erstmals die Wächter auf Stufe 140 und 150. Zwei Meilensteine an einem Tag. Das gemeinsame Siegesbild hält den Triumph über Stufe 150 fest.';
-    document.querySelector('.battle-chronicle').hidden = trophy.level !== 160;
-    const memory = victoryImages[trophy.level === 140 ? 150 : trophy.level];
+    document.querySelector('[data-story]').textContent = !trophy.won ? 'Das Schild ist noch leer. Hier wird der Wächterkopf hängen, wenn wir diese Stufe zum ersten Mal gemeinsam bezwingen.' : trophy.estimated ? 'Diesen Wächter haben wir gemeinsam besiegt. Das genaue Datum ist nicht überliefert; der angezeigte Tag ist eine rückblickende Schätzung innerhalb unserer bisherigen Spielzeit.' : battleIntroductions[trophy.level];
+    document.querySelectorAll('[data-chronicle]').forEach(chronicle => { chronicle.hidden = Number(chronicle.dataset.chronicle) !== trophy.level; });
+    const memory = victoryImages[trophy.level];
     const memoryLink = document.querySelector('.victory-link');
     memoryLink.hidden = !memory;
     if (memory) {

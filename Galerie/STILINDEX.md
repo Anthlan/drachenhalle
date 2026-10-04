@@ -4,6 +4,9 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 
 ## S1 – Filmische Allianz-Fantasy
 
+- [2026_10_04_2204_Waechter140_Drachenherz_Anthlan.png](Chatbilder/2026_10_04_2204_Waechter140_Drachenherz_Anthlan.png)
+- [2026_10_04_2204_Waechter150_Drachenherz_Anthlan_Boshos.png](Chatbilder/2026_10_04_2204_Waechter150_Drachenherz_Anthlan_Boshos.png)
+
 - [2026_10_04_2113_Waechter160_Drachenherz_Anthlan_Killergruppe_Hulkster666.png](Chatbilder/2026_10_04_2113_Waechter160_Drachenherz_Anthlan_Killergruppe_Hulkster666.png)
 
 - [2026_08_24_0821_Trinkhalle_Drachenherz.png](Chatbilder/2026_08_24_0821_Trinkhalle_Drachenherz.png)
