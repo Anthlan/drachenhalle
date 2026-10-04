@@ -32,6 +32,7 @@ export const EVENT_VOUCHERS_PER_COIN = baseMoments.mean + slotMoments.mean;
 export const EVENT_VARIANCE_PER_COIN = baseMoments.variance + slotMoments.variance;
 export const EVENT_STANDARD_DEVIATION_PER_COIN = Math.sqrt(EVENT_VARIANCE_PER_COIN);
 export const GUARANTEED_VOUCHERS_PER_COIN = 5;
+export type DrawMultiplier = 1 | 5;
 
 export type EventPackage = {
   id: string;
@@ -360,10 +361,19 @@ export const remainingPurchaseWindows = (days: number, hours: number) => {
   return totalHours === 0 ? 0 : Math.ceil(totalHours / 24);
 };
 
-export const casinoProjection = (coins: number, centralConfidence = 0.8) => {
+export const casinoProjection = (
+  coins: number,
+  centralConfidence = 0.8,
+  drawMultiplier: DrawMultiplier = 1,
+) => {
   const safeCoins = Math.max(0, Math.floor(coins));
   const expected = safeCoins * EVENT_VOUCHERS_PER_COIN;
-  const standardDeviation = Math.sqrt(safeCoins * EVENT_VARIANCE_PER_COIN);
+  const completeDraws = Math.floor(safeCoins / drawMultiplier);
+  const remainingSingleDraws = safeCoins % drawMultiplier;
+  // Im 5x-Modus wird ein einziges Zufallsergebnis verfünffacht. Der Mittelwert
+  // bleibt gleich, die Varianz steigt gegenüber fünf unabhängigen 1x-Ziehungen.
+  const varianceFactor = completeDraws * drawMultiplier ** 2 + remainingSingleDraws;
+  const standardDeviation = Math.sqrt(varianceFactor * EVENT_VARIANCE_PER_COIN);
   const z = centralConfidence >= 0.95 ? 1.96 : centralConfidence >= 0.9 ? 1.645 : 1.282;
   const guaranteed = safeCoins * GUARANTEED_VOUCHERS_PER_COIN;
   return {
@@ -379,9 +389,10 @@ export const expectedVoucherGap = (
   targetVouchers: number,
   securedVouchers: number,
   availableCoins: number,
+  drawMultiplier: DrawMultiplier = 1,
 ) => Math.max(
   0,
-  Math.ceil(targetVouchers - securedVouchers - casinoProjection(availableCoins).expected),
+  Math.ceil(targetVouchers - securedVouchers - casinoProjection(availableCoins, 0.8, drawMultiplier).expected),
 );
 
 const erf = (value: number) => {
@@ -400,9 +411,13 @@ const erf = (value: number) => {
 
 const normalCdf = (value: number) => 0.5 * (1 + erf(value / Math.sqrt(2)));
 
-export const probabilityToReach = (neededVouchers: number, coins: number) => {
+export const probabilityToReach = (
+  neededVouchers: number,
+  coins: number,
+  drawMultiplier: DrawMultiplier = 1,
+) => {
   if (neededVouchers <= 0) return 1;
-  const projection = casinoProjection(coins);
+  const projection = casinoProjection(coins, 0.8, drawMultiplier);
   if (neededVouchers <= projection.guaranteed) return 1;
   if (coins <= 0 || projection.standardDeviation <= 0) return 0;
   const z = (neededVouchers - 0.5 - projection.expected) / projection.standardDeviation;
@@ -413,10 +428,11 @@ export const requiredCoinsForChance = (
   neededVouchers: number,
   chance: number,
   maxCoins = 10000,
+  drawMultiplier: DrawMultiplier = 1,
 ) => {
   if (neededVouchers <= 0) return 0;
   for (let coins = 1; coins <= maxCoins; coins += 1) {
-    if (probabilityToReach(neededVouchers, coins) >= chance) return coins;
+    if (probabilityToReach(neededVouchers, coins, drawMultiplier) >= chance) return coins;
   }
   return null;
 };
@@ -511,14 +527,14 @@ const bestPlanAtLeast = (table: PackageTable, requiredUnits: number): Exclude<Pa
   return { units: bestUnits, costCents: bestCost, counts: table.counts[bestUnits] ?? {} };
 };
 
-const reliableCasinoYield = (coins: number, chance: number) => {
+const reliableCasinoYield = (coins: number, chance: number, drawMultiplier: DrawMultiplier) => {
   if (coins <= 0) return 0;
-  const projection = casinoProjection(coins);
+  const projection = casinoProjection(coins, 0.8, drawMultiplier);
   let low = 0;
   let high = Math.ceil(projection.high + projection.standardDeviation * 4 + 500);
   while (low < high) {
     const middle = Math.ceil((low + high) / 2);
-    if (probabilityToReach(middle, coins) >= chance) low = middle;
+    if (probabilityToReach(middle, coins, drawMultiplier) >= chance) low = middle;
     else high = middle - 1;
   }
   return low;
@@ -532,10 +548,11 @@ const completeHybridPlan = (
   securedVouchers: number,
   targetVouchers: number,
   confidence: number,
+  drawMultiplier: DrawMultiplier,
 ): Exclude<HybridPlan, null> => {
   const totalCoins = availableCoins + coinPlan.units;
   const directVouchers = voucherPlan.units;
-  const projection = casinoProjection(totalCoins, confidence);
+  const projection = casinoProjection(totalCoins, confidence, drawMultiplier);
   const neededFromCasino = Math.max(0, targetVouchers - securedVouchers - directVouchers);
   return {
     strategy,
@@ -547,7 +564,7 @@ const completeHybridPlan = (
     expectedTotal: securedVouchers + directVouchers + projection.expected,
     lowTotal: securedVouchers + directVouchers + projection.low,
     highTotal: securedVouchers + directVouchers + projection.high,
-    probability: probabilityToReach(neededFromCasino, totalCoins),
+    probability: probabilityToReach(neededFromCasino, totalCoins, drawMultiplier),
   };
 };
 
@@ -558,6 +575,7 @@ export const optimizeHybridPurchase = ({
   securedVouchers,
   availableCoins,
   confidence,
+  drawMultiplier = 1,
 }: {
   strategy: HybridStrategy;
   windows: number;
@@ -565,6 +583,7 @@ export const optimizeHybridPurchase = ({
   securedVouchers: number;
   availableCoins: number;
   confidence: number;
+  drawMultiplier?: DrawMultiplier;
 }): HybridPlan => {
   const coinTable = buildExactPackagePlans(COIN_PACKAGES, windows);
   const voucherTable = buildExactPackagePlans(VOUCHER_PACKAGES, windows);
@@ -575,6 +594,7 @@ export const optimizeHybridPurchase = ({
       Math.max(0, neededFromCasino),
       confidence,
       availableCoins + coinTable.maximum,
+      drawMultiplier,
     );
     if (requiredTotal === null) return null;
     return bestPlanAtLeast(coinTable, Math.max(0, requiredTotal - availableCoins));
@@ -586,7 +606,7 @@ export const optimizeHybridPurchase = ({
     if (!coinPlan) return null;
     const directNeed = casinoOnlyPlan
       ? 0
-      : Math.max(0, totalGap - reliableCasinoYield(availableCoins + coinPlan.units, confidence));
+      : Math.max(0, totalGap - reliableCasinoYield(availableCoins + coinPlan.units, confidence, drawMultiplier));
     const voucherPlan = bestPlanAtLeast(voucherTable, directNeed);
     if (!voucherPlan) return null;
     return completeHybridPlan(
@@ -597,6 +617,7 @@ export const optimizeHybridPurchase = ({
       securedVouchers,
       targetVouchers,
       confidence,
+      drawMultiplier,
     );
   }
 
@@ -614,6 +635,7 @@ export const optimizeHybridPurchase = ({
       securedVouchers,
       targetVouchers,
       confidence,
+      drawMultiplier,
     );
   }
 
@@ -636,6 +658,7 @@ export const optimizeHybridPurchase = ({
       securedVouchers,
       targetVouchers,
       confidence,
+      drawMultiplier,
     );
     if (
       !best
@@ -865,6 +888,7 @@ export const initializeFlightEventCalculator = () => {
     const remainingHours = Math.min(23, wholeNumber(data.get("remainingHours")));
     const remainingFreeVouchers = Math.min(99, wholeNumber(data.get("remainingFreeVouchers")));
     const confidence = Number(data.get("confidence") ?? 0.8);
+    const drawMultiplier: DrawMultiplier = data.get("drawMultiplier") === "5" ? 5 : 1;
     const purchaseStrategyValue = String(data.get("purchaseStrategy") ?? "cost-optimized");
     const purchaseStrategy: HybridStrategy = purchaseStrategyValue === "casino-first"
       || purchaseStrategyValue === "voucher-first"
@@ -886,12 +910,12 @@ export const initializeFlightEventCalculator = () => {
     const availableCoins = currentCoins + futureCoins;
     const securedVouchers = currentVouchers + futureVouchers + diamondVouchers;
     const neededFromCasino = Math.max(0, targetVouchers - securedVouchers);
-    const currentProjection = casinoProjection(availableCoins, confidence);
+    const currentProjection = casinoProjection(availableCoins, confidence, drawMultiplier);
     const currentTotalExpected = securedVouchers + currentProjection.expected;
-    const currentProbability = probabilityToReach(neededFromCasino, availableCoins);
+    const currentProbability = probabilityToReach(neededFromCasino, availableCoins, drawMultiplier);
 
-    const meanCoinTarget = requiredCoinsForChance(neededFromCasino, 0.5);
-    const confidenceCoinTarget = requiredCoinsForChance(neededFromCasino, confidence);
+    const meanCoinTarget = requiredCoinsForChance(neededFromCasino, 0.5, 10000, drawMultiplier);
+    const confidenceCoinTarget = requiredCoinsForChance(neededFromCasino, confidence, 10000, drawMultiplier);
     const meanCoinPlan = meanCoinTarget === null
       ? null
       : optimizePackagePurchase(COIN_PACKAGES, windows, Math.max(0, meanCoinTarget - availableCoins));
@@ -903,6 +927,7 @@ export const initializeFlightEventCalculator = () => {
       targetVouchers,
       securedVouchers,
       availableCoins,
+      drawMultiplier,
     );
     const directPlan = optimizePackagePurchase(VOUCHER_PACKAGES, windows, directGap);
     const hybridPlan = optimizeHybridPurchase({
@@ -912,11 +937,12 @@ export const initializeFlightEventCalculator = () => {
       securedVouchers,
       availableCoins,
       confidence,
+      drawMultiplier,
     });
 
     const plannedCasinoCoins = availableCoins + (confidenceCoinPlan?.units ?? 0);
-    const plannedProjection = casinoProjection(plannedCasinoCoins, confidence);
-    const plannedProbability = probabilityToReach(neededFromCasino, plannedCasinoCoins);
+    const plannedProjection = casinoProjection(plannedCasinoCoins, confidence, drawMultiplier);
+    const plannedProbability = probabilityToReach(neededFromCasino, plannedCasinoCoins, drawMultiplier);
 
     setText(result, "[data-flight-result-kicker]", currentProbability >= confidence ? "Ziel bereits realistisch" : "Dein Kurs zum Ziel");
     setText(

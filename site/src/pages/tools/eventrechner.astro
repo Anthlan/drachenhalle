@@ -241,6 +241,13 @@ const shopPages = [
                     <option value="0.95">95 % – sehr vorsichtig</option>
                   </select>
                 </label>
+                <label>
+                  <span class="flight-select-label"><strong>Ziehungsmodus</strong><small>5× spart Zeit, erhöht aber die Schwankung deutlich.</small></span>
+                  <select name="drawMultiplier">
+                    <option value="1" selected>1× – besser planbar</option>
+                    <option value="5">5× – höhere Schwankung</option>
+                  </select>
+                </label>
               </div>
             </fieldset>
 
@@ -410,13 +417,15 @@ const shopPages = [
             </header>
 
             <section class="flight-info-section">
-              <h3>Erwartungswert je Münze</h3>
+              <h3>Theoretischer Erwartungswert je Münze</h3>
               <div class="flight-method-grid">
                 <article><strong>10,01</strong><span>Grundbelohnung</span><small>5, 50, 250 oder 500 Gutscheine.</small></article>
                 <article><strong>2,77</strong><span>Symbolkombinationen</span><small>Direkte Gutschein-Kombinationen.</small></article>
                 <article><strong>2,31</strong><span>Spielautomaten-Luftabwurf</span><small>40-%-Gutscheinpool der Truhenziehung.</small></article>
                 <article class="is-total"><strong>15,08</strong><span>Gesamt erwartet</span><small>Je eingesetzter Münze, nicht garantiert.</small></article>
               </div>
+              <p><strong>Praxismessung:</strong> 279 überwiegend mit 5× eingesetzte Münzen brachten 1.500 neue Gutscheine beziehungsweise 5,38 je Münze. Weitere 50 Münzen mit 1× ergaben 460 Gutscheine beziehungsweise 9,2 je Münze. Zusammen sind das 1.960 Gutscheine aus 329 Münzen oder 5,96 je Münze.</p>
+              <p><strong>Empfehlung:</strong> Für ein festes Gutscheinziel 1× ziehen. Der 5×-Modus verändert den theoretischen Mittelwert nicht, bündelt aber jeweils fünf Münzen in nur einem Zufallsergebnis.</p>
               <p>Der eigenständige Bereich <strong>Versorgungsabwurf</strong> mit Hilfsgütern bringt weder Münzen noch Vorratsgutscheine und wird ausdrücklich nicht eingerechnet.</p>
             </section>
 

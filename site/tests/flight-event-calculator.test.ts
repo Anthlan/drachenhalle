@@ -20,6 +20,16 @@ test("berechnet den vollständigen Erwartungswert inklusive Spielautomaten-Lufta
   assert.ok(Math.abs(casinoProjection(100).expected - 1508.31) < 0.1);
 });
 
+test("behält im 5x-Modus den Mittelwert bei, bildet aber die höhere Streuung ab", () => {
+  const single = casinoProjection(190, 0.8, 1);
+  const bundled = casinoProjection(190, 0.8, 5);
+  assert.equal(bundled.expected, single.expected);
+  assert.equal(bundled.guaranteed, single.guaranteed);
+  assert.ok(Math.abs(bundled.standardDeviation - single.standardDeviation * Math.sqrt(5)) < 0.001);
+  assert.ok(bundled.low <= single.low);
+  assert.ok(bundled.high >= single.high);
+});
+
 test("ignoriert den Versorgungsabwurf und nutzt nur dokumentierte Gutschein-Ausgänge", () => {
   const projection = casinoProjection(1);
   assert.equal(projection.guaranteed, 5);

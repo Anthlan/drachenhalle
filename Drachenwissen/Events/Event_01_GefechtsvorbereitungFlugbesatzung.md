@@ -15,7 +15,7 @@ status: Zeitlich begrenzt
 - **Free2Play** sammelt Münzen und bündelt die Ziehungen möglichst auf den letzten sicheren Nutzungstag. **Gezielte Käufer** können dagegen täglich UR-Omni-Heldensplitter oder die Optionale Deluxe-Truhe sichern.
 - Die **Vibranium-Verteidigungslinie für 4.000 Vorratsgutscheine** ist stark, aber realistisch eine exklusive Belohnung für Großspender – kein vernünftiges Hauptziel für 0 bis 100 € Budget.
 - Bei den direkten Vorratsgutschein-Paketen bietet **2,49 € für 20 Gutscheine** den besten Kurs. Von 5,99 € bis 119,99 € bleibt der Kurs mit etwa 0,15 € je Gutschein praktisch konstant.
-- **Münzen bieten den besseren Erwartungswert, direkte Vorratsgutscheine die höhere Planungssicherheit.** Wer ein tägliches Angebot unbedingt kaufen möchte, sichert zuerst die fehlenden Gutscheine; bei einem Gesamtziel ohne Tageslimit wird zuerst gedreht und erst danach die Restlücke gekauft.
+- **Der theoretische Münz-Erwartungswert ist kein verlässlicher persönlicher Ertrag.** Im Praxistest ergaben 279 überwiegend mit 5× eingesetzte Münzen nur 5,38 Gutscheine je Münze; weitere 50 Münzen mit 1× erreichten 9,2 je Münze. Für feste Ziele sind direkte Gutscheine planbarer; bei Münzen möglichst 1× ziehen.
 - Bei einem großen Münzbestand und dem Ziel **maximale Vorratsgutscheine** sind mehrere Tagesläufe bis Stufe 7 beziehungsweise 9 sinnvoller als ein einzelner Lauf bis Stufe 15, weil alle sichtbar mit Gutscheinen markierten Aufgabenbelohnungen bereits bis Stufe 7 vergeben werden.
 
 > **Kurzempfehlung:** Kleine F2P-Bestände werden für einen sicheren Tagesmeilenstein gesammelt. Bei großen Beständen und Gutschein-Fokus die frühen Gutscheinboxen an mehreren Tagen bis Stufe 7 oder 9 wiederholen. Gezielte Käufer sichern nur gewünschte Tagesangebote; beim Skin-Ziel nach allen Ziehungen lediglich die verbleibende Gutscheinlücke direkt kaufen.
@@ -40,7 +40,7 @@ Wichtig: Die täglich verfügbaren Feierpunkte der fünf Eventtage sind eine eig
 
 | Ressource | Verwendung | Empfehlung |
 | --- | --- | --- |
-| **Fliegende-Stern-Münzen** | Eine Münze bezahlt eine normale Ziehung am Flughafen-Spielautomaten. Der 5×-Modus vervielfacht Einsatz und Belohnung. | Kostenlos einsammeln und für einen guten Tagesmeilenstein bündeln. |
+| **Fliegende-Stern-Münzen** | Eine Münze bezahlt eine normale Ziehung am Flughafen-Spielautomaten. Der 5×-Modus verfünffacht ein einzelnes Zufallsergebnis. | Kostenlos einsammeln, für einen guten Tagesmeilenstein bündeln und für bessere Planbarkeit 1× ziehen. |
 | **Vorratsgutscheine** | Entstehen durch Ziehungen, Kombinationen, Tagesstufen und Bonusziehungen. Sie werden im Vorratsdepot ausgegeben. | Tagesangebote nur bei klarem Ziel kaufen; sonst sammeln und vor Ablauf des Vorratsdepots gezielt verteilen. |
 | **Hilfsgüter** | Sind durch die Erledigung der **„Startzeit“-Aufgaben** sowie durch tägliche Aktivität erspielbar. Weitere Eventbereiche können zusätzliche Hilfsgüter liefern. | Alle verfügbaren Eventaufgaben und Reiter regelmäßig prüfen. |
 
@@ -53,10 +53,18 @@ Deshalb gilt:
 1. Holt kostenlose Münzen und Aufgabenbelohnungen täglich ab.
 2. Dreht nicht automatisch sofort nach jeder erhaltenen Münze.
 3. Sammelt, bis ihr einen sinnvollen Tagesmeilenstein sicher erreichen könnt.
-4. Nutzt 5× nur als Abkürzung; Einsatz und Belohnung werden gleichermaßen verfünffacht.
+4. Nutzt für ein festes Gutscheinziel möglichst **1×**. Der 5×-Modus spart Zeit, erzeugt aber aus fünf Münzen nur ein verfünffachtes Zufallsergebnis und erhöht dadurch die Schwankung stark.
 5. Stoppt nach dem geplanten Meilenstein. Nicht wegen bereits ausgegebener Münzen unkontrolliert nachkaufen.
 
 Nicht verbrauchte Münzen werden nach Eventende laut Eventregel umgewandelt. **Eine Münze entspricht 30 Beschleunigern zu je fünf Minuten**, also 150 Minuten. Das verhindert einen vollständigen Verlust, ist aber meist schwächer als gezielt erreichte Tagesstufen und Ziehungsbelohnungen.
+
+### Praxismessung: Warum 5× riskanter ist
+
+Bei einem dokumentierten Lauf wurden **279 Münzen überwiegend im 5×-Modus** eingesetzt und **1.500 neue Gutscheine** erzielt. Das entspricht nur **5,38 Gutscheinen je Münze**. Statt 279 unabhängigen 1×-Ergebnissen entstanden dadurch nur 55 verfünffachte Ergebnisse und vier einzelne Restziehungen, also insgesamt 59 unabhängige Zufallsergebnisse.
+
+Eine anschließende Messreihe mit **50 einzelnen 1×-Ziehungen** brachte weitere **460 Gutscheine**, also **9,2 Gutscheine je Münze**. Über beide Reihen zusammen wurden damit 1.960 Gutscheine aus 329 Münzen erzielt, entsprechend **5,96 je Münze**. Die 1×-Serie ist mit 50 Ziehungen noch klein, zeigt aber den Vorteil der breiteren Risikostreuung: Ein einzelner schlechter Treffer betrifft nur eine Münze statt fünf.
+
+Diese Messungen ersetzen die offiziellen Wahrscheinlichkeiten nicht durch einen neuen allgemeingültigen Erwartungswert. Der theoretische Langzeitmittelwert ist in beiden Modi gleich; 1× macht den persönlichen Ertrag lediglich stabiler. Für ein festes Ziel gilt deshalb: **1× ziehen, Zwischenstand prüfen und eine Restlücke lieber direkt schließen.**
 
 ### Tägliche zeitbegrenzte Aufgaben: 15 Stufen
 
@@ -104,9 +112,9 @@ Dieser Listenpreis überschätzt den persönlichen Nutzen der Zufallstruhen jedo
 
 ### Warum der Skin ohne Großspender-Budget unrealistisch ist
 
-Die lila Grundbelohnung einer Ziehung beträgt 5, 50, 250 oder 500 Vorratsgutscheine. Aus den angezeigten Wahrscheinlichkeiten ergibt sich rechnerisch ein Erwartungswert von rund **10 Vorratsgutscheinen je Münze** allein aus dieser Grundbelohnung. Kombinationen, Tagesstufen und Luftabwurf-Boni kommen hinzu, sind aber zufallsabhängig.
+Die lila Grundbelohnung einer Ziehung beträgt 5, 50, 250 oder 500 Vorratsgutscheine. Aus den angezeigten Wahrscheinlichkeiten ergibt sich rechnerisch ein theoretischer Erwartungswert von rund **10 Vorratsgutscheinen je Münze** allein aus dieser Grundbelohnung. Dieser Wert wird stark von den seltenen hohen Treffern angehoben. Kombinationen, Tagesstufen und Luftabwurf-Boni kommen hinzu, sind ebenfalls zufallsabhängig.
 
-Rein über den Grundwert wären für 4.000 Vorratsgutscheine im Mittel etwa **400 Münzen** nötig. Die bis zu 83 kostenlosen Münzen entsprechen auf dieser Basis rund **830 erwarteten Vorratsgutscheinen**. Kombinationen, Tagesstufen und Bonusziehungen erhöhen den Ertrag, schließen die große Lücke zum Skin aber nicht zuverlässig. Auch ein Budget bis 100 € bleibt stark vom Glück abhängig und sollte nicht um den Skin herum geplant werden.
+Rein über den theoretischen Grundwert wären für 4.000 Vorratsgutscheine im Mittel etwa **400 Münzen** nötig. Der schlechte 5×-Lauf mit 5,38 Gutscheinen je Münze würde dagegen rund **744 Münzen** erfordern; die kurze 1×-Messung mit 9,2 je Münze rund **435 Münzen**. Beides sind Praxisbeispiele und keine neue Prognose für alle Spieler. Auch ein Budget bis 100 € bleibt stark vom Glück abhängig und sollte nicht um den Skin herum geplant werden.
 
 Enthält ein Ergebnis ein Luftabwurf-Truhensymbol, entsteht eine zusätzliche Auswahlchance. Der sichtbare Bonuspool besteht zu **40 % aus Vorratsgutscheinen** und zu **60 % aus Veredelten Steinen**. Das ist wertvoll, aber ebenfalls keine Garantie für eine bestimmte Menge an Vorratsgutscheinen.
 
@@ -201,15 +209,19 @@ Der Skin kostet **4.000 Vorratsgutscheine** und ist stark, aber ausdrücklich ke
 
 Wenn Besitz- und Nutzungsbonus wie angezeigt gleichzeitig wirken, erreicht der aktiv verwendete Skin insgesamt **Helden-ANG +10 %, Helden-VER +5,5 % und Helden-LP +1 %**. Das ist eine starke exklusive Belohnung. Sie rechtfertigt aber nicht, mit kleinem oder mittlerem Budget einer zufälligen Lücke bei den Vorratsgutscheinen hinterherzukaufen.
 
-### Echtgeldwert des Basis-Skins: Erwartungswert oder sicherer Kauf
+### Echtgeldwert des Basis-Skins: Theorie, Praxismessung oder sicherer Kauf
 
-Aus der sichtbaren Grundbelohnung und den direkt ausgewiesenen Kombinationen mit Vorratsgutscheinen ergeben sich rechnerisch etwa **12,8 Vorratsgutscheine pro Münze**. Ohne die nicht sicher bezifferbaren Tagesstufen und Bonusziehungen wären damit im Mittel ungefähr 313 Münzen für 4.000 Vorratsgutscheine nötig.
+Aus der sichtbaren Grundbelohnung und den direkt ausgewiesenen Kombinationen mit Vorratsgutscheinen ergeben sich rechnerisch etwa **12,8 Vorratsgutscheine pro Münze**. Ohne die nicht sicher bezifferbaren Tagesstufen und Bonusziehungen wären damit theoretisch ungefähr 313 Münzen für 4.000 Vorratsgutscheine nötig.
 
-Nach Abzug der bis zu 83 kostenlosen Münzen bleiben rechnerisch rund 230 zu kaufende Münzen. Werden zuerst alle kleinen Tagespakete genutzt und der Rest zum regulären Kurs von ungefähr 1,20 € pro Münze gekauft, liegt die reine Erwartungsrechnung bei etwa **250 €**. Dieser Wert beschreibt einen statistischen Mittelwert und garantiert den Skin nicht.
+Nach Abzug der bis zu 83 kostenlosen Münzen bleiben in dieser theoretischen Rechnung rund 230 zu kaufende Münzen. Werden zuerst alle kleinen Tagespakete genutzt und der Rest zum regulären Kurs von ungefähr 1,20 € pro Münze gekauft, liegt die reine Erwartungsrechnung bei etwa **250 €**. Dieser Betrag ist ausdrücklich **keine realistische Preiszusage**.
+
+Beim beobachteten Kurs von **5,38 Gutscheinen je Münze** wären insgesamt rund 744 Münzen nötig. Nach Abzug von 83 kostenlosen Münzen kostet der günstigste abgebildete Paketmix für die übrigen rund 661 Münzen über acht Kaufperioden ungefähr **766 €**. Ein solch schlechter Münzlauf wäre damit sogar teurer als der sichere Direktkauf der Gutscheine.
+
+Die kurze 1×-Serie mit 9,2 Gutscheinen je Münze ergäbe hochgerechnet rund 435 benötigte Münzen. Nach Abzug der kostenlosen Münzen läge der günstigste Paketmix für weitere 352 Münzen bei ungefähr **395 €**. Dieser Wert ist wegen der kleinen Stichprobe von 50 Ziehungen nur eine Orientierung, zeigt aber, warum 1× für ein begrenztes Budget sinnvoller planbar ist.
 
 Der vollständig planbare Weg führt über direkte Gutscheinpakete. Werden über acht erreichbare Kaufperioden jeweils die günstigen 20er-Pakete genutzt, entstehen 160 Gutscheine für 19,92 €. Die verbleibenden 3.840 Gutscheine kosten über die größeren Paketstufen rund 575,93 €. Damit liegt der **sichere Direktkauf bei ungefähr 595,85 €, also rund 596 €**. Kostenlose und bereits erspielte Gutscheine reduzieren diesen Betrag entsprechend.
 
-Die sinnvollste Kaufstrategie liegt dazwischen: zuerst kostenlose und günstig gekaufte Münzen einsetzen, danach den tatsächlichen Gutscheinbestand prüfen und nur die Restlücke direkt schließen. Der rechnerische Münz-Erwartungswert beginnt bei etwa **250 €**; ein Budget von **250 bis 400 €** ist jedoch weiterhin keine feste Garantie, solange der abschließende Direktkauf der Restlücke nicht einkalkuliert ist. Die einzige vorab vollständig planbare Obergrenze ist der reine Direktkauf für rund **596 €**.
+Die sinnvollste Kaufstrategie liegt dazwischen: kostenlose Münzen und höchstens die günstigen kleinen Münzpakete **im 1×-Modus** einsetzen, danach den tatsächlichen Gutscheinbestand prüfen und nur die Restlücke direkt schließen. Die Vergleichswerte lauten: theoretische Münzrechnung rund **250 €**, kurze 1×-Messung hochgerechnet rund **395 €**, schlechter 5×-Lauf rund **766 €** und sicherer Direktkauf rund **596 €**. Nur der Direktkauf ist vorab vollständig planbar.
 
 ![Vibranium-Verteidigungslinie als exklusive Großspender-Belohnung und Veredelte Steine als allgemeine Empfehlung](Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
 
@@ -272,29 +284,29 @@ Das 2,49-€-Paket ist beim reinen Gutscheinkurs ungefähr **20 % besser** als d
 
 ### Münzen oder Vorratsgutscheine kaufen?
 
-Für einen fairen Vergleich werden beide Wege auf **Vorratsgutscheine je Euro** umgerechnet. Bei Münzen handelt es sich um einen Erwartungswert von etwa 12,8 Gutscheinen pro Münze; bei direkten Gutscheinpaketen ist die angegebene Menge garantiert.
+Für einen fairen Vergleich werden beide Wege auf **Vorratsgutscheine je Euro** umgerechnet. Bei Münzen stehen der theoretische Wert von etwa 12,8 Gutscheinen pro Münze, der beobachtete schlechte 5×-Lauf mit 5,38 und die kurze 1×-Serie mit 9,2 gegenüber. Bei direkten Gutscheinpaketen ist die angegebene Menge garantiert.
 
-| Kaufweg | Gutscheinertrag | Gutscheine je Euro | Einordnung |
+| Kaufweg | Theoretisch | Beobachtet 5× / 1× | Einordnung |
 | --- | ---: | ---: | --- |
-| **2 Münzen für 1,19 €** | ca. 25,6 erwartet | ca. 21,5 | Bester Erwartungswert, aber zufällig |
-| **4 Münzen für 2,49 €** | ca. 51,2 erwartet | ca. 20,6 | Sehr guter Erwartungswert, aber zufällig |
-| **Münzen zum regulären Kurs von ca. 1,20 € je Münze** | ca. 12,8 erwartet | ca. 10,7 | Weiterhin besserer Mittelwert als Direktkauf |
-| **20 direkte Gutscheine für 2,49 €** | 20 garantiert | ca. 8,03 | Bester sicherer Gutscheinkurs |
-| **Größere direkte Gutscheinpakete** | garantiert | ca. 6,67 | Teurer, aber vollständig planbar |
+| **2 Münzen für 1,19 €** | ca. 25,6 | ca. 10,8 / 18,4 | Günstigstes Münzpaket; trotzdem zufällig |
+| **4 Münzen für 2,49 €** | ca. 51,2 | ca. 21,5 / 36,8 | Kann sich lohnen, aber keine Garantie |
+| **Münze zum regulären Kurs von ca. 1,20 €** | ca. 12,8 | ca. 5,38 / 9,2 | 1× war im Praxistest deutlich besser planbar |
+| **20 direkte Gutscheine für 2,49 €** | 20 garantiert | 20 garantiert | Bester sicherer Gutscheinkurs |
+| **Größere direkte Gutscheinpakete** | ca. 6,67 Gutscheine je Euro | ca. 6,67 Gutscheine je Euro | Vollständig planbar |
 
-Rein rechnerisch sind Münzen damit effizienter. Sie liefern zusätzlich Slot-Punkte, Tagesstufen und weitere Ziehungsbelohnungen. Der Nachteil ist die Streuung: Ein einzelner Spieler kann deutlich unter dem Erwartungswert landen. Direkte Gutscheine sind deshalb kein besserer Wertkauf, sondern eine **Sicherheitsprämie**.
+Die kleinen Münzpakete bleiben wegen ihres niedrigen Preises interessant. Regulär bepreiste Münzen sind bei einem schwachen Lauf dagegen schlechter als direkte Gutscheine. Münzen liefern zwar zusätzlich Slot-Punkte, Tagesstufen und weitere Ziehungsbelohnungen, dürfen aber nicht mehr pauschal als besserer Wertkauf bezeichnet werden.
 
 **Konkrete Beispiele für tägliche Ziele:**
 
 | Tagesziel | Direkter, sicherer Weg | Münzweg im Erwartungswert |
 | --- | --- | --- |
-| **60 Gutscheine für 10 UR-Omni-Heldensplitter** | 20er- plus 40er-Paket: **8,48 € garantiert** | rechnerisch ca. 4,7 Münzen; das kleine Tagespaket-Duo liefert 6 Münzen für **3,68 €** und damit ca. 76,8 Gutscheine erwartet, aber keine Garantie |
-| **100 Gutscheine für die Optionale Deluxe-Truhe** | 20er- plus 80er-Paket: **14,48 € garantiert** | rechnerisch ca. 7,8 Münzen; mit 11 Münzen für **9,67 €** werden ca. 140,8 Gutscheine erwartet, aber auch hier ohne Garantie |
+| **60 Gutscheine für 10 UR-Omni-Heldensplitter** | 20er- plus 40er-Paket: **8,48 € garantiert** | 6 günstige Münzen kosten 3,68 €; beim beobachteten 5×-/1×-Kurs entsprächen sie rund 32 beziehungsweise 55 Gutscheinen |
+| **100 Gutscheine für die Optionale Deluxe-Truhe** | 20er- plus 80er-Paket: **14,48 € garantiert** | 11 Münzen kosten 9,67 €; beim beobachteten 5×-/1×-Kurs entsprächen sie rund 59 beziehungsweise 101 Gutscheinen |
 
 **Entscheidungsregel für Gezielte Käufer:**
 
 - **Tagesangebot muss heute sicher gekauft werden:** Vorhandene Gutscheine anrechnen und nur die konkrete Restmenge direkt kaufen.
-- **Ein verpasstes Tagesangebot wäre verkraftbar:** Günstige Münzpakete bieten den besseren erwarteten Gegenwert.
+- **Ein verpasstes Tagesangebot wäre verkraftbar:** Günstige Münzpakete können den besseren Gegenwert liefern; für geringere Schwankung 1× ziehen.
 - **Größeres Eventziel ohne Tageslimit:** Erst Münzen drehen, danach ausschließlich die verbleibende Gutscheinlücke direkt schließen.
 - **Knappes festes Budget:** Nicht gleichzeitig auf Slot-Glück und mehrere tägliche Käufe planen. Vor dem Kauf ein Hauptziel festlegen.
 
@@ -337,13 +349,15 @@ Der kostenlose Tagesgutschein und bereits erspielte Vorratsgutscheine reduzieren
 ```html
 <color=#FFD700><b>✈️ EVENT-GUIDE – FLUGBESATZUNG</b></color>
 
-<color=#7FFF00><b>F2P:</b></color> 15 Münzen je Tag, 75 in 5 Tagen; mit Shop-Resets bis zu 83 gratis. Für einen sicheren Tagesmeilenstein sammeln. 1 Vorratsgutschein täglich ist gratis.
+<color=#7FFF00><b>F2P:</b></color> 15 Münzen/Tag, 75 in 5 Tagen; bis zu 83 gratis. Für einen Tagesmeilenstein sammeln. 1 Gutschein täglich gratis.
 
-<color=#7FFF00><b>280-MÜNZEN-PLAN:</b></color> Bei Gutschein-Fokus lieber an 2 Tagen bis Stufe 7/9 als einmal bis Stufe 15. Alle sichtbaren Gutscheinboxen liegen auf Stufe 1, 3, 5 und 7. Nach Lauf 1 den Verbrauch prüfen.
+<color=#7FFF00><b>280-MÜNZEN-PLAN:</b></color> Bei Gutschein-Fokus lieber 2× bis Stufe 7/9 als 1× bis 15. Gutscheinboxen liegen auf Stufe 1, 3, 5 und 7. Verbrauch nach Lauf 1 prüfen.
 
-<color=#7FFF00><b>KAUFEN:</b></color> Münzen haben den besseren Erwartungswert, direkte Gutscheine geben Sicherheit. 60 Gutscheine kosten sicher 8,48 €; 100 kosten 14,48 €. Erst drehen, dann nur die Restlücke kaufen.
+<color=#7FFF00><b>ZIEHEN:</b></color> Für feste Ziele 1× nutzen. Praxistest: 5× brachte 5,38, die 1×-Serie 9,2 Gutscheine/Münze.
 
-<color=#7FFF00><b>SKIN:</b></color> 4.000 Gutscheine. Münz-Erwartungswert ca. 250 €; sicherer Direktkauf ca. 596 €.
+<color=#7FFF00><b>KAUFEN:</b></color> Erst günstige Münzen, dann Restlücke direkt schließen. 60 Gutscheine: 8,48 €; 100: 14,48 € sicher.
 
-<color=#FFAA00><b>WICHTIG:</b></color> Der Slot-Punktezähler wird täglich zurückgesetzt. Tagesangebote mit „Heute übrig: 1“ verfallen beim Reset.
+<color=#7FFF00><b>SKIN:</b></color> 4.000 Gutscheine. Theorie ca. 250 €, sicherer Direktkauf ca. 596 €; schlechter 5×-Lauf hochgerechnet ca. 766 €.
+
+<color=#FFAA00><b>WICHTIG:</b></color> Slot-Punkte werden täglich zurückgesetzt. Tagesangebote mit „Heute übrig: 1“ verfallen.
 ```
