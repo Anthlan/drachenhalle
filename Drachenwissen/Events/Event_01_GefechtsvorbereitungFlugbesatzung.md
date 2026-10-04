@@ -76,9 +76,9 @@ Die Screenshots zeigen eine **15-stufige tägliche Aufgabenkette** mit eigenem C
 | 10 | unbekannt | 1 helles Gebäudeteil |
 | 11 | unbekannt | 1 rot-graues Gebäudeteil |
 | 12 | unbekannt | 1 helles Gebäudeteil |
-| 13 | unbekannt | 3 Event-Zufallstruhen |
-| 14 | unbekannt | 3 Event-Zufallstruhen |
-| 15 | unbekannt | 3 Event-Zufallstruhen |
+| 13 | unbekannt | 3 UR-Überlebenstruhen (zufälliger UR-Überlebender) |
+| 14 | unbekannt | 3 UR-Überlebenstruhen (zufälliger UR-Überlebender) |
+| 15 | unbekannt | 3 UR-Überlebenstruhen (zufälliger UR-Überlebender) |
 
 Für die ersten sechs Aufgaben sind zusammen **65 geforderte Einheiten beziehungsweise Aktionen** sichtbar. Die Aufgaben verwenden wechselnde Symbole. Deshalb darf diese Summe nicht automatisch als 65 Münzen oder 65 Ziehungen gelesen werden: Wie schnell eine Münze den jeweiligen Fortschritt erhöht, hängt vom Ziehungsergebnis ab.
 
@@ -94,9 +94,11 @@ Wer **Vorratsgutscheine maximieren** möchte, sollte die Kette nach einem Reset 
 - **Zweimal bis Stufe 9** liefert entsprechend **4 violette und 14 goldene Gutscheinboxen**.
 - **Einmal bis Stufe 15** liefert weiterhin nur **2 violette und 7 goldene Gutscheinboxen**. Die Stufen 8 bis 15 zeigen keine weitere ausdrücklich mit einem Gutscheinsymbol markierte Belohnung.
 
-Damit ist deine Vermutung für das Ziel **maximale Gutscheinausbeute** richtig: Wenn 280 Münzen in der Praxis für zwei vollständige Läufe bis Stufe 9 reichen, ist diese Aufteilung klar attraktiver als ein einzelner tiefer Lauf. Rein aus den bestätigten Anforderungen lässt sich die Reichweite der 280 Münzen jedoch nicht garantieren, weil eine Ziehung unterschiedlich viele passende Symbole liefern kann.
+Damit ist deine Vermutung für das Ziel **maximale Gutscheinausbeute** richtig: Wenn 280 Münzen in der Praxis für zwei vollständige Läufe bis Stufe 9 reichen, ist diese Aufteilung attraktiver als ein einzelner tiefer Lauf. Die zusätzlich wiederholten Gutscheinboxen liefern rechnerisch rund **78 Vorratsgutscheine**: 2 violette Boxen zu je 4 sowie 7 goldene Boxen zu je rund 10,01 Gutscheinen im Mittel. Das sind über alle neun Boxen durchschnittlich etwa **8,67 Gutscheine je Box**. Rein aus den bestätigten Anforderungen lässt sich die Reichweite der 280 Münzen jedoch nicht garantieren, weil eine Ziehung unterschiedlich viele passende Symbole liefern kann.
 
-Für den **gesamten Gegenwert** ist die Entscheidung weniger eindeutig. Die Stufen 10 bis 12 liefern drei weitere Gebäudeteile; die Stufen 13 bis 15 zusammen neun Event-Zufallstruhen. Diese Belohnungen können wertvoll sein, erhöhen aber nicht die Zahl der sichtbar ausgewiesenen Gutscheinboxen. Praktisch gilt daher: am ersten Tag Stufe 9 erreichen, den tatsächlichen Münzverbrauch notieren und nur dann am zweiten Tag erneut Stufe 9 anpeilen, wenn der Restbestand mit Sicherheitsreserve ausreicht.
+Beim **gesamten Gegenwert** ist die Entscheidung differenzierter. Ein zweiter Lauf durch Stufe 9 wiederholt zusätzlich eine violette Dekoration zum Shoppreis von 40 Gutscheinen sowie vier UR-Dekorationen zu je 100 Gutscheinen. Zusammen mit den Gutscheinboxen entspricht das einem rechnerischen Shop-Gegenwert von rund **518 Gutscheinen**. Der Weg von Stufe 10 bis 15 liefert dagegen drei UR-Dekorationen zu je 100 Gutscheinen und neun UR-Überlebenstruhen mit zufälligem UR-Überlebenden. Zum nominellen Shoppreis von ebenfalls 100 Gutscheinen je Truhe wären das **1.200 Gutscheine Gegenwert**.
+
+Dieser Listenpreis überschätzt den persönlichen Nutzen der Zufallstruhen jedoch schnell. Der tiefe Lauf überholt den zweiten Lauf bis Stufe 9 bereits dann, wenn jede der neun UR-Überlebenstruhen persönlich mindestens rund **24 Gutscheine** wert ist. Wer die zufälligen Überlebenden kaum noch benötigt, bleibt mit zwei Läufen bis Stufe 9 besser bedient; wer fast jeden möglichen UR-Überlebenden sinnvoll einsetzen kann, erhält mit dem Lauf bis Stufe 15 wahrscheinlich den höheren Gesamtwert. Für den reinen Gutschein-Fokus bleibt die Empfehlung unverändert: am ersten Tag Stufe 9 erreichen, den tatsächlichen Münzverbrauch notieren und nur dann am zweiten Tag erneut Stufe 9 anpeilen, wenn der Restbestand mit Sicherheitsreserve ausreicht.
 
 ![Spielautomat, Tagesstufen und täglicher Reset im Drachenhallen-Design](Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
 

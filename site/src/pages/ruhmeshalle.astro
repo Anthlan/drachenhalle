@@ -3,6 +3,12 @@ import "../styles/global.css";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import gallery from "../data/gallery.generated.json";
+import { earlyGuardianLegends } from "../data/guardian-legends";
+const legendImages = Object.fromEntries(earlyGuardianLegends.map(legend => {
+  const image = gallery.items.find(item => item.sourcePath.endsWith(legend.imageFile));
+  if (!image) throw new Error(`Das Legendenbild für Wächter ${legend.level} fehlt in der Galerie.`);
+  return [legend.level, { url: image.webUrl, thumbnail: image.webUrl, alt: legend.imageAlt, caption: `Fiktives Legendenbild zum ${legend.level}er vergrößern ↗` }];
+}));
 const victory = gallery.items.find(item => item.sourcePath.endsWith("2026_10_04_2204_Waechter140_Drachenherz_Anthlan.png"));
 if (!victory) throw new Error("Das Erinnerungsbild zum Wächter auf Stufe 140 fehlt in der Galerie.");
 const victory150 = gallery.items.find(item => item.sourcePath.endsWith("2026_10_04_2204_Waechter150_Drachenherz_Anthlan_Boshos.png"));
@@ -10,6 +16,7 @@ if (!victory150) throw new Error("Das neue Erinnerungsbild zum Wächter auf Stuf
 const victory160 = gallery.items.find(item => item.sourcePath.endsWith("2026_10_04_2113_Waechter160_Drachenherz_Anthlan_Killergruppe_Hulkster666.png"));
 if (!victory160) throw new Error("Das Erinnerungsbild zum Wächter auf Stufe 160 fehlt in der Galerie.");
 const victoryImages = {
+  ...legendImages,
   140: { url: victory.webUrl, thumbnail: victory.webUrl, alt: "Drachenherz und Anthlan in ihren M2-Ausstattungen beim ersten Sieg über einen Wächter auf Stufe 140.", caption: "Erinnerungsbild zum 140er vergrößern ↗" },
   150: { url: victory150.webUrl, thumbnail: victory150.webUrl, alt: "Drachenherz und Anthlan stehen beim besiegten Wächter auf Stufe 150 im Mittelpunkt. Boshos unterstützt im Hintergrund nach seinem finalen Schlag.", caption: "Neues Erinnerungsbild zum 150er vergrößern ↗" },
   160: { url: victory160.webUrl, thumbnail: victory160.webUrl, alt: "Drachenherz und Anthlan stehen gemeinsam im Mittelpunkt beim gefallenen Wächter auf Stufe 160. Killergruppe und Hulkster666 unterstützen sie im Hintergrund.", caption: "Erinnerungsbild zum 02.10.2026 vergrößern ↗" },
@@ -57,6 +64,14 @@ const trophies = Array.from({length:11}, (_, index) => {
     <form method="dialog"><button class="close">Schließen ×</button></form>
     <p class="eyebrow" data-status></p><h2 id="trophy-title"></h2><p class="victory-date" data-date></p><p data-story></p>
     <a class="victory-link" href={victory.webUrl} target="_blank" rel="noopener"><img src={victory.webUrl} width="640" height="427" alt="Drachenherz und Anthlan beim Sieg über Wächter Stufe 140." /><span>Erinnerungsbild zum 140er vergrößern ↗</span></a>
+    {earlyGuardianLegends.map(legend => (
+      <section class="battle-chronicle" data-chronicle={legend.level} hidden aria-label={`Fiktive Legende zu Wächter Stufe ${legend.level}`}>
+        <p class="battle-credit">Fiktive Geschichte und erfundene DIE-Mitglieder. Der Sieg ist bestätigt; Figuren und Handlung sind frei erzählt. Das Datum ist geschätzt.</p>
+        <h3>{legend.title}</h3>
+        {legend.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+        <p class="battle-closing">{legend.closing}</p>
+      </section>
+    ))}
     <section class="battle-chronicle" data-chronicle="140" hidden aria-label="Chronik unserer ersten Wächtertötung auf Stufe 140">
       <p class="battle-credit">Rückblick nach der Erinnerung von Anthlan. Der genaue damalige Kampfbericht ist nicht mehr vorhanden.</p>
       <h3>Eine fixe Idee, zwei Mitstreiter</h3>
@@ -103,9 +118,9 @@ const trophies = Array.from({length:11}, (_, index) => {
     current = index;
     const trophy = trophies[index];
     document.querySelector('#trophy-title').textContent = `Wächter · Stufe ${trophy.level}`;
-    document.querySelector('[data-status]').textContent = trophy.won ? 'Trophäe unserer Gemeinschaft' : 'Unser nächstes Kapitel';
+    document.querySelector('[data-status]').textContent = trophy.estimated ? 'Die namenlosen Helden · Fiktive Legende' : trophy.won ? 'Trophäe unserer Gemeinschaft' : 'Unser nächstes Kapitel';
     document.querySelector('[data-date]').textContent = trophy.won ? `${trophy.label} · Datum ${trophy.estimated ? 'geschätzt' : 'bestätigt'}` : trophy.label;
-    document.querySelector('[data-story]').textContent = !trophy.won ? 'Das Schild ist noch leer. Hier wird der Wächterkopf hängen, wenn wir diese Stufe zum ersten Mal gemeinsam bezwingen.' : trophy.estimated ? 'Diesen Wächter haben wir gemeinsam besiegt. Das genaue Datum ist nicht überliefert; der angezeigte Tag ist eine rückblickende Schätzung innerhalb unserer bisherigen Spielzeit.' : battleIntroductions[trophy.level];
+    document.querySelector('[data-story]').textContent = !trophy.won ? 'Das Schild ist noch leer. Hier wird der Wächterkopf hängen, wenn wir diese Stufe zum ersten Mal gemeinsam bezwingen.' : trophy.estimated ? 'An die Namen der tapferen Helden kann sich heute niemand mehr erinnern. Doch ihre Leistungen gingen in die Geschichte von DIE ein. Diese Legenden geben den frühen Siegen ein Gesicht.' : battleIntroductions[trophy.level];
     document.querySelectorAll('[data-chronicle]').forEach(chronicle => { chronicle.hidden = Number(chronicle.dataset.chronicle) !== trophy.level; });
     const memory = victoryImages[trophy.level];
     const memoryLink = document.querySelector('.victory-link');

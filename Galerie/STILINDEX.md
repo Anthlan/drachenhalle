@@ -4,6 +4,11 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 
 ## S1 – Filmische Allianz-Fantasy
 
+- [2026_10_04_2236_Waechter100_DasErsteBanner.png](Chatbilder/2026_10_04_2236_Waechter100_DasErsteBanner.png)
+- [2026_10_04_2236_Waechter110_DieLaterneImNebel.png](Chatbilder/2026_10_04_2236_Waechter110_DieLaterneImNebel.png)
+- [2026_10_04_2236_Waechter120_DerLetzteSchild.png](Chatbilder/2026_10_04_2236_Waechter120_DerLetzteSchild.png)
+- [2026_10_04_2236_Waechter130_VierHaendeEinSieg.png](Chatbilder/2026_10_04_2236_Waechter130_VierHaendeEinSieg.png)
+
 - [2026_10_04_2204_Waechter140_Drachenherz_Anthlan.png](Chatbilder/2026_10_04_2204_Waechter140_Drachenherz_Anthlan.png)
 - [2026_10_04_2204_Waechter150_Drachenherz_Anthlan_Boshos.png](Chatbilder/2026_10_04_2204_Waechter150_Drachenherz_Anthlan_Boshos.png)
 
