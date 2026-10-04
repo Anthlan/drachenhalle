@@ -209,19 +209,15 @@ Der Skin kostet **4.000 Vorratsgutscheine** und ist stark, aber ausdrücklich ke
 
 Wenn Besitz- und Nutzungsbonus wie angezeigt gleichzeitig wirken, erreicht der aktiv verwendete Skin insgesamt **Helden-ANG +10 %, Helden-VER +5,5 % und Helden-LP +1 %**. Das ist eine starke exklusive Belohnung. Sie rechtfertigt aber nicht, mit kleinem oder mittlerem Budget einer zufälligen Lücke bei den Vorratsgutscheinen hinterherzukaufen.
 
-### Echtgeldwert des Basis-Skins: Theorie, Praxismessung oder sicherer Kauf
+### Echtgeldwert des Basis-Skins: nur sicher planen
 
-Aus der sichtbaren Grundbelohnung und den direkt ausgewiesenen Kombinationen mit Vorratsgutscheinen ergeben sich rechnerisch etwa **12,8 Vorratsgutscheine pro Münze**. Ohne die nicht sicher bezifferbaren Tagesstufen und Bonusziehungen wären damit theoretisch ungefähr 313 Münzen für 4.000 Vorratsgutscheine nötig.
+Die angezeigten Wahrscheinlichkeiten ergeben zwar einen hohen theoretischen Langzeitmittelwert. Die dokumentierten Praxisläufe zeigen jedoch, dass dieser Wert für eine konkrete Echtgeldentscheidung nicht belastbar genug ist. Er wird deshalb **nicht mehr zur Preisberechnung des Skins verwendet**.
 
-Nach Abzug der bis zu 83 kostenlosen Münzen bleiben in dieser theoretischen Rechnung rund 230 zu kaufende Münzen. Werden zuerst alle kleinen Tagespakete genutzt und der Rest zum regulären Kurs von ungefähr 1,20 € pro Münze gekauft, liegt die reine Erwartungsrechnung bei etwa **250 €**. Dieser Betrag ist ausdrücklich **keine realistische Preiszusage**.
-
-Beim beobachteten Kurs von **5,38 Gutscheinen je Münze** wären insgesamt rund 744 Münzen nötig. Nach Abzug von 83 kostenlosen Münzen kostet der günstigste abgebildete Paketmix für die übrigen rund 661 Münzen über acht Kaufperioden ungefähr **766 €**. Ein solch schlechter Münzlauf wäre damit sogar teurer als der sichere Direktkauf der Gutscheine.
-
-Die kurze 1×-Serie mit 9,2 Gutscheinen je Münze ergäbe hochgerechnet rund 435 benötigte Münzen. Nach Abzug der kostenlosen Münzen läge der günstigste Paketmix für weitere 352 Münzen bei ungefähr **395 €**. Dieser Wert ist wegen der kleinen Stichprobe von 50 Ziehungen nur eine Orientierung, zeigt aber, warum 1× für ein begrenztes Budget sinnvoller planbar ist.
+Für eine sichere Münzrechnung zählt ausschließlich die garantierte Grundbelohnung von **5 Gutscheinen je Münze**. Für 4.000 Gutscheine wären damit 800 Münzen nötig. Nach Abzug von bis zu 83 kostenlosen Münzen müssten noch 717 Münzen gekauft werden. Der günstigste abgebildete Paketmix liefert 718 Münzen für ungefähr **833,13 €**. Seltene Gewinne können diesen Betrag senken, dürfen aber nicht vor dem Kauf eingeplant werden.
 
 Der vollständig planbare Weg führt über direkte Gutscheinpakete. Werden über acht erreichbare Kaufperioden jeweils die günstigen 20er-Pakete genutzt, entstehen 160 Gutscheine für 19,92 €. Die verbleibenden 3.840 Gutscheine kosten über die größeren Paketstufen rund 575,93 €. Damit liegt der **sichere Direktkauf bei ungefähr 595,85 €, also rund 596 €**. Kostenlose und bereits erspielte Gutscheine reduzieren diesen Betrag entsprechend.
 
-Die sinnvollste Kaufstrategie liegt dazwischen: kostenlose Münzen und höchstens die günstigen kleinen Münzpakete **im 1×-Modus** einsetzen, danach den tatsächlichen Gutscheinbestand prüfen und nur die Restlücke direkt schließen. Die Vergleichswerte lauten: theoretische Münzrechnung rund **250 €**, kurze 1×-Messung hochgerechnet rund **395 €**, schlechter 5×-Lauf rund **766 €** und sicherer Direktkauf rund **596 €**. Nur der Direktkauf ist vorab vollständig planbar.
+Ein dokumentierter Nachkauf von **2.400 Gutscheinen für 360 €** bestätigt den regulären Direktkurs von 0,15 € je Gutschein. Die sinnvolle Strategie lautet deshalb: kostenlose Münzen und höchstens die günstigen kleinen Münzpakete **im 1×-Modus** einsetzen, anschließend den tatsächlichen Bestand prüfen und nur die verbleibende Lücke direkt schließen. Für eine vollständige Vorabplanung ist der direkte Gutscheinweg mit rund **596 €** günstiger als die sichere Münzrechnung mit rund **833 €**.
 
 ![Vibranium-Verteidigungslinie als exklusive Großspender-Belohnung und Veredelte Steine als allgemeine Empfehlung](Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
 
@@ -286,7 +282,7 @@ Das 2,49-€-Paket ist beim reinen Gutscheinkurs ungefähr **20 % besser** als d
 
 Für einen fairen Vergleich werden beide Wege auf **Vorratsgutscheine je Euro** umgerechnet. Bei Münzen stehen der theoretische Wert von etwa 12,8 Gutscheinen pro Münze, der beobachtete schlechte 5×-Lauf mit 5,38 und die kurze 1×-Serie mit 9,2 gegenüber. Bei direkten Gutscheinpaketen ist die angegebene Menge garantiert.
 
-| Kaufweg | Theoretisch | Beobachtet 5× / 1× | Einordnung |
+| Kaufweg | Rechenwert, nicht Kaufbasis | Beobachtet 5× / 1× | Einordnung |
 | --- | ---: | ---: | --- |
 | **2 Münzen für 1,19 €** | ca. 25,6 | ca. 10,8 / 18,4 | Günstigstes Münzpaket; trotzdem zufällig |
 | **4 Münzen für 2,49 €** | ca. 51,2 | ca. 21,5 / 36,8 | Kann sich lohnen, aber keine Garantie |
@@ -298,7 +294,7 @@ Die kleinen Münzpakete bleiben wegen ihres niedrigen Preises interessant. Regul
 
 **Konkrete Beispiele für tägliche Ziele:**
 
-| Tagesziel | Direkter, sicherer Weg | Münzweg im Erwartungswert |
+| Tagesziel | Direkter, sicherer Weg | Beobachtete Münzkurse, nicht garantiert |
 | --- | --- | --- |
 | **60 Gutscheine für 10 UR-Omni-Heldensplitter** | 20er- plus 40er-Paket: **8,48 € garantiert** | 6 günstige Münzen kosten 3,68 €; beim beobachteten 5×-/1×-Kurs entsprächen sie rund 32 beziehungsweise 55 Gutscheinen |
 | **100 Gutscheine für die Optionale Deluxe-Truhe** | 20er- plus 80er-Paket: **14,48 € garantiert** | 11 Münzen kosten 9,67 €; beim beobachteten 5×-/1×-Kurs entsprächen sie rund 59 beziehungsweise 101 Gutscheinen |
@@ -357,7 +353,7 @@ Der kostenlose Tagesgutschein und bereits erspielte Vorratsgutscheine reduzieren
 
 <color=#7FFF00><b>KAUFEN:</b></color> Erst günstige Münzen, dann Restlücke direkt schließen. 60 Gutscheine: 8,48 €; 100: 14,48 € sicher.
 
-<color=#7FFF00><b>SKIN:</b></color> 4.000 Gutscheine. Theorie ca. 250 €, sicherer Direktkauf ca. 596 €; schlechter 5×-Lauf hochgerechnet ca. 766 €.
+<color=#7FFF00><b>SKIN:</b></color> 4.000 Gutscheine. Sicher über Münzen ca. 833 €, direkter Gutscheinkauf ca. 596 €. Seltene Gewinne nie vorab einplanen.
 
 <color=#FFAA00><b>WICHTIG:</b></color> Slot-Punkte werden täglich zurückgesetzt. Tagesangebote mit „Heute übrig: 1“ verfallen.
 ```

@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   COIN_PACKAGES,
   EVENT_VOUCHERS_PER_COIN,
+  THEORETICAL_EVENT_VOUCHERS_PER_COIN,
   VOUCHER_PACKAGES,
   casinoProjection,
   expectedVoucherGap,
@@ -15,25 +16,25 @@ import {
   requiredCoinsForChance,
 } from "../src/scripts/flight-event-calculator.ts";
 
-test("berechnet den vollständigen Erwartungswert inklusive Spielautomaten-Luftabwurf", () => {
-  assert.ok(Math.abs(EVENT_VOUCHERS_PER_COIN - 15.0831) < 0.001);
-  assert.ok(Math.abs(casinoProjection(100).expected - 1508.31) < 0.1);
+test("trennt den theoretischen Mittelwert von der sicheren Kaufplanung", () => {
+  assert.ok(Math.abs(THEORETICAL_EVENT_VOUCHERS_PER_COIN - 15.0831) < 0.001);
+  assert.equal(EVENT_VOUCHERS_PER_COIN, 5);
+  assert.equal(casinoProjection(100).expected, 500);
 });
 
-test("behält im 5x-Modus den Mittelwert bei, bildet aber die höhere Streuung ab", () => {
+test("plant in beiden Ziehungsmodi ausschließlich mit dem garantierten Ertrag", () => {
   const single = casinoProjection(190, 0.8, 1);
   const bundled = casinoProjection(190, 0.8, 5);
   assert.equal(bundled.expected, single.expected);
   assert.equal(bundled.guaranteed, single.guaranteed);
-  assert.ok(Math.abs(bundled.standardDeviation - single.standardDeviation * Math.sqrt(5)) < 0.001);
-  assert.ok(bundled.low <= single.low);
-  assert.ok(bundled.high >= single.high);
+  assert.equal(bundled.standardDeviation, 0);
+  assert.deepEqual(bundled, single);
 });
 
 test("ignoriert den Versorgungsabwurf und nutzt nur dokumentierte Gutschein-Ausgänge", () => {
   const projection = casinoProjection(1);
   assert.equal(projection.guaranteed, 5);
-  assert.ok(projection.expected > 15 && projection.expected < 15.2);
+  assert.equal(projection.expected, 5);
 });
 
 test("zählt angefangene Kaufperioden", () => {
@@ -58,10 +59,10 @@ test("findet den sicheren günstigsten Direktkauf für 60 Gutscheine", () => {
   assert.equal(plan.counts["voucher-40"], 1);
 });
 
-test("kauft direkt nur die Restlücke nach Bestand und erwartetem Münzertrag", () => {
+test("kauft direkt nur die Restlücke nach garantiertem Münzertrag", () => {
   const expected = casinoProjection(100).expected;
   assert.equal(expectedVoucherGap(2000, 110, 100), Math.ceil(2000 - 110 - expected));
-  assert.equal(expectedVoucherGap(1500, 110, 100), 0);
+  assert.equal(expectedVoucherGap(600, 110, 100), 0);
 });
 
 test("respektiert verbleibende Tageslimits", () => {
@@ -81,12 +82,13 @@ test("berücksichtigt zehn 800er-Gutscheinpakete je Kaufperiode", () => {
   assert.equal(plan.units, 8000);
 });
 
-test("mehr Münzen erhöhen die Zielchance und die geforderte Sicherheit den Bedarf", () => {
-  assert.ok(probabilityToReach(1000, 100) > probabilityToReach(1000, 50));
+test("meldet ein Ziel erst bei ausreichendem garantierten Münzertrag als erreicht", () => {
+  assert.equal(probabilityToReach(1000, 199), 0);
+  assert.equal(probabilityToReach(1000, 200), 1);
   const realistic = requiredCoinsForChance(4000, 0.8);
   const cautious = requiredCoinsForChance(4000, 0.95);
-  assert.ok(realistic !== null && cautious !== null);
-  assert.ok((cautious as number) >= (realistic as number));
+  assert.equal(realistic, 800);
+  assert.equal(cautious, 800);
 });
 
 test("kombiniert Münz- und Gutscheinpakete für große Ziele", () => {

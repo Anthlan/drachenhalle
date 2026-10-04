@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import HallAnthlan from "../components/HallAnthlan.astro";
 import gallery from "../data/gallery.generated.json";
 import { earlyGuardianLegends } from "../data/guardian-legends";
 const legendImages = Object.fromEntries(earlyGuardianLegends.map(legend => {
@@ -44,7 +45,7 @@ const trophies = Array.from({length:11}, (_, index) => {
 <main id="main-content" class="hall">
   <nav class="breadcrumbs" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/">Start</a><span>/</span><a href="/drachenhalle/docs/allianz/">Allianz</a><span>/</span><span aria-current="page">Ruhmeshalle</span></nav>
   <header class="hall-heading"><div><p class="eyebrow">Allianzzentrale · Der Raum unserer Siege</p><h1>Die Ruhmeshalle</h1><p>Sieben Köpfe an der Wand. Vier Plätze für das, was noch kommt.</p></div><div class="record"><small>Höchster Sieg</small><strong>160</strong><span>Wächterstufe</span></div></header>
-  <div class="room-toolbar"><p>Wähle einen Wächterkopf oder einen leeren Ehrenplatz.</p><div><button data-fire aria-pressed="true">Kaminfeuer an</button><button data-light aria-pressed="false">Abendstimmung</button></div></div>
+  <div class="room-toolbar"><p id="guide-hint">Wähle eine Trophäe oder sprich Anthlan an.</p><div><button data-guide-pause aria-pressed="false">Anthlan anhalten</button><button data-fire aria-pressed="true">Kaminfeuer an</button><button data-light aria-pressed="false">Abendstimmung</button></div></div>
   <div class="room-scroll" tabindex="0" aria-label="Trophäenraum; auf kleinen Bildschirmen seitlich verschiebbar">
     <section class="room" aria-label="Interaktive Trophäenwand in unserer Allianzzentrale">
       <div class="room-shade"></div><div class="room-heading"><span>DIE</span><strong>Gemeinsam stärker</strong></div>
@@ -55,6 +56,7 @@ const trophies = Array.from({length:11}, (_, index) => {
         </button>)}
       </div>
       <div class="fireplace" aria-hidden="true"><div class="fire-glow"></div><div class="fire-bed"></div><div class="fire-sprite"></div><div class="embers"><i></i><i></i><i></i></div></div><div class="fire-reflection" aria-hidden="true"></div>
+      <HallAnthlan />
       <p class="room-motto">Unsere Siege bleiben. Unsere Geschichte wächst.</p>
     </section>
   </div>

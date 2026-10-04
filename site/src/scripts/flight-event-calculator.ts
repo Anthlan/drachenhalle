@@ -28,10 +28,14 @@ const moments = (outcomes: ReadonlyArray<{ vouchers: number; probability: number
 const baseMoments = moments(BASE_VOUCHER_OUTCOMES);
 const slotMoments = moments(SLOT_VOUCHER_OUTCOMES);
 
-export const EVENT_VOUCHERS_PER_COIN = baseMoments.mean + slotMoments.mean;
-export const EVENT_VARIANCE_PER_COIN = baseMoments.variance + slotMoments.variance;
-export const EVENT_STANDARD_DEVIATION_PER_COIN = Math.sqrt(EVENT_VARIANCE_PER_COIN);
 export const GUARANTEED_VOUCHERS_PER_COIN = 5;
+export const THEORETICAL_EVENT_VOUCHERS_PER_COIN = baseMoments.mean + slotMoments.mean;
+export const THEORETICAL_EVENT_VARIANCE_PER_COIN = baseMoments.variance + slotMoments.variance;
+// Kaufpläne verwenden ausschließlich den garantierten Ertrag. Der aus seltenen
+// Treffern berechnete Langzeitmittelwert bleibt nur als Information sichtbar.
+export const EVENT_VOUCHERS_PER_COIN = GUARANTEED_VOUCHERS_PER_COIN;
+export const EVENT_VARIANCE_PER_COIN = 0;
+export const EVENT_STANDARD_DEVIATION_PER_COIN = 0;
 export type DrawMultiplier = 1 | 5;
 
 export type EventPackage = {
@@ -368,12 +372,10 @@ export const casinoProjection = (
 ) => {
   const safeCoins = Math.max(0, Math.floor(coins));
   const expected = safeCoins * EVENT_VOUCHERS_PER_COIN;
-  const completeDraws = Math.floor(safeCoins / drawMultiplier);
-  const remainingSingleDraws = safeCoins % drawMultiplier;
-  // Im 5x-Modus wird ein einziges Zufallsergebnis verfünffacht. Der Mittelwert
-  // bleibt gleich, die Varianz steigt gegenüber fünf unabhängigen 1x-Ziehungen.
-  const varianceFactor = completeDraws * drawMultiplier ** 2 + remainingSingleDraws;
-  const standardDeviation = Math.sqrt(varianceFactor * EVENT_VARIANCE_PER_COIN);
+  // Der Modus beeinflusst das tatsächliche Risiko, aber nicht die sichere
+  // Kaufplanung: Hier zählt bewusst nur die garantierte Mindestbelohnung.
+  void drawMultiplier;
+  const standardDeviation = 0;
   const z = centralConfidence >= 0.95 ? 1.96 : centralConfidence >= 0.9 ? 1.645 : 1.282;
   const guaranteed = safeCoins * GUARANTEED_VOUCHERS_PER_COIN;
   return {
@@ -670,7 +672,7 @@ export const optimizeHybridPurchase = ({
     ) best = candidate;
   }
   return best ?? (totalGap === 0
-    ? completeHybridPlan(strategy, emptyPlan, emptyPlan, availableCoins, securedVouchers, targetVouchers, confidence)
+    ? completeHybridPlan(strategy, emptyPlan, emptyPlan, availableCoins, securedVouchers, targetVouchers, confidence, drawMultiplier)
     : null);
 };
 
@@ -944,18 +946,18 @@ export const initializeFlightEventCalculator = () => {
     const plannedProjection = casinoProjection(plannedCasinoCoins, confidence, drawMultiplier);
     const plannedProbability = probabilityToReach(neededFromCasino, plannedCasinoCoins, drawMultiplier);
 
-    setText(result, "[data-flight-result-kicker]", currentProbability >= confidence ? "Ziel bereits realistisch" : "Dein Kurs zum Ziel");
+    setText(result, "[data-flight-result-kicker]", currentProbability >= confidence ? "Ziel sicher gedeckt" : "Dein sicherer Kurs zum Ziel");
     setText(
       result,
       "[data-flight-result-title]",
-      currentProbability >= confidence ? "Du liegst gut in der Luft" : "Noch Nachschub einplanen",
+      currentProbability >= confidence ? "Der Mindestwert reicht aus" : "Noch Nachschub einplanen",
     );
     setText(
       result,
       "[data-flight-result-summary]",
       currentProbability >= confidence
-        ? `Mit deinem Bestand und den eingeplanten Gratisquellen liegt die geschätzte Zielchance bei ${formatPercent(currentProbability)}.`
-        : `Ohne Nachkauf werden etwa ${formatInteger(currentTotalExpected)} von ${formatInteger(targetVouchers)} Gutscheinen erwartet.`,
+        ? "Dein Bestand und der garantierte Münzertrag decken das Ziel vollständig."
+        : `Ohne Nachkauf sind ${formatInteger(currentTotalExpected)} von ${formatInteger(targetVouchers)} Gutscheinen sicher eingeplant.`,
     );
     setCharacter(result, currentProbability >= confidence ? "success" : "concerned");
     result.dataset.state = currentProbability >= confidence ? "success" : "concerned";
@@ -966,8 +968,8 @@ export const initializeFlightEventCalculator = () => {
     setText(result, "[data-flight-current-vouchers]", formatInteger(securedVouchers));
     setText(result, "[data-flight-coin-expected]", formatInteger(currentProjection.expected));
     setText(result, "[data-flight-current-expected]", formatInteger(currentTotalExpected));
-    setText(result, "[data-flight-current-range]", `${formatInteger(securedVouchers + currentProjection.low)}–${formatInteger(securedVouchers + currentProjection.high)}`);
-    setText(result, "[data-flight-current-chance]", formatPercent(currentProbability));
+    setText(result, "[data-flight-current-range]", formatInteger(securedVouchers + currentProjection.low));
+    setText(result, "[data-flight-current-chance]", currentProbability >= confidence ? "Ja" : "Nein");
     setText(result, "[data-flight-direct-gap]", `${formatInteger(directGap)} Gutscheine`);
 
     latestF2PBudget = Math.floor(securedVouchers + currentProjection.low);
@@ -975,7 +977,9 @@ export const initializeFlightEventCalculator = () => {
     renderF2PRecommendation();
 
     const casinoRange = meanCoinPlan && confidenceCoinPlan
-      ? `${formatEuro(meanCoinPlan.costCents)}–${formatEuro(confidenceCoinPlan.costCents)}`
+      ? meanCoinPlan.costCents === confidenceCoinPlan.costCents
+        ? formatEuro(confidenceCoinPlan.costCents)
+        : `${formatEuro(meanCoinPlan.costCents)}–${formatEuro(confidenceCoinPlan.costCents)}`
       : meanCoinPlan
         ? `ab ${formatEuro(meanCoinPlan.costCents)}`
         : "nicht vollständig verfügbar";
@@ -984,9 +988,9 @@ export const initializeFlightEventCalculator = () => {
     setText(
       result,
       "[data-flight-casino-outcome]",
-      `${formatInteger(securedVouchers + plannedProjection.expected)} erwartet · ${formatInteger(securedVouchers + plannedProjection.low)}–${formatInteger(securedVouchers + plannedProjection.high)} im Korridor`,
+      `${formatInteger(securedVouchers + plannedProjection.expected)} Gutscheine sicher eingeplant`,
     );
-    setText(result, "[data-flight-casino-chance]", `Zielchance ca. ${formatPercent(plannedProbability)}`);
+    setText(result, "[data-flight-casino-chance]", plannedProbability >= confidence ? "Ziel sicher gedeckt" : "Ziel nicht sicher gedeckt");
     setText(result, "[data-flight-casino-plan]", describePlan(confidenceCoinPlan, COIN_PACKAGES));
 
     setText(result, "[data-flight-direct-cost]", directPlan ? formatEuro(directPlan.costCents) : "nicht verfügbar");
@@ -995,9 +999,9 @@ export const initializeFlightEventCalculator = () => {
       "[data-flight-direct-outcome]",
       directPlan
         ? directGap > 0
-          ? `${formatInteger(directGap)} Gutscheine fehlen nach dem erwartbaren Ertrag.`
-          : "Dein erwartbarer Ertrag erreicht das Ziel bereits."
-        : "Die erwartete Restlücke lässt sich innerhalb der verbleibenden Tageslimits nicht vollständig kaufen.",
+          ? `${formatInteger(directGap)} Gutscheine fehlen nach dem garantierten Ertrag.`
+          : "Der garantierte Ertrag erreicht das Ziel bereits."
+        : "Die sichere Restlücke lässt sich innerhalb der verbleibenden Tageslimits nicht vollständig kaufen.",
     );
     setText(result, "[data-flight-direct-plan]", describePlan(directPlan, VOUCHER_PACKAGES));
 
@@ -1016,7 +1020,7 @@ export const initializeFlightEventCalculator = () => {
       result,
       "[data-flight-hybrid-outcome]",
       hybridPlan
-        ? `${formatInteger(hybridPlan.expectedTotal)} erwartet · ${formatInteger(hybridPlan.lowTotal)}–${formatInteger(hybridPlan.highTotal)} im Korridor · Zielchance ${formatPercent(hybridPlan.probability)}`
+        ? `${formatInteger(hybridPlan.expectedTotal)} Gutscheine sicher eingeplant`
         : "Das Ziel lässt sich mit den verbleibenden Münz- und Gutscheinlimits nicht vollständig planen.",
     );
     setText(
@@ -1056,12 +1060,12 @@ export const initializeFlightEventCalculator = () => {
       : hybridPlan && hybridPlan.coinPlan.units > 0 && hybridPlan.voucherPlan.units > 0
         ? `${hybridLabels[purchaseStrategy]}: Der Kombi-Plan erweitert die einzeln begrenzten Wege und erreicht dein Ziel mit ${formatEuro(hybridPlan.totalCostCents)} geplanter Kaufsumme.`
       : directGap === 0
-        ? "Der Erwartungswert reicht bereits für dein Ziel. Drehe zuerst deine vorhandenen Münzen und prüfe danach, ob überhaupt noch eine Restlücke besteht."
+        ? "Der garantierte Mindestwert reicht bereits für dein Ziel. Ziehe vorhandene Münzen einzeln und prüfe danach den tatsächlichen Überschuss."
       : confidenceCoinPlan && (!directPlan || confidenceCoinPlan.costCents < directPlan.costCents)
-        ? "Münzen bieten den günstigeren statistischen Kurs. Drehe sie zuerst und kaufe erst danach eine tatsächlich verbliebene Gutscheinlücke direkt."
+        ? "Münzen bieten selbst mit nur 5 garantierten Gutscheinen den günstigeren Kurs. Ziehe einzeln und kaufe erst danach eine tatsächlich verbliebene Gutscheinlücke direkt."
         : directPlan
-          ? "Für dieses Ziel ist der direkte Nachkauf der erwarteten Restlücke planbarer. Drehe vorhandene Münzen zuerst, denn die tatsächliche Lücke kann kleiner oder größer ausfallen."
-          : "Mit den verbleibenden Kaufperioden ist das Ziel weder statistisch vorsichtig noch garantiert vollständig planbar.";
+          ? "Für dieses Ziel ist der direkte Nachkauf der sicheren Restlücke günstiger. Vorhandene Münzen können die tatsächliche Lücke nur noch verkleinern."
+          : "Mit den verbleibenden Kaufperioden ist das Ziel auf garantierter Basis nicht vollständig planbar.";
     setText(result, "[data-flight-recommendation]", recommendation);
 
     const query = new URLSearchParams();

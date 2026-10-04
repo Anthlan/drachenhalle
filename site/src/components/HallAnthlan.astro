@@ -1,0 +1,80 @@
+<div class="hall-guide" data-hall-guide>
+  <div class="guide-caption" role="status" aria-live="polite" hidden><strong>Anthlan</strong><span></span><button type="button" aria-label="Anthlans Kommentar schließen">×</button></div>
+  <button class="guide-character" type="button" aria-label="Mit Anthlan sprechen" aria-describedby="guide-hint"><span class="guide-shadow" aria-hidden="true"></span><span class="guide-body" aria-hidden="true"></span><span class="guide-name">Anthlan</span></button>
+</div>
+<script>
+  const guide = document.querySelector<HTMLElement>('[data-hall-guide]');
+  if (guide) {
+    const character = guide.querySelector<HTMLButtonElement>('.guide-character')!;
+    const caption = guide.querySelector<HTMLElement>('.guide-caption')!;
+    const remarks = [
+      'Die ersten Namen sind verblasst. Was diese Helden für DIE geleistet haben, bleibt.',
+      'Beim 140er brauchten Drachenherz und ich zwei Anläufe. Danach wollten wir wissen, was noch geht.',
+      'Der 150er? Nach 40 % im ersten Angriff rechneten wir mit drei Runden. Unsere Mitstreiter machten den Unterschied.',
+      'Neue T9 feiern und einen 160er legen – klang nach einem guten Plan. Der Sieg hat uns einiges abverlangt.',
+      'Diese Plätze sind noch leer. Ich bin gespannt, wessen Geschichte wir hier als Nächstes erzählen.'
+    ];
+    const route = [22, 37, 58, 72, 61, 30];
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const compact = window.matchMedia('(max-width: 600px)');
+    let position = route[0], target = 1, stopUntil = 0, lastTime = 0, remark = 0;
+    let manualPause = false, frame = 0;
+    const pauseButton = document.querySelector<HTMLButtonElement>('[data-guide-pause]')!;
+    function closeComment() { caption.hidden = true; }
+    function speak() {
+      caption.querySelector('span')!.textContent = remarks[remark];
+      remark = (remark + 1) % remarks.length;
+      caption.hidden = false;
+      stopUntil = performance.now() + 14000;
+      guide!.classList.remove('walking');
+    }
+    character.addEventListener('click', speak);
+    caption.querySelector('button')!.addEventListener('click', closeComment);
+    character.addEventListener('keydown', event => { if (event.key === 'Escape') closeComment(); });
+    pauseButton.addEventListener('click', () => {
+      manualPause = !manualPause;
+      pauseButton.setAttribute('aria-pressed', String(manualPause));
+      pauseButton.textContent = manualPause ? 'Anthlan weitergehen lassen' : 'Anthlan anhalten';
+    });
+    // A single clock keeps walking frames and floor movement in sync. Dialogs,
+    // keyboard focus and hidden tabs stop the guide without advancing his route.
+    function tick(now: number) {
+      const elapsed = lastTime ? Math.min(now - lastTime, 80) : 0;
+      lastTime = now;
+      const paused = motion.matches || manualPause || document.hidden ||
+        !!document.querySelector('.trophy-dialog[open]') || !!guide!.querySelector(':focus-visible');
+      const walking = !paused && now >= stopUntil;
+      guide!.classList.toggle('walking', walking);
+      if (walking) {
+        closeComment();
+        const destination = route[target];
+        const direction = Math.sign(destination - position);
+        const speed = compact.matches ? .0015 : .003;
+        position += direction * Math.min(Math.abs(destination - position), elapsed * speed);
+        guide!.style.setProperty('--facing', direction < 0 ? '-1' : '1');
+        if (Math.abs(destination - position) < .01) {
+          target = (target + 1) % route.length;
+          stopUntil = now + (compact.matches ? 16000 : 6500);
+          guide!.classList.remove('walking');
+        }
+      }
+      guide!.style.left = `${position}%`;
+      frame = requestAnimationFrame(tick);
+    }
+    frame = requestAnimationFrame(tick);
+    document.addEventListener('astro:before-swap', () => cancelAnimationFrame(frame), {once:true});
+  }
+</script>
+<style>
+  .hall-guide{position:absolute;left:22%;bottom:12%;width:12%;height:25%;z-index:3;--facing:1}
+  .guide-character{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer;color:#efd19a;border-radius:12px}
+  .guide-character:focus-visible{outline:2px solid #efd19a;outline-offset:5px}
+  .guide-body{position:absolute;inset:0;background:url('/drachenhalle/brand/hall-anthlan-walk.webp') 0 0/400% 200% no-repeat;transform:scaleX(var(--facing));filter:drop-shadow(0 3px 2px #0005)}
+  .walking .guide-body{animation:anthlan-walk .95s steps(1,end) infinite}
+  .guide-shadow{position:absolute;bottom:0;left:13%;width:74%;height:7%;background:radial-gradient(ellipse,#05080bb0,transparent 70%);transform:rotate(-8deg)}
+  .guide-name{position:absolute;bottom:-14px;left:0;width:100%;font-size:.7rem;text-shadow:0 2px 3px #000}
+  .guide-caption{position:absolute;bottom:104%;left:50%;transform:translateX(-50%);width:240px;background:#18202bf5;border:1px solid #be955b;border-radius:10px;padding:.8rem 1.5rem .8rem .8rem;box-shadow:0 5px 20px #0008;color:#eee5d7;font-size:.85rem;line-height:1.5}
+  .guide-caption[hidden]{display:none}.guide-caption strong{display:block;color:#efd19a;margin-bottom:.25rem}.guide-caption button{position:absolute;right:4px;top:4px;background:none;border:0;color:#efd19a;cursor:pointer;font-size:1.2rem}
+  @keyframes anthlan-walk{0%{background-position:0 0}12.5%{background-position:33.3333% 0}25%{background-position:66.6667% 0}37.5%{background-position:100% 0}50%{background-position:0 100%}62.5%{background-position:33.3333% 100%}75%{background-position:66.6667% 100%}87.5%{background-position:100% 100%}}
+  @media(prefers-reduced-motion:reduce){.walking .guide-body{animation:none}}
+</style>

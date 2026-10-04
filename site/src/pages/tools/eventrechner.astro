@@ -107,8 +107,8 @@ const shopPages = [
               </button>
             </div>
             <p>
-              Prüfe, was dein Münz- und Gutscheinbestand statistisch wert ist, und vergleiche den
-              Casino-Weg mit einem gezielten Nachkauf der erwarteten Restlücke.
+              Plane mit dem garantierten Mindestwert deiner Münzen und vergleiche den Casino-Weg
+              mit einem gezielten Nachkauf der sicher verbleibenden Restlücke.
             </p>
             <div class="flight-hero-actions">
               <a href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Event-Guide öffnen →</a>
@@ -137,7 +137,7 @@ const shopPages = [
           <div class="flight-hero-route" aria-label="Vom Bestand zum Kaufplan">
             <div><span>01</span><strong>Bestand</strong><small>Münzen &amp; Gutscheine</small></div>
             <i aria-hidden="true">→</i>
-            <div><span>02</span><strong>Prognose</strong><small>Chance &amp; Streuung</small></div>
+            <div><span>02</span><strong>Sicherheitsrechnung</strong><small>5 Gutscheine je Münze</small></div>
             <i aria-hidden="true">→</i>
             <div class="is-result"><span>03</span><strong>Kaufplan</strong><small>Casino oder direkt</small></div>
           </div>
@@ -213,7 +213,7 @@ const shopPages = [
                 </label>
                 <label>
                   <input name="purchaseStrategy" type="radio" value="cost-optimized" checked />
-                  <span><strong>Geldoptimiert</strong><small>Die günstigste verfügbare Kombination für deine gewählte Planungssicherheit.</small></span>
+                  <span><strong>Geldoptimiert</strong><small>Die günstigste Kombination auf Basis des garantierten Mindestwerts.</small></span>
                 </label>
               </div>
             </fieldset>
@@ -233,21 +233,10 @@ const shopPages = [
                   <strong>Zusatzbelohnungen nicht eingerechnet</strong>
                   <small>Punkte-Fortschritt und tägliche Aufgaben lassen sich mit den belegten Daten noch nicht verlässlich aus der Münzzahl ableiten.</small>
                 </div>
-                <label>
-                  <span class="flight-select-label"><strong>Gewünschte Planungssicherheit</strong><small>Für die obere Grenze des Casino-Korridors.</small></span>
-                  <select name="confidence">
-                    <option value="0.8" selected>80 % – realistisch</option>
-                    <option value="0.9">90 % – vorsichtig</option>
-                    <option value="0.95">95 % – sehr vorsichtig</option>
-                  </select>
-                </label>
-                <label>
-                  <span class="flight-select-label"><strong>Ziehungsmodus</strong><small>5× spart Zeit, erhöht aber die Schwankung deutlich.</small></span>
-                  <select name="drawMultiplier">
-                    <option value="1" selected>1× – besser planbar</option>
-                    <option value="5">5× – höhere Schwankung</option>
-                  </select>
-                </label>
+                <div class="flight-task-box-note">
+                  <strong>Sichere Kaufplanung</strong>
+                  <small>Der Rechner setzt je Münze nur die garantierten 5 Gutscheine an. Seltene Treffer verbessern das Ergebnis, werden aber niemals vorab zum Kaufbudget gerechnet.</small>
+                </div>
               </div>
             </fieldset>
 
@@ -295,15 +284,15 @@ const shopPages = [
                 <p class="flight-basis-equation">
                   <span><strong data-flight-current-vouchers>0</strong> vorhandene Gutscheine</span>
                   <b aria-hidden="true">+</b>
-                  <span><strong data-flight-coin-expected>0</strong> erwartbar aus Münzen</span>
+                  <span><strong data-flight-coin-expected>0</strong> sicher aus Münzen</span>
                   <b aria-hidden="true">=</b>
-                  <span class="is-total"><strong data-flight-current-expected>0</strong> erwartbarer Endstand</span>
+                  <span class="is-total"><strong data-flight-current-expected>0</strong> sicherer Endstand</span>
                 </p>
               </div>
               <dl>
-                <div><dt>Typischer Korridor</dt><dd data-flight-current-range>0–0</dd></div>
-                <div><dt>Zielchance</dt><dd data-flight-current-chance>0 %</dd></div>
-                <div><dt>Erwartete Restlücke</dt><dd data-flight-direct-gap>0 Gutscheine</dd></div>
+                <div><dt>Garantierter Stand</dt><dd data-flight-current-range>0</dd></div>
+                <div><dt>Ziel sicher gedeckt</dt><dd data-flight-current-chance>Nein</dd></div>
+                <div><dt>Sichere Restlücke</dt><dd data-flight-direct-gap>0 Gutscheine</dd></div>
               </dl>
             </article>
 
@@ -312,7 +301,7 @@ const shopPages = [
                 <div>
                   <p class="eyebrow">Ohne Echtgeld</p>
                   <h3>Das meiste aus deinen Gutscheinen holen</h3>
-                  <p>Die Empfehlung plant bewusst mit der vorsichtigen Untergrenze deines erwartbaren Gutscheinbestands.</p>
+                  <p>Die Empfehlung plant ausschließlich mit deinem sicheren Bestand und 5 garantierten Gutscheinen je Münze.</p>
                 </div>
                 <div class="flight-f2p-budget">
                   <span>Planbarer Rahmen</span>
@@ -366,12 +355,12 @@ const shopPages = [
 
               <article class="flight-route-card is-direct">
                 <div class="flight-route-icon" aria-hidden="true">🎟️</div>
-                <p class="eyebrow">Erwartete Restlücke schließen</p>
+                <p class="eyebrow">Sichere Restlücke schließen</p>
                 <h3>Gutschein-Nachkauf</h3>
                 <strong class="flight-route-price" data-flight-direct-cost>–</strong>
                 <p data-flight-direct-outcome></p>
                 <p class="flight-package-plan" data-flight-direct-plan></p>
-                <p class="flight-route-note">Die Rechnung nutzt deinen erwartbaren Münzertrag. Drehe vorhandene Münzen zuerst und kaufe anschließend nur die tatsächlich verbliebene Differenz.</p>
+                <p class="flight-route-note">Die Rechnung setzt je Münze nur 5 garantierte Gutscheine an. Zusätzliche Treffer verkleinern die tatsächlich verbleibende Differenz.</p>
               </article>
 
               <article class="flight-route-card is-hybrid">
@@ -417,7 +406,7 @@ const shopPages = [
             </header>
 
             <section class="flight-info-section">
-              <h3>Theoretischer Erwartungswert je Münze</h3>
+              <h3>Theoretischer Langzeitwert – nicht zur Kaufplanung</h3>
               <div class="flight-method-grid">
                 <article><strong>10,01</strong><span>Grundbelohnung</span><small>5, 50, 250 oder 500 Gutscheine.</small></article>
                 <article><strong>2,77</strong><span>Symbolkombinationen</span><small>Direkte Gutschein-Kombinationen.</small></article>
@@ -455,8 +444,8 @@ const shopPages = [
             </section>
 
             <section class="flight-info-section">
-              <h3>Wie ist der Korridor zu lesen?</h3>
-              <p>Der Rechner verwendet Erwartungswert und statistische Streuung aller dokumentierten Gutschein-Ausgänge. Der gewählte Sicherheitswert erhöht die geplante Münzmenge. Seltene Glückstreffer können trotzdem außerhalb des dargestellten Korridors liegen.</p>
+              <h3>Wie ist die Sicherheitsrechnung zu lesen?</h3>
+              <p>Der Rechner verwendet für Kaufentscheidungen ausschließlich 5 garantierte Gutscheine je Münze. Die angezeigten Wahrscheinlichkeiten und seltenen hohen Gewinne werden nicht vorab als verfügbares Budget behandelt.</p>
               <p>Die separate Punkte-Fortschrittsleiste zeigt feste Belohnungen von 200 Vorratsgutscheinen bei 300 Punkten und weiteren 200 bei 500 Punkten. Die vorliegenden Bilder belegen jedoch nicht, wie viele Punkte eine Ziehung bringt. Diese 400 Gutscheine werden daher nicht automatisch aus der Münzzahl abgeleitet.</p>
               <p>Zusätzlich enthalten die täglichen zeitbegrenzten Aufgaben Zufallsboxen. Die zwei dokumentierten Gutscheinboxen liefern im Mittel 4 beziehungsweise rund 10,01 Gutscheine. Weil die Anforderungen der späteren Aufgabenstufen verborgen sind, bleiben auch diese Boxen außerhalb der automatischen Planung.</p>
               <a class="flight-info-guide-link" href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Vollständigen Event-Guide lesen →</a>
