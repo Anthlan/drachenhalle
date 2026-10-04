@@ -335,11 +335,13 @@ Der kostenlose Tagesgutschein und bereits erspielte Vorratsgutscheine reduzieren
 ```html
 <color=#FFD700><b>✈️ EVENT-GUIDE – FLUGBESATZUNG</b></color>
 
-<color=#7FFF00><b>F2P:</b></color> 15 Münzen je Eventtag, 75 in 5 Tagen; mit Shop-Resets bis zu 83 gratis. Bis zum letzten sicheren Nutzungstag sammeln und gebündelt drehen. 1 Vorratsgutschein pro Tag ist gratis; 500 Diamanten für den zweiten lohnen meist nicht.
+<color=#7FFF00><b>F2P:</b></color> 15 Münzen je Tag, 75 in 5 Tagen; mit Shop-Resets bis zu 83 gratis. Für einen sicheren Tagesmeilenstein sammeln. 1 Vorratsgutschein täglich ist gratis.
 
-<color=#7FFF00><b>GEZIELTE KÄUFER:</b></color> Münzen haben den besseren Erwartungswert, direkte Gutscheine geben Sicherheit. 60 Gutscheine für 10 UR-Splitter kosten sicher 8,48 €; 100 für die Deluxe-Truhe 14,48 €. Aus der Truhe sind 5.000 Veredelte Steine die beste allgemeine Wahl.
+<color=#7FFF00><b>280-MÜNZEN-PLAN:</b></color> Bei Gutschein-Fokus lieber an 2 Tagen bis Stufe 7/9 als einmal bis Stufe 15. Alle sichtbaren Gutscheinboxen liegen auf Stufe 1, 3, 5 und 7. Nach Lauf 1 den Verbrauch prüfen.
 
-<color=#7FFF00><b>SKIN:</b></color> Kostet 4.000 Gutscheine. Erst Münzen drehen, danach nur die Restlücke direkt kaufen. Münz-Erwartungswert ca. 250 € – keine Garantie. Sicherer Direktkauf ca. 596 €.
+<color=#7FFF00><b>KAUFEN:</b></color> Münzen haben den besseren Erwartungswert, direkte Gutscheine geben Sicherheit. 60 Gutscheine kosten sicher 8,48 €; 100 kosten 14,48 €. Erst drehen, dann nur die Restlücke kaufen.
+
+<color=#7FFF00><b>SKIN:</b></color> 4.000 Gutscheine. Münz-Erwartungswert ca. 250 €; sicherer Direktkauf ca. 596 €.
 
 <color=#FFAA00><b>WICHTIG:</b></color> Der Slot-Punktezähler wird täglich zurückgesetzt. Tagesangebote mit „Heute übrig: 1“ verfallen beim Reset.
 ```
