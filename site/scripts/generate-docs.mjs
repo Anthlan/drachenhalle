@@ -27,6 +27,15 @@ const imageMimeType = (sourcePath) => {
 
 const baseDocuments = [
   {
+    source: "Drachenwissen/Eventankuendigungen/AllianzWettkampf_Punkte_Radar.md",
+    slug: "eventankuendigung-allianzwettkampf",
+    title: "Allianz-Wettkampf: Punkte und Radar planen",
+    section: "Drachenwissen",
+    summary: "Kopiervorlagen für passende Einsatzbereitschaft und Radarvorbereitung.",
+    parentSlug: "eventankuendigungen",
+    kind: "alliance",
+  },
+  {
     source: "README.md",
     slug: "projekt",
     title: "Über das Archiv",

@@ -10,6 +10,8 @@ Eventankündigungen ergänzen die beiden benachbarten Bereiche:
 
 ## Verfügbare Eventankündigungen
 
+- [Allianz-Wettkampf: Punkte und Radar planen](AllianzWettkampf_Punkte_Radar.md) – Einsatzbereitschaft kombinieren und Radarplatz vorbereiten
+
 - [Allianz-Hinterhalt: vorbereitet starten](AllianzHinterhalt_Start_Verlueste.md) – Startvorbereitung, Verlustmanagement und effizientes Heilen
 - [Raubzugkämpfe: Schilde rechtzeitig setzen](Raubzugkaempfe_Schilde_Hoch.md) – Schutzzeitraum, Schildplan und Vorbereitung
 - [Zombie-Belagerung: gemeinsam verteidigen](ZombieBelagerung_Ablauf_Teilnahme.md) – Ablauf, Teilnahme, Ausstieg und Unterstützung

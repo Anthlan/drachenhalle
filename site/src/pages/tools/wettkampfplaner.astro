@@ -1,0 +1,64 @@
+---
+import SocialMeta from "../../components/SocialMeta.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import "../../styles/global.css";
+const fields = [
+  ["current", "Aktuelle Wettkampfpunkte", "0"], ["target", "Dein Wettkampfziel", ""],
+  ["points", "Wettkampfpunkte je Einheit (inklusive deiner Boni)", ""], ["stock", "Verfügbare Einheiten dieser Aktion", ""],
+  ["readinessCurrent", "Aktuelle Einsatzbereitschaftspunkte", "0"], ["readinessTarget", "Ziel der Einsatzbereitschaft", "0"],
+  ["readinessPoints", "Einsatzbereitschaftspunkte je gleicher Einheit", "0"],
+];
+const actions = [["other", "Andere / noch nicht geprüft"], ["build", "Bauen"], ["research", "Forschen"], ["heroes", "Heldenentwicklung"], ["training", "Soldaten trainieren"], ["radar", "Radarquests"], ["stamina", "Ausdauer einsetzen"]];
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+    <title>Allianz-Wettkampf-Punkteplaner · DIE Drachenhalle</title>
+    <SocialMeta title="Allianz-Wettkampf-Punkteplaner" description="Punkteziele, Einsatzbereitschaft und Radarvorrat gemeinsam planen." />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+  </head>
+  <body><div class="page-shell"><SiteHeader active="tools" />
+    <main class="tool-main" id="main-content">
+      <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/tools/">Tools</a><span>/</span><span>Wettkampfplaner</span></nav>
+      <header class="tool-hero"><p class="eyebrow">Gezielt punkten und Vorräte halten</p><h1>Allianz-Wettkampf-Punkteplaner</h1><p>Wie viel fehlt zum Ziel? Welche Einsatzbereitschaft passt? Wie viele Radarquests kannst du sparen?</p></header>
+      <p>Übernimm Punkte und Ziele aus deinen aktuellen Eventanzeigen. Die Berechnung betrachtet eine Aktion mit gleicher Wertung je Einheit: zum Beispiel einen Forschungsdatenpunkt, eine Beschleunigerminute oder eine Radarquest. Unterschiedlich bewertete Quests bitte getrennt planen.</p>
+      <form data-competition-form>
+        <fieldset><legend>1 · Punkte und Vorrat</legend>
+          <label>Geplante Aktion<select name="action">{actions.map(([value, label]) => <option value={value}>{label}</option>)}</select></label>
+          {fields.slice(0,4).map(([name,label,value]) => <label>{label}<input name={name} type="number" min={name === "points" ? "1" : "0"} max="1000000000000" step="1" value={value} required /></label>)}
+        </fieldset>
+        <fieldset><legend>2 · Mit Einsatzbereitschaft kombinieren</legend>
+          <label>Passende Phase laut Aufgabenliste<select name="phase">{actions.map(([value, label]) => <option value={value}>{label}</option>)}</select></label>
+          <p>Wähle die Phase, in der deine konkrete Aktion ebenfalls Punkte bringt. Ähnliche Namen allein reichen nicht; Start, Abschluss und Itemverbrauch können unterschiedlich gewertet werden.</p>
+          {fields.slice(4).map(([name,label,value]) => <label>{label}<input name={name} type="number" min="0" max="1000000000000" step="1" value={value} required /></label>)}
+        </fieldset>
+        <fieldset><legend>3 · Radar vor der nächsten Auffüllung</legend>
+          <p>Dieser Teil ist unabhängig vom gewählten Punkteziel. Er berechnet Platz für genau eine Auffüllung. Trage nur Quests ein, die das betreffende Speicherlimit belegen.</p>
+          <label>Gespeicherte Radarquests<input name="radar" type="number" min="0" max="10000" step="1" /></label>
+          <label>Dein Radar-Speicherlimit<input name="cap" type="number" min="1" max="10000" step="1" /></label>
+          <label>Neue Quests bei der nächsten Auffüllung<input name="arrivals" type="number" min="0" max="10000" step="1" /></label>
+          <p>Speicherlimit, Auffüllung und Gültigkeit sind noch nicht für unseren Server dokumentiert. Prüfe im Spiel auch, ob erledigte, aber nicht abgeholte Quests Speicher belegen und wann sie gewertet werden.</p>
+        </fieldset>
+        <button type="submit">Meinen Plan berechnen</button>
+      </form>
+      <section class="plan-output" aria-live="polite" aria-label="Dein Plan" data-competition-output></section>
+      <p>Deine Eingaben werden nach dem Berechnen auf diesem Gerät gespeichert, sofern der Browser dies erlaubt.</p>
+      <p><a href="/drachenhalle/docs/tipp-14-allianz-wettkampf-punkte-planen/">Wissensartikel: Wettkampf, Einsatzbereitschaft und Radar richtig planen →</a></p>
+      <noscript>Für die Berechnung bitte JavaScript aktivieren. Den Wissensartikel kannst du auch ohne JavaScript lesen.</noscript>
+    </main><SiteFooter /></div>
+    <script>import { initializeCompetitionCalculator } from "../../scripts/competition-calculator"; initializeCompetitionCalculator();</script>
+  </body>
+</html>
+<style>
+  form { display: grid; gap: 1.5rem; margin-block: 2rem; }
+  fieldset { border: 1px solid var(--border, #66563e); border-radius: 16px; padding: 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  legend { font-weight: 700; padding-inline: .5rem; }
+  label { display: grid; gap: .5rem; }
+  input, select { width: 100%; min-width: 0; padding: .8rem; border-radius: 8px; border: 1px solid #887453; background: #181c20; color: #fff; font: inherit; }
+  fieldset p { grid-column: 1 / -1; }
+  button { padding: 1rem; border-radius: 10px; background: #e6bd72; color: #181c20; font: inherit; font-weight: 700; cursor: pointer; }
+  .plan-output:not(:empty) { padding: 1.5rem; border: 1px solid #e6bd72; border-radius: 16px; }
+  @media(max-width: 640px) { fieldset { grid-template-columns: 1fr; padding: 1rem; } }
+</style>
