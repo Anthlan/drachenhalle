@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
@@ -20,6 +21,7 @@ const renderRegions = [...mapData.regions].sort((first, second) => Number(first.
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Planungskarte · Strategieraum · DIE Drachenhalle</title>
+  <SocialMeta title={`Planungskarte · Strategieraum · DIE Drachenhalle`} description="Interne Planungskarte für den Allianzrat der DIE Drachenhalle." />
   </head>
   <body>
     <div class="page-shell map-page-shell">

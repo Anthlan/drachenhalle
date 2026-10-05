@@ -1,3 +1,4 @@
+import { hasHiddenMarker } from "./content-visibility.mjs";
 import { mkdir, readFile, readdir, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -163,6 +164,7 @@ const expectedCalendars = new Set();
 
 for (const fileName of fileNames) {
   const source = await readFile(path.join(eventsDirectory, fileName), "utf8");
+  if (hasHiddenMarker(source)) continue;
   const { metadata, markdown } = parseDocument(source, fileName);
   const title = String(metadata.title ?? "").trim();
   const date = String(metadata.date ?? "").trim();

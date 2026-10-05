@@ -11,3 +11,5 @@ summary: "So könnte ein kommender Allianztermin in der neuen Übersicht aussehe
 Dieser Termin dient als sichtbares Beispiel für die neue Kalenderfunktion. Er kann einfach angepasst oder durch einen echten Termin ersetzt werden.
 
 **Bitte beachten:** Datum, Uhrzeit und Beschreibung sind nur Platzhalter.
+
+## HIDDEN

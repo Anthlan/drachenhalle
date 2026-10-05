@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
@@ -321,6 +322,7 @@ const responsibilities = [
     {document.hidden && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>{document.title} · DIE Drachenhalle</title>
+  <SocialMeta title={`${document.title} · DIE Drachenhalle`} description={document.summary} />
   </head>
   <body>
     <div class="page-shell">

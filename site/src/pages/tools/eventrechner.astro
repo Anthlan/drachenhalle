@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
@@ -38,7 +39,7 @@ const shopPages = [
       { id: "bauplan-gold", name: "Goldener Bauplan", unit: "1 Bauplan", price: 60, max: 100, limit: "Maximal 100", x: 90, y: 60 },
       { id: "ur-truhe", name: "UR-Auswahltruhe", unit: "1 Truhe", price: 300, max: 5, limit: "Maximal 5", x: 10, y: 80 },
       { id: "holz", name: "Holz", unit: "100 Holz", price: 60, max: 200, limit: "Maximal 200", x: 50, y: 80 },
-      { id: "fortschrittsbuch", name: "Fortschrittsbücher", unit: "100 Bücher", price: 40, max: 200, limit: "Maximal 200", x: 90, y: 80 },
+      { id: "fortschrittsbuch", name: "Forschungsmaterial", unit: "100 Material", price: 40, max: 200, limit: "Maximal 200", x: 90, y: 80 },
     ],
   },
   {
@@ -52,8 +53,8 @@ const shopPages = [
       { id: "flugmaterial", name: "Flugmaterial", unit: "10.000 Material", price: 16, max: 100, limit: "Maximal 100", x: 50, y: 41 },
       { id: "fortschrittskiste-a", name: "Fortschrittskiste A", unit: "1 Truhe", price: 8, max: 1000, limit: "Maximal 1.000", x: 90, y: 41 },
       { id: "fortschrittskiste-b", name: "Fortschrittskiste B", unit: "1 Truhe", price: 8, max: 1000, limit: "Maximal 1.000", x: 10, y: 62 },
-      { id: "metallspulen", name: "Metallspulen", unit: "100 Spulen", price: 4, max: 1000, limit: "Maximal 1.000", x: 50, y: 62 },
-      { id: "handbuecher", name: "Trainingshandbücher", unit: "100 Bücher", price: 4, max: 1000, limit: "Maximal 1.000", x: 90, y: 62 },
+      { id: "metallspulen", name: "Veredelte Steine", unit: "100 Steine", price: 4, max: 1000, limit: "Maximal 1.000", x: 50, y: 62 },
+      { id: "handbuecher", name: "Heldenbücher", unit: "100 Bücher", price: 4, max: 1000, limit: "Maximal 1.000", x: 90, y: 62 },
       { id: "versorgungskisten", name: "Versorgungskisten", unit: "10 Kisten", price: 40, max: 1000, limit: "Maximal 1.000", x: 10, y: 85 },
     ],
   },
@@ -77,6 +78,7 @@ const shopPages = [
     />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Flügelevent-Planer · Tools · DIE Drachenhalle</title>
+  <SocialMeta title={`Flügelevent-Planer · Tools · DIE Drachenhalle`} description="Plane Münzen, Vorratsgutscheine und Echtgeldpakete für das aktuelle Flügelevent." />
   </head>
   <body>
     <div class="page-shell">
@@ -229,15 +231,19 @@ const shopPages = [
                   <input name="includeDiamonds" type="checkbox" value="yes" />
                   <span><strong>500-Diamanten-Gutschein einplanen</strong><small>1 zusätzlicher Gutschein je Kaufperiode.</small></span>
                 </label>
-                <div class="flight-task-box-note">
-                  <strong>Zusatzbelohnungen nicht eingerechnet</strong>
-                  <small>Punkte-Fortschritt und tägliche Aufgaben lassen sich mit den belegten Daten noch nicht verlässlich aus der Münzzahl ableiten.</small>
-                </div>
+                <label>
+                  <span class="flight-select-label"><strong>Ziehungsmodus</strong><small>Ändert nur die Praxisorientierung, nicht die sichere Kaufplanung.</small></span>
+                  <select name="drawMultiplier">
+                    <option value="1" selected>1× – besser planbar</option>
+                    <option value="5">5× – schneller, aber riskanter</option>
+                  </select>
+                </label>
                 <div class="flight-task-box-note">
                   <strong>Sichere Kaufplanung</strong>
                   <small>Der Rechner setzt je Münze nur die garantierten 5 Gutscheine an. Seltene Treffer verbessern das Ergebnis, werden aber niemals vorab zum Kaufbudget gerechnet.</small>
                 </div>
               </div>
+              <p class="flight-field-note">Punktefortschritt und die 15-stufige Tageskette werden als Strategiehinweis gezeigt, aber wegen unbekannter Anforderungen nicht zum sicheren Gutscheinstand addiert.</p>
             </fieldset>
 
             <div class="flight-form-footer">
@@ -294,6 +300,30 @@ const shopPages = [
                 <div><dt>Ziel sicher gedeckt</dt><dd data-flight-current-chance>Nein</dd></div>
                 <div><dt>Sichere Restlücke</dt><dd data-flight-direct-gap>0 Gutscheine</dd></div>
               </dl>
+              <p class="flight-practice-reference" data-flight-practice-reference>
+                Der dokumentierte 1×-Praxistest wird nach der Berechnung hier als unverbindliche Orientierung ergänzt.
+              </p>
+            </article>
+
+            <article class="flight-task-strategy">
+              <div>
+                <p class="eyebrow">15-stufige Tageskette</p>
+                <h3>Ziehungen über die Resets verteilen</h3>
+                <p data-flight-task-summary>Die Stufenanforderungen lassen sich nicht sicher in Münzen umrechnen.</p>
+              </div>
+              <div class="flight-task-routes">
+                <section>
+                  <span>Gutschein-Fokus</span>
+                  <strong>Mehrfach bis Stufe 7/9</strong>
+                  <small>Nach dem ersten Lauf den echten Münzverbrauch notieren und nur mit ausreichender Reserve wiederholen.</small>
+                </section>
+                <section>
+                  <span>Gesamtwert-Fokus</span>
+                  <strong>Ein tiefer Lauf bis Stufe 15</strong>
+                  <small>Kann besser sein, wenn dir die neun zufälligen UR-Überlebenstruhen persönlich noch viel bringen.</small>
+                </section>
+              </div>
+              <p class="flight-task-caveat">Aufgabenbelohnungen bleiben außerhalb des sicheren Gutscheinstands: bestätigt sind nur die Anforderungen der Stufen 1 bis 6.</p>
             </article>
 
             <article class="flight-f2p-plan">
@@ -410,10 +440,10 @@ const shopPages = [
               <div class="flight-method-grid">
                 <article><strong>10,01</strong><span>Grundbelohnung</span><small>5, 50, 250 oder 500 Gutscheine.</small></article>
                 <article><strong>2,77</strong><span>Symbolkombinationen</span><small>Direkte Gutschein-Kombinationen.</small></article>
-                <article><strong>2,31</strong><span>Spielautomaten-Luftabwurf</span><small>40-%-Gutscheinpool der Truhenziehung.</small></article>
-                <article class="is-total"><strong>15,08</strong><span>Gesamt erwartet</span><small>Je eingesetzter Münze, nicht garantiert.</small></article>
+                <article><strong>2,31</strong><span>Spielautomaten-Luftabwurf</span><small>Separater Modellwert aus dem 40-%-Gutscheinpool.</small></article>
+                <article class="is-total"><strong>12,78 + Bonus</strong><span>Theoretischer Kernwert</span><small>Grundbelohnung und Kombinationen; niemals Kaufbasis.</small></article>
               </div>
-              <p><strong>Praxismessung:</strong> 279 überwiegend mit 5× eingesetzte Münzen brachten 1.500 neue Gutscheine beziehungsweise 5,38 je Münze. Weitere 50 Münzen mit 1× ergaben 460 Gutscheine beziehungsweise 9,2 je Münze. Zusammen sind das 1.960 Gutscheine aus 329 Münzen oder 5,96 je Münze.</p>
+              <p><strong>Praxismessung:</strong> 279 überwiegend mit 5× eingesetzte Münzen brachten 1.500 neue Gutscheine beziehungsweise 5,38 je Münze. Weitere 50 Münzen mit 1× ergaben 460 Gutscheine beziehungsweise 9,2 je Münze. Der Rechner zeigt den gewählten Messwert nur als Orientierung und plant Käufe weiterhin mit 5 sicheren Gutscheinen je Münze.</p>
               <p><strong>Empfehlung:</strong> Für ein festes Gutscheinziel 1× ziehen. Der 5×-Modus verändert den theoretischen Mittelwert nicht, bündelt aber jeweils fünf Münzen in nur einem Zufallsergebnis.</p>
               <p>Der eigenständige Bereich <strong>Versorgungsabwurf</strong> mit Hilfsgütern bringt weder Münzen noch Vorratsgutscheine und wird ausdrücklich nicht eingerechnet.</p>
             </section>
@@ -445,9 +475,9 @@ const shopPages = [
 
             <section class="flight-info-section">
               <h3>Wie ist die Sicherheitsrechnung zu lesen?</h3>
-              <p>Der Rechner verwendet für Kaufentscheidungen ausschließlich 5 garantierte Gutscheine je Münze. Die angezeigten Wahrscheinlichkeiten und seltenen hohen Gewinne werden nicht vorab als verfügbares Budget behandelt.</p>
-              <p>Die separate Punkte-Fortschrittsleiste zeigt feste Belohnungen von 200 Vorratsgutscheinen bei 300 Punkten und weiteren 200 bei 500 Punkten. Die vorliegenden Bilder belegen jedoch nicht, wie viele Punkte eine Ziehung bringt. Diese 400 Gutscheine werden daher nicht automatisch aus der Münzzahl abgeleitet.</p>
-              <p>Zusätzlich enthalten die täglichen zeitbegrenzten Aufgaben Zufallsboxen. Die zwei dokumentierten Gutscheinboxen liefern im Mittel 4 beziehungsweise rund 10,01 Gutscheine. Weil die Anforderungen der späteren Aufgabenstufen verborgen sind, bleiben auch diese Boxen außerhalb der automatischen Planung.</p>
+              <p>Der Rechner verwendet für Kaufentscheidungen ausschließlich 5 garantierte Gutscheine je Münze. Seltene hohe Gewinne und die Praxiswerte werden nicht vorab als verfügbares Budget behandelt.</p>
+              <p>Die Punktefortschrittsleiste besitzt tägliche Stufen bei 30, 50, 100, 300, 500, 1.000 und 1.500 Punkten. Da nicht belegt ist, wie viele Punkte jede Ziehung sicher erzeugt, werden diese Belohnungen nicht automatisch aus der Münzzahl abgeleitet.</p>
+              <p>Die 15-stufige Tageskette zeigt Gutscheinboxen auf den Stufen 1, 3, 5 und 7. Bestätigt sind jedoch nur die Anforderungen der Stufen 1 bis 6; wechselnde Aufgabensymbole verhindern eine sichere Umrechnung in Münzen. Deshalb erscheint die Kette als Strategiehinweis, nicht als garantierter Gutscheinbetrag.</p>
               <a class="flight-info-guide-link" href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Vollständigen Event-Guide lesen →</a>
             </section>
           </div>

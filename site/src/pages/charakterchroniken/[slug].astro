@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
@@ -23,6 +24,7 @@ const themeStyle = `--chronicle-accent:${chronicle.theme.accent};--chronicle-acc
     <meta name="description" content={`${chronicle.name}: ${chronicle.invitation}`} />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>{chronicle.name} · Charakterchronik · DIE Drachenhalle</title>
+  <SocialMeta title={`${chronicle.name} · Charakterchronik · DIE Drachenhalle`} description={`${chronicle.name}: ${chronicle.invitation}`} />
   </head>
   <body>
     <div class="page-shell">

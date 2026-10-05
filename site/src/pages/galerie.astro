@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../components/SocialMeta.astro";
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
@@ -70,6 +71,7 @@ const originalMimeType = (item) => {
     />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Galerie · DIE Drachenhalle</title>
+  <SocialMeta title={`Galerie · DIE Drachenhalle`} description="Die Bilderwelt der DIE Drachenhalle mit Chatbildern, Reaktionsbildern, Charaktermodellen und Allianzmotiven." />
   </head>
   <body>
     <div class="page-shell">
@@ -101,6 +103,7 @@ const originalMimeType = (item) => {
             <p class="gallery-hint">Bild auswählen, die Galerieseite teilen oder das Original herunterladen.</p>
           </div>
 
+          <div class="gallery-search"><label for="gallery-search">Bilder suchen</label><input id="gallery-search" type="search" placeholder="Titel oder Spielername" autocomplete="off" /></div>
           <div class="gallery-toolbar">
             <div class="category-list" role="group" aria-label="Nach Kategorie filtern">
               <button class="category-chip is-selected" type="button" data-category="all" aria-pressed="true">
@@ -301,6 +304,8 @@ const originalMimeType = (item) => {
 
       const cards = [...document.querySelectorAll(".gallery-card")];
       const categoryButtons = [...document.querySelectorAll(".category-chip[data-category]")];
+      const searchFilter = document.querySelector<HTMLInputElement>("#gallery-search")!;
+      const normalizeSearch = (value: string) => value.toLocaleLowerCase("de").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll("ß", "ss");
       const peopleFilter = document.querySelector("#people-filter");
       const styleFilter = document.querySelector("#style-filter");
       const seriesFilter = document.querySelector("#series-filter");
@@ -334,6 +339,7 @@ const originalMimeType = (item) => {
         if (peopleFilter.value !== "all") url.searchParams.set("person", peopleFilter.value);
         if (styleFilter.value !== "all") url.searchParams.set("stil", styleFilter.value);
         if (seriesFilter.value !== "all") url.searchParams.set("serie", seriesFilter.value);
+        if (searchFilter.value.trim()) url.searchParams.set("suche", searchFilter.value.trim());
         url.hash = hash;
 
         return `${url.pathname}${url.search}${url.hash}`;
@@ -378,7 +384,9 @@ const originalMimeType = (item) => {
           const personMatches = selectedPerson === "all" || people.includes(selectedPerson);
           const styleMatches = selectedStyle === "all" || card.dataset.style === selectedStyle;
           const seriesMatches = seriesFilter.value === "all" || card.dataset.series === seriesFilter.value;
-          const visible = categoryMatches && personMatches && styleMatches && seriesMatches;
+          const searchText = normalizeSearch(`${card.dataset.title} ${card.dataset.people}`);
+          const searchMatches = normalizeSearch(searchFilter.value).split(/\s+/).filter(Boolean).every(word => searchText.includes(word));
+          const visible = categoryMatches && personMatches && styleMatches && seriesMatches && searchMatches;
           card.hidden = !visible;
           return visible;
         });
@@ -429,6 +437,7 @@ const originalMimeType = (item) => {
         });
       });
 
+      searchFilter.addEventListener("input", () => applyFilters({ updateAddress: true }));
       peopleFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
       styleFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
       seriesFilter.addEventListener("change", () => applyFilters({ updateAddress: true }));
@@ -437,6 +446,7 @@ const originalMimeType = (item) => {
       });
 
       const initialParams = new URLSearchParams(window.location.search);
+      searchFilter.value = initialParams.get("suche") ?? "";
       const initialCategory = initialParams.get("kategorie");
       const initialPerson = initialParams.get("person");
       const initialStyle = initialParams.get("stil");

@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../components/SocialMeta.astro";
 import "../styles/global.css";
 import ImageActionIcon from "../components/ImageActionIcon.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -20,6 +21,7 @@ const internalDocuments = docsData.items.filter((document) => document.hidden);
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Strategieraum des Allianzrats · DIE Drachenhalle</title>
+  <SocialMeta title={`Strategieraum des Allianzrats · DIE Drachenhalle`} description="Nicht gelistete Beratungsunterlagen für den Allianzrat der DIE Drachenhalle." />
   </head>
   <body>
     <div class="page-shell">

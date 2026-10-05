@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../components/SocialMeta.astro";
 import "../styles/global.css";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -40,7 +41,8 @@ const trophies = Array.from({length:11}, (_, index) => {
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
   <meta name="description" content="Betritt die Ruhmeshalle unserer Allianzzentrale: Wächtertrophäen, gemeinsame Siege und die nächsten Herausforderungen bis Stufe 200." />
   <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" /><title>Ruhmeshalle · DIE Drachenhalle</title>
-</head>
+<SocialMeta title={`Ruhmeshalle · DIE Drachenhalle`} description="Betritt die Ruhmeshalle unserer Allianzzentrale: Wächtertrophäen, gemeinsame Siege und die nächsten Herausforderungen bis Stufe 200." />
+  </head>
 <body><div class="page-shell"><SiteHeader active="alliance" />
 <main id="main-content" class="hall">
   <nav class="breadcrumbs" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/">Start</a><span>/</span><a href="/drachenhalle/docs/allianz/">Allianz</a><span>/</span><span aria-current="page">Ruhmeshalle</span></nav>

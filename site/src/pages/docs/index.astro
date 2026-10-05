@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
@@ -22,6 +23,7 @@ const usefulDocuments = informationSection
     />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Wissen der Drachenhalle · DIE Drachenhalle</title>
+  <SocialMeta title={`Wissen der Drachenhalle · DIE Drachenhalle`} description="Tipps, Strategien und Informationen für den Spiel- und Allianzalltag der DIE Drachenhalle." />
   </head>
   <body>
     <div class="page-shell">

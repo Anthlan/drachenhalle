@@ -36,6 +36,8 @@ export const THEORETICAL_EVENT_VARIANCE_PER_COIN = baseMoments.variance + slotMo
 export const EVENT_VOUCHERS_PER_COIN = GUARANTEED_VOUCHERS_PER_COIN;
 export const EVENT_VARIANCE_PER_COIN = 0;
 export const EVENT_STANDARD_DEVIATION_PER_COIN = 0;
+export const OBSERVED_SINGLE_VOUCHERS_PER_COIN = 9.2;
+export const OBSERVED_BUNDLED_VOUCHERS_PER_COIN = 1500 / 279;
 export type DrawMultiplier = 1 | 5;
 
 export type EventPackage = {
@@ -88,64 +90,64 @@ export const VOUCHER_PACKAGES: readonly EventPackage[] = [
 
 export const F2P_SHOP_PRIORITIES = [
   {
-    id: "ur-splitter",
-    name: "UR-Omni-Heldensplitter",
-    unit: "10 Splitter",
-    price: 60,
-    max: 1,
-    perWindow: true,
-    score: 98,
-    reason: "Sehr selten, universell einsetzbar und täglich stark limitiert.",
-  },
-  {
     id: "deluxe-truhe",
     name: "Optionale Deluxe-Truhe",
     unit: "1 Truhe",
     price: 100,
     max: 1,
     perWindow: true,
-    score: 94,
-    reason: "Hohe Auswahlfreiheit für einen kleinen täglichen Gutscheinbetrag.",
+    score: 100,
+    reason: "Mit 5.000 Veredelten Steinen bietet sie den stärksten allgemein bezifferbaren Tageswert.",
   },
   {
-    id: "ur-truhe",
-    name: "UR-Auswahltruhe",
-    unit: "1 Truhe",
-    price: 300,
-    max: 5,
+    id: "ur-splitter",
+    name: "UR-Omni-Heldensplitter",
+    unit: "10 Splitter",
+    price: 60,
+    max: 1,
+    perWindow: true,
+    score: 96,
+    reason: "Seltene, universelle Heldenprogression zum besseren Kurs als über die Deluxe-Truhe.",
+  },
+  {
+    id: "metallspulen",
+    name: "Veredelte Steine",
+    unit: "100 Steine",
+    price: 4,
+    max: 1000,
     perWindow: false,
-    score: 91,
-    reason: "Gezielter UR-Fortschritt ist für kostenlose Spieler besonders wertvoll.",
+    score: 92,
+    reason: "Planbare, dauerhafte Ausrüstungsprogression und sehr gute Resteverwertung.",
   },
   {
-    id: "bauplan-rot",
-    name: "Roter Bauplan",
-    unit: "1 Bauplan",
-    price: 300,
-    max: 10,
+    id: "handbuecher",
+    name: "Heldenbücher",
+    unit: "100 Bücher",
+    price: 4,
+    max: 1000,
     perWindow: false,
-    score: 87,
-    reason: "Engpassmaterial mit dauerhaftem Ausbauwert.",
+    score: 88,
+    reason: "Dauerhafter Heldenfortschritt zu einem sehr günstigen Gutscheinkurs.",
   },
   {
-    id: "puzzleteil",
-    name: "Goldenes Puzzleteil",
-    unit: "1 Teil",
-    price: 16,
-    max: 300,
-    perWindow: false,
-    score: 82,
-    reason: "Guter Lückenfüller: günstig, dauerhaft nützlich und fein dosierbar.",
-  },
-  {
-    id: "gebaeudeteil-c",
-    name: "Gebäudeteil C",
-    unit: "1 Teil",
+    id: "fortschrittsbuch",
+    name: "Forschungsmaterial",
+    unit: "100 Material",
     price: 40,
-    max: 80,
+    max: 200,
     perWindow: false,
-    score: 76,
-    reason: "Solider Ausbaufortschritt, wenn die seltenen Käufe bereits gedeckt sind.",
+    score: 80,
+    reason: "Dauerhafter Forschungsfortschritt, sofern Forschung dein aktueller Engpass ist.",
+  },
+  {
+    id: "fortschrittskiste-a",
+    name: "Fortschrittskiste A",
+    unit: "1 Truhe",
+    price: 8,
+    max: 1000,
+    perWindow: false,
+    score: 70,
+    reason: "Günstige Ergänzung, wenn die planbaren dauerhaften Käufe gedeckt sind.",
   },
 ] as const;
 
@@ -222,6 +224,16 @@ export const F2P_HERO_PRIORITIES = [
     perWindow: false,
     score: 92,
     reason: "Gezielte UR-Auswahl für den Helden, den du tatsächlich weiterentwickelst.",
+  },
+  {
+    id: "handbuecher",
+    name: "Heldenbücher",
+    unit: "100 Bücher",
+    price: 4,
+    max: 1000,
+    perWindow: false,
+    score: 84,
+    reason: "Preiswerter dauerhafter Fortschritt, wenn das Heldenlevel bremst.",
   },
   {
     id: "event-zufallstruhe",
@@ -363,6 +375,22 @@ export const recommendF2PShopping = (
 export const remainingPurchaseWindows = (days: number, hours: number) => {
   const totalHours = Math.max(0, days * 24 + hours);
   return totalHours === 0 ? 0 : Math.ceil(totalHours / 24);
+};
+
+export const observedVoucherProjection = (
+  coins: number,
+  drawMultiplier: DrawMultiplier = 1,
+) => {
+  const safeCoins = Math.max(0, Math.floor(coins));
+  const vouchersPerCoin = drawMultiplier === 5
+    ? OBSERVED_BUNDLED_VOUCHERS_PER_COIN
+    : OBSERVED_SINGLE_VOUCHERS_PER_COIN;
+  return {
+    coins: safeCoins,
+    vouchersPerCoin,
+    vouchers: safeCoins * vouchersPerCoin,
+    sampleCoins: drawMultiplier === 5 ? 279 : 50,
+  };
 };
 
 export const casinoProjection = (
@@ -811,7 +839,7 @@ export const initializeFlightEventCalculator = () => {
 
   const fields = [
     "currentCoins", "currentVouchers", "targetVouchers", "remainingDays", "remainingHours",
-    "remainingFreeVouchers", "confidence", "purchaseStrategy", "includeFree", "includeDiamonds",
+    "remainingFreeVouchers", "confidence", "drawMultiplier", "purchaseStrategy", "includeFree", "includeDiamonds",
   ];
 
   const applyValues = (values: Record<string, unknown>) => {
@@ -913,6 +941,7 @@ export const initializeFlightEventCalculator = () => {
     const securedVouchers = currentVouchers + futureVouchers + diamondVouchers;
     const neededFromCasino = Math.max(0, targetVouchers - securedVouchers);
     const currentProjection = casinoProjection(availableCoins, confidence, drawMultiplier);
+    const observedProjection = observedVoucherProjection(availableCoins, drawMultiplier);
     const currentTotalExpected = securedVouchers + currentProjection.expected;
     const currentProbability = probabilityToReach(neededFromCasino, availableCoins, drawMultiplier);
 
@@ -971,6 +1000,22 @@ export const initializeFlightEventCalculator = () => {
     setText(result, "[data-flight-current-range]", formatInteger(securedVouchers + currentProjection.low));
     setText(result, "[data-flight-current-chance]", currentProbability >= confidence ? "Ja" : "Nein");
     setText(result, "[data-flight-direct-gap]", `${formatInteger(directGap)} Gutscheine`);
+    setText(
+      result,
+      "[data-flight-practice-reference]",
+      drawMultiplier === 5
+        ? `Praxistest überwiegend mit 5×: ${observedProjection.sampleCoins} Münzen ergaben ${observedProjection.vouchersPerCoin.toLocaleString("de-DE", { maximumFractionDigits: 2 })} Gutscheine je Münze. Auf deinen Bestand übertragen wären das grob ${formatInteger(securedVouchers + observedProjection.vouchers)} – nur Orientierung, keine Kaufbasis.`
+        : `Praxistest mit 1×: ${observedProjection.sampleCoins} Einzelziehungen ergaben ${observedProjection.vouchersPerCoin.toLocaleString("de-DE", { maximumFractionDigits: 1 })} Gutscheine je Münze. Auf deinen Bestand übertragen wären das grob ${formatInteger(securedVouchers + observedProjection.vouchers)} – nur Orientierung, keine Kaufbasis.`,
+    );
+    setText(
+      result,
+      "[data-flight-task-summary]",
+      availableCoins <= 0
+        ? "Aktuell sind keine Münzen für einen Tageslauf eingeplant. Aufgabenbelohnungen werden daher nicht vorab angesetzt."
+        : windows >= 2
+          ? `Du planst mit ${availableCoins.toLocaleString("de-DE")} Münzen und erreichst noch ${windows} Resetfenster. Spiele den ersten Lauf nur bis zum gewählten Ziel und notiere den tatsächlichen Verbrauch, bevor du einen zweiten Lauf planst.`
+          : `Du planst mit ${availableCoins.toLocaleString("de-DE")} Münzen und nur noch einem Resetfenster. Wähle vor dem Start zwischen Gutschein-Fokus bis Stufe 7/9 und dem tieferen Gesamtwert-Lauf.`,
+    );
 
     latestF2PBudget = Math.floor(securedVouchers + currentProjection.low);
     latestF2PWindows = windows;

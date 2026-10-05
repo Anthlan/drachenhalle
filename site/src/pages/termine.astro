@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../components/SocialMeta.astro";
 import "../styles/global.css";
 import EventCard from "../components/EventCard.astro";
 import MonthlyCalendar from "../components/MonthlyCalendar.astro";
@@ -28,6 +29,7 @@ const relativeLabel = (date) => {
     <meta name="description" content="Kommende und vergangene Termine der DIE-Allianz." />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Termine · DIE Drachenhalle</title>
+  <SocialMeta title={`Termine · DIE Drachenhalle`} description="Kommende und vergangene Termine der DIE-Allianz." />
   </head>
   <body>
     <div class="page-shell">

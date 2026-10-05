@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../components/SocialMeta.astro";
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
@@ -56,6 +57,7 @@ const relativeLabel = (date) => {
     />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Aktuelles · DIE Drachenhalle</title>
+  <SocialMeta title={`Aktuelles · DIE Drachenhalle`} description="Neuigkeiten und die letzten Änderungen aus der öffentlichen DIE Drachenhalle." />
   </head>
   <body>
     <div class="page-shell">
@@ -70,6 +72,7 @@ const relativeLabel = (date) => {
               Der gemeinsame Ort für Neuigkeiten, Termine, Wissen und die Geschichten unserer Allianz.
             </p>
           </div>
+          <nav class="home-shortcuts" aria-label="Schnellzugriff"><a href="/drachenhalle/termine/">Termine</a><a href="/drachenhalle/tools/">Rechner</a><a href="/drachenhalle/docs/dein-einstieg-bei-uns/">Dein Einstieg</a></nav>
           <figure class="welcome-visual">
             <img
               src="/drachenhalle/brand/die-drachenhalle-willkommen.webp"

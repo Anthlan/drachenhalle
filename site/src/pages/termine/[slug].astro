@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
@@ -48,6 +49,7 @@ const nextEventDateLabel = nextEvent
     <meta name="description" content={event.summary} />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>{event.title} · Termine · DIE Drachenhalle</title>
+  <SocialMeta title={`${event.title} · Termine · DIE Drachenhalle`} description={event.summary} />
   </head>
   <body>
     <div class="page-shell">

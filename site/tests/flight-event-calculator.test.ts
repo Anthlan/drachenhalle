@@ -10,6 +10,7 @@ import {
   expectedVoucherGap,
   optimizeHybridPurchase,
   optimizePackagePurchase,
+  observedVoucherProjection,
   probabilityToReach,
   recommendF2PShopping,
   remainingPurchaseWindows,
@@ -29,6 +30,15 @@ test("plant in beiden Ziehungsmodi ausschließlich mit dem garantierten Ertrag",
   assert.equal(bundled.guaranteed, single.guaranteed);
   assert.equal(bundled.standardDeviation, 0);
   assert.deepEqual(bundled, single);
+});
+
+test("zeigt die beiden Praxismessungen getrennt von der sicheren Planung", () => {
+  const single = observedVoucherProjection(50, 1);
+  const bundled = observedVoucherProjection(279, 5);
+  assert.ok(Math.abs(single.vouchers - 460) < 0.001);
+  assert.equal(single.vouchersPerCoin, 9.2);
+  assert.equal(Math.round(bundled.vouchers), 1500);
+  assert.ok(bundled.vouchersPerCoin < single.vouchersPerCoin);
 });
 
 test("ignoriert den Versorgungsabwurf und nutzt nur dokumentierte Gutschein-Ausgänge", () => {
@@ -123,10 +133,9 @@ test("plant eine gewichtete Einkaufsliste ohne Echtgeld innerhalb des Gutscheinr
   assert.deepEqual(
     plan.recommendations.map((item) => [item.id, item.quantity]),
     [
-      ["ur-splitter", 4],
       ["deluxe-truhe", 4],
-      ["ur-truhe", 2],
-      ["puzzleteil", 14],
+      ["ur-splitter", 4],
+      ["metallspulen", 208],
     ],
   );
 });
@@ -152,8 +161,7 @@ test("bietet getrennte Empfehlungen für Helden und Ausbau", () => {
       ["ur-splitter", 4],
       ["deluxe-truhe", 4],
       ["ur-truhe", 2],
-      ["event-zufallstruhe", 2],
-      ["puzzleteil", 2],
+      ["handbuecher", 58],
     ],
   );
 

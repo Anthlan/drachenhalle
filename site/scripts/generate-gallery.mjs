@@ -67,6 +67,7 @@ const transliterations = new Map([
   ["Buero", "Büro"],
   ["Gaertner", "Gärtner"],
   ["Waechter", "Wächter"],
+  ["Haende", "Hände"],
   ["Jaeger", "Jäger"],
   ["Aerger", "Ärger"],
   ["Faehigkeiten", "Fähigkeiten"],
@@ -193,9 +194,13 @@ async function loadSetIndex({ indexFile, codePrefix, sourceDirectory, seriesName
   };
 }
 
-function humanize(value) {
+function humanize(value, legacy = false) {
+  if (!legacy && value === "Waechter130 VierHaendeEinSieg") return "Wächter 130 – Vier Hände, ein Sieg";
   let normalized = value;
-  for (const [source, replacement] of transliterations) normalized = normalized.replaceAll(source, replacement);
+  for (const [source, replacement] of transliterations) {
+    if (legacy && source === "Haende") continue;
+    normalized = normalized.replaceAll(source, replacement);
+  }
 
   return normalized
     .replaceAll("_", " ")
@@ -258,7 +263,10 @@ function parseMetadata(sourcePath, defaultCategory) {
 
   if (version) title += ` · Version ${version}`;
 
-  return { category, date, people, time, title, version };
+  const legacyTitle = ["Avatar", "Charaktermodell"].includes(category)
+    ? title
+    : humanize(tokens.join(" ") || baseName, true) + (version ? ` · Version ${version}` : "");
+  return { category, date, people, time, title, legacyTitle, version };
 }
 
 async function loadPreviousItems() {
@@ -405,7 +413,7 @@ const items = await mapWithConcurrency(sources, 3, async ({ absolutePath, catego
   const seriesStatus = avatarSetStatus ?? modelSetStatus;
   const seriesType = avatarSet ? "Avatar-Serie" : modelSet ? "Modell-Serie" : null;
   const hash = crypto.createHash("sha1").update(relativePath).digest("hex").slice(0, 8);
-  const id = `${slugify(metadata.title) || "bild"}-${hash}`;
+  const id = `${slugify(metadata.legacyTitle) || "bild"}-${hash}`;
   const thumbnailName = `${id}-thumb.webp`;
   const webName = `${id}-web.webp`;
   const thumbnailPath = path.join(outputDirectory, thumbnailName);

@@ -10,27 +10,72 @@
       {left:61, pose:1, text:'Beim 140er brauchten Drachenherz und ich zwei Anläufe. Danach wollten wir wissen, was noch geht.'},
       {left:30, pose:0, text:'Nach 40 % beim ersten Angriff auf den 150er rechneten wir mit drei Runden. Dank unserer Mitstreiter reichten zwei. Boshos setzte den letzten Schlag.'},
       {left:66, pose:2, text:'Neue T9 feiern und einen 160er legen – das war unser Plan. Drachenherz und ich gingen voran; Killergruppe brachte die letzten Reste zu Fall. Ein teurer, denkwürdiger Sieg.'},
-      {left:42, pose:1, text:'Die Ehrenplätze ab Stufe 170 sind noch leer. Unsere nächste Geschichte wartet schon.'}
+      {left:42, pose:1, text:'Die Ehrenplätze ab Stufe 170 sind noch leer. Unsere nächste Geschichte wartet schon.'},
+      {left:28, pose:0, text:'In unserer Legende zum 100er wackelt der Stein unter dem Banner. Zum Glück hält jemand die Stange fest. So fängt Gemeinschaft an.'},
+      {left:57, pose:1, text:'Die Laterne im Nebel gehört zur erfundenen Geschichte des 110ers. Der Gedanke dahinter gefällt mir: Niemand bleibt allein zurück.'},
+      {left:35, pose:2, text:'Die Legende vom 120er erinnert an die Schildträger. Nicht jeder Held setzt den letzten Schlag. Manche verschaffen den anderen erst die Zeit dafür.'},
+      {left:64, pose:0, text:'Vier Hände richten in unserer 130er-Legende das Banner auf. Wer den entscheidenden Treffer setzte? Für den gemeinsamen Sieg spielt das keine Rolle.'},
+      {left:24, pose:2, text:'Der 140er war eine fixe Idee von Drachenherz und mir. Nach 60 % Schaden im ersten Anlauf wirkte die nächste Stufe plötzlich erreichbar.'},
+      {left:60, pose:0, text:'Vom 140er direkt zum 150er. Manchmal ist ein Erfolg der beste Weg, uns auf die nächste verrückte Idee zu bringen.'},
+      {left:39, pose:1, text:'40 % beim ersten 150er-Angriff. Da hatten wir uns auf viele Verluste eingestellt. Dass schon der zweite Versuch reichte, verdanken wir auch unseren Unterstützern.'},
+      {left:68, pose:2, text:'ButterflySong kam zur ersten Jagd auf den 160er mit. Die Arme wusste wohl noch nicht, auf was für eine Feier sie sich da einließ.'},
+      {left:32, pose:1, text:'Beim zweiten 160er-Angriff stand der Wächter noch mit 60 % Restleben. Hulkster666, Markus78 und Killergruppe kamen dazu. Leicht wurde es trotzdem nicht.'},
+      {left:55, pose:2, text:'Drachenherz brachte das dritte Team beim 160er fast zu Fall. Fast war noch kein Sieg. Killergruppe erledigte schließlich die Reste.'},
+      {left:26, pose:0, text:'Ich wollte meine neuen T9 feiern. Aus der Feier wurde eine Schlacht, die wir so schnell nicht vergessen. Der 160er hat seinen Platz hier verdient.'},
+      {left:62, pose:1, text:'Die Namen der frühen Helden kennen wir nicht mehr. Ihre Siege sind bestätigt; die Geschichten dazu erzählen wir als Legenden.'},
+      {left:44, pose:0, text:'Sieben Trophäen, vier freie Plätze. Bei jeder neuen Stufe wird aus einem leeren Schild ein Stück Allianzgeschichte.'}
     ];
     const toggle = document.querySelector<HTMLButtonElement>('[data-guide-pause]')!;
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-    let enabled = true, index = 0, phase = 'waiting', remaining = 2500, lastTime = 0;
+    let enabled = true, phase = 'waiting', remaining = 2500, lastTime = 0;
+    let queue: number[] = [], previous = -1, previousPose = -1, previousLeft = -100;
+    const countKey = 'die-hall-anthlan-appearances-v1';
+    let appearanceCount = 0;
+    try {
+      const saved = Number(sessionStorage.getItem(countKey));
+      if (Number.isSafeInteger(saved) && saved >= 0) appearanceCount = saved;
+    } catch { /* The current page still counts when storage is unavailable. */ }
+    function nextAppearance() {
+      appearanceCount++;
+      try { sessionStorage.setItem(countKey, String(appearanceCount)); } catch {}
+      if (appearanceCount % 30 === 0) {
+        previousPose = 5; previousLeft = previousLeft < 45 ? 62 : 28;
+        return {left:previousLeft, pose:5, text:'Psst. Dieser Drachenkeks ist meine geheime Trophäe. Die Krone? Rein zeremoniell. Drachenherz muss davon nichts erfahren.'};
+      }
+      // Each comment appears once per shuffled round. Avoid repeating a pose
+      // or nearby position when another entry is available.
+      if (!queue.length) {
+        queue = appearances.map((_, index) => index);
+        for (let i = queue.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [queue[i], queue[j]] = [queue[j], queue[i]];
+        }
+      }
+      let candidate = queue.findIndex(index => index !== previous && Math.abs(appearances[index].left - previousLeft) >= 15);
+      if (candidate < 0) candidate = queue.findIndex(index => index !== previous);
+      const index = queue.splice(Math.max(0, candidate), 1)[0];
+      const poses = [0, 1, 2, 3, 4].filter(pose => pose !== previousPose);
+      const entry = {...appearances[index], pose:poses[Math.floor(Math.random() * poses.length)]};
+      previous = index; previousPose = entry.pose; previousLeft = entry.left;
+      return entry;
+    }
     function dismiss() {
       guide!.classList.remove('visible');
       phase = 'fading'; remaining = reduced.matches ? 0 : 900;
       guide!.inert = true;
     }
     function appear() {
-      const entry = appearances[index];
-      index = (index + 1) % appearances.length;
+      const entry = nextAppearance();
       guide!.style.left = `${entry.left}%`;
-      guide!.querySelector<HTMLElement>('.guide-body')!.style.backgroundPosition = `${entry.pose * 50}% 0`;
+      const body = guide!.querySelector<HTMLElement>('.guide-body')!;
+      body.classList.toggle('extra-poses', entry.pose >= 3);
+      body.style.backgroundPosition = `${(entry.pose % 3) * 50}% 0`;
       guide!.querySelector('.guide-caption span')!.textContent = entry.text;
       guide!.hidden = false; guide!.inert = false;
       requestAnimationFrame(() => { if (enabled && phase === 'showing') guide!.classList.add('visible'); });
-      phase = 'showing'; remaining = 18000;
+      phase = 'showing'; remaining = Math.max(14000, Math.min(23000, entry.text.length * 90));
     }
-    guide.querySelector('button')!.addEventListener('click', () => { toggle.focus(); dismiss(); });
+    guide.querySelector('button')!.addEventListener('click', () => { toggle.focus({preventScroll:true}); dismiss(); });
     toggle.addEventListener('click', () => {
       enabled = !enabled;
       toggle.setAttribute('aria-pressed', String(!enabled));
@@ -48,7 +93,7 @@
       if (remaining > 0) return;
       if (phase === 'waiting') appear();
       else if (phase === 'showing') dismiss();
-      else { guide!.hidden = true; phase = 'waiting'; remaining = 12000; }
+      else { guide!.hidden = true; phase = 'waiting'; remaining = 10000 + Math.random() * 10000; }
     }, 100);
     document.addEventListener('astro:before-swap', () => clearInterval(timer), {once:true});
   }
@@ -57,6 +102,7 @@
   .hall-guide{position:absolute;left:22%;bottom:12%;width:10.3333%;height:31%;z-index:3;opacity:0;transition:opacity .9s ease;pointer-events:none}
   .hall-guide[hidden]{display:none}.hall-guide.visible{opacity:1;pointer-events:auto}
   .guide-body{position:absolute;inset:0;background:url('/drachenhalle/brand/hall-anthlan-poses.webp') 0 0/300% 100% no-repeat;filter:drop-shadow(0 3px 3px #0006)}
+  .guide-body.extra-poses{background-image:url('/drachenhalle/brand/hall-anthlan-poses-extra.webp')}
   .guide-shadow{position:absolute;bottom:0;left:14%;width:72%;height:6%;background:radial-gradient(ellipse,#05080b90,transparent 70%)}
   .guide-caption{position:absolute;bottom:102%;left:50%;transform:translateX(-50%);width:250px;background:linear-gradient(135deg,#222c3af5,#121b28f5);border:1px solid #be955b;border-radius:12px;padding:.9rem 1.6rem .9rem 1rem;box-shadow:0 5px 20px #0008;color:#eee5d7;font-size:.85rem;line-height:1.55}
   .guide-caption::after{content:'';position:absolute;top:100%;left:48%;border:8px solid transparent;border-top-color:#be955b}

@@ -1,4 +1,5 @@
 ---
+import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
@@ -25,6 +26,7 @@ const calculatorData = JSON.stringify({ raidEvents, capitalEvents }).replaceAll(
     />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Schildplaner · Tools · DIE Drachenhalle</title>
+  <SocialMeta title={`Schildplaner · Tools · DIE Drachenhalle`} description="Plane deine Friedensschilde für den nächsten Raubzug und lade passende Kalendererinnerungen herunter." />
   </head>
   <body>
     <div class="page-shell">
