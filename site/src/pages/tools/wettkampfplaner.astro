@@ -4,68 +4,151 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import { competitionDays, actionBlock, competitionMilestones } from "../../data/competition";
 import "../../styles/global.css";
-const fmt = (n: number) => n.toLocaleString("de-DE", {maximumFractionDigits: 6});
+
+const fmt = (n: number) => n.toLocaleString("de-DE", { maximumFractionDigits: 6 });
 ---
-<!doctype html><html lang="de"><head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
-  <title>Allianz-Wettkampf-Punkteplaner · DIE Drachenhalle</title>
-  <SocialMeta title="Allianz-Wettkampf-Punkteplaner" description="Die fünf Sammelmottos: Vorräte, Punkte und Einsatzbereitschaft für deine Woche planen." />
-  <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
-</head><body><div class="page-shell"><SiteHeader active="tools" />
-<main class="tool-main" id="main-content">
-  <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/tools/">Tools</a><span>/</span><span>Wettkampfplaner</span></nav>
-  <header class="tool-hero"><p class="eyebrow">Deine Vorräte zur richtigen Zeit</p><h1>Was plane ich für welchen Tag?</h1><p>Wähle ein Tagesmotto und trage ein, was du dafür einsetzen möchtest. Der Planer addiert deine Punkte und zeigt, welche Einsatzbereitschaft du dazu prüfen solltest.</p></header>
-  <div class="week-strip" aria-label="Die Wettkampfwoche">{competitionDays.map(day => <div><strong>{day.day}</strong><span>{day.title}</span><small>{day.victory} Siegpunkt{day.victory > 1 ? "e" : ""}</small></div>)}</div>
-  <p>Montag bis Freitag sind unsere fünf Sammelphasen. Samstag folgt der Feindangriff. Die kleinen Siegpunkte entscheiden die Wochenwertung; deine Aktionspunkte zählen für Tageswertung und Belohnungen.</p>
-  <form data-competition-form>
-    <label class="day-select">1 · Für welchen Tag planst du?<select name="day">{competitionDays.map(day => <option value={day.id}>{day.day} · {day.title}</option>)}</select></label>
-    {competitionDays.map((day,index) => <section data-day={day.id} hidden={index !== 0}>
-      <h2>{day.day} · {day.title}</h2><p class="recommendation">{day.save}</p>
-      <div class="targets"><label>Bereits erreichte Punkte<input name={`${day.id}-current`} type="number" min="0" max="1000000000000" step="1" value="0" /></label>
-        <label>Belohnungsziel auswählen<select name={`${day.id}-goal`}>
-          <option value="next">Nächster Meilenstein nach aktuellem Punktestand</option>
-          {competitionMilestones.map((points,i) => <option value={String(points)}>Meilenstein {i+1} · {fmt(points)} Punkte</option>)}
-          <option value="custom">Eigenes Ziel</option>
-        </select></label>
-        <label>Dein Tagesziel<input name={`${day.id}-target`} type="number" min="0" max="1000000000000" step="1" placeholder="Eigenes Ziel oder gewählter Meilenstein" /></label>
-      </div>
-      <p>Die Zielauswahl übernimmt die neun Schwellen der bereitgestellten Spielbilder. Falls eure Anzeige abweicht oder eine Truhe noch gesperrt ist, wählt ein eigenes erreichbares Ziel. Die Rechnung sagt nichts darüber aus, ob eine Belohnung bereits abgeholt wurde.</p>
-      <h3>2 · Was möchtest du einsetzen?</h3><p>Nur deine geplanten Mengen eintragen. Beschleuniger in Minuten (1 Stunde = 60 Minuten). Für Mengenwertungen werden vollständige Blöcke gezählt.</p>
-      <div class="table-scroll"><table><thead><tr><th>Aktion / Vorrat</th><th>Geplante Menge</th><th>Punkte laut Anzeige</th><th>Geplante Punkte</th></tr></thead><tbody>{day.actions.map(action => <tr>
-        <th scope="row">{action.label}<small>{action.unit}</small>{action.note && <small class="action-note">{action.note}</small>}</th>
-        <td><input aria-label={`${day.day}: ${action.label} – Menge`} name={`${day.id}-${action.id}-quantity`} data-quantity type="number" min="0" max="1000000000000" step="1" value="0" /></td>
-        <td><input aria-label={`${day.day}: ${action.label} – Punkte je Wertungsblock`} name={`${day.id}-${action.id}-rate`} type="number" min="0" max="1000000000" step="any" value={action.points * actionBlock(action)} /><small>je {actionBlock(action)} {action.unit}; Screenshot: {fmt(action.points * actionBlock(action))}</small></td>
-        <td data-points={`${day.id}-${action.id}`}>0</td>
-      </tr>)}</tbody></table></div>
-      <p class="source-note">Stand 06.10.2026: Angezeigte Werte des bereitgestellten Screenshot-Kontos. Übernimm abweichende Werte aus deiner Anzeige. Die grünen Zahlen können persönliche Boni enthalten; es wird kein zusätzlicher Bonus automatisch aufgeschlagen.</p>
-      <h3>3 · Mit Einsatzbereitschaft kombinieren</h3><p>{day.readiness}</p><p>Die Zuordnung ist eine Prüfhilfe. Aufgaben und Zeiten der Einsatzbereitschaft sind im Upload nicht belegt. Vor dem Einsatz kontrollieren: Zählt dieselbe Aktion jetzt in beiden Events, und läuft der Wettkampftag noch?</p>
-    </section>)}
-    <div class="buttons"><button type="submit">Tagesplan prüfen</button><button type="button" data-clear-day>Geplante Mengen dieses Tages leeren</button></div>
-    <section class="plan-output" aria-live="polite" aria-label="Dein Tagesplan" data-competition-output></section>
-    <section aria-label="Belohnungsmeilensteine"><h2>Deine neun Belohnungsmeilensteine</h2><p>Erreicht = aktueller Punktestand. Mit Plan abgedeckt = aktueller Stand plus geplante Aktionen.</p><ol class="milestones" data-milestones></ol></section>
-    <details><summary>Radar sparen: Platz vor der nächsten Auffüllung berechnen</summary>
-      <p>Radar zählt Montag, Mittwoch und Freitag. Dienstag und Donnerstag sind deshalb Vorbereitungstage; am Wochenende kannst du Montag vorbereiten. Nicht unbegrenzt halten: Ablauf und freien Speicher prüfen.</p>
-      <div class="targets"><label>Gespeicherte Radarquests<input name="radar" type="number" min="0" max="10000" step="1" /></label><label>Dein Speicherlimit<input name="cap" type="number" min="1" max="10000" step="1" /></label><label>Neue Quests bei der nächsten Auffüllung<input name="arrivals" type="number" min="0" max="10000" step="1" /></label></div>
-      <button type="button" data-radar-calculate>Radarplatz berechnen</button><p data-radar-result aria-live="polite"></p>
-      <p>Erfasst genau eine Auffüllung. Ob Erledigen oder Abholen den Speicher freigibt und die Wertung auslöst, ist noch zu prüfen.</p>
-    </details>
-  </form>
-  <p>Deine Pläne und angepassten Werte werden je Wochentag auf diesem Gerät gespeichert. Die Rechnung zeigt Punktepotenzial; sie verbraucht keine Vorräte und legt keine automatische Einsatzreihenfolge fest.</p>
-  <p><a href="/drachenhalle/docs/tipp-14-allianz-wettkampf-punkte-planen/">Wissensartikel: Unsere Wettkampfwoche und Radarplanung →</a></p>
-  <noscript>Für den interaktiven Planer bitte JavaScript aktivieren. Alle Tage und Wertungen findest du im Wissensartikel.</noscript>
-</main><SiteFooter /></div><script>import { initializeCompetitionCalculator } from "../../scripts/competition-calculator"; initializeCompetitionCalculator();</script></body></html>
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Plane Vorräte, Punkte und Einsatzbereitschaft für die sechs Tage des Allianz-Wettkampfs." />
+    <title>Allianz-Wettkampf-Punkteplaner · DIE Drachenhalle</title>
+    <SocialMeta title="Allianz-Wettkampf-Punkteplaner" description="Die fünf Sammelmottos: Vorräte, Punkte und Einsatzbereitschaft für deine Woche planen." />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="tools" />
+      <main class="tool-main" id="main-content">
+        <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/tools/">Tools</a><span aria-hidden="true">/</span><span>Wettkampfplaner</span>
+        </nav>
+
+        <header class="tool-hero competition-tool-hero">
+          <div class="competition-hero-copy">
+            <p class="eyebrow">Deine Vorräte zur richtigen Zeit</p>
+            <h1>Wettkampfplaner</h1>
+            <p>Wähle ein Tagesmotto und trage ein, was du dafür einsetzen möchtest. Der Planer addiert deine Punkte und zeigt, welche Einsatzbereitschaft du dazu prüfen solltest.</p>
+          </div>
+          <div class="competition-hero-flow" aria-label="Vom Wettkampftag zum fertigen Tagesplan">
+            <div><span>01</span><strong>Tag</strong><small>Motto und Ziel wählen</small></div><i aria-hidden="true">→</i>
+            <div><span>02</span><strong>Vorräte</strong><small>geplanten Einsatz erfassen</small></div><i aria-hidden="true">→</i>
+            <div class="is-result"><span>03</span><strong>Tagesplan</strong><small>Punkte und Lücke prüfen</small></div>
+          </div>
+        </header>
+
+        <section class="competition-week" aria-labelledby="competition-week-title">
+          <div class="competition-week-heading">
+            <div><p class="eyebrow">Woche im Blick</p><h2 id="competition-week-title">Sechs Tage, sechs Schwerpunkte</h2></div>
+            <p>Die kleinen Siegpunkte entscheiden die Wochenwertung. Deine Aktionspunkte zählen für Tageswertung und Belohnungen.</p>
+          </div>
+          <div class="week-strip" aria-label="Die Wettkampfwoche">
+            {competitionDays.map((day, index) => (
+              <div><span>{String(index + 1).padStart(2, "0")}</span><strong>{day.day}</strong><small>{day.title}</small><b>{day.victory} Siegpunkt{day.victory > 1 ? "e" : ""}</b></div>
+            ))}
+          </div>
+          <p class="competition-week-note">Montag bis Freitag sind unsere fünf Sammelphasen. Samstag folgt der Feindangriff.</p>
+        </section>
+
+        <form class="competition-form" data-competition-form>
+          <div class="competition-form-intro">
+            <div><p class="eyebrow">Schritt 1</p><h2 id="competition-form-title">Wettkampftag festlegen</h2><p>Starte mit dem Tag, für den du deine Vorräte und dein Belohnungsziel planen möchtest.</p></div>
+            <label class="day-select"><span>Für welchen Tag planst du?</span><select name="day">{competitionDays.map(day => <option value={day.id}>{day.day} · {day.title}</option>)}</select></label>
+          </div>
+
+          {competitionDays.map((day, index) => (
+            <section class="competition-day" data-day={day.id} hidden={index !== 0}>
+              <div class="competition-day-heading">
+                <div><p class="eyebrow">Dein Tagesplan</p><h2>{day.day} · {day.title}</h2></div>
+                <p class="recommendation">{day.save}</p>
+              </div>
+
+              <div class="competition-section">
+                <div class="competition-section-heading"><span>01</span><div><h3>Punktestand und Ziel</h3><p>Wähle eine der neun Schwellen oder trage ein eigenes erreichbares Ziel ein.</p></div></div>
+                <div class="targets">
+                  <label><span>Bereits erreichte Punkte</span><input name={`${day.id}-current`} type="number" min="0" max="1000000000000" step="1" value="0" /></label>
+                  <label><span>Belohnungsziel auswählen</span><select name={`${day.id}-goal`}>
+                    <option value="next">Nächster Meilenstein nach aktuellem Punktestand</option>
+                    {competitionMilestones.map((points, i) => <option value={String(points)}>Meilenstein {i + 1} · {fmt(points)} Punkte</option>)}
+                    <option value="custom">Eigenes Ziel</option>
+                  </select></label>
+                  <label><span>Dein Tagesziel</span><input name={`${day.id}-target`} type="number" min="0" max="1000000000000" step="1" placeholder="Eigenes Ziel oder gewählter Meilenstein" /></label>
+                </div>
+                <p class="competition-field-help">Die Zielauswahl übernimmt die neun Schwellen der bereitgestellten Spielbilder. Falls eure Anzeige abweicht oder eine Truhe noch gesperrt ist, wählt ein eigenes erreichbares Ziel. Die Rechnung sagt nichts darüber aus, ob eine Belohnung bereits abgeholt wurde.</p>
+              </div>
+
+              <div class="competition-section">
+                <div class="competition-section-heading"><span>02</span><div><h3>Geplanten Einsatz eintragen</h3><p>Nur deine geplanten Mengen eintragen. Beschleuniger in Minuten (1 Stunde = 60 Minuten). Vollständige Wertungsblöcke werden automatisch gezählt.</p></div></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>Aktion / Vorrat</th><th>Geplante Menge</th><th>Punkte laut Anzeige</th><th>Geplante Punkte</th></tr></thead>
+                  <tbody>{day.actions.map(action => <tr>
+                    <th scope="row"><strong>{action.label}</strong><small>{action.unit}</small>{action.note && <small class="action-note">{action.note}</small>}</th>
+                    <td><input aria-label={`${day.day}: ${action.label} – Menge`} name={`${day.id}-${action.id}-quantity`} data-quantity type="number" min="0" max="1000000000000" step="1" value="0" /></td>
+                    <td><input aria-label={`${day.day}: ${action.label} – Punkte je Wertungsblock`} name={`${day.id}-${action.id}-rate`} type="number" min="0" max="1000000000" step="any" value={action.points * actionBlock(action)} /><small>je {actionBlock(action)} {action.unit}; Screenshot: {fmt(action.points * actionBlock(action))}</small></td>
+                    <td class="competition-points" data-points={`${day.id}-${action.id}`}>0</td>
+                  </tr>)}</tbody>
+                </table></div>
+                <p class="source-note">Stand 06.10.2026: Angezeigte Werte des bereitgestellten Screenshot-Kontos. Übernimm abweichende Werte aus deiner Anzeige. Die grünen Zahlen können persönliche Boni enthalten; es wird kein zusätzlicher Bonus automatisch aufgeschlagen.</p>
+              </div>
+
+              <div class="competition-section competition-readiness-section">
+                <div class="competition-section-heading"><span>03</span><div><h3>Mit Einsatzbereitschaft kombinieren</h3><p>{day.readiness}</p></div></div>
+                <p class="competition-field-help">Die Zuordnung ist eine Prüfhilfe. Aufgaben und Zeiten der Einsatzbereitschaft sind im Upload nicht belegt. Vor dem Einsatz kontrollieren: Zählt dieselbe Aktion jetzt in beiden Events, und läuft der Wettkampftag noch?</p>
+              </div>
+            </section>
+          ))}
+
+          <div class="competition-buttons">
+            <button class="tool-primary-button" type="submit">Tagesplan prüfen</button>
+            <button class="competition-secondary-button" type="button" data-clear-day>Geplante Mengen dieses Tages leeren</button>
+          </div>
+
+          <div class="competition-result-grid">
+            <section class="plan-output" aria-live="polite" aria-label="Dein Tagesplan" data-competition-output></section>
+            <section class="milestone-panel" aria-label="Belohnungsmeilensteine">
+              <p class="eyebrow">Fortschritt</p><h2>Deine neun Belohnungsmeilensteine</h2><p>Erreicht = aktueller Punktestand. Mit Plan abgedeckt = aktueller Stand plus geplante Aktionen.</p>
+              <ol class="milestones" data-milestones></ol>
+            </section>
+          </div>
+
+          <details class="radar-planner"><summary>Radar sparen: Platz vor der nächsten Auffüllung berechnen</summary>
+            <div class="radar-planner-content">
+              <p>Radar zählt Montag, Mittwoch und Freitag. Dienstag und Donnerstag sind deshalb Vorbereitungstage; am Wochenende kannst du Montag vorbereiten. Nicht unbegrenzt halten: Ablauf und freien Speicher prüfen.</p>
+              <div class="targets"><label><span>Gespeicherte Radarquests</span><input name="radar" type="number" min="0" max="10000" step="1" /></label><label><span>Dein Speicherlimit</span><input name="cap" type="number" min="1" max="10000" step="1" /></label><label><span>Neue Quests bei der nächsten Auffüllung</span><input name="arrivals" type="number" min="0" max="10000" step="1" /></label></div>
+              <button class="competition-secondary-button" type="button" data-radar-calculate>Radarplatz berechnen</button><p class="radar-result" data-radar-result aria-live="polite"></p>
+              <p class="competition-field-help">Erfasst genau eine Auffüllung. Ob Erledigen oder Abholen den Speicher freigibt und die Wertung auslöst, ist noch zu prüfen.</p>
+            </div>
+          </details>
+        </form>
+
+        <aside class="competition-footer-note"><p>Deine Pläne und angepassten Werte werden je Wochentag auf diesem Gerät gespeichert. Die Rechnung zeigt Punktepotenzial; sie verbraucht keine Vorräte und legt keine automatische Einsatzreihenfolge fest.</p><a href="/drachenhalle/docs/tipp-14-allianz-wettkampf-punkte-planen/">Wissensartikel: Unsere Wettkampfwoche und Radarplanung →</a></aside>
+        <noscript>Für den interaktiven Planer bitte JavaScript aktivieren. Alle Tage und Wertungen findest du im Wissensartikel.</noscript>
+      </main>
+      <SiteFooter />
+    </div>
+    <script>import { initializeCompetitionCalculator } from "../../scripts/competition-calculator"; initializeCompetitionCalculator();</script>
+  </body>
+</html>
+
 <style>
-  .week-strip { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; margin: 2rem 0; }
-  .week-strip div, .recommendation { border: 1px solid #786443; border-radius: 12px; padding: 1rem; }
-  .week-strip span, .week-strip small, th small, td small { display:block; margin-top:.35rem; }
-  .week-strip strong { color:#e6bd72; } small { font-weight:400; font-size:.8rem; } .action-note { opacity:.8; }
-  form { display:grid; gap:1.5rem; margin:2rem 0; min-width:0; } form > section { min-width:0; } [hidden] { display:none !important; }
-  label { display:grid; gap:.5rem; } .targets { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1rem 0; }
-  input,select { width:100%; min-width:0; padding:.75rem; border-radius:8px; border:1px solid #887453; background:#181c20; color:#fff; font:inherit; }
-  .day-select { max-width:36rem; font-weight:700; } .table-scroll { overflow-x:auto; max-width:100%; }
-  table { width:100%; min-width:680px; border-collapse:collapse; } th,td { padding:.8rem; text-align:left; border-bottom:1px solid #524735; } th { width:43%; } td input { min-width:105px; }
-  button { padding:.8rem 1rem; border-radius:10px; border:1px solid #887453; background:#e6bd72; color:#181c20; font:inherit; font-weight:700; cursor:pointer; } .buttons { display:flex; gap:.75rem; flex-wrap:wrap; }
-  .plan-output { padding:1.5rem; border:1px solid #e6bd72; border-radius:16px; } details { border:1px solid #786443; border-radius:12px; padding:1rem; } summary { cursor:pointer; font-weight:700; }
-  .milestones { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; padding:0; list-style:none; } .milestones :global(li) { border:1px solid #786443; border-radius:12px; padding:1rem; } .milestones :global(li[data-status="reached"]) { border-color:#7cad79; } .milestones :global(li[data-status="planned"]) { border-color:#e6bd72; } .milestones :global(strong),.milestones :global(span) { display:block; margin-bottom:.35rem; }
-  @media(max-width:640px) { .week-strip,.milestones { grid-template-columns:repeat(2,minmax(0,1fr)); } .targets { grid-template-columns:1fr; } }
+  .competition-tool-hero{grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:clamp(34px,5vw,72px);padding:clamp(34px,4.2vw,54px);background:linear-gradient(90deg,transparent 0 66%,rgba(227,173,78,.045) 66% 100%),radial-gradient(circle at 86% 18%,rgba(227,173,78,.16),transparent 18rem),linear-gradient(145deg,rgba(20,30,64,.94),rgba(7,11,27,.98))}
+  .competition-hero-copy{min-width:0}.competition-tool-hero .competition-hero-copy h1{margin:5px 0 18px;font-size:clamp(42px,5.4vw,68px)}.competition-tool-hero .competition-hero-copy>p:last-child{max-width:720px;margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+  .competition-hero-flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;gap:10px;padding:12px;border:1px solid var(--line-bright);background:rgba(5,9,22,.62);box-shadow:inset 0 0 30px rgba(227,173,78,.035)}
+  .competition-hero-flow>div{min-width:0;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:15px 12px;border:1px solid var(--line);background:rgba(15,22,47,.78)}.competition-hero-flow>div.is-result{border-color:rgba(227,173,78,.52);background:linear-gradient(145deg,rgba(227,173,78,.14),rgba(15,22,47,.9))}.competition-hero-flow span{color:var(--gold);font-size:9px;font-weight:900;letter-spacing:.13em}.competition-hero-flow strong{color:var(--ivory);font:500 16px/1.15 Georgia,"Times New Roman",serif}.competition-hero-flow small{color:var(--muted);font-size:9px;line-height:1.4}.competition-hero-flow>i{align-self:center;color:rgba(227,173,78,.66);font:normal 18px/1 Georgia,"Times New Roman",serif}
+  .competition-week,.competition-form,.competition-footer-note{border:1px solid var(--line);background:rgba(9,14,32,.84)}.competition-week{margin-top:24px;padding:28px 30px 30px}.competition-week-heading{display:grid;grid-template-columns:minmax(0,.8fr) minmax(360px,1.2fr);align-items:end;gap:28px}
+  .competition-week-heading h2,.competition-form-intro h2,.competition-day-heading h2,.milestone-panel h2{margin:5px 0 0;color:var(--ivory);font:500 28px/1.15 Georgia,"Times New Roman",serif}.competition-week-heading>p,.competition-form-intro>div>p:last-child,.competition-week-note,.competition-section-heading p,.milestone-panel>p:not(.eyebrow),.radar-planner-content>p,.competition-footer-note p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
+  .week-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:24px}.week-strip>div{min-width:0;min-height:128px;display:flex;flex-direction:column;padding:16px 14px;border:1px solid var(--line);background:rgba(17,25,54,.58)}.week-strip span{color:var(--gold);font-size:9px;font-weight:900;letter-spacing:.13em}.week-strip strong{margin-top:10px;color:var(--gold-pale);font:600 15px/1.15 Georgia,"Times New Roman",serif}.week-strip small{flex:1;margin-top:7px;color:var(--muted);font-size:10px;line-height:1.45}.week-strip b{margin-top:12px;color:var(--ivory);font-size:10px}.competition-week-note{margin-top:14px}
+  .competition-form{min-width:0;display:grid;margin-top:24px}.competition-form-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,.72fr);align-items:end;gap:30px;padding:28px 30px;border-bottom:1px solid var(--line);background:linear-gradient(145deg,rgba(227,173,78,.09),transparent 72%)}.competition-form label{min-width:0;display:grid;gap:9px}.competition-form label>span{color:var(--gold-pale);font-size:11px;font-weight:800}.competition-form input,.competition-form select{width:100%;min-width:0;min-height:46px;padding:10px 12px;border:1px solid var(--line-bright);border-radius:3px;background:rgba(5,9,22,.86);color:var(--ivory);font:inherit}.competition-form input:focus,.competition-form select:focus{border-color:var(--gold);outline:2px solid rgba(227,173,78,.14)}
+  .competition-day{min-width:0}.competition-day[hidden]{display:none!important}.competition-day-heading{display:grid;grid-template-columns:minmax(0,.9fr) minmax(380px,1.1fr);align-items:center;gap:30px;padding:28px 30px;border-bottom:1px solid var(--line)}.recommendation{margin:0;padding:16px 18px;border-left:3px solid var(--gold);background:rgba(227,173,78,.075);color:var(--gold-pale);font-size:12px;line-height:1.65}
+  .competition-section{padding:28px 30px 30px;border-bottom:1px solid var(--line)}.competition-section-heading{display:flex;align-items:flex-start;gap:14px}.competition-section-heading>span{width:34px;height:34px;display:grid;flex:0 0 34px;place-items:center;border:1px solid var(--line-bright);color:var(--gold);font-size:9px;font-weight:900;letter-spacing:.08em}.competition-section-heading h3{margin:0 0 5px;color:var(--ivory);font:500 21px/1.2 Georgia,"Times New Roman",serif}.targets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}.competition-field-help,.source-note{margin:16px 0 0;color:var(--muted);font-size:10px;line-height:1.6}
+  .table-scroll{max-width:100%;overflow-x:auto;margin-top:20px;border:1px solid var(--line)}table{width:100%;min-width:850px;border-collapse:collapse}th,td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}thead th{background:rgba(227,173,78,.075);color:var(--gold);font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even){background:rgba(17,25,54,.28)}tbody th{width:38%}tbody th strong{display:block;color:var(--ivory);font-size:12px}tbody th small,tbody td small{display:block;margin-top:5px;color:var(--muted);font-size:9px;font-weight:500;line-height:1.45}tbody th .action-note{color:rgba(190,194,209,.72)}tbody td input{min-width:110px}.competition-points{color:var(--gold-pale);font-weight:800;white-space:nowrap}.competition-readiness-section{border-bottom:0;background:rgba(17,25,54,.3)}
+  .competition-buttons{display:flex;flex-wrap:wrap;gap:12px;padding:24px 30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.competition-buttons .tool-primary-button{margin:0}.competition-secondary-button{min-height:46px;padding:10px 18px;border:1px solid var(--line-bright);border-radius:3px;background:rgba(17,25,54,.7);color:var(--gold-pale);font:inherit;font-size:11px;font-weight:800;cursor:pointer}.competition-secondary-button:hover,.competition-secondary-button:focus-visible{border-color:var(--gold);background:rgba(227,173,78,.12)}
+  .competition-result-grid{display:grid;grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr);align-items:start;gap:24px;padding:30px}.plan-output,.milestone-panel{min-width:0;border:1px solid var(--line-bright);background:rgba(5,9,22,.7)}.plan-output{padding:24px;border-top:3px solid var(--gold)}.plan-output:before{display:block;margin-bottom:12px;color:var(--gold);font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;content:"Dein Ergebnis"}.plan-output :global(p){margin:10px 0 0;color:var(--muted);font-size:12px;line-height:1.65}.plan-output :global(p:first-child){margin-top:0;color:var(--ivory);font:500 21px/1.45 Georgia,"Times New Roman",serif}.milestone-panel{padding:24px}.milestone-panel h2{font-size:24px}.milestone-panel>p:not(.eyebrow){margin-top:8px}
+  .milestones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:20px 0 0;padding:0;list-style:none}.milestones :global(li){min-width:0;padding:12px;border:1px solid var(--line);background:rgba(17,25,54,.45)}.milestones :global(li[data-status="reached"]){border-color:rgba(124,173,121,.7);background:rgba(124,173,121,.08)}.milestones :global(li[data-status="planned"]){border-color:rgba(227,173,78,.65);background:rgba(227,173,78,.08)}.milestones :global(strong),.milestones :global(span){display:block}.milestones :global(strong){color:var(--ivory);font-size:10px;line-height:1.4}.milestones :global(span){margin-top:5px;color:var(--muted);font-size:9px;line-height:1.45}
+  .radar-planner{margin:0 30px 30px;border:1px solid var(--line);background:rgba(17,25,54,.42)}.radar-planner summary{padding:18px 20px;color:var(--gold-pale);font:500 17px/1.3 Georgia,"Times New Roman",serif;cursor:pointer}.radar-planner-content{padding:0 20px 20px}.radar-planner-content .competition-secondary-button{margin-top:18px}.radar-result:not(:empty){margin:16px 0 0;padding:12px 14px;border-left:3px solid var(--gold);background:rgba(227,173,78,.075);color:var(--gold-pale);font-size:12px}
+  .competition-footer-note{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:24px;padding:22px 24px}.competition-footer-note p{max-width:820px}.competition-footer-note a{flex:0 0 auto;color:var(--gold-pale);font-size:12px;font-weight:800}
+  @media(max-width:1120px){.competition-tool-hero,.competition-week-heading,.competition-form-intro,.competition-day-heading{grid-template-columns:1fr}.week-strip{grid-template-columns:repeat(3,minmax(0,1fr))}.competition-result-grid{grid-template-columns:1fr}}
+  @media(max-width:760px){.competition-tool-hero{gap:24px;background:radial-gradient(circle at 86% 76%,rgba(227,173,78,.13),transparent 17rem),linear-gradient(145deg,rgba(20,30,64,.94),rgba(7,11,27,.98))}.competition-tool-hero .competition-hero-copy h1{font-size:clamp(32px,10vw,42px)}.competition-hero-flow{gap:6px;padding:8px}.competition-hero-flow>div{padding:12px 8px}.competition-hero-flow strong{font-size:14px}.competition-hero-flow small{font-size:8px}.competition-week,.competition-form-intro,.competition-day-heading,.competition-section,.competition-result-grid{padding:24px 20px}.week-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.targets,.milestones{grid-template-columns:1fr}.competition-buttons{padding:20px}.radar-planner{margin:0 20px 20px}.competition-footer-note{align-items:flex-start;flex-direction:column}}
 </style>
