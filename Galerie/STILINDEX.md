@@ -55,6 +55,13 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_10_02_2052_KleinerFluch_Somea_Skibbi.png](Chatbilder/2026_10_02_2052_KleinerFluch_Somea_Skibbi.png)
 - [2026_10_02_2052_LegDichNichtMitMirAn_RuhrpottBlach_Anthlan.png](Chatbilder/2026_10_02_2052_LegDichNichtMitMirAn_RuhrpottBlach_Anthlan.png)
 - [2026_10_02_2318_NieVerlassen_DaVinci1986_Drachenherz_Somea.png](Chatbilder/2026_10_02_2318_NieVerlassen_DaVinci1986_Drachenherz_Somea.png)
+- [2026_10_06_1021_AufZuNeuenHorizonten_Thor63.png](Chatbilder/2026_10_06_1021_AufZuNeuenHorizonten_Thor63.png)
+- [2026_10_06_1021_DiscounterLife_Anthlan_RuhrpottBlach.png](Chatbilder/2026_10_06_1021_DiscounterLife_Anthlan_RuhrpottBlach.png)
+- [2026_10_06_1021_Dropsmischung_Drachenherz_Somea_Streetjudge.png](Chatbilder/2026_10_06_1021_Dropsmischung_Drachenherz_Somea_Streetjudge.png)
+- [2026_10_06_1021_EinPlatzImWagon_Streetjudge_Drachenherz.png](Chatbilder/2026_10_06_1021_EinPlatzImWagon_Streetjudge_Drachenherz.png)
+- [2026_10_06_1021_Spezialmischung_Drachenherz_Anthlan_Somea.png](Chatbilder/2026_10_06_1021_Spezialmischung_Drachenherz_Anthlan_Somea.png)
+- [2026_10_06_1021_ZutrittNurNachFreigabe_Anthlan.png](Chatbilder/2026_10_06_1021_ZutrittNurNachFreigabe_Anthlan.png)
+- [2026_10_06_1022_Augenhoehe_Somea_Anthlan.png](Chatbilder/2026_10_06_1022_Augenhoehe_Somea_Anthlan.png)
 
 ## S2 – Fantasy-Comic & Infografik
 
@@ -106,6 +113,9 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_09_29_1215_DankeFuerDieGalerie_Anthlan.png](Chatbilder/2026_09_29_1215_DankeFuerDieGalerie_Anthlan.png)
 - [2026_09_29_1215_KaffeemaschineUndGruenePillen_Streetjudge_Drachenherz_Somea.png](Chatbilder/2026_09_29_1215_KaffeemaschineUndGruenePillen_Streetjudge_Drachenherz_Somea.png)
 - [2026_09_29_0446_BasisLevel26_Odin81.png](Chatbilder/2026_09_29_0446_BasisLevel26_Odin81.png)
+- [2026_10_06_1021_Level26_mysteryZ.png](Chatbilder/2026_10_06_1021_Level26_mysteryZ.png)
+- [2026_10_06_1022_SamstagsRitual_Somea.png](Chatbilder/2026_10_06_1022_SamstagsRitual_Somea.png)
+- [2026_10_06_1022_StarkeAllianzStattStillstand_Anthlan.png](Chatbilder/2026_10_06_1022_StarkeAllianzStattStillstand_Anthlan.png)
 
 ## S3 – Chibi-Fantasy
 
@@ -122,6 +132,18 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_09_25_2336_Natuerlich_Anthlan.png](Reaktionsbilder/2026_09_25_2336_Natuerlich_Anthlan.png)
 - [2026_09_25_2338_IchRegelDas_Anthlan.png](Reaktionsbilder/2026_09_25_2338_IchRegelDas_Anthlan.png)
 - [2026_09_25_2340_WieBitte_Anthlan.png](Reaktionsbilder/2026_09_25_2340_WieBitte_Anthlan.png)
+- [2026_10_06_2134_AllesKlar_Anthlan.png](Reaktionsbilder/2026_10_06_2134_AllesKlar_Anthlan.png)
+- [2026_10_06_2134_BinDabei_Anthlan.png](Reaktionsbilder/2026_10_06_2134_BinDabei_Anthlan.png)
+- [2026_10_06_2134_WarteKurz_Anthlan.png](Reaktionsbilder/2026_10_06_2134_WarteKurz_Anthlan.png)
+- [2026_10_06_2135_GuteIdee_Anthlan.png](Reaktionsbilder/2026_10_06_2135_GuteIdee_Anthlan.png)
+- [2026_10_06_2135_Danke_Anthlan.png](Reaktionsbilder/2026_10_06_2135_Danke_Anthlan.png)
+- [2026_10_06_2135_Respekt_Anthlan.png](Reaktionsbilder/2026_10_06_2135_Respekt_Anthlan.png)
+- [2026_10_06_2135_KeineAhnung_Anthlan.png](Reaktionsbilder/2026_10_06_2135_KeineAhnung_Anthlan.png)
+- [2026_10_06_2135_IchWarsNicht_Anthlan.png](Reaktionsbilder/2026_10_06_2135_IchWarsNicht_Anthlan.png)
+- [2026_10_06_2200_Ernsthaft_Anthlan.png](Reaktionsbilder/2026_10_06_2200_Ernsthaft_Anthlan.png)
+- [2026_10_06_2200_OhNichtSchonWieder_Anthlan.png](Reaktionsbilder/2026_10_06_2200_OhNichtSchonWieder_Anthlan.png)
+- [2026_10_06_2200_MussDasHeuteSein_Anthlan.png](Reaktionsbilder/2026_10_06_2200_MussDasHeuteSein_Anthlan.png)
+- [2026_10_06_2200_JaJaIstJaGut_Anthlan.png](Reaktionsbilder/2026_10_06_2200_JaJaIstJaGut_Anthlan.png)
 - [2026_09_28_0825_GutenMorgenAusDerSchweiz_DaVinci1986.png](Reaktionsbilder/2026_09_28_0825_GutenMorgenAusDerSchweiz_DaVinci1986.png)
 - [2026_09_28_1131_Passt_Somea.png](Reaktionsbilder/2026_09_28_1131_Passt_Somea.png)
 - [2026_09_28_1131_Stark_Somea.png](Reaktionsbilder/2026_09_28_1131_Stark_Somea.png)

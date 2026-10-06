@@ -1,6 +1,39 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { pointsPlan, radarPlan } from "../src/scripts/competition-calculator.ts";
+import { actionPoints, competitionDays, nextRadarDay, milestoneProgress, competitionMilestones } from "../src/data/competition.ts";
+
+test("Meilensteine unterscheiden erreichte Punkte von geplantem Einsatz", () => {
+  const progress = milestoneProgress(145000, 405000);
+  assert.equal(progress[1].status, "reached");
+  assert.equal(progress[2].status, "planned");
+  assert.equal(progress[3].status, "open");
+  assert.equal(progress[3].missing, 100000);
+  assert.equal(milestoneProgress(7190000, 0).every(m => m.status === "reached"), true);
+  assert.equal(competitionMilestones.length, 9);
+});
+
+test("Mittwoch kombiniert Radar, Forschungsdaten und Minuten ohne Einheiten zu vermischen", () => {
+  const actions = competitionDays[2].actions;
+  const points = (id: string, amount: number) => actionPoints(actions.find(a => a.id === id)!, amount);
+  assert.equal(points("radar", 20) + points("data", 1000) + points("research", 60), 1130560);
+  assert.equal(points("component-7", 1), 1701000);
+});
+test("Radarplanung überspringt Tage ohne Radarwertung einschließlich Wochenende", () => {
+  assert.deepEqual(nextRadarDay(0), {index:2, days:2});
+  assert.deepEqual(nextRadarDay(1), {index:2, days:1});
+  assert.deepEqual(nextRadarDay(4), {index:0, days:3});
+  assert.deepEqual(nextRadarDay(5), {index:0, days:2});
+  assert.deepEqual(nextRadarDay(6), {index:0, days:1});
+});
+test("Helden-EP und Energie verwenden vollständige belegte Wertungsblöcke", () => {
+  const xp = competitionDays[3].actions.find(a => a.id === "xp")!;
+  assert.equal(actionPoints(xp, 649), 0);
+  assert.equal(actionPoints(xp, 1300), 4);
+  assert.equal(actionPoints(xp, 1300, 4 / 650), 8);
+  const energy = competitionDays[1].actions.find(a => a.id === "build-power")!;
+  assert.equal(actionPoints(energy, 19), 231);
+});
 
 test("rundet den Bedarf auf und zeigt eine Bestandslücke", () => {
   assert.deepEqual(pointsPlan(10, 101, 20, 3), { missing: 91, needed: 5, use: 3, remaining: 0, shortfall: 31 });

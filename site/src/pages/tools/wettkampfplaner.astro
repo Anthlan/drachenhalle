@@ -2,63 +2,70 @@
 import SocialMeta from "../../components/SocialMeta.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import { competitionDays, actionBlock, competitionMilestones } from "../../data/competition";
 import "../../styles/global.css";
-const fields = [
-  ["current", "Aktuelle Wettkampfpunkte", "0"], ["target", "Dein Wettkampfziel", ""],
-  ["points", "Wettkampfpunkte je Einheit (inklusive deiner Boni)", ""], ["stock", "Verfügbare Einheiten dieser Aktion", ""],
-  ["readinessCurrent", "Aktuelle Einsatzbereitschaftspunkte", "0"], ["readinessTarget", "Ziel der Einsatzbereitschaft", "0"],
-  ["readinessPoints", "Einsatzbereitschaftspunkte je gleicher Einheit", "0"],
-];
-const actions = [["other", "Andere / noch nicht geprüft"], ["build", "Bauen"], ["research", "Forschen"], ["heroes", "Heldenentwicklung"], ["training", "Soldaten trainieren"], ["radar", "Radarquests"], ["stamina", "Ausdauer einsetzen"]];
+const fmt = (n: number) => n.toLocaleString("de-DE", {maximumFractionDigits: 6});
 ---
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
-    <title>Allianz-Wettkampf-Punkteplaner · DIE Drachenhalle</title>
-    <SocialMeta title="Allianz-Wettkampf-Punkteplaner" description="Punkteziele, Einsatzbereitschaft und Radarvorrat gemeinsam planen." />
-    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
-  </head>
-  <body><div class="page-shell"><SiteHeader active="tools" />
-    <main class="tool-main" id="main-content">
-      <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/tools/">Tools</a><span>/</span><span>Wettkampfplaner</span></nav>
-      <header class="tool-hero"><p class="eyebrow">Gezielt punkten und Vorräte halten</p><h1>Allianz-Wettkampf-Punkteplaner</h1><p>Wie viel fehlt zum Ziel? Welche Einsatzbereitschaft passt? Wie viele Radarquests kannst du sparen?</p></header>
-      <p>Übernimm Punkte und Ziele aus deinen aktuellen Eventanzeigen. Die Berechnung betrachtet eine Aktion mit gleicher Wertung je Einheit: zum Beispiel einen Forschungsdatenpunkt, eine Beschleunigerminute oder eine Radarquest. Unterschiedlich bewertete Quests bitte getrennt planen.</p>
-      <form data-competition-form>
-        <fieldset><legend>1 · Punkte und Vorrat</legend>
-          <label>Geplante Aktion<select name="action">{actions.map(([value, label]) => <option value={value}>{label}</option>)}</select></label>
-          {fields.slice(0,4).map(([name,label,value]) => <label>{label}<input name={name} type="number" min={name === "points" ? "1" : "0"} max="1000000000000" step="1" value={value} required /></label>)}
-        </fieldset>
-        <fieldset><legend>2 · Mit Einsatzbereitschaft kombinieren</legend>
-          <label>Passende Phase laut Aufgabenliste<select name="phase">{actions.map(([value, label]) => <option value={value}>{label}</option>)}</select></label>
-          <p>Wähle die Phase, in der deine konkrete Aktion ebenfalls Punkte bringt. Ähnliche Namen allein reichen nicht; Start, Abschluss und Itemverbrauch können unterschiedlich gewertet werden.</p>
-          {fields.slice(4).map(([name,label,value]) => <label>{label}<input name={name} type="number" min="0" max="1000000000000" step="1" value={value} required /></label>)}
-        </fieldset>
-        <fieldset><legend>3 · Radar vor der nächsten Auffüllung</legend>
-          <p>Dieser Teil ist unabhängig vom gewählten Punkteziel. Er berechnet Platz für genau eine Auffüllung. Trage nur Quests ein, die das betreffende Speicherlimit belegen.</p>
-          <label>Gespeicherte Radarquests<input name="radar" type="number" min="0" max="10000" step="1" /></label>
-          <label>Dein Radar-Speicherlimit<input name="cap" type="number" min="1" max="10000" step="1" /></label>
-          <label>Neue Quests bei der nächsten Auffüllung<input name="arrivals" type="number" min="0" max="10000" step="1" /></label>
-          <p>Speicherlimit, Auffüllung und Gültigkeit sind noch nicht für unseren Server dokumentiert. Prüfe im Spiel auch, ob erledigte, aber nicht abgeholte Quests Speicher belegen und wann sie gewertet werden.</p>
-        </fieldset>
-        <button type="submit">Meinen Plan berechnen</button>
-      </form>
-      <section class="plan-output" aria-live="polite" aria-label="Dein Plan" data-competition-output></section>
-      <p>Deine Eingaben werden nach dem Berechnen auf diesem Gerät gespeichert, sofern der Browser dies erlaubt.</p>
-      <p><a href="/drachenhalle/docs/tipp-14-allianz-wettkampf-punkte-planen/">Wissensartikel: Wettkampf, Einsatzbereitschaft und Radar richtig planen →</a></p>
-      <noscript>Für die Berechnung bitte JavaScript aktivieren. Den Wissensartikel kannst du auch ohne JavaScript lesen.</noscript>
-    </main><SiteFooter /></div>
-    <script>import { initializeCompetitionCalculator } from "../../scripts/competition-calculator"; initializeCompetitionCalculator();</script>
-  </body>
-</html>
+<!doctype html><html lang="de"><head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+  <title>Allianz-Wettkampf-Punkteplaner · DIE Drachenhalle</title>
+  <SocialMeta title="Allianz-Wettkampf-Punkteplaner" description="Die fünf Sammelmottos: Vorräte, Punkte und Einsatzbereitschaft für deine Woche planen." />
+  <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+</head><body><div class="page-shell"><SiteHeader active="tools" />
+<main class="tool-main" id="main-content">
+  <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation"><a href="/drachenhalle/tools/">Tools</a><span>/</span><span>Wettkampfplaner</span></nav>
+  <header class="tool-hero"><p class="eyebrow">Deine Vorräte zur richtigen Zeit</p><h1>Was plane ich für welchen Tag?</h1><p>Wähle ein Tagesmotto und trage ein, was du dafür einsetzen möchtest. Der Planer addiert deine Punkte und zeigt, welche Einsatzbereitschaft du dazu prüfen solltest.</p></header>
+  <div class="week-strip" aria-label="Die Wettkampfwoche">{competitionDays.map(day => <div><strong>{day.day}</strong><span>{day.title}</span><small>{day.victory} Siegpunkt{day.victory > 1 ? "e" : ""}</small></div>)}</div>
+  <p>Montag bis Freitag sind unsere fünf Sammelphasen. Samstag folgt der Feindangriff. Die kleinen Siegpunkte entscheiden die Wochenwertung; deine Aktionspunkte zählen für Tageswertung und Belohnungen.</p>
+  <form data-competition-form>
+    <label class="day-select">1 · Für welchen Tag planst du?<select name="day">{competitionDays.map(day => <option value={day.id}>{day.day} · {day.title}</option>)}</select></label>
+    {competitionDays.map((day,index) => <section data-day={day.id} hidden={index !== 0}>
+      <h2>{day.day} · {day.title}</h2><p class="recommendation">{day.save}</p>
+      <div class="targets"><label>Bereits erreichte Punkte<input name={`${day.id}-current`} type="number" min="0" max="1000000000000" step="1" value="0" /></label>
+        <label>Belohnungsziel auswählen<select name={`${day.id}-goal`}>
+          <option value="next">Nächster Meilenstein nach aktuellem Punktestand</option>
+          {competitionMilestones.map((points,i) => <option value={String(points)}>Meilenstein {i+1} · {fmt(points)} Punkte</option>)}
+          <option value="custom">Eigenes Ziel</option>
+        </select></label>
+        <label>Dein Tagesziel<input name={`${day.id}-target`} type="number" min="0" max="1000000000000" step="1" placeholder="Eigenes Ziel oder gewählter Meilenstein" /></label>
+      </div>
+      <p>Die Zielauswahl übernimmt die neun Schwellen der bereitgestellten Spielbilder. Falls eure Anzeige abweicht oder eine Truhe noch gesperrt ist, wählt ein eigenes erreichbares Ziel. Die Rechnung sagt nichts darüber aus, ob eine Belohnung bereits abgeholt wurde.</p>
+      <h3>2 · Was möchtest du einsetzen?</h3><p>Nur deine geplanten Mengen eintragen. Beschleuniger in Minuten (1 Stunde = 60 Minuten). Für Mengenwertungen werden vollständige Blöcke gezählt.</p>
+      <div class="table-scroll"><table><thead><tr><th>Aktion / Vorrat</th><th>Geplante Menge</th><th>Punkte laut Anzeige</th><th>Geplante Punkte</th></tr></thead><tbody>{day.actions.map(action => <tr>
+        <th scope="row">{action.label}<small>{action.unit}</small>{action.note && <small class="action-note">{action.note}</small>}</th>
+        <td><input aria-label={`${day.day}: ${action.label} – Menge`} name={`${day.id}-${action.id}-quantity`} data-quantity type="number" min="0" max="1000000000000" step="1" value="0" /></td>
+        <td><input aria-label={`${day.day}: ${action.label} – Punkte je Wertungsblock`} name={`${day.id}-${action.id}-rate`} type="number" min="0" max="1000000000" step="any" value={action.points * actionBlock(action)} /><small>je {actionBlock(action)} {action.unit}; Screenshot: {fmt(action.points * actionBlock(action))}</small></td>
+        <td data-points={`${day.id}-${action.id}`}>0</td>
+      </tr>)}</tbody></table></div>
+      <p class="source-note">Stand 06.10.2026: Angezeigte Werte des bereitgestellten Screenshot-Kontos. Übernimm abweichende Werte aus deiner Anzeige. Die grünen Zahlen können persönliche Boni enthalten; es wird kein zusätzlicher Bonus automatisch aufgeschlagen.</p>
+      <h3>3 · Mit Einsatzbereitschaft kombinieren</h3><p>{day.readiness}</p><p>Die Zuordnung ist eine Prüfhilfe. Aufgaben und Zeiten der Einsatzbereitschaft sind im Upload nicht belegt. Vor dem Einsatz kontrollieren: Zählt dieselbe Aktion jetzt in beiden Events, und läuft der Wettkampftag noch?</p>
+    </section>)}
+    <div class="buttons"><button type="submit">Tagesplan prüfen</button><button type="button" data-clear-day>Geplante Mengen dieses Tages leeren</button></div>
+    <section class="plan-output" aria-live="polite" aria-label="Dein Tagesplan" data-competition-output></section>
+    <section aria-label="Belohnungsmeilensteine"><h2>Deine neun Belohnungsmeilensteine</h2><p>Erreicht = aktueller Punktestand. Mit Plan abgedeckt = aktueller Stand plus geplante Aktionen.</p><ol class="milestones" data-milestones></ol></section>
+    <details><summary>Radar sparen: Platz vor der nächsten Auffüllung berechnen</summary>
+      <p>Radar zählt Montag, Mittwoch und Freitag. Dienstag und Donnerstag sind deshalb Vorbereitungstage; am Wochenende kannst du Montag vorbereiten. Nicht unbegrenzt halten: Ablauf und freien Speicher prüfen.</p>
+      <div class="targets"><label>Gespeicherte Radarquests<input name="radar" type="number" min="0" max="10000" step="1" /></label><label>Dein Speicherlimit<input name="cap" type="number" min="1" max="10000" step="1" /></label><label>Neue Quests bei der nächsten Auffüllung<input name="arrivals" type="number" min="0" max="10000" step="1" /></label></div>
+      <button type="button" data-radar-calculate>Radarplatz berechnen</button><p data-radar-result aria-live="polite"></p>
+      <p>Erfasst genau eine Auffüllung. Ob Erledigen oder Abholen den Speicher freigibt und die Wertung auslöst, ist noch zu prüfen.</p>
+    </details>
+  </form>
+  <p>Deine Pläne und angepassten Werte werden je Wochentag auf diesem Gerät gespeichert. Die Rechnung zeigt Punktepotenzial; sie verbraucht keine Vorräte und legt keine automatische Einsatzreihenfolge fest.</p>
+  <p><a href="/drachenhalle/docs/tipp-14-allianz-wettkampf-punkte-planen/">Wissensartikel: Unsere Wettkampfwoche und Radarplanung →</a></p>
+  <noscript>Für den interaktiven Planer bitte JavaScript aktivieren. Alle Tage und Wertungen findest du im Wissensartikel.</noscript>
+</main><SiteFooter /></div><script>import { initializeCompetitionCalculator } from "../../scripts/competition-calculator"; initializeCompetitionCalculator();</script></body></html>
 <style>
-  form { display: grid; gap: 1.5rem; margin-block: 2rem; }
-  fieldset { border: 1px solid var(--border, #66563e); border-radius: 16px; padding: 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-  legend { font-weight: 700; padding-inline: .5rem; }
-  label { display: grid; gap: .5rem; }
-  input, select { width: 100%; min-width: 0; padding: .8rem; border-radius: 8px; border: 1px solid #887453; background: #181c20; color: #fff; font: inherit; }
-  fieldset p { grid-column: 1 / -1; }
-  button { padding: 1rem; border-radius: 10px; background: #e6bd72; color: #181c20; font: inherit; font-weight: 700; cursor: pointer; }
-  .plan-output:not(:empty) { padding: 1.5rem; border: 1px solid #e6bd72; border-radius: 16px; }
-  @media(max-width: 640px) { fieldset { grid-template-columns: 1fr; padding: 1rem; } }
+  .week-strip { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; margin: 2rem 0; }
+  .week-strip div, .recommendation { border: 1px solid #786443; border-radius: 12px; padding: 1rem; }
+  .week-strip span, .week-strip small, th small, td small { display:block; margin-top:.35rem; }
+  .week-strip strong { color:#e6bd72; } small { font-weight:400; font-size:.8rem; } .action-note { opacity:.8; }
+  form { display:grid; gap:1.5rem; margin:2rem 0; min-width:0; } form > section { min-width:0; } [hidden] { display:none !important; }
+  label { display:grid; gap:.5rem; } .targets { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1rem 0; }
+  input,select { width:100%; min-width:0; padding:.75rem; border-radius:8px; border:1px solid #887453; background:#181c20; color:#fff; font:inherit; }
+  .day-select { max-width:36rem; font-weight:700; } .table-scroll { overflow-x:auto; max-width:100%; }
+  table { width:100%; min-width:680px; border-collapse:collapse; } th,td { padding:.8rem; text-align:left; border-bottom:1px solid #524735; } th { width:43%; } td input { min-width:105px; }
+  button { padding:.8rem 1rem; border-radius:10px; border:1px solid #887453; background:#e6bd72; color:#181c20; font:inherit; font-weight:700; cursor:pointer; } .buttons { display:flex; gap:.75rem; flex-wrap:wrap; }
+  .plan-output { padding:1.5rem; border:1px solid #e6bd72; border-radius:16px; } details { border:1px solid #786443; border-radius:12px; padding:1rem; } summary { cursor:pointer; font-weight:700; }
+  .milestones { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; padding:0; list-style:none; } .milestones :global(li) { border:1px solid #786443; border-radius:12px; padding:1rem; } .milestones :global(li[data-status="reached"]) { border-color:#7cad79; } .milestones :global(li[data-status="planned"]) { border-color:#e6bd72; } .milestones :global(strong),.milestones :global(span) { display:block; margin-bottom:.35rem; }
+  @media(max-width:640px) { .week-strip,.milestones { grid-template-columns:repeat(2,minmax(0,1fr)); } .targets { grid-template-columns:1fr; } }
 </style>
