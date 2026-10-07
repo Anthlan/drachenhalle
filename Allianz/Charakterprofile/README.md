@@ -12,6 +12,7 @@ Die Aussagen beziehen sich ausschließlich auf die fiktive Darstellung innerhalb
 - [DaVinci1986](DaVinci1986.md)
 - [Drachenherz](Drachenherz.md)
 - [Helltrain](Helltrain.md)
+- [Krasaviza](Krasaviza.md)
 - [Streetjudge](Streetjudge.md)
 - [Thor63](Thor63.md)
 

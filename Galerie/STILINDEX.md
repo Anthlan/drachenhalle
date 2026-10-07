@@ -144,6 +144,7 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_10_06_2200_OhNichtSchonWieder_Anthlan.png](Reaktionsbilder/2026_10_06_2200_OhNichtSchonWieder_Anthlan.png)
 - [2026_10_06_2200_MussDasHeuteSein_Anthlan.png](Reaktionsbilder/2026_10_06_2200_MussDasHeuteSein_Anthlan.png)
 - [2026_10_06_2200_JaJaIstJaGut_Anthlan.png](Reaktionsbilder/2026_10_06_2200_JaJaIstJaGut_Anthlan.png)
+- [2026_10_06_2322_Glueckwunsch_Anthlan_animiert.gif](Reaktionsbilder/2026_10_06_2322_Glueckwunsch_Anthlan_animiert.gif)
 - [2026_09_28_0825_GutenMorgenAusDerSchweiz_DaVinci1986.png](Reaktionsbilder/2026_09_28_0825_GutenMorgenAusDerSchweiz_DaVinci1986.png)
 - [2026_09_28_1131_Passt_Somea.png](Reaktionsbilder/2026_09_28_1131_Passt_Somea.png)
 - [2026_09_28_1131_Stark_Somea.png](Reaktionsbilder/2026_09_28_1131_Stark_Somea.png)
