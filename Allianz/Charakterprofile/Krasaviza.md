@@ -51,9 +51,9 @@ Ihre frühere Führungs- und Aufbauarbeit gibt ihr Ruhe und Orientierung, soll a
 
 ### Das Atrium der Kulturen
 
-Krasavizas Welt ist ein weitläufiges Atrium an einem Knotenpunkt verschiedener Regionen. Helle Steinbögen, dunkles Holz, alte Atlanten, geschnitzte Schubladen, Mosaikböden, Keramik und ausgewählte Textilien erzählen von vielen Herkunftsorten, ohne zu einer beliebigen Sammlung exotischer Dekoration zu werden.
+Krasavizas Welt ist ein weitläufiges, mehrstöckiges Atrium an einem Knotenpunkt verschiedener Regionen. Mediterrane Steinarkaden, ostasiatisch geprägte Holzgalerien, südasiatische Steingitter, mitteleuropäische Bibliotheksbalkone sowie westafrikanisch inspirierte Bronze- und Webarbeiten sind durch Brücken, Kartenlinien und gemeinsame Materialien zu einem gewachsenen Ganzen verbunden. Keine einzelne Tradition beherrscht den Raum; ihre Eigenheiten bleiben erkennbar, ohne wie voneinander getrennte Themenkulissen zu wirken.
 
-Das Atrium ist Bibliothek, Kartenraum und Begegnungsort zugleich. Menschen kommen hier nicht zusammen, um ihre Unterschiede abzulegen, sondern um sie lesbar zu machen. Kartenlinien verbinden entfernte Horizonte; feine kalligrafische Spuren schweben wie Gedankengänge durch das Licht, bleiben aber frei von zufälligem Pseudotext. Das Haus wirkt gepflegt und kultiviert, zugleich bewohnt und offen für Ergänzungen.
+Das Atrium ist Bibliothek, Kartenraum, Akademie und internationaler Begegnungsort zugleich. Reisende, Gelehrte und Abgesandte unterschiedlicher Herkunft tauschen dort Bücher, Karten, Hinweise und Erfahrungen aus. Ein großes Weltmosaik im Boden, eine komplexe Armillarsphäre und kupferfarbene Routen verbinden die Flügel des Hauses mit einer kosmopolitischen Stadt aus Botschaften, Handelshäusern und Lehrstätten. Terrakotta, Safran, Lapis und Jade ergänzen Krasavizas Smaragd-Elfenbein-Palette, ohne ihre eigene Farbidentität zu überlagern.
 
 Krasaviza steht meist an einem großen Kartentisch. Sie zeigt einen Weg, hört eine andere Deutung an oder legt eine neue Verbindung zwischen bereits Bekanntem. Ihre Welt erzählt dadurch sowohl vom Weitergeben als auch vom Lernen.
 
@@ -74,7 +74,7 @@ Auch ihre frühere Rolle verlangt Balance. Sie besitzt die Erfahrung einer Mitgr
 
 ## Bildrichtung
 
-Krasaviza gehört in das helle, smaragdgrün beschattete Atrium der Kulturen. Ihr Hauptoutfit ist ein elegantes, figurnahes und bewegliches Gelehrtenensemble: ein langer smaragdgrüner Coatdress mit klaren Linien, elfenbeinfarbene Seide, dunkle Hose oder geteilter Rock, hochwertige Lederstiefel und wenige Kupferdetails. Diese Silhouette unterscheidet sie bewusst von Someas abendlicher Femme-fatale-Ästhetik und DaVincis schwarz-roter Goth- und Ballkleidwelt.
+Krasaviza gehört in das helle, smaragdgrün beschattete Atrium der Kulturen. Die Umgebung muss auf den ersten Blick international und belebt wirken: mehrere verbundene Architekturtraditionen, vielfältige Besucher im Hintergrund, eine kosmopolitische Stadt jenseits der Bögen und sichtbare Routen zwischen Karten, Weltmosaik und Galerien. Die kulturellen Einflüsse bleiben respektvoll und ausgewogen; Nationalflaggen, religiöse Symbole, Kostümklischees oder die Dominanz einer einzelnen Region passen nicht in diese Welt. Ihr Hauptoutfit ist ein elegantes, figurnahes und bewegliches Gelehrtenensemble: ein langer smaragdgrüner Coatdress mit klaren Linien, elfenbeinfarbene Seide, dunkle Hose oder geteilter Rock, hochwertige Lederstiefel und wenige Kupferdetails. Diese Silhouette unterscheidet sie bewusst von Someas abendlicher Femme-fatale-Ästhetik und DaVincis schwarz-roter Goth- und Ballkleidwelt.
 
 Das M2-Alternativoutfit zeigt ihre frühere Gründer- und Göttinnenseite. Eine bodenlange, architektonisch gerade Gewandung aus Elfenbein und Smaragd, ein asymmetrischer Schulterumhang und ein gebrauchter Gründungsband vermitteln Würde und Erfahrung. Der Look bleibt zurückhaltend und vermeidet Krone, Zepter, Spitze, übermäßigen Schmuck oder eine ausladende Prinzessinnensilhouette.
 
@@ -87,5 +87,6 @@ Ihre Mimiken sollen Herzlichkeit, Witz, nachdenkliches Zuhören und direkte Klar
 - Smaragdgrün, Elfenbein, dunkles Holz, Jade und oxidiertes Kupfer bilden ihre eigene Palette.
 - Das Hauptoutfit zeigt die kultivierte, bewegliche Weltenleserin.
 - Das Alternativoutfit zeigt ihre erfahrene frühere Gründer- und Göttinnenseite.
-- Das Atrium der Kulturen ist ihre verbindliche Welt.
+- Das internationale, mehrstöckige Atrium der Kulturen ist ihre verbindliche Welt.
+- Verschiedene Architektur-, Handwerks- und Besuchertraditionen erscheinen gleichberechtigt; keine Region dominiert.
 - Abendkleid, Femme fatale, Goth, Fächer, Katze, Sternornamente und schwarz-rote Ballästhetik gehören nicht zu ihrer Bildsprache.
