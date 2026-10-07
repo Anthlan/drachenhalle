@@ -14,7 +14,7 @@ const documentImageDataFile = path.join(siteRoot, "src", "data", "document-image
 const styleIndexFile = path.join(repositoryRoot, "Galerie", "STILINDEX.md");
 const avatarSetIndexFile = path.join(repositoryRoot, "Galerie", "Avatare", "SETINDEX.md");
 const modelSetIndexFile = path.join(repositoryRoot, "Galerie", "Charaktermodelle", "SETINDEX.md");
-const imageExtensions = new Set([".png", ".jpg", ".jpeg", ".webp"]);
+const imageExtensions = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif"]);
 const validStyles = new Set(["S1", "S2", "S3", "S4"]);
 
 const contentAreas = [
@@ -430,10 +430,11 @@ const items = await mapWithConcurrency(sources, 3, async ({ absolutePath, catego
   }
 
   if (previous?.fingerprint !== fingerprint || !outputsExist) {
-    const image = sharp(absolutePath, { failOn: "warning" }).rotate();
+    const animated = path.extname(absolutePath).toLowerCase() === ".gif";
+    const image = sharp(absolutePath, { animated, failOn: "warning" }).rotate();
     const sourceMetadata = await image.metadata();
     width = sourceMetadata.width ?? null;
-    height = sourceMetadata.height ?? null;
+    height = sourceMetadata.pageHeight ?? sourceMetadata.height ?? null;
 
     await Promise.all([
       image.clone().resize({ width: 480, withoutEnlargement: true }).webp({ quality: 68, effort: 5 }).toFile(thumbnailPath),
