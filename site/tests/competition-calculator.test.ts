@@ -1,7 +1,15 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { pointsPlan, radarPlan } from "../src/scripts/competition-calculator.ts";
+import { pointsPlan, radarPlan, durationMinutes } from "../src/scripts/competition-calculator.ts";
 import { actionPoints, competitionDays, nextRadarDay, milestoneProgress, competitionMilestones } from "../src/data/competition.ts";
+
+test("Beschleuniger zählen Tage, Stunden und Minuten gemeinsam", () => {
+  assert.equal(durationMinutes(1, 2, 30), 1590);
+  assert.equal(durationMinutes(0, 24, 60), 1500);
+  assert.equal(durationMinutes(0, 0, 0), 0);
+  const research = competitionDays[2].actions.find(action => action.id === "research")!;
+  assert.equal(actionPoints(research, durationMinutes(1, 2, 30)), 200340);
+});
 
 test("Meilensteine unterscheiden erreichte Punkte von geplantem Einsatz", () => {
   const progress = milestoneProgress(145000, 405000);

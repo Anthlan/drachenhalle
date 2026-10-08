@@ -43,7 +43,7 @@ Die Wochentage folgen unserem bestätigten Montag-bis-Freitag-Rhythmus; Phasenbe
 
 1. Wählt den Tag, für den ihr Vorräte vorbereiten möchtet.
 2. Tragt den bereits erreichten Punktestand ein. Wählt den nächsten Meilenstein, eine bestimmte der neun Truhengrenzen oder ein eigenes Tagesziel.
-3. Tragt pro Aktion nur die Menge ein, die ihr einsetzen möchtet. Eine Stunde Beschleunigung entspricht 60 Minuten.
+3. Tragt pro Aktion nur die Menge ein, die ihr einsetzen möchtet. Beschleuniger erfasst ihr getrennt als Tage (d), Stunden (h) und Minuten (m); der Planer rechnet sie automatisch zusammen. Kämpfer-Komponenten-Truhen stehen kompakt nach Level gruppiert, mit einer eigenen Anzahl je Level.
 4. Prüft die Punktelücke. Ergänzt bei Bedarf eine andere passende Aktion oder reduziert den Einsatz, wenn das Ziel schon abgedeckt ist.
 5. Prüft vor dem tatsächlichen Einsatz das passende Einsatzbereitschaftsfenster und die verbleibende Wettkampfzeit.
 

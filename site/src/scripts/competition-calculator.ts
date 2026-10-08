@@ -1,5 +1,9 @@
 import { competitionDays, actionPoints, actionBlock, nextRadarDay, competitionMilestones, milestoneProgress } from "../data/competition.ts";
 
+export function durationMinutes(days: number, hours: number, minutes: number) {
+  return days * 1440 + hours * 60 + minutes;
+}
+
 export function pointsPlan(current: number, target: number, perAction: number, stock: number) {
   const missing = Math.max(0, target - current);
   const needed = perAction > 0 ? Math.ceil(missing / perAction) : null;
@@ -26,6 +30,15 @@ export function initializeCompetitionCalculator() {
     const saved = JSON.parse(localStorage.getItem(key) ?? "null");
     for (const input of form.querySelectorAll<HTMLInputElement | HTMLSelectElement>("[name]")) if (saved && typeof saved[input.name] === "string") input.value = saved[input.name];
     for (const day of competitionDays) {
+      for (const action of day.actions.filter(action => action.unit === "Minuten")) {
+        const prefix = `${day.id}-${action.id}`;
+        if (saved && saved[`${prefix}-days`] === undefined) {
+          const minutes = Math.max(0, Number(saved[`${prefix}-quantity`]) || 0);
+          for (const [unit, value] of [["days", Math.floor(minutes / 1440)], ["hours", Math.floor(minutes % 1440 / 60)], ["minutes", minutes % 60]]) {
+            (form.elements.namedItem(`${prefix}-${unit}`) as HTMLInputElement).value = String(value);
+          }
+        }
+      }
       const goal = form.elements.namedItem(`${day.id}-goal`) as HTMLSelectElement;
       if (saved && !saved[`${day.id}-goal`] && Number(saved[`${day.id}-target`]) > 0) goal.value = "custom";
     }
@@ -38,10 +51,19 @@ export function initializeCompetitionCalculator() {
     if (invalid) { output.replaceChildren(); line("Bitte gültige, nicht negative Mengen und Punkte eintragen."); return; }
     let total = 0;
     for (const action of day.actions) {
+      if (action.unit === "Minuten") {
+        const prefix = `${day.id}-${action.id}`;
+        const minutes = durationMinutes(number(`${prefix}-days`), number(`${prefix}-hours`), number(`${prefix}-minutes`));
+        (form.elements.namedItem(`${prefix}-quantity`) as HTMLInputElement).value = String(minutes);
+        const hint = form.querySelector<HTMLElement>(`[data-duration="${prefix}"]`);
+        if (hint) hint.textContent = `${fmt(minutes)} Minuten insgesamt`;
+      }
       const points = actionPoints(action, number(`${day.id}-${action.id}-quantity`), number(`${day.id}-${action.id}-rate`) / actionBlock(action));
       total += points;
       const cell = form.querySelector<HTMLElement>(`[data-points="${day.id}-${action.id}"]`);
       if (cell) cell.textContent = fmt(points);
+      const rateDisplay = form.querySelector<HTMLElement>(`[data-rate-display="${day.id}-${action.id}"]`);
+      if (rateDisplay) rateDisplay.textContent = fmt(number(`${day.id}-${action.id}-rate`));
     }
     output.replaceChildren();
     const current = number(`${day.id}-current`);

@@ -6,6 +6,15 @@ import { competitionDays, actionBlock, competitionMilestones } from "../../data/
 import "../../styles/global.css";
 
 const fmt = (n: number) => n.toLocaleString("de-DE", { maximumFractionDigits: 6 });
+const levelGroups = [
+  { title: "Kämpfer-Komponenten-Truhen öffnen", prefix: "component-", unit: "Truhe", level: "Lv. " },
+  { title: "Soldaten ausbilden", prefix: "soldier-", unit: "Soldat", level: "T", note: "Aufwertungen sind in diesem Screenshot nicht ausdrücklich erklärt." },
+  { title: "Soldaten eliminieren · spezifischer Kampf", prefix: "match-", unit: "Soldat", level: "T", note: "Gesonderte Wertung; nicht mit allgemeiner Eliminierung addieren, ohne die Spielregel zu prüfen." },
+  { title: "Soldaten eliminieren · allgemein", prefix: "kill-", unit: "Soldat", level: "T" },
+  { title: "Soldaten verlieren", prefix: "loss-", unit: "Soldat", level: "T", note: "Nur bereits erwartete Verluste bilanzieren; keine Verlustempfehlung." },
+  { title: "Heldensplitter verwenden", ids: ["ur", "ssr", "sr"], unit: "Splitter", level: "" },
+];
+const belongsTo = (action: { id: string }, group: typeof levelGroups[number]) => group.prefix ? action.id.startsWith(group.prefix) : group.ids!.includes(action.id);
 ---
 
 <!doctype html>
@@ -80,16 +89,30 @@ const fmt = (n: number) => n.toLocaleString("de-DE", { maximumFractionDigits: 6 
               </div>
 
               <div class="competition-section">
-                <div class="competition-section-heading"><span>02</span><div><h3>Geplanten Einsatz eintragen</h3><p>Nur deine geplanten Mengen eintragen. Beschleuniger in Minuten (1 Stunde = 60 Minuten). Vollständige Wertungsblöcke werden automatisch gezählt.</p></div></div>
+                <div class="competition-section-heading"><span>02</span><div><h3>Geplanten Einsatz eintragen</h3><p>Beschleuniger als Tage (d), Stunden (h) und Minuten (m) eintragen. Vollständige Wertungsblöcke werden automatisch gezählt.</p></div></div>
                 <div class="table-scroll"><table>
                   <thead><tr><th>Aktion / Vorrat</th><th>Geplante Menge</th><th>Punkte laut Anzeige</th><th>Geplante Punkte</th></tr></thead>
-                  <tbody>{day.actions.map(action => <tr>
+                  <tbody>{day.actions.filter(action => !levelGroups.some(group => belongsTo(action, group))).map(action => <tr>
                     <th scope="row"><strong>{action.label}</strong><small>{action.unit}</small>{action.note && <small class="action-note">{action.note}</small>}</th>
-                    <td><input aria-label={`${day.day}: ${action.label} – Menge`} name={`${day.id}-${action.id}-quantity`} data-quantity type="number" min="0" max="1000000000000" step="1" value="0" /></td>
+                    <td>{action.unit === "Minuten" ? <>
+                      <input name={`${day.id}-${action.id}-quantity`} type="hidden" value="0" />
+                      <div class="duration-inputs">{[["days", "d", "Tage"], ["hours", "h", "Stunden"], ["minutes", "m", "Minuten"]].map(([unit, short, label]) => <label><span>{short}</span><input aria-label={`${day.day}: ${action.label} – ${label}`} name={`${day.id}-${action.id}-${unit}`} data-quantity type="number" min="0" max="1000000000" step="1" value="0" /></label>)}</div>
+                      <small data-duration={`${day.id}-${action.id}`}>0 Minuten insgesamt</small>
+                    </> : <input aria-label={`${day.day}: ${action.label} – Menge`} name={`${day.id}-${action.id}-quantity`} data-quantity type="number" min="0" max="1000000000000" step="1" value="0" />}</td>
                     <td><input aria-label={`${day.day}: ${action.label} – Punkte je Wertungsblock`} name={`${day.id}-${action.id}-rate`} type="number" min="0" max="1000000000" step="any" value={action.points * actionBlock(action)} /><small>je {actionBlock(action)} {action.unit}; Screenshot: {fmt(action.points * actionBlock(action))}</small></td>
                     <td class="competition-points" data-points={`${day.id}-${action.id}`}>0</td>
                   </tr>)}</tbody>
                 </table></div>
+                {levelGroups.filter(group => day.actions.some(action => belongsTo(action, group))).map(group => <section class="component-group" aria-label={group.title}>
+                  <h4>{group.title}</h4>
+                  {group.note && <p class="group-note">{group.note}</p>}
+                  <div class="component-grid">{day.actions.filter(action => belongsTo(action, group)).map(action => <div class="component-card">
+                    <label><span>{group.level}{group.prefix ? action.id.split("-")[1] : action.id.toUpperCase()} · Anzahl</span><input aria-label={`${day.day}: ${action.label} – Menge`} name={`${day.id}-${action.id}-quantity`} data-quantity type="number" min="0" max="1000000000000" step="1" value="0" /></label>
+                    <small><span data-rate-display={`${day.id}-${action.id}`}>{fmt(action.points)}</span> Punkte je {group.unit}</small>
+                    <strong><span data-points={`${day.id}-${action.id}`}>0</span> Punkte</strong>
+                    <details><summary>Punkte anpassen</summary><input aria-label={`${day.day}: ${action.label} – Punkte je Wertungsblock`} name={`${day.id}-${action.id}-rate`} type="number" min="0" max="1000000000" step="any" value={action.points} /></details>
+                  </div>)}</div>
+                </section>)}
                 <p class="source-note">Stand 06.10.2026: Angezeigte Werte des bereitgestellten Screenshot-Kontos. Übernimm abweichende Werte aus deiner Anzeige. Die grünen Zahlen können persönliche Boni enthalten; es wird kein zusätzlicher Bonus automatisch aufgeschlagen.</p>
               </div>
 
@@ -133,6 +156,9 @@ const fmt = (n: number) => n.toLocaleString("de-DE", { maximumFractionDigits: 6 
 </html>
 
 <style>
+  .group-note{margin:0 0 12px;color:var(--muted);font-size:10px;line-height:1.6}
+  tbody td .duration-inputs input{min-width:0}
+  .duration-inputs{display:grid;grid-template-columns:repeat(3,minmax(58px,1fr));gap:6px}.duration-inputs label{gap:4px}.duration-inputs input{min-width:0;padding:8px}.component-group{margin-top:20px}.component-group h4{margin:0 0 12px;color:var(--ivory)}.component-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px}.component-card{min-width:0;padding:12px;border:1px solid var(--line);background:rgba(17,25,54,.28)}.component-card small,.component-card>strong{display:block;margin-top:8px;font-size:10px}.component-card small{color:var(--muted)}.component-card>strong{color:var(--gold-pale)}.component-card details{margin-top:10px;font-size:10px;color:var(--muted)}.component-card summary{cursor:pointer}.component-card details input{margin-top:8px}
   .competition-tool-hero{grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:clamp(34px,5vw,72px);padding:clamp(34px,4.2vw,54px);background:linear-gradient(90deg,transparent 0 66%,rgba(227,173,78,.045) 66% 100%),radial-gradient(circle at 86% 18%,rgba(227,173,78,.16),transparent 18rem),linear-gradient(145deg,rgba(20,30,64,.94),rgba(7,11,27,.98))}
   .competition-hero-copy{min-width:0}.competition-tool-hero .competition-hero-copy h1{margin:5px 0 18px;font-size:clamp(42px,5.4vw,68px)}.competition-tool-hero .competition-hero-copy>p:last-child{max-width:720px;margin:0;color:var(--muted);font-size:15px;line-height:1.7}
   .competition-hero-flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;gap:10px;padding:12px;border:1px solid var(--line-bright);background:rgba(5,9,22,.62);box-shadow:inset 0 0 30px rgba(227,173,78,.035)}
