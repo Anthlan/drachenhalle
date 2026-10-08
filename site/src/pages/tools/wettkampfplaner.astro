@@ -13,6 +13,7 @@ const levelGroups = [
   { title: "Soldaten eliminieren · allgemein", prefix: "kill-", unit: "Soldat", level: "T" },
   { title: "Soldaten verlieren", prefix: "loss-", unit: "Soldat", level: "T", note: "Nur bereits erwartete Verluste bilanzieren; keine Verlustempfehlung." },
   { title: "Heldensplitter verwenden", ids: ["ur", "ssr", "sr"], unit: "Splitter", level: "" },
+  { title: "Rohstoffe sammeln", ids: ["food", "metal", "oil"], labels: { food: "Nahrung", metal: "Metall", oil: "Öl" }, unit: "", level: "", note: "Radar-Sammelquests sind ausgeschlossen. Es zählen vollständige Blöcke: 10 Nahrung, 10 Metall oder 6 Öl." },
 ];
 const belongsTo = (action: { id: string }, group: typeof levelGroups[number]) => group.prefix ? action.id.startsWith(group.prefix) : group.ids!.includes(action.id);
 ---
@@ -107,10 +108,10 @@ const belongsTo = (action: { id: string }, group: typeof levelGroups[number]) =>
                   <h4>{group.title}</h4>
                   {group.note && <p class="group-note">{group.note}</p>}
                   <div class="component-grid">{day.actions.filter(action => belongsTo(action, group)).map(action => <div class="component-card">
-                    <label><span>{group.level}{group.prefix ? action.id.split("-")[1] : action.id.toUpperCase()} · Anzahl</span><input aria-label={`${day.day}: ${action.label} – Menge`} name={`${day.id}-${action.id}-quantity`} data-quantity type="number" min="0" max="1000000000000" step="1" value="0" /></label>
-                    <small><span data-rate-display={`${day.id}-${action.id}`}>{fmt(action.points)}</span> Punkte je {group.unit}</small>
+                    <label><span>{group.labels ? group.labels[action.id as keyof typeof group.labels] : `${group.level}${group.prefix ? action.id.split("-")[1] : action.id.toUpperCase()}`} · Anzahl</span><input aria-label={`${day.day}: ${action.label} – Menge`} name={`${day.id}-${action.id}-quantity`} data-quantity type="number" min="0" max="1000000000000" step="1" value="0" /></label>
+                    <small><span data-rate-display={`${day.id}-${action.id}`}>{fmt(action.points * actionBlock(action))}</span> Punkte je {actionBlock(action) > 1 ? `${actionBlock(action)} ${action.unit}` : group.unit}</small>
                     <strong><span data-points={`${day.id}-${action.id}`}>0</span> Punkte</strong>
-                    <details><summary>Punkte anpassen</summary><input aria-label={`${day.day}: ${action.label} – Punkte je Wertungsblock`} name={`${day.id}-${action.id}-rate`} type="number" min="0" max="1000000000" step="any" value={action.points} /></details>
+                    <details><summary>Punkte anpassen</summary><input aria-label={`${day.day}: ${action.label} – Punkte je Wertungsblock`} name={`${day.id}-${action.id}-rate`} type="number" min="0" max="1000000000" step="any" value={action.points * actionBlock(action)} /></details>
                   </div>)}</div>
                 </section>)}
                 <p class="source-note">Stand 06.10.2026: Angezeigte Werte des bereitgestellten Screenshot-Kontos. Übernimm abweichende Werte aus deiner Anzeige. Die grünen Zahlen können persönliche Boni enthalten; es wird kein zusätzlicher Bonus automatisch aufgeschlagen.</p>
