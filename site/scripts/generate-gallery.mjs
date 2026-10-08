@@ -45,6 +45,7 @@ const knownPeople = [
   "Kaylani",
   "Killergruppe",
   "Korpi92",
+  "Krasaviza",
   "Lordmirko",
   "Odin71",
   "Odin81",
