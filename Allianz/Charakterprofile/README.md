@@ -15,6 +15,7 @@ Die Aussagen beziehen sich ausschließlich auf die fiktive Darstellung innerhalb
 - [Kaylani](Kaylani.md)
 - [Krasaviza](Krasaviza.md)
 - [Lordmirko](Lordmirko.md)
+- [Odin81](Odin81.md)
 - [Streetjudge](Streetjudge.md)
 - [Thor63](Thor63.md)
 

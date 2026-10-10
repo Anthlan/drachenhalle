@@ -17,6 +17,7 @@ Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie besch
 - [Krasaviza_Modell_Weltserie.png](Krasaviza_Modell_Weltserie.png)
 - [Lordmirko_Modell_Weltserie.png](Lordmirko_Modell_Weltserie.png)
 - [mysteryZ_Modell_Weltserie.png](mysteryZ_Modell_Weltserie.png)
+- [Odin81_Modell_Weltserie.png](Odin81_Modell_Weltserie.png)
 - [Somea_Modell_Weltserie.png](Somea_Modell_Weltserie.png)
 - [Streetjudge_Modell_Weltserie.png](Streetjudge_Modell_Weltserie.png)
 - [Thor63_Modell_Weltserie.png](Thor63_Modell_Weltserie.png)
