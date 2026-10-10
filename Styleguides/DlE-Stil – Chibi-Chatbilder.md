@@ -26,6 +26,7 @@ Ernsthafte Allianzankündigungen und verbindliche Charakterreferenzen bleiben in
 
 ## Charaktere
 
+- Bei neuen Chibi-Szenen geben die bewährten Reaktions-Chibis der jeweiligen Figur den Zeichenstil, die Gesichtsform, Augen, Proportionen und Mimik vor. Sie werden als Bildreferenzen eingebunden. M1- und M2-Modelle ergänzen die Referenz für Charaktermerkmale, Kleidung und Umgebung; sie ersetzen die bestehende Chibi-Stilreferenz nicht. Das gilt auch für Chibi-Illustrationen in Aktuelles und Auswertungen.
 - vorhandene Charaktermodelle sind auch im Chibi-Stil die verbindliche Referenz
 - Gesicht, Frisur, Hautfarbe, Hörner, Ohren und andere körperliche Merkmale eindeutig übernehmen
 - charakteristische Kleidung, Farben, Schmuckstücke und Accessoires vereinfacht, aber wiedererkennbar darstellen

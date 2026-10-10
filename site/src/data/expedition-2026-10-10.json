@@ -1,0 +1,5281 @@
+{
+  "event": "Expeditionswahnsinn – Hauptstadteroberung",
+  "date": "2026-10-10",
+  "capturedAt": "2026-10-10T16:49:46+02:00",
+  "sources": {
+    "leaderboardScreenshots": 60,
+    "allianceScreenshots": 20,
+    "description": "Vollständige Rangliste und 20 Allianzüberblicke von S105; am 10.10.2026 zur Weiterverarbeitung angenommen."
+  },
+  "players": [
+    {
+      "rank": 1,
+      "player": "♛Bo1Ii1e6nuk9♛",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 7427064,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 2,
+      "player": "Kiddo+",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 5711959,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 3,
+      "player": "Thrifty",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 5178518,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 4,
+      "player": "Pepega1337",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 5127143,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 5,
+      "player": "MnGkanor",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 4639035,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 6,
+      "player": "Man7icora",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 4525374,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 7,
+      "player": "TorukMakto",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 4239614,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 8,
+      "player": "LikesWelcome",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 4139091,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 9,
+      "player": "Brav01-26",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 4133397,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 10,
+      "player": "juicybagels",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 3448437,
+      "source": "20261010_163941000_iOS.png"
+    },
+    {
+      "rank": 11,
+      "player": "6YPATVIHO",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 3339141,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 12,
+      "player": "senestra",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 3189868,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 13,
+      "player": "뮤토이",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 3058276,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 14,
+      "player": "@payMapTa1",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 3011618,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 15,
+      "player": "SAILOR",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 2944659,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 16,
+      "player": "Blood05",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 2818098,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 17,
+      "player": "meteor-",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 2809104,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 18,
+      "player": "MontanaRoo",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 2740925,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 19,
+      "player": "GeneralPrime",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 2686199,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 20,
+      "player": "Dzrrrr",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 2569516,
+      "source": "20261010_163945000_iOS.png"
+    },
+    {
+      "rank": 21,
+      "player": "SmashDeviI",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 2527036,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 22,
+      "player": "'Daniel",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 2491208,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 23,
+      "player": "JeyKey5751",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 2474514,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 24,
+      "player": "TÜRKOGLU",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 2409264,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 25,
+      "player": "FarmerDegen",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 2367868,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 26,
+      "player": "lakulaku",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 2346394,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 27,
+      "player": "Witch±CHZhä",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 2330387,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 28,
+      "player": "RJ076",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 2309505,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 29,
+      "player": "Hawkhead",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 2260439,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 30,
+      "player": "WEISS57",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 2233494,
+      "source": "20261010_163949000_iOS.png"
+    },
+    {
+      "rank": 31,
+      "player": "maxipator",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 2229774,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 32,
+      "player": "nastyku",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 2226907,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 33,
+      "player": "BravoCompany",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 2194328,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 34,
+      "player": "Papashuiis",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 2165263,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 35,
+      "player": "ИНТЕРНЕТ•ЖЕНА",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 2124994,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 36,
+      "player": "AlmazGT",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 2118793,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 37,
+      "player": "Anna35",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 2093590,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 38,
+      "player": "MapTblH1980",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 2078364,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 39,
+      "player": "FanOfSkorpee",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 2066001,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 40,
+      "player": "Kamakazie",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 2064832,
+      "source": "20261010_163956000_iOS.png"
+    },
+    {
+      "rank": 41,
+      "player": "Jonke",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 2049659,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 42,
+      "player": "shwilla",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 2025620,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 43,
+      "player": "AeroLink",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 2022395,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 44,
+      "player": "Irex51",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1959323,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 45,
+      "player": "KlIIFack",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1916031,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 46,
+      "player": "ilf2022",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1889061,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 47,
+      "player": "Madee",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1879459,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 48,
+      "player": "Lord Hansa",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1863335,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 49,
+      "player": "Yusk€i",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1862427,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 50,
+      "player": "TDI",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1853564,
+      "source": "20261010_164001000_iOS.png"
+    },
+    {
+      "rank": 51,
+      "player": "-NaTeWoLf-",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1841280,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 52,
+      "player": "alwaysbusy",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1831314,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 53,
+      "player": "Timeless",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1824261,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 54,
+      "player": "Jimo59",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1810030,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 55,
+      "player": "Rhanys",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 1786794,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 56,
+      "player": "Mnxann698",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1781250,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 57,
+      "player": "Kilwel",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1757337,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 58,
+      "player": "Antoha125",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1750817,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 59,
+      "player": "Levi88",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1748053,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 60,
+      "player": "WOPOX666",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1737351,
+      "source": "20261010_164005000_iOS.png"
+    },
+    {
+      "rank": 61,
+      "player": "PatryneO",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1731747,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 62,
+      "player": "FinalFantasy",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1730160,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 63,
+      "player": "ddudu²",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1726920,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 64,
+      "player": "SergikZ",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1717812,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 65,
+      "player": "Boone223",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1705516,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 66,
+      "player": "Rosé88",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1694387,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 67,
+      "player": "nnaBhJ1bHR",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1678632,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 68,
+      "player": "5i*vEr",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1669596,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 69,
+      "player": "SY°",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1662348,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 70,
+      "player": "DHURGHAM",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1657325,
+      "source": "20261010_164009000_iOS.png"
+    },
+    {
+      "rank": 71,
+      "player": "Sneek88",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1656498,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 72,
+      "player": "CTap06enscK",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1654366,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 73,
+      "player": "SkittIes90",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1648015,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 74,
+      "player": "PoedateIPeImeney",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1645084,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 75,
+      "player": "Hur110",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 1643304,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 76,
+      "player": "Socice",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1643020,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 77,
+      "player": "K0HApaThi2",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1636365,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 78,
+      "player": "EmperorMARTINEZ",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 1632289,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 79,
+      "player": "LelPro",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1626496,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 80,
+      "player": "Spinder311a",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1625852,
+      "source": "20261010_164012000_iOS.png"
+    },
+    {
+      "rank": 81,
+      "player": "뉴비라힘들어",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1624323,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 82,
+      "player": "Rohlan",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1623430,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 83,
+      "player": "Tobbe7777777",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1620829,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 84,
+      "player": "sullenb",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 1618459,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 85,
+      "player": "Chiroptera",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1617121,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 86,
+      "player": "PhoenixViOIet",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 1616808,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 87,
+      "player": "Vurhis",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1615588,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 88,
+      "player": "Fluge",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1612028,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 89,
+      "player": "Rob01965",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1610504,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 90,
+      "player": "Mawxypa",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1601330,
+      "source": "20261010_164016000_iOS.png"
+    },
+    {
+      "rank": 91,
+      "player": "CHADWICKXIII",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1599231,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 92,
+      "player": "LKW",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1594051,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 93,
+      "player": "Kenas",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1593836,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 94,
+      "player": "BeerCan",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1593338,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 95,
+      "player": "Bcjt",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1591819,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 96,
+      "player": "max596",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 1589769,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 97,
+      "player": "Mariavash",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 1583738,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 98,
+      "player": "Nadln",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1580634,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 99,
+      "player": "Cowboy238er",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1580292,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 100,
+      "player": "AlexFighter",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1576300,
+      "source": "20261010_164020000_iOS.png"
+    },
+    {
+      "rank": 101,
+      "player": "MRIZAK",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1575282,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 102,
+      "player": "Krishbl",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 1573972,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 103,
+      "player": "Markus78",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 1569148,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 104,
+      "player": "JaanaRanta",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1569051,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 105,
+      "player": "MamaVee",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1567804,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 106,
+      "player": "Chessaxel",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1565330,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 107,
+      "player": "Gboy",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1563391,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 108,
+      "player": "SHERZOD78",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1563345,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 109,
+      "player": "Ranger1068",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 1555499,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 110,
+      "player": "Dinden",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1555094,
+      "source": "20261010_164024000_iOS.png"
+    },
+    {
+      "rank": 111,
+      "player": "bobble",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 1551669,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 112,
+      "player": "PrettyGirISheyb(",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1548899,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 113,
+      "player": "CariocaBIue",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1547601,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 114,
+      "player": "Alena19",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1547028,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 115,
+      "player": "Jayz-",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1545975,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 116,
+      "player": "•FLAME•",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1544942,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 117,
+      "player": "Moji08",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1544738,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 118,
+      "player": "Alex5566",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1542616,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 119,
+      "player": "TheDadTax",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1542499,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 120,
+      "player": "TOBCYXOB",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1541715,
+      "source": "20261010_164028000_iOS.png"
+    },
+    {
+      "rank": 121,
+      "player": "KPACHbliJych",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1540160,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 122,
+      "player": "Cuatrones",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 1539176,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 123,
+      "player": "RussianBear13",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1529764,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 124,
+      "player": "MasterOfDeath12",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1529675,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 125,
+      "player": "curfumoor",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1528018,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 126,
+      "player": "Gusimu",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 1527118,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 127,
+      "player": "LVFztD",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1526970,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 128,
+      "player": "Milloun",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1525594,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 129,
+      "player": "JInxoaeiKa",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1525382,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 130,
+      "player": "Stafff",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1524589,
+      "source": "20261010_164034000_iOS.png"
+    },
+    {
+      "rank": 131,
+      "player": "panda65",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1523300,
+      "source": "20261010_164601000_iOS.png"
+    },
+    {
+      "rank": 132,
+      "player": "KillerK1 ng",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1523180,
+      "source": "20261010_164039000_iOS.png"
+    },
+    {
+      "rank": 133,
+      "player": "OFFcHlol",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1521402,
+      "source": "20261010_164039000_iOS.png"
+    },
+    {
+      "rank": 134,
+      "player": "AissaAissa",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1521261,
+      "source": "20261010_164039000_iOS.png"
+    },
+    {
+      "rank": 135,
+      "player": "Funtown",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1518440,
+      "source": "20261010_164039000_iOS.png"
+    },
+    {
+      "rank": 136,
+      "player": "Jun15",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1515786,
+      "source": "20261010_164039000_iOS.png"
+    },
+    {
+      "rank": 137,
+      "player": "Dagiman",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 1515570,
+      "source": "20261010_164039000_iOS.png"
+    },
+    {
+      "rank": 138,
+      "player": "Kenesary",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1515154,
+      "source": "20261010_164601000_iOS.png"
+    },
+    {
+      "rank": 139,
+      "player": "HIHI",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1514168,
+      "source": "20261010_164039000_iOS.png"
+    },
+    {
+      "rank": 140,
+      "player": "McSteele",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1513453,
+      "source": "20261010_164039000_iOS.png"
+    },
+    {
+      "rank": 141,
+      "player": "Apseed",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 1512894,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 142,
+      "player": "hepax",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1511794,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 143,
+      "player": "MallBZ",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 1511717,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 144,
+      "player": "AHApeiL4caK0BcKMi",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1510426,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 145,
+      "player": "Mycobacterium",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1510381,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 146,
+      "player": "3mma19",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1509416,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 147,
+      "player": "k4k4k4",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1508600,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 148,
+      "player": "JJLayne",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 1506626,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 149,
+      "player": "Scoby",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 1506494,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 150,
+      "player": "PrOmTo0",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1505224,
+      "source": "20261010_164605000_iOS.png"
+    },
+    {
+      "rank": 151,
+      "player": "Beaverkz",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1504892,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 152,
+      "player": "Shadowti",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1504251,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 153,
+      "player": "Matt76",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 1503575,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 154,
+      "player": "AlisaW",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1496930,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 155,
+      "player": "7MaximusDecimus7",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 1452147,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 156,
+      "player": "Anthlan",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 1442449,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 157,
+      "player": "MoHaX26",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 1392311,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 158,
+      "player": "Stray2ko",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 1348919,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 159,
+      "player": "Idill",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 1331446,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 160,
+      "player": "Moussou",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 1315370,
+      "source": "20261010_164610000_iOS.png"
+    },
+    {
+      "rank": 161,
+      "player": "Danica1010",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1314393,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 162,
+      "player": "ZXaH095X:t",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 1314297,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 163,
+      "player": "LILE—ninano",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 1302760,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 164,
+      "player": "iFIow",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1298039,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 165,
+      "player": "wonderwoman",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1274500,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 166,
+      "player": "드라군",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1263116,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 167,
+      "player": "천안형아",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1254508,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 168,
+      "player": "ræxlk0MUZI",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1241434,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 169,
+      "player": "Kimakazi",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 1236698,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 170,
+      "player": "Waqas1986",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1227682,
+      "source": "20261010_164615000_iOS.png"
+    },
+    {
+      "rank": 171,
+      "player": "세종시",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1223914,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 172,
+      "player": "OmaewaMouShindru",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1222007,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 173,
+      "player": "VonFIapjack",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1217346,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 174,
+      "player": "CipSturmbrecherO",
+      "tag": "ASG",
+      "alliance": "AsgardWar",
+      "server": 97,
+      "points": 1201252,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 175,
+      "player": "hiddej",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1200282,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 176,
+      "player": "HMM",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 1195086,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 177,
+      "player": "ViTauRUS13",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 1184487,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 178,
+      "player": "TheGringe",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1155003,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 179,
+      "player": "마루몬",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1153294,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 180,
+      "player": "OsouaReD",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1144825,
+      "source": "20261010_164620000_iOS.png"
+    },
+    {
+      "rank": 181,
+      "player": "bogner008",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1139549,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 182,
+      "player": "shimo-",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1133365,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 183,
+      "player": "BoozeanGIory",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 1118128,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 184,
+      "player": "Kiasu",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 1116429,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 185,
+      "player": "izad",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 1114306,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 186,
+      "player": "Ogir",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1101521,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 187,
+      "player": "곽철용",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1084100,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 188,
+      "player": "RocksJohn",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 1079086,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 189,
+      "player": "Bushman",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 1073829,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 190,
+      "player": "Chunky3",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 1061064,
+      "source": "20261010_164624000_iOS.png"
+    },
+    {
+      "rank": 191,
+      "player": "-SHÄNKS-",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1045895,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 192,
+      "player": "KomarDNR",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 1011542,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 193,
+      "player": "SpiderGreen",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 1011418,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 194,
+      "player": "Eximus",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 1003894,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 195,
+      "player": "ChickenButNugget",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 1003825,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 196,
+      "player": "PaPaDon...",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 996954,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 197,
+      "player": "시간의끝",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 993642,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 198,
+      "player": "DefNdumb",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 991956,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 199,
+      "player": "mineka",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 977446,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 200,
+      "player": "seriikardinal",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 927088,
+      "source": "20261010_164629000_iOS.png"
+    },
+    {
+      "rank": 201,
+      "player": "McPunisher",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 925194,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 202,
+      "player": "Citzen777",
+      "tag": "ASG",
+      "alliance": "AsgardWar",
+      "server": 97,
+      "points": 915795,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 203,
+      "player": "MiladHichkas",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 914065,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 204,
+      "player": "KHYT",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 909311,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 205,
+      "player": "Tyu15",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 908935,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 206,
+      "player": "Emreayse",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 908438,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 207,
+      "player": "YuraN",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 906124,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 208,
+      "player": "Miraaaa",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 892130,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 209,
+      "player": "Drachenherz",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 884900,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 210,
+      "player": "Alex202001",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 880692,
+      "source": "20261010_164632000_iOS.png"
+    },
+    {
+      "rank": 211,
+      "player": "RedRiot",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 870017,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 212,
+      "player": "Skibbi",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 869322,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 213,
+      "player": "Sk00009",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 846203,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 214,
+      "player": "Anpenb",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 843808,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 215,
+      "player": "Gussy89",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 842742,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 216,
+      "player": "«Y6\"Mua6y'AAbl»",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 840633,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 217,
+      "player": "Billym0607",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 840595,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 218,
+      "player": "Boshos",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 837376,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 219,
+      "player": "Skitzo",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 827399,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 220,
+      "player": "vory",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 826546,
+      "source": "20261010_164639000_iOS.png"
+    },
+    {
+      "rank": 221,
+      "player": "FromSurvivaI",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 825956,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 222,
+      "player": "BossArnel",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 825778,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 223,
+      "player": "Chief-KOCOUR",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 822551,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 224,
+      "player": "Somea",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 807201,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 225,
+      "player": "VilOlcHcl",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 802880,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 226,
+      "player": "ACEKILLA48",
+      "tag": "LGA2",
+      "alliance": "Legacy2",
+      "server": 97,
+      "points": 797238,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 227,
+      "player": "strato",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 794111,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 228,
+      "player": "FineShytNiq",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 787047,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 229,
+      "player": "Zendin",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 786968,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 230,
+      "player": "RuhrpottBIach",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 784879,
+      "source": "20261010_164644000_iOS.png"
+    },
+    {
+      "rank": 231,
+      "player": "Mnogohash",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 779591,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 232,
+      "player": "Ncat3133",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 772610,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 233,
+      "player": "Fatigued",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 767464,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 234,
+      "player": "•MEDVED•",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 763298,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 235,
+      "player": "DaVinci1986",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 762697,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 236,
+      "player": "Vivi555",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 762435,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 237,
+      "player": "멸공카페",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 760506,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 238,
+      "player": "Hotboykash",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 756876,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 239,
+      "player": "Landgraf",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 753887,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 240,
+      "player": "AthenaFreyaVaIor",
+      "tag": "LGA2",
+      "alliance": "Legacy2",
+      "server": 97,
+      "points": 753328,
+      "source": "20261010_164651000_iOS.png"
+    },
+    {
+      "rank": 241,
+      "player": "Tikola",
+      "tag": "6HW",
+      "alliance": "autumn",
+      "server": 105,
+      "points": 744277,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 242,
+      "player": "Jontylwp",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 742249,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 243,
+      "player": "Leterriencontre",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 737720,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 244,
+      "player": "Colonia72",
+      "tag": "LGA2",
+      "alliance": "Legacy2",
+      "server": 97,
+      "points": 735007,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 245,
+      "player": "$EE'k'l.lJ",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 727104,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 246,
+      "player": "Beehive2026",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 725822,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 247,
+      "player": "disss",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 717370,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 248,
+      "player": "littlemoo",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 717292,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 249,
+      "player": "CapitalB",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 708544,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 250,
+      "player": "KpaiMBonwe6HhK",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 708179,
+      "source": "20261010_164655000_iOS.png"
+    },
+    {
+      "rank": 251,
+      "player": "AMnyTaTop",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 707951,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 252,
+      "player": "hayalkent",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 705350,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 253,
+      "player": "ToastyNuts",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 699088,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 254,
+      "player": "Тупицак",
+      "tag": "",
+      "alliance": "",
+      "server": 105,
+      "points": 690810,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 255,
+      "player": "DedRob",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 680566,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 256,
+      "player": "Jeakell",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 674788,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 257,
+      "player": "Rnoozz",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 669497,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 258,
+      "player": "syndie",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 661561,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 259,
+      "player": "JI}0AKa",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 659636,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 260,
+      "player": "TeM",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 639501,
+      "source": "20261010_164704000_iOS.png"
+    },
+    {
+      "rank": 261,
+      "player": "DaNyNax",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 631607,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 262,
+      "player": "Farukh",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 624987,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 263,
+      "player": "Elnur906",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 624708,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 264,
+      "player": "투야4848",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 618304,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 265,
+      "player": "Killergruppe",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 608370,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 266,
+      "player": "ChristopheB",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 593421,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 267,
+      "player": "Kosma",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 592304,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 268,
+      "player": "homeboy88",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 584061,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 269,
+      "player": "pikitator",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 581287,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 270,
+      "player": "Tomgarr",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 580395,
+      "source": "20261010_164708000_iOS.png"
+    },
+    {
+      "rank": 271,
+      "player": "bulldog66",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 569026,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 272,
+      "player": "SnakeSpear",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 559156,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 273,
+      "player": "ROKNAVY368",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 545710,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 274,
+      "player": "하리용",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 542690,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 275,
+      "player": "CNGPS",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 542081,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 276,
+      "player": "Chouquette",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 541292,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 277,
+      "player": "이승아",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 539245,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 278,
+      "player": "LUTypM0BaR",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 539086,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 279,
+      "player": "Buccini",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 526485,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 280,
+      "player": "JCGL",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 525148,
+      "source": "20261010_164714000_iOS.png"
+    },
+    {
+      "rank": 281,
+      "player": "rishka0802",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 524710,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 282,
+      "player": "AneKcaup1234",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 523549,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 283,
+      "player": "Audacious-Loki",
+      "tag": "ASG",
+      "alliance": "AsgardWar",
+      "server": 97,
+      "points": 523369,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 284,
+      "player": "Pitta",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 519066,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 285,
+      "player": "CapJohnSnow",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 517909,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 286,
+      "player": "Enorais",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 514276,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 287,
+      "player": "Adrien2p",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 512160,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 288,
+      "player": "YourMumsCity",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 508190,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 289,
+      "player": "MaKc1408",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 504503,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 290,
+      "player": "Albert01804",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 500720,
+      "source": "20261010_164720000_iOS.png"
+    },
+    {
+      "rank": 291,
+      "player": "JeffMax",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 493928,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 292,
+      "player": "vezita",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 492985,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 293,
+      "player": "pumaDi8402",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 491120,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 294,
+      "player": "Awanje19",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 485900,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 295,
+      "player": "DirtyLawyer",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 482533,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 296,
+      "player": "Olyaparis",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 477658,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 297,
+      "player": "Jupiter7",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 471659,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 298,
+      "player": "crayk",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 469892,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 299,
+      "player": "Madcat69",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 465481,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 300,
+      "player": "3rnaa",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 462163,
+      "source": "20261010_164724000_iOS.png"
+    },
+    {
+      "rank": 301,
+      "player": "BETFLA1845",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 461069,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 302,
+      "player": "WingCIipper",
+      "tag": "ASG",
+      "alliance": "AsgardWar",
+      "server": 97,
+      "points": 458977,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 303,
+      "player": "Rekt707",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 454988,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 304,
+      "player": "Ankarion",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 454237,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 305,
+      "player": "NeAngeIok",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 451541,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 306,
+      "player": "Capundies",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 449411,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 307,
+      "player": "RogueRun",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 448980,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 308,
+      "player": "Margouillat",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 442500,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 309,
+      "player": "DCM35",
+      "tag": "LGA2",
+      "alliance": "Legacy2",
+      "server": 97,
+      "points": 442116,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 310,
+      "player": "시금한닐리리아",
+      "tag": "9988",
+      "alliance": "나혼자한다",
+      "server": 97,
+      "points": 442092,
+      "source": "20261010_164729000_iOS.png"
+    },
+    {
+      "rank": 311,
+      "player": "Lili-007",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 432933,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 312,
+      "player": "ISaam3",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 432884,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 313,
+      "player": "Mahalna",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 431271,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 314,
+      "player": "NaraBKK",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 426623,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 315,
+      "player": "Citron",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 424973,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 316,
+      "player": "Trebor972",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 424569,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 317,
+      "player": "Patya85",
+      "tag": "Crm",
+      "alliance": "Cyprym",
+      "server": 105,
+      "points": 422342,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 318,
+      "player": "b-e-n-d",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 418592,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 319,
+      "player": "Morphius",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 418034,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 320,
+      "player": "3peHierep",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 409437,
+      "source": "20261010_164732000_iOS.png"
+    },
+    {
+      "rank": 321,
+      "player": "twi5ter",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 403984,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 322,
+      "player": "Andreyhooligan",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 402775,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 323,
+      "player": "LeBaron",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 397994,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 324,
+      "player": "Lordmirko",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 394241,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 325,
+      "player": "♡Милый♡",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 388856,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 326,
+      "player": "Dalibor988",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 388851,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 327,
+      "player": "majormongo",
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "points": 386427,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 328,
+      "player": "Fka",
+      "tag": "RPo",
+      "alliance": "RusPower",
+      "server": 97,
+      "points": 386253,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 329,
+      "player": "ksafver",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 372336,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 330,
+      "player": "BUZZ22",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 369904,
+      "source": "20261010_164738000_iOS.png"
+    },
+    {
+      "rank": 331,
+      "player": "YMhAaXOH",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 366792,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 332,
+      "player": "DAYMON",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 360682,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 333,
+      "player": "SantaFe1",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 359792,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 334,
+      "player": "Splider",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 359065,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 335,
+      "player": "zarazxxxxx",
+      "tag": "Lsa1",
+      "alliance": "서아패밀리",
+      "server": 105,
+      "points": 353357,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 336,
+      "player": "Lancelot34",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 350588,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 337,
+      "player": "StePoupi",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 349975,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 338,
+      "player": "BBOSONG",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 348450,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 339,
+      "player": "AnnaA\"H716",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 347786,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 340,
+      "player": "Ijax17620",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 343643,
+      "source": "20261010_164743000_iOS.png"
+    },
+    {
+      "rank": 341,
+      "player": "평경장",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 342065,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 342,
+      "player": "Anetka2000",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 337014,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 343,
+      "player": "Danie117",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 323646,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 344,
+      "player": "tedblu",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 321000,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 345,
+      "player": "Jump13",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 319085,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 346,
+      "player": "Pouria",
+      "tag": "TRf",
+      "alliance": "Türklerrr",
+      "server": 97,
+      "points": 318111,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 347,
+      "player": "Magnus2",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 314526,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 348,
+      "player": "MINHO",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 312360,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 349,
+      "player": "Vladbll<a",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 310765,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 350,
+      "player": "Xten",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 309625,
+      "source": "20261010_164746000_iOS.png"
+    },
+    {
+      "rank": 351,
+      "player": "SteamPower",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 308271,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 352,
+      "player": "TickIeFist",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 306636,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 353,
+      "player": "murat01",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 301749,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 354,
+      "player": "ZDrasVstVui",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 300012,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 355,
+      "player": "JiminJeong",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 297378,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 356,
+      "player": "Godcity",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 294685,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 357,
+      "player": "Jacky988",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 290924,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 358,
+      "player": "Vince78",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 287526,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 359,
+      "player": "Ulimax",
+      "tag": "ASG",
+      "alliance": "AsgardWar",
+      "server": 97,
+      "points": 282883,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 360,
+      "player": "BIGK",
+      "tag": "BBb",
+      "alliance": "BigBurger",
+      "server": 97,
+      "points": 282815,
+      "source": "20261010_164752000_iOS.png"
+    },
+    {
+      "rank": 361,
+      "player": "Kaylani",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 278814,
+      "source": "20261010_164758000_iOS.png"
+    },
+    {
+      "rank": 362,
+      "player": "Griiinch",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 275316,
+      "source": "20261010_164800000_iOS.png"
+    },
+    {
+      "rank": 363,
+      "player": "Arrow2",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 275156,
+      "source": "20261010_164758000_iOS.png"
+    },
+    {
+      "rank": 364,
+      "player": "3mowa",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 266203,
+      "source": "20261010_164758000_iOS.png"
+    },
+    {
+      "rank": 365,
+      "player": "Elicia",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 261070,
+      "source": "20261010_164758000_iOS.png"
+    },
+    {
+      "rank": 366,
+      "player": "Velitsyan",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 257532,
+      "source": "20261010_164758000_iOS.png"
+    },
+    {
+      "rank": 367,
+      "player": "Dirtyweaponry",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 240385,
+      "source": "20261010_164758000_iOS.png"
+    },
+    {
+      "rank": 368,
+      "player": "shuma-den",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 240012,
+      "source": "20261010_164758000_iOS.png"
+    },
+    {
+      "rank": 369,
+      "player": "XcaIibuR",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 236989,
+      "source": "20261010_164758000_iOS.png"
+    },
+    {
+      "rank": 370,
+      "player": "MaKc136pyc",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 225913,
+      "source": "20261010_164800000_iOS.png"
+    },
+    {
+      "rank": 371,
+      "player": "Captainamerica",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 220469,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 372,
+      "player": "booiwoll",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 220288,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 373,
+      "player": "BADxKITTY",
+      "tag": "LGA2",
+      "alliance": "Legacy2",
+      "server": 97,
+      "points": 218413,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 374,
+      "player": "Major-Payne",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 210000,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 375,
+      "player": "Psychopolis",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 204930,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 376,
+      "player": "NEFr",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 194521,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 377,
+      "player": "SCROOG3MCBUCKS",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 193988,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 378,
+      "player": "GENTI",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 192032,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 379,
+      "player": "BXFINEST21",
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "points": 187008,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 380,
+      "player": "Muhammad828",
+      "tag": "DOZR",
+      "alliance": "DoomsdayCrisis",
+      "server": 105,
+      "points": 186336,
+      "source": "20261010_164803000_iOS.png"
+    },
+    {
+      "rank": 381,
+      "player": "\"Bra",
+      "tag": "0088",
+      "alliance": "[0088]",
+      "server": 97,
+      "points": 183215,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 382,
+      "player": "Igamergir1211",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 176790,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 383,
+      "player": "Commander1WFBJdD",
+      "tag": "1453",
+      "alliance": "Kizilelma",
+      "server": 105,
+      "points": 172852,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 384,
+      "player": "domin8ter",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 170170,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 385,
+      "player": "shineä\\ä",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 168945,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 386,
+      "player": "Mirba996",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 167507,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 387,
+      "player": "GUSTAVO",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 167090,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 388,
+      "player": "vinsa183",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 165884,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 389,
+      "player": "Captiancaveman",
+      "tag": "TGT",
+      "alliance": "Overlordl",
+      "server": 105,
+      "points": 165290,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 390,
+      "player": "경기도파주",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 163586,
+      "source": "20261010_164808000_iOS.png"
+    },
+    {
+      "rank": 391,
+      "player": "rubito",
+      "tag": "GDS",
+      "alliance": "IceandFire",
+      "server": 105,
+      "points": 159315,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 392,
+      "player": "EnOOt",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 158508,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 393,
+      "player": "11104144",
+      "tag": "0411",
+      "alliance": "TheLeague",
+      "server": 105,
+      "points": 158136,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 394,
+      "player": "SBLÄGK-DÉVIL5",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 157730,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 395,
+      "player": "CKBepHa",
+      "tag": "BG1",
+      "alliance": "ФеНИкС",
+      "server": 105,
+      "points": 157340,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 396,
+      "player": "•RAVEN•",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 155640,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 397,
+      "player": "MasterX777",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 154536,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 398,
+      "player": "Manoune",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 153118,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 399,
+      "player": "Cussler",
+      "tag": "ASG",
+      "alliance": "AsgardWar",
+      "server": 97,
+      "points": 151000,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 400,
+      "player": "MELNIK",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 150000,
+      "source": "20261010_164813000_iOS.png"
+    },
+    {
+      "rank": 401,
+      "player": "Commander1X40Zuh",
+      "tag": "OuT",
+      "alliance": "OUTLAWSofTexas",
+      "server": 105,
+      "points": 145634,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 402,
+      "player": "ohmimi",
+      "tag": "0197",
+      "alliance": "풍림화산77",
+      "server": 105,
+      "points": 143198,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 403,
+      "player": "wynken",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 141360,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 404,
+      "player": "FenrirNusrat",
+      "tag": "LGA2",
+      "alliance": "Legacy2",
+      "server": 97,
+      "points": 139660,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 405,
+      "player": "DalheGrémio",
+      "tag": "Vgdr",
+      "alliance": "vingadores",
+      "server": 105,
+      "points": 138585,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 406,
+      "player": "빠르쉼",
+      "tag": "qwer",
+      "alliance": "ㅛㅛㅛㅛㅛㅛ",
+      "server": 105,
+      "points": 136950,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 407,
+      "player": "qoq07",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 136058,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 408,
+      "player": "martinas",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 132960,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 409,
+      "player": "Mercenari01982",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 130568,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 410,
+      "player": "DropBear181",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 128800,
+      "source": "20261010_164819000_iOS.png"
+    },
+    {
+      "rank": 411,
+      "player": "Derkaiser",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 126656,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 412,
+      "player": "Hitlit9",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 118030,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 413,
+      "player": "Inkl",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 117860,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 414,
+      "player": "enzomclaren",
+      "tag": "LOE",
+      "alliance": "LegionofEternity",
+      "server": 105,
+      "points": 114825,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 415,
+      "player": "KaMoTeQ",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 113315,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 416,
+      "player": "mangtomas",
+      "tag": "LW7",
+      "alliance": "Valormint",
+      "server": 105,
+      "points": 110068,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 417,
+      "player": "Lulli",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 107139,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 418,
+      "player": "Mephist0314",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 107000,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 419,
+      "player": "Michas",
+      "tag": "ASG",
+      "alliance": "AsgardWar",
+      "server": 97,
+      "points": 104000,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 420,
+      "player": "Ayuka",
+      "tag": "Crm",
+      "alliance": "Cyprym",
+      "server": 105,
+      "points": 100380,
+      "source": "20261010_164823000_iOS.png"
+    },
+    {
+      "rank": 421,
+      "player": "복숭아☆°APEACH",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 97314,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 422,
+      "player": "c2h20h",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 96000,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 423,
+      "player": "Fenrir16",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 94482,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 424,
+      "player": "Ioup-garou",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 92879,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 425,
+      "player": "아르티스",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 92680,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 426,
+      "player": "aweasso",
+      "tag": "LGA2",
+      "alliance": "Legacy2",
+      "server": 97,
+      "points": 91991,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 427,
+      "player": "DoogIe32",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 89792,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 428,
+      "player": "Torreäo",
+      "tag": "XXXS",
+      "alliance": "Backtothepast",
+      "server": 105,
+      "points": 88695,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 429,
+      "player": "Drillbreak",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 88060,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 430,
+      "player": "Twi5ter2",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 87176,
+      "source": "20261010_164828000_iOS.png"
+    },
+    {
+      "rank": 431,
+      "player": "leilanana",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 82063,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 432,
+      "player": "Skoalman",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 81128,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 433,
+      "player": "BoulajSuoyarvi",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 79746,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 434,
+      "player": "RaTaMaN",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 78000,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 435,
+      "player": "XxLYFExX",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 76232,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 436,
+      "player": "tripod",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 74450,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 437,
+      "player": "TJ69",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 73084,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 438,
+      "player": "AssAssIn",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 70760,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 439,
+      "player": "HARVEY",
+      "tag": "WNi",
+      "alliance": "ЦИТАДЕЛЬ",
+      "server": 97,
+      "points": 70000,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 440,
+      "player": "Ebulfez",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 69396,
+      "source": "20261010_164834000_iOS.png"
+    },
+    {
+      "rank": 441,
+      "player": "WELES",
+      "tag": "KVIZ",
+      "alliance": "Инквизиция",
+      "server": 97,
+      "points": 68000,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 442,
+      "player": "MeatMissiIe",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 68000,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 443,
+      "player": "St3ph4ni3",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 67296,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 444,
+      "player": "romankuza",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 59383,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 445,
+      "player": "strelokhausa",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 58744,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 446,
+      "player": "LeXieV",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 58600,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 447,
+      "player": "EBPOIIA",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 58569,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 448,
+      "player": "JeunLee",
+      "tag": "CrZ",
+      "alliance": "CrusaderZ",
+      "server": 97,
+      "points": 55392,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 449,
+      "player": "You95",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 54476,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 450,
+      "player": "wewen2k26",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 52340,
+      "source": "20261010_164838000_iOS.png"
+    },
+    {
+      "rank": 451,
+      "player": "@eepnq",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 52338,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 452,
+      "player": "mexicanol",
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "points": 51852,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 453,
+      "player": "defuse",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 51556,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 454,
+      "player": "1314",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 48016,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 455,
+      "player": "JRS17",
+      "tag": "LGA2",
+      "alliance": "Legacy2",
+      "server": 97,
+      "points": 45620,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 456,
+      "player": "아현테크",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 45000,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 457,
+      "player": "천지개벽",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 45000,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 458,
+      "player": "Commander1WIc1eh",
+      "tag": "Knvs",
+      "alliance": "knavesteam",
+      "server": 105,
+      "points": 42390,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 459,
+      "player": "LilPiggy",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 41942,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 460,
+      "player": "nyn•1TYK",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 37549,
+      "source": "20261010_164841000_iOS.png"
+    },
+    {
+      "rank": 461,
+      "player": "AbraCadabrAaaaaa",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 37468,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 462,
+      "player": "ANY",
+      "tag": "KKL",
+      "alliance": "KeyStoneLTD",
+      "server": 97,
+      "points": 37336,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 463,
+      "player": "Kazuken",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 36760,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 464,
+      "player": "MickeyH",
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "points": 31025,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 465,
+      "player": "000700",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 28500,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 466,
+      "player": "CknCoop",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 28500,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 467,
+      "player": "Joyeux",
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "points": 25985,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 468,
+      "player": "schens",
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "points": 22016,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 469,
+      "player": "Arsenalfc49",
+      "tag": "lga",
+      "alliance": "LegacyAlliance",
+      "server": 97,
+      "points": 21764,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 470,
+      "player": "Cinderfog",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 21688,
+      "source": "20261010_164845000_iOS.png"
+    },
+    {
+      "rank": 471,
+      "player": "ApocaAnon",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 20740,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 472,
+      "player": "GoddessLelya",
+      "tag": "ZEuS",
+      "alliance": "БогиОлимпа",
+      "server": 112,
+      "points": 17000,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 473,
+      "player": "pepen",
+      "tag": "BxBs",
+      "alliance": "Beauxbâtons",
+      "server": 97,
+      "points": 15500,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 474,
+      "player": "takeover",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 12538,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 475,
+      "player": "Rus026",
+      "tag": "KmA",
+      "alliance": "Kimura",
+      "server": 108,
+      "points": 11920,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 476,
+      "player": "Santinot",
+      "tag": "COB",
+      "alliance": "ConcilioBlanco",
+      "server": 105,
+      "points": 10270,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 477,
+      "player": "JASON267",
+      "tag": "US1",
+      "alliance": "USAElite",
+      "server": 97,
+      "points": 9500,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 478,
+      "player": "BoopBB",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 9030,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 479,
+      "player": "Garythesnail",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 3890,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 480,
+      "player": "kobmoo",
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "points": 3753,
+      "source": "20261010_164850000_iOS.png"
+    },
+    {
+      "rank": 481,
+      "player": "xZeuSx",
+      "tag": "TGT",
+      "alliance": "Overlordl",
+      "server": 105,
+      "points": 2799,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 482,
+      "player": "oncetwice",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 2682,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 483,
+      "player": "Banter",
+      "tag": "clo",
+      "alliance": "shakirhasan",
+      "server": 105,
+      "points": 2092,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 484,
+      "player": "RJ40",
+      "tag": "",
+      "alliance": "",
+      "server": 105,
+      "points": 2016,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 485,
+      "player": "🦅🦅🦅",
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "points": 1945,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 486,
+      "player": "VleHeu",
+      "tag": "OSM R",
+      "alliance": "StoneMountainRiver",
+      "server": 105,
+      "points": 1521,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 487,
+      "player": "AigarsLatvija",
+      "tag": "GDSH",
+      "alliance": "gdsherhrstj",
+      "server": 105,
+      "points": 1521,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 488,
+      "player": "KillerKim",
+      "tag": "clo",
+      "alliance": "shakirhasan",
+      "server": 105,
+      "points": 1395,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 489,
+      "player": "Mahan007",
+      "tag": "aio",
+      "alliance": "aAooAa",
+      "server": 105,
+      "points": 1377,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 490,
+      "player": "ATX",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 1341,
+      "source": "20261010_164855000_iOS.png"
+    },
+    {
+      "rank": 491,
+      "player": "toty",
+      "tag": "COB",
+      "alliance": "ConcilioBlanco",
+      "server": 105,
+      "points": 1242,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 492,
+      "player": "Commander1WdnbSh",
+      "tag": "0197",
+      "alliance": "풍림화산77",
+      "server": 105,
+      "points": 1000,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 493,
+      "player": "Jarrett94",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 909,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 494,
+      "player": "DADA51",
+      "tag": "AdM",
+      "alliance": "ArméeDuMonde",
+      "server": 105,
+      "points": 864,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 495,
+      "player": "Commander1WnXcaR",
+      "tag": "MLT",
+      "alliance": "MULTORUMVIDIT",
+      "server": 105,
+      "points": 855,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 496,
+      "player": "Bialeee",
+      "tag": "6HW",
+      "alliance": "autumn",
+      "server": 105,
+      "points": 738,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 497,
+      "player": "Banzaj",
+      "tag": "Nio",
+      "alliance": "Nightowls",
+      "server": 105,
+      "points": 724,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 498,
+      "player": "Streetjudge",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 672,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 499,
+      "player": "dashl",
+      "tag": "GDS",
+      "alliance": "IceandFire",
+      "server": 105,
+      "points": 558,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 500,
+      "player": "lullu0987",
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "points": 500,
+      "source": "20261010_164859000_iOS.png"
+    },
+    {
+      "rank": 501,
+      "player": "Datos",
+      "tag": "GDS",
+      "alliance": "IceandFire",
+      "server": 105,
+      "points": 480,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 502,
+      "player": "Alleys",
+      "tag": "clo",
+      "alliance": "shakirhasan",
+      "server": 105,
+      "points": 477,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 503,
+      "player": "rkboss",
+      "tag": "US2e",
+      "alliance": "USRequiem",
+      "server": 105,
+      "points": 464,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 504,
+      "player": "Commander1WNKPVL",
+      "tag": "GDS",
+      "alliance": "IceandFire",
+      "server": 105,
+      "points": 430,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 505,
+      "player": "MIZUK126",
+      "tag": "SWIV",
+      "alliance": "ANewHope",
+      "server": 105,
+      "points": 405,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 506,
+      "player": "MetalGirI",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 360,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 507,
+      "player": "Pescador",
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "points": 360,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 508,
+      "player": "josani",
+      "tag": "Scrf",
+      "alliance": "Scarface",
+      "server": 105,
+      "points": 333,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 509,
+      "player": "Assasina",
+      "tag": "MDO",
+      "alliance": "Mundo",
+      "server": 105,
+      "points": 315,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 510,
+      "player": "GTIine88",
+      "tag": "DDV",
+      "alliance": "USAAAAAA",
+      "server": 105,
+      "points": 300,
+      "source": "20261010_164903000_iOS.png"
+    },
+    {
+      "rank": 511,
+      "player": "Deniska27",
+      "tag": "TGT",
+      "alliance": "Overlordl",
+      "server": 105,
+      "points": 297,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 512,
+      "player": "Shantia",
+      "tag": "GDS",
+      "alliance": "IceandFire",
+      "server": 105,
+      "points": 279,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 513,
+      "player": "Lulühome2",
+      "tag": "DDV",
+      "alliance": "USAAAAAA",
+      "server": 105,
+      "points": 272,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 514,
+      "player": "Commander1XvrXLz",
+      "tag": "LW7",
+      "alliance": "Valormint",
+      "server": 105,
+      "points": 270,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 515,
+      "player": "Commander1)(Nu6SZ",
+      "tag": "AWS",
+      "alliance": "AshWalkers",
+      "server": 105,
+      "points": 250,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 516,
+      "player": "peckerdecker",
+      "tag": "GGRI",
+      "alliance": "GGGRI",
+      "server": 105,
+      "points": 243,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 517,
+      "player": "plumbus",
+      "tag": "2VB",
+      "alliance": "RidgeReapers",
+      "server": 105,
+      "points": 230,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 518,
+      "player": "boytinapay",
+      "tag": "TGT",
+      "alliance": "Overlordl",
+      "server": 105,
+      "points": 216,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 519,
+      "player": "Commander1WkhC4x",
+      "tag": "HHS",
+      "alliance": "HHRTS",
+      "server": 105,
+      "points": 216,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 520,
+      "player": "Commander1XR18Eh",
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "points": 207,
+      "source": "20261010_164907000_iOS.png"
+    },
+    {
+      "rank": 521,
+      "player": "Rockl 975",
+      "tag": "LW7",
+      "alliance": "Valormint",
+      "server": 105,
+      "points": 198,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 522,
+      "player": "Survivalman1967",
+      "tag": "GDS",
+      "alliance": "IceandFire",
+      "server": 105,
+      "points": 189,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 523,
+      "player": "TylerMode",
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "points": 144,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 524,
+      "player": "Commander1Xrq4zv",
+      "tag": "SVO",
+      "alliance": "HoqHoVIA030p",
+      "server": 105,
+      "points": 130,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 525,
+      "player": "jefemaestrol",
+      "tag": "CLP",
+      "alliance": "Chilito",
+      "server": 105,
+      "points": 120,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 526,
+      "player": "Commander1YaUSox",
+      "tag": "SaBa",
+      "alliance": "SachsenBande",
+      "server": 105,
+      "points": 108,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 527,
+      "player": "Commander1YaxUOI",
+      "tag": "SOSI",
+      "alliance": "SWIFTKEY",
+      "server": 105,
+      "points": 108,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 528,
+      "player": "Commander25tqiu2",
+      "tag": "Dstr",
+      "alliance": "destripadores",
+      "server": 110,
+      "points": 108,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 529,
+      "player": "Commander1YIQRYJ",
+      "tag": "HHG",
+      "alliance": "HolyHandGrenade",
+      "server": 105,
+      "points": 99,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 530,
+      "player": "Commander1WH3Zwt",
+      "tag": "Fifa",
+      "alliance": "fifalafa",
+      "server": 105,
+      "points": 90,
+      "source": "20261010_164912000_iOS.png"
+    },
+    {
+      "rank": 531,
+      "player": "Commander1WuRRi1",
+      "tag": "MLT",
+      "alliance": "MULTORUMVIDIT",
+      "server": 105,
+      "points": 90,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 532,
+      "player": "Beba01",
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "points": 80,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 533,
+      "player": "GIFÆ",
+      "tag": "NMT",
+      "alliance": "NoxMortis",
+      "server": 105,
+      "points": 80,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 534,
+      "player": "Commander1WLV64N",
+      "tag": "Dolt",
+      "alliance": "BRUTE",
+      "server": 105,
+      "points": 72,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 535,
+      "player": "Nygard",
+      "tag": "ADG",
+      "alliance": "asdfghj",
+      "server": 105,
+      "points": 70,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 536,
+      "player": "medya",
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "points": 63,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 537,
+      "player": "NaDA",
+      "tag": "Lsa1",
+      "alliance": "서아패밀리",
+      "server": 105,
+      "points": 60,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 538,
+      "player": "RIOT",
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "points": 50,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 539,
+      "player": "Commander1WOmXkR",
+      "tag": "SaBa",
+      "alliance": "SachsenBande",
+      "server": 105,
+      "points": 50,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 540,
+      "player": "VhagarVaIyria",
+      "tag": "SWIV",
+      "alliance": "ANewHope",
+      "server": 105,
+      "points": 45,
+      "source": "20261010_164921000_iOS.png"
+    },
+    {
+      "rank": 541,
+      "player": "30Daha",
+      "tag": "EvX",
+      "alliance": "EVANESCENCE",
+      "server": 105,
+      "points": 36,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 542,
+      "player": "SergeiCrimea",
+      "tag": "GDS",
+      "alliance": "IceandFire",
+      "server": 105,
+      "points": 36,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 543,
+      "player": "SuPerRanfer",
+      "tag": "NMT",
+      "alliance": "NoxMortis",
+      "server": 105,
+      "points": 30,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 544,
+      "player": "Kingkst",
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "points": 30,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 545,
+      "player": "DimaSkaIp",
+      "tag": "COB",
+      "alliance": "ConcilioBlanco",
+      "server": 105,
+      "points": 30,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 546,
+      "player": "STORMPIERCER",
+      "tag": "TGT",
+      "alliance": "Overlordl",
+      "server": 105,
+      "points": 30,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 547,
+      "player": "Pcgomes13",
+      "tag": "Knvs",
+      "alliance": "knavesteam",
+      "server": 105,
+      "points": 27,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 548,
+      "player": "Commander1XSOF29",
+      "tag": "2VB",
+      "alliance": "RidgeReapers",
+      "server": 105,
+      "points": 27,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 549,
+      "player": "Botchie",
+      "tag": "SCOR",
+      "alliance": "Scorpion",
+      "server": 105,
+      "points": 27,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 550,
+      "player": "Commander1YGJi4N",
+      "tag": "",
+      "alliance": "",
+      "server": 105,
+      "points": 27,
+      "source": "20261010_164926000_iOS.png"
+    },
+    {
+      "rank": 551,
+      "player": "Commander1Y29VkI",
+      "tag": "Crm",
+      "alliance": "Cyprym",
+      "server": 105,
+      "points": 27,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 552,
+      "player": "Commander1WJjT9D",
+      "tag": "",
+      "alliance": "",
+      "server": 105,
+      "points": 27,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 553,
+      "player": "Commander1WzNUIV",
+      "tag": "WXZ",
+      "alliance": "guardian",
+      "server": 105,
+      "points": 21,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 554,
+      "player": "TupoyBot",
+      "tag": "BG1",
+      "alliance": "ФеНИкС",
+      "server": 105,
+      "points": 20,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 555,
+      "player": "Juzzyb069",
+      "tag": "US2e",
+      "alliance": "USRequiem",
+      "server": 105,
+      "points": 20,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 556,
+      "player": "Gabrielare",
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "points": 18,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 557,
+      "player": "Commander1XZnpgJ",
+      "tag": "CFL",
+      "alliance": "CasualFreeLancers",
+      "server": 105,
+      "points": 10,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 558,
+      "player": "Snowden",
+      "tag": "COB",
+      "alliance": "ConcilioBlanco",
+      "server": 105,
+      "points": 10,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 559,
+      "player": "Mmm4321",
+      "tag": "CFL",
+      "alliance": "CasualFreeLancers",
+      "server": 105,
+      "points": 10,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 560,
+      "player": "Commander1WTdrwR",
+      "tag": "kilb",
+      "alliance": "killerxb",
+      "server": 105,
+      "points": 10,
+      "source": "20261010_164941000_iOS.png"
+    },
+    {
+      "rank": 561,
+      "player": "KoKyaw",
+      "tag": "DOZR",
+      "alliance": "DoomsdayCrisis",
+      "server": 105,
+      "points": 9,
+      "source": "20261010_164946000_iOS.png"
+    },
+    {
+      "rank": 562,
+      "player": "Commander1X3Sxex",
+      "tag": "EvX",
+      "alliance": "EVANESCENCE",
+      "server": 105,
+      "points": 9,
+      "source": "20261010_164946000_iOS.png"
+    },
+    {
+      "rank": 563,
+      "player": "Ayla16",
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "points": 9,
+      "source": "20261010_164946000_iOS.png"
+    }
+  ],
+  "alliances": [
+    {
+      "tag": "GGR",
+      "alliance": "GamerGirlsRule",
+      "server": 105,
+      "members": 99,
+      "capacity": 100,
+      "power": 4111956441,
+      "level": 27,
+      "source": "20261010_165208000_iOS.png"
+    },
+    {
+      "tag": "BTs",
+      "alliance": "BangTan",
+      "server": 105,
+      "members": 79,
+      "capacity": 100,
+      "power": 2987664595,
+      "level": 24,
+      "source": "20261010_165212000_iOS.png"
+    },
+    {
+      "tag": "Lrs",
+      "alliance": "LesRôdeursSombres",
+      "server": 105,
+      "members": 80,
+      "capacity": 100,
+      "power": 2532833513,
+      "level": 24,
+      "source": "20261010_165215000_iOS.png"
+    },
+    {
+      "tag": "CCE",
+      "alliance": "Celestra",
+      "server": 105,
+      "members": 79,
+      "capacity": 100,
+      "power": 2443160807,
+      "level": 23,
+      "source": "20261010_165218000_iOS.png"
+    },
+    {
+      "tag": "IGGG",
+      "alliance": "TripleG",
+      "server": 105,
+      "members": 62,
+      "capacity": 100,
+      "power": 2414913483,
+      "level": 25,
+      "source": "20261010_165221000_iOS.png"
+    },
+    {
+      "tag": "TuT",
+      "alliance": "TheUnholyTriad",
+      "server": 105,
+      "members": 64,
+      "capacity": 100,
+      "power": 2188603225,
+      "level": 23,
+      "source": "20261010_165225000_iOS.png"
+    },
+    {
+      "tag": "BOD",
+      "alliance": "BubbleOrDie",
+      "server": 105,
+      "members": 62,
+      "capacity": 100,
+      "power": 2013194241,
+      "level": 22,
+      "source": "20261010_165229000_iOS.png"
+    },
+    {
+      "tag": "Beep",
+      "alliance": "Beepandboop",
+      "server": 105,
+      "members": 71,
+      "capacity": 100,
+      "power": 1728324698,
+      "level": 12,
+      "source": "20261010_165233000_iOS.png"
+    },
+    {
+      "tag": "LIG",
+      "alliance": "LIGHT",
+      "server": 105,
+      "members": 60,
+      "capacity": 100,
+      "power": 1564269341,
+      "level": 16,
+      "source": "20261010_165237000_iOS.png"
+    },
+    {
+      "tag": "DIE",
+      "alliance": "Drachenritter",
+      "server": 105,
+      "members": 58,
+      "capacity": 100,
+      "power": 1539532861,
+      "level": 16,
+      "source": "20261010_165244000_iOS.png"
+    },
+    {
+      "tag": "Asg",
+      "alliance": "asgardianos",
+      "server": 105,
+      "members": 70,
+      "capacity": 100,
+      "power": 1531625826,
+      "level": 11,
+      "source": "20261010_165247000_iOS.png"
+    },
+    {
+      "tag": "GDS",
+      "alliance": "IceandFire",
+      "server": 105,
+      "members": 100,
+      "capacity": 100,
+      "power": 1334155559,
+      "level": 11,
+      "source": "20261010_165252000_iOS.png"
+    },
+    {
+      "tag": "CFL",
+      "alliance": "CasualFreeLancers",
+      "server": 105,
+      "members": 92,
+      "capacity": 100,
+      "power": 796748374,
+      "level": 8,
+      "source": "20261010_165256000_iOS.png"
+    },
+    {
+      "tag": "COB",
+      "alliance": "ConcilioBlanco",
+      "server": 105,
+      "members": 43,
+      "capacity": 100,
+      "power": 623770213,
+      "level": 7,
+      "source": "20261010_165303000_iOS.png"
+    },
+    {
+      "tag": "clo",
+      "alliance": "shakirhasan",
+      "server": 105,
+      "members": 100,
+      "capacity": 100,
+      "power": 597439779,
+      "level": 8,
+      "source": "20261010_165308000_iOS.png"
+    },
+    {
+      "tag": "SWIV",
+      "alliance": "ANewHope",
+      "server": 105,
+      "members": 39,
+      "capacity": 100,
+      "power": 596916563,
+      "level": 7,
+      "source": "20261010_165314000_iOS.png"
+    },
+    {
+      "tag": "BG1",
+      "alliance": "ФеНИкС",
+      "server": 105,
+      "members": 25,
+      "capacity": 100,
+      "power": 466744750,
+      "level": 8,
+      "source": "20261010_165318000_iOS.png"
+    },
+    {
+      "tag": "Crm",
+      "alliance": "Cyprym",
+      "server": 105,
+      "members": 42,
+      "capacity": 100,
+      "power": 416040201,
+      "level": 9,
+      "source": "20261010_165324000_iOS.png"
+    },
+    {
+      "tag": "0197",
+      "alliance": "풍림화산77",
+      "server": 105,
+      "members": 32,
+      "capacity": 100,
+      "power": 409602905,
+      "level": 9,
+      "source": "20261010_165327000_iOS.png"
+    },
+    {
+      "tag": "Lsa1",
+      "alliance": "서아패밀리",
+      "server": 105,
+      "members": 26,
+      "capacity": 100,
+      "power": 402098222,
+      "level": 7,
+      "source": "20261010_165330000_iOS.png"
+    }
+  ]
+}
