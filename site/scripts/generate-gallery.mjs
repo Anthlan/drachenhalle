@@ -77,7 +77,11 @@ const transliterations = new Map([
 ]);
 
 async function walk(directory) {
-  const entries = await readdir(directory, { withFileTypes: true });
+  const entries = await readdir(directory, { withFileTypes: true }).catch((error) => {
+    // Text-only areas have no shared image folder in a fresh Git checkout.
+    if (error.code === "ENOENT") return [];
+    throw error;
+  });
   const files = [];
 
   for (const entry of entries) {
