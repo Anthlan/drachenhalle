@@ -260,5 +260,8 @@
   "S105 vs. S97": "S105 и S97",
   "Teilen": "Поделиться",
   "Reduziert teilen": "Поделиться только содержимым",
-  "Nur diesen Inhalt ohne Navigation teilen": "Поделиться только содержимым без навигации"
+  "Nur diesen Inhalt ohne Navigation teilen": "Поделиться только содержимым без навигации",
+  "Hilfe zum Teilen": "Как поделиться",
+  "Teilt den Inhalt mit der normalen Seitennavigation.": "Поделиться содержимым с обычной навигацией сайта.",
+  "Teilt nur diesen Inhalt ohne Seitennavigation.": "Поделиться только этим содержимым без навигации сайта."
 }

@@ -2045,5 +2045,8 @@
   "offen": "unclaimed",
   "der Allianzpunkte. Für diese Allianz liegen keine Mitgliederzahlen vor.": "of alliance points. Membership figures are unavailable for this alliance.",
   "Reduziert teilen": "Share content only",
-  "Nur diesen Inhalt ohne Navigation teilen": "Share only this content without navigation"
+  "Nur diesen Inhalt ohne Navigation teilen": "Share only this content without navigation",
+  "Hilfe zum Teilen": "Sharing help",
+  "Teilt den Inhalt mit der normalen Seitennavigation.": "Shares the content with the normal site navigation.",
+  "Teilt nur diesen Inhalt ohne Seitennavigation.": "Shares only this content without site navigation."
 }

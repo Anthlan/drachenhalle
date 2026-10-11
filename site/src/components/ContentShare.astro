@@ -1,0 +1,35 @@
+---
+import ImageActionIcon from "./ImageActionIcon.astro";
+const { url } = Astro.props;
+---
+<div class="content-share-actions">
+  <button type="button" class="tip-article-share" data-share-page data-share-url={url} aria-label="Teilen" title="Teilen"><ImageActionIcon type="share" /></button>
+  <button type="button" class="tip-article-share" data-share-page data-share-reduced data-share-url={url} aria-label="Reduziert teilen" title="Reduziert teilen"><ImageActionIcon type="share-content" /></button>
+  <details class="content-share-help">
+    <summary aria-label="Hilfe zum Teilen" title="Hilfe zum Teilen"><span aria-hidden="true">?</span></summary>
+    <div class="content-share-help-panel">
+      <p><ImageActionIcon type="share" /><span><strong>Teilen</strong><br />Teilt den Inhalt mit der normalen Seitennavigation.</span></p>
+      <p><ImageActionIcon type="share-content" /><span><strong>Reduziert teilen</strong><br />Teilt nur diesen Inhalt ohne Seitennavigation.</span></p>
+    </div>
+  </details>
+</div>
+<style>
+.content-share-actions { position: relative; width:fit-content; }
+.content-share-actions button { width:44px; height:44px; flex:0 0 44px; padding:0; }
+.content-share-help > summary { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line-bright); border-radius:50%; color:var(--gold-pale); background:rgba(227,173,78,.07); cursor:pointer; list-style:none; font:700 19px/1 Georgia,"Times New Roman",serif; }
+.content-share-help > summary::-webkit-details-marker { display:none; }
+.content-share-help > summary:hover, .content-share-help > summary:focus-visible { border-color:var(--gold); background:rgba(227,173,78,.15); outline:2px solid rgba(227,173,78,.18); }
+.content-share-help-panel { position:absolute; right:0; top:calc(100% + 8px); z-index:20; width:min(300px,calc(100vw - 48px)); padding:16px; background:var(--navy); border:1px solid var(--line-bright); border-radius:8px; box-shadow:0 8px 25px #0008; }
+:global(.expedition) .content-share-help-panel { left:0; right:auto; }
+.content-share-help-panel p { display:flex; align-items:flex-start; gap:12px; margin:0; font-size:13px; line-height:1.5; }
+.content-share-help-panel p + p { margin-top:14px; }
+.content-share-help-panel svg { flex:0 0 20px; }
+</style>
+<script>
+document.querySelectorAll<HTMLDetailsElement>('.content-share-help').forEach(help => {
+ document.addEventListener('click', event => { if(event.target instanceof Node && !help.contains(event.target))help.open=false; });
+ help.addEventListener('keydown', event => { if(event.key==='Escape'){help.open=false;help.querySelector('summary')?.focus();} });
+});
+</script>
+
+

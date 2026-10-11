@@ -4,3 +4,8 @@
 .exp-written-analysis h2, .exp-written-analysis h3 { margin-top: 1.8rem; }
 .exp-written-analysis p { max-width: 80ch; }
 .exp-written-analysis table { display: block; overflow-x: auto; margin-block: 1.5rem; }
+
+/* Keep wide analysis tables inside their own scroll area on phones. */
+.exp-written-analysis table { min-width: 0; max-width: 100%; }
+.exp-hero > *, .exp-scorecards > *, .exp-detail-grid > *, .exp-method-grid > * { min-width: 0; }
+.exp-hero h1, .exp-detail-stat span, .exp-top-list li > span { overflow-wrap: anywhere; }

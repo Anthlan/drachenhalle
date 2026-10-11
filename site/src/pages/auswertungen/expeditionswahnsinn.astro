@@ -1,6 +1,7 @@
 ---
 import SocialMeta from "../../components/SocialMeta.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import ContentShare from "../../components/ContentShare.astro";
 import ReducedView from "../../components/ReducedView.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import "../../styles/global.css";
@@ -31,7 +32,7 @@ const description = "Die Hauptstadteroberung vom 10.10.2026: S105 und S97 im Ver
   <body><ReducedView /><div class="page-shell">
     <SiteHeader active="alliance" />
     <main id="main-content" class="expedition">
-      <div class="content-share-actions"><button type="button" class="tip-article-share" data-share-page data-share-url="/drachenhalle/auswertungen/expeditionswahnsinn/">Teilen</button><button type="button" class="tip-article-share" data-share-page data-share-reduced data-share-url="/drachenhalle/auswertungen/expeditionswahnsinn/">Reduziert teilen</button></div><header class="exp-hero">
+      <ContentShare url={"/drachenhalle/auswertungen/expeditionswahnsinn/"} /><header class="exp-hero">
         <div><p class="eyebrow">Event-Auswertung · 10. Oktober 2026</p><h1>Expeditionswahnsinn<span>Hauptstadteroberung</span></h1><p>Wer war dabei? Wer hat die Punkte getragen? Vergleicht unsere Beteiligung auf S105 mit S97 und schaut euch jede Allianz im Detail an.</p><div class="exp-jumps"><a href="#allianzen">Allianzen vergleichen ↓</a><a href="#spieler">Spieler finden ↓</a><a href="#daten">Datengrundlage ↓</a><a href="#analyse">Analyse lesen ↓</a></div></div>
         <div class="exp-seal"><strong>{analysis.count}</strong><span>Spieler in der vollständigen Rangliste</span><small>Stand der Screenshots: 10.10.2026 · 16:49 Uhr</small></div>
       </header>

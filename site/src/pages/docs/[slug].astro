@@ -1,6 +1,7 @@
 ---
 import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
+import ContentShare from "../../components/ContentShare.astro";
 import ReducedView from "../../components/ReducedView.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
@@ -389,10 +390,7 @@ const responsibilities = [
                   <p class="eyebrow">{document.section}</p>
                   <h1>{document.title}</h1>
                 </div>
-                <div class="content-share-actions">
-<button type="button" class="tip-article-share" data-share-page data-share-url={document.url}><ImageActionIcon type="share" /><span>Teilen</span></button>
-<button type="button" class="tip-article-share" data-share-page data-share-reduced data-share-url={document.url} title="Nur diesen Inhalt ohne Navigation teilen"><ImageActionIcon type="share" /><span>Reduziert teilen</span></button>
-</div>
+                <ContentShare url={document.url} />
               </div>
               {!document.hidden && <p>{document.summary}</p>}
               {document.kind === "tip" && (
