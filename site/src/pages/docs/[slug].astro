@@ -2,6 +2,7 @@
 import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
 import ContentShare from "../../components/ContentShare.astro";
+import { prepareShareAnalysis } from "../../scripts/share-analysis.mjs";
 import ReducedView from "../../components/ReducedView.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
@@ -1050,7 +1051,7 @@ const responsibilities = [
                 <section class="markdown-content tip-copy" set:html={document.copyHtml} />
               </div>
             ) : (
-              <div class:list={["markdown-content", { "consultation-content": document.hidden }]} set:html={document.html} />
+              <div class:list={["markdown-content", { "consultation-content": document.hidden }]} set:html={prepareShareAnalysis(document.html)} />
             )}
           </article>
         </div>

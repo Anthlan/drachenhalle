@@ -1,7 +1,16 @@
+---
+import LanguagePicker from "./LanguagePicker.astro";
+---
 <script is:inline>
 if(new URLSearchParams(location.search).get('view')==='content')document.documentElement.classList.add('content-only');
 </script>
+<div class="reduced-language-toolbar"><LanguagePicker /></div>
 <style is:global>
+.reduced-language-toolbar{display:none}
+html.content-only .reduced-language-toolbar{display:flex;justify-content:flex-end;width:min(1440px,calc(100% - 48px));margin:16px auto 0}
+[data-public-analysis-intro]{display:none}
+html.content-only [data-alliance-only]{display:none!important}
+html.content-only [data-public-analysis-intro]{display:block}
 html.content-only .site-header,html.content-only .skip-link,html.content-only .page-shell > footer,html.content-only .breadcrumbs,html.content-only .document-sidebar{display:none!important}
 html.content-only .document-layout{grid-template-columns:minmax(0,1fr)!important}
 html.content-only .page-shell{padding-top:24px}
