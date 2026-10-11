@@ -13630,3 +13630,8 @@ body:has(.character-chronicle[data-chronicle="anthlan"]) {
 @media (max-width: 700px) { .healing-result-character { right: 0; } }
 
 @media (max-width:700px) { .welcome-copy { padding-top:0; } .welcome-copy > p:not(.eyebrow) { margin-top:14px; } .home-today .content-section-heading h2 { font-size:26px; } .home-today .content-section-heading { gap:12px; } }
+
+.language-picker { display: flex; gap: .2rem; padding: .2rem; border: 1px solid var(--line); border-radius: .5rem; }
+.language-picker a { padding: .3rem .45rem; font-size: .75rem; font-weight: 700; color: var(--gold-pale); text-decoration: none; }
+.language-picker a[aria-current=true] { background: rgba(227,173,78,.2); border-radius: .3rem; }
+@media(max-width:700px) { .language-picker a { padding: .25rem; } }

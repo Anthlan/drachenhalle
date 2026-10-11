@@ -1,3 +1,5 @@
+import {translateClient} from "../i18n/client.ts";
+import {translateCalendar} from "../i18n/calendar.mjs";
 type ShieldEvent = {
   slug?: string;
   title: string;
@@ -118,7 +120,7 @@ const toCalendarValue = (date: Date) => (
   + `T${pad(date.getHours())}${pad(date.getMinutes())}00`
 );
 
-const formatDateTime = (date: Date) => new Intl.DateTimeFormat("de-DE", {
+const formatDateTime = (date: Date) => new Intl.DateTimeFormat(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, {
   weekday: "short",
   day: "2-digit",
   month: "2-digit",
@@ -126,20 +128,20 @@ const formatDateTime = (date: Date) => new Intl.DateTimeFormat("de-DE", {
   minute: "2-digit",
 }).format(date);
 
-const formatTime = (date: Date) => new Intl.DateTimeFormat("de-DE", {
+const formatTime = (date: Date) => new Intl.DateTimeFormat(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, {
   hour: "2-digit",
   minute: "2-digit",
 }).format(date);
 
 const formatEventWindow = (start: Date, end: Date) => {
-  const startLabel = new Intl.DateTimeFormat("de-DE", {
+  const startLabel = new Intl.DateTimeFormat(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, {
     weekday: "long",
     day: "2-digit",
     month: "long",
     hour: "2-digit",
     minute: "2-digit",
   }).format(start);
-  const endLabel = new Intl.DateTimeFormat("de-DE", {
+  const endLabel = new Intl.DateTimeFormat(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, {
     weekday: "long",
     hour: "2-digit",
     minute: "2-digit",
@@ -164,7 +166,7 @@ const boundedCount = (value: FormDataEntryValue | null) => {
   return Number.isFinite(parsed) ? Math.min(20, Math.max(0, parsed)) : 0;
 };
 
-const formatNumber = (value: number) => value.toLocaleString("de-DE");
+const formatNumber = (value: number) => value.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang);
 
 const countShields = (counts: ShieldCounts) => (
   counts.shields72 + counts.shields24 + counts.shields12 + counts.shields8
@@ -1295,7 +1297,7 @@ export const initializeShieldCalculator = () => {
 
   downloadButton?.addEventListener("click", () => {
     if (!currentCalendar) return;
-    const blob = new Blob([currentCalendar], { type: "text/calendar;charset=utf-8" });
+    const blob = new Blob([translateCalendar(currentCalendar,translateClient)], { type: "text/calendar;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;

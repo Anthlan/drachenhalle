@@ -4,7 +4,7 @@ type PageViewResponse = {
   totalViews: number;
 };
 
-const numberFormatter = new Intl.NumberFormat("de-DE");
+const numberFormatter = new Intl.NumberFormat(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang);
 
 export const initializePageViews = () => {
   const counter = document.querySelector<HTMLElement>("[data-page-views]");

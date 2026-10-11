@@ -258,8 +258,8 @@ export const initializeHealingCalculator = () => {
         facts,
         "Heilungsgeschwindigkeit",
         tacticalMinister
-          ? `${effectiveSpeed.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % (${(healingSpeed as number).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % + 20)`
-          : `${effectiveSpeed.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %`,
+          ? `${effectiveSpeed.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % (${(healingSpeed as number).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % + 20)`
+          : `${effectiveSpeed.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %`,
       );
     }
 
@@ -319,10 +319,10 @@ export const initializeHealingCalculator = () => {
     const soldierLabel = recommendedSoldiers === 1
       ? usesTierBase ? `${tierLabel}-Soldat` : "Soldat"
       : usesTierBase ? `${tierLabel}-Soldaten` : "Soldaten";
-    soldiers.textContent = `${recommendedSoldiers.toLocaleString("de-DE")} ${soldierLabel}`;
+    soldiers.textContent = `${recommendedSoldiers.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)} ${soldierLabel}`;
     detail.textContent = usesTierBase
-      ? `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Grundlage: ${baseSeconds} Sekunden je ${tierLabel} bei ${effectiveSpeed.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % wirksamer Heilungsgeschwindigkeit${tacticalMinister ? ` (${(healingSpeed as number).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % Basiswert + 20 Prozentpunkte Taktischer Minister)` : ""}.`
-      : `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Gültig für dieselbe Truppenstufe und Zusammensetzung wie deine Kalibrierung mit ${(calibrationSoldiers as number).toLocaleString("de-DE")} Soldaten.`;
+      ? `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Grundlage: ${baseSeconds} Sekunden je ${tierLabel} bei ${effectiveSpeed.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % wirksamer Heilungsgeschwindigkeit${tacticalMinister ? ` (${(healingSpeed as number).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} % Basiswert + 20 Prozentpunkte Taktischer Minister)` : ""}.`
+      : `Geschätzte Heilzeit: ${formatDuration(Math.ceil(expectedDuration))} Gültig für dieselbe Truppenstufe und Zusammensetzung wie deine Kalibrierung mit ${(calibrationSoldiers as number).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)} Soldaten.`;
   });
 
   form.requestSubmit();

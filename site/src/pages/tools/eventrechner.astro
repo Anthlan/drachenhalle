@@ -651,10 +651,10 @@ const shopPages = [
             }
           });
 
-          if (targetTotal instanceof HTMLOutputElement) targetTotal.value = total.toLocaleString("de-DE");
+          if (targetTotal instanceof HTMLOutputElement) targetTotal.value = total.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang);
           if (targetSelection instanceof HTMLElement) {
             targetSelection.textContent = selectedRewards > 0
-              ? `${selectedRewards} Belohnungsarten · ${selectedPurchases.toLocaleString("de-DE")} Käufe ausgewählt`
+              ? `${selectedRewards} Belohnungsarten · ${selectedPurchases.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)} Käufe ausgewählt`
               : "Noch keine Belohnung ausgewählt.";
           }
           if (targetApplyButton instanceof HTMLButtonElement) targetApplyButton.disabled = total <= 0;

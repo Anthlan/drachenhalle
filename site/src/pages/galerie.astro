@@ -384,7 +384,7 @@ const originalMimeType = (item) => {
           const personMatches = selectedPerson === "all" || people.includes(selectedPerson);
           const styleMatches = selectedStyle === "all" || card.dataset.style === selectedStyle;
           const seriesMatches = seriesFilter.value === "all" || card.dataset.series === seriesFilter.value;
-          const searchText = normalizeSearch(`${card.dataset.title} ${card.dataset.people}`);
+          const searchText = normalizeSearch(`${card.dataset.title} ${card.dataset.people} ${card.textContent ?? ""} ${card.querySelector("img")?.alt ?? ""}`);
           const searchMatches = normalizeSearch(searchFilter.value).split(/\s+/).filter(Boolean).every(word => searchText.includes(word));
           const visible = categoryMatches && personMatches && styleMatches && seriesMatches && searchMatches;
           card.hidden = !visible;

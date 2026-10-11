@@ -1,0 +1,28 @@
+---
+import config from "../i18n/config.json";
+const currentPath=Astro.url.pathname;
+const suffix=currentPath.slice(config.base.length);
+---
+<nav class="language-picker" aria-label="Sprache wählen">
+  {config.languages.map(language=><a data-language={language.code} href={`${config.base}${language.path?"/"+language.path:""}${suffix}`} lang={language.code} aria-current={language.code===config.defaultLanguage?"true":"false"} title={language.label}>{language.code.toUpperCase()}</a>)}
+</nav>
+<script>
+  import languageConfig from "../i18n/config.json";
+  import {localizedPageUrl} from "../i18n/translate.mjs";
+  try {
+    const preferred=localStorage.getItem("die-language");
+    if(preferred&&preferred!==languageConfig.defaultLanguage&&languageConfig.languages.some(language=>language.code===preferred)&&location.pathname===languageConfig.base+"/") {
+      location.replace(localizedPageUrl(location.pathname,preferred,languageConfig.base,languageConfig.languages.map(language=>language.code),languageConfig.defaultLanguage)+location.search+location.hash);
+    }
+  } catch {}
+  for(const link of document.querySelectorAll<HTMLAnchorElement>("[data-language]")) {
+    link.href+=location.search+location.hash;
+    link.addEventListener("click",()=> {
+      const destination=new URL(link.href);
+      destination.search=location.search;
+      destination.hash=location.hash;
+      link.href=destination.href;
+      try{localStorage.setItem("die-language",link.dataset.language!);}catch{}
+    });
+  }
+</script>

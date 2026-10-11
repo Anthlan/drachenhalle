@@ -1,0 +1,8 @@
+{
+  "defaultLanguage": "de",
+  "base": "/drachenhalle",
+  "languages": [
+    { "code": "de", "label": "Deutsch", "locale": "de-DE", "path": "" },
+    { "code": "en", "label": "English", "locale": "en-GB", "path": "en" }
+  ]
+}

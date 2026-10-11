@@ -1,5 +1,6 @@
 ---
 import InboxLink from "./InboxLink.astro";
+import LanguagePicker from "./LanguagePicker.astro";
 
 const { active = "" } = Astro.props;
 const uploadUrl = "https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g";
@@ -116,6 +117,7 @@ const isCurrentLink = (href) => !href.includes("#") && !href.includes("?") && hr
   </nav>
 
   <div class="header-actions">
+    <LanguagePicker />
     <a class="upload-link" href={uploadUrl} target="_blank" rel="noopener noreferrer" aria-label="Datei bei Dropbox einreichen (öffnet in neuem Tab)">
       <span class="action-label-full" aria-hidden="true">Datei einreichen</span>
       <span class="action-label-short" aria-hidden="true">Einreichen</span>

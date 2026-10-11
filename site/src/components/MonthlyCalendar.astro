@@ -77,7 +77,7 @@ const calendarLegend = ["hinterhalt", "pandora", "raubzug", "hauptstadt", "zombi
       const month = visibleMonth.getMonth();
       const firstDayOffset = (new Date(year, month, 1).getDay() + 6) % 7;
       const gridStart = new Date(year, month, 1 - firstDayOffset);
-      const monthLabel = new Intl.DateTimeFormat("de-DE", { month: "long", year: "numeric" }).format(visibleMonth);
+      const monthLabel = new Intl.DateTimeFormat(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, { month: "long", year: "numeric" }).format(visibleMonth);
       title.textContent = monthLabel.charAt(0).toUpperCase() + monthLabel.slice(1);
       grid.replaceChildren();
 

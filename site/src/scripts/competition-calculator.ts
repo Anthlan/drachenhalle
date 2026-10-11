@@ -22,7 +22,7 @@ export function initializeCompetitionCalculator() {
   const select = form?.querySelector<HTMLSelectElement>("[name=day]");
   if (!form || !output || !select) return;
   const key = "drachenhalle-competition-week-v2";
-  const fmt = (value: number) => Math.round(value).toLocaleString("de-DE");
+  const fmt = (value: number) => Math.round(value).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang);
   const number = (name: string) => Number((form.elements.namedItem(name) as HTMLInputElement)?.value ?? 0);
   const line = (message: string) => { const p = document.createElement("p"); p.textContent = message; output.append(p); };
   const save = () => { try { localStorage.setItem(key, JSON.stringify(Object.fromEntries(new FormData(form)))); } catch { /* Speicherung optional. */ } };

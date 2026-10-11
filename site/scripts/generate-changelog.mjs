@@ -1,5 +1,6 @@
 import { execFile } from "node:child_process";
-import { readFile, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
+import { readFile, logicalSource } from "./content-files.mjs";
 import path from "node:path";
 import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
@@ -79,7 +80,7 @@ try {
   const changesText = await runGit(["-c", "core.quotepath=false", "diff-tree", "--no-commit-id", "--name-status", "-r", "-M", "--root", "HEAD"]);
   const changes = changesText.split(/\r?\n/).filter(Boolean).map((line) => {
     const [status, firstPath, secondPath] = line.split("\t");
-    return { status, path: secondPath ?? firstPath };
+    return { status, path: logicalSource(secondPath ?? firstPath) };
   });
   const changedPaths = new Set(changes.map((change) => change.path));
   const groups = new Map();

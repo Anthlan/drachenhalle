@@ -1,4 +1,5 @@
-import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
+import { readFile, readdir, repositorySource } from "./content-files.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -90,7 +91,7 @@ for (const fileName of fileNames) {
     featured: metadata.featured === true,
     html: await marked.parse(normalizedMarkdown),
     url: `/drachenhalle/neuigkeiten/${slugify(fileName.replace(/\.md$/i, "").replace(/^\d{4}_\d{2}_\d{2}_/, ""))}/`,
-    repositoryUrl: `${repositoryUrl}/blob/main/${sourceRelativePath.split("/").map(encodeURIComponent).join("/")}`,
+    repositoryUrl: `${repositoryUrl}/blob/main/${repositorySource(sourceRelativePath).split("/").map(encodeURIComponent).join("/")}`,
   });
 }
 

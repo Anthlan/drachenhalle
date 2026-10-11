@@ -2,6 +2,10 @@
 
 Dieses Repository ist die zentrale, strukturierte Sammlung von Inhalten rund um **Z:Route: Redemption** und die Allianz **DIE**. Seine Hauptbereiche entsprechen direkt der Navigation der [Website](https://anthlan.github.io/drachenhalle/).
 
+## Sprachen
+
+Die Website bietet Deutsch und Englisch mit einer Sprachwahl auf jeder Seite. Pflegbare Textquellen liegen unter `content/<Thema>/de` und `content/<Thema>/en`; Bilder und Charaktermodelle werden gemeinsam verwendet. Weitere Sprachen können über `site/src/i18n/config.json` ergänzt werden. Die [Sprachstruktur](content/README.md) beschreibt das Vorgehen.
+
 ## Einstieg
 
 - [Archivregeln und Rahmenparameter](ARCHIVREGELN.md)
@@ -13,12 +17,12 @@ Jeder Fachordner enthält eine eigene `README.md` mit seinem Zweck, seiner vorge
 
 | Ordner | Inhalt |
 | --- | --- |
-| [`Aktuelles`](Aktuelles/README.md) | Manuell gepflegte Neuigkeiten für die Startseite |
-| [`Termine`](Termine/README.md) | Kommende und vergangene Allianz-Events mit Detailseite, passenden Wissensinhalten und Kalender-Download |
+| [`Aktuelles`](content/Aktuelles/de/README.md) | Manuell gepflegte Neuigkeiten für die Startseite |
+| [`Termine`](content/Termine/de/README.md) | Kommende und vergangene Allianz-Events mit Detailseite, passenden Wissensinhalten und Kalender-Download |
 | [`Galerie`](Galerie/README.md) | Chatbilder, Reaktionsbilder, Avatare und Charaktermodelle |
-| [`Drachenwissen`](Drachenwissen/README.md) | Tipps, Strategien und Informationen für den Spiel- und Allianzalltag |
-| [`Tutorials`](Tutorials/README.md) | Geführte Schritt-für-Schritt-Anleitungen für wichtige Abläufe |
-| [`Allianz`](Allianz/README.md) | Regeln, Offiziere, Verantwortlichkeiten und interne Beratungsunterlagen |
+| [`Drachenwissen`](content/Drachenwissen/de/README.md) | Tipps, Strategien und Informationen für den Spiel- und Allianzalltag |
+| [`Tutorials`](content/Tutorials/de/README.md) | Geführte Schritt-für-Schritt-Anleitungen für wichtige Abläufe |
+| [`Allianz`](content/Allianz/de/README.md) | Regeln, Offiziere, Verantwortlichkeiten und interne Beratungsunterlagen |
 | [`Styleguides`](Styleguides/README.md) | Gestaltungs- und Textregeln für konsistente DIE-Inhalte |
 | [`Archiv`](Archiv/README.md) | Ersetzte, veraltete oder historisch relevante Inhalte |
 | [`site`](site) | Technische Quellen der automatisch erzeugten Website |

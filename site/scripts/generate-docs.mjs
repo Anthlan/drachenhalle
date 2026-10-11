@@ -1,4 +1,5 @@
-import { readFile, readdir, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
+import { readFile, readdir, repositorySource, logicalSource } from "./content-files.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -565,12 +566,12 @@ const resolveLocalMarkdownLinks = (markdown, source) => {
       return match;
     }
 
-    const targetSource = path.posix.normalize(
+    const targetSource = logicalSource(path.posix.normalize(
       path.posix.join(sourceDirectory, decodedTarget.replaceAll("\\", "/")),
-    );
+    ));
     if (contentVisibility.hiddenDocuments.has(targetSource) && targetSource !== source) return label;
     const websiteUrl = documentUrlBySource.get(targetSource);
-    const targetUrl = websiteUrl ?? `${repositoryUrl}/blob/main/${encodeRepositoryPath(targetSource)}`;
+    const targetUrl = websiteUrl ?? `${repositoryUrl}/blob/main/${encodeRepositoryPath(repositorySource(targetSource))}`;
     return `[${label}](${targetUrl})`;
   });
 };
@@ -676,7 +677,7 @@ for (const document of documents) {
   const allianceCopyMarkdown = allianceCopyMatch
     ? articleMarkdown.slice(allianceCopyMatch.index).trim()
     : null;
-  const encodedSource = encodeRepositoryPath(document.source);
+  const encodedSource = encodeRepositoryPath(repositorySource(document.source));
 
   items.push({
     ...document,

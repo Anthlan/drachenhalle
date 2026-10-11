@@ -1,5 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import { normalizeContentLinks, logicalSource, isLocalizedSource, languageCodes } from "./content-files.mjs";
 
 const ignoredDirectories = new Set([".git", ".github", "node_modules", "site"]);
 const hiddenHeadingPattern = /^##\s*HIDDEN\s*$/i;
@@ -35,13 +36,16 @@ async function walkMarkdownFiles(repositoryRoot, directory = repositoryRoot) {
 
   for (const entry of entries) {
     if (entry.isDirectory() && ignoredDirectories.has(entry.name)) continue;
+    if (entry.isDirectory() && languageCodes.has(entry.name) && entry.name !== "de") continue;
 
     const entryPath = path.join(directory, entry.name);
     if (entry.isDirectory()) files.push(...(await walkMarkdownFiles(repositoryRoot, entryPath)));
     if (entry.isFile() && entry.name.toLowerCase().endsWith(".md")) {
+      const physical=repositoryPath(repositoryRoot,entryPath);
+      if(physical.startsWith("content/") && !isLocalizedSource(physical)) continue;
       files.push({
         absolutePath: entryPath,
-        sourcePath: repositoryPath(repositoryRoot, entryPath),
+        sourcePath: logicalSource(repositoryPath(repositoryRoot, entryPath)),
       });
     }
   }
@@ -70,14 +74,14 @@ const localImageReferences = (markdown, markdownSource) => {
 };
 
 export async function loadContentVisibility(repositoryRoot) {
-  const markdownFiles = await walkMarkdownFiles(repositoryRoot);
+  const markdownFiles = (await walkMarkdownFiles(repositoryRoot)).sort((a,b)=>Number(isLocalizedSource(repositoryPath(repositoryRoot,a.absolutePath)))-Number(isLocalizedSource(repositoryPath(repositoryRoot,b.absolutePath))));
   const hiddenDocuments = new Set();
   const hiddenImageReferences = new Set();
   const publicImageReferences = new Set();
   const markdownBySource = new Map();
 
   for (const markdownFile of markdownFiles) {
-    const markdown = await readFile(markdownFile.absolutePath, "utf8");
+    const markdown = normalizeContentLinks(markdownFile.absolutePath,await readFile(markdownFile.absolutePath, "utf8"));
     const hidden = hasHiddenMarker(markdown);
     markdownBySource.set(markdownFile.sourcePath, markdown);
 

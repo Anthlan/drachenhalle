@@ -1,5 +1,6 @@
 import { hasHiddenMarker } from "./content-visibility.mjs";
-import { mkdir, readFile, readdir, unlink, writeFile } from "node:fs/promises";
+import { mkdir, unlink, writeFile } from "node:fs/promises";
+import { readFile, readdir, repositorySource } from "./content-files.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -232,7 +233,7 @@ for (const fileName of fileNames) {
     related,
     imageUrl: related.find((document) => document.imageUrl)?.imageUrl ?? null,
     calendarUrl: `/drachenhalle/generated/events/${calendarName}`,
-    repositoryUrl: `${repositoryUrl}/blob/main/${sourceRelativePath.split("/").map(encodeURIComponent).join("/")}`,
+    repositoryUrl: `${repositoryUrl}/blob/main/${repositorySource(sourceRelativePath).split("/").map(encodeURIComponent).join("/")}`,
   });
 }
 

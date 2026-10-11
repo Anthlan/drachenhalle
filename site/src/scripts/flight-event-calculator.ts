@@ -709,8 +709,8 @@ const wholeNumber = (value: FormDataEntryValue | null, fallback = 0) => {
   return Number.isFinite(parsed) ? Math.max(0, Math.floor(parsed)) : fallback;
 };
 
-const formatInteger = (value: number) => Math.round(value).toLocaleString("de-DE");
-const formatEuro = (cents: number) => (cents / 100).toLocaleString("de-DE", {
+const formatInteger = (value: number) => Math.round(value).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang);
+const formatEuro = (cents: number) => (cents / 100).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, {
   style: "currency",
   currency: "EUR",
 });
@@ -764,7 +764,7 @@ const renderF2PPlan = (
     heading.append(rank, title);
 
     const amount = document.createElement("b");
-    amount.textContent = `${item.quantity.toLocaleString("de-DE")}× ${item.unit} · ${item.cost.toLocaleString("de-DE")} Gutscheine`;
+    amount.textContent = `${item.quantity.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)}× ${item.unit} · ${item.cost.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)} Gutscheine`;
     const reason = document.createElement("small");
     reason.textContent = item.reason;
     copy.append(heading, amount, reason);
@@ -1004,8 +1004,8 @@ export const initializeFlightEventCalculator = () => {
       result,
       "[data-flight-practice-reference]",
       drawMultiplier === 5
-        ? `Praxistest überwiegend mit 5×: ${observedProjection.sampleCoins} Münzen ergaben ${observedProjection.vouchersPerCoin.toLocaleString("de-DE", { maximumFractionDigits: 2 })} Gutscheine je Münze. Auf deinen Bestand übertragen wären das grob ${formatInteger(securedVouchers + observedProjection.vouchers)} – nur Orientierung, keine Kaufbasis.`
-        : `Praxistest mit 1×: ${observedProjection.sampleCoins} Einzelziehungen ergaben ${observedProjection.vouchersPerCoin.toLocaleString("de-DE", { maximumFractionDigits: 1 })} Gutscheine je Münze. Auf deinen Bestand übertragen wären das grob ${formatInteger(securedVouchers + observedProjection.vouchers)} – nur Orientierung, keine Kaufbasis.`,
+        ? `Praxistest überwiegend mit 5×: ${observedProjection.sampleCoins} Münzen ergaben ${observedProjection.vouchersPerCoin.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, { maximumFractionDigits: 2 })} Gutscheine je Münze. Auf deinen Bestand übertragen wären das grob ${formatInteger(securedVouchers + observedProjection.vouchers)} – nur Orientierung, keine Kaufbasis.`
+        : `Praxistest mit 1×: ${observedProjection.sampleCoins} Einzelziehungen ergaben ${observedProjection.vouchersPerCoin.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, { maximumFractionDigits: 1 })} Gutscheine je Münze. Auf deinen Bestand übertragen wären das grob ${formatInteger(securedVouchers + observedProjection.vouchers)} – nur Orientierung, keine Kaufbasis.`,
     );
     setText(
       result,
@@ -1013,8 +1013,8 @@ export const initializeFlightEventCalculator = () => {
       availableCoins <= 0
         ? "Aktuell sind keine Münzen für einen Tageslauf eingeplant. Aufgabenbelohnungen werden daher nicht vorab angesetzt."
         : windows >= 2
-          ? `Du planst mit ${availableCoins.toLocaleString("de-DE")} Münzen und erreichst noch ${windows} Resetfenster. Spiele den ersten Lauf nur bis zum gewählten Ziel und notiere den tatsächlichen Verbrauch, bevor du einen zweiten Lauf planst.`
-          : `Du planst mit ${availableCoins.toLocaleString("de-DE")} Münzen und nur noch einem Resetfenster. Wähle vor dem Start zwischen Gutschein-Fokus bis Stufe 7/9 und dem tieferen Gesamtwert-Lauf.`,
+          ? `Du planst mit ${availableCoins.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)} Münzen und erreichst noch ${windows} Resetfenster. Spiele den ersten Lauf nur bis zum gewählten Ziel und notiere den tatsächlichen Verbrauch, bevor du einen zweiten Lauf planst.`
+          : `Du planst mit ${availableCoins.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)} Münzen und nur noch einem Resetfenster. Wähle vor dem Start zwischen Gutschein-Fokus bis Stufe 7/9 und dem tieferen Gesamtwert-Lauf.`,
     );
 
     latestF2PBudget = Math.floor(securedVouchers + currentProjection.low);
@@ -1072,14 +1072,14 @@ export const initializeFlightEventCalculator = () => {
       result,
       "[data-flight-hybrid-coins]",
       hybridPlan
-        ? `${hybridPlan.coinPlan.units.toLocaleString("de-DE")} Münzen nachkaufen`
+        ? `${hybridPlan.coinPlan.units.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)} Münzen nachkaufen`
         : "Münzlimit ausgeschöpft",
     );
     setText(
       result,
       "[data-flight-hybrid-vouchers]",
       hybridPlan
-        ? `${hybridPlan.directVouchers.toLocaleString("de-DE")} Gutscheine direkt`
+        ? `${hybridPlan.directVouchers.toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang)} Gutscheine direkt`
         : "Gutscheinlimit ausgeschöpft",
     );
 

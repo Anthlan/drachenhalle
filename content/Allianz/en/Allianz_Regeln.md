@@ -1,0 +1,67 @@
+# Our alliance rules
+
+Our alliance rules protect us, prevent unnecessary conflict and keep our attacks and raids consistent with our server's agreements. When in doubt, check first and act afterwards. If you are unsure, please ask an R4 or R5.
+
+![Our alliance rules](../../../Allianz/Allianz_Regeln.png)
+
+## 1. Respect NAP10
+
+We **do not attack members of the current NAP10 alliances**. Rankings can change, so we do not rely on an earlier position.
+
+Before every attack, check the current rankings and your target's alliance again. If the alliance belongs to NAP10, or the situation is unclear, we do not attack. This helps prevent counterattacks and diplomatic conflicts that can affect us all.
+
+## 2. Permitted base attacks
+
+We may attack **players without an alliance** and players whose name follows the pattern **Commander\*\*\*\***. Even when a target is permitted, keep the attack proportionate: please do not reduce anyone completely to **0**.
+
+A permitted attack does not give us free rein to keep attacking unnecessarily. End your attack once you have achieved your objective. Before any further attacks, check again whether the alliance name, rank or situation has changed.
+
+## 3. Raid the right targets
+
+We do not raid trucks, freight trains or special missions **on our own server**. Always select a target from **another server** in the relevant view.
+
+Check the server number carefully before starting. An attractive reward or rare cargo does not override this rule. This protects cooperation on our server and prevents unnecessary disputes with other alliances.
+
+## 4. If a NAP10 member attacks
+
+If a member of a NAP10 alliance attacks you, our rule is: **do not retaliate**. A direct counterattack can complicate the resolution and turn a single incident into a larger conflict.
+
+Instead, share the attack report and report the incident to an **R4 or R5**. Where possible, include the attacker's name, alliance and the time. Our alliance leadership will then coordinate the response and tell you what happens next.
+
+## Rule violations and warnings
+
+A first rule violation receives a **warning**. A second warning leads to **removal from our alliance**. Warnings remind us of our agreed conduct and may be cleared after a longer period without further violations.
+
+| Situation | What we should do |
+| --- | --- |
+| Target belongs to a current NAP10 alliance | Do not attack |
+| Target has no alliance or is named Commander\*\*\*\* | Attacking is permitted, but do not reduce them to 0 |
+| Truck, freight train or special mission is on our own server | Do not raid; choose a target on another server |
+| A NAP10 member attacks you | Do not retaliate; send the report to an R4 or R5 |
+| You are unsure | Ask an R4 or R5 before acting |
+
+> **Remember:** Check the rankings and server first. Report NAP10 incidents instead of retaliating.
+
+## Alliance message to copy
+
+```html
+<size=46><b>DIE - ALLIANCE RULES</b></size>
+
+🛡️ <size=40><b>1. Respect NAP10</b></size>
+We do not attack members of the current NAP10 alliances. Please check the rankings regularly.
+
+🏰 <size=40><b>2. Base attacks</b></size>
+We may attack players without an alliance and Commander****. Please do not reduce anyone to 0.
+
+🚚 <size=40><b>3. Raiding</b></size>
+We do not raid trucks, freight trains or special missions on our server. Always choose <color=#9DBA32><b>another server</b></color>.
+
+⚠️ <size=40><b>4. Attacks by NAP10</b></size>
+<color=#E6A23C><b>We do not retaliate!</b></color> Share the attack report and report the incident to an R4 or R5.
+
+📌 <size=40><b>Rule violations</b></size>
+1st violation = warning; 2nd warning = removal. Warnings may be cleared after a longer period of following the rules.
+
+💬 <size=40><b>Questions?</b></size>
+You are always welcome to ask an R4 or R5.
+```

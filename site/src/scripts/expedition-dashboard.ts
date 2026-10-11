@@ -5,9 +5,9 @@ const analysis = analyzeExpedition(data.players, data.alliances);
 type Alliance = typeof analysis.alliances[number];
 type Metric = "points" | "count" | "participation" | "average" | "pointsPerMember";
 const $ = <T extends HTMLElement = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
-const number = (value: number) => Math.round(value).toLocaleString("de-DE");
-const percent = (value: number) => (value * 100).toLocaleString("de-DE", {maximumFractionDigits:1}) + " %";
-const compact = (value: number) => value >= 1e6 ? (value/1e6).toLocaleString("de-DE",{maximumFractionDigits:2})+" Mio." : number(value);
+const number = (value: number) => Math.round(value).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang);
+const percent = (value: number) => (value * 100).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang, {maximumFractionDigits:1}) + " %";
+const compact = (value: number) => value >= 1e6 ? (value/1e6).toLocaleString(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang,{maximumFractionDigits:2})+" Mio." : number(value);
 const escape = (value: unknown) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]!));
 const color = (server: number) => server === 105 ? "home" : server === 97 ? "opponent" : "others";
 const serverFilter = $<HTMLSelectElement>("#exp-server");
@@ -99,7 +99,8 @@ playerSearch.oninput=()=>{page=0;renderPlayers()};playerAlliance.onchange=()=>{p
 $("#exp-prev").onclick=()=>{page--;renderPlayers()};$("#exp-next").onclick=()=>{page++;renderPlayers()};
 $("#exp-export").onclick=()=>{
   const cell=(value:string|number)=>typeof value==='number'?String(value):'"'+(/^[=+\-@]/.test(value)?"'":'')+value.replace(/"/g,'""')+'"';
-  const csv='\uFEFF'+['Rang;Spieler;Allianzkürzel;Allianz;Server;Punkte',...filteredPlayers().map(p=>[p.rank,p.player,p.tag,p.tag==='DIE'?'DIE':p.alliance,p.server,p.points].map(cell).join(';'))].join('\r\n');
+  const heading=document.documentElement.lang==='de'?'Rang;Spieler;Allianzkürzel;Allianz;Server;Punkte':'Rank;Player;Alliance tag;Alliance;Server;Points';
+  const csv='\uFEFF'+[heading,...filteredPlayers().map(p=>[p.rank,p.player,p.tag,p.tag==='DIE'?'DIE':p.alliance,p.server,p.points].map(cell).join(';'))].join('\r\n');
   const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='Expeditionswahnsinn_2026_10_10.csv';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
 selectAlliance(selectedAlliance);renderPlayers();
