@@ -1,12 +1,13 @@
 ---
 interface Props { title: string; description: string; }
 import languageConfig from "../i18n/config.json";
+import {languageAvailable} from "../i18n/translate.mjs";
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const image = new URL('/drachenhalle/brand/die-drachenhalle-willkommen.webp', Astro.site);
 ---
 <link rel="canonical" href={canonical} />
-{languageConfig.languages.map(language=><link rel="alternate" hreflang={language.code} href={new URL(`${languageConfig.base}${language.path?"/"+language.path:""}${Astro.url.pathname.slice(languageConfig.base.length)}`,Astro.site)} />)}
+{languageConfig.languages.filter(language=>languageAvailable(Astro.url.pathname,language,languageConfig)).map(language=><link rel="alternate" hreflang={language.code} href={new URL(`${languageConfig.base}${language.path?"/"+language.path:""}${Astro.url.pathname.slice(languageConfig.base.length)}`,Astro.site)} />)}
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="de_DE" />
 <meta property="og:site_name" content="DIE Drachenhalle" />

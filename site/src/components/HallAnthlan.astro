@@ -3,6 +3,7 @@
   <span class="guide-shadow" aria-hidden="true"></span><span class="guide-body" aria-hidden="true"></span>
 </div>
 <script>
+  import {translateClient as t} from "../i18n/client";
   const guide = document.querySelector<HTMLElement>('[data-hall-guide]');
   if (guide) {
     const appearances = [
@@ -70,7 +71,7 @@
       const body = guide!.querySelector<HTMLElement>('.guide-body')!;
       body.classList.toggle('extra-poses', entry.pose >= 3);
       body.style.backgroundPosition = `${(entry.pose % 3) * 50}% 0`;
-      guide!.querySelector('.guide-caption span')!.textContent = entry.text;
+      guide!.querySelector('.guide-caption span')!.textContent = t(entry.text);
       guide!.hidden = false; guide!.inert = false;
       requestAnimationFrame(() => { if (enabled && phase === 'showing') guide!.classList.add('visible'); });
       phase = 'showing'; remaining = Math.max(14000, Math.min(23000, entry.text.length * 90));
@@ -79,7 +80,7 @@
     toggle.addEventListener('click', () => {
       enabled = !enabled;
       toggle.setAttribute('aria-pressed', String(!enabled));
-      toggle.textContent = enabled ? 'Anthlans Kommentare ausblenden' : 'Anthlans Kommentare einblenden';
+      toggle.textContent = t(enabled ? 'Anthlans Kommentare ausblenden' : 'Anthlans Kommentare einblenden');
       if (!enabled) dismiss(); else { phase = 'waiting'; remaining = 500; }
     });
     // Time advances only while the hall is visible and no trophy is being read.

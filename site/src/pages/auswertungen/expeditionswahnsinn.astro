@@ -1,6 +1,7 @@
 ---
 import SocialMeta from "../../components/SocialMeta.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import ReducedView from "../../components/ReducedView.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import "../../styles/global.css";
 import "../../styles/expedition.css";
@@ -27,10 +28,10 @@ const description = "Die Hauptstadteroberung vom 10.10.2026: S105 und S97 im Ver
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <SocialMeta title={title} description={description} />
   </head>
-  <body><div class="page-shell">
+  <body><ReducedView /><div class="page-shell">
     <SiteHeader active="alliance" />
     <main id="main-content" class="expedition">
-      <header class="exp-hero">
+      <div class="content-share-actions"><button type="button" class="tip-article-share" data-share-page data-share-url="/drachenhalle/auswertungen/expeditionswahnsinn/">Teilen</button><button type="button" class="tip-article-share" data-share-page data-share-reduced data-share-url="/drachenhalle/auswertungen/expeditionswahnsinn/">Reduziert teilen</button></div><header class="exp-hero">
         <div><p class="eyebrow">Event-Auswertung · 10. Oktober 2026</p><h1>Expeditionswahnsinn<span>Hauptstadteroberung</span></h1><p>Wer war dabei? Wer hat die Punkte getragen? Vergleicht unsere Beteiligung auf S105 mit S97 und schaut euch jede Allianz im Detail an.</p><div class="exp-jumps"><a href="#allianzen">Allianzen vergleichen ↓</a><a href="#spieler">Spieler finden ↓</a><a href="#daten">Datengrundlage ↓</a><a href="#analyse">Analyse lesen ↓</a></div></div>
         <div class="exp-seal"><strong>{analysis.count}</strong><span>Spieler in der vollständigen Rangliste</span><small>Stand der Screenshots: 10.10.2026 · 16:49 Uhr</small></div>
       </header>
@@ -84,6 +85,6 @@ const description = "Die Hauptstadteroberung vom 10.10.2026: S105 und S97 im Ver
 
       <section id="daten" class="exp-section exp-method" aria-labelledby="method-title"><p class="eyebrow">So lesen wir die Zahlen</p><h2 id="method-title">Datengrundlage & Einordnung</h2><div class="exp-method-grid"><div><h3>Vollständige Rangliste</h3><p>563 Spieler mit mindestens einem Punkt, erfasst aus 60 Screenshots. Der Stand der Bilder ist der 10.10.2026 gegen 16:49 Uhr. Die Zahlen beschreiben diesen Stand, nicht den Ausgang der Schlacht.</p></div><div><h3>Mitglieder und Beteiligung</h3><p>20 Allianzüberblicke von S105 liefern die Mitgliederzahlen. Jeder Ranglisteneintrag zählt als Teilnehmer. Punkte pro Allianzmitglied berücksichtigen auch Mitglieder ohne Ranglisteneintrag. Die Mitgliederzahl ist eine Momentaufnahme.</p></div><div><h3>Durchschnitt und Median</h3><p>Der Durchschnitt verteilt alle Punkte auf die Teilnehmer. Der Median zeigt den Wert in der Mitte: Eine Hälfte liegt darüber, die andere darunter. Einzelne sehr starke Spieler beeinflussen den Durchschnitt stärker.</p></div><div><h3>Wer trägt die Punkte?</h3><p>Top-1-, Top-5- und Top-10-Anteile beziehen sich auf die Punkte der ausgewählten Allianz. Ein hoher Anteil zeigt, wie stark wenige Spieler das Gesamtergebnis prägen.</p></div></div><p class="exp-caption">Keine Serverangabe im Bild gilt als S105. S97, S108, S110 und S112 werden nach ihrer sichtbaren Angabe geführt. Vier Spieler haben keine Allianzangabe. Die Kürzel Asg (S105) und ASG (S97) gehören zu verschiedenen Allianzen.</p></section>
       <section id="analyse" class="exp-section exp-written-analysis" aria-labelledby="written-analysis-title"><p class="eyebrow">Einordnung und nächste Schritte</p><h2 id="written-analysis-title">Analyse zur Hauptstadteroberung</h2><div set:html={analysisHtml} /></section>
-    </main><SiteFooter />
-  </div><script>import "../../scripts/expedition-dashboard";</script></body>
+    </main><p class="share-feedback" role="status" aria-live="polite" data-share-feedback></p><SiteFooter />
+  </div><script>import "../../scripts/expedition-dashboard"; import { initializeImageActions } from "../../scripts/image-actions"; initializeImageActions();</script></body>
 </html>

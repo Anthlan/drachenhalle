@@ -12,11 +12,7 @@ export function createTranslator(catalog, locale = "en-GB") {
     const clean = normalizeText(text);
     if (!clean) return text;
     let result = catalog[text] ?? normalized.get(clean);
-    if(result===undefined&&clean.includes(" · ")) {
-      const parts=clean.split(" · ");
-      const translatedParts=parts.map(part=>normalized.get(part)??part);
-      if(parts.some((part,index)=>part!==translatedParts[index]))result=translatedParts.join(" · ");
-    }
+
     if (result === undefined) {
       for (const template of templates) {
         const match = clean.match(template.regex);
@@ -61,4 +57,18 @@ export function localizedPageUrl(url, language, base = "/drachenhalle", language
   // Assets are shared across languages. Only document routes are localized.
   if (/^\/(?:_astro|brand|generated|tutorial|news|favicon)(?:\/|\.)/.test(suffix) || /\.[a-z0-9]+(?:[?#].*)?$/i.test(suffix)) return url;
   return `${base}${language === defaultLanguage ? "" : "/" + language}${suffix || "/"}`;
+}
+
+export function languageAvailable(url, language, config) {
+  if (!language.pages) return true;
+  const pathname = url.startsWith('http') ? new URL(url).pathname : url.split(/[?#]/)[0];
+  let route = pathname.slice(config.base.length);
+  const first = route.split('/')[1];
+  if (config.languages.some(item => item.code === first)) route = route.slice(first.length + 1);
+  return language.pages.includes((route || '/').replace(/\/?$/, '/'));
+}
+export function localizedNavigationUrl(url, languageCode, config) {
+  const language = config.languages.find(item => item.code === languageCode);
+  const selected = language && languageAvailable(url, language, config) ? languageCode : language?.fallbackLanguage || config.defaultLanguage;
+  return localizedPageUrl(url, selected, config.base, config.languages.map(item => item.code), config.defaultLanguage);
 }

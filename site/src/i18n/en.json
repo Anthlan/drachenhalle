@@ -1245,8 +1245,8 @@
   "Ruhmeshalle · DIE Drachenhalle": "Hall of Fame · DIE Dragon Hall",
   "Trophäenraum; auf kleinen Bildschirmen seitlich verschiebbar": "Trophy room; scrolls sideways on smaller screens",
   "Interaktive Trophäenwand in unserer Allianzzentrale": "Interactive trophy wall in our alliance headquarters",
-  "Datum geschätzt": "Date Estimated",
-  "Datum bestätigt": "Date Confirmed",
+  "Datum geschätzt": "Estimated date",
+  "Datum bestätigt": "Confirmed date",
   "noch offen": "not yet achieved",
   "Wächterstufe direkt auswählen": "Choose Guardian Level Directly",
   "Trophäe unserer Gemeinschaft": "Our Community’s Trophy",
@@ -2037,5 +2037,13 @@
   "Wächter ${title} teilen": "Share Guardian ${title}",
   "120 Der Letzte Schild": "120 – The Last Shield",
   "130 – Vier Hände, ein Sieg": "130 – Four Hands, One Victory",
-  "Jäger Screenshot": "Hunter Screenshot"
+  "Jäger Screenshot": "Hunter Screenshot",
+  "Verfügbare Sprachen": "Available languages",
+  "Besiegt": "Defeated",
+  "besiegt": "defeated",
+  "Ehrenplatz frei": "Unclaimed",
+  "offen": "unclaimed",
+  "der Allianzpunkte. Für diese Allianz liegen keine Mitgliederzahlen vor.": "of alliance points. Membership figures are unavailable for this alliance.",
+  "Reduziert teilen": "Share content only",
+  "Nur diesen Inhalt ohne Navigation teilen": "Share only this content without navigation"
 }

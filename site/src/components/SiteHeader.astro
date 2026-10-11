@@ -116,8 +116,9 @@ const isCurrentLink = (href) => !href.includes("#") && !href.includes("?") && hr
     ))}
   </nav>
 
-  <div class="header-actions">
+  <div class="header-utilities">
     <LanguagePicker />
+    <div class="header-actions">
     <a class="upload-link" href={uploadUrl} target="_blank" rel="noopener noreferrer" aria-label="Datei bei Dropbox einreichen (öffnet in neuem Tab)">
       <span class="action-label-full" aria-hidden="true">Datei einreichen</span>
       <span class="action-label-short" aria-hidden="true">Einreichen</span>
@@ -127,6 +128,7 @@ const isCurrentLink = (href) => !href.includes("#") && !href.includes("?") && hr
       <span aria-hidden="true">?</span>
     </button>
     <InboxLink />
+    </div>
   </div>
 
   <details class="mobile-menu">

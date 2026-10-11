@@ -33,3 +33,7 @@ Die Sprachordner liegen direkt im bestehenden OneDrive-Repository und werden gem
 Im Ordner `site` erzeugt `pnpm build` die Inhalte und beide Sprachfassungen. Danach stellt `pnpm preview` Deutsch unter `/drachenhalle/` und Englisch unter `/drachenhalle/en/` bereit. Die englischen Seiten entstehen beim statischen Build; die reine Astro-Entwicklungsansicht erzeugt sie nicht.
 
 Der Build prüft, ob alle deutschen Textquellen eine Übersetzung besitzen und die Markdown-Blöcke sowie Textsegmente zusammenpassen. Tabellen, Hervorhebungen und Kopiervorlagen deshalb in derselben Struktur pflegen. Gemeinsame Spielkennungen und Linkziele bleiben stabil. Sprachwahl, Metadaten und interne Seitenlinks werden für jede registrierte Sprache erzeugt; dynamische Ergebnisse verwenden das passende Wörterbuch.
+
+## Sprachen für einzelne Seiten
+
+Russisch ist zunächst nur für die Expeditionswahnsinn-Auswertung verfügbar. Der Analysetext liegt unter `Drachenwissen/Analysen/ru/`, die Oberfläche in `site/src/i18n/ru.json`. Die Felder `pages` und `contentSources` in der Sprachkonfiguration begrenzen Seiten und erforderliche Übersetzungen. Sprachmenü und Sprachmetadaten zeigen nur vorhandene Fassungen. Verweise aus der russischen Auswertung zu anderen Seiten führen über `fallbackLanguage` zur englischen Fassung. Für eine vollständige neue Sprache können diese Einschränkungen später entfallen.

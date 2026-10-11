@@ -2,7 +2,30 @@
   "defaultLanguage": "de",
   "base": "/drachenhalle",
   "languages": [
-    { "code": "de", "label": "Deutsch", "locale": "de-DE", "path": "" },
-    { "code": "en", "label": "English", "locale": "en-GB", "path": "en" }
+    {
+      "code": "de",
+      "label": "Deutsch",
+      "locale": "de-DE",
+      "path": ""
+    },
+    {
+      "code": "en",
+      "label": "English",
+      "locale": "en-GB",
+      "path": "en"
+    },
+    {
+      "code": "ru",
+      "label": "Русский",
+      "locale": "ru-RU",
+      "path": "ru",
+      "pages": [
+        "/auswertungen/expeditionswahnsinn/"
+      ],
+      "contentSources": [
+        "Drachenwissen/Analysen/2026_10_10_Expeditionswahnsinn.md"
+      ],
+      "fallbackLanguage": "en"
+    }
   ]
 }

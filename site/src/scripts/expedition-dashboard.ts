@@ -1,3 +1,4 @@
+import {translateClient as t} from "../i18n/client";
 import data from "../data/expedition-2026-10-10.json";
 import { analyzeExpedition, allianceKey, share } from "./expedition-analysis";
 
@@ -26,9 +27,9 @@ const metricValue = (alliance: Alliance, metric: Metric) => alliance[metric];
 const formatMetric = (value: number, metric: Metric) => metric === "participation" ? percent(value) : compact(value);
 
 function allianceList() {
-  const query = allianceSearch.value.trim().toLocaleLowerCase("de");
+  const query = allianceSearch.value.trim().toLocaleLowerCase(document.documentElement.lang);
   const metric = metricSelect.value as Metric;
-  return analysis.alliances.filter(a => matchesServer(a.server) && (!query || `${a.tag} ${a.name}`.toLocaleLowerCase("de").includes(query)))
+  return analysis.alliances.filter(a => matchesServer(a.server) && (!query || `${a.tag} ${a.name}`.toLocaleLowerCase(document.documentElement.lang).includes(query)))
     .sort((a,b) => (metricValue(b,metric) ?? -1) - (metricValue(a,metric) ?? -1) || b.points-a.points || a.key.localeCompare(b.key));
 }
 
@@ -70,9 +71,9 @@ function selectAlliance(key: string, focus = false) {
 }
 
 function filteredPlayers() {
-  const query = playerSearch.value.trim().toLocaleLowerCase('de');
-  return data.players.filter(p => matchesServer(p.server) && (!playerAlliance.value || allianceKey(p)===playerAlliance.value) && (!query || p.player.toLocaleLowerCase('de').includes(query) || String(p.rank)===query.replace(/^#/,'')))
-    .sort((a,b)=>playerSort.value==='name'?a.player.localeCompare(b.player,'de')||a.rank-b.rank:playerSort.value==='points-asc'?a.points-b.points||a.rank-b.rank:a.rank-b.rank);
+  const query = playerSearch.value.trim().toLocaleLowerCase(document.documentElement.lang);
+  return data.players.filter(p => matchesServer(p.server) && (!playerAlliance.value || allianceKey(p)===playerAlliance.value) && (!query || p.player.toLocaleLowerCase(document.documentElement.lang).includes(query) || String(p.rank)===query.replace(/^#/,'')))
+    .sort((a,b)=>playerSort.value==='name'?a.player.localeCompare(b.player,document.documentElement.lang)||a.rank-b.rank:playerSort.value==='points-asc'?a.points-b.points||a.rank-b.rank:a.rank-b.rank);
 }
 
 function renderPlayers() {
@@ -99,7 +100,7 @@ playerSearch.oninput=()=>{page=0;renderPlayers()};playerAlliance.onchange=()=>{p
 $("#exp-prev").onclick=()=>{page--;renderPlayers()};$("#exp-next").onclick=()=>{page++;renderPlayers()};
 $("#exp-export").onclick=()=>{
   const cell=(value:string|number)=>typeof value==='number'?String(value):'"'+(/^[=+\-@]/.test(value)?"'":'')+value.replace(/"/g,'""')+'"';
-  const heading=document.documentElement.lang==='de'?'Rang;Spieler;Allianzkürzel;Allianz;Server;Punkte':'Rank;Player;Alliance tag;Alliance;Server;Points';
+  const heading=t('Rang;Spieler;Allianzkürzel;Allianz;Server;Punkte');
   const csv='\uFEFF'+[heading,...filteredPlayers().map(p=>[p.rank,p.player,p.tag,p.tag==='DIE'?'DIE':p.alliance,p.server,p.points].map(cell).join(';'))].join('\r\n');
   const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='Expeditionswahnsinn_2026_10_10.csv';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };

@@ -116,15 +116,16 @@ const trophies = Array.from({length:11}, (_, index) => {
 </main><SiteFooter /></div></body>
 </html>
 <script define:vars={{trophies, victoryImages, battleIntroductions}}>
+  const t = text => globalThis.dieTranslate?.(text) ?? text;
   const dialog = document.querySelector('.trophy-dialog');
   let current = 0;
   function showTrophy(index) {
     current = index;
     const trophy = trophies[index];
-    document.querySelector('#trophy-title').textContent = `Wächter · Stufe ${trophy.level}`;
-    document.querySelector('[data-status]').textContent = trophy.estimated ? 'Die namenlosen Helden · Fiktive Legende' : trophy.won ? 'Trophäe unserer Gemeinschaft' : 'Unser nächstes Kapitel';
-    document.querySelector('[data-date]').textContent = trophy.won ? `${trophy.label} · Datum ${trophy.estimated ? 'geschätzt' : 'bestätigt'}` : trophy.label;
-    document.querySelector('[data-story]').textContent = !trophy.won ? 'Das Schild ist noch leer. Hier wird der Wächterkopf hängen, wenn wir diese Stufe zum ersten Mal gemeinsam bezwingen.' : trophy.estimated ? 'An die Namen der tapferen Helden kann sich heute niemand mehr erinnern. Doch ihre Leistungen gingen in die Geschichte von DIE ein. Diese Legenden geben den frühen Siegen ein Gesicht.' : battleIntroductions[trophy.level];
+    document.querySelector('#trophy-title').textContent = t(`Wächter · Stufe ${trophy.level}`);
+    document.querySelector('[data-status]').textContent = t(trophy.estimated ? 'Die namenlosen Helden · Fiktive Legende' : trophy.won ? 'Trophäe unserer Gemeinschaft' : 'Unser nächstes Kapitel');
+    document.querySelector('[data-date]').textContent = trophy.won ? `${new Intl.DateTimeFormat(document.documentElement.lang,{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(trophy.date+'T12:00:00Z'))} · ${t(trophy.estimated ? 'Datum geschätzt' : 'Datum bestätigt')}` : t(trophy.label);
+    document.querySelector('[data-story]').textContent = t(!trophy.won ? 'Das Schild ist noch leer. Hier wird der Wächterkopf hängen, wenn wir diese Stufe zum ersten Mal gemeinsam bezwingen.' : trophy.estimated ? 'An die Namen der tapferen Helden kann sich heute niemand mehr erinnern. Doch ihre Leistungen gingen in die Geschichte von DIE ein. Diese Legenden geben den frühen Siegen ein Gesicht.' : battleIntroductions[trophy.level]);
     document.querySelectorAll('[data-chronicle]').forEach(chronicle => { chronicle.hidden = Number(chronicle.dataset.chronicle) !== trophy.level; });
     const memory = victoryImages[trophy.level];
     const memoryLink = document.querySelector('.victory-link');
@@ -132,8 +133,8 @@ const trophies = Array.from({length:11}, (_, index) => {
     if (memory) {
       memoryLink.href = memory.url;
       memoryLink.querySelector('img').src = memory.thumbnail;
-      memoryLink.querySelector('img').alt = memory.alt;
-      memoryLink.querySelector('span').textContent = memory.caption;
+      memoryLink.querySelector('img').alt = t(memory.alt);
+      memoryLink.querySelector('span').textContent = t(memory.caption);
     }
     dialog.scrollTop = 0;
     document.querySelector('[data-previous]').disabled = index === 0;
@@ -147,7 +148,7 @@ const trophies = Array.from({length:11}, (_, index) => {
   document.querySelector('[data-fire]').addEventListener('click', event => {
     const off = document.querySelector('.room').classList.toggle('fire-off');
     event.currentTarget.setAttribute('aria-pressed', String(!off));
-    event.currentTarget.textContent = off ? 'Kaminfeuer aus' : 'Kaminfeuer an';
+    event.currentTarget.textContent = t(off ? 'Kaminfeuer aus' : 'Kaminfeuer an');
   });
   document.querySelector('[data-light]').addEventListener('click', event => {
     const dim = document.querySelector('.room').classList.toggle('evening');

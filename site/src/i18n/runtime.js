@@ -1,4 +1,4 @@
-import {createTranslator,localizedPageUrl} from "./translate.mjs";
+import {createTranslator,localizedNavigationUrl} from "./translate.mjs";
 import catalog from "./catalog.mjs";
 // Localized static pages are fully readable without JavaScript. This module
 // translates content produced later by shared interactive tools and galleries.
@@ -6,11 +6,11 @@ const language=document.documentElement.lang;
 const base=config.base;
 const t=createTranslator(catalog,config.languages.find(item=>item.code===language)?.locale);
 globalThis.dieTranslate=t;
-const pageLink=url=>localizedPageUrl(url,language,base,config.languages.map(item=>item.code),config.defaultLanguage);
+const pageLink=url=>localizedNavigationUrl(url,language,config);
 function localize(root) {
-  if(root.nodeType===Node.TEXT_NODE){if(!root.parentElement?.closest("script,style")){const value=t(root.nodeValue);if(value!==root.nodeValue)root.nodeValue=value;}return;}
+  if(root.nodeType===Node.TEXT_NODE){if(!root.parentElement?.closest("script,style,[translate=no]")){const value=t(root.nodeValue);if(value!==root.nodeValue)root.nodeValue=value;}return;}
   if(root.nodeType!==Node.ELEMENT_NODE)return;
-  if(root.matches("script,style"))return;
+  if(root.matches("script,style,[translate=no]"))return;
   for(const attribute of ["title","alt","placeholder","aria-label"])if(root.hasAttribute(attribute)){const old=root.getAttribute(attribute),value=t(old);if(value!==old)root.setAttribute(attribute,value);}
   if(root.matches("a[href]")&&!root.hasAttribute("data-language")){const old=root.getAttribute("href"),value=pageLink(old);if(old!==value)root.setAttribute("href",value);}
   if(root.hasAttribute("data-share-url")){const old=root.getAttribute("data-share-url"),value=pageLink(old);if(old!==value)root.setAttribute("data-share-url",value);}

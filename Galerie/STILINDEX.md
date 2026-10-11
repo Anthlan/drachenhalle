@@ -62,6 +62,8 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_10_06_1021_Spezialmischung_Drachenherz_Anthlan_Somea.png](Chatbilder/2026_10_06_1021_Spezialmischung_Drachenherz_Anthlan_Somea.png)
 - [2026_10_06_1021_ZutrittNurNachFreigabe_Anthlan.png](Chatbilder/2026_10_06_1021_ZutrittNurNachFreigabe_Anthlan.png)
 - [2026_10_06_1022_Augenhoehe_Somea_Anthlan.png](Chatbilder/2026_10_06_1022_Augenhoehe_Somea_Anthlan.png)
+- [2026_10_11_1533_Sonntagsblues_Allianzensemble.png](Chatbilder/2026_10_11_1533_Sonntagsblues_Allianzensemble.png)
+- [2026_10_11_2137_NurEinWaechter_Anthlan_Drachenherz.png](Chatbilder/2026_10_11_2137_NurEinWaechter_Anthlan_Drachenherz.png)
 
 ## S2 – Fantasy-Comic & Infografik
 

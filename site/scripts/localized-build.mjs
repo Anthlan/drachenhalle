@@ -2,7 +2,7 @@ import { readFile, readdir, writeFile, mkdir, copyFile } from "node:fs/promises"
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
-import { createTranslator, localizedPageUrl, normalizeText } from "../src/i18n/translate.mjs";
+import { createTranslator, localizedNavigationUrl, languageAvailable, normalizeText } from "../src/i18n/translate.mjs";
 import config from "../src/i18n/config.json" with { type: "json" };
 import { translateCalendar } from "../src/i18n/calendar.mjs";
 
@@ -10,7 +10,7 @@ import { logicalSource, localizedSource, isLocalizedSource } from "./content-fil
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repositoryRoot = path.resolve(siteRoot, "..");
-const pageUrl=(url,language)=>localizedPageUrl(url,language,config.base,config.languages.map(item=>item.code),config.defaultLanguage);
+const pageUrl=(url,language)=>localizedNavigationUrl(url,language,config);
 const decode = text => text.replace(/&#(x[\da-f]+|\d+);/gi, (_, number) => String.fromCodePoint(number[0] === "x" ? parseInt(number.slice(1), 16) : Number(number)))
   .replace(/&(amp|lt|gt|quot|apos|nbsp);/g, (_, name) => ({amp:"&",lt:"<",gt:">",quot:'"',apos:"'",nbsp:" "})[name]);
 const escape = text => text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
@@ -84,9 +84,12 @@ async function loadCatalog(language) {
 }
 
 function translateHtml(html, translate, language, sources) {
+  let preservedDepth=0;
   // Keep scripts, styles, input values, identifiers and data attributes intact.
   const tokens=html.split(/(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>|<!--[^]*?-->|<[^>]*>)/gi);
   return tokens.map(token=> {
+    if(preservedDepth){if(/^<\//.test(token))preservedDepth--;else if(/^<[^!]/.test(token)&&!/^<[^>]+\/>$/.test(token))preservedDepth++;return token;}
+    if(/^<[^>]+\btranslate="no"/.test(token)){preservedDepth=1;return token;}
     if(/^<(?:script|style|!--)/i.test(token))return token;
     if(token.startsWith("<"))return token.replace(/(\s)(alt|title|placeholder|aria-label|content)="([^"]*)"/g,(match,space,attribute,value)=>`${space}${attribute}="${escape(translate(decode(value))).replaceAll('"',"&quot;")}"`)
       .replace(/(\s)(href|action|data-share-url)="([^"]*)"/g,(_,space,attribute,value)=> {
@@ -110,7 +113,9 @@ export default function localizedBuild() {
     for(const language of config.languages.filter(item=>item.code!==config.defaultLanguage)) {
       const {catalog,warnings}=await loadCatalog(language.code);
       const sources=new Set((await localizedFiles(language.code)).map(file=>logicalSource(path.relative(repositoryRoot,file).split(path.sep).join("/"))));
-      const missing=(await localizedFiles(config.defaultLanguage)).map(file=>logicalSource(path.relative(repositoryRoot,file).split(path.sep).join("/"))).filter(source=>!sources.has(source));
+      const requiredSources=language.contentSources ?? (await localizedFiles(config.defaultLanguage)).map(file=>logicalSource(path.relative(repositoryRoot,file).split(path.sep).join("/")));
+      const missing=requiredSources.filter(source=>!sources.has(source));
+      const languageHtmlFiles=htmlFiles.filter(file=>languageAvailable(config.base+"/"+path.relative(out,file).split(path.sep).join("/").replace(/index\.html$/,""),language,config));
       if(missing.length)throw new Error(`Missing ${language.code} content translations: ${missing.join(", ")}`);
       if(warnings.length)throw new Error(`Translation structure differs: ${JSON.stringify(warnings)}`);
       const translate=createTranslator(catalog,language.locale);
@@ -120,12 +125,12 @@ export default function localizedBuild() {
       await writeFile(path.join(runtimePath,"catalog.mjs"),`export default ${JSON.stringify(catalog)};`);
       await writeFile(path.join(runtimePath,"runtime.js"),`const config=${JSON.stringify(config)};\n`+await readFile(path.join(siteRoot,"src/i18n/runtime.js"),"utf8"));
       await copyFile(path.join(siteRoot,"src/i18n/translate.mjs"),path.join(runtimePath,"translate.mjs"));
-      for(const calendar of await walk(path.join(out,"generated/events"),".ics")) {
+      for(const calendar of language.pages ? [] : await walk(path.join(out,"generated/events"),".ics")) {
         const target=path.join(out,language.path,path.relative(out,calendar));
         await mkdir(path.dirname(target),{recursive:true});
         await writeFile(target,translateCalendar(await readFile(calendar,"utf8"),translate));
       }
-      for(const file of htmlFiles) {
+      for(const file of languageHtmlFiles) {
         const relative=path.relative(out,file);
         const germanUrl=config.base+"/"+relative.split(path.sep).join("/").replace(/index\.html$/,"" );
         const englishUrl=pageUrl(germanUrl,language.code);
@@ -141,8 +146,8 @@ export default function localizedBuild() {
         const target=path.join(out,language.path,relative);
         await mkdir(path.dirname(target),{recursive:true});await writeFile(target,html);
       }
-      await writeFile(path.join(runtimePath,"translation-report.json"),JSON.stringify({pages:htmlFiles.length,entries:Object.keys(catalog).length,warnings},null,2));
-      console.log(`[languages] ${language.code}: ${htmlFiles.length} pages, ${Object.keys(catalog).length} translations, ${warnings.length} alignment notices`);
+      await writeFile(path.join(runtimePath,"translation-report.json"),JSON.stringify({pages:languageHtmlFiles.length,entries:Object.keys(catalog).length,warnings},null,2));
+      console.log(`[languages] ${language.code}: ${languageHtmlFiles.length} pages, ${Object.keys(catalog).length} translations, ${warnings.length} alignment notices`);
     }
   }}};
 }

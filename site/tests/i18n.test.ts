@@ -1,6 +1,9 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { createTranslator, localizedPageUrl } from "../src/i18n/translate.mjs";
+import { createTranslator, localizedPageUrl, localizedNavigationUrl, languageAvailable } from "../src/i18n/translate.mjs";
+import config from "../src/i18n/config.json" with { type: "json" };
+import english from "../src/i18n/en.json" with { type: "json" };
+import russian from "../src/i18n/ru.json" with { type: "json" };
 import { translateCalendar } from "../src/i18n/calendar.mjs";
 import { normalizeContentLinks, repositoryRoot } from "../scripts/content-files.mjs";
 import path from "node:path";
@@ -18,6 +21,26 @@ test("specific templates win and nested labels are translated",()=> {
   const t=createTranslator({"${left} von ${right}":"${left} of ${right}","${shown} von ${total} Allianzen":"${shown} of ${total} alliances","Punkte":"Points","${count} Punkte":"${count} points"});
   assert.equal(t("15 von 77 Allianzen"),"15 of 77 alliances");
   assert.equal(t("38.000 Punkte"),"38,000 points");
+});
+
+test("full hall templates win before partial compound labels",()=> {
+  const t=createTranslator(english);
+  assert.equal(t("Wächter · Stufe 160"),"Guardian · Level 160");
+  assert.equal(t("Besiegt"),"Defeated");
+  assert.equal(t("Ehrenplatz frei"),"Unclaimed");
+});
+
+test("Russian is limited to expedition analysis with valid fallback links",()=> {
+  const ru=config.languages.find(item=>item.code==="ru")!;
+  assert.equal(languageAvailable("/drachenhalle/en/auswertungen/expeditionswahnsinn/#analyse",ru,config),true);
+  assert.equal(languageAvailable("/drachenhalle/ruhmeshalle/",ru,config),false);
+  assert.equal(localizedNavigationUrl("/drachenhalle/auswertungen/expeditionswahnsinn/?server=105#spieler","ru",config),"/drachenhalle/ru/auswertungen/expeditionswahnsinn/?server=105#spieler");
+  assert.equal(localizedNavigationUrl("/drachenhalle/docs/allianzregeln/","ru",config),"/drachenhalle/en/docs/allianzregeln/");
+  assert.equal(localizedNavigationUrl("/drachenhalle/brand/image.webp","ru",config),"/drachenhalle/brand/image.webp");
+  const t=createTranslator(russian,"ru-RU");
+  assert.equal(t("Seite 2 / 12"),"Страница 2 / 12");
+  assert.equal(t("Rang;Spieler;Allianzkürzel;Allianz;Server;Punkte"),"Место;Игрок;Тег альянса;Альянс;Сервер;Очки");
+  assert.ok(!/Punkte|Teilnehmer|Allianzmitglied/.test(t("Ø 637 655 Punkte pro Teilnehmer · Median 762 697 Punkte · 164 911 Punkte pro Allianzmitglied.")));
 });
 
 test("calendar translations preserve event timezones and alarms",()=> {

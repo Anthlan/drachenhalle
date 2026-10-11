@@ -1,0 +1,13 @@
+<script is:inline>
+if(new URLSearchParams(location.search).get('view')==='content')document.documentElement.classList.add('content-only');
+</script>
+<style is:global>
+html.content-only .site-header,html.content-only .skip-link,html.content-only .page-shell > footer,html.content-only .breadcrumbs,html.content-only .document-sidebar{display:none!important}
+html.content-only .document-layout{grid-template-columns:minmax(0,1fr)!important}
+html.content-only .page-shell{padding-top:24px}
+.content-share-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.content-share-actions button{width:auto;min-height:44px;padding:10px 14px;gap:8px}
+</style>
+<script>
+if(document.documentElement.classList.contains('content-only'))document.querySelectorAll<HTMLAnchorElement>('main a[href]:not([href^="#"]):not([download])').forEach(link=>{link.removeAttribute('href');link.removeAttribute('tabindex');});
+</script>

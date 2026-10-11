@@ -105,10 +105,13 @@ export function initializeImageActions() {
     if (!(button instanceof HTMLButtonElement)) continue;
 
     button.addEventListener("click", () => {
-      const url = button.dataset.shareUrl;
-      if (!url) return;
+      const source = button.dataset.shareUrl;
+      if (!source) return;
+      const url = new URL(source, window.location.href);
+      url.searchParams.delete('view');
+      if (button.hasAttribute('data-share-reduced')) url.searchParams.set('view', 'content');
       const linkLabel = button.hasAttribute("data-share-page") ? "Seitenlink" : "Bildlink";
-      void shareLink(url, linkLabel);
+      void shareLink(url.href, linkLabel);
     });
   }
 
