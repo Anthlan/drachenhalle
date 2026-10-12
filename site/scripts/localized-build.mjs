@@ -72,6 +72,11 @@ async function loadCatalog(language) {
           catalog[normalizedWebsite(de[index])]=en[index].replaceAll("DlE","DIE");
         }
       }
+      // Copyable in-game messages keep their line breaks and rich-text codes.
+      if(original.type==="code" && original.text!==english.text) {
+        catalog[original.text]=english.text;
+        catalog[normalizeText(original.text)]=english.text;
+      }
     }
     // Metadata is visible on cards, article headers and social previews.
     for(const field of ["title","summary","description","category","location"]) {

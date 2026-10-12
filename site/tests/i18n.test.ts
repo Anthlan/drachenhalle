@@ -30,12 +30,12 @@ test("full hall templates win before partial compound labels",()=> {
   assert.equal(t("Ehrenplatz frei"),"Unclaimed");
 });
 
-test("Russian is limited to expedition analysis with valid fallback links",()=> {
+test("Russian supports all pages with valid counterpart links",()=> {
   const ru=config.languages.find(item=>item.code==="ru")!;
   assert.equal(languageAvailable("/drachenhalle/en/auswertungen/expeditionswahnsinn/#analyse",ru,config),true);
-  assert.equal(languageAvailable("/drachenhalle/ruhmeshalle/",ru,config),false);
+  assert.equal(languageAvailable("/drachenhalle/ruhmeshalle/",ru,config),true);
   assert.equal(localizedNavigationUrl("/drachenhalle/auswertungen/expeditionswahnsinn/?server=105#spieler","ru",config),"/drachenhalle/ru/auswertungen/expeditionswahnsinn/?server=105#spieler");
-  assert.equal(localizedNavigationUrl("/drachenhalle/docs/allianzregeln/","ru",config),"/drachenhalle/en/docs/allianzregeln/");
+  assert.equal(localizedNavigationUrl("/drachenhalle/docs/allianzregeln/","ru",config),"/drachenhalle/ru/docs/allianzregeln/");
   assert.equal(localizedNavigationUrl("/drachenhalle/brand/image.webp","ru",config),"/drachenhalle/brand/image.webp");
   const t=createTranslator(russian,"ru-RU");
   assert.equal(t("Seite 2 / 12"),"Страница 2 / 12");
@@ -65,4 +65,14 @@ test("translation preserves whitespace, numeric placeholders and composed headin
   assert.equal(t("Allianz · DIE Drachenhalle"),"Alliance · DIE Dragon Hall");
   assert.equal(t("← Allianz"),"← Alliance");
   assert.equal(t("Anthlan"),"Anthlan");
+});
+
+
+test("Russian UI catalog covers English keys and preserves interpolation",()=> {
+  for(const key of Object.keys(english)){
+    assert.ok(Object.hasOwn(russian,key), 'Missing Russian UI key: '+key);
+    const placeholders=(value:string)=>[...value.matchAll(/\$\{([^}]+)\}/g)].map(match=>match[1]).sort();
+    assert.deepEqual(placeholders(russian[key]),placeholders(key),'Interpolation differs: '+key);
+    assert.ok(!/QXK\d|KXQ/.test(russian[key]),'Temporary token in '+key);
+  }
 });

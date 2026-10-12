@@ -18,14 +18,7 @@
       "code": "ru",
       "label": "Русский",
       "locale": "ru-RU",
-      "path": "ru",
-      "pages": [
-        "/auswertungen/expeditionswahnsinn/"
-      ],
-      "contentSources": [
-        "Drachenwissen/Analysen/2026_10_10_Expeditionswahnsinn.md"
-      ],
-      "fallbackLanguage": "en"
+      "path": "ru"
     }
   ]
 }
