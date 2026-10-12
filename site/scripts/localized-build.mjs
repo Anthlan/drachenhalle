@@ -5,6 +5,7 @@ import { marked } from "marked";
 import { createTranslator, localizedNavigationUrl, languageAvailable, normalizeText } from "../src/i18n/translate.mjs";
 import config from "../src/i18n/config.json" with { type: "json" };
 import { translateCalendar } from "../src/i18n/calendar.mjs";
+import { localizedTipImages } from "./localized-tip-images.mjs";
 
 import { logicalSource, localizedSource, isLocalizedSource } from "./content-files.mjs";
 
@@ -116,6 +117,7 @@ export default function localizedBuild() {
     const out=fileURLToPath(dir);
     const htmlFiles=(await walk(out,".html")).filter(file=>!config.languages.some(language=>language.path&&path.relative(out,file).startsWith(language.path+path.sep)));
     for(const language of config.languages.filter(item=>item.code!==config.defaultLanguage)) {
+      const localizeImages = await localizedTipImages(repositoryRoot, out, config.base, language.code);
       const {catalog,warnings}=await loadCatalog(language.code);
       const sources=new Set((await localizedFiles(language.code)).map(file=>logicalSource(path.relative(repositoryRoot,file).split(path.sep).join("/"))));
       const requiredSources=language.contentSources ?? (await localizedFiles(config.defaultLanguage)).map(file=>logicalSource(path.relative(repositoryRoot,file).split(path.sep).join("/")));
@@ -149,6 +151,7 @@ export default function localizedBuild() {
         for(const choice of config.languages)html=html.replace(new RegExp(`data-language="${choice.code}" href="[^"]*"`,"g"),`data-language="${choice.code}" href="${pageUrl(germanUrl,choice.code)}"`);
         html=html.replace(/(data-language="([^"]+)"[^>]*aria-current=")[^"]*/g,(_,prefix,code)=>prefix+(code===language.code?"true":"false"));
         const target=path.join(out,language.path,relative);
+        html=localizeImages(html);
         await mkdir(path.dirname(target),{recursive:true});await writeFile(target,html);
       }
       await writeFile(path.join(runtimePath,"translation-report.json"),JSON.stringify({pages:languageHtmlFiles.length,entries:Object.keys(catalog).length,warnings},null,2));
