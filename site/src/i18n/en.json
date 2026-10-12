@@ -163,7 +163,6 @@
   "Vorheriges Bild": "Previous Image",
   "Bilder aus der Drachenhalle": "Images from Dragon Hall",
   "Bilder und Geschichten der Drachenritter": "Images and Stories of the Dragon Knights",
-  "Durchsuche Chatbilder, Reaktionsbilder, Charakterreferenzen und Allianzmaterial. Die Originale bleiben mit ihrer vollständigen Qualität und Historie im GitHub-Repository erhalten.": "Browse chat images, reaction images, character references and alliance material. The originals retain their full quality and history in the GitHub repository.",
   "Bilder": "Images",
   "Chat- &amp; Reaktionsbilder": "Chat &amp; Reaction Images",
   "Referenzen": "References",
@@ -185,7 +184,6 @@
   "Verbindliche Bildsprache, Gestaltung und Textformatierung.": "Required imagery, design and text formatting guidelines.",
   "Personen": "Characters",
   "Datum": "Date",
-  "Original auf GitHub öffnen": "Open Original on GitHub",
   "Kommende und vergangene Termine der DIE-Allianz.": "Upcoming and past events of the DIE alliance.",
   "Termine · DIE Drachenhalle": "Events · DIE Dragon Hall",
   "Umfang der Termine": "Event Collection",
@@ -872,7 +870,6 @@
   "Thema": "Topic",
   "Persönlichen Heilblock berechnen →": "Calculate Your Personal Healing Batch →",
   "Persönliches Eventziel planen →": "Plan Your Personal Event Goal →",
-  "Markdown auf GitHub öffnen": "Open Markdown on GitHub",
   "Informationsseiten": "Information Pages",
   "Alle Tipps": "All Tips",
   "Wähle je eine Art und ein Thema. Beide Filter werden miteinander kombiniert.": "Choose one type and one topic. Both filters are combined.",
@@ -926,7 +923,6 @@
   "Weiter →": "Next →",
   "Geschafft": "Done",
   "Passende Grafik zum Teilen im Allianzchat.": "Matching graphic for sharing in alliance chat.",
-  "Originalgrafik auf GitHub öffnen": "Open Original Graphic on GitHub",
   "Mitteilung kopieren": "Copy Announcement",
   "Kurz &amp; knapp": "Short &amp; Sweet",
   "Kurz & knapp": "Short & Sweet",
@@ -2049,5 +2045,8 @@
   "Hilfe zum Teilen": "Sharing help",
   "Teilt den Inhalt mit der normalen Seitennavigation.": "Shares the content with the normal site navigation.",
   "Teilt nur diesen Inhalt ohne Seitennavigation.": "Shares only this content without site navigation.",
-  "S105 bringt mehr Spieler in die Rangliste, S97 erzielt deutlich mehr Punkte.": "S105 brings more players into the ranking, while S97 scores significantly more points."
+  "S105 bringt mehr Spieler in die Rangliste, S97 erzielt deutlich mehr Punkte.": "S105 brings more players into the ranking, while S97 scores significantly more points.",
+  "Original öffnen": "Open original",
+  "Originalgrafik öffnen": "Open original graphic",
+  "Durchsuche Chatbilder, Reaktionsbilder, Charakterreferenzen und Allianzmaterial. Die Originalbilder stehen in voller Qualität zur Verfügung.": "Browse chat images, reaction images, character references and alliance material. Original images are available in full quality."
 }

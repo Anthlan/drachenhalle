@@ -358,7 +358,6 @@
   "Vorheriges Bild": "Предыдущее изображение",
   "Bilder aus der Drachenhalle": "Изображения из Зала Дракона",
   "Bilder und Geschichten der Drachenritter": "Образы и истории рыцарей-драконов",
-  "Durchsuche Chatbilder, Reaktionsbilder, Charakterreferenzen und Allianzmaterial. Die Originale bleiben mit ihrer vollständigen Qualität und Historie im GitHub-Repository erhalten.": "Просматривайте изображения чата, изображения реакций, ссылки на персонажей и материалы альянсов. Оригиналы сохраняют свое полное качество и историю в репозитории GitHub.",
   "Chat- &amp; Reaktionsbilder": "Чат и изображения реакций",
   "Referenzen": "Ссылки",
   "Die vollständige Bildsammlung": "Полная коллекция изображений",
@@ -376,7 +375,6 @@
   "Bereich öffnen →": "Открыть раздел →",
   "Verbindliche Bildsprache, Gestaltung und Textformatierung.": "Требования к изображениям, дизайну и форматированию текста.",
   "Datum": "Дата",
-  "Original auf GitHub öffnen": "Открыть оригинал на GitHub",
   "Kommende und vergangene Termine der DIE-Allianz.": "Предстоящие и прошедшие мероприятия альянса DIE.",
   "Termine · DIE Drachenhalle": "События · DIE Зал Дракона",
   "Umfang der Termine": "Коллекция событий",
@@ -1032,7 +1030,6 @@
   "Thema": "Тема",
   "Persönlichen Heilblock berechnen →": "Рассчитайте свой личный курс исцеления →",
   "Persönliches Eventziel planen →": "Спланируйте свою личную цель мероприятия →",
-  "Markdown auf GitHub öffnen": "Откройте Markdown на GitHub",
   "Informationsseiten": "Информационные страницы",
   "Alle Tipps": "Все советы",
   "Wähle je eine Art und ein Thema. Beide Filter werden miteinander kombiniert.": "Выберите один тип и одну тему. Оба фильтра комбинированные.",
@@ -1083,7 +1080,6 @@
   "Von vorn beginnen": "Начать заново",
   "Geschafft": "Готово",
   "Passende Grafik zum Teilen im Allianzchat.": "Соответствующее изображение для обмена в чате альянса.",
-  "Originalgrafik auf GitHub öffnen": "Открыть исходную графику на GitHub",
   "Mitteilung kopieren": "Копировать объявление",
   "Kurz &amp; knapp": "Короткий и сладкий",
   "Kurz & knapp": "Короткий и сладкий",
@@ -2181,5 +2177,8 @@
   "je 1 Minuten; Screenshot: 126": "За 1 минуту; на скриншоте: 126",
   "je 1 Forschungsdaten; Screenshot: 640": "За 1 единицу исследовательских данных; на скриншоте: 640",
   "je 1 Bücher; Screenshot: 24": "За 1 книгу; на скриншоте: 24",
-  "verbleibende Eventzeit > Rally-Vorbereitung + Marschzeit": "Оставшееся время события > подготовка совместной атаки + время марша"
+  "verbleibende Eventzeit > Rally-Vorbereitung + Marschzeit": "Оставшееся время события > подготовка совместной атаки + время марша",
+  "Original öffnen": "Открыть оригинал",
+  "Originalgrafik öffnen": "Открыть исходное изображение",
+  "Durchsuche Chatbilder, Reaktionsbilder, Charakterreferenzen und Allianzmaterial. Die Originalbilder stehen in voller Qualität zur Verfügung.": "Просматривайте изображения для чата, реакции, образцы персонажей и материалы альянса. Оригиналы изображений доступны в полном качестве."
 }

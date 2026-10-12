@@ -84,8 +84,7 @@ const originalMimeType = (item) => {
             <h1 id="archive-title">Bilder und Geschichten der Drachenritter</h1>
           </div>
           <p class="intro-copy">
-            Durchsuche Chatbilder, Reaktionsbilder, Charakterreferenzen und Allianzmaterial. Die Originale bleiben mit ihrer
-            vollständigen Qualität und Historie im GitHub-Repository erhalten.
+            Durchsuche Chatbilder, Reaktionsbilder, Charakterreferenzen und Allianzmaterial. Die Originalbilder stehen in voller Qualität zur Verfügung.
           </p>
           <dl class="archive-stats" aria-label="Umfang der Galerie">
             <div><dt>{galleryData.imageCount}</dt><dd>Bilder</dd></div>
@@ -181,7 +180,7 @@ const originalMimeType = (item) => {
                 data-date={item.date ?? ""}
                 data-date-label={formatDate(item.date)}
                 data-web={item.webUrl}
-                data-original={item.repositoryUrl}
+                data-original={originalImageUrl(item)}
                 data-original-image={originalImageUrl(item)}
                 data-original-name={originalFileName(item)}
                 data-original-mime={originalMimeType(item)}
@@ -288,7 +287,7 @@ const originalMimeType = (item) => {
               </button>
             </div>
             <a class="detail-original" id="detail-original" href="#" target="_blank" rel="noopener noreferrer">
-              Original auf GitHub öffnen <span aria-hidden="true">↗</span>
+              Original öffnen <span aria-hidden="true">↗</span>
             </a>
           </aside>
         </div>

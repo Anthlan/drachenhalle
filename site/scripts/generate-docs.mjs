@@ -571,7 +571,8 @@ const resolveLocalMarkdownLinks = (markdown, source) => {
     ));
     if (contentVisibility.hiddenDocuments.has(targetSource) && targetSource !== source) return label;
     const websiteUrl = documentUrlBySource.get(targetSource);
-    const targetUrl = websiteUrl ?? `${repositoryUrl}/blob/main/${encodeRepositoryPath(repositorySource(targetSource))}`;
+    if (!websiteUrl) return label;
+    const targetUrl = websiteUrl;
     return `[${label}](${targetUrl})`;
   });
 };

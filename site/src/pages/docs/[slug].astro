@@ -418,13 +418,6 @@ const responsibilities = [
                   Persönliches Eventziel planen →
                 </a>
               )}
-          {!document.hidden && !["Drachenwissen", "Allianz", "Tutorials"].includes(document.section) && (
-            <div class="document-header-actions">
-              <a href={document.repositoryUrl} target="_blank" rel="noopener noreferrer">
-                Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          )}
             </header>
             {document.slug === "tipp-04-richtig-teleportieren" && <TeleportDemo />}
             {isTipsOverview && (
@@ -921,7 +914,7 @@ const responsibilities = [
                   <section class="markdown-content alliance-main-content" set:html={document.allianceArticleHtml} />
                   {document.imageUrl && (
                     <aside class="document-visual" aria-label="Zugehörige Allianz-Grafik">
-                      <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
+                      <a href={document.imageOriginalUrl} target="_blank" rel="noopener noreferrer">
                         <img src={document.imageUrl} alt={`Grafik zu ${document.title}`} />
                       </a>
                       <p>Passende Grafik zum Teilen im Allianzchat.</p>
@@ -939,8 +932,8 @@ const responsibilities = [
                           <ImageActionIcon type="download" />
                         </button>
                       </div>
-                      <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
-                        Originalgrafik auf GitHub öffnen <span aria-hidden="true">↗</span>
+                      <a href={document.imageOriginalUrl} target="_blank" rel="noopener noreferrer">
+                        Originalgrafik öffnen <span aria-hidden="true">↗</span>
                       </a>
                     </aside>
                   )}
@@ -992,7 +985,7 @@ const responsibilities = [
 
                   {document.imageUrl && (
                     <aside class="document-visual tip-shared-visual" aria-label={`Zugehörige ${document.kind === "event" ? "Event" : "Tipp"}-Grafik`}>
-                      <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
+                      <a href={document.imageOriginalUrl} target="_blank" rel="noopener noreferrer">
                         <img src={document.imageUrl} alt={`Grafik zu ${document.title}`} />
                       </a>
                       <p>Passende Grafik zum Teilen im Allianzchat.</p>
@@ -1010,8 +1003,8 @@ const responsibilities = [
                           <ImageActionIcon type="download" />
                         </button>
                       </div>
-                      <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
-                        Originalgrafik auf GitHub öffnen <span aria-hidden="true">↗</span>
+                      <a href={document.imageOriginalUrl} target="_blank" rel="noopener noreferrer">
+                        Originalgrafik öffnen <span aria-hidden="true">↗</span>
                       </a>
                     </aside>
                   )}
@@ -1024,7 +1017,7 @@ const responsibilities = [
                   <section class="markdown-content tip-main-content" set:html={document.tipHtml} />
                   {document.imageUrl && (
                     <aside class="document-visual" aria-label="Zugehörige Tipp-Grafik">
-                      <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
+                      <a href={document.imageOriginalUrl} target="_blank" rel="noopener noreferrer">
                         <img src={document.imageUrl} alt={`Grafik zu ${document.title}`} />
                       </a>
                       <p>Passende Grafik zum Teilen im Allianzchat.</p>
@@ -1042,8 +1035,8 @@ const responsibilities = [
                           <ImageActionIcon type="download" />
                         </button>
                       </div>
-                      <a href={document.imageRepositoryUrl} target="_blank" rel="noopener noreferrer">
-                        Originalgrafik auf GitHub öffnen <span aria-hidden="true">↗</span>
+                      <a href={document.imageOriginalUrl} target="_blank" rel="noopener noreferrer">
+                        Originalgrafik öffnen <span aria-hidden="true">↗</span>
                       </a>
                     </aside>
                   )}

@@ -39,11 +39,11 @@ Where possible, include your player name and a brief description of the content 
 
 ### Website Inbox Counter
 
-The Pages workflow counts all files in the shared Dropbox inbox folder twice an hour and displays the number beside the inbox icon. Filenames and other metadata are not published on the website. The repository requires the GitHub Actions secrets `DROPBOX_APP_KEY`, `DROPBOX_APP_SECRET` and `DROPBOX_REFRESH_TOKEN` for this query. If they are missing, the website still builds and the inbox icon remains without a counter.
+The Pages workflow counts all files in the shared Dropbox inbox folder twice an hour and displays the number beside the inbox icon. Filenames and other metadata are not published on the website. The repository requires the workflow secrets `DROPBOX_APP_KEY`, `DROPBOX_APP_SECRET` and `DROPBOX_REFRESH_TOKEN` for this query. If they are missing, the website still builds and the inbox icon remains without a counter.
 
 ### Website Page Views
 
-A small Cloudflare Worker counts views of each published page in a D1 database and also returns the total count. Both values appear in the footer. The application stores only the page path and aggregated counters; it sets no cookies and stores no browser identifiers. Setup is documented under [`cloudflare/page-views`](../../cloudflare/page-views/README.md). Without the GitHub Actions variable `PUBLIC_PAGE_VIEWS_API_URL`, the website continues to build normally and the counter stays hidden.
+A small Cloudflare Worker counts views of each published page in a D1 database and also returns the total count. Both values appear in the footer. The application stores only the page path and aggregated counters; it sets no cookies and stores no browser identifiers. Setup is documented under [`cloudflare/page-views`](../../cloudflare/page-views/README.md). Without the workflow variable `PUBLIC_PAGE_VIEWS_API_URL`, the website continues to build normally and the counter stays hidden.
 
 ## Design Principle
 

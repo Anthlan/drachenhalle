@@ -341,7 +341,7 @@ The strategy therefore distinguishes stable principles – coordinated rallies, 
 
 ## Sources and reliability
 
-- **DIE schedule and operational basis:** [Capital Conquest on 26 September 2026](https://github.com/Anthlan/drachenhalle/blob/main/Termine/2026_09_26_Hauptstadteroberung.md) – attacker/defender logic, time window, 100% progress, task allocation and Battle Frenzy.
+- **DIE schedule and operational basis:** [Capital Conquest on 26 September 2026](../../../Termine/en/2026_09_26_Hauptstadteroberung.md) – attacker/defender logic, time window, 100% progress, task allocation and Battle Frenzy.
 - **Detailed community documentation:** [Expedition Frenzy – Zroute Unofficial](https://zroutegame.com/expedition-frenzy/) – phases, server time, cooperation, battery positions and values, personal scoring and roles. The source itself identifies numerous unresolved claims or details read only from screenshots.
 - **Version notes:** [Z Route Academy – Updates](https://zroute.dev/updates/) documents the visual revision of Expedition Frenzy and later changes to returning, markers and rewards, among other updates.
 - **Related DIE tips:** Tip #2 on rallies, Tip #4 on teleporting, Tip #8 on rapid healing, Tip #9 on free Raid jumping, Tip #10 on Hit & Run, Tip #11 on fixed raid teams and Tip #12 on reading battle reports.

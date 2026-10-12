@@ -50,9 +50,6 @@ const formatDate = (value) => new Intl.DateTimeFormat("de-DE", {
             </div>
             <h1>{article.title}</h1>
             <p>{article.summary}</p>
-            <a href={article.repositoryUrl} target="_blank" rel="noopener noreferrer">
-              Markdown auf GitHub öffnen <span aria-hidden="true">↗</span>
-            </a>
           </header>
           <div class="markdown-content" set:html={article.html} />
         </article>
