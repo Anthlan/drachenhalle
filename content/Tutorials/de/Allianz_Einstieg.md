@@ -2,7 +2,7 @@
 
 ## Willkommen in der Drachenhalle
 
-**Schön, dass du da bist!** Dieser Rundgang bringt dich in acht kurzen Schritten sicher durch die wichtigsten Informationen für deinen Start bei DIE.
+**Schön, dass du da bist!** Dieser Rundgang bringt dich in neun kurzen Schritten sicher durch die wichtigsten Informationen für deinen Start bei DIE.
 
 <img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="Anthlan begrüßt neue Mitglieder mit einem Daumen nach oben." decoding="async">
 
@@ -98,6 +98,12 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
 </div>
 
 > **Kontrolle:** Bei Transportlastwagen muss der Ausschluss-Haken grün aktiviert sein. Bei Spezialmissionen muss ein Fremdserver angezeigt werden beziehungsweise die erste Koordinatenzahl darf nicht **105** sein.
+
+## Plünderungsquiz
+
+Teste die Plünderungsregeln in sechs kurzen Situationen. Nach jeder Antwort erfährst du, worauf es ankommt. Das Quiz ist eine Übung; du kannst anschließend normal weitergehen.
+
+[Quiz auch einzeln öffnen](Pluenderungsquiz.md)
 
 ## Deine ersten Schritte
 

@@ -1,0 +1,121 @@
+---
+import { raidQuestions } from "../data/raid-quiz";
+---
+<section class="raid-quiz" data-raid-quiz aria-label="Plünderungsquiz">
+  <header>
+    <p class="eyebrow">Wissen ausprobieren</p>
+    <h2>Erst den Server prüfen. Dann plündern.</h2>
+    <p>Sechs Situationen aus dem Allianzalltag. Wähle eine Antwort und erfahre direkt, warum sie richtig oder falsch ist.</p>
+  </header>
+  <div data-quiz-game hidden>
+    <p class="quiz-progress">Frage <strong data-quiz-current>1</strong> <span>von</span> {raidQuestions.length}</p>
+    {raidQuestions.map((q, index) => (
+      <div data-quiz-question={index} hidden={index !== 0}>
+        <h3 tabindex="-1"><span aria-hidden="true">{q.icon}</span> {q.title}</h3>
+        <p class="quiz-scenario">{q.question}</p>
+        <div class="quiz-options" role="group" aria-label={q.question}>
+          {q.options.map((option, choice) => <button type="button" data-quiz-choice data-correct={choice === q.correct ? "true" : "false"}>{option}</button>)}
+        </div>
+        <div class="quiz-feedback" data-quiz-feedback role="status" aria-live="polite" hidden>
+          <strong data-quiz-right hidden>✓ Richtig!</strong>
+          <strong data-quiz-wrong hidden>Diese Antwort stimmt noch nicht.</strong>
+          <p>{q.explanation}</p>
+        </div>
+      </div>
+    ))}
+    <button type="button" class="quiz-next" data-quiz-next hidden>Nächste Frage →</button>
+    <button type="button" class="quiz-next" data-quiz-finish hidden>Ergebnis ansehen</button>
+    <div data-quiz-result hidden>
+      <h3 tabindex="-1">Dein Ergebnis</h3>
+      <p class="quiz-score"><span>Richtig beantwortet:</span> <strong data-quiz-score>0</strong> / {raidQuestions.length}</p>
+      <p data-quiz-perfect hidden>Alles richtig! Du erkennst, welche Plünderungsziele erlaubt sind.</p>
+      <p data-quiz-practice hidden>Gut geübt! Schau dir die Erklärungen noch einmal an und probiere es erneut.</p>
+      <p><strong>Merke:</strong> Lastwagen, Güterzüge und Spezialmissionen nur auf anderen Servern plündern.</p>
+      <button type="button" class="quiz-next" data-quiz-reset>Noch einmal üben</button>
+    </div>
+  </div>
+  <noscript>
+    <p>Für das interaktive Quiz bitte JavaScript aktivieren. Hier kannst du die Situationen mit ihren Lösungen nachlesen.</p>
+    {raidQuestions.map(q => <details><summary>{q.title}</summary><p>{q.question}</p><p>{q.explanation}</p></details>)}
+  </noscript>
+</section>
+<style>
+  .raid-quiz { margin: 24px 0; padding: clamp(18px, 4vw, 32px); border: 1px solid var(--line-bright); border-radius: 16px; background: linear-gradient(140deg, #172c40, #0b1524); }
+  .raid-quiz [hidden] { display: none !important; }
+  header { border-bottom: 1px solid var(--line-bright); margin-bottom: 22px; padding-bottom: 18px; }
+  h2 { font-size: clamp(23px, 3vw, 32px); margin: 8px 0 14px; }
+  h3 { font-size: 23px; color: var(--gold-pale); }
+  p { line-height: 1.65; }
+  .quiz-progress { color: var(--gold-pale); font-size: 14px; }
+  .quiz-scenario { font-size: 19px; }
+  .quiz-options { display: grid; gap: 12px; }
+  button { font: inherit; color: inherit; cursor: pointer; border: 1px solid var(--line-bright); border-radius: 10px; background: #ffffff08; padding: 16px; min-height: 48px; }
+  .quiz-options button { text-align: left; line-height: 1.5; }
+  button:hover:not(:disabled), button:focus-visible { border-color: var(--gold); background: #e3ad4e18; }
+  button:focus-visible, h3:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+  button:disabled { cursor: default; opacity: .75; }
+  button.is-right { border-color: #91d4a9; background: #31584166; opacity: 1; }
+  button.is-wrong { border-color: #e9a39b; background: #683e3e66; opacity: 1; }
+  .quiz-feedback { margin-top: 18px; border-left: 3px solid var(--gold); padding: 12px 18px; background: #0002; }
+  .quiz-feedback p { margin-bottom: 0; }
+  .quiz-next { margin-top: 18px; color: var(--gold-pale); font-weight: 700; }
+  .quiz-score { font-size: 24px; }
+</style>
+<script>
+  for (const quiz of document.querySelectorAll<HTMLElement>("[data-raid-quiz]")) {
+    const questions = [...quiz.querySelectorAll<HTMLElement>("[data-quiz-question]")];
+    const game = quiz.querySelector<HTMLElement>("[data-quiz-game]")!;
+    const current = quiz.querySelector<HTMLElement>("[data-quiz-current]")!;
+    const next = quiz.querySelector<HTMLButtonElement>("[data-quiz-next]")!;
+    const finish = quiz.querySelector<HTMLButtonElement>("[data-quiz-finish]")!;
+    const result = quiz.querySelector<HTMLElement>("[data-quiz-result]")!;
+    let index = 0, score = 0, answered = false;
+    game.hidden = false;
+    const showQuestion = () => {
+      questions.forEach((question, i) => { question.hidden = i !== index; });
+      current.textContent = String(index + 1);
+      next.hidden = finish.hidden = true;
+      answered = false;
+      questions[index].querySelector<HTMLElement>("h3")?.focus();
+    };
+    questions.forEach((question, i) => {
+      const choices = [...question.querySelectorAll<HTMLButtonElement>("[data-quiz-choice]")];
+      choices.forEach(choice => choice.addEventListener("click", () => {
+        if (answered || i !== index) return;
+        answered = true;
+        const correct = choice.dataset.correct === "true";
+        if (correct) score++;
+        choices.forEach(button => {
+          button.disabled = true;
+          button.classList.toggle("is-right", button.dataset.correct === "true");
+          button.classList.toggle("is-wrong", button === choice && !correct);
+        });
+        question.querySelector<HTMLElement>("[data-quiz-right]")!.hidden = !correct;
+        question.querySelector<HTMLElement>("[data-quiz-wrong]")!.hidden = correct;
+        question.querySelector<HTMLElement>("[data-quiz-feedback]")!.hidden = false;
+        next.hidden = index === questions.length - 1;
+        finish.hidden = index !== questions.length - 1;
+      }));
+    });
+    next.addEventListener("click", () => { if (!answered || index >= questions.length - 1) return; index++; showQuestion(); });
+    finish.addEventListener("click", () => {
+      if (!answered || index !== questions.length - 1) return;
+      questions[index].hidden = true;
+      finish.hidden = true;
+      quiz.querySelector<HTMLElement>(".quiz-progress")!.hidden = true;
+      quiz.querySelector<HTMLElement>("[data-quiz-score]")!.textContent = String(score);
+      quiz.querySelector<HTMLElement>("[data-quiz-perfect]")!.hidden = score !== questions.length;
+      quiz.querySelector<HTMLElement>("[data-quiz-practice]")!.hidden = score === questions.length;
+      result.hidden = false;
+      result.querySelector<HTMLElement>("h3")?.focus();
+    });
+    quiz.querySelector("[data-quiz-reset]")!.addEventListener("click", () => {
+      index = score = 0;
+      result.hidden = true;
+      quiz.querySelector<HTMLElement>(".quiz-progress")!.hidden = false;
+      quiz.querySelectorAll<HTMLButtonElement>("[data-quiz-choice]").forEach(button => { button.disabled = false; button.classList.remove("is-right", "is-wrong"); });
+      quiz.querySelectorAll<HTMLElement>("[data-quiz-feedback]").forEach(feedback => { feedback.hidden = true; });
+      showQuestion();
+    });
+  }
+</script>

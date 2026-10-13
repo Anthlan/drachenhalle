@@ -8,6 +8,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import TeleportDemo from "../../components/TeleportDemo.astro";
+import RaidQuiz from "../../components/RaidQuiz.astro";
 import docsData from "../../data/docs.generated.json";
 import galleryData from "../../data/gallery.generated.json";
 
@@ -866,6 +867,7 @@ const responsibilities = [
                     >
                       <p class="eyebrow">Schritt {index + 1} von {document.onboardingSteps.length}</p>
                       <div class="markdown-content tutorial-step-content" set:html={step.html} />
+                      {document.slug === "dein-einstieg-bei-uns" && step.id.endsWith("plunderungsquiz") && <RaidQuiz />}
                     </section>
                   ))}
                 </div>
@@ -944,6 +946,11 @@ const responsibilities = [
                     <div set:html={section} />
                   </section>
                 ))}
+              </div>
+            ) : document.kind === "quiz" ? (
+              <div>
+                <div class="markdown-content" set:html={document.html} />
+                <RaidQuiz />
               </div>
             ) : isBriefKnowledgeArticle && document.hasBriefView ? (
               <div class="tip-viewer" data-tip-viewer>

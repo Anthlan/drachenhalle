@@ -2,7 +2,7 @@
 
 ## Welcome to the Dragon Hall
 
-**Glad you are here!** This tour guides you safely through the most important information for getting started at DIE in eight short steps.
+**Glad you are here!** This tour guides you safely through the most important information for getting started at DIE in nine short steps.
 
 <img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="Anthlan welcomes new members with a thumbs-up." decoding="async">
 
@@ -98,6 +98,12 @@ When special missions are shared in chat, identify the server from the first num
 </div>
 
 > **Check:** For transport trucks, the exclusion checkbox must be enabled in green. For special missions, another server must be displayed or the first coordinate number must not be **105**.
+
+## Raiding quiz
+
+Test the raiding rules in six short scenarios. Each answer explains what to look out for. This quiz is practice; you can continue the tutorial normally afterwards.
+
+[Open the quiz separately](Pluenderungsquiz.md)
 
 ## Your first steps
 

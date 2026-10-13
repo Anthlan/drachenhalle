@@ -124,6 +124,15 @@ const baseDocuments = [
     kind: "onboarding",
   },
   {
+    source: "Tutorials/Pluenderungsquiz.md",
+    slug: "pluenderungsquiz",
+    title: "Plünderungsquiz",
+    section: "Tutorials",
+    summary: "Sechs interaktive Situationen: erlaubte Plünderungsziele und Servernummern erkennen.",
+    parentSlug: "tutorials",
+    kind: "quiz",
+  },
+  {
     source: "Tutorials/Profilbild_Tutorial.md",
     slug: "profilbild-im-spiel",
     title: "Profilbild aus der Galerie im Spiel verwenden",
