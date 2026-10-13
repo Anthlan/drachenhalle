@@ -1,5 +1,6 @@
 ---
 import { raidQuestions } from "../data/raid-quiz";
+const illustrations = ["check", "train", "container", "container", "check", "check"];
 ---
 <section class="raid-quiz" data-raid-quiz aria-label="Plünderungsquiz">
   <header>
@@ -8,13 +9,23 @@ import { raidQuestions } from "../data/raid-quiz";
     <p>Sechs Situationen aus dem Allianzalltag. Wähle eine Antwort und erfahre direkt, warum sie richtig oder falsch ist.</p>
   </header>
   <div data-quiz-game hidden>
-    <p class="quiz-progress">Frage <strong data-quiz-current>1</strong> <span>von</span> {raidQuestions.length}</p>
+    <div class="quiz-progress">
+      <p>Frage <strong data-quiz-current>1</strong> <span>von</span> {raidQuestions.length}</p>
+      <div class="quiz-progress-track" aria-hidden="true">
+        {raidQuestions.map((_, index) => <span data-quiz-marker class:list={[{ "is-current": index === 0 }]} />)}
+      </div>
+    </div>
     {raidQuestions.map((q, index) => (
       <div data-quiz-question={index} hidden={index !== 0}>
-        <h3 tabindex="-1"><span aria-hidden="true">{q.icon}</span> {q.title}</h3>
-        <p class="quiz-scenario">{q.question}</p>
+        <div class="quiz-situation">
+          <h3 tabindex="-1"><span class="quiz-topic-icon" aria-hidden="true">{q.icon}</span> {q.title}</h3>
+          <p class="quiz-scenario">{q.question}</p>
+          <figure class="quiz-illustration" aria-hidden="true">
+            <img src={`/drachenhalle/tutorial/quiz/anthlan-${illustrations[index]}.webp`} alt="" width="600" height="600" decoding="async" loading="lazy" />
+          </figure>
+        </div>
         <div class="quiz-options" role="group" aria-label={q.question}>
-          {q.options.map((option, choice) => <button type="button" data-quiz-choice data-correct={choice === q.correct ? "true" : "false"}>{option}</button>)}
+          {q.options.map((option, choice) => <button type="button" data-quiz-choice data-correct={choice === q.correct ? "true" : "false"}><span class="quiz-option-marker" aria-hidden="true">{choice === 0 ? "A" : "B"}</span><span>{option}</span></button>)}
         </div>
         <div class="quiz-feedback" data-quiz-feedback role="status" aria-live="polite" hidden>
           <strong data-quiz-right hidden>✓ Richtig!</strong>
@@ -26,6 +37,7 @@ import { raidQuestions } from "../data/raid-quiz";
     <button type="button" class="quiz-next" data-quiz-next hidden>Nächste Frage →</button>
     <button type="button" class="quiz-next" data-quiz-finish hidden>Ergebnis ansehen</button>
     <div data-quiz-result hidden>
+      <img class="quiz-result-character" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="" width="180" height="270" loading="lazy" />
       <h3 tabindex="-1">Dein Ergebnis</h3>
       <p class="quiz-score"><span>Richtig beantwortet:</span> <strong data-quiz-score>0</strong> / {raidQuestions.length}</p>
       <p data-quiz-perfect hidden>Alles richtig! Du erkennst, welche Plünderungsziele erlaubt sind.</p>
@@ -40,17 +52,29 @@ import { raidQuestions } from "../data/raid-quiz";
   </noscript>
 </section>
 <style>
-  .raid-quiz { margin: 24px 0; padding: clamp(18px, 4vw, 32px); border: 1px solid var(--line-bright); border-radius: 16px; background: linear-gradient(140deg, #172c40, #0b1524); }
+  .raid-quiz { margin: 24px 0; padding: clamp(18px, 3vw, 30px); border: 1px solid var(--line-bright); border-radius: 18px; background: radial-gradient(ellipse at top right, #25446260, transparent 65%), #0d192a; box-shadow: 0 16px 45px #0002; }
   .raid-quiz [hidden] { display: none !important; }
-  header { border-bottom: 1px solid var(--line-bright); margin-bottom: 22px; padding-bottom: 18px; }
-  h2 { font-size: clamp(23px, 3vw, 32px); margin: 8px 0 14px; }
-  h3 { font-size: 23px; color: var(--gold-pale); }
+  header { border-bottom: 1px solid var(--line); margin-bottom: 20px; padding-bottom: 18px; }
+  header p:last-child { color: var(--muted); margin-bottom: 0; font-size: 15px; }
+  h2 { font-size: clamp(22px, 2.5vw, 29px); margin: 8px 0 10px; text-wrap: balance; }
+  h3 { font-size: clamp(23px, 2.6vw, 30px); color: var(--gold-pale); margin: 0; line-height: 1.25; text-wrap: balance; }
   p { line-height: 1.65; }
-  .quiz-progress { color: var(--gold-pale); font-size: 14px; }
-  .quiz-scenario { font-size: 19px; }
-  .quiz-options { display: grid; gap: 12px; }
+  .quiz-progress { display: flex; align-items: center; gap: 24px; color: var(--gold-pale); font-size: 14px; margin-bottom: 12px; }
+  .quiz-progress p { margin: 0; white-space: nowrap; }
+  .quiz-progress-track { display: flex; gap: 6px; flex: 1; }
+  .quiz-progress-track span { height: 5px; border-radius: 5px; background: #ffffff15; flex: 1; }
+  .quiz-progress-track .is-current { background: var(--gold); box-shadow: 0 0 12px #e3ad4e44; }
+  .quiz-progress-track .is-complete { background: #91d4a9; }
+  .quiz-situation { display: grid; grid-template-columns: minmax(0, 1fr) 190px; grid-template-areas: "title art" "scenario art"; column-gap: 24px; align-items: center; padding: 8px 0 20px; }
+  .quiz-situation h3 { grid-area: title; align-self: end; }
+  .quiz-topic-icon { display: inline-block; margin-right: 4px; font-size: .8em; }
+  .quiz-scenario { grid-area: scenario; font-size: 18px; margin: 16px 0 0; align-self: start; }
+  .quiz-illustration { grid-area: art; margin: 0; display: grid; place-items: center; background: radial-gradient(ellipse, #e3ad4e12, transparent 70%); }
+  .quiz-illustration img { width: 100%; height: 200px; object-fit: contain; filter: drop-shadow(0 8px 14px #0004); }
+  .quiz-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   button { font: inherit; color: inherit; cursor: pointer; border: 1px solid var(--line-bright); border-radius: 10px; background: #ffffff08; padding: 16px; min-height: 48px; }
-  .quiz-options button { text-align: left; line-height: 1.5; }
+  .quiz-options button { display: flex; align-items: flex-start; gap: 12px; text-align: left; line-height: 1.5; background: #15283b; padding: 18px; }
+  .quiz-option-marker { display: grid; place-items: center; flex: 0 0 27px; height: 27px; border: 1px solid var(--line-bright); border-radius: 7px; color: var(--gold-pale); font-size: 13px; font-weight: 700; }
   button:hover:not(:disabled), button:focus-visible { border-color: var(--gold); background: #e3ad4e18; }
   button:focus-visible, h3:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
   button:disabled { cursor: default; opacity: .75; }
@@ -58,8 +82,21 @@ import { raidQuestions } from "../data/raid-quiz";
   button.is-wrong { border-color: #e9a39b; background: #683e3e66; opacity: 1; }
   .quiz-feedback { margin-top: 18px; border-left: 3px solid var(--gold); padding: 12px 18px; background: #0002; }
   .quiz-feedback p { margin-bottom: 0; }
-  .quiz-next { margin-top: 18px; color: var(--gold-pale); font-weight: 700; }
+  .quiz-next { display: block; margin: 18px 0 0 auto; color: #132033; background: var(--gold-pale); border-color: var(--gold-pale); font-weight: 700; padding: 12px 20px; }
+  .quiz-next:hover:not(:disabled), .quiz-next:focus-visible { background: var(--gold); }
   .quiz-score { font-size: 24px; }
+  .quiz-result-character { float: right; width: 140px; height: 210px; object-fit: contain; margin: 0 0 12px 20px; }
+  [data-quiz-result] { display: flow-root; }
+  @media (max-width: 640px) {
+    .quiz-situation { grid-template-columns: minmax(0, 1fr) 100px; grid-template-areas: "title art" "scenario scenario"; column-gap: 10px; padding-top: 0; }
+    .quiz-situation h3 { align-self: center; }
+    .quiz-illustration img { height: 122px; }
+    .quiz-scenario { margin-top: 10px; font-size: 17px; }
+    .quiz-options { grid-template-columns: 1fr; }
+    .quiz-options button { padding: 14px; }
+    .quiz-next { width: 100%; }
+    .quiz-result-character { width: 90px; height: 140px; margin-left: 12px; }
+  }
 </style>
 <script>
   for (const quiz of document.querySelectorAll<HTMLElement>("[data-raid-quiz]")) {
@@ -69,11 +106,16 @@ import { raidQuestions } from "../data/raid-quiz";
     const next = quiz.querySelector<HTMLButtonElement>("[data-quiz-next]")!;
     const finish = quiz.querySelector<HTMLButtonElement>("[data-quiz-finish]")!;
     const result = quiz.querySelector<HTMLElement>("[data-quiz-result]")!;
+    const markers = [...quiz.querySelectorAll<HTMLElement>("[data-quiz-marker]")];
     let index = 0, score = 0, answered = false;
     game.hidden = false;
     const showQuestion = () => {
       questions.forEach((question, i) => { question.hidden = i !== index; });
       current.textContent = String(index + 1);
+      markers.forEach((marker, i) => {
+        marker.classList.toggle("is-current", i === index);
+        marker.classList.toggle("is-complete", i < index);
+      });
       next.hidden = finish.hidden = true;
       answered = false;
       questions[index].querySelector<HTMLElement>("h3")?.focus();
@@ -83,6 +125,7 @@ import { raidQuestions } from "../data/raid-quiz";
       choices.forEach(choice => choice.addEventListener("click", () => {
         if (answered || i !== index) return;
         answered = true;
+        markers[index].classList.add("is-complete");
         const correct = choice.dataset.correct === "true";
         if (correct) score++;
         choices.forEach(button => {
