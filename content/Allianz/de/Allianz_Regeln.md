@@ -28,9 +28,27 @@ Wenn euch ein Mitglied einer NAP10-Allianz angreift, gilt für uns: **nicht zur�
 
 Teilt stattdessen den Angriffsbericht und meldet den Vorfall einem **R4 oder R5**. Fügt nach Möglichkeit den Namen des Angreifers, seine Allianz und den Zeitpunkt hinzu. Unsere Allianzführung übernimmt anschließend die Abstimmung und informiert euch über unser weiteres Vorgehen.
 
+## Rang- und Aktivitätsregeln
+
+### Rang 1 – Einstieg
+
+Neue Mitglieder haben **7 Tage Probezeit**. Auch Commander ohne eigenen Namen und Mitglieder ab **7 Tagen unangemeldeter Inaktivität** gehören zu Rang 1. Nach 7 Tagen unangemeldeter Inaktivität erfolgt eine **PN**; ohne Rückmeldung erfolgt am **9. Tag die Entfernung** aus der Allianz.
+
+### Rang 2 – Mitglied
+
+Regelmäßig online und am **Allianzsammelpunkt**, aber mit wenig Eventbeteiligung. **Rang 2 ist dauerhaft möglich.**
+
+### Rang 3 – Aktiv
+
+Regelmäßig online und Teilnahme an **Allianz-Events**. Nicht jedes Event ist Pflicht; die **Beteiligung insgesamt** zählt.
+
+## Gemeinschaft und Abwesenheiten
+
+Am **Allianzsammelpunkt stehen**, wichtige **PN beantworten** und die Regeln beachten. **Urlaub, Krankheit und Pausen bitte melden.** Ränge zeigen Aktivität und sind **keine persönliche Wertung**.
+
 ## Regelverstöße und Verwarnungen
 
-Beim ersten Regelverstoß sprechen wir eine **Verwarnung** aus. Eine zweite Verwarnung führt zum **Ausschluss aus unserer Allianz**. Verwarnungen sollen uns an das vereinbarte Verhalten erinnern und können nach einer längeren Zeit ohne weitere Verstöße wieder entfallen.
+Bei Regelverstößen gibt es **2 Verwarnungen**. Beim nächsten Verstoß erfolgt die **Entfernung aus der Allianz**. Verwarnungen bleiben gültig, **bis sie aufgehoben werden**.
 
 | Situation | Unser richtiges Vorgehen |
 | --- | --- |
@@ -60,8 +78,14 @@ Wir plündern keine Lastwagen, Güterzüge oder Spezialmissionen unseres Servers
 <color=#E6A23C><b>Wir schlagen nicht zurück!</b></color> Teilt den Angriffsbericht und meldet den Vorfall einem R4 oder R5.
 
 📌 <size=40><b>Regelverstöße</b></size>
-1. Verstoß = Verwarnung, 2. Verwarnung = Ausschluss. Verwarnungen können bei längerer Regelkonformität wieder entfallen.
+1. und 2. Verstoß = Verwarnung; nächster Verstoß = Entfernung. Verwarnungen bleiben gültig, bis sie aufgehoben werden.
 
 💬 <size=40><b>Fragen?</b></size>
 Wendet euch jederzeit gerne an einen R4 oder R5.
+```
+
+## Rang- und Aktivitätsregeln zum Kopieren
+
+```html
+<color=#FFD700>⚔ DlE – RANG- UND AKTIVITÄTSREGELN ⚔ ◆ <color=#FFD700>RANG 1 – EINSTIEG: Neue Mitglieder haben 7 Tage Probezeit. Auch Commander ohne eigenen Namen und Mitglieder ab 7 Tagen unangemeldeter Inaktivität gehören zu Rang 1. Nach 7 Tagen unangemeldeter Inaktivität erfolgt eine PN; ohne Rückmeldung erfolgt am 9. Tag die Entfernung aus der Allianz. ◆ <color=#FFD700>RANG 2 – MITGLIED: Regelmäßig online und am Allianzsammelpunkt, aber mit wenig Eventbeteiligung. Rang 2 ist dauerhaft möglich. ◆ <color=#FFD700>RANG 3 – AKTIV: Regelmäßig online und Teilnahme an Allianz-Events. Nicht jedes Event ist Pflicht; die Beteiligung insgesamt zählt. ◆ <color=#FF4040>GEMEINSCHAFT UND ABWESENHEITEN: Am Allianzsammelpunkt stehen, wichtige PN beantworten und die Regeln beachten. Urlaub, Krankheit und Pausen bitte melden. Ränge zeigen Aktivität und sind keine persönliche Wertung. Bei Regelverstößen gibt es 2 Verwarnungen. Beim nächsten Verstoß erfolgt die Entfernung aus der Allianz. Verwarnungen bleiben gültig, bis sie aufgehoben werden.
 ```

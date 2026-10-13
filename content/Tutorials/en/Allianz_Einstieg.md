@@ -44,7 +44,9 @@ You do not have to work out who handles a topic by yourself. [Our officers](../.
 3. **Raid only on other servers:** Do not raid trucks, freight trains or special missions on our own server. Check the server number before starting.
 4. **Do not retaliate after a NAP10 attack:** Share the attack report and report the attacker's name, alliance and the time to an officer (R4) or the leader (R5). Leadership will handle the resolution.
 
-If unsure, always **check or ask first, then act**. A first rule violation receives a warning; a second warning leads to removal.
+If unsure, always **check or ask first, then act**. Rule violations receive **2 warnings**; the next violation leads to removal. Warnings remain valid until they are lifted.
+
+Rank 1 means a **7-day probation period** for new members and also applies to Commanders without a custom name. Rank 2 can be permanent for regularly active members at the rally point with little event participation. Rank 3 means regular activity and participation in alliance events; not every event is mandatory. **Ranks reflect activity, not personal worth.**
 
 [Read all alliance rules with examples](../../Allianz/en/Allianz_Regeln.md)
 
@@ -63,7 +65,8 @@ If unsure, always **check or ask first, then act**. A first rule violation recei
 - When reporting an attack, include **the attacker's name, alliance and the time** where possible, and share the attack report.
 - Discuss concerns, problems and fairness with the **Goddess** or alliance leadership; confidential issues should not be discussed in public alliance chat.
 - During shared activities, follow current guidance from event or combat coordinators.
-- Please let us know beforehand about holidays or longer inactivity. Members who do not notify us are usually removed after **seven days of inactivity**.
+- Report **holidays, illness and breaks**. After **7 days of unreported inactivity**, you are assigned rank 1 and receive a **private message**; without a reply, **removal follows on day 9**.
+- Stay at the **alliance rally point**, answer important **private messages** and follow the rules.
 
 [Meet our officers and learn their areas of responsibility](../../Allianz/en/Allianz_Offiziere.md)
 

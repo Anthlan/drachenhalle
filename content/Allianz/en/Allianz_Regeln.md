@@ -28,9 +28,27 @@ If a member of a NAP10 alliance attacks you, our rule is: **do not retaliate**. 
 
 Instead, share the attack report and report the incident to an **R4 or R5**. Where possible, include the attacker's name, alliance and the time. Our alliance leadership will then coordinate the response and tell you what happens next.
 
+## Rank and activity rules
+
+### Rank 1 – Entry
+
+New members have a **7-day probation period**. Commanders without a custom name and members with **7 or more days of unreported inactivity** also belong to rank 1. After 7 days of unreported inactivity, a **private message** is sent; without a reply, **removal from the alliance follows on day 9**.
+
+### Rank 2 – Member
+
+Regularly online and at the **alliance rally point**, but with little event participation. **Rank 2 can be permanent.**
+
+### Rank 3 – Active
+
+Regularly online and participating in **alliance events**. Not every event is mandatory; **overall participation** counts.
+
+## Community and absences
+
+Stay at the **alliance rally point**, answer important **private messages** and follow the rules. **Please report holidays, illness and breaks.** Ranks reflect activity and are **not a personal judgment**.
+
 ## Rule violations and warnings
 
-A first rule violation receives a **warning**. A second warning leads to **removal from our alliance**. Warnings remind us of our agreed conduct and may be cleared after a longer period without further violations.
+Rule violations receive **2 warnings**. The next violation leads to **removal from the alliance**. Warnings remain valid **until they are lifted**.
 
 | Situation | What we should do |
 | --- | --- |
@@ -60,8 +78,14 @@ We do not raid trucks, freight trains or special missions on our server. Always 
 <color=#E6A23C><b>We do not retaliate!</b></color> Share the attack report and report the incident to an R4 or R5.
 
 📌 <size=40><b>Rule violations</b></size>
-1st violation = warning; 2nd warning = removal. Warnings may be cleared after a longer period of following the rules.
+1st and 2nd violation = warning; next violation = removal. Warnings remain valid until they are lifted.
 
 💬 <size=40><b>Questions?</b></size>
 You are always welcome to ask an R4 or R5.
+```
+
+## Rank and activity rules to copy
+
+```html
+<color=#FFD700>⚔ DlE – RANK AND ACTIVITY RULES ⚔ ◆ <color=#FFD700>RANK 1 – ENTRY: New members have a 7-day probation period. Commanders without a custom name and members with 7 or more days of unreported inactivity also belong to rank 1. After 7 days of unreported inactivity, a private message is sent; without a reply, removal from the alliance follows on day 9. ◆ <color=#FFD700>RANK 2 – MEMBER: Regularly online and at the alliance rally point, but with little event participation. Rank 2 can be permanent. ◆ <color=#FFD700>RANK 3 – ACTIVE: Regularly online and participating in alliance events. Not every event is mandatory; overall participation counts. ◆ <color=#FF4040>COMMUNITY AND ABSENCES: Stay at the alliance rally point, answer important private messages and follow the rules. Please report holidays, illness and breaks. Ranks reflect activity and are not a personal judgment. Rule violations receive 2 warnings. The next violation leads to removal from the alliance. Warnings remain valid until they are lifted.
 ```

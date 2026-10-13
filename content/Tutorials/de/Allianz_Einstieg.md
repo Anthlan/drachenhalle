@@ -44,7 +44,9 @@ Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Über
 3. **Nur auf anderen Servern plündern:** Plündere keine Lastwagen, Güterzüge oder Spezialmissionen unseres eigenen Servers. Kontrolliere vor dem Start die Servernummer.
 4. **Nach einem NAP10-Angriff nicht zurückschlagen:** Teile den Angriffsbericht und melde den Namen des Angreifers, seine Allianz und den Zeitpunkt an einen Offizier (R4) oder den Anführer (R5). Die Führung übernimmt die Klärung.
 
-Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim ersten Regelverstoß folgt eine Verwarnung, die zweite Verwarnung führt zum Ausschluss.
+Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Bei Regelverstößen gibt es **2 Verwarnungen**, beim nächsten Verstoß erfolgt die Entfernung. Verwarnungen bleiben gültig, bis sie aufgehoben werden.
+
+Rang 1 bedeutet **7 Tage Probezeit** für neue Mitglieder und gilt auch für Commander ohne eigenen Namen. Rang 2 ist für regelmäßig aktive Mitglieder am Sammelpunkt mit wenig Eventbeteiligung dauerhaft möglich. Rang 3 steht für regelmäßige Aktivität und Teilnahme an Allianz-Events; nicht jedes Event ist Pflicht. **Ränge zeigen Aktivität, keine persönliche Wertung.**
 
 [Alle Allianzregeln mit Beispielen lesen](../../Allianz/de/Allianz_Regeln.md)
 
@@ -63,7 +65,8 @@ Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Beim er
 - Nenne bei einem gemeldeten Angriff möglichst **den Namen des Angreifers, seine Allianz und den Zeitpunkt** und teile den Angriffsbericht.
 - Kläre Sorgen, Probleme und Fairness-Themen mit der **Göttin** oder der Allianzführung; vertrauliche Anliegen sollten nicht im öffentlichen Allianzchat besprochen werden.
 - Achte während gemeinsamer Aktionen auf die aktuellen Hinweise der zuständigen Event- oder Kampfkoordination.
-- Gib bei Urlaub oder längerer Inaktivität bitte vorher Bescheid. Mitglieder, die sich nicht abmelden, werden in der Regel nach **sieben Tagen Inaktivität** aus der Allianz entfernt.
+- Melde **Urlaub, Krankheit und Pausen**. Ab **7 Tagen unangemeldeter Inaktivität** gilt Rang 1 und du erhältst eine **PN**; ohne Rückmeldung erfolgt am **9. Tag die Entfernung**.
+- Stehe am **Allianzsammelpunkt**, beantworte wichtige **PN** und beachte die Regeln.
 
 [Unsere Offiziere und ihre Ansprechbereiche kennenlernen](../../Allianz/de/Allianz_Offiziere.md)
 
