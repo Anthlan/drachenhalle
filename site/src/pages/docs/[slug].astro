@@ -950,7 +950,9 @@ const responsibilities = [
             ) : document.kind === "quiz" ? (
               <div>
                 <div class="markdown-content" set:html={document.html} />
-                <RaidQuiz />
+                <div class="quiz-card-inset">
+                  <RaidQuiz />
+                </div>
               </div>
             ) : isBriefKnowledgeArticle && document.hasBriefView ? (
               <div class="tip-viewer" data-tip-viewer>

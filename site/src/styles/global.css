@@ -3298,6 +3298,10 @@ h1 {
   box-shadow: 0 26px 100px rgba(0, 0, 0, 0.22);
 }
 
+.quiz-card-inset {
+  padding: 0 clamp(24px, 4vw, 48px) 24px;
+}
+
 .document-article.is-hub-overview {
   background:
     radial-gradient(circle at 88% 4%, rgba(227, 173, 78, 0.075), transparent 28%),
