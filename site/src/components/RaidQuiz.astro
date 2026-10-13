@@ -21,7 +21,9 @@ const illustrations = ["check", "train", "container", "container", "check", "che
           <h3 tabindex="-1"><span class="quiz-topic-icon" aria-hidden="true">{q.icon}</span> {q.title}</h3>
           <p class="quiz-scenario">{q.question}</p>
           <figure class="quiz-illustration" aria-hidden="true">
-            <img src={`/drachenhalle/tutorial/quiz/anthlan-${illustrations[index]}.webp`} alt="" width="600" height="600" decoding="async" loading="lazy" />
+            <img data-quiz-pose="scenario" src={`/drachenhalle/tutorial/quiz/anthlan-${illustrations[index]}.webp`} alt="" width="600" height="600" decoding="async" loading="lazy" />
+            <img data-quiz-pose="right" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="" width="720" height="1080" decoding="async" hidden />
+            <img data-quiz-pose="wrong" src="/drachenhalle/brand/tool-shield-anthlan-concerned.webp" alt="" width="696" height="1044" decoding="async" hidden />
           </figure>
         </div>
         <div class="quiz-options" role="group" aria-label={q.question}>
@@ -37,10 +39,19 @@ const illustrations = ["check", "train", "container", "container", "check", "che
     <button type="button" class="quiz-next" data-quiz-next hidden>Nächste Frage →</button>
     <button type="button" class="quiz-next" data-quiz-finish hidden>Ergebnis ansehen</button>
     <div data-quiz-result hidden>
-      <img class="quiz-result-character" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="" width="180" height="270" loading="lazy" />
-      <h3 tabindex="-1">Dein Ergebnis</h3>
-      <p class="quiz-score"><span>Richtig beantwortet:</span> <strong data-quiz-score>0</strong> / {raidQuestions.length}</p>
+      <div class="quiz-result-heading">
+        <div>
+          <h3 tabindex="-1">Dein Ergebnis</h3>
+          <p class="quiz-score"><span>Richtig beantwortet:</span> <strong data-quiz-score>0</strong> / {raidQuestions.length}</p>
+        </div>
+        <div class="quiz-result-character" aria-hidden="true">
+          <img data-quiz-result-pose="perfect" src="/drachenhalle/brand/tool-flight-anthlan-success.webp" alt="" width="720" height="1080" decoding="async" hidden />
+          <img data-quiz-result-pose="okay" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="" width="720" height="1080" decoding="async" hidden />
+          <img data-quiz-result-pose="concerned" src="/drachenhalle/brand/tool-shield-anthlan-concerned.webp" alt="" width="696" height="1044" decoding="async" hidden />
+        </div>
+      </div>
       <p data-quiz-perfect hidden>Alles richtig! Du erkennst, welche Plünderungsziele erlaubt sind.</p>
+      <p data-quiz-okay hidden>Ganz okay! Die meisten Regeln sitzen. Übe die unsicheren Situationen noch einmal.</p>
       <p data-quiz-practice hidden>Gut geübt! Schau dir die Erklärungen noch einmal an und probiere es erneut.</p>
       <p><strong>Merke:</strong> Lastwagen, Güterzüge und Spezialmissionen nur auf anderen Servern plündern.</p>
       <button type="button" class="quiz-next" data-quiz-reset>Noch einmal üben</button>
@@ -52,50 +63,55 @@ const illustrations = ["check", "train", "container", "container", "check", "che
   </noscript>
 </section>
 <style>
-  .raid-quiz { margin: 24px 0; padding: clamp(18px, 3vw, 30px); border: 1px solid var(--line-bright); border-radius: 18px; background: radial-gradient(ellipse at top right, #25446260, transparent 65%), #0d192a; box-shadow: 0 16px 45px #0002; }
+  .raid-quiz { container: raid-quiz / inline-size; margin: 32px 0; padding: clamp(24px, 4vw, 48px); border: 1px solid var(--line-bright); border-radius: 18px; background: radial-gradient(ellipse at top right, #25446260, transparent 65%), #0d192a; box-shadow: 0 16px 45px #0002; }
   .raid-quiz [hidden] { display: none !important; }
-  header { border-bottom: 1px solid var(--line); margin-bottom: 20px; padding-bottom: 18px; }
+  header { border-bottom: 1px solid var(--line); margin-bottom: 32px; padding-bottom: 28px; }
+  header .eyebrow { margin: 0 0 18px; }
   header p:last-child { color: var(--muted); margin-bottom: 0; font-size: 15px; }
-  h2 { font-size: clamp(22px, 2.5vw, 29px); margin: 8px 0 10px; text-wrap: balance; }
+  h2 { font-size: clamp(22px, 2.5vw, 29px); margin: 0 0 20px; text-wrap: balance; }
   h3 { font-size: clamp(23px, 2.6vw, 30px); color: var(--gold-pale); margin: 0; line-height: 1.25; text-wrap: balance; }
   p { line-height: 1.65; }
-  .quiz-progress { display: flex; align-items: center; gap: 24px; color: var(--gold-pale); font-size: 14px; margin-bottom: 12px; }
+  .quiz-progress { display: flex; align-items: center; gap: 24px; color: var(--gold-pale); font-size: 14px; margin-bottom: 28px; }
   .quiz-progress p { margin: 0; white-space: nowrap; }
   .quiz-progress-track { display: flex; gap: 6px; flex: 1; }
   .quiz-progress-track span { height: 5px; border-radius: 5px; background: #ffffff15; flex: 1; }
   .quiz-progress-track .is-current { background: var(--gold); box-shadow: 0 0 12px #e3ad4e44; }
   .quiz-progress-track .is-complete { background: #91d4a9; }
-  .quiz-situation { display: grid; grid-template-columns: minmax(0, 1fr) 190px; grid-template-areas: "title art" "scenario art"; column-gap: 24px; align-items: center; padding: 8px 0 20px; }
+  .quiz-situation { display: grid; grid-template-columns: minmax(0, 1fr) 190px; grid-template-areas: "title art" "scenario art"; column-gap: 36px; align-items: center; padding: 12px 0 36px; }
   .quiz-situation h3 { grid-area: title; align-self: end; }
   .quiz-topic-icon { display: inline-block; margin-right: 4px; font-size: .8em; }
-  .quiz-scenario { grid-area: scenario; font-size: 18px; margin: 16px 0 0; align-self: start; }
+  .quiz-scenario { grid-area: scenario; font-size: 18px; margin: 24px 0 0; align-self: start; }
   .quiz-illustration { grid-area: art; margin: 0; display: grid; place-items: center; background: radial-gradient(ellipse, #e3ad4e12, transparent 70%); }
   .quiz-illustration img { width: 100%; height: 200px; object-fit: contain; filter: drop-shadow(0 8px 14px #0004); }
-  .quiz-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .quiz-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
   button { font: inherit; color: inherit; cursor: pointer; border: 1px solid var(--line-bright); border-radius: 10px; background: #ffffff08; padding: 16px; min-height: 48px; }
-  .quiz-options button { display: flex; align-items: flex-start; gap: 12px; text-align: left; line-height: 1.5; background: #15283b; padding: 18px; }
+  .quiz-options button { display: flex; align-items: flex-start; gap: 16px; text-align: left; line-height: 1.65; background: #15283b; padding: 22px; }
   .quiz-option-marker { display: grid; place-items: center; flex: 0 0 27px; height: 27px; border: 1px solid var(--line-bright); border-radius: 7px; color: var(--gold-pale); font-size: 13px; font-weight: 700; }
   button:hover:not(:disabled), button:focus-visible { border-color: var(--gold); background: #e3ad4e18; }
   button:focus-visible, h3:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
   button:disabled { cursor: default; opacity: .75; }
   button.is-right { border-color: #91d4a9; background: #31584166; opacity: 1; }
   button.is-wrong { border-color: #e9a39b; background: #683e3e66; opacity: 1; }
-  .quiz-feedback { margin-top: 18px; border-left: 3px solid var(--gold); padding: 12px 18px; background: #0002; }
+  .quiz-feedback { margin-top: 28px; border-left: 3px solid var(--gold); padding: 20px 24px; background: #0002; }
   .quiz-feedback p { margin-bottom: 0; }
-  .quiz-next { display: block; margin: 18px 0 0 auto; color: #132033; background: var(--gold-pale); border-color: var(--gold-pale); font-weight: 700; padding: 12px 20px; }
+  .quiz-next { display: block; margin: 28px 0 0 auto; color: #132033; background: var(--gold-pale); border-color: var(--gold-pale); font-weight: 700; padding: 14px 24px; }
   .quiz-next:hover:not(:disabled), .quiz-next:focus-visible { background: var(--gold); }
   .quiz-score { font-size: 24px; }
-  .quiz-result-character { float: right; width: 140px; height: 210px; object-fit: contain; margin: 0 0 12px 20px; }
-  [data-quiz-result] { display: flow-root; }
-  @media (max-width: 640px) {
+  .quiz-result-heading { display: grid; grid-template-columns: minmax(0, 1fr) 160px; gap: 24px; align-items: center; margin-bottom: 28px; }
+  .quiz-result-character img { display: block; width: 100%; height: 230px; object-fit: contain; }
+  @container raid-quiz (max-width: 600px) {
+    header { margin-bottom: 24px; padding-bottom: 24px; }
+    .quiz-progress { gap: 16px; margin-bottom: 20px; }
     .quiz-situation { grid-template-columns: minmax(0, 1fr) 100px; grid-template-areas: "title art" "scenario scenario"; column-gap: 10px; padding-top: 0; }
     .quiz-situation h3 { align-self: center; }
     .quiz-illustration img { height: 122px; }
-    .quiz-scenario { margin-top: 10px; font-size: 17px; }
-    .quiz-options { grid-template-columns: 1fr; }
-    .quiz-options button { padding: 14px; }
+    .quiz-scenario { margin-top: 20px; font-size: 17px; }
+    .quiz-options { grid-template-columns: 1fr; gap: 16px; }
+    .quiz-options button { padding: 18px; gap: 12px; }
     .quiz-next { width: 100%; }
-    .quiz-result-character { width: 90px; height: 140px; margin-left: 12px; }
+    .quiz-result-heading { grid-template-columns: minmax(0, 1fr) 100px; gap: 16px; }
+    .quiz-result-character img { height: 150px; }
+    .quiz-score { font-size: 20px; }
   }
 </style>
 <script>
@@ -127,6 +143,9 @@ const illustrations = ["check", "train", "container", "container", "check", "che
         answered = true;
         markers[index].classList.add("is-complete");
         const correct = choice.dataset.correct === "true";
+        question.querySelectorAll<HTMLElement>("[data-quiz-pose]").forEach(pose => {
+          pose.hidden = pose.dataset.quizPose !== (correct ? "right" : "wrong");
+        });
         if (correct) score++;
         choices.forEach(button => {
           button.disabled = true;
@@ -148,7 +167,13 @@ const illustrations = ["check", "train", "container", "container", "check", "che
       quiz.querySelector<HTMLElement>(".quiz-progress")!.hidden = true;
       quiz.querySelector<HTMLElement>("[data-quiz-score]")!.textContent = String(score);
       quiz.querySelector<HTMLElement>("[data-quiz-perfect]")!.hidden = score !== questions.length;
-      quiz.querySelector<HTMLElement>("[data-quiz-practice]")!.hidden = score === questions.length;
+      quiz.querySelector<HTMLElement>("[data-quiz-okay]")!.hidden = score < 4 || score === questions.length;
+      quiz.querySelector<HTMLElement>("[data-quiz-practice]")!.hidden = score >= 4;
+      const mood = score === questions.length ? "perfect" : score >= 4 ? "okay" : "concerned";
+      result.dataset.mood = mood;
+      result.querySelectorAll<HTMLElement>("[data-quiz-result-pose]").forEach(pose => {
+        pose.hidden = pose.dataset.quizResultPose !== mood;
+      });
       result.hidden = false;
       result.querySelector<HTMLElement>("h3")?.focus();
     });
@@ -158,6 +183,7 @@ const illustrations = ["check", "train", "container", "container", "check", "che
       quiz.querySelector<HTMLElement>(".quiz-progress")!.hidden = false;
       quiz.querySelectorAll<HTMLButtonElement>("[data-quiz-choice]").forEach(button => { button.disabled = false; button.classList.remove("is-right", "is-wrong"); });
       quiz.querySelectorAll<HTMLElement>("[data-quiz-feedback]").forEach(feedback => { feedback.hidden = true; });
+      quiz.querySelectorAll<HTMLElement>("[data-quiz-pose]").forEach(pose => { pose.hidden = pose.dataset.quizPose !== "scenario"; });
       showQuestion();
     });
   }
