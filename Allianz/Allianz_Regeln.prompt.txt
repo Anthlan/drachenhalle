@@ -1,0 +1,43 @@
+Edit the supplied German alliance rules poster. Preserve navy/gold dragon-knight aesthetic and crest. Primary task: much better readability via SHORT BULLET POINTS and substantially LARGER body text, no paragraphs. Reduce giant title, decoration and icons to make room for text. Portrait high resolution. Use four main framed areas, first area TWO columns rather than four narrow columns, ranks three columns. All body text large clear sans serif, white on navy, headings gold. Layout may change to give spacious line spacing. Render exact following text, bullets each on a separate line. No additional small text, omissions or invented policies.
+DIE – ALLIANZREGELN
+KAMPF & PLÜNDERN
+NAP10
+• Aktuelle NAP10 nicht angreifen
+• Vor Angriff: Rangliste & Allianz prüfen
+BASEN
+• Allianzlose & Commander**** erlaubt
+• Niemanden auf 0 bringen
+PLÜNDERN
+• Lastwagen, Güterzüge, Spezialmissionen:
+  nur auf anderen Servern!
+• Servernummer prüfen
+BEI NAP10-ANGRIFF
+• Nicht zurückschlagen!
+• Bericht teilen & R4/R5 informieren
+RÄNGE & AKTIVITÄT
+RANG 1 – EINSTIEG
+• Neu: 7 Tage Probezeit
+• Commander ohne eigenen Namen
+• Ab 7 Tagen unangemeldet inaktiv
+RANG 2 – MITGLIED
+• Regelmäßig online
+• Am Allianzsammelpunkt
+• Wenig Eventbeteiligung
+• Dauerhaft möglich
+RANG 3 – AKTIV
+• Regelmäßig online
+• Teilnahme an Allianz-Events
+• Gesamtbeteiligung zählt
+• Nicht jedes Event ist Pflicht
+GEMEINSCHAFT & PAUSEN
+• Am Allianzsammelpunkt stehen
+• Wichtige PN beantworten & Regeln beachten
+• Urlaub, Krankheit & Pausen melden
+• Unangemeldet inaktiv: Tag 7 → PN & Rang 1
+• Ohne Rückmeldung: Tag 9 → Entfernung
+VERWARNUNGEN
+• 1. & 2. Verstoß → Verwarnung
+• Nächster Verstoß → Entfernung
+• Gültig, bis sie aufgehoben werden
+Footer large readable: Ränge zeigen Aktivität – keine persönliche Wertung.
+Avoid tiny footer or ornate body serif. Must preserve all meanings.

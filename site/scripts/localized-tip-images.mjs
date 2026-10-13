@@ -4,32 +4,36 @@ import sharp from "sharp";
 
 // Localized originals live beside the translated content, with language last.
 export async function localizedTipImages(repositoryRoot, outputRoot, base, language) {
-  const directory = path.join(repositoryRoot, "content/Drachenwissen/Tipps", language);
-  const files = await readdir(directory).catch(error => {
-    if (error.code === "ENOENT") return [];
-    throw error;
-  });
+  const areas = ["Drachenwissen/Tipps", "Allianz"];
   const gallery = JSON.parse(await readFile(path.join(repositoryRoot, "site/src/data/gallery.generated.json"), "utf8"));
   const replacements = [];
-  const destination = path.join(outputRoot, "generated/tips", language);
-  await mkdir(destination, { recursive: true });
-  for (const name of files.filter(name => /^Tipp_\d+_.*\.(?:png|jpe?g)$/i.test(name))) {
-    const source = `Drachenwissen/Tipps/${name}`;
-    const item = gallery.items.find(item => item.sourcePath === source);
-    if (!item) throw new Error(`Localized tip has no original: ${source}`);
-    const input = path.join(directory, name);
-    const stem = name.slice(0, -path.extname(name).length);
-    const prefix = `${base}/generated/tips/${language}/`;
-    await copyFile(input, path.join(destination, name));
-    await sharp(input).resize({ width: 1200, withoutEnlargement: true }).webp({ quality: 90 }).toFile(path.join(destination, `${stem}-web.webp`));
-    await sharp(input).resize({ width: 480, withoutEnlargement: true }).webp({ quality: 85 }).toFile(path.join(destination, `${stem}-thumb.webp`));
-    const encoded = source.split("/").map(encodeURIComponent).join("/");
-    replacements.push(
-      [item.webUrl, `${prefix}${stem}-web.webp`],
-      [item.thumbnailUrl ?? item.thumbUrl, `${prefix}${stem}-thumb.webp`],
-      [`https://raw.githubusercontent.com/Anthlan/drachenhalle/main/${encoded}`, `${prefix}${name}`],
-      [item.repositoryUrl, `${prefix}${name}`],
-    );
+  for (const area of areas) {
+    const directory = path.join(repositoryRoot, "content", area, language);
+    const files = await readdir(directory).catch(error => {
+      if (error.code === "ENOENT") return [];
+      throw error;
+    });
+    const category = area === "Allianz" ? "alliance" : "tips";
+    const destination = path.join(outputRoot, "generated", category, language);
+    await mkdir(destination, { recursive: true });
+    for (const name of files.filter(name => area === "Allianz" ? /^Allianz_Regeln\.png$/i.test(name) : /^Tipp_\d+_.*\.(?:png|jpe?g)$/i.test(name))) {
+      const source = `${area}/${name}`;
+      const item = gallery.items.find(item => item.sourcePath === source);
+      if (!item) throw new Error(`Localized image has no original: ${source}`);
+      const input = path.join(directory, name);
+      const stem = name.slice(0, -path.extname(name).length);
+      const prefix = `${base}/generated/${category}/${language}/`;
+      await copyFile(input, path.join(destination, name));
+      await sharp(input).resize({ width: 1200, withoutEnlargement: true }).webp({ quality: 90 }).toFile(path.join(destination, `${stem}-web.webp`));
+      await sharp(input).resize({ width: 480, withoutEnlargement: true }).webp({ quality: 85 }).toFile(path.join(destination, `${stem}-thumb.webp`));
+      const encoded = source.split("/").map(encodeURIComponent).join("/");
+      replacements.push(
+        [item.webUrl, `${prefix}${stem}-web.webp`],
+        [item.thumbnailUrl ?? item.thumbUrl, `${prefix}${stem}-thumb.webp`],
+        [`https://raw.githubusercontent.com/Anthlan/drachenhalle/main/${encoded}`, `${prefix}${name}`],
+        [item.repositoryUrl, `${prefix}${name}`],
+      );
+    }
   }
   return html => replacements.reduce((html, [from, to]) => from ? html.replaceAll(from, to) : html, html);
 }
