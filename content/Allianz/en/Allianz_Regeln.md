@@ -87,5 +87,24 @@ You are always welcome to ask an R4 or R5.
 ## Rank and activity rules to copy
 
 ```html
-<color=#FFD700>⚔ DlE – RANK AND ACTIVITY RULES ⚔ ◆ <color=#FFD700>RANK 1 – ENTRY: New members have a 7-day probation period. Commanders without a custom name and members with 7 or more days of unreported inactivity also belong to rank 1. After 7 days of unreported inactivity, a private message is sent; without a reply, removal from the alliance follows on day 9. ◆ <color=#FFD700>RANK 2 – MEMBER: Regularly online and at the alliance rally point, but with little event participation. Rank 2 can be permanent. ◆ <color=#FFD700>RANK 3 – ACTIVE: Regularly online and participating in alliance events. Not every event is mandatory; overall participation counts. ◆ <color=#FF4040>COMMUNITY AND ABSENCES: Stay at the alliance rally point, answer important private messages and follow the rules. Please report holidays, illness and breaks. Ranks reflect activity and are not a personal judgment. Rule violations receive 2 warnings. The next violation leads to removal from the alliance. Warnings remain valid until they are lifted.
+<size=46><b>DlE – RANK & ACTIVITY RULES</b></size>
+
+⭐ <size=40><b>Rank 1 – Entry</b></size>
+New: 7-day probation. Commanders without a custom name and 7+ days inactive without notice.
+Day 7: PM. No reply: removal on day 9.
+
+⭐⭐ <size=40><b>Rank 2 – Member</b></size>
+Regularly online, at the rally point, little event participation. Can be permanent.
+
+⭐⭐⭐ <size=40><b>Rank 3 – Active</b></size>
+Regularly online, joining alliance events. Overall participation counts; not every event is mandatory.
+
+🤝 <size=40><b>Community</b></size>
+Stay at the rally point, answer important PMs, follow rules.
+
+⚠️ <size=40><b>Warnings</b></size>
+2 warnings; next violation: removal. Valid until lifted.
+
+📌 <size=40><b>Important</b></size>
+Report holidays, illness and breaks. Ranks reflect activity, not personal worth.
 ```

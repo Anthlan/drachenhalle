@@ -87,5 +87,24 @@ Wendet euch jederzeit gerne an einen R4 oder R5.
 ## Rang- und Aktivitätsregeln zum Kopieren
 
 ```html
-<color=#FFD700>⚔ DlE – RANG- UND AKTIVITÄTSREGELN ⚔ ◆ <color=#FFD700>RANG 1 – EINSTIEG: Neue Mitglieder haben 7 Tage Probezeit. Auch Commander ohne eigenen Namen und Mitglieder ab 7 Tagen unangemeldeter Inaktivität gehören zu Rang 1. Nach 7 Tagen unangemeldeter Inaktivität erfolgt eine PN; ohne Rückmeldung erfolgt am 9. Tag die Entfernung aus der Allianz. ◆ <color=#FFD700>RANG 2 – MITGLIED: Regelmäßig online und am Allianzsammelpunkt, aber mit wenig Eventbeteiligung. Rang 2 ist dauerhaft möglich. ◆ <color=#FFD700>RANG 3 – AKTIV: Regelmäßig online und Teilnahme an Allianz-Events. Nicht jedes Event ist Pflicht; die Beteiligung insgesamt zählt. ◆ <color=#FF4040>GEMEINSCHAFT UND ABWESENHEITEN: Am Allianzsammelpunkt stehen, wichtige PN beantworten und die Regeln beachten. Urlaub, Krankheit und Pausen bitte melden. Ränge zeigen Aktivität und sind keine persönliche Wertung. Bei Regelverstößen gibt es 2 Verwarnungen. Beim nächsten Verstoß erfolgt die Entfernung aus der Allianz. Verwarnungen bleiben gültig, bis sie aufgehoben werden.
+<size=46><b>DlE – RANG- & AKTIVITÄTSREGELN</b></size>
+
+⭐ <size=40><b>Rang 1 – Einstieg</b></size>
+Neu: 7 Tage Probezeit. Commander ohne eigenen Namen und ab 7 Tagen unangemeldeter Inaktivität.
+Tag 7: PN. Ohne Rückmeldung: Entfernung am 9. Tag.
+
+⭐⭐ <size=40><b>Rang 2 – Mitglied</b></size>
+Regelmäßig online und am Sammelpunkt, wenig Eventbeteiligung. Dauerhaft möglich.
+
+⭐⭐⭐ <size=40><b>Rang 3 – Aktiv</b></size>
+Regelmäßig online und Teilnahme an Allianz-Events. Gesamtbeteiligung zählt, nicht jedes Event ist Pflicht.
+
+🤝 <size=40><b>Gemeinschaft</b></size>
+Am Sammelpunkt stehen, wichtige PN beantworten, Regeln beachten.
+
+⚠️ <size=40><b>Verwarnungen</b></size>
+2 Verwarnungen, nächster Verstoß: Entfernung. Gültig, bis sie aufgehoben werden.
+
+📌 <size=40><b>Wichtig</b></size>
+Urlaub, Krankheit und Pausen melden. Ränge zeigen Aktivität, keine persönliche Wertung.
 ```

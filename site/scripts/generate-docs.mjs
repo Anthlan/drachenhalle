@@ -695,6 +695,9 @@ for (const document of documents) {
       ? addHeadingIds(await marked.parse(removeTipMainImage(allianceArticleMarkdown, document.imageUrl)))
       : null,
     allianceCopyHtml: allianceCopyMarkdown ? addHeadingIds(await marked.parse(allianceCopyMarkdown)) : null,
+    allianceCopySections: allianceCopyMarkdown
+      ? await Promise.all(allianceCopyMarkdown.split(/(?=^##\s+)/m).filter((section) => section.trim()).map(async (section) => addHeadingIds(await marked.parse(section))))
+      : [],
     onboardingSteps: await Promise.all(onboardingSections.map(async (section, index) => ({
       id: `tutorial-${index + 1}-${slugify(section.title)}`,
       title: section.displayTitle,

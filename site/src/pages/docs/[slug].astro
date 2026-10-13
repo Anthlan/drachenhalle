@@ -938,10 +938,12 @@ const responsibilities = [
                     </aside>
                   )}
                 </div>
-                <section class="markdown-content alliance-copy" data-copy-section>
-                  <button type="button" class="copy-code-button" data-copy-code>Mitteilung kopieren</button>
-                  <div set:html={document.allianceCopyHtml} />
-                </section>
+                {document.allianceCopySections.map((section) => (
+                  <section class="markdown-content alliance-copy" data-copy-section>
+                    <button type="button" class="copy-code-button" data-copy-code>Mitteilung kopieren</button>
+                    <div set:html={section} />
+                  </section>
+                ))}
               </div>
             ) : isBriefKnowledgeArticle && document.hasBriefView ? (
               <div class="tip-viewer" data-tip-viewer>
