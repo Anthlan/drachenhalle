@@ -45,6 +45,8 @@ O workflow de Pages conta os arquivos da pasta compartilhada do Dropbox duas vez
 
 Um pequeno Cloudflare Worker conta os acessos a cada página publicada em um banco D1 e também retorna o total. Os dois valores aparecem no rodapé. A aplicação salva apenas o caminho da página e contadores agregados; não usa cookies nem armazena identificadores do navegador. A configuração está documentada em [`cloudflare/page-views`](../../cloudflare/page-views/README.md). Sem a variável de workflow `PUBLIC_PAGE_VIEWS_API_URL`, o site continua sendo gerado normalmente e o contador fica oculto.
 
+O Cloudflare Web Analytics também pode ser ativado para a análise privada de visitas, países, referências, dispositivos e páginas mais populares. O token do site é armazenado na variável de workflow `PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN`. Para excluir permanentemente seus próprios acessos em um navegador, abra uma vez `https://anthlan.github.io/drachenhalle/?traffic=off`. O parâmetro `?traffic=on` reativa a contagem nesse navegador. O desenvolvimento local e navegadores automatizados nunca são contabilizados. A exclusão vale tanto para o Web Analytics quanto para o contador visível de páginas.
+
 ## Princípio de design
 
 Nas imagens de chat e de reação, a finalidade e o estilo visual são independentes. Imagens de chat contam pequenas cenas; imagens de reação oferecem respostas curtas, reutilizáveis ou saudações. Ambas podem usar S1, S2, S3 ou S4. As orientações obrigatórias estão nos [guias de estilo](Styleguides), e as classificações estão no [índice de estilos da galeria](../../Galerie/STILINDEX.md).

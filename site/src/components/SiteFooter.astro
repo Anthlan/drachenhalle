@@ -1,6 +1,7 @@
 ---
 const repositoryUrl = "https://github.com/Anthlan/drachenhalle";
 const pageViewsApiUrl = import.meta.env.PUBLIC_PAGE_VIEWS_API_URL?.replace(/\/$/, "") ?? "";
+const cloudflareAnalyticsToken = import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN ?? "";
 ---
 
 <footer>
@@ -27,8 +28,14 @@ const pageViewsApiUrl = import.meta.env.PUBLIC_PAGE_VIEWS_API_URL?.replace(/\/$/
   </nav>
 </footer>
 
+{cloudflareAnalyticsToken && (
+  <span data-traffic-analytics data-token={cloudflareAnalyticsToken} hidden></span>
+)}
+
 <script>
+  import { initializeCloudflareAnalytics } from "../scripts/cloudflare-analytics";
   import { initializePageViews } from "../scripts/page-views";
 
   initializePageViews();
+  initializeCloudflareAnalytics();
 </script>

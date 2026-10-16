@@ -45,6 +45,8 @@ The Pages workflow counts all files in the shared Dropbox inbox folder twice an 
 
 A small Cloudflare Worker counts views of each published page in a D1 database and also returns the total count. Both values appear in the footer. The application stores only the page path and aggregated counters; it sets no cookies and stores no browser identifiers. Setup is documented under [`cloudflare/page-views`](../../cloudflare/page-views/README.md). Without the workflow variable `PUBLIC_PAGE_VIEWS_API_URL`, the website continues to build normally and the counter stays hidden.
 
+Cloudflare Web Analytics can additionally be enabled for private analysis of visits, countries, referrers, devices and popular pages. The site token is stored as the workflow variable `PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN`. To permanently exclude your own views in a browser, open `https://anthlan.github.io/drachenhalle/?traffic=off` once. `?traffic=on` enables counting again in that browser. Local development and automated browsers are never counted. The opt-out applies to both Web Analytics and the visible page counter.
+
 ## Design Principle
 
 For chat and reaction images, purpose and visual style are maintained separately. Chat images tell scenes, while reaction images provide short, reusable replies or greetings. Both categories can independently use S1, S2, S3 or S4. The required guidelines are in [`Styleguides`](Styleguides), and assignments are in [`Galerie/STILINDEX.md`](../../Galerie/STILINDEX.md).

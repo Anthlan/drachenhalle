@@ -26,3 +26,7 @@ pnpm dev
 ```
 
 Die lokale Website darf laut Voreinstellung unter `http://localhost:4321` auf den Worker zugreifen. Damit Astro den Zähler einbindet, beim lokalen Start zusätzlich `PUBLIC_PAGE_VIEWS_API_URL` auf die von Wrangler angezeigte lokale URL setzen.
+
+## Eigene Aufrufe ausschließen
+
+Einmal `https://anthlan.github.io/drachenhalle/?traffic=off` in jedem eigenen Browser und auf jedem eigenen Gerät öffnen. Die Einstellung wird lokal im Browser gespeichert; der sichtbare Zähler wird dann nur noch gelesen und nicht erhöht. `?traffic=on` hebt den Ausschluss wieder auf. Auf `localhost` und in automatisierten Browsern wird nie hochgezählt.

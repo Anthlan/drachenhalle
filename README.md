@@ -45,6 +45,8 @@ Der Pages-Workflow zählt zweimal pro Stunde alle Dateien im freigegebenen Dropb
 
 Ein kleiner Cloudflare Worker zählt die Aufrufe jeder veröffentlichten Seite in einer D1-Datenbank und liefert zusätzlich die Gesamtzahl aus. Im Footer werden beide Werte angezeigt. Die Anwendung speichert nur den Seitenpfad und die aggregierten Zählerstände; sie setzt keine Cookies und speichert keine Browser-Kennungen. Die Einrichtung ist unter [`cloudflare/page-views`](cloudflare/page-views/README.md) dokumentiert. Ohne die Workflow-Variable `PUBLIC_PAGE_VIEWS_API_URL` wird die Website weiterhin normal gebaut; der Zähler bleibt dann ausgeblendet.
 
+Für die nicht öffentliche Auswertung von Besuchen, Ländern, Referrern, Geräten und beliebten Seiten kann zusätzlich Cloudflare Web Analytics aktiviert werden. Der Site-Token wird als Workflow-Variable `PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN` hinterlegt. Eigene Aufrufe lassen sich pro Browser dauerhaft ausschließen, indem einmal `https://anthlan.github.io/drachenhalle/?traffic=off` geöffnet wird. `?traffic=on` schaltet die Zählung im jeweiligen Browser wieder ein. Lokale Entwicklung und automatisierte Browser werden grundsätzlich nicht gezählt. Der Opt-out gilt sowohl für Web Analytics als auch für den sichtbaren Seitenzähler.
+
 ## Gestaltungsprinzip
 
 Bei Chat- und Reaktionsbildern werden Verwendungszweck und Darstellungsstil getrennt gepflegt. Chatbilder erzählen Szenen, Reaktionsbilder liefern kurze wiederverwendbare Antworten oder Grüße. Beide Kategorien können unabhängig davon in S1, S2, S3 oder S4 gestaltet sein. Die verbindlichen Vorgaben befinden sich unter [`Styleguides`](Styleguides), die Zuordnung im [`Galerie/STILINDEX.md`](Galerie/STILINDEX.md).

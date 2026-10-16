@@ -36,6 +36,7 @@ jobs:
       - name: Install, build, and upload website
         uses: withastro/action@v6
         env:
+          PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN: ${{ vars.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN }}
           PUBLIC_PAGE_VIEWS_API_URL: ${{ vars.PUBLIC_PAGE_VIEWS_API_URL }}
         with:
           path: ./site

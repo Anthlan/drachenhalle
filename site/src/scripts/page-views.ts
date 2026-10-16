@@ -1,3 +1,5 @@
+import { applyTrafficPreferenceFromUrl, isTrafficExcluded } from "./traffic-preferences";
+
 type PageViewResponse = {
   path: string;
   views: number;
@@ -7,6 +9,8 @@ type PageViewResponse = {
 const numberFormatter = new Intl.NumberFormat(document.documentElement.lang === "de" ? "de-DE" : document.documentElement.lang);
 
 export const initializePageViews = () => {
+  applyTrafficPreferenceFromUrl();
+
   const counter = document.querySelector<HTMLElement>("[data-page-views]");
   if (!counter) return;
 
@@ -15,10 +19,15 @@ export const initializePageViews = () => {
   const total = counter.querySelector<HTMLElement>("[data-page-view-total]");
   if (!endpoint || !current || !total) return;
 
-  fetch(`${endpoint}/api/views`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ path: window.location.pathname }),
+  const excluded = isTrafficExcluded();
+  const requestUrl = excluded
+    ? `${endpoint}/api/views?path=${encodeURIComponent(window.location.pathname)}`
+    : `${endpoint}/api/views`;
+
+  fetch(requestUrl, {
+    method: excluded ? "GET" : "POST",
+    headers: excluded ? undefined : { "Content-Type": "application/json" },
+    body: excluded ? undefined : JSON.stringify({ path: window.location.pathname }),
     cache: "no-store",
     referrerPolicy: "no-referrer",
   })
