@@ -4,6 +4,7 @@ import "../../styles/global.css";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import EventArchiveNotice from "../../components/EventArchiveNotice.astro";
 
 const shopPages = [
   {
@@ -74,23 +75,24 @@ const shopPages = [
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="Plane Münzen, Vorratsgutscheine und Echtgeldpakete für das aktuelle Flügelevent."
+      content="Archivierter Planer zum abgeschlossenen, zeitlich begrenzten Flügelevent."
     />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
     <title>Flügelevent-Planer · Tools · DIE Drachenhalle</title>
-  <SocialMeta title={`Flügelevent-Planer · Tools · DIE Drachenhalle`} description="Plane Münzen, Vorratsgutscheine und Echtgeldpakete für das aktuelle Flügelevent." />
+  <SocialMeta title={`Flügelevent-Planer · Tools · DIE Drachenhalle`} description="Archivierter Planer zum abgeschlossenen, zeitlich begrenzten Flügelevent." />
   </head>
   <body>
     <div class="page-shell">
-      <SiteHeader active="tools" />
+      <SiteHeader active="events" />
 
       <main class="tool-main" id="main-content">
         <nav class="tool-breadcrumb" aria-label="Brotkrümelnavigation">
-          <a href="/drachenhalle/tools/">Tools</a>
+          <a href="/drachenhalle/event-archiv/">Event-Archiv</a>
           <span aria-hidden="true">/</span>
           <span>Flügelevent-Planer</span>
         </nav>
 
+        <EventArchiveNotice />
         <header class="tool-hero flight-tool-hero">
           <div class="flight-hero-copy">
             <p class="eyebrow">Gefechtsvorbereitung der Flugbesatzung</p>

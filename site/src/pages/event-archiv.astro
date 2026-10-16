@@ -1,0 +1,48 @@
+---
+import SocialMeta from "../components/SocialMeta.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import "../styles/global.css";
+const title = "Event-Archiv · DIE Drachenhalle";
+const description = "Abgeschlossene, zeitlich begrenzte Events mit ihren Guides und Rechnern.";
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>{title}</title>
+    <SocialMeta title={title} description={description} />
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="events" />
+      <main class="tool-main" id="main-content">
+        <header class="tools-overview-hero">
+          <p class="eyebrow">Abgeschlossene Events</p>
+          <h1>Event-Archiv</h1>
+          <p>Hier bewahren wir zeitlich begrenzte Events auf, die für unsere Allianz bereits vorbei sind. Guides, Grafiken und Rechner bleiben zum Nachschlagen erhalten.</p>
+        </header>
+        <section class="archived-event" aria-labelledby="flight-archive-title">
+          <p class="eyebrow">Für uns abgeschlossen · Zeitlich begrenztes Event</p>
+          <h2 id="flight-archive-title">Flügelevent</h2>
+          <p>Gefechtsvorbereitung der Flugbesatzung</p>
+          <p>Die dokumentierten Währungen, Angebote und Berechnungen gehören zur damaligen Event-Ausgabe. Sie sind keine Ankündigung eines aktuell laufenden Events.</p>
+          <div class="archive-links">
+            <a href="/drachenhalle/docs/event-01-gefechtsvorbereitung-flugbesatzung/">Event-Guide und Grafiken ansehen →</a>
+            <a href="/drachenhalle/tools/eventrechner/">Archivierten Flügelevent-Planer öffnen →</a>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
+<style>
+  .archived-event { padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid #947333; border-radius: 1.25rem; background: #102033; }
+  .archived-event h2 { margin-block: 1rem; }
+  .archived-event p { max-width: 70ch; line-height: 1.75; }
+  .archive-links { display: flex; flex-wrap: wrap; gap: 1.25rem 2rem; margin-top: 2rem; }
+</style>

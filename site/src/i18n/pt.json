@@ -8064,5 +8064,20 @@
   "Charakter": "Personagem",
   "Bevorstehend": "Próximos",
   "in insgesamt": "no total",
-  "DIE Drachenhalle – Start": "Salão dos Dragões DIE – Início"
+  "DIE Drachenhalle – Start": "Salão dos Dragões DIE – Início",
+  "Event-Archiv": "Arquivo de eventos",
+  "Eventstatus": "Status do evento",
+  "Für uns abgeschlossen · Zeitlich begrenztes Event": "Encerrado para nós · Evento por tempo limitado",
+  "Das Flügelevent ist für unsere Allianz vorbei. Guide und Rechner bleiben als Rückblick erhalten. Bei einer erneuten Ausgabe müssen Laufzeiten, Preise und Belohnungen neu geprüft werden.": "O evento de asas terminou para a nossa aliança. O guia e a calculadora continuam disponíveis para consulta. Se o evento voltar, será necessário conferir novamente os prazos, preços e recompensas.",
+  "Zum Event-Archiv →": "Ir para o arquivo de eventos →",
+  "Event-Archiv · DIE Drachenhalle": "Arquivo de eventos · Salão dos Dragões DIE",
+  "Abgeschlossene, zeitlich begrenzte Events mit ihren Guides und Rechnern.": "Eventos encerrados por tempo limitado, com seus guias e calculadoras.",
+  "Abgeschlossene Events": "Eventos encerrados",
+  "Hier bewahren wir zeitlich begrenzte Events auf, die für unsere Allianz bereits vorbei sind. Guides, Grafiken und Rechner bleiben zum Nachschlagen erhalten.": "Aqui reunimos eventos por tempo limitado que já terminaram para a nossa aliança. Guias, imagens e calculadoras continuam disponíveis para consulta.",
+  "Flügelevent": "Evento de asas",
+  "Die dokumentierten Währungen, Angebote und Berechnungen gehören zur damaligen Event-Ausgabe. Sie sind keine Ankündigung eines aktuell laufenden Events.": "As moedas, ofertas e cálculos documentados pertencem à edição anterior. Eles não anunciam um evento em andamento.",
+  "Event-Guide und Grafiken ansehen →": "Ver guia e imagens do evento →",
+  "Archivierten Flügelevent-Planer öffnen →": "Abrir planejador arquivado do evento de asas →",
+  "Archivierter Planer zum abgeschlossenen, zeitlich begrenzten Flügelevent.": "Planejador arquivado do evento de asas por tempo limitado já encerrado.",
+  "Guides und Rechner zu vergangenen, zeitlich begrenzten Events.": "Guias e calculadoras de eventos anteriores por tempo limitado."
 }

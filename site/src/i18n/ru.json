@@ -2228,5 +2228,20 @@
   "Merke:": "Запомни:",
   "Lastwagen, Güterzüge und Spezialmissionen nur auf anderen Servern plündern.": "Грабь грузовики, поезда и спецзадания только на других серверах.",
   "Noch einmal üben": "Попробовать снова",
-  "Für das interaktive Quiz bitte JavaScript aktivieren. Hier kannst du die Situationen mit ihren Lösungen nachlesen.": "Включи JavaScript для интерактивной викторины. Здесь можно прочитать ситуации и их решения."
+  "Für das interaktive Quiz bitte JavaScript aktivieren. Hier kannst du die Situationen mit ihren Lösungen nachlesen.": "Включи JavaScript для интерактивной викторины. Здесь можно прочитать ситуации и их решения.",
+  "Event-Archiv": "Архив событий",
+  "Eventstatus": "Статус события",
+  "Für uns abgeschlossen · Zeitlich begrenztes Event": "Для нас завершено · Временное событие",
+  "Das Flügelevent ist für unsere Allianz vorbei. Guide und Rechner bleiben als Rückblick erhalten. Bei einer erneuten Ausgabe müssen Laufzeiten, Preise und Belohnungen neu geprüft werden.": "Событие крыльев для нашего альянса завершено. Руководство и калькулятор сохранены для справки. При повторном проведении необходимо заново проверить сроки, цены и награды.",
+  "Zum Event-Archiv →": "В архив событий →",
+  "Event-Archiv · DIE Drachenhalle": "Архив событий · DIE Зал драконов",
+  "Abgeschlossene, zeitlich begrenzte Events mit ihren Guides und Rechnern.": "Завершённые временные события с руководствами и калькуляторами.",
+  "Abgeschlossene Events": "Завершённые события",
+  "Hier bewahren wir zeitlich begrenzte Events auf, die für unsere Allianz bereits vorbei sind. Guides, Grafiken und Rechner bleiben zum Nachschlagen erhalten.": "Здесь собраны временные события, которые для нашего альянса уже завершились. Руководства, иллюстрации и калькуляторы сохранены для справки.",
+  "Flügelevent": "Событие крыльев",
+  "Die dokumentierten Währungen, Angebote und Berechnungen gehören zur damaligen Event-Ausgabe. Sie sind keine Ankündigung eines aktuell laufenden Events.": "Указанные валюты, предложения и расчёты относятся к прошлому проведению события. Это не объявление о текущем событии.",
+  "Event-Guide und Grafiken ansehen →": "Руководство и иллюстрации →",
+  "Archivierten Flügelevent-Planer öffnen →": "Открыть архивный планировщик события крыльев →",
+  "Archivierter Planer zum abgeschlossenen, zeitlich begrenzten Flügelevent.": "Архивный планировщик завершённого временного события крыльев.",
+  "Guides und Rechner zu vergangenen, zeitlich begrenzten Events.": "Руководства и калькуляторы прошедших временных событий."
 }

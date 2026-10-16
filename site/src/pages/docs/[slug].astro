@@ -9,6 +9,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import TeleportDemo from "../../components/TeleportDemo.astro";
 import RaidQuiz from "../../components/RaidQuiz.astro";
+import EventArchiveNotice from "../../components/EventArchiveNotice.astro";
 import docsData from "../../data/docs.generated.json";
 import galleryData from "../../data/gallery.generated.json";
 
@@ -420,6 +421,7 @@ const responsibilities = [
                 </a>
               )}
             </header>
+            {isFlightEvent && <EventArchiveNotice />}
             {document.slug === "tipp-04-richtig-teleportieren" && <TeleportDemo />}
             {isTipsOverview && (
               <section class="knowledge-children tip-catalog" aria-labelledby="knowledge-children-title" data-tip-catalog>
