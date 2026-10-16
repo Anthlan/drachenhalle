@@ -4,7 +4,7 @@ Dieses Repository ist die zentrale, strukturierte Sammlung von Inhalten rund um 
 
 ## Sprachen
 
-Die Website bietet Deutsch und Englisch mit einer Sprachwahl auf jeder Seite. Pflegbare Textquellen liegen unter `content/<Thema>/de` und `content/<Thema>/en`; Bilder und Charaktermodelle werden gemeinsam verwendet. Weitere Sprachen können über `site/src/i18n/config.json` ergänzt werden. Die [Sprachstruktur](content/README.md) beschreibt das Vorgehen.
+Die Website bietet Deutsch, Englisch, Russisch und brasilianisches Portugiesisch mit einer Sprachwahl auf jeder Seite. Pflegbare Textquellen liegen unter `content/<Thema>/<Sprache>` (`de`, `en`, `ru`, `pt`). Textfreie Bilder und Charaktermodelle werden gemeinsam verwendet; übersetzte Wissensgrafiken liegen neben den jeweiligen Sprachtexten. Die [Sprachstruktur](content/README.md) beschreibt das Vorgehen.
 
 ## Einstieg
 

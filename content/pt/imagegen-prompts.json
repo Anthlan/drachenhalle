@@ -1,0 +1,95 @@
+{
+  "language": "pt-BR",
+  "tool": "built-in Imagegen",
+  "date": "2026-10-16",
+  "prompts": [
+    {
+      "source": "Allianz/Allianz_Regeln.png",
+      "prompt": "Edit the supplied alliance rules poster into Brazilian Portuguese. Keep layout, large bullet text, gold/navy style, all illustrations. All policy meanings unchanged. Exact concise text:\nDIE – REGRAS DA ALIANÇA\nCOMBATE E SAQUES\nNAP10\n• Não atacar as alianças do NAP10 atual\n• Antes de atacar: conferir ranking e aliança\nBASES\n• Permitido: sem aliança e Commander****\n• Não reduzir ninguém a 0\nSAQUES\n• Caminhões, trens de carga e missões especiais:\n  somente em outros servidores!\n• Conferir o número do servidor\nSE O NAP10 ATACAR\n• Não revidar!\n• Compartilhar relatório e avisar R4/R5\nCARGOS E ATIVIDADE\nCARGO 1 – INICIANTE\n• Novos: 7 dias de experiência\n• Commander sem nome próprio\n• 7+ dias inativo sem avisar\nCARGO 2 – MEMBRO\n• Online regularmente\n• No ponto de encontro da aliança\n• Pouca participação em eventos\n• Pode ser permanente\nCARGO 3 – ATIVO\n• Online regularmente\n• Participação em eventos da aliança\n• Conta a participação geral\n• Nem todo evento é obrigatório\nCOMUNIDADE E PAUSAS\n• Ficar no ponto de encontro da aliança\n• Responder MPs importantes e seguir as regras\n• Avisar sobre férias, doenças e pausas\n• Inativo sem avisar: dia 7 → MP e cargo 1\n• Sem resposta: dia 9 → remoção\nADVERTÊNCIAS\n• 1ª e 2ª infração → advertência\n• Próxima infração → remoção\n• Válidas até serem revogadas\nCargos indicam atividade, não o valor de uma pessoa.\nNo German text, no added rules, no tiny lettering."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_01_TruppenEffizientBewegen.png",
+      "prompt": "Use case: text-localization. Edit this English game infographic into fluent Brazilian Portuguese (pt-BR). Translate EVERY heading, caption, body text and diagram label. Preserve the complete navy/gold fantasy composition, illustrations, icons, arrows, tables, all numbers, times, percentages, team identifiers A1/D1 etc and their exact positions/relationships. Do not add or omit facts or mechanics. Names Anthlan, DIE, NAP10, S105 stay unchanged. Use concise natural Brazilian Portuguese game terms: tropa, equipe, aliança, marcha, recursos, cura. Keep text highly readable; fit translated text within panels without clipping. No remaining English or German text. No watermark. Same portrait aspect ratio and high resolution."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_02_Sammelangriffe.png",
+      "prompt": "Use case: text-localization. Edit this English game infographic into fluent Brazilian Portuguese (pt-BR). Translate EVERY heading, caption, body text and diagram label. Preserve the complete navy/gold fantasy composition, illustrations, icons, arrows, tables, all numbers, times, percentages, team identifiers A1/D1 etc and their exact positions/relationships. Do not add or omit facts or mechanics. Names Anthlan, DIE, NAP10, S105 stay unchanged. Use concise natural Brazilian Portuguese game terms: tropa, equipe, aliança, marcha, recursos, cura. Keep text highly readable; fit translated text within panels without clipping. No remaining English or German text. No watermark. Same portrait aspect ratio and high resolution."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_03_Hauptstadtrollen.png",
+      "prompt": "Use case: text-localization. Edit this English game infographic into fluent Brazilian Portuguese (pt-BR). Translate EVERY heading, caption, body text and diagram label. Preserve the complete navy/gold fantasy composition, illustrations, icons, arrows, tables, all numbers, times, percentages, team identifiers A1/D1 etc and their exact positions/relationships. Do not add or omit facts or mechanics. Names Anthlan, DIE, NAP10, S105 stay unchanged. Use concise natural Brazilian Portuguese game terms: tropa, equipe, aliança, marcha, recursos, cura. Keep text highly readable; fit translated text within panels without clipping. No remaining English or German text. No watermark. Same portrait aspect ratio and high resolution."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_04_RichtigTeleportieren.png",
+      "prompt": "Edit this infographic to Brazilian Portuguese (pt-BR). Translate all English headings, explanatory text, labels and captions into fluent natural concise Portuguese. Preserve the entire layout, art, diagrams, arrows, every number/stat/time/percentage, tier T6/T7/T8, R4/R5, UR and other identifiers, all facts and warnings. Text must fit the panels clearly. Glossary: Tips & Tricks = Dicas e estratégias; teleporter = teletransportador; freight train = trem de carga; conductor = maquinista; carriage = vagão; convoy contracts = contratos de comboio; promote soldiers = promover soldados; barracks = quartel; resources = recursos; resource tile = ponto de recursos. No added mechanics or facts, no omitted text, no remaining English/German, no watermark. Maintain same aspect ratio."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_05_Gueterzug.png",
+      "prompt": "Edit this infographic to Brazilian Portuguese (pt-BR). Translate all English headings, explanatory text, labels and captions into fluent natural concise Portuguese. Preserve the entire layout, art, diagrams, arrows, every number/stat/time/percentage, tier T6/T7/T8, R4/R5, UR and other identifiers, all facts and warnings. Text must fit the panels clearly. Glossary: Tips & Tricks = Dicas e estratégias; teleporter = teletransportador; freight train = trem de carga; conductor = maquinista; carriage = vagão; convoy contracts = contratos de comboio; promote soldiers = promover soldados; barracks = quartel; resources = recursos; resource tile = ponto de recursos. No added mechanics or facts, no omitted text, no remaining English/German, no watermark. Maintain same aspect ratio."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_06_SoldatenRichtigAufwerten.png",
+      "prompt": "Edit this infographic to Brazilian Portuguese (pt-BR). Translate all English headings, explanatory text, labels and captions into fluent natural concise Portuguese. Preserve the entire layout, art, diagrams, arrows, every number/stat/time/percentage, tier T6/T7/T8, R4/R5, UR and other identifiers, all facts and warnings. Text must fit the panels clearly. Glossary: Tips & Tricks = Dicas e estratégias; teleporter = teletransportador; freight train = trem de carga; conductor = maquinista; carriage = vagão; convoy contracts = contratos de comboio; promote soldiers = promover soldados; barracks = quartel; resources = recursos; resource tile = ponto de recursos. No added mechanics or facts, no omitted text, no remaining English/German, no watermark. Maintain same aspect ratio."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_10_HitAndRunImPvP.png",
+      "prompt": "Edit this infographic to fluent Brazilian Portuguese. Translate all headings, text, labels and decorative wording while preserving illustrations, navy/gold style, charts, arrows, numbers, stats, times and mechanics exactly. No content additions or omissions. Glossary: Tips & Tricks=Dicas e estratégias; Hit & Run=Ataque e fuga; raid team=equipe de ataque; rally=ataque conjunto; battle report=relatório de batalha; home server=nosso servidor; enemy server=servidor inimigo; recall troops=recolher tropas; teleporter=teletransportador; capital conquest=Conquista da Capital; damage=dano; healing=cura. Preserve PvP, tier T8, proper names. Highly readable lettering fits all panels. Same portrait aspect and resolution."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_11_FesteRaidteamsImPvP.png",
+      "prompt": "Edit this infographic to fluent Brazilian Portuguese. Translate all headings, text, labels and decorative wording while preserving illustrations, navy/gold style, charts, arrows, numbers, stats, times and mechanics exactly. No content additions or omissions. Glossary: Tips & Tricks=Dicas e estratégias; Hit & Run=Ataque e fuga; raid team=equipe de ataque; rally=ataque conjunto; battle report=relatório de batalha; home server=nosso servidor; enemy server=servidor inimigo; recall troops=recolher tropas; teleporter=teletransportador; capital conquest=Conquista da Capital; damage=dano; healing=cura. Preserve PvP, tier T8, proper names. Highly readable lettering fits all panels. Same portrait aspect and resolution."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_12_KampfberichteRichtigLesen.png",
+      "prompt": "Edit this infographic to fluent Brazilian Portuguese. Translate all headings, text, labels and decorative wording while preserving illustrations, navy/gold style, charts, arrows, numbers, stats, times and mechanics exactly. No content additions or omissions. Glossary: Tips & Tricks=Dicas e estratégias; Hit & Run=Ataque e fuga; raid team=equipe de ataque; rally=ataque conjunto; battle report=relatório de batalha; home server=nosso servidor; enemy server=servidor inimigo; recall troops=recolher tropas; teleporter=teletransportador; capital conquest=Conquista da Capital; damage=dano; healing=cura. Preserve PvP, tier T8, proper names. Highly readable lettering fits all panels. Same portrait aspect and resolution."
+    },
+    {
+      "source": "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png",
+      "prompt": "Use case text-localization: translate every German heading, text, UI label and caption in this instructional image into fluent Brazilian Portuguese. Preserve all art, layout, symbols, arrows, numbers, currencies (keep €), percentages, times, costs, item quantities and factual mechanics exactly. No added advice or changed figures. Glossary: Event-Wissen=Guia do evento; Gefechtsvorbereitung der Flugbesatzung=Preparação de Combate da Tripulação Aérea; Münzen=moedas; Spielautomat=máquina de sorteio; Vorratsdepot=depósito de suprimentos; Vorratsgutscheine=cupons de suprimentos; Tagesstufen=etapas diárias; Rohstoffe=recursos; Splitter=fragmentos; Truhe=baú; Held-ANG=ATQ do herói; Held-VER=DEF do herói; Held-LP=PV do herói. Keep F2P and DIE. Carefully fit concise Portuguese text inside each panel; no text clipping or remaining German. Same resolution and portrait aspect ratio."
+    },
+    {
+      "source": "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png",
+      "prompt": "Use case text-localization: translate every German heading, text, UI label and caption in this instructional image into fluent Brazilian Portuguese. Preserve all art, layout, symbols, arrows, numbers, currencies (keep €), percentages, times, costs, item quantities and factual mechanics exactly. No added advice or changed figures. Glossary: Event-Wissen=Guia do evento; Gefechtsvorbereitung der Flugbesatzung=Preparação de Combate da Tripulação Aérea; Münzen=moedas; Spielautomat=máquina de sorteio; Vorratsdepot=depósito de suprimentos; Vorratsgutscheine=cupons de suprimentos; Tagesstufen=etapas diárias; Rohstoffe=recursos; Splitter=fragmentos; Truhe=baú; Held-ANG=ATQ do herói; Held-VER=DEF do herói; Held-LP=PV do herói. Keep F2P and DIE. Carefully fit concise Portuguese text inside each panel; no text clipping or remaining German. Same resolution and portrait aspect ratio."
+    },
+    {
+      "source": "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png",
+      "prompt": "Use case text-localization: translate every German heading, text, UI label and caption in this instructional image into fluent Brazilian Portuguese. Preserve all art, layout, symbols, arrows, numbers, currencies (keep €), percentages, times, costs, item quantities and factual mechanics exactly. No added advice or changed figures. Glossary: Event-Wissen=Guia do evento; Gefechtsvorbereitung der Flugbesatzung=Preparação de Combate da Tripulação Aérea; Münzen=moedas; Spielautomat=máquina de sorteio; Vorratsdepot=depósito de suprimentos; Vorratsgutscheine=cupons de suprimentos; Tagesstufen=etapas diárias; Rohstoffe=recursos; Splitter=fragmentos; Truhe=baú; Held-ANG=ATQ do herói; Held-VER=DEF do herói; Held-LP=PV do herói. Keep F2P and DIE. Carefully fit concise Portuguese text inside each panel; no text clipping or remaining German. Same resolution and portrait aspect ratio."
+    },
+    {
+      "source": "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png",
+      "prompt": "Use case text-localization: translate every German heading, text, UI label and caption in this instructional image into fluent Brazilian Portuguese. Preserve all art, layout, symbols, arrows, numbers, currencies (keep €), percentages, times, costs, item quantities and factual mechanics exactly. No added advice or changed figures. Glossary: Event-Wissen=Guia do evento; Gefechtsvorbereitung der Flugbesatzung=Preparação de Combate da Tripulação Aérea; Münzen=moedas; Spielautomat=máquina de sorteio; Vorratsdepot=depósito de suprimentos; Vorratsgutscheine=cupons de suprimentos; Tagesstufen=etapas diárias; Rohstoffe=recursos; Splitter=fragmentos; Truhe=baú; Held-ANG=ATQ do herói; Held-VER=DEF do herói; Held-LP=PV do herói. Keep F2P and DIE. Carefully fit concise Portuguese text inside each panel; no text clipping or remaining German. Same resolution and portrait aspect ratio."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_01_TruppenEffizientBewegen.png",
+      "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. Replace EVERY occurrence of 'azulejo de recursos' with 'ponto de recursos' matching capitalization. The resource map location is not a ceramic tile. All other content unchanged."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_03_Hauptstadtrollen.png",
+      "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. Replace '5 ESCRITÓRIOS – FORTES BÔNUS' with '5 CARGOS – FORTES BÔNUS'. Replace 'durante o período em que você estiver no escritório' with 'enquanto você ocupar o cargo'. Use 'cargo' instead of 'escritório' for an official position. All stats unchanged."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_05_Gueterzug.png",
+      "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. Replace gold caption below four golden wagons 'OS 4 VAGÕES TERÃO O SEU ESTADO' with exact 'TODOS OS 4 VAGÕES TÊM STATUS UR'. Replace 'PASSAGEIROS SE APLICAM' with 'PASSAGEIROS SE INSCREVEM'. All else unchanged."
+    },
+    {
+      "source": "Drachenwissen/Tipps/Tipp_10_HitAndRunImPvP.png",
+      "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. In RIGHT column 'COMEÇO: NOSSO SERVIDOR' replace step 3 'ATAQUE CONJUNTO → VÁ' with exact 'SAQUE → IR'. This refers to Raid event Go command, not a rally. Everything else unchanged."
+    },
+    {
+      "source": "Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png",
+      "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. Replace RED text in first defense panel 'Não use escudos neste evento!' with exact 'Escudos não protegem neste evento!'. Shields do not protect; they are not forbidden. All else unchanged."
+    },
+    {
+      "source": "Drachenwissen/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png",
+      "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. Replace main title 'SAQUE DE ESCUDOS' with exact 'COMBATES DE SAQUE'. Replace subtitle 'Proteja-se bem!' with 'Ative os escudos!'. Keep all times and timezone labels and all other text unchanged."
+    },
+    {
+      "source": "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png",
+      "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. Replace 'COMPRADORES ALVO' with 'COMPRAS PLANEJADAS', retaining 20–100 €. Replace 'GRANDES GASTADORES' with 'GRANDES COMPRADORES'. Replace 'GIRE PRIMEIRO · DEPOIS COMPRE A LACUNA' with 'GIRE PRIMEIRO · COMPRE SÓ O QUE FALTAR'. Replace 'F2P: ÚLTIMO DIA MAIS SEGURO' with 'F2P: ÚLTIMO DIA SEGURO'. All else unchanged."
+    },
+    {
+      "source": "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png",
+      "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. Bottom right material caption MUST read exact 'MELHOR ESCOLHA: 5.000 PEDRAS REFINADAS', replacing 'MELHOR ESCOLHA: 5.000 FRAGMENTOS'. These are refined stones, NOT shards. Replace 'EXCLUSIVO PARA GRANDES DOADORES' with 'EXCLUSIVO PARA GRANDES COMPRADORES'. Replace stats heading 'Quando em uso ativo' with 'Ao usar' and 'Quando mantido' with 'Ao obter'. All numerical bonuses, quantities and other content unchanged."
+    }
+  ]
+}

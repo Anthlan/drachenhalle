@@ -4,7 +4,7 @@ import sharp from "sharp";
 
 // Localized originals live beside the translated content, with language last.
 export async function localizedTipImages(repositoryRoot, outputRoot, base, language) {
-  const areas = ["Drachenwissen/Tipps", "Allianz"];
+  const areas = ["Drachenwissen/Tipps", "Allianz", "Drachenwissen/Events", "Drachenwissen/Eventankuendigungen"];
   const gallery = JSON.parse(await readFile(path.join(repositoryRoot, "site/src/data/gallery.generated.json"), "utf8"));
   const replacements = [];
   for (const area of areas) {
@@ -13,10 +13,10 @@ export async function localizedTipImages(repositoryRoot, outputRoot, base, langu
       if (error.code === "ENOENT") return [];
       throw error;
     });
-    const category = area === "Allianz" ? "alliance" : "tips";
+    const category = {"Allianz":"alliance", "Drachenwissen/Tipps":"tips", "Drachenwissen/Events":"event-guides", "Drachenwissen/Eventankuendigungen":"announcements"}[area];
     const destination = path.join(outputRoot, "generated", category, language);
     await mkdir(destination, { recursive: true });
-    for (const name of files.filter(name => area === "Allianz" ? /^Allianz_Regeln\.png$/i.test(name) : /^Tipp_\d+_.*\.(?:png|jpe?g)$/i.test(name))) {
+    for (const name of files.filter(name => /\.(?:png|jpe?g)$/i.test(name))) {
       const source = `${area}/${name}`;
       const item = gallery.items.find(item => item.sourcePath === source);
       if (!item) throw new Error(`Localized image has no original: ${source}`);

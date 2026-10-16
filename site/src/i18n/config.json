@@ -19,6 +19,12 @@
       "label": "Русский",
       "locale": "ru-RU",
       "path": "ru"
+    },
+    {
+      "code": "pt",
+      "label": "Português (Brasil)",
+      "locale": "pt-BR",
+      "path": "pt"
     }
   ]
 }
