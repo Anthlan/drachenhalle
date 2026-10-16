@@ -137,3 +137,11 @@ Examples:
 - Content with DRR, old roles or obsolete rules is not silently overwritten.
 - If it remains worth documenting, clearly label it and move it to `Archiv`.
 - The current version always uses **DIE** and the latest confirmed roles and rules.
+
+## Lifecycle of Limited-Time Events
+
+- After its confirmed end for our alliance, add a limited-time event under “Events → Event Archive” and label it “Finished for us · Limited-time event”. Give an end date only when confirmed.
+- Keep the guide, graphics and calculator available for reference. Display an archive notice on the guide and calculator; no longer promote the event as current or running.
+- Remove event-specific calculators from the regular Tools menu and link them from the archive entry. Preserve existing URLs where possible.
+- Mark related launch and promotional news with `archived: true` in every language source. Keep source files; the news generator publishes neither the listing nor the article page.
+- Maintain archive entries and status labels in every registered language. If an event returns, recheck durations, currencies, prices and rewards before presenting it as current again.

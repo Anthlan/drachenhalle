@@ -1,4 +1,5 @@
 ---
+archived: true
 title: "Event guide: Aircrew Battle Preparation"
 date: "2026-09-28"
 category: "Event"

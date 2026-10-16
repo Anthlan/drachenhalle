@@ -137,3 +137,11 @@ Exemplos:
 - O conteúdo com DRR, antigos papéis ou regras obsoletas não é silenciosamente sobreescrevido.
 - Se ainda valer a pena documentá-lo, marque-o claramente e mude-o para `Archiv`.
 - A versão atual sempre usa **DIE** e as últimas funções e regras confirmadas.
+
+## Ciclo de vida dos eventos por tempo limitado
+
+- Após o encerramento confirmado para a nossa aliança, incluir o evento por tempo limitado em “Eventos → Arquivo de eventos” e marcar “Encerrado para nós · Evento por tempo limitado”. Informar uma data de término somente se estiver confirmada.
+- Manter o guia, as imagens e a calculadora disponíveis para consulta. Exibir um aviso de arquivo no guia e na calculadora; deixar de apresentar o evento como atual ou em andamento.
+- Retirar as calculadoras específicas de eventos do menu regular de ferramentas e incluí-las na entrada do arquivo. Preservar os URLs existentes sempre que possível.
+- Marcar as notícias de lançamento e divulgação relacionadas com `archived: true` em todas as versões de idioma. Os arquivos-fonte são preservados; o gerador de notícias não publica nem a entrada na lista nem a página do artigo.
+- Manter o arquivo e os avisos de status em todos os idiomas registrados. Se o evento voltar, conferir prazos, moedas, preços e recompensas antes de apresentá-lo novamente como atual.

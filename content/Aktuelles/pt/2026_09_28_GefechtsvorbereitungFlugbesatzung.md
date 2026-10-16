@@ -1,4 +1,5 @@
 ---
+archived: true
 title: "Guia de Eventos: Preparação de Batalha da tripulação"
 date: "2026-09-28"
 category: "Evento"

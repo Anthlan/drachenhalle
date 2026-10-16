@@ -137,3 +137,11 @@ Beispiele:
 - Inhalte mit DRR, alten Rollen oder überholten Regeln werden nicht stillschweigend überschrieben.
 - Wenn sie weiterhin dokumentationswürdig sind, werden sie eindeutig gekennzeichnet und nach `Archiv` verschoben.
 - Die aktuelle Fassung verwendet immer **DIE** und den zuletzt bestätigten Rollen- und Regelstand.
+
+## Lebenszyklus zeitlich begrenzter Events
+
+- Nach dem bestätigten Ende für unsere Allianz erhält ein zeitlich begrenztes Event einen Eintrag unter „Termine → Event-Archiv“ und die Kennzeichnung „Für uns abgeschlossen · Zeitlich begrenztes Event“. Ein Enddatum nur angeben, wenn es bestätigt ist.
+- Guide, Grafiken und Rechner bleiben als Rückblick erreichbar. Auf Guide und Rechner einen sichtbaren Archivhinweis setzen; nicht mehr als aktuell oder als laufendes Event bewerben.
+- Eventbezogene Rechner aus dem regulären Tools-Menü entfernen und über den Archiv-Eintrag verlinken. Bestehende URLs nach Möglichkeit beibehalten.
+- Zugehörige Start- und Werbemeldungen in allen Sprachquellen mit `archived: true` aus der News-Veröffentlichung nehmen. Die Quelldateien bleiben erhalten; der News-Generator veröffentlicht weder Listeneintrag noch Artikelseite.
+- Archivierung und Kennzeichnung in allen registrierten Sprachen pflegen. Bei einer Wiederholung Laufzeiten, Währungen, Preise und Belohnungen neu prüfen, bevor das Event wieder als aktuell erscheint.

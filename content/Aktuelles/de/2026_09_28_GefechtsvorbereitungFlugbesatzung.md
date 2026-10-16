@@ -1,4 +1,5 @@
 ---
+archived: true
 title: "Event-Guide: Gefechtsvorbereitung der Flugbesatzung"
 date: "2026-09-28"
 category: "Event"

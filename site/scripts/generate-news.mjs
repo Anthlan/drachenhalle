@@ -71,6 +71,7 @@ for (const fileName of fileNames) {
   const sourcePath = path.join(newsDirectory, fileName);
   const source = await readFile(sourcePath, "utf8");
   const { metadata, markdown } = parseDocument(source, fileName);
+  if (metadata.archived === true) continue;
   const title = String(metadata.title ?? "").trim();
   const date = String(metadata.date ?? "").trim();
 
