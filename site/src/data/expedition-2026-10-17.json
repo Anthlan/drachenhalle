@@ -14,16 +14,69 @@
     "description": "Ränge 1–720 erfasst. Die bewusst nicht erfasste Fortsetzung liegt bei höchstens 250 Punkten. Der ausgewertete Bereich ab 1.000 Punkten ist vollständig. Allianzüberblicke vom 18.10.2026."
   },
   "quality": {
-    "visuallyCheckedRows": 107,
+    "visuallyCheckedRows": 144,
     "missingNames": 0,
     "remainingNameNotes": [
       4,
+      178,
       199,
       223,
       617,
       704
     ],
-    "unresolvedAllianceOverviews": 1
+    "unresolvedAllianceOverviews": 1,
+    "cyrillicNameAudit": {
+      "date": "2026-10-18",
+      "checkedRanks": [
+        38,
+        47,
+        71,
+        73,
+        81,
+        86,
+        91,
+        104,
+        132,
+        144,
+        146,
+        151,
+        157,
+        172,
+        190,
+        202,
+        213,
+        224,
+        247,
+        248,
+        266,
+        299,
+        307,
+        313,
+        326,
+        369,
+        377,
+        389,
+        401,
+        416,
+        427,
+        476,
+        478,
+        494,
+        509,
+        523,
+        544,
+        555,
+        567,
+        597,
+        609,
+        637,
+        698
+      ],
+      "mixedScriptUncertainty": [
+        178
+      ],
+      "method": "Visueller Abgleich der Originalbilder; Rang 104 zusätzlich vom Nutzer bestätigt."
+    }
   },
   "players": [
     {
@@ -362,7 +415,7 @@
     },
     {
       "rank": 38,
-      "player": "MMHnnar",
+      "player": "Минилаг",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -659,7 +712,7 @@
     },
     {
       "rank": 71,
-      "player": "TBoq-BanbKnpb•1R",
+      "player": "Твоя-Валькирия",
       "tag": "Wild",
       "alliance": "WildVibe",
       "server": 107,
@@ -677,7 +730,7 @@
     },
     {
       "rank": 73,
-      "player": "CepéranMTep",
+      "player": "СерёгаПитер",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -794,7 +847,7 @@
     },
     {
       "rank": 86,
-      "player": "IOphCT71",
+      "player": "Юрист71",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -839,7 +892,7 @@
     },
     {
       "rank": 91,
-      "player": "AMnyTaTop",
+      "player": "Ампутатор",
       "tag": "TuT",
       "alliance": "TheUnholyTriad",
       "server": 105,
@@ -956,7 +1009,7 @@
     },
     {
       "rank": 104,
-      "player": "3mowa",
+      "player": "Злюша",
       "tag": "TuT",
       "alliance": "TheUnholyTriad",
       "server": 105,
@@ -1208,7 +1261,7 @@
     },
     {
       "rank": 132,
-      "player": "1 npnpaK",
+      "player": "1Призрак",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -1316,7 +1369,7 @@
     },
     {
       "rank": 144,
-      "player": "POCKOCMOC",
+      "player": "РОСКОСМОС",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -1334,7 +1387,7 @@
     },
     {
       "rank": 146,
-      "player": "MaKc1408",
+      "player": "Макс1408",
       "tag": "TuT",
       "alliance": "TheUnholyTriad",
       "server": 105,
@@ -1379,7 +1432,7 @@
     },
     {
       "rank": 151,
-      "player": "HaCTR09",
+      "player": "настя09",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -1433,7 +1486,7 @@
     },
     {
       "rank": 157,
-      "player": "Vladbll<a",
+      "player": "Vladыка",
       "tag": "TuT",
       "alliance": "TheUnholyTriad",
       "server": 105,
@@ -1568,7 +1621,7 @@
     },
     {
       "rank": 172,
-      "player": "mpnun«a160477",
+      "player": "иришка160477",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -1627,7 +1680,8 @@
       "alliance": "TripleG",
       "server": 105,
       "points": 1559335,
-      "source": "20261017_220237000_iOS.png"
+      "source": "20261017_220237000_iOS.png",
+      "nameNote": "Gemischte Zeichenfolge im Namen: lateinische und kyrillische gleich aussehende Zeichen sind im Screenshot nicht eindeutig unterscheidbar."
     },
     {
       "rank": 179,
@@ -1730,7 +1784,7 @@
     },
     {
       "rank": 190,
-      "player": "BaHCnrypA",
+      "player": "ВанСигурд",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -1839,7 +1893,7 @@
     },
     {
       "rank": 202,
-      "player": "3acaannnyc",
+      "player": "засадилиус",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -2038,7 +2092,7 @@
     },
     {
       "rank": 224,
-      "player": "3HTOHhBn",
+      "player": "ЭнтониВл",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -2245,7 +2299,7 @@
     },
     {
       "rank": 247,
-      "player": "Koconanblil",
+      "player": "КоСоЛаПыЙ",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -2254,7 +2308,7 @@
     },
     {
       "rank": 248,
-      "player": "Maq088",
+      "player": "Мачо88",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -2416,7 +2470,7 @@
     },
     {
       "rank": 266,
-      "player": "BnaAL4M14p83",
+      "player": "Владимир83",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -2713,7 +2767,7 @@
     },
     {
       "rank": 299,
-      "player": "CMaiJ1hK52",
+      "player": "Смайлик52",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -2785,7 +2839,7 @@
     },
     {
       "rank": 307,
-      "player": "CBeTnqqéK",
+      "player": "Светлячёк",
       "tag": "Wild",
       "alliance": "WildVibe",
       "server": 107,
@@ -2839,7 +2893,7 @@
     },
     {
       "rank": 313,
-      "player": "@eepnq",
+      "player": "Феерия",
       "tag": "IGGG",
       "alliance": "TripleG",
       "server": 105,
@@ -2956,7 +3010,7 @@
     },
     {
       "rank": 326,
-      "player": "AapKHaiA",
+      "player": "ДаркНайд",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -3415,7 +3469,7 @@
     },
     {
       "rank": 377,
-      "player": "Annwon",
+      "player": "Дилшол",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -3631,7 +3685,7 @@
     },
     {
       "rank": 401,
-      "player": "Boppa",
+      "player": "Ворра",
       "tag": "Wild",
       "alliance": "WildVibe",
       "server": 107,
@@ -3766,7 +3820,7 @@
     },
     {
       "rank": 416,
-      "player": "6eK1985",
+      "player": "Бек1985",
       "tag": "TuT",
       "alliance": "TheUnholyTriad",
       "server": 105,
@@ -3865,7 +3919,7 @@
     },
     {
       "rank": 427,
-      "player": "CKBepHa",
+      "player": "Скверна",
       "tag": "BG1",
       "alliance": "ФеНИкС",
       "server": 105,
@@ -4306,7 +4360,7 @@
     },
     {
       "rank": 476,
-      "player": "raHM3H",
+      "player": "ганмэн",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -4468,7 +4522,7 @@
     },
     {
       "rank": 494,
-      "player": "TpaHAYJIRTop",
+      "player": "Трандулятор",
       "tag": "IGGG",
       "alliance": "TripleG",
       "server": 105,
@@ -4603,7 +4657,7 @@
     },
     {
       "rank": 509,
-      "player": "ApcnaH0B0",
+      "player": "Арсланово",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -4729,7 +4783,7 @@
     },
     {
       "rank": 523,
-      "player": "3J1}0L.u",
+      "player": "Злюш",
       "tag": "TuT",
       "alliance": "TheUnholyTriad",
       "server": 105,
@@ -4918,7 +4972,7 @@
     },
     {
       "rank": 544,
-      "player": "Mramoxa",
+      "player": "Игарюха",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -5017,7 +5071,7 @@
     },
     {
       "rank": 555,
-      "player": "AxaHTao",
+      "player": "ДжанТао",
       "tag": "Wild",
       "alliance": "WildVibe",
       "server": 107,
@@ -5125,7 +5179,7 @@
     },
     {
       "rank": 567,
-      "player": "CA06a",
+      "player": "сдоба",
       "tag": "jRUS",
       "alliance": "CoapyxecTB0",
       "server": 107,
@@ -5395,7 +5449,7 @@
     },
     {
       "rank": 597,
-      "player": "X03RVIH-JIECA",
+      "player": "ХОЗЯЙН-ЛЕСА",
       "tag": "HoP",
       "alliance": "HeartOfPhoenix",
       "server": 107,
@@ -5503,7 +5557,7 @@
     },
     {
       "rank": 609,
-      "player": "RPCMarmcTpaT",
+      "player": "ЯРСмагистрат",
       "tag": "SiD1",
       "alliance": "AngelicMonaster",
       "server": 112,
@@ -5756,7 +5810,7 @@
     },
     {
       "rank": 637,
-      "player": "MacTepoK",
+      "player": "МастероК",
       "tag": "TuT",
       "alliance": "TheUnholyTriad",
       "server": 105,
