@@ -9,3 +9,7 @@
 .exp-written-analysis table { min-width: 0; max-width: 100%; }
 .exp-hero > *, .exp-scorecards > *, .exp-detail-grid > *, .exp-method-grid > * { min-width: 0; }
 .exp-hero h1, .exp-detail-stat span, .exp-top-list li > span { overflow-wrap: anywhere; }
+
+.exp-disclaimer{border:1px solid var(--line-bright);border-left:4px solid var(--gold);border-radius:9px;background:rgba(227,173,78,.055);padding:24px;margin:24px 0;line-height:1.65}.exp-disclaimer h2{font-size:21px;margin:0 0 14px}.exp-disclaimer p{font-size:14px;color:var(--muted);margin:12px 0}.exp-disclaimer p:last-child{margin-bottom:0}
+
+.exp-report-nav{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}.exp-report-nav a{padding:9px 16px;border:1px solid var(--line);border-radius:6px;color:var(--muted)}.exp-report-nav a[aria-current=page]{border-color:var(--gold);color:var(--gold-pale)}.exp-selection{padding:18px 24px;border:1px solid var(--line);border-radius:9px;margin:24px 0;background:rgba(112,180,238,.05)}.exp-selection strong{color:var(--gold-pale)}.exp-selection p{color:var(--muted);font-size:14px;line-height:1.65;margin-bottom:0}

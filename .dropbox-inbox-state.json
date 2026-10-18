@@ -1,7 +1,7 @@
 {
   "version": 1,
   "dropboxFolder": "/Dateianfragen/Drachenhalle-Inbox",
-  "lastCheckedAt": "2026-10-06T20:34:03+02:00",
+  "lastCheckedAt": "2026-10-18T12:42:00+02:00",
   "processed": [
     {
       "fileId": "id:nTVVCXDkSgcAAAAAAAAADA",
@@ -176,6 +176,123 @@
       "revision": "0165d27afd46604000000038a389113",
       "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-06 - E0437b24_77C6_4C23_A0d3_8F3a5834c197.png",
       "destinationPath": "Galerie/Chatbilder/2026_10_06_1021_Dropsmischung_Drachenherz_Somea_Streetjudge.png"
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAALg",
+      "revision": "0165def8114cf08000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-16 - 5Bc7de43_0Cb1_4Deb_B7a3_8302726Edc8c.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:47Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-16 - 5Bc7de43_0Cb1_4Deb_B7a3_8302726Edc8c.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_16_0845_BasisLevel26_Somea_Streetjudge.png",
+      "style": "S2",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "1c3622acc0e8e4e7f24fdb4b53c05190c062a7087534bee162590a1220b4428d",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAAMg",
+      "revision": "0165def820b5a77000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-16 - C653a18d_6C5a_4C6f_Bb6e_1Ec65ddb2187.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:49Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-16 - C653a18d_6C5a_4C6f_Bb6e_1Ec65ddb2187.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_16_0845_BasisLevel26_Killergruppe.png",
+      "style": "S1",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "189120bd7bc0b4f9879f1f5c99891dd87b7148676acbac4e68b6e8e87a2a120f",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAALQ",
+      "revision": "0165def80d37729000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-16 - E2e98e6c_8Dad_485A_9Beb_A8d8338d48ea.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:50Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-16 - E2e98e6c_8Dad_485A_9Beb_A8d8338d48ea.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_16_0844_HerzenVerteilen_Somea_Anthlan_DaVinci1986_mysteryZ.png",
+      "style": "S2",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "cb7fc85a2ee0acc1b59011f8f00b0f279f8f27dea6405593348348d930a51899",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAALA",
+      "revision": "0165de6a898d530000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-15 - File_000000002584820E8f5c8a7e2c8f9b9a.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:51Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-15 - File_000000002584820E8f5c8a7e2c8f9b9a.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_15_2211_BasisLevel28_Anthlan.png",
+      "style": "S1",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "88f64d375fcbdae0ec26fa30194c502ad6b9f4dc9c9476ca4ffb903731198d95",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAALw",
+      "revision": "0165def81520021000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-16 - 0250Ee02_A129_4Cc6_8D05_08487Bf8bf58.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:52Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-16 - 0250Ee02_A129_4Cc6_8D05_08487Bf8bf58.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_16_0845_BasisLevel26_Streetjudge.png",
+      "style": "S1",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "3c0877a716f03fae9968dbfe14707a466c9e78c19dd0af42bc577635c1c0e421",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAAMQ",
+      "revision": "0165def81d3d7ec000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-16 - 39682427_8162_41D9_876B_581C610506c3.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:53Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-16 - 39682427_8162_41D9_876B_581C610506c3.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_16_0845_ZurueckZumZug_Skibbi_Killergruppe.png",
+      "style": "S1",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "454b85075cdec727c0b0f9a8010271525e6a181d3769485f8bb7573524d37405",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAAKg",
+      "revision": "0165de6a80e47d4000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-15 - File_0000000022Ec81f495369ba71f4125c7.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:55Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-15 - File_0000000022Ec81f495369ba71f4125c7.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_15_2211_WaechtertestLevel150_Somea_Drachenherz.png",
+      "style": "S2",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "906acaf1cd167b1dbdcc0cf14b17a41e78a31263c23902f92cb317baeaebf543",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAAMA",
+      "revision": "0165def8196ea4e000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-16 - C84a804e_1Ee6_459C_9622_8F7d9f3a7495.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:56Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-16 - C84a804e_1Ee6_459C_9622_8F7d9f3a7495.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_16_0845_BasisLevel29_Drachenherz.png",
+      "style": "S1",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "75f9bf5a93c11b3891ba5ebaa648d2b9154af70c4c97bf697c074392ea7a12df",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
+    },
+    {
+      "fileId": "id:nTVVCXDkSgcAAAAAAAAAKw",
+      "revision": "0165de6a851ed87000000038a389113",
+      "archivedSourcePath": "/Dateianfragen/Done/2026-10-15 - File_00000000Ff448210a9e5d13175e46332.png",
+      "dropboxMoveStatus": "success",
+      "dropboxMovedAt": "2026-10-18T10:42:57Z",
+      "sourcePath": "/Dateianfragen/Drachenhalle-Inbox/2026-10-15 - File_00000000Ff448210a9e5d13175e46332.png",
+      "destinationPath": "Galerie/Chatbilder/2026_10_15_2211_GrueneSuperpille_Somea_Streetjudge.png",
+      "style": "S2",
+      "timestampSource": "Dropbox client_modified, Europe/Berlin",
+      "contentHash": "aaf9f4ba51f2c4da9f2fadd68c86e33bd3333484d394d45a2c67b7a1b41a2fa3",
+      "importNote": "Regulaere Galerie trotz Drachenritter-Beschriftung vom Nutzer am 18.10.2026 freigegeben."
     }
   ]
 }

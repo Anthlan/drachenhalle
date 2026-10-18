@@ -1,0 +1,7 @@
+---
+import ExpeditionReport from "../../../components/ExpeditionReport.astro";
+import { expeditionReports } from "../../../data/expedition-reports";
+export function getStaticPaths(){return expeditionReports.map(report=>({params:{date:report.date},props:{report}}));}
+const { report }=Astro.props;
+---
+<ExpeditionReport report={report} />

@@ -1,0 +1,8 @@
+---
+import methodology from "../data/expedition-methodology.json";
+const text = methodology.de;
+---
+<aside class="exp-disclaimer" aria-labelledby="exp-disclaimer-title">
+  <h2 id="exp-disclaimer-title">{text.title}</h2>
+  {text.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+</aside>

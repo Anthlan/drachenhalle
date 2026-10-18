@@ -1,0 +1,103 @@
+---
+import SocialMeta from "./SocialMeta.astro";
+import SiteHeader from "./SiteHeader.astro";
+import ContentShare from "./ContentShare.astro";
+import ReducedView from "./ReducedView.astro";
+import SiteFooter from "./SiteFooter.astro";
+import ExpeditionDisclaimer from "./ExpeditionDisclaimer.astro";
+import "../styles/global.css";
+import "../styles/expedition.css";
+import { expeditionReports, latestExpeditionReport } from "../data/expedition-reports";
+import { prepareShareAnalysis } from "../scripts/share-analysis.mjs";
+import { marked } from "marked";
+import { analyzeExpedition, share } from "../scripts/expedition-analysis";
+const { report=latestExpeditionReport }=Astro.props;
+const {data,opponentServer}=report;
+const players=data.players.filter(player=>player.points>=report.minimumPoints);
+const analysis=analyzeExpedition(players,data.alliances);
+const home=analysis.servers.find(s=>s.server===105)!;
+const opponent=analysis.servers.find(s=>s.server===opponentServer)!;
+const pairPoints=home.points+opponent.points;
+const pairCount=home.count+opponent.count;
+const number=(value:number)=>Math.round(value).toLocaleString("de-DE");
+const percent=(value:number)=>(value*100).toLocaleString("de-DE",{maximumFractionDigits:1})+" %";
+const reportUrl=`/drachenhalle/auswertungen/expeditionswahnsinn/${report.date}/`;
+const title=`Hauptstadteroberung · ${report.label} · DIE Drachenhalle`;
+const description=`Systempunkte zur Hauptstadteroberung vom ${report.label}. Ranglistendaten, Aussagegrenzen und Beobachtungen.`;
+const introduction=`Vergleicht die vom System erfassten Punkte von S105 und S${opponentServer} und schaut euch die Ranglisteneinträge jeder Allianz an.`;
+const snapshot=report.minimumPoints?"Rangliste: 17.10.2026 · Allianzüberblicke: 18.10.2026":"Stand der Screenshots: 10.10.2026 · 16:49 Uhr";
+const selectionTitle=report.minimumPoints?"Mindestens 1.000 Systempunkte":"Historische Ansicht ohne Mindestpunktfilter";
+const selectionNotice=report.minimumPoints?"Diese Auswertung zählt ausschließlich Spieler mit mindestens 1.000 Eventpunkten. 655 von 720 erfassten Einträgen erfüllen diese Grenze. Die nicht fotografierte Fortsetzung liegt bei höchstens 250 Punkten und damit sicher darunter. Dies ist ein statistischer Filter, keine Bewertung tatsächlicher Beteiligung.":"Alle 563 erfassten Ranglisteneinträge bleiben in dieser historischen Ansicht enthalten. Im Wochenvergleich werden dagegen beide Wochen mit derselben Mindestgrenze neu berechnet.";
+const coverageNotice=report.minimumPoints?"Ranglistenquote = Spieler ab 1.000 Punkten ÷ Mitgliederzahl der Momentaufnahme. Von 20 Allianzüberblicken sind 19 eindeutig zugeordnet; ein verdeckter Allianztitel wird nicht für Quoten verwendet. Die Quote misst keine tatsächliche Teilnahme.":"Ranglistenquote = erfasste Spieler ÷ Mitgliederzahl der Momentaufnahme. Mitgliederzahlen liegen für 20 Allianzen von S105 vor. Die Quote misst keine tatsächliche Teilnahme.";
+const sourceNotice=report.minimumPoints?"720 Ränge aus 79 Ranglistenbildern; 655 Spieler ab 1.000 Punkten werden ausgewertet. 25 Allianzaufnahmen ergeben 20 verschiedene Überblicke. Ein gleichzeitiger Endstand der Schlacht ist nicht belegt.":"563 Spieler aus 60 Ranglistenbildern, ergänzt um 20 Allianzüberblicke von S105. Stand: 10.10.2026 gegen 16:49 Uhr. Die Zahlen belegen nicht den Ausgang der Schlacht.";
+const analysisHtml=prepareShareAnalysis(marked.parse(report.analysisText.replace(/^# .*\r?\n/,"")));
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} /><title>{title}</title>
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <SocialMeta title={title} description={description} />
+  </head>
+  <body><ReducedView /><div class="page-shell">
+    <SiteHeader active="alliance" />
+    <main id="main-content" class="expedition">
+      <ContentShare url={reportUrl} /><nav class="exp-report-nav" aria-label="Auswertung auswählen">{expeditionReports.map(item => <a href={`/drachenhalle/auswertungen/expeditionswahnsinn/${item.date}/`} aria-current={item.date===report.date?"page":undefined}>{item.label}</a>)}</nav><header class="exp-hero">
+        <div><p class="eyebrow">Event-Auswertung · {report.label}</p><h1>Expeditionswahnsinn<span>Hauptstadteroberung</span></h1><p>{introduction}</p><div class="exp-jumps"><a href="#allianzen">Allianzen vergleichen ↓</a><a href="#spieler">Spieler finden ↓</a><a href="#daten">Datengrundlage ↓</a><a href="#analyse">Analyse lesen ↓</a></div></div>
+        <div class="exp-seal"><strong>{analysis.count}</strong><span>Spieler in dieser Auswertung</span><small>{snapshot}</small></div>
+      </header>
+
+      <ExpeditionDisclaimer /><aside class="exp-selection"><strong>{selectionTitle}</strong><p>{selectionNotice}</p></aside>
+      <section aria-labelledby="server-title" class="exp-section">
+        <div class="exp-heading"><div><p class="eyebrow">Unser Server und der Gegner</p><h2 id="server-title">S105 vs. S{opponentServer}</h2></div><span class="exp-caption">Anteile beziehen sich hier auf diese beiden Server.</span></div>
+        <div class="exp-scorecards">
+          {[home,opponent].map(server => <article class:list={["exp-scorecard",server.server===105?"home":"opponent"]}>
+            <div class="exp-card-label"><span>S{server.server}</span><small>{server.server===105?"Unser Server":"Gegnerserver"}</small></div>
+            <strong class="exp-total">{number(server.points)}<small>Punkte</small></strong>
+            <div class="exp-card-stats"><div><b>{server.count}</b><span>Spieler</span></div><div><b>{number(server.average)}</b><span>Ø Punkte / Spieler</span></div><div><b>{number(server.median)}</b><span>Median / Spieler</span></div></div>
+            <p><b>{percent(share(server.points,pairPoints))}</b> der gemeinsamen Punkte · <b>{percent(share(server.count,pairCount))}</b> der Spieler</p>
+          </article>)}
+        </div>
+        <div class="exp-comparison">
+          <div class="exp-heading"><h3>Wie verteilen sich die Anteile?</h3><div class="exp-toggle" role="group" aria-label="Serververgleich nach Kennzahl"><button type="button" data-server-metric="points" aria-pressed="true">Punkte</button><button type="button" data-server-metric="count" aria-pressed="false">Spieler</button></div></div>
+          <div class="exp-share-bar" id="server-share-bar" role="img" aria-label={`Punkteanteile: S105 ${percent(share(home.points,pairPoints))}, S${opponentServer} ${percent(share(opponent.points,pairPoints))}`}><span class="home" style={`width:${share(home.points,pairPoints)*100}%`}>S105 · {percent(share(home.points,pairPoints))}</span><span class="opponent" style={`width:${share(opponent.points,pairPoints)*100}%`}>S{opponentServer} · {percent(share(opponent.points,pairPoints))}</span></div>
+          <p id="server-insight" class="exp-insight">S105 stellt {percent(share(home.count,pairCount))} der Spieler und erzielt {percent(share(home.points,pairPoints))} der Punkte im direkten Vergleich.</p>
+        </div>
+        <aside class="exp-extra"><strong>Weitere Server in der Auswertung</strong>{analysis.servers.filter(server => ![105,opponentServer].includes(server.server)).map(server => <span>S{server.server}: {server.count} Spieler · {number(server.points)} Punkte</span>)}<small>Diese Einträge sind im direkten Vergleich oben nicht enthalten.</small></aside>
+      </section>
+
+      <section class="exp-section" id="allianzen" aria-labelledby="alliance-title">
+        <div class="exp-heading"><div><p class="eyebrow">Anzahl der Ranglisteneinträge und Verteilung der Systempunkte</p><h2 id="alliance-title">Allianzen im Vergleich</h2></div></div>
+        <div class="exp-controls">
+          <label>Server<select id="exp-server"><option value="">Alle Server</option><option value="105">S105 · unser Server</option><option value={opponentServer}>S{opponentServer} · Gegnerserver</option><option value="other">Weitere Server</option></select></label>
+          <label>Kennzahl<select id="exp-metric"><option value="points">Gesamtpunkte</option><option value="count">Spieler</option><option value="participation">Ranglistenquote</option><option value="average">Punkte pro Spieler</option><option value="pointsPerMember">Punkte pro Allianzmitglied</option></select></label>
+          <label class="exp-search">Allianz suchen<input id="exp-alliance-search" type="search" placeholder="Zum Beispiel DIE oder GGR" /></label>
+        </div>
+        <p class="exp-caption" id="chart-caption">Die 15 Allianzen mit den meisten Punkten. Wählt einen Balken für die Details.</p>
+        <div class="exp-chart" id="exp-chart" aria-label="Allianzvergleich">
+          {analysis.alliances.slice(0,15).map(alliance => <button type="button" class="exp-bar-row" data-alliance={alliance.key} title={`${alliance.name}: ${number(alliance.points)} Punkte`}><span class="exp-bar-label"><b>{alliance.tag||"—"}</b><small>S{alliance.server}</small></span><span class="exp-bar-track"><span class:list={["exp-bar-fill",alliance.server===105?"home":"opponent"]} style={`width:${share(alliance.points,analysis.alliances[0].points)*100}%`}></span></span><strong>{number(alliance.points)}</strong></button>)}
+        </div>
+        <p class="exp-caption">{coverageNotice}</p>
+        <details class="exp-alliance-table"><summary>Alle Allianzen als sortierte Tabelle <span id="alliance-table-count"></span></summary><div class="exp-table-scroll"><table><thead><tr><th>Allianz</th><th>Server</th><th>Spieler</th><th>Mitglieder</th><th>Ranglistenquote</th><th>Punkte</th><th>Ø / Spieler</th><th>Anteil am Server</th></tr></thead><tbody id="exp-alliance-rows"></tbody></table></div></details>
+        <noscript><p>Der Serververgleich und die Grafik sind ohne JavaScript lesbar. Für Filter, Allianzdetails und die Spielersuche bitte JavaScript aktivieren.</p></noscript>
+      </section>
+
+      <section id="allianz-detail" class="exp-section exp-detail" aria-labelledby="detail-title">
+        <div class="exp-heading"><div><p class="eyebrow">Eine Allianz unter der Lupe</p><h2 id="detail-title" tabindex="-1">Unsere Allianz DIE</h2></div><label>Allianz auswählen<select id="exp-detail-select">{analysis.alliances.map(a=><option value={a.key} selected={a.tag==="DIE"}>[{a.tag||"—"}] {a.name} · S{a.server}</option>)}</select></label></div>
+        <div id="exp-detail-content"></div>
+      </section>
+
+      <section id="spieler" class="exp-section" aria-labelledby="players-title">
+        <div class="exp-heading"><div><p class="eyebrow">Vom System erfasste Punkte</p><h2 id="players-title">Rangliste der ausgewerteten Spieler</h2></div><button class="exp-export" type="button" id="exp-export">Auswahl als CSV herunterladen ↓</button></div>
+        <div class="exp-controls"><label class="exp-search">Spieler suchen<input id="exp-player-search" type="search" placeholder="Spielername oder Rang" /></label><label>Allianz<select id="exp-player-alliance"><option value="">Alle Allianzen</option>{analysis.alliances.map(a=><option value={a.key}>[{a.tag||"—"}] {a.name} · S{a.server}</option>)}</select></label><label>Sortieren<select id="exp-player-sort"><option value="rank">Rang aufsteigend</option><option value="name">Spielername A–Z</option><option value="points-asc">Punkte aufsteigend</option></select></label></div>
+        <p id="exp-player-count" class="exp-caption" aria-live="polite"></p>
+        <div class="exp-table-scroll"><table><thead><tr><th>Rang</th><th>Spieler</th><th>Allianz</th><th>Server</th><th>Punkte</th></tr></thead><tbody id="exp-player-rows"></tbody></table></div>
+        <div class="exp-pagination"><button type="button" id="exp-prev">← Zurück</button><span id="exp-page" aria-live="polite"></span><button type="button" id="exp-next">Weiter →</button></div>
+      </section>
+
+      <section id="daten" class="exp-section exp-method" aria-labelledby="method-title"><p class="eyebrow">So lesen wir die Zahlen</p><h2 id="method-title">Datengrundlage &amp; Einordnung</h2><div class="exp-method-grid"><div><h3>Umfang der Erfassung</h3><p>{sourceNotice}</p></div><div><h3>Mitglieder und Ranglistenabdeckung</h3><p>{coverageNotice}</p></div><div><h3>Durchschnitt und Median</h3><p>Der Durchschnitt verteilt die Systempunkte auf die ausgewerteten Spieler. Der Median ist der mittlere Punktwert. Beide beschreiben Punkte, keinen strategischen Nutzen.</p></div><div><h3>Hinweise zu Namen</h3><p>Originalschreibweisen wurden aus den Screenshots übernommen. Ähnlich aussehende Sonderzeichen und Kennungen können nicht immer eindeutig unterschieden werden. Die Zuordnung erfolgt über Rang und Quelle, nicht allein über den Namen.</p></div></div></section>
+      <section id="analyse" class="exp-section exp-written-analysis" aria-labelledby="written-analysis-title"><p class="eyebrow">Einordnung und Aussagegrenzen</p><h2 id="written-analysis-title">Auswertung und Beobachtung</h2><div set:html={analysisHtml} /></section>
+    <script id="expedition-data" type="application/json" set:html={JSON.stringify({...data,players,minimumPoints:report.minimumPoints,opponentServer,date:report.date}).replaceAll("<","\\u003c")} /></main><p class="share-feedback" role="status" aria-live="polite" data-share-feedback></p><SiteFooter />
+  </div><script>import "../scripts/expedition-dashboard"; import { initializeImageActions } from "../scripts/image-actions"; initializeImageActions();</script></body>
+</html>

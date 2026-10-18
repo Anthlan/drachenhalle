@@ -1,0 +1,34 @@
+{
+  "de": {
+    "title": "Was diese Daten aussagen – und was nicht",
+    "paragraphs": [
+      "Diese Auswertung zeigt ausschließlich die vom Spielsystem erfassten Eventpunkte zum jeweiligen Screenshotstand. Sie erlaubt keine verlässliche Aussage über den tatsächlichen strategischen Beitrag einzelner Spieler, Allianzen oder Server zur Hauptstadteroberung.",
+      "Kämpfe im Vorfeld können etwa verhindern, dass sich der Gegner für die Eroberung aufstellt, und damit wesentlich zum Event beitragen, ohne entsprechende Eventpunkte zu erzeugen. Umgekehrt können Angriffe nach der eigentlichen Eroberungsphase, beispielsweise auf sammelnde Basen, hohe Eventpunkte einbringen, ohne zum Eroberungsziel beizutragen. Ob und in welchem Umfang dies geschah, lässt sich aus der Rangliste nicht erkennen.",
+      "Hohe Punktzahlen belegen deshalb keinen hohen strategischen Nutzen; niedrige oder fehlende Punkte belegen keinen fehlenden Einsatz. Ranglistenquoten beschreiben nur die statistisch erfassten Spieler. Sie bewerten weder tatsächliche Teilnahme noch Unterstützung, Einsatzbereitschaft oder Leistung."
+    ]
+  },
+  "en": {
+    "title": "What these data can and cannot tell us",
+    "paragraphs": [
+      "This analysis shows only the event points recorded by the game system at the time of each screenshot. It cannot reliably establish the actual strategic contribution of individual players, alliances or servers to Capital Conquest.",
+      "Fighting before the conquest may prevent opponents from taking up their positions and make a substantial contribution without earning corresponding event points. Conversely, attacks after the actual conquest phase, for example on bases engaged in gathering, may earn high event points without contributing to the conquest objective. The rankings do not show whether or to what extent either occurred.",
+      "High point totals therefore do not establish high strategic value; low or missing points do not establish a lack of effort. Leaderboard coverage describes only the players recorded statistically. It does not assess actual participation, support, commitment or performance."
+    ]
+  },
+  "ru": {
+    "title": "Что показывают эти данные и чего они не показывают",
+    "paragraphs": [
+      "В этом анализе представлены только очки события, учтённые игровой системой на момент каждого снимка экрана. По ним нельзя достоверно оценить реальный стратегический вклад отдельных игроков, альянсов или серверов в захват столицы.",
+      "Бои до начала захвата могут помешать противнику занять позиции и внести значительный вклад в событие, не принося соответствующих очков. И наоборот, атаки после основной фазы захвата, например на базы, занимающиеся сбором ресурсов, могут принести много очков, не способствуя захвату столицы. Рейтинг не позволяет установить, происходило ли это и в каком объёме.",
+      "Поэтому высокие очки не доказывают высокую стратегическую пользу, а низкие очки или их отсутствие не доказывают отсутствие усилий. Доля игроков в рейтинге описывает только статистически учтённых игроков. Она не оценивает фактическое участие, поддержку, готовность помочь или результативность."
+    ]
+  },
+  "pt": {
+    "title": "O que estes dados mostram — e o que não mostram",
+    "paragraphs": [
+      "Esta análise apresenta apenas os pontos do evento registrados pelo sistema do jogo no momento de cada captura de tela. Eles não permitem avaliar com segurança a contribuição estratégica real de jogadores, alianças ou servidores para a Conquista da Capital.",
+      "Combates antes da conquista podem impedir que o adversário se posicione e contribuir muito para o evento sem gerar os pontos correspondentes. Por outro lado, ataques após a fase principal da conquista, por exemplo contra bases ocupadas com coleta, podem render muitos pontos sem contribuir para o objetivo da conquista. O ranking não mostra se isso aconteceu nem em que medida.",
+      "Portanto, muitos pontos não comprovam grande valor estratégico; poucos pontos ou a ausência deles não comprovam falta de esforço. A proporção no ranking descreve apenas os jogadores contabilizados estatisticamente. Ela não avalia participação real, apoio, dedicação ou desempenho."
+    ]
+  }
+}

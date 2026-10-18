@@ -4,6 +4,12 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 
 ## S1 – Filmische Allianz-Fantasy
 
+- [2026_10_16_0845_BasisLevel26_Killergruppe.png](Chatbilder/2026_10_16_0845_BasisLevel26_Killergruppe.png)
+- [2026_10_15_2211_BasisLevel28_Anthlan.png](Chatbilder/2026_10_15_2211_BasisLevel28_Anthlan.png)
+- [2026_10_16_0845_BasisLevel26_Streetjudge.png](Chatbilder/2026_10_16_0845_BasisLevel26_Streetjudge.png)
+- [2026_10_16_0845_ZurueckZumZug_Skibbi_Killergruppe.png](Chatbilder/2026_10_16_0845_ZurueckZumZug_Skibbi_Killergruppe.png)
+- [2026_10_16_0845_BasisLevel29_Drachenherz.png](Chatbilder/2026_10_16_0845_BasisLevel29_Drachenherz.png)
+
 - [2026_10_04_2236_Waechter100_DasErsteBanner.png](Chatbilder/2026_10_04_2236_Waechter100_DasErsteBanner.png)
 - [2026_10_04_2236_Waechter110_DieLaterneImNebel.png](Chatbilder/2026_10_04_2236_Waechter110_DieLaterneImNebel.png)
 - [2026_10_04_2236_Waechter120_DerLetzteSchild.png](Chatbilder/2026_10_04_2236_Waechter120_DerLetzteSchild.png)
@@ -64,8 +70,14 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_10_06_1022_Augenhoehe_Somea_Anthlan.png](Chatbilder/2026_10_06_1022_Augenhoehe_Somea_Anthlan.png)
 - [2026_10_11_1533_Sonntagsblues_Allianzensemble.png](Chatbilder/2026_10_11_1533_Sonntagsblues_Allianzensemble.png)
 - [2026_10_11_2137_NurEinWaechter_Anthlan_Drachenherz.png](Chatbilder/2026_10_11_2137_NurEinWaechter_Anthlan_Drachenherz.png)
+- [2026_10_18_1232_BasisLevel23_Kaylani_Anthlan_Somea_mysteryZ_Drachenherz_DaVinci1986.png](Chatbilder/2026_10_18_1232_BasisLevel23_Kaylani_Anthlan_Somea_mysteryZ_Drachenherz_DaVinci1986.png)
 
 ## S2 – Fantasy-Comic & Infografik
+
+- [2026_10_16_0845_BasisLevel26_Somea_Streetjudge.png](Chatbilder/2026_10_16_0845_BasisLevel26_Somea_Streetjudge.png)
+- [2026_10_16_0844_HerzenVerteilen_Somea_Anthlan_DaVinci1986_mysteryZ.png](Chatbilder/2026_10_16_0844_HerzenVerteilen_Somea_Anthlan_DaVinci1986_mysteryZ.png)
+- [2026_10_15_2211_WaechtertestLevel150_Somea_Drachenherz.png](Chatbilder/2026_10_15_2211_WaechtertestLevel150_Somea_Drachenherz.png)
+- [2026_10_15_2211_GrueneSuperpille_Somea_Streetjudge.png](Chatbilder/2026_10_15_2211_GrueneSuperpille_Somea_Streetjudge.png)
 
 - [2026_08_25_1206_NichtZuendeln.png](Chatbilder/2026_08_25_1206_NichtZuendeln.png)
 - [2026_08_31_1117_AOKChopper_Bertpfanne.png](Chatbilder/2026_08_31_1117_AOKChopper_Bertpfanne.png)

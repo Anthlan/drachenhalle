@@ -1,66 +1,51 @@
-# Análise da Conquista de Capitais para 10 de Outubro de 2026
+# Análise da Conquista da Capital em 10 de outubro de 2026
 
-**O S105 tem mais jogadores no ranking, enquanto o S97 ganha substancialmente mais pontos. A participação é uma área importante para a melhoria da nossa aliança DIE: os nossos 15 participantes registados conseguem um retorno de pontos mais elevado do que a média S105.**
+O ranking contém mais jogadores do S105; o S97 tem mais pontos registrados pelo sistema. Isso descreve a pontuação capturada, não a contribuição estratégica para a conquista.
 
-## Comparar S105 e S97
+## O que estes dados mostram — e o que não mostram
 
-| Métrica | S105 | S97 |
+Esta análise apresenta apenas os pontos do evento registrados pelo sistema do jogo no momento de cada captura de tela. Eles não permitem avaliar com segurança a contribuição estratégica real de jogadores, alianças ou servidores para a Conquista da Capital.
+
+Combates antes da conquista podem impedir que o adversário se posicione e contribuir muito para o evento sem gerar os pontos correspondentes. Por outro lado, ataques após a fase principal da conquista, por exemplo contra bases ocupadas com coleta, podem render muitos pontos sem contribuir para o objetivo da conquista. O ranking não mostra se isso aconteceu nem em que medida.
+
+Portanto, muitos pontos não comprovam grande valor estratégico; poucos pontos ou a ausência deles não comprovam falta de esforço. A proporção no ranking descreve apenas os jogadores contabilizados estatisticamente. Ela não avalia participação real, apoio, dedicação ou desempenho.
+
+## Pontos do sistema por servidor
+
+| Indicador | S105 | S97 |
 | --- | ---: | ---: |
-| Participantes do ranking | 318 | 242 |
-| Proporção dos participantes de ambos os servidores | 56.8% | 43.2% |
-| Pontos totais | 184.974.397 | 281.527.891 |
-| Proporção de pontos de ambos os servidores | 39.7% | 60.3% |
-| Média por participante | 581.680 | 1.163.338 |
-| Mediana por participante | 296.032 | 1.192.870 |
+| Jogadores registrados | 318 | 242 |
+| Total de pontos | 184.974.397 | 281.527.891 |
+| Parcela dos pontos dos dois servidores | 39,7% | 60,3% |
+| Média por jogador registrado | 581.680 | 1.163.338 |
+| Mediana por jogador registrado | 296.032 | 1.192.870 |
 
-O S105 tem 76 participantes a mais do que o S97. No entanto, a S97 lidera por cerca de 96,6 milhões de pontos. Em média, o S97 ganha quase o dobro dos pontos por participante registado.
+No registro capturado, o S97 supera o S105 em 96.553.494 pontos do sistema. Sua mediana também é maior. O ranking não explica quais ações geraram esses pontos.
 
-A mediana revela a diferença em todo o campo. É o valor médio no ranking de um servidor. Na S97, é de cerca de 1,19 milhões de pontos, aproximadamente quatro vezes a média da S105. A vantagem não depende, portanto, apenas de algumas contribuições principais: o participante de nível médio da S97 também ganha consideravelmente mais pontos.
+## Limites da interpretação
 
-A classificação sozinha não pode dizer-nos se a força dos jogadores, o tempo gasto, os papéis atribuídos ou outros fatores causaram essa diferença. Na próxima análise, seria útil comparar os dados dos pontos com a nossa experiência prática durante o evento.
+Esses dados não permitem determinar sucesso em combate, controle territorial, importância de ações individuais, tempo de jogo, perdas ou apoio fora da pontuação. Recomendações sobre posicionamento, funções ou dedicação exigem observações adicionais e relatórios de combate.
 
-## Que alianças contribuem para os pontos
+## Nossa aliança DIE
 
-No S105, a IGGG lidera com 44,05 milhões de pontos, seguida pela GGR com 40,55 milhões e pela BT com 22,50 milhões. Juntos, ganham **57,9% de todos os pontos S105**. A TuT segue com 21,72 milhões e a Lrs com 13,96 milhões de pontos.
+| Indicador | DIE |
+| --- | ---: |
+| Pontos do sistema | 9.564.831 |
+| Jogadores registrados / membros no panorama | 15 / 58 |
+| Proporção no ranking | 25,9% |
+| Média por jogador registrado | 637.655 |
+| Mediana por jogador registrado | 762.697 |
 
-No S97, a IGA lidera com 58,00 milhões, a KKL com 48,00 milhões e a KVIZ com 44,08 milhões de pontos. A participação combinada dos servidores é de 53,3%. Por trás deles, a CrZ contribui com outros 43,42 milhões de pontos. Por conseguinte, a S97 possui quatro alianças superiores a 40 milhões de pontos, em comparação com duas na S105.
+A DIE ocupa o sexto lugar entre as alianças do S105 por pontos registrados e representa 5,2% dos pontos do sistema desse servidor. Há 15 de 58 membros no ranking. Essa proporção não mede a participação real no evento; a ausência dos outros 43 membros não comprova falta de contribuição.
 
-Entre as 20 alianças com números conhecidos de membros, a IGGG e a TuT lideram a participação relativa:
+As cinco maiores pontuações somam 58,6% dos pontos registrados da aliança, e as dez maiores, 93,7%. Isso descreve a distribuição de pontos e não permite classificar a utilidade estratégica real dos jogadores.
 
-| Aliança S105 | Participantes / membros | Participação |
-| --- | ---: | ---: |
-| IGGG | 38 / 62 | 61.3% |
-| O TTU | 33 / 64 | 51.6% |
-| GGR | 38 / 99 | 38.4% |
-| BTs | 27 / 79 | 34.2% |
-| LIG | 19 / 60 | 31.7% |
-| Lrs | 21 / 80 | 26.3% |
-| DIE | 15 / 58 | 25.9% |
+## Fontes dos dados
 
-A IGGG e a GGR têm cada um 38 jogadores no ranking. A IGGG tem menos membros, por isso a sua taxa de participação é consideravelmente maior. O nosso planejamento deve, portanto, ter em conta tanto o número de participantes como a sua parte na aliança. Os números de membros não estão disponíveis para o S97, de modo que as taxas de participação não podem ser comparadas entre os servidores.
+O ranking fotografado completo contém 563 jogadores e 466.531.316 pontos em 60 capturas, além de 20 panoramas de alianças do S105. As imagens são de aproximadamente 16h49 de 10 de outubro de 2026; isso não comprova um resultado final da batalha em um momento comum.
 
-## A nossa aliança DIE .
+A comparação direta abrange 560 jogadores dos servidores S105 e S97. Três registros adicionais de S108, S110 e S112, com 29.028 pontos no total, ficam fora dela. A quantidade de membros é um retrato do momento; médias e medianas são arredondadas para pontos inteiros.
 
-Nós ganhamos **9.564.831 pontos**, que ocupa o sexto lugar entre as alianças S105 por pontos totais. A nossa contribuição representa 5,2% dos pontos do nosso servidor.
+Esta visualização histórica inclui todos os registros sem um filtro de pontuação mínima. Uma comparação semanal deve aplicar o mesmo mínimo às duas semanas. O filtro define uma seleção estatística, não uma participação comprovada.
 
-15 dos 58 membros aparecem no ranking. Com 25,9%, a nossa participação é a sétima entre as 20 alianças com contagem de membros conhecida. Os restantes 43 membros não têm nenhuma entrada de classificação neste snapshot; isso não diz nada sobre sua disponibilidade ou seus papéis durante o evento.
-
-Os nossos participantes mediram 637.655 pontos, cerca de 9,6% acima da média S105. A média é de 762.697 pontos. Por conseguinte, o nosso participante de nível médio também ganha substancialmente mais pontos do que o participante do ranking médio da S105.
-
-O Markus78 faz a maior contribuição individual com 1.569.148 pontos, seguido por Anthlan com 1.442.449. Os cinco jogadores com maior pontuação ganham 58,6% dos pontos da nossa aliança, e os dez primeiros ganham 93,7%. Vários agentes-chave contribuem para o nosso resultado, mas está claramente concentrado entre esses dez.
-
-## Áreas para o próximo evento
-
-Um primeiro objetivo útil para a DIE seria envolver mais membros com uma contribuição mensurável. **Com a participação inalterada de 58 membros, 20 participantes significariam uma taxa de participação de 34,5%.** Isso significaria cinco participantes adicionais e aproximadamente a taxa atual de BTs. Não implica qualquer pontuação adicional específica.
-
-Antes do próximo evento, devemos esclarecer quem pode participar, quais papéis correspondem às suas capacidades e que apoio precisam. Depois, podemos verificar se uma participação mais ampla também melhora os pontos totais e a média. A mera participação nos rankings e a contribuição de pontos maiores devem ser consideradas separadamente.
-
-Para a comparação do servidor, a questão central é como mais dos nossos participantes já gravados podem alcançar contribuições maiores. A experiência da IGGG e da TuT com uma ampla participação, e a experiência das alianças de alta pontuação durante as suas implantações, podem ser úteis.
-
-## Base de dados
-
-O ranking completo inclui 563 jogadores e 466.531.316 pontos em 60 capturas de tela, além de 20 visões gerais da aliança da S105. As capturas de tela foram tiradas em 10 de outubro de 2026 por volta das 16:49 e descrevem os pontos naquele momento, em vez do resultado da batalha.
-
-A comparação direta inclui apenas os 560 jogadores dos S105 e S97. São excluídas dessa comparação outras três entradas de S108, S110 e S112, totalizando 29.028 pontos. A participação aqui significa jogadores com uma entrada de classificação dividida pela adesão da aliança na instantânea. As médias e as médias são arredondadas para pontos inteiros.
-
-[Compare alianças e procure atores individuais na infografia interativa.](/drachenhalle/pt/auswertungen/expeditionswahnsinn/)
+[Consultar alianças e registros individuais na infografia interativa.](/drachenhalle/auswertungen/expeditionswahnsinn/)
