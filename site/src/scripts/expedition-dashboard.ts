@@ -1,10 +1,10 @@
 import {translateClient as t} from "../i18n/client";
 import type { ExpeditionPlayer, AllianceOverview } from "./expedition-analysis";
-const data=JSON.parse(document.querySelector("#expedition-data")!.textContent!) as {players:ExpeditionPlayer[];alliances:AllianceOverview[];opponentServer:number;date:string};
+const data=JSON.parse(document.querySelector("#expedition-data")!.textContent!) as {allPlayers:ExpeditionPlayer[];minimumPoints:number;players:ExpeditionPlayer[];alliances:AllianceOverview[];opponentServer:number;date:string};
 const opponentServer=data.opponentServer;
 import { analyzeExpedition, allianceKey, share } from "./expedition-analysis";
 
-const analysis = analyzeExpedition(data.players, data.alliances);
+let analysis = analyzeExpedition(data.players, data.alliances);
 type Alliance = typeof analysis.alliances[number];
 type Metric = "points" | "count" | "participation" | "average" | "pointsPerMember";
 const $ = <T extends HTMLElement = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
@@ -106,4 +106,44 @@ $("#exp-export").onclick=()=>{
   const csv='\uFEFF'+[heading,...filteredPlayers().map(p=>[p.rank,p.player,p.tag,p.tag==='DIE'?'DIE':p.alliance,p.server,p.points].map(cell).join(';'))].join('\r\n');
   const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='Expeditionswahnsinn_'+data.date.replaceAll('-','_')+'.csv';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
-selectAlliance(selectedAlliance);renderPlayers();
+
+const minimumRange=$<HTMLInputElement>('#exp-minimum');
+const minimumNumber=$<HTMLInputElement>('#exp-minimum-number');
+function applyMinimum(value:number) {
+  const minimum=Number.isFinite(value)?Math.max(1000,Math.min(1000000,Math.round(value/1000)*1000)):1000;
+  minimumRange.value=minimumNumber.value=String(minimum);
+  minimumRange.setAttribute('aria-valuetext',number(minimum)+' '+t('Punkte'));
+  data.players=data.allPlayers.filter(player=>player.points>=minimum);
+  analysis=analyzeExpedition(data.players,data.alliances);
+  page=0;
+  $('#exp-selected-count').textContent=String(analysis.count);
+  $('#exp-selection-title').textContent=t('Mindestens ${minimum} Systempunkte').replace('${minimum}',number(minimum));
+  $('#exp-selection-notice').textContent=t('Diese Ansicht berücksichtigt ${count} von ${captured} erfassten Spielern mit mindestens ${minimum} Eventpunkten. Dies ist ein statistischer Filter, keine Bewertung tatsächlicher Beteiligung.').replace('${count}',String(analysis.count)).replace('${captured}',String(data.allPlayers.length)).replace('${minimum}',number(minimum));
+  const home=analysis.servers.find(s=>s.server===105)!;
+  const opponent=analysis.servers.find(s=>s.server===opponentServer)!;
+  const points=home.points+opponent.points,count=home.count+opponent.count;
+  document.querySelectorAll<HTMLElement>('.exp-scorecard').forEach((card,index)=>{
+    const server=index===0?home:opponent;
+    card.querySelector('.exp-total')!.innerHTML=number(server.points)+'<small>'+t('Punkte')+'</small>';
+    card.querySelectorAll('.exp-card-stats b').forEach((value,i)=>value.textContent=[String(server.count),number(server.average),number(server.median)][i]);
+    const values=card.querySelectorAll('p b');values[0].textContent=percent(share(server.points,points));values[1].textContent=percent(share(server.count,count));
+  });
+  $('#server-insight').textContent=t('S105 stellt ${count} der Spieler und erzielt ${points} der Punkte im direkten Vergleich.').replace('${count}',percent(share(home.count,count))).replace('${points}',percent(share(home.points,points)));
+  const extras=document.querySelector('.exp-extra')!;extras.querySelectorAll('span').forEach(span=>span.remove());
+  analysis.servers.filter(s=>![105,opponentServer].includes(s.server)).forEach(server=>{const span=document.createElement('span');span.textContent=t('S${server}: ${count} Spieler · ${points} Punkte').replace('${server}',String(server.server)).replace('${count}',String(server.count)).replace('${points}',number(server.points));extras.insertBefore(span,extras.querySelector('small'));});
+  for(const select of [detailSelect,playerAlliance]){
+    const previous=select.value;
+    select.innerHTML=(select===playerAlliance?'<option value="">'+t('Alle Allianzen')+'</option>':'')+analysis.alliances.map(a=>'<option value="'+escape(a.key)+'">['+escape(a.tag||'—')+'] '+escape(a.name)+' · S'+a.server+'</option>').join('');
+    select.value=analysis.alliances.some(a=>a.key===previous)?previous:(select===playerAlliance?'':'105:DIE');
+  }
+  if(!analysis.alliances.some(a=>a.key===selectedAlliance))selectedAlliance='105:DIE';
+  selectAlliance(selectedAlliance);renderPlayers();
+  document.querySelector<HTMLButtonElement>('[data-server-metric][aria-pressed="true"]')?.click();
+  const url=new URL(location.href);url.searchParams.set('min',String(minimum));history.replaceState(null,'',url);
+  document.querySelectorAll<HTMLElement>('[data-share-page]').forEach(button=>{const shareUrl=new URL(button.dataset.shareUrl||location.href,location.href);shareUrl.searchParams.set('min',String(minimum));button.dataset.shareUrl=shareUrl.pathname+shareUrl.search;});
+  document.querySelectorAll<HTMLAnchorElement>('.exp-report-nav a').forEach(link=>{const target=new URL(link.href);target.searchParams.set('min',String(minimum));if(url.searchParams.get('view')==='content')target.searchParams.set('view','content');link.href=target.toString();});
+}
+minimumRange.oninput=()=>applyMinimum(Number(minimumRange.value));
+minimumNumber.onchange=()=>applyMinimum(Number(minimumNumber.value));
+window.addEventListener('pageshow',()=>applyMinimum(Number(new URLSearchParams(location.search).get('min')||data.minimumPoints)));
+applyMinimum(Number(new URLSearchParams(location.search).get('min')||data.minimumPoints));

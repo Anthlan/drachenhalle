@@ -1,10 +1,23 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import current from "../src/data/expedition-2026-10-17.json" with { type: "json" };
+import previous from "../src/data/expedition-2026-10-10.json" with { type: "json" };
 import { analyzeExpedition } from "../src/scripts/expedition-analysis.ts";
 import { readFile } from "node:fs/promises";
 import { marked } from "marked";
 import { prepareShareAnalysis } from "../src/scripts/share-analysis.mjs";
+
+test("higher threshold compares both weeks consistently without changing original ranks",()=>{
+  for(const [data,count,homeCount,dieCount] of [[previous,453,217,12],[current,545,184,11]] as const){
+    const selected=data.players.filter(p=>p.points>=50000);
+    assert.equal(selected.length,count);
+    const summary=analyzeExpedition(selected,data.alliances);
+    assert.equal(summary.servers.find(s=>s.server===105)?.count,homeCount);
+    assert.equal(summary.alliances.find(a=>a.tag==='DIE')?.count,dieCount);
+    assert.ok(selected.every(p=>data.players.find(source=>source.rank===p.rank)?.points===p.points));
+    assert.ok(summary.servers.find(s=>s.server===105)!.points/analyzeExpedition(data.players.filter(p=>p.points>=1000),data.alliances).servers.find(s=>s.server===105)!.points>0.99);
+  }
+});
 
 test("October 17 covers every captured rank and excludes unidentified membership data", () => {
   assert.equal(current.players.length,720);

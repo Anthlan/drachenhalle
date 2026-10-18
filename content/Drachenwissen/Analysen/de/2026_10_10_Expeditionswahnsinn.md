@@ -14,13 +14,13 @@ Hohe Punktzahlen belegen deshalb keinen hohen strategischen Nutzen; niedrige ode
 
 | Kennzahl | S105 | S97 |
 | --- | ---: | ---: |
-| Erfasste Spieler | 318 | 242 |
-| Gesamtpunkte | 184.974.397 | 281.527.891 |
+| Erfasste Spieler | 248 | 242 |
+| Gesamtpunkte | 184.959.827 | 281.527.891 |
 | Anteil an den Punkten beider Server | 39,7 % | 60,3 % |
-| Durchschnitt pro erfasstem Spieler | 581.680 | 1.163.338 |
-| Median pro erfasstem Spieler | 296.032 | 1.192.870 |
+| Durchschnitt pro erfasstem Spieler | 745.806 | 1.163.338 |
+| Median pro erfasstem Spieler | 541.687 | 1.192.870 |
 
-S97 liegt im erfassten Stand um 96.553.494 Systempunkte vor S105. Auch der Median der erfassten Punktzahlen ist höher. Die Rangliste erklärt nicht, welche Aktionen diese Punkte erzeugt haben.
+S97 liegt im erfassten Stand um 96.568.064 Systempunkte vor S105. Auch der Median der erfassten Punktzahlen ist höher. Die Rangliste erklärt nicht, welche Aktionen diese Punkte erzeugt haben.
 
 ## Grenzen der Interpretation
 
@@ -30,13 +30,13 @@ Aus diesen Daten lassen sich weder Kampferfolg, Gebietskontrolle oder die Bedeut
 
 | Kennzahl | DIE |
 | --- | ---: |
-| Systempunkte | 9.564.831 |
-| Erfasste Spieler / Mitglieder im Überblick | 15 / 58 |
-| Ranglistenquote | 25,9 % |
-| Durchschnitt pro erfasstem Spieler | 637.655 |
-| Median pro erfasstem Spieler | 762.697 |
+| Systempunkte | 9.563.043 |
+| Erfasste Spieler / Mitglieder im Überblick | 12 / 58 |
+| Ranglistenquote | 20,7 % |
+| Durchschnitt pro erfasstem Spieler | 796.920 |
+| Median pro erfasstem Spieler | 796.040 |
 
-DIE belegt im erfassten Punktestand den sechsten Platz unter den Allianzen von S105 und erzielt 5,2 % der Systempunkte dieses Servers. 15 von 58 Mitgliedern erscheinen in der Rangliste. Die Quote ist keine Messung der tatsächlichen Eventteilnahme; aus den übrigen 43 Mitgliedern ohne Eintrag folgt kein fehlender Beitrag.
+DIE belegt im erfassten Punktestand den sechsten Platz unter den Allianzen von S105 und erzielt 5,2 % der Systempunkte dieses Servers. 12 von 58 Mitgliedern erreichen mindestens 1.000 Punkte. Die Quote ist keine Messung der tatsächlichen Eventteilnahme; aus den übrigen 46 Mitgliedern unterhalb der Grenze folgt kein fehlender Beitrag.
 
 Die fünf höchsten Punktzahlen ergeben zusammen 58,6 % der erfassten Allianzpunkte, die zehn höchsten 93,7 %. Das beschreibt die Punkteverteilung und erlaubt keine Rangfolge des tatsächlichen strategischen Nutzens einzelner Spieler.
 
@@ -44,8 +44,8 @@ Die fünf höchsten Punktzahlen ergeben zusammen 58,6 % der erfassten Allianzpun
 
 Die vollständige fotografierte Rangliste umfasst 563 Spieler und 466.531.316 Punkte aus 60 Screenshots. Hinzu kommen 20 Allianzüberblicke von S105. Der Screenshotstand ist der 10. Oktober 2026 gegen 16:49 Uhr; ein gleichzeitiger Endstand der Schlacht ist damit nicht belegt.
 
-Der direkte Serververgleich umfasst 560 Spieler von S105 und S97. Drei weitere Einträge von S108, S110 und S112 mit zusammen 29.028 Punkten bleiben dort außen vor. Mitgliederzahlen sind Momentaufnahmen; Durchschnitt und Median sind auf ganze Punkte gerundet.
+Der direkte Serververgleich umfasst 490 Spieler von S105 und S97. Zwei weitere ausgewertete Einträge von S108 und S112 mit zusammen 28.920 Punkten bleiben dort außen vor. Mitgliederzahlen sind Momentaufnahmen; Durchschnitt und Median sind auf ganze Punkte gerundet.
 
-Diese historische Ansicht zeigt alle erfassten Einträge ohne Mindestpunktfilter. Für einen Wochenvergleich muss dieselbe Mindestpunktzahl auf beide Wochen angewandt werden. Ein solcher Filter definiert eine statistische Auswahl und keine nachgewiesene Beteiligung.
+Diese Auswertung berücksichtigt ausschließlich Spieler mit mindestens 1.000 Systempunkten. 492 der 563 erfassten Einträge erfüllen diese Grenze. Derselbe Filter gilt für beide Wochen und den Wochenvergleich; er definiert eine statistische Auswahl und keine nachgewiesene Beteiligung.
 
-[Allianzen und einzelne Ranglisteneinträge in der interaktiven Infografik nachschlagen.](/drachenhalle/auswertungen/expeditionswahnsinn/)
+[Allianzen und einzelne Ranglisteneinträge in der interaktiven Infografik nachschlagen.](/drachenhalle/auswertungen/expeditionswahnsinn/2026-10-10/)

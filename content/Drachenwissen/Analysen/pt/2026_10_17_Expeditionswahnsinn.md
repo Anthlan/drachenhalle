@@ -45,4 +45,4 @@ As posições 1–720 foram registradas em 79 imagens do ranking. A continuaçã
 
 25 capturas de alianças de 18 de outubro mostram 20 panoramas distintos do S105. 19 têm identificação inequívoca; uma notificação cobre o nome da aliança em um deles. Esse panorama não é usado nas proporções por membros. Nomes e caracteres especiais também foram transcritos diretamente das imagens; alguns caracteres semelhantes continuam sinalizados.
 
-As imagens do ranking são de 17 de outubro e os panoramas de alianças, da manhã seguinte. Os números de membros são retratos do momento, não um grupo fixo de jogadores. A visualização histórica de 10 de outubro permanece sem filtro; apenas a comparação semanal foi recalculada com o mesmo limite nas duas semanas.
+As imagens do ranking são de 17 de outubro e os panoramas de alianças, da manhã seguinte. Os números de membros são retratos do momento, não um grupo fixo de jogadores. Ambas as análises e a comparação semanal usam o mesmo limite mínimo de 1.000 pontos do sistema.

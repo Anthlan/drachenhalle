@@ -14,13 +14,13 @@ Portanto, muitos pontos não comprovam grande valor estratégico; poucos pontos 
 
 | Indicador | S105 | S97 |
 | --- | ---: | ---: |
-| Jogadores registrados | 318 | 242 |
-| Total de pontos | 184.974.397 | 281.527.891 |
+| Jogadores registrados | 248 | 242 |
+| Total de pontos | 184.959.827 | 281.527.891 |
 | Parcela dos pontos dos dois servidores | 39,7% | 60,3% |
-| Média por jogador registrado | 581.680 | 1.163.338 |
-| Mediana por jogador registrado | 296.032 | 1.192.870 |
+| Média por jogador registrado | 745.806 | 1.163.338 |
+| Mediana por jogador registrado | 541.687 | 1.192.870 |
 
-No registro capturado, o S97 supera o S105 em 96.553.494 pontos do sistema. Sua mediana também é maior. O ranking não explica quais ações geraram esses pontos.
+No registro capturado, o S97 supera o S105 em 96.568.064 pontos do sistema. Sua mediana também é maior. O ranking não explica quais ações geraram esses pontos.
 
 ## Limites da interpretação
 
@@ -30,13 +30,13 @@ Esses dados não permitem determinar sucesso em combate, controle territorial, i
 
 | Indicador | DIE |
 | --- | ---: |
-| Pontos do sistema | 9.564.831 |
-| Jogadores registrados / membros no panorama | 15 / 58 |
-| Proporção no ranking | 25,9% |
-| Média por jogador registrado | 637.655 |
-| Mediana por jogador registrado | 762.697 |
+| Pontos do sistema | 9.563.043 |
+| Jogadores registrados / membros no panorama | 12 / 58 |
+| Proporção no ranking | 20,7% |
+| Média por jogador registrado | 796.920 |
+| Mediana por jogador registrado | 796.040 |
 
-A DIE ocupa o sexto lugar entre as alianças do S105 por pontos registrados e representa 5,2% dos pontos do sistema desse servidor. Há 15 de 58 membros no ranking. Essa proporção não mede a participação real no evento; a ausência dos outros 43 membros não comprova falta de contribuição.
+A DIE ocupa o sexto lugar entre as alianças do S105 por pontos registrados e representa 5,2% dos pontos do sistema desse servidor. 12 de 58 membros atingem pelo menos 1.000 pontos. Essa proporção não mede a participação real no evento; a exclusão dos outros 46 membros abaixo do limite não comprova falta de contribuição.
 
 As cinco maiores pontuações somam 58,6% dos pontos registrados da aliança, e as dez maiores, 93,7%. Isso descreve a distribuição de pontos e não permite classificar a utilidade estratégica real dos jogadores.
 
@@ -44,8 +44,8 @@ As cinco maiores pontuações somam 58,6% dos pontos registrados da aliança, e 
 
 O ranking fotografado completo contém 563 jogadores e 466.531.316 pontos em 60 capturas, além de 20 panoramas de alianças do S105. As imagens são de aproximadamente 16h49 de 10 de outubro de 2026; isso não comprova um resultado final da batalha em um momento comum.
 
-A comparação direta abrange 560 jogadores dos servidores S105 e S97. Três registros adicionais de S108, S110 e S112, com 29.028 pontos no total, ficam fora dela. A quantidade de membros é um retrato do momento; médias e medianas são arredondadas para pontos inteiros.
+A comparação direta abrange 490 jogadores dos servidores S105 e S97. Dois registros adicionais selecionados de S108 e S112, com 28.920 pontos no total, ficam fora dela. A quantidade de membros é um retrato do momento; médias e medianas são arredondadas para pontos inteiros.
 
-Esta visualização histórica inclui todos os registros sem um filtro de pontuação mínima. Uma comparação semanal deve aplicar o mesmo mínimo às duas semanas. O filtro define uma seleção estatística, não uma participação comprovada.
+Esta análise inclui apenas jogadores com pelo menos 1.000 pontos do sistema. 492 dos 563 registros capturados atingem esse limite. O mesmo filtro vale para ambas as semanas e sua comparação; ele define uma seleção estatística, não uma participação comprovada.
 
-[Consultar alianças e registros individuais na infografia interativa.](/drachenhalle/auswertungen/expeditionswahnsinn/)
+[Consultar alianças e registros individuais na infografia interativa.](/drachenhalle/auswertungen/expeditionswahnsinn/2026-10-10/)

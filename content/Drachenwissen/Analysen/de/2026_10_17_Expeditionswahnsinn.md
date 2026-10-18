@@ -45,4 +45,4 @@ Erfasst sind die Ränge 1–720 aus 79 Ranglistenbildern. Die Fortsetzung ab Ran
 
 25 Allianzaufnahmen vom 18. Oktober ergeben 20 verschiedene Überblicke von S105. Für 19 ist die Zuordnung eindeutig; bei einem verdeckt eine Meldung den Allianztitel. Dieser Überblick wird nicht für Mitgliederquoten verwendet. Namen und Sonderzeichen wurden ergänzend direkt aus den Bildern übertragen; einzelne ähnlich aussehende Zeichen bleiben gekennzeichnet.
 
-Die Ranglistenbilder stammen vom 17. Oktober, die Allianzüberblicke vom folgenden Morgen. Mitgliederzahlen sind Momentaufnahmen und keine feste Spielergruppe. Die historische Ansicht vom 10. Oktober bleibt ungefiltert; ausschließlich der Wochenvergleich wurde in beiden Wochen mit derselben Grenze neu berechnet.
+Die Ranglistenbilder stammen vom 17. Oktober, die Allianzüberblicke vom folgenden Morgen. Mitgliederzahlen sind Momentaufnahmen und keine feste Spielergruppe. Beide Auswertungen und der Wochenvergleich verwenden dieselbe Mindestgrenze von 1.000 Systempunkten.

@@ -45,4 +45,4 @@ Ranks 1–720 were recorded from 79 ranking images. The continuation from rank 7
 
 25 alliance screenshots from 18 October cover 20 distinct S105 overviews. 19 can be identified unambiguously; a notification obscures the alliance title in one. That overview is excluded from membership ratios. Names and special characters were additionally transcribed directly from the images; some similar-looking characters remain flagged.
 
-The ranking screenshots are from 17 October, while alliance overviews are from the following morning. Membership counts are snapshots, not a fixed player cohort. The historical view for 10 October remains unfiltered; only the weekly comparison was recalculated using the same threshold in both weeks.
+The ranking screenshots are from 17 October, while alliance overviews are from the following morning. Membership counts are snapshots, not a fixed player cohort. Both reports and the weekly comparison use the same minimum of 1,000 system-recorded points.
