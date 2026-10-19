@@ -133,6 +133,8 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 
 ## S3 – Chibi-Fantasy
 
+- [2026_10_18_2331_SucheNachSomea_Anthlan.png](Chatbilder/2026_10_18_2331_SucheNachSomea_Anthlan.png)
+- [2026_10_18_2331_HuckepackZurAllianz_Anthlan_Somea.png](Chatbilder/2026_10_18_2331_HuckepackZurAllianz_Anthlan_Somea.png)
 - [2026_09_23_0751_AngriffsknopfChibi_Somea_Anthlan.png](Chatbilder/2026_09_23_0751_AngriffsknopfChibi_Somea_Anthlan.png)
 - [2026_09_25_2145_JutenMorjenBerlin_Somea.png](Reaktionsbilder/2026_09_25_2145_JutenMorjenBerlin_Somea.png)
 - [2026_09_25_2147_JuteNachtBerlin_Somea.png](Reaktionsbilder/2026_09_25_2147_JuteNachtBerlin_Somea.png)
