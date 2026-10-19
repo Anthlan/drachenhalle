@@ -47,7 +47,7 @@ export function createTranslator(catalog, locale = "en-GB") {
   };
 }
 
-export function localizedPageUrl(url, language, base = "/drachenhalle", languages = ["de", "en"], defaultLanguage = "de") {
+export function localizedPageUrl(url, language, base = "/drachenhalle", languages = ["de", "en", "fr", "ru", "pt"], defaultLanguage = "de") {
   const siteOrigin="https://anthlan.github.io";
   if(url.startsWith(siteOrigin+base+"/")||url===siteOrigin+base)return siteOrigin+localizedPageUrl(url.slice(siteOrigin.length),language,base,languages,defaultLanguage);
   if (!url.startsWith(base + "/") && url !== base) return url;

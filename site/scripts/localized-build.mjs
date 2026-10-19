@@ -144,7 +144,10 @@ export default function localizedBuild() {
         let html=translateHtml(await readFile(file,"utf8"),translate,language.code,sources);
         html=html.replace(/<html lang="de"/,`<html lang="${language.code}"`)
           .replace(/content="de_DE"/,`content="${language.locale.replace("-","_")}"`)
-          .replaceAll(`https://anthlan.github.io${germanUrl}`,`https://anthlan.github.io${englishUrl}`);
+          // Localize only exact page URLs. A prefix-wide replacement would
+          // duplicate language segments in canonical links and incorrectly
+          // move shared assets such as /brand images below /en or /fr.
+          .replaceAll(`"https://anthlan.github.io${germanUrl}"`,`"https://anthlan.github.io${englishUrl}"`);
         html=html.replace(/<head>/,`<head><script type="module" src="${config.base}/languages/${language.code}/runtime.js"></script>`);
         for(const choice of config.languages)html=html.replace(new RegExp(`hreflang="${choice.code}" href="[^"]*"`,"g"),`hreflang="${choice.code}" href="https://anthlan.github.io${pageUrl(germanUrl,choice.code)}"`);
         // Picker links must lead to counterparts, not both to the current language.

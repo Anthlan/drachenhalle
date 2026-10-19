@@ -21,10 +21,10 @@ Auf dieser Website und im Repository wird die Allianz durchgängig als **DIE** b
 
 ## Ordnerstruktur
 
-- `content/Aktuelles/de` und `content/Aktuelles/en`: deutsche und englische Neuigkeiten für die Startseite
-- `content/Termine/de` und `content/Termine/en`: Allianz-Events mit Datum, Uhrzeit, eigener Detailseite, passenden Wissensinhalten und Kalender-Download
+- `content/Aktuelles/<Sprache>`: Neuigkeiten für die Startseite in allen registrierten Sprachen (`de`, `en`, `fr`, `ru`, `pt`)
+- `content/Termine/<Sprache>`: Allianz-Events mit Datum, Uhrzeit, eigener Detailseite, passenden Wissensinhalten und Kalender-Download
 - `Galerie`: Chatbilder, Reaktionsbilder, Avatare und Charaktermodelle
-- `content/<Thema>/de` und `content/<Thema>/en`: parallele Textquellen für Drachenwissen, Allianz und Tutorials; gleiche relative Pfade und Dateinamen
+- `content/<Thema>/<Sprache>`: parallele Textquellen für Drachenwissen, Allianz und Tutorials; gleiche relative Pfade und Dateinamen in `de`, `en`, `fr`, `ru` und `pt`
 - `Styleguides`: verbindliche Regeln für Gestaltung und Textformatierung
 - `Archiv`: ersetzte, veraltete oder nur noch historisch relevante Fassungen
 - `site`: technische Quellen und Build-Skripte der Website

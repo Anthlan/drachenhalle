@@ -15,6 +15,12 @@
       "path": "en"
     },
     {
+      "code": "fr",
+      "label": "Français",
+      "locale": "fr-FR",
+      "path": "fr"
+    },
+    {
       "code": "ru",
       "label": "Русский",
       "locale": "ru-RU",

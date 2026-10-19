@@ -4,7 +4,7 @@ Este repositório reúne, de forma centralizada e organizada, o conteúdo sobre 
 
 ## Idiomas
 
-O site oferece alemão, inglês, russo e português brasileiro, com seleção de idioma em todas as páginas. Os textos editáveis ficam em `content/<Tema>/<Idioma>` (`de`, `en`, `ru`, `pt`). Imagens sem texto e modelos de personagens são compartilhados; as imagens informativas traduzidas ficam junto aos textos do idioma correspondente. A [estrutura de idiomas](../README.md) explica o processo.
+O site oferece alemão, inglês, francês, russo e português brasileiro, com seleção de idioma em todas as páginas. Os textos editáveis ficam em `content/<Tema>/<Idioma>` (`de`, `en`, `fr`, `ru`, `pt`). Imagens sem texto e modelos de personagens são compartilhados; as imagens informativas traduzidas ficam junto aos textos do idioma correspondente. A [estrutura de idiomas](../README.md) explica o processo.
 
 ## Primeiros passos
 

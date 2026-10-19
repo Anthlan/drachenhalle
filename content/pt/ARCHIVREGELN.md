@@ -21,10 +21,10 @@ Neste site e no repositório, a aliança é chamada consistentemente **DIE**. A 
 
 ## Estrutura de pasta
 
-- `content/Aktuelles/de` e `content/Aktuelles/en`: Notícias alemãs e inglesas para a página inicial
-- `content/Termine/de` e `content/Termine/en`: eventos da aliança com data, hora, página dedicada de detalhes, conteúdo de conhecimento relacionado e download de calendário
+- `content/Aktuelles/<Idioma>`: notícias da página inicial em todos os idiomas registrados (`de`, `en`, `fr`, `ru`, `pt`)
+- `content/Termine/<Idioma>`: eventos da aliança com data, hora, página dedicada de detalhes, conteúdo de conhecimento relacionado e download de calendário
 - `Galerie`: imagens de chat, imagens reacionais, avatares e modelos de personagens
-- `content/<Topic>/de` e `content/<Topic>/en`: fontes de texto paralelas para o Conhecimento dos Dragões, Alliance e Tutoriais; caminhos relativos e nomes de arquivos idênticos
+- `content/<Tema>/<Idioma>`: fontes de texto paralelas para o Conhecimento dos Dragões, Aliança e Tutoriais; caminhos relativos e nomes de arquivos idênticos em `de`, `en`, `fr`, `ru` e `pt`
 - `Styleguides`: regras exigidas para a concepção e a formatagem de texto
 - `Archiv`: versões substituídas, ultrapassadas ou puramente históricas
 - `site`: fontes técnicas e scripts de construção de sites

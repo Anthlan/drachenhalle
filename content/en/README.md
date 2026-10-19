@@ -4,7 +4,7 @@ This repository is the central, structured collection of content about **Z:Route
 
 ## Languages
 
-The website offers German, English, Russian and Brazilian Portuguese with a language selector on every page. Editable text sources live under `content/<Topic>/<Language>` (`de`, `en`, `ru`, `pt`). Text-free images and character models are shared; translated knowledge graphics live beside the corresponding language files. The [language structure](../README.md) explains the workflow.
+The website offers German, English, French, Russian and Brazilian Portuguese with a language selector on every page. Editable text sources live under `content/<Topic>/<Language>` (`de`, `en`, `fr`, `ru`, `pt`). Text-free images and character models are shared; translated knowledge graphics live beside the corresponding language files. The [language structure](../README.md) explains the workflow.
 
 ## Getting Started
 

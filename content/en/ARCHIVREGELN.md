@@ -21,10 +21,10 @@ On this website and in the repository, the alliance is consistently called **DIE
 
 ## Folder Structure
 
-- `content/Aktuelles/de` and `content/Aktuelles/en`: German and English news for the homepage
-- `content/Termine/de` and `content/Termine/en`: alliance events with a date, time, dedicated detail page, related knowledge content and calendar download
+- `content/Aktuelles/<Language>`: homepage news in every registered language (`de`, `en`, `fr`, `ru`, `pt`)
+- `content/Termine/<Language>`: alliance events with a date, time, dedicated detail page, related knowledge content and calendar download
 - `Galerie`: chat images, reaction images, avatars and character models
-- `content/<Topic>/de` and `content/<Topic>/en`: parallel text sources for Dragon Knowledge, Alliance and Tutorials; identical relative paths and filenames
+- `content/<Topic>/<Language>`: parallel text sources for Dragon Knowledge, Alliance and Tutorials; identical relative paths and filenames in `de`, `en`, `fr`, `ru` and `pt`
 - `Styleguides`: required rules for design and text formatting
 - `Archiv`: replaced, outdated or purely historical versions
 - `site`: technical sources and website build scripts

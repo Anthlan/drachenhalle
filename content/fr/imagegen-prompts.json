@@ -1,0 +1,28 @@
+{
+  "language": "fr-FR",
+  "tool": "built-in Imagegen",
+  "date": "2026-10-19",
+  "prompt": "Localize the supplied infographic into fluent, concise French. Translate every visible heading, caption, label and body text while preserving the complete navy-and-gold composition, illustrations, icons, arrows, all numbers, times, percentages, identifiers and game mechanics. Fit the French text inside the original panels without clipping. Leave no English, German or Portuguese text. Do not add, omit or reinterpret facts. Keep the original aspect ratio and resolution.",
+  "sources": [
+    "Allianz/Allianz_Regeln.png",
+    "Drachenwissen/Tipps/Tipp_01_TruppenEffizientBewegen.png",
+    "Drachenwissen/Tipps/Tipp_02_Sammelangriffe.png",
+    "Drachenwissen/Tipps/Tipp_03_Hauptstadtrollen.png",
+    "Drachenwissen/Tipps/Tipp_04_RichtigTeleportieren.png",
+    "Drachenwissen/Tipps/Tipp_05_Gueterzug.png",
+    "Drachenwissen/Tipps/Tipp_06_SoldatenRichtigAufwerten.png",
+    "Drachenwissen/Tipps/Tipp_07_AllianzHinterhalt.png",
+    "Drachenwissen/Tipps/Tipp_08_SoldatenSchnellerHeilen.png",
+    "Drachenwissen/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png",
+    "Drachenwissen/Tipps/Tipp_10_HitAndRunImPvP.png",
+    "Drachenwissen/Tipps/Tipp_11_FesteRaidteamsImPvP.png",
+    "Drachenwissen/Tipps/Tipp_12_KampfberichteRichtigLesen.png",
+    "Drachenwissen/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png",
+    "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png",
+    "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png",
+    "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png",
+    "Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png",
+    "Drachenwissen/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png",
+    "Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png"
+  ]
+}
