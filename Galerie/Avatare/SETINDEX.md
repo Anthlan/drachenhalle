@@ -9,20 +9,10 @@ Dieser Index ordnet jeden Avatar genau einer Serie zu. Eine Serie beschreibt das
 
 ### Bilder
 
-- [Anthlan_2026_10_18_1248.png](Anthlan_2026_10_18_1248.png)
-- [Anthlan_2026_10_18_1304.png](Anthlan_2026_10_18_1304.png)
-- [Anthlan_2026_10_18_1551.png](Anthlan_2026_10_18_1551.png)
-- [Anthlan_2026_10_18_1613.png](Anthlan_2026_10_18_1613.png)
-- [Anthlan_2026_10_18_1616.png](Anthlan_2026_10_18_1616.png)
-- [Anthlan_2026_10_18_1710.png](Anthlan_2026_10_18_1710.png)
-- [Anthlan_2026_10_18_1718.png](Anthlan_2026_10_18_1718.png)
 - [Anthlan_2026_10_18_1947.png](Anthlan_2026_10_18_1947.png)
-- [Anthlan_2026_10_18_2047.png](Anthlan_2026_10_18_2047.png)
 - [Anthlan_2026_10_18_2053.png](Anthlan_2026_10_18_2053.png)
 - [DaVinci1986_2026_10_02_0817.png](DaVinci1986_2026_10_02_0817.png)
 - [DRACHENHERZ_2026_10_02_0817.png](DRACHENHERZ_2026_10_02_0817.png)
-- [DRACHENHERZ_2026_10_18_2212.png](DRACHENHERZ_2026_10_18_2212.png)
-- [DRACHENHERZ_2026_10_18_2215.png](DRACHENHERZ_2026_10_18_2215.png)
 - [DRACHENHERZ_2026_10_18_2235.png](DRACHENHERZ_2026_10_18_2235.png)
 - [DRACHENHERZ_2026_10_18_2327.png](DRACHENHERZ_2026_10_18_2327.png)
 - [Krasaviza_2026_10_08_0654.png](Krasaviza_2026_10_08_0654.png)
