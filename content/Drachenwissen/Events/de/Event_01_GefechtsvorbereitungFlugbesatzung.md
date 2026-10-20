@@ -20,7 +20,7 @@ status: Zeitlich begrenzt
 
 > **Kurzempfehlung:** Kleine F2P-Bestände werden für einen sicheren Tagesmeilenstein gesammelt. Bei großen Beständen und Gutschein-Fokus die frühen Gutscheinboxen an mehreren Tagen bis Stufe 7 oder 9 wiederholen. Gezielte Käufer sichern nur gewünschte Tagesangebote; beim Skin-Ziel nach allen Ziehungen lediglich die verbleibende Gutscheinlücke direkt kaufen.
 
-![Event-Guide – Gefechtsvorbereitung der Flugbesatzung](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png)
+![Event-Guide – Gefechtsvorbereitung der Flugbesatzung](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png)
 
 ## Wofür ist dieser Event-Guide?
 
@@ -108,7 +108,7 @@ Beim **gesamten Gegenwert** ist die Entscheidung differenzierter. Ein zweiter La
 
 Dieser Listenpreis überschätzt den persönlichen Nutzen der Zufallstruhen jedoch schnell. Der tiefe Lauf überholt den zweiten Lauf bis Stufe 9 bereits dann, wenn jede der neun UR-Überlebenstruhen persönlich mindestens rund **24 Gutscheine** wert ist. Wer die zufälligen Überlebenden kaum noch benötigt, bleibt mit zwei Läufen bis Stufe 9 besser bedient; wer fast jeden möglichen UR-Überlebenden sinnvoll einsetzen kann, erhält mit dem Lauf bis Stufe 15 wahrscheinlich den höheren Gesamtwert. Für den reinen Gutschein-Fokus bleibt die Empfehlung unverändert: am ersten Tag Stufe 9 erreichen, den tatsächlichen Münzverbrauch notieren und nur dann am zweiten Tag erneut Stufe 9 anpeilen, wenn der Restbestand mit Sicherheitsreserve ausreicht.
 
-![Spielautomat, Tagesstufen und täglicher Reset im Drachenhallen-Design](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
+![Spielautomat, Tagesstufen und täglicher Reset im Drachenhallen-Design](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
 
 ### Warum der Skin ohne Großspender-Budget unrealistisch ist
 
@@ -219,11 +219,11 @@ Der vollständig planbare Weg führt über direkte Gutscheinpakete. Werden über
 
 Ein dokumentierter Nachkauf von **2.400 Gutscheinen für 360 €** bestätigt den regulären Direktkurs von 0,15 € je Gutschein. Die sinnvolle Strategie lautet deshalb: kostenlose Münzen und höchstens die günstigen kleinen Münzpakete **im 1×-Modus** einsetzen, anschließend den tatsächlichen Bestand prüfen und nur die verbleibende Lücke direkt schließen. Für eine vollständige Vorabplanung ist der direkte Gutscheinweg mit rund **596 €** günstiger als die sichere Münzrechnung mit rund **833 €**.
 
-![Vibranium-Verteidigungslinie als exklusive Großspender-Belohnung und Veredelte Steine als allgemeine Empfehlung](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
+![Vibranium-Verteidigungslinie als exklusive Großspender-Belohnung und Veredelte Steine als allgemeine Empfehlung](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
 
 ## Empfehlungen nach Budget
 
-![Budget-Empfehlung für das Event](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png)
+![Budget-Empfehlung für das Event](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png)
 
 ### Free2Play – 0 €
 

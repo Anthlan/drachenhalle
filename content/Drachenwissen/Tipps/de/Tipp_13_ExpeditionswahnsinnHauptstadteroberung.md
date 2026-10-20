@@ -25,7 +25,7 @@ themen:
 
 > **Merksatz:** Für maximalen Objektdruck feste Raidteams einsetzen; bei Unterzahl kontrolliert auf Hit & Run ausweichen.
 
-![Tipp 13 – Expeditionswahnsinn: Hauptstadteroberung](../../../../Drachenwissen/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png)
+![Tipp 13 – Expeditionswahnsinn: Hauptstadteroberung](../../../../media/knowledge/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png)
 
 ## Wofür ist dieser Tipp?
 

@@ -22,7 +22,7 @@ themen:
 
 > **Rappelez-vous :** Result → troupes → formation → développement → statistiques → tester un changement.
 
-![Conseil 12 – Lisez les rapports de bataille correctement](../../../../Drachenwissen/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
+![Conseil 12 – Lisez les rapports de bataille correctement](../../../../media/knowledge/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
 
 ## À quoi sert cette astuce ?
 

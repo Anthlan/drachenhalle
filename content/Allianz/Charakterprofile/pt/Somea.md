@@ -73,4 +73,4 @@ A mesa redonda, o gato preto e os detalhes pessoais indivíduos ainda mostram qu
 
 A roupa alternativa do M2 mostra seu lado feminino-fatal confiante em um vestido de noite de veludo preto e seda azul-noite. Safiros, ouro envelhecido, bordados com estrelas e camadas escuras transparentes ligam-no ao mundo dela. Sozinha e atenciosa em um balcão alto acima de Berlim durante a noite, ela olha ansiosamente para a distância. Uma espinha aberta, uma linha de ombros clara, uma silhueta ajustada e uma fenda de perna controlada transmitem o apelo sexual adulto sem se tornar uma postura de pin-up, exposição excessiva ou estética moderna do tapete vermelho. O café, o botão de decisão e o gato não pertencem a esta cena de varanda alternativa.
 
-Imagem atual: `site/public/brand/officer-somea-world-v4.webp`
+Imagem atual: `apps/website/public/brand/officer-somea-world-v4.webp`

@@ -73,4 +73,4 @@ DaVinci1986 belongs in a warm house of open paths above a Swiss lake-and-mountai
 
 Morning light and a small playful dragon pendant can hint at her inner child without making the adult protagonist overly cute. A train may appear as a distant secondary motif. Dogs and other real pets are expressly excluded from this visual world.
 
-Current scene image: `site/public/brand/officer-davinci1986-world.webp`
+Current scene image: `apps/website/public/brand/officer-davinci1986-world.webp`

@@ -4,7 +4,7 @@ Pendant les combats de raid, les adversaires d'autres serveurs peuvent nous tél
 
 Cette annonce combine trois choses que chaque membre doit savoir : la période de danger réelle, la préparation en temps opportun dans le magasin d'alliance et les deux temps d'activation dans notre plan de bouclier.
 
-![Batailles de raid – boucliers vers le haut](../../../../Drachenwissen/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
+![Batailles de raid – boucliers vers le haut](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
 
 ## Pourquoi le plan de bouclier est important
 

@@ -23,7 +23,7 @@ themen:
 
 > **Remember:** One call, five clear roles, one shared target.
 
-![Tip 11 – Fixed raid teams in PvP](../../../../Drachenwissen/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
+![Tip 11 – Fixed raid teams in PvP](../../../../media/knowledge/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
 
 ## What is a fixed raid team?
 

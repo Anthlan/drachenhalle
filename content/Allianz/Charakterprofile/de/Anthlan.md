@@ -61,5 +61,5 @@ Anthlan bewegt sich zwischen visionärem Weltenbauer und zugänglichem Teammitgl
 
 Anthlan gehört in eine warme Sternwarte mit verbundenen Städten, sichtbarer Gemeinschaft und einem benutzten Strategietisch. Er soll kompetent, aber nicht makellos wirken. Ein leicht verschmitzter Blick und kleine Spuren des lebendigen Allianzalltags sind wichtiger als ein Thron oder eine heroische Herrscherpose.
 
-Aktuelles Szenenbild: `site/public/brand/officer-anthlan-world.webp`
+Aktuelles Szenenbild: `apps/website/public/brand/officer-anthlan-world.webp`
 

@@ -25,7 +25,7 @@ themen:
 
 > **Rappelez-vous :** Utilisez des équipes de raid fixes pour une pression objective maximale; quand elles sont plus nombreuses, passez délibérément à Hit & Run contrôlé.
 
-![Conseil 13 – Expédition Frenzy: Conquête du capital](../../../../Drachenwissen/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png)
+![Conseil 13 – Expédition Frenzy: Conquête du capital](../../../../media/knowledge/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png)
 
 ## À quoi sert cette astuce ?
 

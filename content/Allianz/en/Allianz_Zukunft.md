@@ -4,7 +4,7 @@
 
 This page is an internal discussion paper for the alliance council. It is intended to help us compare our options openly and objectively. We are not making a final decision yet. First, we need to ask what kind of alliance we want to become and what level of activity and teamwork we expect.
 
-![Chibi Anthlan considers three possible paths for the alliance at the strategy table](../../../Allianz/Allianz_Zukunft_Ratsberatung.png)
+![Chibi Anthlan considers three possible paths for the alliance at the strategy table](../../../media/alliance/Allianz_Zukunft_Ratsberatung.png)
 
 ## The central question
 
@@ -16,7 +16,7 @@ Power and rankings are not the only things to consider. Reliability, motivation,
 
 We remove members who remain passive over the long term and expect clearly defined minimum activity from existing and new members. This particularly includes important alliance events, reliable teamwork and following our shared agreements.
 
-![Chibi Anthlan stands resolutely in front of a small, united shield formation](../../../Allianz/Allianz_Zukunft_AktiverKern.png)
+![Chibi Anthlan stands resolutely in front of a small, united shield formation](../../../media/alliance/Allianz_Zukunft_AktiverKern.png)
 
 ### Opportunities
 
@@ -41,7 +41,7 @@ We remove members who remain passive over the long term and expect clearly defin
 
 We deliberately retain a larger membership and accept that people take part in events, battles and agreements to different degrees. Activity remains welcome, but is only required to a limited extent.
 
-![Chibi Anthlan tries to coordinate active, passive and supporting contributions at the same time](../../../Allianz/Allianz_Zukunft_GrosseGemeinschaft.png)
+![Chibi Anthlan tries to coordinate active, passive and supporting contributions at the same time](../../../media/alliance/Allianz_Zukunft_GrosseGemeinschaft.png)
 
 ### Opportunities
 
@@ -65,7 +65,7 @@ We deliberately retain a larger membership and accept that people take part in e
 
 We look for a similarly sized alliance with which to combine members, leadership and structures. As there is currently no suitable German alliance available, a merger would probably be international and would need careful language and cultural preparation.
 
-![Chibi Anthlan joins two different alliance banners while using a translation book](../../../Allianz/Allianz_Zukunft_Fusion.png)
+![Chibi Anthlan joins two different alliance banners while using a translation book](../../../media/alliance/Allianz_Zukunft_Fusion.png)
 
 ### Opportunities
 

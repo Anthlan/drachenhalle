@@ -19,7 +19,7 @@ themen:
 
 > **Merksatz:** Rohstofffelder verkürzen den entscheidenden Weg – beim Angriff und beim Rückzug.
 
-![Tipp 1 – Truppen effizient bewegen](../../../../Drachenwissen/Tipps/Tipp_01_TruppenEffizientBewegen.png)
+![Tipp 1 – Truppen effizient bewegen](../../../../media/knowledge/Tipps/Tipp_01_TruppenEffizientBewegen.png)
 
 ## Wofür ist dieser Tipp?
 

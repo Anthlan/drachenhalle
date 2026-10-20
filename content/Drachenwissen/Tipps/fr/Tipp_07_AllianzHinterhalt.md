@@ -20,7 +20,7 @@ themen:
 
 > **Rappelez-vous :** Commencez cinq normaux, rejoignez cinq normaux, puis continuez à soutenir et à utiliser seulement autant de puissance de combat que nécessaire pour réussir en toute sécurité.
 
-![Conseil 7 – Embuscade d’alliance](../../../../Drachenwissen/Tipps/Tipp_07_AllianzHinterhalt.png)
+![Conseil 7 – Embuscade d’alliance](../../../../media/knowledge/Tipps/Tipp_07_AllianzHinterhalt.png)
 
 ## À quoi sert cette astuce ?
 

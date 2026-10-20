@@ -18,7 +18,7 @@ themen:
 
 > **Remember:** Random for flexibility, Alliance for regrouping, Advanced for an exact position.
 
-![Tip 4 – Teleport correctly](../../../../Drachenwissen/Tipps/Tipp_04_RichtigTeleportieren.png)
+![Tip 4 – Teleport correctly](../../../../media/knowledge/Tipps/Tipp_04_RichtigTeleportieren.png)
 
 ## What is this tip for?
 

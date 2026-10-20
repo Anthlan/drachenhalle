@@ -22,7 +22,7 @@ themen:
 
 > **Помните:** Результат → войска → формирование → развитие → статистика → протестируйте одно изменение.
 
-![Совет 12 – Правильно читайте отчеты о боях](../../../../Drachenwissen/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
+![Совет 12 – Правильно читайте отчеты о боях](../../../../media/knowledge/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
 
 ## Для чего этот совет?
 

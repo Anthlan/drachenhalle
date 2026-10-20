@@ -1,6 +1,6 @@
 # A nossa equipe de liderança
 
-![A nossa equipe de liderança discute os planos juntos na mesa do mapa](../../../Allianz/Allianz_Fuehrungsteam.png)
+![A nossa equipe de liderança discute os planos juntos na mesa do mapa](../../../media/alliance/Allianz_Fuehrungsteam.png)
 
 A liderança da nossa aliança é composta por Anthlan como R5 e os nossos seis oficiais R4. Coordenamos juntos, tomamos decisões para a nossa aliança e estamos aqui por si. Esta página mostra os membros atuais da nossa equipe de liderança. No Salão dos Dragões, pode clicar em cada retrato para descobrir o alter ego fictício por trás dele.
 

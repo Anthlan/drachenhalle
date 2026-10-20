@@ -13,7 +13,7 @@ Chat images can use one of four visual styles independently of their purpose:
 - **S3 – Chibi Fantasy:** highly simplified, cute and deliberately exaggerated designs
 - **S4 – Z-Routes Post-apocalypse:** bold, grainy survival posters with black-red-white typography, handwritten jokes and clear “Z Routes Redemption” branding
 
-The required assignment of all chat and reaction images is in the central [`Galerie/STILINDEX.md`](../../../../Galerie/STILINDEX.md). Style is inferred neither from the folder nor the filename. New or renamed images without exactly one valid style entry deliberately cause the website build to fail.
+The required assignment of all chat and reaction images is in the central [`media/gallery/STILINDEX.md`](../../../../media/gallery/STILINDEX.md). Style is inferred neither from the folder nor the filename. New or renamed images without exactly one valid style entry deliberately cause the website build to fail.
 
 ## Naming Rules
 

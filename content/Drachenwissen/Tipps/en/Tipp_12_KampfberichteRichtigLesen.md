@@ -22,7 +22,7 @@ themen:
 
 > **Remember:** Result → troops → formation → development → statistics → test one change.
 
-![Tip 12 – Read battle reports correctly](../../../../Drachenwissen/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
+![Tip 12 – Read battle reports correctly](../../../../media/knowledge/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
 
 ## What is this tip for?
 

@@ -75,4 +75,4 @@ Drachenherz appartient dans un bosquet boisé ouvert à l'intérieur d'un bastio
 
 Une petite action de soins, comme soutenir une plante endommagée, forme le centre émotionnel. La bénédiction protectrice émeraude peut être grande, mais devrait couvrir tout le camp plutôt que d'élever Drachenherz comme solitaire choisi. Forêt chaude et feu de feu préservent son approcheabilité.
 
-Image de la scène actuelle : `site/public/brand/officer-drachenherz-world.webp`
+Image de la scène actuelle : `apps/website/public/brand/officer-drachenherz-world.webp`

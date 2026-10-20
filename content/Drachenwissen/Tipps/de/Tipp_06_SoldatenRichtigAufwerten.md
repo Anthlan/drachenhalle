@@ -19,7 +19,7 @@ themen:
 
 > **Merksatz:** Niedriger ausbilden, vorhandene Soldaten sammeln und in der höchsten Kaserne über den grünen Pfeil befördern.
 
-![Tipp 6 – Soldaten richtig aufwerten](../../../../Drachenwissen/Tipps/Tipp_06_SoldatenRichtigAufwerten.png)
+![Tipp 6 – Soldaten richtig aufwerten](../../../../media/knowledge/Tipps/Tipp_06_SoldatenRichtigAufwerten.png)
 
 ## Wofür ist dieser Tipp?
 

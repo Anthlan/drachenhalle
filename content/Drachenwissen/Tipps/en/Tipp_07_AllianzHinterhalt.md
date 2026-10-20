@@ -20,7 +20,7 @@ themen:
 
 > **Remember:** Start five rallies, join five rallies, then keep supporting and use only as much combat power as a safe success requires.
 
-![Tip 7 – Alliance Ambush](../../../../Drachenwissen/Tipps/Tipp_07_AllianzHinterhalt.png)
+![Tip 7 – Alliance Ambush](../../../../media/knowledge/Tipps/Tipp_07_AllianzHinterhalt.png)
 
 ## What is this tip for?
 

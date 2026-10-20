@@ -4,7 +4,7 @@
 
 Esta página é um documento de discussão interna para o Conselho da Aliança. Pretende-se ajudar-nos a comparar as nossas opções de forma aberta e objetiva. Ainda não estamos a tomar uma decisão final. Primeiro, precisamos de perguntar que tipo de aliança queremos ser e que nível de atividade e trabalho em equipe esperamos.
 
-![Chibi Anthlan considera três possíveis caminhos para a aliança na mesa de estratégia](../../../Allianz/Allianz_Zukunft_Ratsberatung.png)
+![Chibi Anthlan considera três possíveis caminhos para a aliança na mesa de estratégia](../../../media/alliance/Allianz_Zukunft_Ratsberatung.png)
 
 ## A questão central
 
@@ -16,7 +16,7 @@ Poder e classificação não são as únicas coisas a considerar. A confiabilida
 
 Retiramos os membros que permanecem passivos a longo prazo e esperamos uma actividade mínima claramente definida dos membros existentes e novos. Isto inclui, em especial, importantes eventos de aliança, trabalho em equipe confiável e o cumprimento dos nossos acordos comuns.
 
-![Chibi Anthlan está resolutamente em frente a uma pequena formação de escudos unidos](../../../Allianz/Allianz_Zukunft_AktiverKern.png)
+![Chibi Anthlan está resolutamente em frente a uma pequena formação de escudos unidos](../../../media/alliance/Allianz_Zukunft_AktiverKern.png)
 
 ### Oportunidades
 
@@ -41,7 +41,7 @@ Retiramos os membros que permanecem passivos a longo prazo e esperamos uma activ
 
 Manteremos deliberadamente um número maior de membros e aceitamos que as pessoas participem em eventos, batalhas e acordos em diferentes graus. A atividade continua a ser bem-vinda, mas é necessária apenas numa medida limitada.
 
-![Chibi Anthlan tenta coordenar contribuições ativas, passivas e de apoio ao mesmo tempo](../../../Allianz/Allianz_Zukunft_GrosseGemeinschaft.png)
+![Chibi Anthlan tenta coordenar contribuições ativas, passivas e de apoio ao mesmo tempo](../../../media/alliance/Allianz_Zukunft_GrosseGemeinschaft.png)
 
 ### Oportunidades
 
@@ -65,7 +65,7 @@ Manteremos deliberadamente um número maior de membros e aceitamos que as pessoa
 
 Buscamos uma aliança de tamanho semelhante com a qual combinar membros, liderança e estruturas. Como não existe atualmente uma aliança alemã adequada, a fusão seria provavelmente internacional e exigiria uma preparação linguística e cultural cuidadosa.
 
-![Chibi Anthlan juntou-se a duas bandeiras diferentes da aliança enquanto usava um livro de tradução](../../../Allianz/Allianz_Zukunft_Fusion.png)
+![Chibi Anthlan juntou-se a duas bandeiras diferentes da aliança enquanto usava um livro de tradução](../../../media/alliance/Allianz_Zukunft_Fusion.png)
 
 ### Oportunidades
 

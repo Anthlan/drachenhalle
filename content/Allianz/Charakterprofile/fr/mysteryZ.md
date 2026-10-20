@@ -68,4 +68,4 @@ mysteryZ Elle demeure au premier plan des lieux, des cartes, des itinéraires ro
 
 Les images de Chibi s'écartent délibérément du cuter général S3 effet: mysteryZ Préférez une silhouette bien lisible, des proportions légèrement plus minces, des expressions oculaires contrôlées et de l'humour visuel sec. Évitez les cœurs, les yeux étincelants, l'esthétique pelucheuse, le poteau proéminent joues et poses infantiles.
 
-Image de la scène actuelle : `site/public/brand/officer-mysteryz-world-v3.webp`
+Image de la scène actuelle : `apps/website/public/brand/officer-mysteryz-world-v3.webp`

@@ -61,4 +61,4 @@ Anthlan Il est trop grand pour le faire devenir un souverain lointain; trop de c
 
 Anthlan Il doit avoir l'air compétent, mais pas sans défaut. Une expression légèrement malicieuse et de petites traces de vie d'alliance vivante comptent plus que trône ou pose de souverain héroïque.
 
-Image de la scène actuelle : `site/public/brand/officer-anthlan-world.webp`
+Image de la scène actuelle : `apps/website/public/brand/officer-anthlan-world.webp`

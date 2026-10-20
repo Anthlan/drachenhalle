@@ -73,4 +73,4 @@ DaVinci1986 Elle est située dans une maison chaleureuse de chemins ouverts au-d
 
 Lumière matinale et un petit pendentif de dragon ludique peut faire allusion à son enfant intérieur sans faire le protagoniste adulte trop mignon. Un train peut apparaître comme un motif secondaire lointain. Les chiens et autres vrais animaux de compagnie sont expressément exclus de ce visuel Le monde entier.
 
-Image de la scène actuelle : `site/public/brand/officer-davinci1986-world.webp`
+Image de la scène actuelle : `apps/website/public/brand/officer-davinci1986-world.webp`

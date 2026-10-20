@@ -18,7 +18,7 @@ themen:
 
 > **Lembre-se:** Aleatório para flexibilidade, Aliança para reagrupamento, Avançado para posição exata.
 
-![Dica 4 – Teletransporte correto](../../../../Drachenwissen/Tipps/Tipp_04_RichtigTeleportieren.png)
+![Dica 4 – Teletransporte correto](../../../../media/knowledge/Tipps/Tipp_04_RichtigTeleportieren.png)
 
 ## Para que é esta gorjeta?
 

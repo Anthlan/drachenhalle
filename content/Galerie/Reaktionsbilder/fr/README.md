@@ -6,7 +6,7 @@ Les images scéniques ou narratives font partie de la [`Galerie/Chatbilder`](../
 
 ## Attribution de style
 
-, Image de réaction, décrit l'utilisation prévue et ne détermine pas le style visuel. S1, S2, S3 ou S4. Leurs tâches requises sont enregistrées à côté des images de chat dans le centre [`Galerie/STILINDEX.md`](../../../../Galerie/STILINDEX.md).
+, Image de réaction, décrit l'utilisation prévue et ne détermine pas le style visuel. S1, S2, S3 ou S4. Leurs tâches requises sont enregistrées à côté des images de chat dans le centre [`media/gallery/STILINDEX.md`](../../../../media/gallery/STILINDEX.md).
 
 ## Règles de désignation
 

@@ -19,7 +19,7 @@ themen:
 
 > **Remember:** Train lower tiers, collect existing soldiers and promote them in the highest-level barracks using the green arrow.
 
-![Tip 6 – Upgrade soldiers correctly](../../../../Drachenwissen/Tipps/Tipp_06_SoldatenRichtigAufwerten.png)
+![Tip 6 – Upgrade soldiers correctly](../../../../media/knowledge/Tipps/Tipp_06_SoldatenRichtigAufwerten.png)
 
 ## What is this tip for?
 

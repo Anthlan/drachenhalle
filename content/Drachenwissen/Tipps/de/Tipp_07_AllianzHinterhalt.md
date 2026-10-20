@@ -20,7 +20,7 @@ themen:
 
 > **Merksatz:** Fünf Rallys starten, fünf Rallys beitreten, danach weiter unterstützen und nur so viel Kampfkraft einsetzen, wie für einen sicheren Erfolg nötig ist.
 
-![Tipp 7 – Allianz-Hinterhalt](../../../../Drachenwissen/Tipps/Tipp_07_AllianzHinterhalt.png)
+![Tipp 7 – Allianz-Hinterhalt](../../../../media/knowledge/Tipps/Tipp_07_AllianzHinterhalt.png)
 
 ## Wofür ist dieser Tipp?
 

@@ -22,7 +22,7 @@ themen:
 
 > **Rappelez-vous :** Grève brièvement, reconnaît le danger tôt, disparaît dans le temps.
 
-![Conseil 10 – Hit & Run in PvP](../../../../Drachenwissen/Tipps/Tipp_10_HitAndRunImPvP.png)
+![Conseil 10 – Hit & Run in PvP](../../../../media/knowledge/Tipps/Tipp_10_HitAndRunImPvP.png)
 
 ## À quoi sert cette astuce ?
 

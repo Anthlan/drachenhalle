@@ -6,7 +6,7 @@ As imagens escénicas ou narrativas pertencem a [`Galerie/Chatbilder`](../../Cha
 
 ## Assegnação de estilo
 
-“Imagem de reação” descreve a utilização prevista e não determina o estilo visual. As imagens de reação podem utilizar S1, S2, S3 ou S4. As suas atribuições necessárias são gravadas ao lado de imagens de bate-papo no centro [`Galerie/STILINDEX.md`](../../../../Galerie/STILINDEX.md).
+“Imagem de reação” descreve a utilização prevista e não determina o estilo visual. As imagens de reação podem utilizar S1, S2, S3 ou S4. As suas atribuições necessárias são gravadas ao lado de imagens de bate-papo no centro [`media/gallery/STILINDEX.md`](../../../../media/gallery/STILINDEX.md).
 
 ## Regras de nomeação
 

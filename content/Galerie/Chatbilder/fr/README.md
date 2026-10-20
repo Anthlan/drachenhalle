@@ -13,7 +13,7 @@ Les images de discussion peuvent utiliser l'un des quatre styles visuels indépe
 - **S3 – Chibi Fantasy :** designs très simplifiés, mignons et délibérément exagérés
 - **S4 – Z-Routes Post-apocalypse :** affiches de survie audacieuses et granuleuses avec typographie noir-rouge-blanc, blagues manuscrites et clair, Z Routes Redemption, marque
 
-L'affectation requise de toutes les images de chat et de réaction est dans le centre [`Galerie/STILINDEX.md`](../../../../Galerie/STILINDEX.md). Style n'est déduit ni du dossier ni du nom du fichier. Les images nouvelles ou rebaptisées sans exactement une entrée de style valide causent délibérément l'échec de la construction du site Web.
+L'affectation requise de toutes les images de chat et de réaction est dans le centre [`media/gallery/STILINDEX.md`](../../../../media/gallery/STILINDEX.md). Style n'est déduit ni du dossier ni du nom du fichier. Les images nouvelles ou rebaptisées sans exactement une entrée de style valide causent délibérément l'échec de la construction du site Web.
 
 ## Règles de désignation
 

@@ -18,7 +18,7 @@ themen:
 
 > **Rappelez-vous :** Position détermine le premier adversaire – le résultat détermine le tour suivant.
 
-![Conseil 2 – Ordre de bataille dans les attaques de rallye](../../../../Drachenwissen/Tipps/Tipp_02_Sammelangriffe.png)
+![Conseil 2 – Ordre de bataille dans les attaques de rallye](../../../../media/knowledge/Tipps/Tipp_02_Sammelangriffe.png)
 
 ## À quoi sert cette astuce ?
 

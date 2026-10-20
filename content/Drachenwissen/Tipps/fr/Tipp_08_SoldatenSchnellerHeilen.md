@@ -20,7 +20,7 @@ themen:
 
 > **Rappelez-vous :** Aide Temps × aide immédiate = temps de guérison maximum pour un lot de guérison instantanée.
 
-![Conseil 8 – Soldats de guérison plus rapide](../../../../Drachenwissen/Tipps/Tipp_08_SoldatenSchnellerHeilen.png)
+![Conseil 8 – Soldats de guérison plus rapide](../../../../media/knowledge/Tipps/Tipp_08_SoldatenSchnellerHeilen.png)
 
 ## À quoi sert cette astuce ?
 
@@ -86,7 +86,7 @@ Le temps de guérison optimal est donc **pas une valeur fixe universelle**. Cela
 
 ### Exemple spécifique de la nouvelle capture d'écran dans le jeu
 
-![Aperçu des buffs dans le jeu avec la limite d'aide 25 et de l'aide 742](../../../../Drachenwissen/Tipps/Tipp_08_Hilfszeit_Buff.jpg)
+![Aperçu des buffs dans le jeu avec la limite d'aide 25 et de l'aide 742](../../../../media/knowledge/Tipps/Tipp_08_Hilfszeit_Buff.jpg)
 
 *(Comment atteindre cette vue : appuyez sur votre base sur la carte du monde → sélectionnez,Set Shield, → basculez vers le,Economy Type, onglet en haut.)*
 

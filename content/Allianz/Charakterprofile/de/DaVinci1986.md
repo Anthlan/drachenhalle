@@ -73,4 +73,4 @@ DaVinci1986 gehört in ein warmes Haus der offenen Wege über einer Schweizer Se
 
 Das Morgenlicht und ein kleiner verspielter Drachenanhänger dürfen ihr inneres Kind andeuten, ohne die erwachsene Hauptfigur ins Niedliche zu ziehen. Ein Zug kann als fernes Nebenmotiv erscheinen. Hunde oder andere reale Haustiere gehören ausdrücklich nicht in diese Bildwelt.
 
-Aktuelles Szenenbild: `site/public/brand/officer-davinci1986-world.webp`
+Aktuelles Szenenbild: `apps/website/public/brand/officer-davinci1986-world.webp`

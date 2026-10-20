@@ -2,7 +2,7 @@
 
 Mitteilung zur Hauptstadteroberung vom 10.10.2026, erstellt am 11.10.2026. Von Anthlan und unseren R4 an unsere Mitglieder.
 
-![Anthlan und unsere sechs R4 danken unseren Mitgliedern für ihren Einsatz.](../../../Allianz/Hauptstadteroberung_Danke.png)
+![Anthlan und unsere sechs R4 danken unseren Mitgliedern für ihren Einsatz.](../../../media/alliance/Hauptstadteroberung_Danke.png)
 
 ## Kopierversion für die Allianz Mitteilung
 

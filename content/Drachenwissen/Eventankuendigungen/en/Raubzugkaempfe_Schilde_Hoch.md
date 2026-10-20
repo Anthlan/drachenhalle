@@ -4,7 +4,7 @@ During raid battles, opponents from other servers can teleport to us and attack 
 
 This announcement combines three things every member needs to know: the actual danger period, timely preparation in the alliance shop and the two activation times in our shield plan.
 
-![Raid battles – shields up](../../../../Drachenwissen/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
+![Raid battles – shields up](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
 
 ## Why the shield plan matters
 

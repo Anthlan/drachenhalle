@@ -68,4 +68,4 @@ mysteryZ belongs in a rainy nighttime headquarters above the Rhine. She remains 
 
 Chibi images deliberately depart from the generally cuter S3 effect: mysteryZ stays compact and exaggerated, but not sweet or cuddly. Prefer a clearly readable silhouette, slightly slimmer proportions, controlled eye expressions and dry visual humour. Avoid hearts, sparkling eyes, plush aesthetics, prominent chubby cheeks and infantilising poses.
 
-Current scene image: `site/public/brand/officer-mysteryz-world-v3.webp`
+Current scene image: `apps/website/public/brand/officer-mysteryz-world-v3.webp`

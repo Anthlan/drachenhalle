@@ -22,7 +22,7 @@ themen:
 
 > **Merksatz:** Kurz zuschlagen, Gefahr früh erkennen, rechtzeitig verschwinden.
 
-![Tipp 10 – Hit & Run im PvP](../../../../Drachenwissen/Tipps/Tipp_10_HitAndRunImPvP.png)
+![Tipp 10 – Hit & Run im PvP](../../../../media/knowledge/Tipps/Tipp_10_HitAndRunImPvP.png)
 
 ## Wofür ist dieser Tipp?
 

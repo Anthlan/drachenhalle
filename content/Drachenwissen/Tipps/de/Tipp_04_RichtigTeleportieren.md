@@ -18,7 +18,7 @@ themen:
 
 > **Merksatz:** Zufällig für Flexibilität, Allianz zum Gruppieren, fortgeschritten für den exakten Platz.
 
-![Tipp 4 – Richtig teleportieren](../../../../Drachenwissen/Tipps/Tipp_04_RichtigTeleportieren.png)
+![Tipp 4 – Richtig teleportieren](../../../../media/knowledge/Tipps/Tipp_04_RichtigTeleportieren.png)
 
 ## Wofür ist dieser Tipp?
 

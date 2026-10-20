@@ -20,7 +20,7 @@ status: Time-limited
 
 > **Recomendação rápida:** Salvar pequenas ações F2P para um marco diário confiável. Com grandes estoques e um foco em cupons, repita as caixas de cupons precoces ao longo de vários dias até a fase 7 ou 9. Os compradores direcionados asseguram apenas as ofertas diárias desejadas; quando se apontam para a visual, compram apenas o restante vazio do voucher imediatamente após todos os sorteamentos.
 
-![Guia de eventos – Preparação para a Batalha da tripulação de voo](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png)
+![Guia de eventos – Preparação para a Batalha da tripulação de voo](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png)
 
 ## Para que é este guia de eventos?
 
@@ -108,7 +108,7 @@ Para **Valor total**, A decisão é mais matizada. A segunda etapa 9 também rep
 
 No entanto, este preço de lista pode rapidamente sobreestimar o valor pessoal dos cofres aleatórios. A corrida profunda ultrapassa a segunda etapa-9 corrida uma vez que cada uma das nove caixas UR Survivor é pessoalmente vale pelo menos cerca de **24 vales**. Qualquer pessoa que dificilmente precisa de sobreviventes aleatórios é melhor atendida por duas corridas de estágio 9; qualquer pessoa que possa usar quase todos os possíveis sobrevivantes da UR provavelmente recebe um valor total maior a partir da fase 15. Para o foco de vales puros, a recomendação permanece inalterada: atingir o estágio 9 no primeiro dia, registrar o uso real de moedas e voltar ao estágio 9, no segundo dia, apenas se o estoque restante incluir uma margem de segurança adequada.
 
-![Máquina de apostas, etapas diárias e reinicialização diária no design Drachenhalle](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
+![Máquina de apostas, etapas diárias e reinicialização diária no design Drachenhalle](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
 
 ### Por que a visual não é realista sem um orçamento elevado
 
@@ -219,11 +219,11 @@ A rota totalmente previsível usa pacotes de cupons diretos. A compra dos pacote
 
 Uma aquisição documentada de acompanhamento de **2.400 cupões para €360** confirma a taxa direta regular de €0,15 por voucher. A estratégia razoável é, portanto, utilizar moedas gratuitas e, no máximo, pequenas embalagens baratas de moedas **em modo 1x**, depois verifique o saldo real e feche directamente apenas a lacuna restante. Para um planejamento completo antecipado, a rota do voucher direto **€596** é mais barato do que o cálculo da moeda garantida em torno de **€833**.
 
-![Vibranium Defense Line como uma recompensa exclusiva de alto gasto e Pedras Refinadas como a recomendação geral](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
+![Vibranium Defense Line como uma recompensa exclusiva de alto gasto e Pedras Refinadas como a recomendação geral](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
 
 ## Recomendações por orçamento
 
-![Recomendação orçamental para o evento](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png)
+![Recomendação orçamental para o evento](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png)
 
 ### Free2Play – €0
 

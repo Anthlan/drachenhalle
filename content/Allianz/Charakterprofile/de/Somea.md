@@ -73,4 +73,4 @@ Der runde Tisch, die schwarze Katze und einzelne persönliche Details erzählen 
 
 Das M2-Alternativoutfit zeigt ihre souveräne Femme-fatale-Seite in einem bodenlangen Abendkleid aus schwarzem Samt und nachtblauer Seide. Saphire, gealtertes Gold, Sternstickerei und transparente dunkle Lagen verbinden das Kleid mit ihrer Welt. Auf einem hohen Balkon über dem nächtlichen Berlin zeigt sie sich allein und nachdenklich; ihr Blick geht sehnsüchtig in die Ferne. Freier Rücken, klare Schulterlinie, körpernahe Silhouette und ein kontrollierter Beinschlitz geben der Darstellung erwachsenen Sexappeal, ohne in Pin-up-Pose, übermäßige Freizügigkeit oder moderne Red-Carpet-Ästhetik zu kippen. Kaffee, Entscheidungsknopf und Katze gehören nicht in diese alternative Balkonszene.
 
-Aktuelles Szenenbild: `site/public/brand/officer-somea-world-v4.webp`
+Aktuelles Szenenbild: `apps/website/public/brand/officer-somea-world-v4.webp`

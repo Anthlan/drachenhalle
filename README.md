@@ -1,62 +1,66 @@
 # ZRoute – DIE Drachenhalle
 
-Dieses Repository ist die zentrale, strukturierte Sammlung von Inhalten rund um **Z:Route: Redemption** und die Allianz **DIE**. Seine Hauptbereiche entsprechen direkt der Navigation der [Website](https://anthlan.github.io/drachenhalle/).
+Dieses Repository enthält die veröffentlichte Wissensseite der Allianz **DIE** zu *Z:Route: Redemption*. Deutsch ist die redaktionelle Hauptfassung; Englisch, Französisch, Russisch und brasilianisches Portugiesisch werden als Übersetzungen gepflegt.
 
-## Sprachen
+## Wo liegt was?
 
-Die Website bietet Deutsch, Englisch, Französisch, Russisch und brasilianisches Portugiesisch mit einer Sprachwahl auf jeder Seite. Pflegbare Textquellen liegen unter `content/<Thema>/<Sprache>` (`de`, `en`, `fr`, `ru`, `pt`). Textfreie Bilder und Charaktermodelle werden gemeinsam verwendet; übersetzte Wissensgrafiken liegen neben den jeweiligen Sprachtexten. Die [Sprachstruktur](content/README.md) beschreibt das Vorgehen.
+| Bereich | Zweck | Wird veröffentlicht? |
+| --- | --- | --- |
+| [`content`](content/README.md) | Eigentliche Seiteninhalte und sprachabhängige Wissensgrafiken | Ja |
+| [`media`](media/README.md) | Sprachneutrale Bilder, Galerie, Karte und historische Medien | Ja |
+| [`apps/website`](apps/website/README.md) | Astro-Anwendung, Generatoren, Tests und Build-Konfiguration | Erzeugt die Website |
+| [`apps/page-views`](apps/page-views/README.md) | Separater Cloudflare-Worker für Seitenaufrufe | Separater Dienst |
+| [`guides`](guides/README.md) | Archivregeln, redaktionelle Bauanleitungen und Bild-Prompts | Dokumentation |
+| [`docs`](docs/README.md) | Technische Dokumentation und erzeugte Prüfberichte | Dokumentation |
+| `.local`, `tmp`, `.tmp`, `state` | Lokale Importe, Laufzeitstände und temporäre Dateien | Nein, von Git ignoriert |
 
-## Einstieg
+Damit bleibt die oberste Ebene bewusst klein: `content` und `media` sind die Inhalte, `apps` ist die Technik, `guides` beschreibt die Pflege und `docs` dokumentiert das System.
 
-- [Archivregeln und Rahmenparameter](ARCHIVREGELN.md)
-- [Styleguides](Styleguides/README.md)
+## Inhalte und Sprachen
 
-Jeder Fachordner enthält eine eigene `README.md` mit seinem Zweck, seiner vorgesehenen Verwendung und den dort geltenden Benennungsregeln.
+Pflegbare Textquellen liegen unter `content/<Thema>/<Sprache>`. Registrierte Sprachcodes sind `de`, `en`, `fr`, `ru` und `pt`. Die deutsche Fassung ist führend. Übersetzungen besitzen dieselbe stabile Inhalts-ID, dürfen aber einen lokalisierten öffentlichen Seitennamen erhalten. Bestehende Links bleiben bei Umbenennungen als Weiterleitungen erhalten.
 
-## Inhalte
+Die wichtigsten redaktionellen Bereiche sind:
 
-| Ordner | Inhalt |
-| --- | --- |
-| [`Aktuelles`](content/Aktuelles/de/README.md) | Manuell gepflegte Neuigkeiten für die Startseite |
-| [`Termine`](content/Termine/de/README.md) | Kommende und vergangene Allianz-Events mit Detailseite, passenden Wissensinhalten und Kalender-Download |
-| [`Galerie`](Galerie/README.md) | Chatbilder, Reaktionsbilder, Avatare und Charaktermodelle |
-| [`Drachenwissen`](content/Drachenwissen/de/README.md) | Tipps, Strategien und Informationen für den Spiel- und Allianzalltag |
-| [`Tutorials`](content/Tutorials/de/README.md) | Geführte Schritt-für-Schritt-Anleitungen für wichtige Abläufe |
-| [`Allianz`](content/Allianz/de/README.md) | Regeln, Offiziere, Verantwortlichkeiten und interne Beratungsunterlagen |
-| [`Styleguides`](Styleguides/README.md) | Gestaltungs- und Textregeln für konsistente DIE-Inhalte |
-| [`Archiv`](Archiv/README.md) | Ersetzte, veraltete oder historisch relevante Inhalte |
-| [`site`](site) | Technische Quellen der automatisch erzeugten Website |
+- `Aktuelles`: Neuigkeiten für die Startseite
+- `Termine`: kommende und archivierte Allianz-Events
+- `Drachenwissen`: Tipps, Strategien, Event-Guides und Auswertungen
+- `Tutorials`: Schritt-für-Schritt-Anleitungen
+- `Allianz`: Regeln, Offiziere und Verantwortlichkeiten
+- `Galerie`: beschreibende Seiten für Avatare, Modelle und Bildsammlungen
+- `Styleguides`: veröffentlichte Gestaltungs- und Textregeln
+- `Archiv`: historisch relevante, nicht mehr aktuelle Inhalte
 
-Unter **Tools** stellt die Website kleine interaktive Werkzeuge bereit. Der Schildrechner liest den nächsten Raubzug und eine mögliche parallele Hauptstadteroberung direkt aus den Termindaten, plant mit 72-, 24-, 12- und 8-Stunden-Schilden sowie frei wählbaren aktiven Kampfzeiten und erzeugt auf Wunsch persönliche Kalendererinnerungen. Bekannte Preise, Wiederbeschaffungskosten und wöchentliche Allianzshop-Limits unterstützen die Kostenplanung. Der Heilrechner berechnet aus Hilfszeit, Hilfslimit und aktiven Helfern ein sicheres Instant-Heal-Zeitfenster. Für T5 bis T9 nutzt er aus Ingame-Messungen abgeleitete Basiswerte von 60 bis 100 Sekunden je Soldat; T1 bis T4 sowie T10 werden aus der erkannten Zehn-Sekunden-Staffelung hochgerechnet. Zusammen mit der persönlichen Heilungsgeschwindigkeit entsteht daraus eine Soldatenempfehlung, während für gemischte Truppen eine eigene Ingame-Kalibrierung verfügbar bleibt.
+Vor Inhaltsänderungen gelten die [Archivregeln](guides/editorial/ARCHIVREGELN.md). Die technische Sprachstruktur ist in der [Inhaltsdokumentation](content/README.md) beschrieben.
 
-Die interaktive [Auswertung zum Expeditionswahnsinn](https://anthlan.github.io/drachenhalle/auswertungen/expeditionswahnsinn/) vergleicht für die Hauptstadteroberung vom 10.10.2026 Teilnehmer und Punkte von S105 und S97. Allianzfilter, Beteiligungsquoten für die 20 Allianzen mit bekannten Mitgliederzahlen, die Verteilung der Beiträge und eine durchsuchbare Rangliste mit CSV-Export erschließen den vollständigen Stand von 563 Spielern. Zusätzliche Server werden separat geführt. Die Datengrundlage liegt in `site/src/data/expedition-2026-10-10.json`.
+## Lokale Entwicklung
+
+```powershell
+cd apps/website
+pnpm install
+pnpm dev
+```
+
+Tests und vollständiger Produktions-Build:
+
+```powershell
+cd apps/website
+pnpm test
+pnpm build
+```
+
+GitHub Pages baut ausschließlich `apps/website`. Die Generatoren lesen veröffentlichte Inhalte aus `content` und Medien aus `media`.
 
 ## Inhalte einreichen
 
-Allianzmitglieder können Bilder und Dokumente über die [ZRoute Upload-Inbox](https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g) einreichen. Für den Upload ist kein Dropbox-Konto erforderlich.
+Allianzmitglieder können Bilder und Dokumente über die [ZRoute Upload-Inbox](https://www.dropbox.com/request/4ha3swzj8zyl4mez6j8g) einreichen. Für den Upload ist kein Dropbox-Konto erforderlich. Einsendungen werden vor der Übernahme geprüft, passend benannt und einem veröffentlichten Bereich zugeordnet. Lokale Importordner werden nicht eingecheckt.
 
-Bitte im Dateinamen nach Möglichkeit den eigenen Spielernamen und einen kurzen Inhaltshinweis angeben. Mit dem Upload muss die Aufnahme der Datei in dieses öffentliche Archiv erlaubt sein. Alle Einsendungen werden vor der Übernahme geprüft, passend benannt und in den vorgesehenen Ordner eingeordnet.
+## Dienste und Datenschutz
 
-### Inbox-Zähler der Website
+Der Pages-Workflow kann die Zahl der Dateien in der Dropbox-Inbox anzeigen. Dafür werden die Secrets `DROPBOX_APP_KEY`, `DROPBOX_APP_SECRET` und `DROPBOX_REFRESH_TOKEN` verwendet. Ohne diese Secrets baut die Website weiterhin.
 
-Der Pages-Workflow zählt zweimal pro Stunde alle Dateien im freigegebenen Dropbox-Inbox-Ordner und zeigt die Anzahl am Inbox-Symbol. Dateinamen oder andere Metadaten werden nicht auf der Website veröffentlicht. Für die Abfrage benötigt das Repository die Workflow-Secrets `DROPBOX_APP_KEY`, `DROPBOX_APP_SECRET` und `DROPBOX_REFRESH_TOKEN`. Fehlen sie, wird die Website weiterhin gebaut und das Inbox-Symbol bleibt ohne Zähler.
-
-### Aufrufzahlen der Website
-
-Ein kleiner Cloudflare Worker zählt die Aufrufe jeder veröffentlichten Seite in einer D1-Datenbank und liefert zusätzlich die Gesamtzahl aus. Im Footer werden beide Werte angezeigt. Die Anwendung speichert nur den Seitenpfad und die aggregierten Zählerstände; sie setzt keine Cookies und speichert keine Browser-Kennungen. Die Einrichtung ist unter [`cloudflare/page-views`](cloudflare/page-views/README.md) dokumentiert. Ohne die Workflow-Variable `PUBLIC_PAGE_VIEWS_API_URL` wird die Website weiterhin normal gebaut; der Zähler bleibt dann ausgeblendet.
-
-Für die nicht öffentliche Auswertung von Besuchen, Ländern, Referrern, Geräten und beliebten Seiten kann zusätzlich Cloudflare Web Analytics aktiviert werden. Der Site-Token wird als Workflow-Variable `PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN` hinterlegt. Eigene Aufrufe lassen sich pro Browser dauerhaft ausschließen, indem einmal `https://anthlan.github.io/drachenhalle/?traffic=off` geöffnet wird. `?traffic=on` schaltet die Zählung im jeweiligen Browser wieder ein. Lokale Entwicklung und automatisierte Browser werden grundsätzlich nicht gezählt. Der Opt-out gilt sowohl für Web Analytics als auch für den sichtbaren Seitenzähler.
-
-## Gestaltungsprinzip
-
-Bei Chat- und Reaktionsbildern werden Verwendungszweck und Darstellungsstil getrennt gepflegt. Chatbilder erzählen Szenen, Reaktionsbilder liefern kurze wiederverwendbare Antworten oder Grüße. Beide Kategorien können unabhängig davon in S1, S2, S3 oder S4 gestaltet sein. Die verbindlichen Vorgaben befinden sich unter [`Styleguides`](Styleguides), die Zuordnung im [`Galerie/STILINDEX.md`](Galerie/STILINDEX.md).
-
-## Projektstatus
-
-Das Repository ist ein fortlaufend gepflegtes Archiv. Neue Inhalte werden nach den dokumentierten Ablage- und Benennungsregeln eingeordnet; veraltete Fassungen werden nachvollziehbar archiviert statt stillschweigend überschrieben. Änderungen bleiben über die Git-Historie nachvollziehbar.
+Der optionale Worker unter [`apps/page-views`](apps/page-views/README.md) zählt ausschließlich Seitenpfade und aggregierte Aufrufzahlen. Er setzt keine Cookies und speichert keine Browser-Kennungen. Ohne `PUBLIC_PAGE_VIEWS_API_URL` bleibt der Zähler ausgeblendet. Cloudflare Web Analytics kann zusätzlich über `PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN` aktiviert werden.
 
 ## Hinweis zu Rechten und Zugehörigkeit
 
-Dies ist ein **inoffizielles Fan- und Community-Projekt**. Es besteht keine Verbindung zum Entwickler oder Herausgeber von *Z:Route: Redemption*. Spielnamen, Marken und sonstige geschützte Bestandteile gehören den jeweiligen Rechteinhabern.
-
-Die Veröffentlichung dieses Repositorys erteilt keine allgemeine Erlaubnis zur Weiterverwendung der enthaltenen Texte, Bilder, Avatare oder Charaktermodelle. Soweit nicht ausdrücklich anders angegeben, ist für eine Nutzung außerhalb dieses Projekts die Zustimmung der jeweiligen Urheber beziehungsweise Rechteinhaber erforderlich.
+Dies ist ein **inoffizielles Fan- und Community-Projekt** ohne Verbindung zum Entwickler oder Herausgeber von *Z:Route: Redemption*. Spielnamen, Marken und sonstige geschützte Bestandteile gehören den jeweiligen Rechteinhabern. Die Veröffentlichung dieses Repositorys erteilt keine allgemeine Erlaubnis zur Weiterverwendung der enthaltenen Texte, Bilder, Avatare oder Charaktermodelle.

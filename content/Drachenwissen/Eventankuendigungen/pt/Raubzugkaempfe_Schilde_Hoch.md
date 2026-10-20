@@ -4,7 +4,7 @@ Durante as batalhas de ataque, os adversários de outros servidores podem teletr
 
 Este anúncio combina três coisas que cada membro precisa saber: o período de perigo real, a preparação oportuna na loja da aliança e os dois tempos de ativação no nosso plano de escudo.
 
-![Batalhas de ataque – escudos para cima](../../../../Drachenwissen/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
+![Batalhas de ataque – escudos para cima](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
 
 ## Por que o plano do escudo importa
 

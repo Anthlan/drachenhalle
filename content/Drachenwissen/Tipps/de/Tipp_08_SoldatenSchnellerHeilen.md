@@ -20,7 +20,7 @@ themen:
 
 > **Merksatz:** Hilfszeit × sofortige Helfer = maximale Heilzeit für einen Instant-Heal-Block.
 
-![Tipp 8 – Soldaten schneller heilen](../../../../Drachenwissen/Tipps/Tipp_08_SoldatenSchnellerHeilen.png)
+![Tipp 8 – Soldaten schneller heilen](../../../../media/knowledge/Tipps/Tipp_08_SoldatenSchnellerHeilen.png)
 
 ## Wofür ist dieser Tipp?
 
@@ -86,7 +86,7 @@ Die optimale Heilzeit ist damit **kein allgemeiner Festwert**. Sie verändert si
 
 ### Konkretes Beispiel aus dem neuen Ingame-Screenshot
 
-![Ingame-Buffübersicht mit Hilfslimit 25 und Hilfszeit 742](../../../../Drachenwissen/Tipps/Tipp_08_Hilfszeit_Buff.jpg)
+![Ingame-Buffübersicht mit Hilfslimit 25 und Hilfszeit 742](../../../../media/knowledge/Tipps/Tipp_08_Hilfszeit_Buff.jpg)
 
 *(So gelangt ihr dorthin: Basis auf der Weltkarte anklicken → „Schild setzen“ auswählen → oben zum Reiter „Wirtschaftstyp“ wechseln.)*
 

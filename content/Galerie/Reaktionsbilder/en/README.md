@@ -6,7 +6,7 @@ Scenic or narrative images belong in [`Galerie/Chatbilder`](../../Chatbilder/en/
 
 ## Style Assignment
 
-“Reaction image” describes intended use and does not determine visual style. Reaction images may use S1, S2, S3 or S4. Their required assignments are recorded alongside chat images in the central [`Galerie/STILINDEX.md`](../../../../Galerie/STILINDEX.md).
+“Reaction image” describes intended use and does not determine visual style. Reaction images may use S1, S2, S3 or S4. Their required assignments are recorded alongside chat images in the central [`media/gallery/STILINDEX.md`](../../../../media/gallery/STILINDEX.md).
 
 ## Naming Rules
 

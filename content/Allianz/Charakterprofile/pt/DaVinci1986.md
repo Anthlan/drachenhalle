@@ -73,4 +73,4 @@ DaVinci1986 pertence a uma casa quente de caminhos abertos acima de uma paisagem
 
 A luz da manhã e um pequeno pendente de dragão brincalhão podem sugerir a sua criança interior sem tornar a protagonista adulta muito simpática. Um trem pode aparecer como um motivo secundário distante. Cães e outros animais reais são expressamente excluídos deste mundo visual.
 
-Imagem atual: `site/public/brand/officer-davinci1986-world.webp`
+Imagem atual: `apps/website/public/brand/officer-davinci1986-world.webp`

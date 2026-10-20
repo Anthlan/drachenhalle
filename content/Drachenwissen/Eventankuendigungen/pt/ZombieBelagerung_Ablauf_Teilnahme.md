@@ -4,7 +4,7 @@ Durante o Cerco dos Zombies, várias ondas atacam as nossas bases uma após a ou
 
 O anúncio explica o processo para que os participantes ativos e os membros que querem ficar fora desta vez saibam o que fazer.
 
-![Cerco de Zombies – processo e participação](../../../../Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
+![Cerco de Zombies – processo e participação](../../../../media/knowledge/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
 
 ## Como funciona a participação
 

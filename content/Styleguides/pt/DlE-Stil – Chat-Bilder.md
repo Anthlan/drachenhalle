@@ -36,7 +36,7 @@ Para retratos fortemente simplificados, bonitos e deliberadamente exagerados com
 
 Para a sobrevivência ousada e cartazes de personagens em um mundo pós-apocalíptico. As características incluem materiais granulares, forte contraste preto-vermelho-branco, pôr-do-sol quente, letras de pincel ou stencil ásperas, notas marginais manuscritas e visíveis “Rutas de Redenção” A marca. Os números podem ser mais caricaturizados do que no S1 ou no S2, mas devem permanecer reconhecíveis a partir de modelos de referência e atributos recorrentes. O S4 combina posters individuais, piadas recorrentes, cenas de grupo e publicidade de aliança que parece fazer parte da mesma série de campanhas robustas.
 
-O grupo de estilos é documentado centralmente em `Galerie/STILINDEX.md`, em vez de codificados em nomes de arquivos ou estrutura de pasta. Introduzir novos grupos apenas quando uma imagem não se encaixar razoavelmente numa existente.
+O grupo de estilos é documentado centralmente em `media/gallery/STILINDEX.md`, em vez de codificados em nomes de arquivos ou estrutura de pasta. Introduzir novos grupos apenas quando uma imagem não se encaixar razoavelmente numa existente.
 
 ### Aparência
 - Alta qualidade **Ilustração cinematográfica de fantasia semi-realista** que se assemelham à arte de jogo refinada

@@ -75,4 +75,4 @@ Drachenherz belongs in an open woodland grove inside an overgrown bastion. The s
 
 A small caring action, such as supporting a damaged plant, forms the emotional centre. The emerald protective blessing can be large, but should cover the whole camp rather than elevate Drachenherz as a solitary chosen one. Warm woodland and firelight preserve his approachability.
 
-Current scene image: `site/public/brand/officer-drachenherz-world.webp`
+Current scene image: `apps/website/public/brand/officer-drachenherz-world.webp`

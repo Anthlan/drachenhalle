@@ -36,7 +36,7 @@ Pour des représentations fortement simplifiées, mignonnes et délibérément e
 
 Pour la survie audacieuse et les affiches de caractère dans un monde humoristique post-apocalyptique. Caractéristiques comprennent des matériaux granuleux, contraste noir-rouge-blanc fort, couchers de soleil chauds, brosse ou lettrage de pochoir, notes de marge manuscrites et visible,Z Routes Les chiffres peuvent être plus caricatures que dans S1 ou S2, mais doit rester recognisable à partir des modèles de référence et des attributs récurrents. S4 s'adapte à des affiches individuelles, des blagues récurrentes, des scènes de groupe et de la publicité d'alliance qui ressemble à une partie de la même série de campagnes robustes.
 
-Le groupe de style est documenté de façon centralisée dans `Galerie/STILINDEX.md`, plutôt que de l'encodage dans les noms de fichiers ou la structure de dossiers. Introduire de nouveaux groupes seulement quand une image ne peut pas raisonnablement correspondre à une image existante.
+Le groupe de style est documenté de façon centralisée dans `media/gallery/STILINDEX.md`, plutôt que de l'encodage dans les noms de fichiers ou la structure de dossiers. Introduire de nouveaux groupes seulement quand une image ne peut pas raisonnablement correspondre à une image existante.
 
 ### Apparence
 - Haute qualité **illustration cinématographique, semi-réaliste de fantaisie** resemblant à de l'art de jeu raffiné

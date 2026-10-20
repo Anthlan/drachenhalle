@@ -68,4 +68,4 @@ O mysteryZ pertence a um quartel-general de noite chuvoso acima do Reno. Ela per
 
 As imagens de Chibi deliberadamente se afastam do efeito S3 geralmente mais bonito: o mysteryZ permanece compacto e exagerado, mas não doce ou carinhoso. Prefere uma silueta claramente legível, proporções ligeiramente mais finas, expressões oculares controladas e humor visual seco. Evite corações, olhos brilhantes, estética de luxo, bochechas grossas e posturas infantil.
 
-Imagem atual: `site/public/brand/officer-mysteryz-world-v3.webp`
+Imagem atual: `apps/website/public/brand/officer-mysteryz-world-v3.webp`

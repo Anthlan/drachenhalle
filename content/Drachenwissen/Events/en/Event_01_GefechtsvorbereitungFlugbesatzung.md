@@ -20,7 +20,7 @@ status: Time-limited
 
 > **Quick recommendation:** Save small F2P stocks for a reliable daily milestone. With large stocks and a voucher focus, repeat early voucher boxes across several days through stage 7 or 9. Targeted Buyers secure only desired daily offers; when aiming for the skin, buy only the remaining voucher gap directly after all draws.
 
-![Event guide – Flight Crew Battle Preparation](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png)
+![Event guide – Flight Crew Battle Preparation](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png)
 
 ## What is this event guide for?
 
@@ -108,7 +108,7 @@ For **total value**, the decision is more nuanced. A second run through stage 9 
 
 However, this list price can quickly overestimate the personal value of random chests. The deep run overtakes the second stage-9 run once each of the nine UR Survivor Chests is personally worth at least around **24 vouchers**. Anyone who barely needs random survivors is better served by two stage-9 runs; anyone who can use nearly every possible UR survivor likely receives higher total value from stage 15. For pure voucher focus, the recommendation remains unchanged: reach stage 9 on day one, record actual coin use, and aim for stage 9 again on day two only if the remaining stock includes an adequate safety margin.
 
-![Slot machine, daily stages and daily reset in Drachenhalle design](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
+![Slot machine, daily stages and daily reset in Drachenhalle design](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
 
 ### Why the skin is unrealistic without a high-spender budget
 
@@ -219,11 +219,11 @@ The fully predictable route uses direct voucher packs. Buying the inexpensive 20
 
 A documented follow-up purchase of **2,400 vouchers for €360** confirms the regular direct rate of €0.15 per voucher. The sensible strategy is therefore to use free coins and, at most, inexpensive small coin packs **in 1× mode**, then check the actual balance and close only the remaining gap directly. For complete advance planning, the direct voucher route at around **€596** is cheaper than the guaranteed coin calculation at around **€833**.
 
-![Vibranium Defense Line as an exclusive high-spender reward and Refined Stones as the general recommendation](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
+![Vibranium Defense Line as an exclusive high-spender reward and Refined Stones as the general recommendation](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
 
 ## Recommendations by budget
 
-![Budget recommendation for the event](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png)
+![Budget recommendation for the event](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png)
 
 ### Free2Play – €0
 

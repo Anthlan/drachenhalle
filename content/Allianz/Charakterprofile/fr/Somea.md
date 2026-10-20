@@ -73,4 +73,4 @@ La table ronde, le chat noir et les détails personnels montrent encore qu'elle 
 
 La tenue alternative M2 montre son côté passionnée et confiant dans une robe de soirée longue en velours noir et soie bleu minuit. Les saphirs, l'or vieilli, la broderie étoile et les couches sombres transparentes l'associent à son monde. Seul et Une ligne d'épaule ouverte, claire, une silhouette ajustée et une fente de jambe contrôlée véhiculent l'attrait sexuel adulte sans devenir une pose pin-up, excessive exposition ou esthétique moderne de la carpe rouge. Café, bouton de décision et le chat n'appartiennent pas dans cette scène de balcon alternative.
 
-Image de la scène actuelle : `site/public/brand/officer-somea-world-v4.webp`
+Image de la scène actuelle : `apps/website/public/brand/officer-somea-world-v4.webp`

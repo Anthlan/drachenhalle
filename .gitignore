@@ -1,5 +1,14 @@
+# Local package caches
 .pnpm-store/
+
+# Local working files, imported screenshots and tool state
+.local/
 tmp/
-.pnpm-store/
-tmp/
+.tmp/
+.dropbox-inbox-tmp/
+state/
+.dropbox-inbox-state.json
+
+# Local development output
+*.log
 

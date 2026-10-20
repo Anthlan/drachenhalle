@@ -1,6 +1,6 @@
 # Our leadership team
 
-![Our leadership team discussing plans together at the map table](../../../Allianz/Allianz_Fuehrungsteam.png)
+![Our leadership team discussing plans together at the map table](../../../media/alliance/Allianz_Fuehrungsteam.png)
 
 Our alliance leadership consists of Anthlan as R5 and our six R4 officers. We coordinate together, make decisions for our alliance and are here for you. This page shows the current members of our leadership team. In the Dragon Hall, you can click each portrait to discover the fictional alter ego behind it.
 

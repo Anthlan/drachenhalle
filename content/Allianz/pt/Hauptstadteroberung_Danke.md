@@ -2,7 +2,7 @@
 
 Mensagem sobre a Conquista da Capital em 10 de outubro de 2026, escrita em 11 de outubro. Do Anthlan e dos nossos oficiais R4 aos nossos membros.
 
-![Anthlan e os nossos seis oficiais da R4 agradecem aos nossos membros pelos seus esforços.](../../../Allianz/Hauptstadteroberung_Danke.png)
+![Anthlan e os nossos seis oficiais da R4 agradecem aos nossos membros pelos seus esforços.](../../../media/alliance/Hauptstadteroberung_Danke.png)
 
 ## Versão de cópia para a mensagem da aliança
 

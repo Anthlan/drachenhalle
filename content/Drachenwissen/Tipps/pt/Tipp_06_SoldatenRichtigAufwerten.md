@@ -19,7 +19,7 @@ themen:
 
 > **Lembre-se:** Treinar os níveis mais baixos, reunir os soldados existentes e promovê-los nos quartéis de nível mais alto usando a seta verde.
 
-![Dica 6 – Avaliar os soldados corretamente](../../../../Drachenwissen/Tipps/Tipp_06_SoldatenRichtigAufwerten.png)
+![Dica 6 – Avaliar os soldados corretamente](../../../../media/knowledge/Tipps/Tipp_06_SoldatenRichtigAufwerten.png)
 
 ## Para que é esta gorjeta?
 

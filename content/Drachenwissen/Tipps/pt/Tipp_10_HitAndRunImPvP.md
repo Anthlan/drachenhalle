@@ -22,7 +22,7 @@ themen:
 
 > **Lembre-se:** Atirar brevemente, reconhecer o perigo cedo, desaparecer a tempo.
 
-![Dica 10 – Hit & Run em PvP](../../../../Drachenwissen/Tipps/Tipp_10_HitAndRunImPvP.png)
+![Dica 10 – Hit & Run em PvP](../../../../media/knowledge/Tipps/Tipp_10_HitAndRunImPvP.png)
 
 ## Para que é esta gorjeta?
 

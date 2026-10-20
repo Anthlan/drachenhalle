@@ -23,7 +23,7 @@ themen:
 
 > **Rappelez-vous :** Un appel, cinq rôles clairs, une cible partagée.
 
-![Conseil 11 – Équipes de raid fixes en PvP](../../../../Drachenwissen/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
+![Conseil 11 – Équipes de raid fixes en PvP](../../../../media/knowledge/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
 
 ## Qu'est-ce qu'une équipe de raid fixe?
 

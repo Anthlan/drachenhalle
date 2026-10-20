@@ -94,4 +94,4 @@ Exemples:
 2026_09_25_2331_Passons_Anthlan.png
 ```
 
-`AngriffsknopfChibi` est un S3 clavarder l'image en raison de son action scénique. `Passt` est un S3 image de réaction en raison de son but réutilisable. Les images de réaction peuvent également être attribuées S1 ou S2. Les tâches de style de liaison sont dans `Galerie/STILINDEX.md`.
+`AngriffsknopfChibi` est un S3 clavarder l'image en raison de son action scénique. `Passt` est un S3 image de réaction en raison de son but réutilisable. Les images de réaction peuvent également être attribuées S1 ou S2. Les tâches de style de liaison sont dans `media/gallery/STILINDEX.md`.

@@ -19,7 +19,7 @@ themen:
 
 > **Lembre-se:** Primeiro é nomeado, verifica o bônus, e depois começa a grande ação.
 
-![Dica 3 – Funções especiais de capital](../../../../Drachenwissen/Tipps/Tipp_03_Hauptstadtrollen.png)
+![Dica 3 – Funções especiais de capital](../../../../media/knowledge/Tipps/Tipp_03_Hauptstadtrollen.png)
 
 ## Para que é esta gorjeta?
 

@@ -23,7 +23,7 @@ themen:
 
 > **Merksatz:** Ein Ruf, fünf klare Rollen, ein gemeinsames Ziel.
 
-![Tipp 11 – Feste Raidteams im PvP](../../../../Drachenwissen/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
+![Tipp 11 – Feste Raidteams im PvP](../../../../media/knowledge/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
 
 ## Was ist ein festes Raidteam?
 

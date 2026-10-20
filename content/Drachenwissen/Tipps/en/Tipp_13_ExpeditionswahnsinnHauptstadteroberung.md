@@ -25,7 +25,7 @@ themen:
 
 > **Remember:** Use fixed raid teams for maximum objective pressure; when outnumbered, deliberately switch to controlled Hit & Run.
 
-![Tip 13 – Expedition Frenzy: Capital Conquest](../../../../Drachenwissen/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png)
+![Tip 13 – Expedition Frenzy: Capital Conquest](../../../../media/knowledge/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png)
 
 ## What is this tip for?
 

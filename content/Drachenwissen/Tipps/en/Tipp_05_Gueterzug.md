@@ -20,7 +20,7 @@ themen:
 
 > **Remember:** Secure 25 contracts first, refresh five times, and set up three strong defending teams before departure.
 
-![Tip 5 – Freight Train](../../../../Drachenwissen/Tipps/Tipp_05_Gueterzug.png)
+![Tip 5 – Freight Train](../../../../media/knowledge/Tipps/Tipp_05_Gueterzug.png)
 
 ## What is this tip for?
 

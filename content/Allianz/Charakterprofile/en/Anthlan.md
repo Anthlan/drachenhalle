@@ -61,4 +61,4 @@ Anthlan moves between visionary world-builder and approachable team member. Too 
 
 Anthlan belongs in a warm observatory with connected cities, visible community and a well-used strategy table. He should look competent, but not flawless. A slightly mischievous expression and small traces of lively alliance life matter more than a throne or heroic ruler's pose.
 
-Current scene image: `site/public/brand/officer-anthlan-world.webp`
+Current scene image: `apps/website/public/brand/officer-anthlan-world.webp`

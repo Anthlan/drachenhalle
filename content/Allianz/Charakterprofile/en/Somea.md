@@ -73,4 +73,4 @@ The round table, black cat and individual personal details still show that she n
 
 The M2 alternative outfit shows her confident femme-fatale side in a floor-length evening gown of black velvet and midnight-blue silk. Sapphires, aged gold, star embroidery and transparent dark layers connect it with her world. Alone and thoughtful on a high balcony above nighttime Berlin, she gazes longingly into the distance. An open back, clear shoulder line, fitted silhouette and controlled leg slit convey adult sex appeal without becoming a pin-up pose, excessive exposure or modern red-carpet aesthetics. Coffee, decision button and cat do not belong in this alternative balcony scene.
 
-Current scene image: `site/public/brand/officer-somea-world-v4.webp`
+Current scene image: `apps/website/public/brand/officer-somea-world-v4.webp`

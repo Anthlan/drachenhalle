@@ -25,7 +25,7 @@ themen:
 
 > **Lembre-se:** Usar equipes de ataque fixas para a pressão objetiva máxima; quando em número inferior, mudar deliberadamente para controlado Hit & Run.
 
-![Dica 13 – Expedição Frenzy: Conquista da Capital](../../../../Drachenwissen/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png)
+![Dica 13 – Expedição Frenzy: Conquista da Capital](../../../../media/knowledge/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png)
 
 ## Para que é esta gorjeta?
 

@@ -20,7 +20,7 @@ themen:
 
 > **Lembre-se:** Comece cinco ataques conjuntos, junte-se a cinco, depois continue a apoiar e use apenas a força de combate que é necessária para um sucesso seguro.
 
-![Dica 7 – Emboscada da Aliança](../../../../Drachenwissen/Tipps/Tipp_07_AllianzHinterhalt.png)
+![Dica 7 – Emboscada da Aliança](../../../../media/knowledge/Tipps/Tipp_07_AllianzHinterhalt.png)
 
 ## Para que é esta gorjeta?
 

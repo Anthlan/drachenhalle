@@ -94,4 +94,4 @@ Examples:
 2026_09_25_2331_Passt_Anthlan.png
 ```
 
-`AngriffsknopfChibi` is an S3 chat image because of its scenic action. `Passt` is an S3 reaction image because of its reusable purpose. Reaction images may also be assigned S1 or S2. Binding style assignments are in `Galerie/STILINDEX.md`.
+`AngriffsknopfChibi` is an S3 chat image because of its scenic action. `Passt` is an S3 reaction image because of its reusable purpose. Reaction images may also be assigned S1 or S2. Binding style assignments are in `media/gallery/STILINDEX.md`.

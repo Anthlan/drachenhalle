@@ -22,7 +22,7 @@ themen:
 
 > **Remember:** Strike briefly, recognize danger early, disappear in time.
 
-![Tip 10 – Hit & Run in PvP](../../../../Drachenwissen/Tipps/Tipp_10_HitAndRunImPvP.png)
+![Tip 10 – Hit & Run in PvP](../../../../media/knowledge/Tipps/Tipp_10_HitAndRunImPvP.png)
 
 ## What is this tip for?
 

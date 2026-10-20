@@ -1,6 +1,6 @@
 # Notre équipe de direction
 
-![Notre équipe de direction discute des plans ensemble à la table de la carte](../../../Allianz/Allianz_Fuehrungsteam.png)
+![Notre équipe de direction discute des plans ensemble à la table de la carte](../../../media/alliance/Allianz_Fuehrungsteam.png)
 
 Notre leadership d'alliance consiste en Anthlan comme R5 et nos six R4 Nous nous coordonnons, prenons des décisions pour notre alliance et sommes là pour vous. Cette page montre les membres actuels de notre équipe de direction. Dans la salle Dragon, vous pouvez cliquer sur chaque portrait pour découvrir l'alter ego fictif derrière C'est ça.
 

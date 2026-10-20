@@ -75,4 +75,4 @@ Drachenherz pertence a uma floresta aberta dentro de um bastião. A cena deve pa
 
 Uma pequena ação de carinho, como apoiar uma planta danificada, forma o centro emocional. A bênção protetora esmeralda pode ser grande, mas deve cobrir todo o acampamento em vez de elevar Drachenherz como um escolhido solitário. A floresta quente e a luz do fogo preservam a sua aproximação.
 
-Imagem atual: `site/public/brand/officer-drachenherz-world.webp`
+Imagem atual: `apps/website/public/brand/officer-drachenherz-world.webp`

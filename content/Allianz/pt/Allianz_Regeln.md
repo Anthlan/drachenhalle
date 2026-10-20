@@ -2,7 +2,7 @@
 
 Nossas regras protegem a comunidade, evitam conflitos desnecessários e mantêm nossos ataques e saques de acordo com os combinados do servidor. Na dúvida, conferimos primeiro e agimos depois. Se algo não estiver claro, procure um R4 ou R5.
 
-![Nossas regras da aliança](../../../Allianz/Allianz_Regeln.png)
+![Nossas regras da aliança](../../../media/alliance/Allianz_Regeln.png)
 
 ## 1. Respeitar o NAP10
 

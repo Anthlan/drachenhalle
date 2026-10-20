@@ -21,7 +21,7 @@ themen:
 
 > **Rappelez-vous :** Sautez à l'adversaire gratuitement, puis sélectionnez immédiatement une nouvelle position de la maison par,Retour, – même avec des troupes en dehors de votre base.
 
-![Conseil 9 – Délocaliser gratuitement par Raid](../../../../Drachenwissen/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png)
+![Conseil 9 – Délocaliser gratuitement par Raid](../../../../media/knowledge/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png)
 
 ## À quoi sert cette astuce ?
 

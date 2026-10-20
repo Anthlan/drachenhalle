@@ -20,7 +20,7 @@ themen:
 
 > **Merksatz:** Erst 25 Verträge sichern, dann fünfmal aktualisieren und vor der Abfahrt drei starke Verteidigungsteams aufstellen.
 
-![Tipp 5 – Güterzug](../../../../Drachenwissen/Tipps/Tipp_05_Gueterzug.png)
+![Tipp 5 – Güterzug](../../../../media/knowledge/Tipps/Tipp_05_Gueterzug.png)
 
 ## Wofür ist dieser Tipp?
 

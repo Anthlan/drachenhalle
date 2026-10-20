@@ -21,7 +21,7 @@ themen:
 
 > **Merksatz:** Kostenlos zum Gegner springen und über „Zurückkehren“ sofort einen neuen Heimatplatz auswählen – auch mit Truppen außerhalb der Basis.
 
-![Tipp 9 – Gratis umziehen per Überfall](../../../../Drachenwissen/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png)
+![Tipp 9 – Gratis umziehen per Überfall](../../../../media/knowledge/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png)
 
 ## Wofür ist dieser Tipp?
 

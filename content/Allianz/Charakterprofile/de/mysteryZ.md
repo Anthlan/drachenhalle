@@ -68,4 +68,4 @@ mysteryZ gehört in eine regnerische Nachtzentrale über dem Rhein. Die Figur bl
 
 Für Chibi-Bilder gilt eine bewusste Ausnahme von der allgemein niedlicheren S3-Wirkung: mysteryZ bleibt kompakt und überzeichnet, aber nicht süß oder knuddelig. Bevorzugt werden eine scharf lesbare Silhouette, etwas schlankere Proportionen, kontrollierte Augenmimik und trockener visueller Humor. Herzen, Glitzeraugen, Plüschästhetik, starke Pausbäckchen und verniedlichende Posen sind zu vermeiden.
 
-Aktuelles Szenenbild: `site/public/brand/officer-mysteryz-world-v3.webp`
+Aktuelles Szenenbild: `apps/website/public/brand/officer-mysteryz-world-v3.webp`

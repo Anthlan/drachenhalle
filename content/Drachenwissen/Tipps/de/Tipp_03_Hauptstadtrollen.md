@@ -19,7 +19,7 @@ themen:
 
 > **Merksatz:** Erst ernennen lassen, Bonus kontrollieren, dann die große Aktion starten.
 
-![Tipp 3 – Sonderrollen der Hauptstadt](../../../../Drachenwissen/Tipps/Tipp_03_Hauptstadtrollen.png)
+![Tipp 3 – Sonderrollen der Hauptstadt](../../../../media/knowledge/Tipps/Tipp_03_Hauptstadtrollen.png)
 
 ## Wofür ist dieser Tipp?
 

@@ -23,7 +23,7 @@ themen:
 
 > **Помните:** Один звонок, пять четких ролей, одна общая цель.
 
-![Совет 11 – Исправлены рейдовые команды в PvP](../../../../Drachenwissen/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
+![Совет 11 – Исправлены рейдовые команды в PvP](../../../../media/knowledge/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
 
 ## Что такое фиксированная рейдовая команда?
 

@@ -20,7 +20,7 @@ themen:
 
 > **Lembre-se:** Segure primeiro 25 contratos, refresque cinco vezes e configure três fortes equipes defensoras antes da partida.
 
-![Dica 5 – Trem de carga](../../../../Drachenwissen/Tipps/Tipp_05_Gueterzug.png)
+![Dica 5 – Trem de carga](../../../../media/knowledge/Tipps/Tipp_05_Gueterzug.png)
 
 ## Para que é esta gorjeta?
 

@@ -1,0 +1,28 @@
+{
+  "language": "fr-FR",
+  "tool": "built-in Imagegen",
+  "date": "2026-10-19",
+  "prompt": "Localize the supplied infographic into fluent, concise French. Translate every visible heading, caption, label and body text while preserving the complete navy-and-gold composition, illustrations, icons, arrows, all numbers, times, percentages, identifiers and game mechanics. Fit the French text inside the original panels without clipping. Leave no English, German or Portuguese text. Do not add, omit or reinterpret facts. Keep the original aspect ratio and resolution.",
+  "sources": [
+    "media/alliance/Allianz_Regeln.png",
+    "media/knowledge/Tipps/Tipp_01_TruppenEffizientBewegen.png",
+    "media/knowledge/Tipps/Tipp_02_Sammelangriffe.png",
+    "media/knowledge/Tipps/Tipp_03_Hauptstadtrollen.png",
+    "media/knowledge/Tipps/Tipp_04_RichtigTeleportieren.png",
+    "media/knowledge/Tipps/Tipp_05_Gueterzug.png",
+    "media/knowledge/Tipps/Tipp_06_SoldatenRichtigAufwerten.png",
+    "media/knowledge/Tipps/Tipp_07_AllianzHinterhalt.png",
+    "media/knowledge/Tipps/Tipp_08_SoldatenSchnellerHeilen.png",
+    "media/knowledge/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png",
+    "media/knowledge/Tipps/Tipp_10_HitAndRunImPvP.png",
+    "media/knowledge/Tipps/Tipp_11_FesteRaidteamsImPvP.png",
+    "media/knowledge/Tipps/Tipp_12_KampfberichteRichtigLesen.png",
+    "media/knowledge/Tipps/Tipp_13_ExpeditionswahnsinnHauptstadteroberung.png",
+    "media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png",
+    "media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png",
+    "media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png",
+    "media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png",
+    "media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png",
+    "media/knowledge/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png"
+  ]
+}

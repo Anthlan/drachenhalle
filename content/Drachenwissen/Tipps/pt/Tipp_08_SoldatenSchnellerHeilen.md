@@ -20,7 +20,7 @@ themen:
 
 > **Lembre-se:** Tempo de ajuda × auxiliares imediatos = tempo máximo de cura para um lote de cura instantânea.
 
-![Dica 8 – Curar soldados mais rápido](../../../../Drachenwissen/Tipps/Tipp_08_SoldatenSchnellerHeilen.png)
+![Dica 8 – Curar soldados mais rápido](../../../../media/knowledge/Tipps/Tipp_08_SoldatenSchnellerHeilen.png)
 
 ## Para que é esta gorjeta?
 
@@ -86,7 +86,7 @@ O tempo óptimo de cura é, portanto, **não um valor fixo universal**. Mude qua
 
 ### Exemplo específico da nova captura de tela no jogo
 
-![Uma visão geral do jogo com o limite de ajuda 25 e o tempo de ajuda 742](../../../../Drachenwissen/Tipps/Tipp_08_Hilfszeit_Buff.jpg)
+![Uma visão geral do jogo com o limite de ajuda 25 e o tempo de ajuda 742](../../../../media/knowledge/Tipps/Tipp_08_Hilfszeit_Buff.jpg)
 
 *(Como chegar a esta visão: toque a sua base no mapa do mundo → selecionar “Set Shield” → mudar para o “Tipo de economia” A tabela está no topo.)*
 

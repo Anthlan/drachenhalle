@@ -19,7 +19,7 @@ themen:
 
 > **Remember:** Get appointed first, check the bonus, then start the major action.
 
-![Tip 3 – Special capital roles](../../../../Drachenwissen/Tipps/Tipp_03_Hauptstadtrollen.png)
+![Tip 3 – Special capital roles](../../../../media/knowledge/Tipps/Tipp_03_Hauptstadtrollen.png)
 
 ## What is this tip for?
 

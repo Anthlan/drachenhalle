@@ -19,7 +19,7 @@ themen:
 
 > **Remember:** Resource tiles shorten the crucial journey – both when attacking and retreating.
 
-![Tip 1 – Move troops efficiently](../../../../Drachenwissen/Tipps/Tipp_01_TruppenEffizientBewegen.png)
+![Tip 1 – Move troops efficiently](../../../../media/knowledge/Tipps/Tipp_01_TruppenEffizientBewegen.png)
 
 ## What is this tip for?
 

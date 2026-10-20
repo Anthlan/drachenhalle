@@ -22,7 +22,7 @@ themen:
 
 > **Lembre-se:** Resultado → tropas → formação → desenvolvimento → Estatísticas → Teste uma mudança.
 
-![Dica 12 – Leia corretamente os relatórios de batalha](../../../../Drachenwissen/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
+![Dica 12 – Leia corretamente os relatórios de batalha](../../../../media/knowledge/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
 
 ## Para que é esta gorjeta?
 

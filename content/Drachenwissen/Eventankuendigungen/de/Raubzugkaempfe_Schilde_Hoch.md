@@ -4,7 +4,7 @@ Während der Raubzugkämpfe können Gegner anderer Server zu uns springen und un
 
 Die Ankündigung verbindet drei Informationen, die für alle Mitglieder wichtig sind: den tatsächlichen Gefahrenzeitraum, die rechtzeitige Vorbereitung im Allianz-Shop und die beiden Zeitpunkte unseres Schildplans.
 
-![Raubzugkämpfe – Schilde hoch](../../../../Drachenwissen/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
+![Raubzugkämpfe – Schilde hoch](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
 
 ## Warum der Schildplan wichtig ist
 

@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 2
 
       - name: Count files in Dropbox inbox
-        working-directory: ./site
+        working-directory: ./apps/website
         env:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
@@ -39,7 +39,7 @@ jobs:
           PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN: ${{ vars.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN }}
           PUBLIC_PAGE_VIEWS_API_URL: ${{ vars.PUBLIC_PAGE_VIEWS_API_URL }}
         with:
-          path: ./site
+          path: ./apps/website
 
   deploy:
     needs: build

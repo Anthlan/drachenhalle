@@ -23,7 +23,7 @@ themen:
 
 > **Lembre-se:** Uma chamada, cinco papéis limpos, um alvo compartilhado.
 
-![Dica 11 – Equipes fixas de ataque em PvP](../../../../Drachenwissen/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
+![Dica 11 – Equipes fixas de ataque em PvP](../../../../media/knowledge/Tipps/Tipp_11_FesteRaidteamsImPvP.png)
 
 ## O que é uma equipe de ataque fixa?
 

@@ -22,7 +22,7 @@ themen:
 
 > **Merksatz:** Ergebnis → Truppen → Formation → Entwicklung → Statistik → eine Änderung testen.
 
-![Tipp 12 – Kampfberichte richtig lesen](../../../../Drachenwissen/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
+![Tipp 12 – Kampfberichte richtig lesen](../../../../media/knowledge/Tipps/Tipp_12_KampfberichteRichtigLesen.png)
 
 ## Wofür ist dieser Tipp?
 

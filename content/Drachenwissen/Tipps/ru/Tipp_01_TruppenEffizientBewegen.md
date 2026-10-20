@@ -19,7 +19,7 @@ themen:
 
 > **Помните:** Тайлы ресурсов сокращают решающий путь – как при атаке, так и при отступлении.
 
-![Совет 1. Эффективно перемещайте войска](../../../../Drachenwissen/Tipps/Tipp_01_TruppenEffizientBewegen.png)
+![Совет 1. Эффективно перемещайте войска](../../../../media/knowledge/Tipps/Tipp_01_TruppenEffizientBewegen.png)
 
 ## Для чего этот совет?
 

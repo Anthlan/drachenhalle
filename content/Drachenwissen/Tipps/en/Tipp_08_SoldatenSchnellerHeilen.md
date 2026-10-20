@@ -20,7 +20,7 @@ themen:
 
 > **Remember:** Help Time × immediate helpers = maximum healing time for an instant-heal batch.
 
-![Tip 8 – Heal soldiers faster](../../../../Drachenwissen/Tipps/Tipp_08_SoldatenSchnellerHeilen.png)
+![Tip 8 – Heal soldiers faster](../../../../media/knowledge/Tipps/Tipp_08_SoldatenSchnellerHeilen.png)
 
 ## What is this tip for?
 
@@ -86,7 +86,7 @@ Optimal healing time is therefore **not a universal fixed value**. It changes wh
 
 ### Specific example from the new in-game screenshot
 
-![In-game buff overview with Help Limit 25 and Help Time 742](../../../../Drachenwissen/Tipps/Tipp_08_Hilfszeit_Buff.jpg)
+![In-game buff overview with Help Limit 25 and Help Time 742](../../../../media/knowledge/Tipps/Tipp_08_Hilfszeit_Buff.jpg)
 
 *(How to reach this view: tap your base on the world map → select “Set Shield” → switch to the “Economy Type” tab at the top.)*
 

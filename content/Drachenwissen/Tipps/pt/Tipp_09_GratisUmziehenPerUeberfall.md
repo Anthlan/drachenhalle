@@ -21,7 +21,7 @@ themen:
 
 > **Lembre-se:** Salta para o oponente de graça, então selecione imediatamente uma nova posição de casa através “Retorno” – Mesmo com tropas fora da sua base.
 
-![Dica 9 – Mudança gratuita através do Raid .](../../../../Drachenwissen/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png)
+![Dica 9 – Mudança gratuita através do Raid .](../../../../media/knowledge/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png)
 
 ## Para que é esta gorjeta?
 

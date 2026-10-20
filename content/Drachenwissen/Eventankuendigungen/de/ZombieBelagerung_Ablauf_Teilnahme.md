@@ -4,7 +4,7 @@ Bei der Zombie-Belagerung greifen mehrere Wellen nacheinander unsere Basen an. A
 
 Die Ankündigung erklärt den Ablauf so, dass sowohl aktive Teilnehmende als auch Mitglieder, die diesmal aussetzen möchten, wissen, was sie tun müssen.
 
-![Zombie-Belagerung – Ablauf und Teilnahme](../../../../Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
+![Zombie-Belagerung – Ablauf und Teilnahme](../../../../media/knowledge/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
 
 ## So funktioniert die Teilnahme
 

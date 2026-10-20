@@ -18,7 +18,7 @@ themen:
 
 > **Lembre-se:** A posição determina o primeiro adversário – O resultado determina a próxima rodada.
 
-![Dica 2 – Ordem de batalha em ataques de ataque conjunto](../../../../Drachenwissen/Tipps/Tipp_02_Sammelangriffe.png)
+![Dica 2 – Ordem de batalha em ataques de ataque conjunto](../../../../media/knowledge/Tipps/Tipp_02_Sammelangriffe.png)
 
 ## Para que é esta gorjeta?
 

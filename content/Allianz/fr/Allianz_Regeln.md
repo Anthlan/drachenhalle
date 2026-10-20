@@ -2,7 +2,7 @@
 
 Nos règles protègent l’alliance, évitent les conflits inutiles et garantissent que nos attaques et pillages respectent les accords de notre serveur. En cas de doute, vérifiez avant d’agir. Si la situation n’est pas claire, demandez conseil à un R4 ou R5.
 
-![Règles de notre alliance](../../../Allianz/Allianz_Regeln.png)
+![Règles de notre alliance](../../../media/alliance/Allianz_Regeln.png)
 
 ## 1. Respecter le NAP10
 

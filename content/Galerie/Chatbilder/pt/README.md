@@ -13,7 +13,7 @@ As imagens de chat podem usar um dos quatro estilos visuais independentemente de
 - **S3 – Chibi Fantasy:** desenhos altamente simplificados, bonitos e deliberadamente exagerados
 - **S4 – Z-Routes Pós-apocalypse:** cartazes de sobrevivência ousados e granulosos com tipografia preto-vermelho-branca, brincadeiras manuscritas e claro “Rutas de Redenção” Marcação
 
-A atribuição necessária de todas as imagens de chat e reação está no centro [`Galerie/STILINDEX.md`](../../../../Galerie/STILINDEX.md). O estilo não é inferido nem da pasta nem do nome do arquivo. Imagens novas ou renomeadas sem exatamente uma entrada de estilo válida causam deliberadamente o fracasso da construção do site.
+A atribuição necessária de todas as imagens de chat e reação está no centro [`media/gallery/STILINDEX.md`](../../../../media/gallery/STILINDEX.md). O estilo não é inferido nem da pasta nem do nome do arquivo. Imagens novas ou renomeadas sem exatamente uma entrada de estilo válida causam deliberadamente o fracasso da construção do site.
 
 ## Regras de nomeação
 

@@ -4,7 +4,7 @@ Pendant Zombie Siege, plusieurs vagues attaquent nos bases les unes après les a
 
 L'annonce explique le processus de sorte que les participants actifs et les membres qui veulent s'asseoir cette fois-ci savent quoi faire.
 
-![Zombie Siege – processus et participation](../../../../Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
+![Zombie Siege – processus et participation](../../../../media/knowledge/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
 
 ## Comment fonctionne la participation
 

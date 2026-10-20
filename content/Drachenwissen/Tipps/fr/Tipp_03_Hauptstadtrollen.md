@@ -19,7 +19,7 @@ themen:
 
 > **Rappelez-vous :** Soyez nommé d'abord, vérifiez le bonus, puis commencez l'action majeure.
 
-![Conseil 3 – Rôles particuliers de capital](../../../../Drachenwissen/Tipps/Tipp_03_Hauptstadtrollen.png)
+![Conseil 3 – Rôles particuliers de capital](../../../../media/knowledge/Tipps/Tipp_03_Hauptstadtrollen.png)
 
 ## À quoi sert cette astuce ?
 

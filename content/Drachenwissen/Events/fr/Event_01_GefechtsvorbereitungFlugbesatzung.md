@@ -20,7 +20,7 @@ status: Time-limited
 
 > **Recommandation rapide :** Enregistrer petit F2P Avec des stocks importants et un voucher focus, répéter les cases de bons précoces sur plusieurs jours à travers la scène 7 ou 9. Les acheteurs ciblés ne sécurisent que les offres quotidiennes souhaitées; lorsqu'ils visent la peau, n'achetez que le solde du bon d'achat après tous les tirages.
 
-![Guide de l'événement – Préparation de la bataille par l'équipage de conduite](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png)
+![Guide de l'événement – Préparation de la bataille par l'équipage de conduite](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung.png)
 
 ## À quoi sert ce guide d'événement?
 
@@ -108,7 +108,7 @@ Pour **Valeur totale**, la décision est plus nuancé. Une deuxième manche à t
 
 Cependant, ce prix de liste peut rapidement surestimer la valeur personnelle des coffres aléatoires.9 une fois chacun des neuf UR Survivor Chests vaut personnellement au moins autour **24 bons**. Quiconque a à peine besoin de survivants aléatoires est mieux servi par deux étapes-9 les pistes; tous ceux qui peuvent utiliser presque toutes les possibilités UR Le survivant reçoit probablement une valeur totale plus élevée à partir de l'étape 15. Pour le pur voucher focus, la recommandation reste inchangée: atteindre le stade 9 le premier jour, enregistrer l'utilisation réelle des pièces et viser la scène 9 à nouveau le deuxième jour seulement si le stock restant comporte une marge de sécurité suffisante.
 
-![Machine à sous, étapes quotidiennes et remise à zéro quotidienne dans le design de Drachenhalle](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
+![Machine à sous, étapes quotidiennes et remise à zéro quotidienne dans le design de Drachenhalle](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png)
 
 ### Pourquoi la peau est irréaliste sans budget élevé
 
@@ -219,11 +219,11 @@ Le parcours entièrement prévisible utilise des packs de bons directs. 20- Les 
 
 Un suivi documenté de l'achat de **2,400 bons pour €360** confirme le taux direct régulier de €0.15 par coupon. La stratégie raisonnable est donc d'utiliser des pièces libres et, au maximum, des petits paquets de pièces peu coûteux **en 1Mode ×**, puis vérifier le solde réel et ne fermer que l'écart restant directement. **€596** est moins cher que le calcul de la pièce garantie à l'environ **€833**.
 
-![La ligne de défense de Viranium comme récompense exclusive pour les hauts-débits et les pierres raffinées comme recommandation générale](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
+![La ligne de défense de Viranium comme récompense exclusive pour les hauts-débits et les pierres raffinées comme recommandation générale](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png)
 
 ## Recommandations par budget
 
-![Recommandation budgétaire pour la manifestation](../../../../Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png)
+![Recommandation budgétaire pour la manifestation](../../../../media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png)
 
 ### Free2Play – €0
 

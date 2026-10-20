@@ -22,7 +22,7 @@ themen:
 
 > **Помните:** Наносите короткие удары, рано распознавайте опасность, вовремя исчезайте.
 
-![Совет 10 – Беги и беги в PvP](../../../../Drachenwissen/Tipps/Tipp_10_HitAndRunImPvP.png)
+![Совет 10 – Беги и беги в PvP](../../../../media/knowledge/Tipps/Tipp_10_HitAndRunImPvP.png)
 
 ## Для чего этот совет?
 

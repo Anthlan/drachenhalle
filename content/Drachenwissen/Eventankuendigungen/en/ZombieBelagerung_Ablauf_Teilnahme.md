@@ -4,7 +4,7 @@ During Zombie Siege, several waves attack our bases one after another. Unlike a 
 
 The announcement explains the process so both active participants and members who want to sit out this time know what to do.
 
-![Zombie Siege – process and participation](../../../../Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
+![Zombie Siege – process and participation](../../../../media/knowledge/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
 
 ## How participation works
 

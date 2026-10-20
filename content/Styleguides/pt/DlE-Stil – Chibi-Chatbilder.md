@@ -94,4 +94,4 @@ Exemplos:
 2026_09_25_2331_Passt_Anthlan.png
 ```
 
-`AngriffsknopfChibi` é uma imagem de bate-papo S3 por causa de sua ação cenográfica. `Passt` é uma imagem de reação S3 por causa da sua finalidade reutilizável. As imagens de reação também podem ser atribuídas a S1 ou S2. As atribuições de estilo obrigatório estão em `Galerie/STILINDEX.md`.
+`AngriffsknopfChibi` é uma imagem de bate-papo S3 por causa de sua ação cenográfica. `Passt` é uma imagem de reação S3 por causa da sua finalidade reutilizável. As imagens de reação também podem ser atribuídas a S1 ou S2. As atribuições de estilo obrigatório estão em `media/gallery/STILINDEX.md`.

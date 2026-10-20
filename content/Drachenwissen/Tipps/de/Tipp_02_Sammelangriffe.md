@@ -18,7 +18,7 @@ themen:
 
 > **Merksatz:** Position bestimmt den ersten Gegner – das Ergebnis bestimmt die nächste Runde.
 
-![Tipp 2 – Kampfreihenfolge bei Sammelangriffen](../../../../Drachenwissen/Tipps/Tipp_02_Sammelangriffe.png)
+![Tipp 2 – Kampfreihenfolge bei Sammelangriffen](../../../../media/knowledge/Tipps/Tipp_02_Sammelangriffe.png)
 
 ## Wofür ist dieser Tipp?
 

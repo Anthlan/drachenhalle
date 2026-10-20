@@ -4,7 +4,7 @@
 
 В объявлении объясняется процесс, чтобы как активные участники, так и те, кто хочет на этот раз отсидеться, знали, что делать.
 
-![Zombie Siege – процесс и участие](../../../../Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
+![Zombie Siege – процесс и участие](../../../../media/knowledge/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png)
 
 ## Как работает участие
 

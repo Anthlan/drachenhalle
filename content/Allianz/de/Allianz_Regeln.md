@@ -2,7 +2,7 @@
 
 Unsere Allianzregeln schützen uns, vermeiden unnötige Konflikte und sorgen dafür, dass unsere Angriffe und Beutezüge mit den Absprachen unseres Servers vereinbar bleiben. Im Zweifel prüfen wir zuerst und handeln danach. Wenn ihr unsicher seid, fragt bitte einen R4 oder R5.
 
-![Unsere Allianzregeln](../../../Allianz/Allianz_Regeln.png)
+![Unsere Allianzregeln](../../../media/alliance/Allianz_Regeln.png)
 
 ## 1. NAP10 respektieren
 

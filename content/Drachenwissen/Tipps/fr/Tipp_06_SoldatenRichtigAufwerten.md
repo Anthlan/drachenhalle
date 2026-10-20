@@ -19,7 +19,7 @@ themen:
 
 > **Rappelez-vous :** Entraînez-vous à un niveau inférieur de tiers, ramassez les soldats existants et faites la promotion de ceux-ci dans les casernes de niveau supérieur en utilisant la flèche verte.
 
-![Conseil 6 – Mettre les soldats à niveau correctement](../../../../Drachenwissen/Tipps/Tipp_06_SoldatenRichtigAufwerten.png)
+![Conseil 6 – Mettre les soldats à niveau correctement](../../../../media/knowledge/Tipps/Tipp_06_SoldatenRichtigAufwerten.png)
 
 ## À quoi sert cette astuce ?
 

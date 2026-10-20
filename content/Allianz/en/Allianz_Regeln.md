@@ -2,7 +2,7 @@
 
 Our alliance rules protect us, prevent unnecessary conflict and keep our attacks and raids consistent with our server's agreements. When in doubt, check first and act afterwards. If you are unsure, please ask an R4 or R5.
 
-![Our alliance rules](../../../Allianz/Allianz_Regeln.png)
+![Our alliance rules](../../../media/alliance/Allianz_Regeln.png)
 
 ## 1. Respect NAP10
 

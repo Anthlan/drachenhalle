@@ -61,4 +61,4 @@ Anthlan move-se entre um visionário criador de mundos e um membro de equipe ace
 
 Anthlan pertence a um observatório quente com cidades conectadas, comunidade visível e uma tabela de estratégia bem utilizada. Ele deve parecer competente, mas não perfeito. Uma expressão ligeiramente maliciosa e pequenos vestígios de vida de aliança animada importam mais do que um trono ou a pose de um governante heróico.
 
-Imagem atual: `site/public/brand/officer-anthlan-world.webp`
+Imagem atual: `apps/website/public/brand/officer-anthlan-world.webp`

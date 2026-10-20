@@ -21,7 +21,7 @@ themen:
 
 > **Remember:** Jump to the opponent for free, then immediately select a new home position through “Return” – even with troops outside your base.
 
-![Tip 9 – Relocate for free through Raid](../../../../Drachenwissen/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png)
+![Tip 9 – Relocate for free through Raid](../../../../media/knowledge/Tipps/Tipp_09_GratisUmziehenPerUeberfall.png)
 
 ## What is this tip for?
 

@@ -19,7 +19,7 @@ themen:
 
 > **Lembre-se:** Os pontos de recursos reduzem a viagem crucial – Tanto ao atacar quanto ao recuar.
 
-![Dica 1 – Mover tropas de forma eficiente](../../../../Drachenwissen/Tipps/Tipp_01_TruppenEffizientBewegen.png)
+![Dica 1 – Mover tropas de forma eficiente](../../../../media/knowledge/Tipps/Tipp_01_TruppenEffizientBewegen.png)
 
 ## Para que é esta gorjeta?
 

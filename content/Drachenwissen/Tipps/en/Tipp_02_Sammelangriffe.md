@@ -18,7 +18,7 @@ themen:
 
 > **Remember:** Position determines the first opponent – the result determines the next round.
 
-![Tip 2 – Battle order in rally attacks](../../../../Drachenwissen/Tipps/Tipp_02_Sammelangriffe.png)
+![Tip 2 – Battle order in rally attacks](../../../../media/knowledge/Tipps/Tipp_02_Sammelangriffe.png)
 
 ## What is this tip for?
 

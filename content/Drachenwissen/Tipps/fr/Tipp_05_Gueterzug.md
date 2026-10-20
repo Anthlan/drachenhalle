@@ -20,7 +20,7 @@ themen:
 
 > **Rappelez-vous :** Sécurisation 25 d'abord, rafraîchir cinq fois et mettre en place trois équipes de défense fortes avant le départ.
 
-![Conseil 5 – Train de marchandises](../../../../Drachenwissen/Tipps/Tipp_05_Gueterzug.png)
+![Conseil 5 – Train de marchandises](../../../../media/knowledge/Tipps/Tipp_05_Gueterzug.png)
 
 ## À quoi sert cette astuce ?
 

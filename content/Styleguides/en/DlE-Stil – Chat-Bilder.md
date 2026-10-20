@@ -36,7 +36,7 @@ For strongly simplified, cute and deliberately exaggerated portrayals with clear
 
 For bold survival and character posters in a humorous post-apocalyptic world. Features include grainy materials, strong black-red-white contrast, warm sunsets, rough brush or stencil lettering, handwritten margin notes and visible “Z Routes Redemption” branding. Figures may be more caricatured than in S1 or S2, but must remain recognisable from reference models and recurring attributes. S4 suits individual posters, recurring jokes, group scenes and alliance advertising that looks like part of the same rugged campaign series.
 
-The style group is documented centrally in `Galerie/STILINDEX.md`, rather than encoded in filenames or folder structure. Introduce new groups only when an image cannot reasonably fit an existing one.
+The style group is documented centrally in `media/gallery/STILINDEX.md`, rather than encoded in filenames or folder structure. Introduce new groups only when an image cannot reasonably fit an existing one.
 
 ### Appearance
 - High-quality **cinematic, semi-realistic fantasy illustration** resembling refined game art

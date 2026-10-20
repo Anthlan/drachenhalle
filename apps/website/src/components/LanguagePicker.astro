@@ -1,0 +1,40 @@
+---
+import config from "../i18n/config.json";
+import {languageAvailable,localizedNavigationUrl} from "../i18n/translate.mjs";
+const currentPath=Astro.url.pathname;
+---
+<details class="language-picker">
+  <summary aria-label="Sprache wählen" title="Sprache wählen">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9" /><ellipse cx="12" cy="12" rx="4" ry="9" /><path d="M3 12h18M5 6.5h14M5 17.5h14" /></svg>
+  </summary>
+  <nav class="language-options" aria-label="Verfügbare Sprachen">
+    {config.languages.filter(language=>languageAvailable(currentPath,language,config)).map(language=><a data-language={language.code} href={localizedNavigationUrl(currentPath,language.code,config)} lang={language.code} aria-current={language.code===config.defaultLanguage?"true":"false"}><span translate="no">{language.label}</span><span class="language-check" aria-hidden="true">✓</span></a>)}
+  </nav>
+</details>
+<script>
+  import languageConfig from "../i18n/config.json";
+  import {localizedPageUrl,languageAvailable} from "../i18n/translate.mjs";
+  try {
+    const preferred=localStorage.getItem("die-language");
+    if(preferred&&preferred!==languageConfig.defaultLanguage&&languageConfig.languages.some(language=>language.code===preferred&&languageAvailable(location.pathname,language,languageConfig))&&location.pathname===languageConfig.base+"/") {
+      location.replace(localizedPageUrl(location.pathname,preferred,languageConfig.base,languageConfig.languages.map(language=>language.code),languageConfig.defaultLanguage)+location.search+location.hash);
+    }
+  } catch {}
+  for(const link of document.querySelectorAll<HTMLAnchorElement>("[data-language]")) {
+    link.href+=location.search+location.hash;
+    link.addEventListener("click",()=> {
+      const destination=new URL(link.href);
+      destination.search=location.search;
+      destination.hash=location.hash;
+      link.href=destination.href;
+      try{localStorage.setItem("die-language",link.dataset.language!);}catch{}
+    });
+  }
+  const pickers = document.querySelectorAll<HTMLDetailsElement>(".language-picker");
+  document.addEventListener("click",event=> {
+    for(const picker of pickers)if(event.target instanceof Node&&!picker.contains(event.target))picker.open=false;
+  });
+  document.addEventListener("keydown",event=> {
+    if(event.key==="Escape")for(const picker of pickers)if(picker.open){picker.open=false;picker.querySelector("summary")?.focus();}
+  });
+</script>

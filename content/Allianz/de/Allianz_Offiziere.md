@@ -1,6 +1,6 @@
 # Unser Führungsteam
 
-![Unser Führungsteam berät gemeinsam am Kartentisch](../../../Allianz/Allianz_Fuehrungsteam.png)
+![Unser Führungsteam berät gemeinsam am Kartentisch](../../../media/alliance/Allianz_Fuehrungsteam.png)
 
 Unsere Allianzführung besteht aus Anthlan als R5 und unseren sechs R4. Wir stimmen uns gemeinsam ab, treffen Entscheidungen für unsere Allianz und sind für euch ansprechbar. Auf dieser Seite seht ihr, wer aktuell zu unserem Führungsteam gehört. In der Drachenhalle könnt ihr auf jedes Porträt klicken und das fiktive Alter Ego dahinter kennenlernen.
 

@@ -18,7 +18,7 @@ themen:
 
 > **Rappelez-vous :** Aléatoire pour la flexibilité, Alliance pour le regroupement, Avancé pour une position exacte.
 
-![Conseil 4 – Teleport correctement](../../../../Drachenwissen/Tipps/Tipp_04_RichtigTeleportieren.png)
+![Conseil 4 – Teleport correctement](../../../../media/knowledge/Tipps/Tipp_04_RichtigTeleportieren.png)
 
 ## À quoi sert cette astuce ?
 

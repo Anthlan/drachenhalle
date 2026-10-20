@@ -19,7 +19,7 @@ themen:
 
 > **Rappelez-vous :** Site de ressources raccourcissent le voyage crucial – tant en attaquant que en reculant.
 
-![Conseil 1 – Déplacer efficacement les troupes](../../../../Drachenwissen/Tipps/Tipp_01_TruppenEffizientBewegen.png)
+![Conseil 1 – Déplacer efficacement les troupes](../../../../media/knowledge/Tipps/Tipp_01_TruppenEffizientBewegen.png)
 
 ## À quoi sert cette astuce ?
 

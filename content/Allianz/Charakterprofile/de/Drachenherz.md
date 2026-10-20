@@ -75,4 +75,4 @@ Drachenherz gehört in einen offenen Waldhain innerhalb einer überwachsenen Bas
 
 Eine kleine fürsorgliche Handlung – etwa das Stützen einer beschädigten Pflanze – bildet den emotionalen Mittelpunkt. Der smaragdgrüne Schutzsegen darf groß sein, soll jedoch das ganze Lager umfassen und nicht Drachenherz als einsamen Auserwählten überhöhen. Warmes Wald- und Feuerlicht bewahrt seine Zugänglichkeit.
 
-Aktuelles Szenenbild: `site/public/brand/officer-drachenherz-world.webp`
+Aktuelles Szenenbild: `apps/website/public/brand/officer-drachenherz-world.webp`
