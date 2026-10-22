@@ -2,6 +2,15 @@
 
 Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie beschreibt Aufbau und Zweck der Referenz, nicht nur ihren Zeichenstil. Die klassischen Referenztafeln sichern vor allem das Aussehen einer Figur; die Weltserie ergänzt diese Grundlage um ihre individuelle Umgebung und Bildsprache.
 
+## M3 – Chibi
+
+- **Status:** In Vorbereitung
+- **Beschreibung:** Chibi-Referenzen für Manga-Geschichten und S3-Szenen. Grundlage M2, ersatzweise M1. Bewährte Reaktions-Chibis und bestätigte Profile berücksichtigen. Grunddesign vor zwölf Posen freigeben.
+
+### Bilder
+
+Noch keine freigegebenen M3-Bilder. Schema: `Spielername_Modell_Chibi.png` und `Spielername_Modell_Chibi_Posen.png`.
+
 ## M2 – Individuelle Charakterwelten (Weltserie)
 
 - **Status:** Aktive neue Serie
@@ -38,7 +47,6 @@ Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie besch
 - [Hulkster666_Referenzmodell.png](Hulkster666_Referenzmodell.png)
 - [Kaylani_Referenzmodell.png](Kaylani_Referenzmodell.png)
 - [Killergruppe_Referenzmodell.png](Killergruppe_Referenzmodell.png)
-- [Korpi92_Referenzmodell.png](Korpi92_Referenzmodell.png)
 - [Lordmirko_Referenzmodell.png](Lordmirko_Referenzmodell.png)
 - [mysteryZ_Referenzmodell.jpg](mysteryZ_Referenzmodell.jpg)
 - [Odin81_Referenzmodell.png](Odin81_Referenzmodell.png)

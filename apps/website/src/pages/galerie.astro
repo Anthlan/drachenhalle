@@ -30,7 +30,7 @@ const people = [...new Set(galleryItems.flatMap((item) => item.people))].sort((l
   left.localeCompare(right, "de"),
 );
 const styles = galleryData.styles;
-const imageSeries = (galleryData.series ?? []).filter((series) => series.count > 0);
+const imageSeries = (galleryData.series ?? []).filter((series) => series.count > 0 || series.value === "M3");
 const seriesGroups = [...new Set(imageSeries.map((series) => series.type))].map((type) => ({
   type,
   items: imageSeries.filter((series) => series.type === type),

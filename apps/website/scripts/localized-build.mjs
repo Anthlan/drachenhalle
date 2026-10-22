@@ -121,7 +121,7 @@ function translateHtml(html, translate, language, sources) {
 export default function localizedBuild() {
   return {name:"drachenhalle-languages",hooks:{"astro:build:done":async ({dir})=> {
     const out=fileURLToPath(dir);
-    const htmlFiles=(await walk(out,".html")).filter(file=>!config.languages.some(language=>language.path&&path.relative(out,file).startsWith(language.path+path.sep)));
+    const htmlFiles=(await walk(out,".html")).filter(file=>!path.relative(out,file).startsWith("werkstatt"+path.sep)&&!config.languages.some(language=>language.path&&path.relative(out,file).startsWith(language.path+path.sep)));
     for(const language of config.languages.filter(item=>item.code!==config.defaultLanguage)) {
       const localizeImages = await localizedTipImages(repositoryRoot, out, config.base, language.code);
       const {catalog,warnings}=await loadCatalog(language.code);

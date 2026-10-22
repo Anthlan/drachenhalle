@@ -1,0 +1,20 @@
+---
+import "../../styles/global.css";
+import ImageActionIcon from "../../components/ImageActionIcon.astro";
+const names = ["Anthlan", "Boshos", "DaVinci1986", "Drachenherz", "Helltrain", "Hitmann", "Hulkster666", "Kaylani", "Killergruppe", "Krasaviza", "Lordmirko", "mysteryZ", "Odin81", "RuhrpottBlach", "Skibbi", "Somea", "Streetjudge", "Thor63"];
+const m1 = new Set(["Boshos", "Hitmann", "Hulkster666", "Killergruppe", "RuhrpottBlach", "Skibbi"]);
+const url = "/drachenhalle/werkstatt/chibi-2026-10-22/";
+---
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta name="robots" content="noindex, nofollow" /><meta name="description" content="18 Chibi-Entwürfe der Allianz DIE zur gemeinsamen Sichtung." /><title>M3 – Chibi-Sichtbilder · Werkstatt</title></head>
+<body><main class="workbench" id="main-content">
+<a href="/drachenhalle/werkstatt/">← Werkstatt</a><p class="eyebrow">Charakterentwicklung · Stand 22. Oktober 2026</p>
+<h1>M3 – Chibi-Sichtbilder</h1><p>18 Charaktere · Vorder-, Dreiviertel-, Seiten- und Rückansicht</p>
+<button class="share" data-share-page data-share-url={url} type="button"><ImageActionIcon type="share" /> Sichtstand teilen</button>
+<aside><strong>Entwürfe zur Abstimmung</strong><p>Bitte Wiedererkennbarkeit, Kleidung, Proportionen und persönliche Merkmale prüfen. Die zwölf Posen folgen nach Freigabe des Grunddesigns. M2 dient als Grundlage, ersatzweise M1. Skibbi ist mit zwei normalen Beinen und seinem kleinen Hasen dargestellt.</p><p>Dieser Bereich ist nicht gelistet. Jeder mit dem Link kann die Bilder ansehen; es gibt keinen Passwortschutz.</p></aside>
+<nav aria-label="Charakter auswählen">{names.map(name=><a href={`#${name}`}>{name}</a>)}</nav>
+{names.map(name=><section id={name}><header><div><p class="eyebrow">Grundlage {m1.has(name)?"M1":"M2"} · Entwurf</p><h2>{name}</h2></div><button class="share" data-share-page data-share-url={`${url}#${name}`} type="button" aria-label={`${name}: Link teilen`}><ImageActionIcon type="share" /> Link teilen</button></header><a href={`/drachenhalle/workbench/chibi-2026-10-22/${name}.webp`} target="_blank" rel="noopener"><img src={`/drachenhalle/workbench/chibi-2026-10-22/${name}.webp`} alt={`${name}: Chibi-Sichtbogen mit vier Ansichten`} loading="lazy" decoding="async" /></a><p class="caption">Bild anklicken, um die große Ansicht zu öffnen.</p></section>)}
+</main><p class="share-feedback" role="status" aria-live="polite" data-share-feedback></p>
+<script>import { initializeImageActions } from "../../scripts/image-actions";initializeImageActions();</script>
+</body></html>
+<style>.workbench{max-width:1600px;margin:auto;padding:clamp(20px,4vw,64px)}h1{font-size:clamp(2rem,5vw,4rem)}a{color:#e4bc75}p{line-height:1.6}aside{margin:28px 0;padding:24px;border:1px solid #987741;border-radius:14px;background:#192536}aside p{max-width:1000px}nav{display:flex;flex-wrap:wrap;gap:10px}nav a,.share{padding:10px 16px;border:1px solid #806b48;border-radius:9px;background:#192536;color:#f5dfba}section{scroll-margin-top:20px;margin-top:48px}header{display:flex;justify-content:space-between;align-items:center;gap:16px}h2{margin-top:0;font-size:2rem}.share{display:inline-flex;align-items:center;gap:8px;cursor:pointer}.share :global(svg){width:20px;height:20px}img{display:block;width:100%;height:auto;border-radius:12px;background:#fff4df}.caption{font-size:.9rem;color:#bac1cb}@media(max-width:500px){header{align-items:flex-start;flex-direction:column;margin-bottom:16px}}</style>
