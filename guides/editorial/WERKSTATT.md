@@ -11,3 +11,4 @@ Der Bereich ist wie der Rat ohne Passwortschutz erreichbar. Nicht gelistet bedeu
 - Entwurfsstatus und Datum sichtbar nennen. Stabile Sprungmarken pro Figur erlauben das Teilen einzelner Entwürfe.
 - Für Freigaben die bestätigten Charaktervorgaben in `guides/image-prompts/Chibi-Manga-Grundmaterial.md` beachten. Korpi92 bleibt archiviert; Skibbi hat zwei normale Beine und seinen kleinen Hasen.
 - Die aktuelle Chibi-Runde ist unter `/drachenhalle/werkstatt/chibi-2026-10-22/` erreichbar. Veröffentlicht wird sie mit dem regulären Website-Deployment.
+- Die bestätigten Grunddesigns liegen als M3-Modelle unter `media/gallery/Charaktermodelle`. Der ergänzende Sichtstand mit zwölf Posen und Ausdrücken je Figur steht unter `/drachenhalle/werkstatt/chibi-referenzen-2026-10-22/`. Seine Posenbögen bleiben bis zur Freigabe außerhalb der regulären Galerie.

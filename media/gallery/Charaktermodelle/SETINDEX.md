@@ -4,12 +4,29 @@ Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie besch
 
 ## M3 – Chibi
 
-- **Status:** In Vorbereitung
+- **Status:** Grundmodelle freigegeben; Posenbögen in Sichtung
 - **Beschreibung:** Chibi-Referenzen für Manga-Geschichten und S3-Szenen. Grundlage M2, ersatzweise M1. Bewährte Reaktions-Chibis und bestätigte Profile berücksichtigen. Grunddesign vor zwölf Posen freigeben.
 
 ### Bilder
 
-Noch keine freigegebenen M3-Bilder. Schema: `Spielername_Modell_Chibi.png` und `Spielername_Modell_Chibi_Posen.png`.
+- [Anthlan_Modell_Chibi.png](Anthlan_Modell_Chibi.png)
+- [Boshos_Modell_Chibi.png](Boshos_Modell_Chibi.png)
+- [DaVinci1986_Modell_Chibi.png](DaVinci1986_Modell_Chibi.png)
+- [Drachenherz_Modell_Chibi.png](Drachenherz_Modell_Chibi.png)
+- [Helltrain_Modell_Chibi.png](Helltrain_Modell_Chibi.png)
+- [Hitmann_Modell_Chibi.png](Hitmann_Modell_Chibi.png)
+- [Hulkster666_Modell_Chibi.png](Hulkster666_Modell_Chibi.png)
+- [Kaylani_Modell_Chibi.png](Kaylani_Modell_Chibi.png)
+- [Killergruppe_Modell_Chibi.png](Killergruppe_Modell_Chibi.png)
+- [Krasaviza_Modell_Chibi.png](Krasaviza_Modell_Chibi.png)
+- [Lordmirko_Modell_Chibi.png](Lordmirko_Modell_Chibi.png)
+- [mysteryZ_Modell_Chibi.png](mysteryZ_Modell_Chibi.png)
+- [Odin81_Modell_Chibi.png](Odin81_Modell_Chibi.png)
+- [RuhrpottBlach_Modell_Chibi.png](RuhrpottBlach_Modell_Chibi.png)
+- [Skibbi_Modell_Chibi.png](Skibbi_Modell_Chibi.png)
+- [Somea_Modell_Chibi.png](Somea_Modell_Chibi.png)
+- [Streetjudge_Modell_Chibi.png](Streetjudge_Modell_Chibi.png)
+- [Thor63_Modell_Chibi.png](Thor63_Modell_Chibi.png)
 
 ## M2 – Individuelle Charakterwelten (Weltserie)
 
