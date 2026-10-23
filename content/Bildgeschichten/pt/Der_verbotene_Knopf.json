@@ -1,0 +1,52 @@
+{
+  "title": "DIE e o botão proibido",
+  "date": "2026-10-23",
+  "pages": [
+    {
+      "alt": "Anthlan avisa sobre o botão. Drachenherz aperta mesmo assim e inicia ondas de zumbis. Anthlan repete o aviso e tranca uma tampa protetora. DaVinci1986 vê a chave.",
+      "description": "Anthlan avisa sobre o botão. Drachenherz aperta mesmo assim e inicia ondas de zumbis. Anthlan repete o aviso e tranca uma tampa protetora. DaVinci1986 vê a chave.",
+      "dialogue": [
+        "Não apertem! Ele inicia 20 ondas de zumbis!",
+        "NÃO APERTAR",
+        "Só vou dar uma olhada ...",
+        "CLIQUE",
+        "20 ONDAS DE ZUMBIS!",
+        "Eu só queria olhar!",
+        "Mais uma vez: NÃO apertem!",
+        "Pronto. Agora está protegido.",
+        "Talvez na segunda vez seja diferente?"
+      ]
+    },
+    {
+      "alt": "DaVinci1986 abre a tampa e testa o botão. Os zumbis voltam. Anthlan repete o aviso, prende a tampa com uma corrente e fica com a chave. Helltrain examina a base.",
+      "description": "DaVinci1986 abre a tampa e testa o botão. Os zumbis voltam. Anthlan repete o aviso, prende a tampa com uma corrente e fica com a chave. Helltrain examina a base.",
+      "dialogue": [
+        "Só um teste rápido ...",
+        "CLIQUE",
+        "Não é diferente!",
+        "20 ONDAS DE ZUMBIS!",
+        "Repito: NÃO apertem!",
+        "Desta vez, com corrente. A chave fica comigo!",
+        "Deve ser só um mau contato."
+      ]
+    },
+    {
+      "alt": "Helltrain desparafusa a tampa com a corrente e aperta. Após o terceiro ataque, Anthlan instala uma gaiola protetora. Somea ainda quer tentar. Anthlan a leva embora, exasperado, enquanto mysteryZ busca café.",
+      "description": "Helltrain desparafusa a tampa com a corrente e aperta. Após o terceiro ataque, Anthlan instala uma gaiola protetora. Somea ainda quer tentar. Anthlan a leva embora, exasperado, enquanto mysteryZ busca café.",
+      "dialogue": [
+        "Assim deve funcionar.",
+        "CLIQUE",
+        "Esse NÃO era o modo de cozinhar!",
+        "20 ONDAS DE ZUMBIS!",
+        "Pela terceira vez: NÃO apertem!",
+        "Agora ele fica trancado!",
+        "Três apertadas ...",
+        "... sessenta ondas.",
+        "Preciso de café.",
+        "Mas só uma vezinha ...?",
+        "Por favor, por favor, deixa eu apertar também",
+        "Coitado do Anthlan. Vou buscar café."
+      ]
+    }
+  ]
+}

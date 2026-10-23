@@ -1,0 +1,52 @@
+{
+  "title": "DIE et le bouton interdit",
+  "date": "2026-10-23",
+  "pages": [
+    {
+      "alt": "Anthlan met tout le monde en garde. Drachenherz appuie quand même et déclenche des vagues de zombies. Anthlan répète son avertissement et verrouille un capot. DaVinci1986 aperçoit la clé.",
+      "description": "Anthlan met tout le monde en garde. Drachenherz appuie quand même et déclenche des vagues de zombies. Anthlan répète son avertissement et verrouille un capot. DaVinci1986 aperçoit la clé.",
+      "dialogue": [
+        "Ne touchez pas ! Il déclenche 20 vagues de zombies !",
+        "NE PAS APPUYER",
+        "Je regarde juste ...",
+        "CLIC",
+        "20 VAGUES DE ZOMBIES !",
+        "Je voulais juste regarder !",
+        "Encore une fois : NE PAS appuyer !",
+        "Voilà. Il est sécurisé.",
+        "Peut-être que la deuxième fois sera différente ?"
+      ]
+    },
+    {
+      "alt": "DaVinci1986 ouvre le capot et teste le bouton. Les zombies reviennent. Anthlan répète son avertissement, ajoute une chaîne et garde la clé. Helltrain examine le socle.",
+      "description": "DaVinci1986 ouvre le capot et teste le bouton. Les zombies reviennent. Anthlan répète son avertissement, ajoute une chaîne et garde la clé. Helltrain examine le socle.",
+      "dialogue": [
+        "Juste un petit test ...",
+        "CLIC",
+        "C’est pareil !",
+        "20 VAGUES DE ZOMBIES !",
+        "Je répète : NE PAS appuyer !",
+        "Avec une chaîne, cette fois. Je garde la clé !",
+        "Sûrement un faux contact."
+      ]
+    },
+    {
+      "alt": "Helltrain dévisse le capot enchaîné et appuie. Après la troisième attaque, Anthlan visse une cage de protection. Somea veut quand même essayer. Anthlan l’emporte, exaspéré, tandis que mysteryZ lui apporte du café.",
+      "description": "Helltrain dévisse le capot enchaîné et appuie. Après la troisième attaque, Anthlan visse une cage de protection. Somea veut quand même essayer. Anthlan l’emporte, exaspéré, tandis que mysteryZ lui apporte du café.",
+      "dialogue": [
+        "Ça devrait marcher.",
+        "CLIC",
+        "Ce n’était PAS le mode cuisine !",
+        "20 VAGUES DE ZOMBIES !",
+        "Pour la troisième fois : NE PAS appuyer !",
+        "Cette fois, il reste sous clé !",
+        "Trois pressions ...",
+        "... soixante vagues.",
+        "Il me faut un café.",
+        "Juste une toute petite fois ... ?",
+        "S’il te plaît, laisse-moi appuyer aussi",
+        "Pauvre Anthlan. Je vais chercher du café."
+      ]
+    }
+  ]
+}

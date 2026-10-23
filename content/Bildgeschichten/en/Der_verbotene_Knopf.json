@@ -1,0 +1,52 @@
+{
+  "title": "DIE and the Forbidden Button",
+  "date": "2026-10-23",
+  "pages": [
+    {
+      "alt": "Anthlan warns everyone about the button. Drachenherz presses it anyway and triggers zombie waves. Anthlan repeats the warning and locks a safety cover. DaVinci1986 spots the key.",
+      "description": "Anthlan warns everyone about the button. Drachenherz presses it anyway and triggers zombie waves. Anthlan repeats the warning and locks a safety cover. DaVinci1986 spots the key.",
+      "dialogue": [
+        "Do not press! It starts 20 zombie waves!",
+        "DO NOT PRESS",
+        "Just taking a look ...",
+        "CLICK",
+        "20 ZOMBIE WAVES!",
+        "I only wanted to look!",
+        "Once again: DO NOT press!",
+        "There. Now it is secured.",
+        "Maybe it is different the second time?"
+      ]
+    },
+    {
+      "alt": "DaVinci1986 opens the cover and tests the button. More zombie waves arrive. Anthlan repeats his warning, chains the cover shut and keeps the key. Helltrain examines the base.",
+      "description": "DaVinci1986 opens the cover and tests the button. More zombie waves arrive. Anthlan repeats his warning, chains the cover shut and keeps the key. Helltrain examines the base.",
+      "dialogue": [
+        "Just a quick test ...",
+        "CLICK",
+        "It is no different!",
+        "20 ZOMBIE WAVES!",
+        "I repeat: DO NOT press!",
+        "A chain this time. The key stays with me!",
+        "Probably just a loose connection."
+      ]
+    },
+    {
+      "alt": "Helltrain unscrews the chained cover and presses. After the third zombie attack, Anthlan bolts a protective cage in place. Somea still wants a turn. Anthlan carries her away, looking exasperated, while mysteryZ gets him coffee.",
+      "description": "Helltrain unscrews the chained cover and presses. After the third zombie attack, Anthlan bolts a protective cage in place. Somea still wants a turn. Anthlan carries her away, looking exasperated, while mysteryZ gets him coffee.",
+      "dialogue": [
+        "That should do it.",
+        "CLICK",
+        "That was NOT cooking mode!",
+        "20 ZOMBIE WAVES!",
+        "For the third time: DO NOT press!",
+        "Now it stays locked up!",
+        "Pressed three times ...",
+        "... sixty waves.",
+        "I need coffee.",
+        "But just once, really quickly ...?",
+        "Please please let me press it too",
+        "Poor Anthlan. I will get coffee."
+      ]
+    }
+  ]
+}

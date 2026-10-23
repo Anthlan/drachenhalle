@@ -164,6 +164,7 @@ export default function localizedBuild() {
         html=html.replace(/(data-language="([^"]+)"[^>]*aria-current=")[^"]*/g,(_,prefix,code)=>prefix+(code===language.code?"true":"false"));
         const target=outputFileForUrl(out,englishUrl);
         html=localizeImages(html);
+        html=html.replaceAll(`${config.base}/stories/verbotener-knopf/de/`,`${config.base}/stories/verbotener-knopf/${language.code}/`);
         await mkdir(path.dirname(target),{recursive:true});await writeFile(target,html);
         const legacyUrl=`${config.base}/${language.path}/${relative.split(path.sep).join("/").replace(/index\.html$/,"")}`;
         if(legacyUrl!==englishUrl) {

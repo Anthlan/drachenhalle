@@ -2,6 +2,8 @@
 // Put more specific routes before their parent area by relying on longest-prefix matching.
 export const routes = [
   ...contentRoutes,
+  { id: "stories.button", paths: { de: "/bildgeschichten/der-verbotene-knopf/", en: "/picture-stories/the-forbidden-button/", fr: "/histoires-en-images/le-bouton-interdit/", ru: "/истории-в-картинках/запретная-кнопка/", pt: "/historias-em-quadrinhos/o-botao-proibido/" } },
+  { id: "stories", paths: { de: "/bildgeschichten/", en: "/picture-stories/", fr: "/histoires-en-images/", ru: "/истории-в-картинках/", pt: "/historias-em-quadrinhos/" } },
   { id: "home", paths: { de: "/", en: "/", fr: "/", ru: "/", pt: "/" } },
   { id: "tool.shield", paths: { de: "/tools/schildrechner/", en: "/tools/shield-planner/", fr: "/outils/planificateur-de-bouclier/", ru: "/инструменты/планировщик-щитов/", pt: "/ferramentas/planejador-de-escudos/" } },
   { id: "tool.healing", paths: { de: "/tools/heilrechner/", en: "/tools/healing-planner/", fr: "/outils/planificateur-de-soins/", ru: "/инструменты/планировщик-лечения/", pt: "/ferramentas/planejador-de-cura/" } },

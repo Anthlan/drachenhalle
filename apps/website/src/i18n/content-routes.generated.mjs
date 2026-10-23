@@ -421,6 +421,16 @@ export default [
     }
   },
   {
+    "id": "content:Aktuelles/2026_10_23_Bildgeschichten_DerVerboteneKnopf.md",
+    "paths": {
+      "de": "/neuigkeiten/bildgeschichten-derverboteneknopf/",
+      "en": "/news/new-our-alliance-in-picture-stories/",
+      "fr": "/actualites/nouveau-notre-alliance-en-histoires-illustrees/",
+      "ru": "/новости/новинка-наш-альянс-в-историях-с-картинками/",
+      "pt": "/noticias/novidade-nossa-alianca-em-quadrinhos/"
+    }
+  },
+  {
     "id": "content:Aktuelles/2026_09_24_Allianzarchiv.md",
     "paths": {
       "de": "/neuigkeiten/allianzarchiv/",
