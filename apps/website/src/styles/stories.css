@@ -31,3 +31,10 @@ html.story-reader-open{overflow:hidden}
 .story-reader-dialog .story-paper{cursor:zoom-in;overflow:hidden}
 .story-reader-dialog .story-paper.is-zoomed{display:block;overflow:auto;overscroll-behavior:contain;cursor:zoom-out;touch-action:pan-x pan-y;scrollbar-width:thin}
 .story-reader-dialog .story-paper.is-zoomed img{display:block;height:auto;max-width:none;max-height:none;object-fit:fill;user-select:none}
+.story-reader-dialog .story-paper{touch-action:pan-x pan-y}
+.story-reader-dialog .story-paper.is-zoomed img{margin-left:auto;margin-right:auto}
+.story-reader-dialog .reader-zoom-controls{position:absolute;top:0;left:0;display:flex;align-items:center;gap:7px;height:30px;color:#abb8c6;font-size:.8rem}
+.reader-zoom-percent{min-width:44px;font-variant-numeric:tabular-nums}
+.story-reader-dialog .reader-fit{display:flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:0;border-radius:5px;background:transparent;color:#edcb8e;cursor:pointer}
+.story-reader-dialog .reader-fit:hover{background:#294059;color:#fff1d4}
+@media(max-height:450px){.story-reader-dialog .reader-zoom-controls,.story-reader-dialog .reader-fit{height:26px}}

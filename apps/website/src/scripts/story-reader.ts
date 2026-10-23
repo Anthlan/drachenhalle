@@ -26,14 +26,55 @@ export function initializeStoryReader() {
   let current = 0;
   let zoomed: HTMLAnchorElement | undefined;
   let suppressClick = false;
+  let scale = 1;
+  const zoomControls = document.createElement("div");
+  zoomControls.className = "reader-zoom-controls";
+  const zoomPercent = document.createElement("span");
+  zoomPercent.className = "reader-zoom-percent";
+  zoomPercent.textContent = "100 %";
+  const fitButton = document.createElement("button");
+  fitButton.type = "button";
+  fitButton.className = "reader-fit";
+  fitButton.title = translateClient("Ganze Seite anzeigen");
+  fitButton.setAttribute("aria-label", fitButton.title);
+  fitButton.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><rect x="8" y="6" width="8" height="12" rx="1"/></svg>';
+  fitButton.addEventListener("click", resetZoom);
+  zoomControls.append(zoomPercent, fitButton);
+  toolbar.append(zoomControls);
 
   function resetZoom() {
     if (!zoomed) return;
     zoomed.classList.remove("is-zoomed");
     zoomed.setAttribute("aria-pressed", "false");
     zoomed.querySelector("img")!.style.removeProperty("width");
+    zoomed.querySelector("img")!.style.removeProperty("margin-top");
+    scale = 1;
+    zoomPercent.textContent = "100 %";
     zoomed.scrollTo(0, 0);
     zoomed = undefined;
+  }
+
+  function zoomAt(paper: HTMLAnchorElement, requested: number, clientX: number, clientY: number, fromX = clientX, fromY = clientY) {
+    const image = paper.querySelector("img")!;
+    const ratio = image.naturalWidth / image.naturalHeight;
+    if (!ratio) return;
+    const bounds = paper.getBoundingClientRect();
+    const fit = Math.min(paper.clientWidth, paper.clientHeight * ratio);
+    const oldWidth = fit * scale;
+    const x = (fromX - bounds.left + paper.scrollLeft - Math.max(0, (paper.clientWidth - oldWidth) / 2)) / oldWidth;
+    const y = (fromY - bounds.top + paper.scrollTop - Math.max(0, (paper.clientHeight - oldWidth / ratio) / 2)) / (oldWidth / ratio);
+    const nextScale = Math.max(1, Math.min(6, requested));
+    if (nextScale <= 1.001) { resetZoom(); return; }
+    zoomed = paper;
+    scale = nextScale;
+    zoomPercent.textContent = `${Math.round(scale * 100)} %`;
+    paper.classList.add("is-zoomed");
+    paper.setAttribute("aria-pressed", "true");
+    const width = fit * scale;
+    image.style.width = width + "px";
+    image.style.marginTop = Math.max(0, (paper.clientHeight - width / ratio) / 2) + "px";
+    paper.scrollLeft = x * width + Math.max(0, (paper.clientWidth - width) / 2) - (clientX - bounds.left);
+    paper.scrollTop = y * width / ratio + Math.max(0, (paper.clientHeight - width / ratio) / 2) - (clientY - bounds.top);
   }
 
   pages.forEach((page, index) => {
@@ -49,22 +90,44 @@ export function initializeStoryReader() {
       if (suppressClick) { suppressClick = false; return; }
       if (!active) { open(index); return; }
       if (zoomed) { resetZoom(); return; }
-      const image = paper.querySelector("img")!;
       const bounds = paper.getBoundingClientRect();
-      const ratio = image.naturalWidth / image.naturalHeight;
-      if (!ratio) return;
-      const fitWidth = Math.min(paper.clientWidth, paper.clientHeight * ratio);
-      const fitHeight = fitWidth / ratio;
-      const x = event.detail ? (event.clientX - bounds.left - (paper.clientWidth - fitWidth) / 2) / fitWidth : .5;
-      const y = event.detail ? (event.clientY - bounds.top - (paper.clientHeight - fitHeight) / 2) / fitHeight : .5;
-      zoomed = paper;
-      paper.classList.add("is-zoomed");
-      paper.setAttribute("aria-pressed", "true");
-      const width = Math.max(fitWidth * 2.5, paper.clientWidth);
-      image.style.width = `${width}px`;
-      paper.scrollLeft = Math.max(0, Math.min(1, x)) * width - paper.clientWidth / 2;
-      paper.scrollTop = Math.max(0, Math.min(1, y)) * width / ratio - paper.clientHeight / 2;
+      zoomAt(paper, 2.5, event.detail ? event.clientX : bounds.left + bounds.width / 2,
+        event.detail ? event.clientY : bounds.top + bounds.height / 2);
     });
+    paper.addEventListener("wheel", event => {
+      if (!active) return;
+      event.preventDefault();
+      const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? paper.clientHeight : 1);
+      zoomAt(paper, scale * Math.exp(-Math.max(-250, Math.min(250, delta)) * .002), event.clientX, event.clientY);
+    }, {passive: false});
+    let pinch: {distance: number; scale: number; x: number; y: number} | undefined;
+    const midpoint = (touches: TouchList) => ({
+      distance: Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY),
+      x: (touches[0].clientX + touches[1].clientX) / 2,
+      y: (touches[0].clientY + touches[1].clientY) / 2,
+    });
+    paper.addEventListener("touchstart", event => {
+      if (!active || event.touches.length !== 2) return;
+      pinch = {...midpoint(event.touches), scale};
+      suppressClick = true;
+      touch = undefined;
+    }, {passive: true});
+    paper.addEventListener("touchmove", event => {
+      if (!active || !pinch || event.touches.length !== 2) return;
+      event.preventDefault();
+      const point = midpoint(event.touches);
+      zoomAt(paper, pinch.scale * point.distance / Math.max(1, pinch.distance), point.x, point.y, pinch.x, pinch.y);
+      pinch = {...point, scale};
+      suppressClick = true;
+    }, {passive: false});
+    paper.addEventListener("touchend", event => {
+      if (!pinch) return;
+      event.stopPropagation();
+      touch = undefined;
+      suppressClick = true;
+      if (event.touches.length < 2) pinch = undefined;
+    });
+    paper.addEventListener("touchcancel", () => { pinch = undefined; touch = undefined; });
     let drag: {x: number; y: number; left: number; top: number} | undefined;
     paper.addEventListener("pointerdown", event => {
       suppressClick = false;

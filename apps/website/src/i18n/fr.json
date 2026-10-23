@@ -2249,5 +2249,7 @@
   "Comic-Reader": "Lecteur de BD",
   "Reader schließen": "Fermer le lecteur",
   "Noch einmal lesen ↺": "Relire ↺",
-  "Mit den Pfeiltasten oder durch Wischen blättern. Esc schließt den Reader.": "Tournez les pages avec les flèches ou en balayant. Échap ferme le lecteur."
+  "Mit den Pfeiltasten oder durch Wischen blättern. Esc schließt den Reader.": "Tournez les pages avec les flèches ou en balayant. Échap ferme le lecteur.",
+  "Mausrad oder zwei Finger zum Zoomen. Ziehen zum Verschieben. Esc setzt den Zoom zurück oder schließt den Reader.": "Zoomez avec la molette ou deux doigts. Faites glisser pour déplacer. Échap réinitialise le zoom ou ferme le lecteur.",
+  "Ganze Seite anzeigen": "Afficher la page entière"
 }

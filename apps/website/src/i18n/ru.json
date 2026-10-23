@@ -2382,5 +2382,7 @@
   "Comic-Reader": "Читалка комиксов",
   "Reader schließen": "Закрыть читалку",
   "Noch einmal lesen ↺": "Читать заново ↺",
-  "Mit den Pfeiltasten oder durch Wischen blättern. Esc schließt den Reader.": "Листайте стрелками или смахиванием. Esc закрывает читалку."
+  "Mit den Pfeiltasten oder durch Wischen blättern. Esc schließt den Reader.": "Листайте стрелками или смахиванием. Esc закрывает читалку.",
+  "Mausrad oder zwei Finger zum Zoomen. Ziehen zum Verschieben. Esc setzt den Zoom zurück oder schließt den Reader.": "Масштабируйте колёсиком мыши или двумя пальцами. Перетаскивайте для перемещения. Esc сбрасывает масштаб или закрывает читалку.",
+  "Ganze Seite anzeigen": "Показать страницу целиком"
 }

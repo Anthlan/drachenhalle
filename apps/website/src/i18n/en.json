@@ -2249,5 +2249,7 @@
   "Comic-Reader": "Comic reader",
   "Reader schließen": "Close reader",
   "Noch einmal lesen ↺": "Read again ↺",
-  "Mit den Pfeiltasten oder durch Wischen blättern. Esc schließt den Reader.": "Turn pages with the arrow keys or by swiping. Esc closes the reader."
+  "Mit den Pfeiltasten oder durch Wischen blättern. Esc schließt den Reader.": "Turn pages with the arrow keys or by swiping. Esc closes the reader.",
+  "Mausrad oder zwei Finger zum Zoomen. Ziehen zum Verschieben. Esc setzt den Zoom zurück oder schließt den Reader.": "Use the mouse wheel or two fingers to zoom. Drag to move. Esc resets the zoom or closes the reader.",
+  "Ganze Seite anzeigen": "Fit whole page"
 }
