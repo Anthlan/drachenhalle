@@ -10,6 +10,12 @@ export function initializeStoryReader() {
   const next = book.querySelector<HTMLButtonElement>("[data-reader-next]")!;
   const position = book.querySelector<HTMLElement>("[data-reader-position]")!;
   const start = document.querySelector<HTMLAnchorElement>("[data-start-reader]")!;
+  const placeholder = document.createComment("Comic-Reader");
+  book.before(placeholder);
+  const dialog = document.createElement("dialog");
+  dialog.className = "story-reader-dialog";
+  dialog.setAttribute("aria-label", document.querySelector("h1")?.textContent || book.getAttribute("aria-label")!);
+  document.body.append(dialog);
   let active = false;
   let current = 0;
 
@@ -23,26 +29,35 @@ export function initializeStoryReader() {
       if (i === current) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
     });
-    book!.scrollIntoView({block: "start"});
   }
 
   function open(index = 0) {
+    if (active) return;
     active = true;
+    dialog.append(book!);
     book!.classList.add("is-reading");
+    document.documentElement.classList.add("story-reader-open");
     toolbar.hidden = help.hidden = false;
     show(index);
+    dialog.showModal();
     book!.focus({preventScroll: true});
   }
 
   function close() {
+    dialog.close();
+  }
+
+  dialog.addEventListener("close", () => {
     active = false;
+    document.documentElement.classList.remove("story-reader-open");
+    placeholder.after(book!);
     book!.classList.remove("is-reading");
     toolbar.hidden = help.hidden = true;
     pages.forEach(page => { page.hidden = false; });
     book!.querySelectorAll("[aria-current]").forEach(link => link.removeAttribute("aria-current"));
     history.replaceState(null, "", location.pathname + location.search);
-    start.focus();
-  }
+    start.focus({preventScroll: true});
+  });
 
   start.addEventListener("click", event => { event.preventDefault(); history.replaceState(null, "", "#lesen"); open(); });
   previous.addEventListener("click", () => show(current - 1));
