@@ -28,3 +28,6 @@ html.story-reader-open{overflow:hidden}
 .story-reader-dialog .reader-help{grid-row:3}
 @media(max-width:700px){.story-reader-dialog .story-page{padding:0 35px}.story-reader-dialog .reader-toolbar .story-secondary{width:30px;height:40px;min-height:40px;font-size:1.8rem}.story-reader-dialog .reader-toolbar .reader-close{height:30px;min-height:30px}.story-reader-dialog .reader-position{font-size:.75rem}}
 @media(max-height:450px){.story-reader-dialog .story-book{grid-template-rows:26px minmax(0,1fr)}.story-reader-dialog .reader-toolbar .reader-close{height:26px;min-height:26px}}
+.story-reader-dialog .story-paper{cursor:zoom-in;overflow:hidden}
+.story-reader-dialog .story-paper.is-zoomed{display:block;overflow:auto;overscroll-behavior:contain;cursor:zoom-out;touch-action:pan-x pan-y;scrollbar-width:thin}
+.story-reader-dialog .story-paper.is-zoomed img{display:block;height:auto;max-width:none;max-height:none;object-fit:fill;user-select:none}
