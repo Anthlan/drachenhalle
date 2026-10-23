@@ -9,6 +9,12 @@ export function initializeStoryReader() {
   const previous = book.querySelector<HTMLButtonElement>("[data-reader-prev]")!;
   const next = book.querySelector<HTMLButtonElement>("[data-reader-next]")!;
   const position = book.querySelector<HTMLElement>("[data-reader-position]")!;
+  const closeButton = book.querySelector<HTMLButtonElement>("[data-reader-close]")!;
+  for (const [button, symbol] of [[previous, "‹"], [closeButton, "×"]] as const) {
+    button.setAttribute("aria-label", button.textContent!.trim());
+    button.title = button.textContent!.trim();
+    button.textContent = symbol;
+  }
   const start = document.querySelector<HTMLAnchorElement>("[data-start-reader]")!;
   const placeholder = document.createComment("Comic-Reader");
   book.before(placeholder);
@@ -23,7 +29,10 @@ export function initializeStoryReader() {
     current = Math.max(0, Math.min(index, pages.length - 1));
     pages.forEach((page, i) => { page.hidden = i !== current; });
     previous.disabled = current === 0;
-    next.textContent = translateClient(current === pages.length - 1 ? "Noch einmal lesen ↺" : "Weiter →");
+    const nextLabel = translateClient(current === pages.length - 1 ? "Noch einmal lesen ↺" : "Weiter →");
+    next.setAttribute("aria-label", nextLabel);
+    next.title = nextLabel;
+    next.textContent = current === pages.length - 1 ? "↺" : "›";
     position.textContent = String(current + 1);
     book!.querySelectorAll<HTMLAnchorElement>(".story-reading-note nav a").forEach((link, i) => {
       if (i === current) link.setAttribute("aria-current", "page");

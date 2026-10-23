@@ -15,3 +15,16 @@ html.story-reader-open{overflow:hidden}
 .story-reader-dialog a:focus-visible,.story-reader-dialog button:focus-visible{outline:2px solid #ffe0a4;outline-offset:2px}
 @media(max-width:700px){.story-reader-dialog{width:100%;height:100dvh;margin:0;border:0;border-radius:0;padding:max(6px,env(safe-area-inset-top)) max(6px,env(safe-area-inset-right)) max(6px,env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left))}.story-reader-dialog .story-book{gap:6px}.story-reader-dialog .reader-toolbar{gap:5px;padding:5px;flex-wrap:wrap}.story-reader-dialog .reader-toolbar .story-secondary{padding:8px 10px;min-height:42px;font-size:.85rem}.story-reader-dialog .reader-position{font-size:.85rem}.story-reader-dialog .reader-close{flex-basis:auto;margin-left:auto}.story-reader-dialog .reader-help{font-size:.7rem}}
 @media(max-height:450px){.story-reader-dialog{height:100dvh;width:100%;padding:5px;border-radius:0}.story-reader-dialog .reader-help{display:none}.story-reader-dialog .story-book{grid-template-rows:auto minmax(0,1fr);gap:4px}.story-reader-dialog .reader-toolbar{padding:3px}.story-reader-dialog .reader-toolbar .story-secondary{min-height:34px;padding:5px 12px}}
+/* Quiet icon controls around the page, with accessible labels. */
+.story-reader-dialog .story-book{position:relative;grid-template-rows:30px minmax(0,1fr) auto;gap:6px}
+.story-reader-dialog .reader-toolbar{display:contents}
+.story-reader-dialog .reader-position{grid-row:1;align-self:center;justify-self:center;font-size:.8rem;color:#abb8c6}
+.story-reader-dialog .story-page{grid-row:2;box-sizing:border-box;padding:0 52px}
+.story-reader-dialog .reader-toolbar .story-secondary{position:absolute;z-index:2;display:flex;align-items:center;justify-content:center;width:40px;height:40px;min-height:40px;padding:0;border:1px solid #ad8a5044;border-radius:50%;background:#142235b3;color:#edcb8e;font-size:2rem;line-height:1;font-weight:400;cursor:pointer}
+.story-reader-dialog [data-reader-prev]{left:0;top:50%;transform:translateY(-50%)}
+.story-reader-dialog [data-reader-next]{right:0;top:50%;transform:translateY(-50%)}
+.story-reader-dialog .reader-toolbar .reader-close{right:0;top:0;width:30px;height:30px;min-height:30px;font-size:1.6rem;border:0;background:transparent;margin:0}
+.story-reader-dialog .reader-toolbar button:hover:not(:disabled){background:#294059;color:#fff1d4}
+.story-reader-dialog .reader-help{grid-row:3}
+@media(max-width:700px){.story-reader-dialog .story-page{padding:0 35px}.story-reader-dialog .reader-toolbar .story-secondary{width:30px;height:40px;min-height:40px;font-size:1.8rem}.story-reader-dialog .reader-toolbar .reader-close{height:30px;min-height:30px}.story-reader-dialog .reader-position{font-size:.75rem}}
+@media(max-height:450px){.story-reader-dialog .story-book{grid-template-rows:26px minmax(0,1fr)}.story-reader-dialog .reader-toolbar .reader-close{height:26px;min-height:26px}}
