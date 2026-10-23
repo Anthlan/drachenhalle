@@ -74,6 +74,9 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 
 ## S2 – Fantasy-Comic & Infografik
 
+- [2026_10_22_1807_BasisLevel27_ButterflySong.png](Chatbilder/2026_10_22_1807_BasisLevel27_ButterflySong.png)
+- [2026_10_22_1807_BittePflegeMich_Somea_Streetjudge_Drachenherz.png](Chatbilder/2026_10_22_1807_BittePflegeMich_Somea_Streetjudge_Drachenherz.png)
+
 - [2026_10_16_0845_BasisLevel26_Somea_Streetjudge.png](Chatbilder/2026_10_16_0845_BasisLevel26_Somea_Streetjudge.png)
 - [2026_10_16_0844_HerzenVerteilen_Somea_Anthlan_DaVinci1986_mysteryZ.png](Chatbilder/2026_10_16_0844_HerzenVerteilen_Somea_Anthlan_DaVinci1986_mysteryZ.png)
 - [2026_10_15_2211_WaechtertestLevel150_Somea_Drachenherz.png](Chatbilder/2026_10_15_2211_WaechtertestLevel150_Somea_Drachenherz.png)
