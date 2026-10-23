@@ -57,5 +57,35 @@ const formatDate = (value) => new Intl.DateTimeFormat("de-DE", {
 
       <SiteFooter />
     </div>
+    <script>
+      import {translateClient} from "../../i18n/client";
+      for (const code of document.querySelectorAll<HTMLElement>(".news-article pre code.language-html")) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "copy-code-button";
+        const label = translateClient("Mitteilung kopieren");
+        button.textContent = label;
+        code.parentElement!.before(button);
+        button.addEventListener("click", async () => {
+          const text = code.textContent?.trimEnd() || "";
+          try {
+            await navigator.clipboard.writeText(text);
+          } catch {
+            const field = document.createElement("textarea");
+            field.value = text;
+            field.style.position = "fixed";
+            field.style.opacity = "0";
+            document.body.append(field);
+            field.select();
+            const copied = document.execCommand("copy");
+            field.remove();
+            button.focus();
+            if (!copied) return;
+          }
+          button.textContent = translateClient("Kopiert!");
+          window.setTimeout(() => { button.textContent = label; }, 1800);
+        });
+      }
+    </script>
   </body>
 </html>

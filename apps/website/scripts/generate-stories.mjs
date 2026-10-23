@@ -12,6 +12,7 @@ for(const {code} of config.languages){
   if(story.pages.length!==3 || story.pages.some(page=>!page.alt || !page.description || !page.dialogue.length))throw Error(`Unvollständiger Comic-Lesetext: ${code}`);
   const destination=path.join(site,'public/stories/verbotener-knopf',code);
   await mkdir(destination,{recursive:true});
+  await sharp(path.join(source,'Bildgeschichten_Ankuendigung.png')).webp({quality:92}).toFile(path.join(destination,'ankuendigung.webp'));
   for(let page=1;page<=3;page++){
     const number=String(page).padStart(2,'0');
     const input=path.join(source,`Der_verbotene_Knopf_Seite_${number}.png`);
