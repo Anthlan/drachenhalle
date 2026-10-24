@@ -5,12 +5,13 @@ import {stripTypeScriptTypes} from 'node:module';
 import {createContext,runInContext} from 'node:vm';
 import {analyzeExpedition,allianceKey,share} from '../src/scripts/expedition-analysis.ts';
 import current from '../src/data/expedition-2026-10-17.json' with {type:'json'};
+import latest from '../src/data/expedition-2026-10-24.json' with {type:'json'};
 import previous from '../src/data/expedition-2026-10-10.json' with {type:'json'};
 
 test('slider recalculates full dashboard and preserves threshold in shared links',async()=>{
  const source=(await readFile(new URL('../src/scripts/expedition-dashboard.ts',import.meta.url),'utf8')).replace(/^import .*;\r?\n/gm,'');
  const script=stripTypeScriptTypes(source,{mode:'strip'});
- for(const [data,opponent]of [[previous,97],[current,107]]){
+ for(const [data,opponent]of [[previous,97],[current,107],[latest,109],[{...latest,players:latest.afterPlayers},109]]){
   const nodes=new Map();
   const node=key=>{if(!nodes.has(key))nodes.set(key,{value:'',textContent:'',innerHTML:'',dataset:{},setAttribute(){},scrollIntoView(){},focus(){}});return nodes.get(key)};
   node('#expedition-data').textContent=JSON.stringify({...data,players:data.players.filter(p=>p.points>=1000),allPlayers:data.players,minimumPoints:1000,opponentServer:opponent});

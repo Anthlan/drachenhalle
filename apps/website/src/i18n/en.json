@@ -2251,5 +2251,18 @@
   "Noch einmal lesen ↺": "Read again ↺",
   "Mit den Pfeiltasten oder durch Wischen blättern. Esc schließt den Reader.": "Turn pages with the arrow keys or by swiping. Esc closes the reader.",
   "Mausrad oder zwei Finger zum Zoomen. Ziehen zum Verschieben. Esc setzt den Zoom zurück oder schließt den Reader.": "Use the mouse wheel or two fingers to zoom. Drag to move. Esc resets the zoom or closes the reader.",
-  "Ganze Seite anzeigen": "Fit whole page"
+  "Ganze Seite anzeigen": "Fit whole page",
+  "Direkt nach der Eroberung": "Immediately after conquest",
+  "Nach der Sammelphase": "After the gathering phase",
+  "Aufnahmezeitpunkt": "Snapshot",
+  "Punkteänderung derselben Spieler": "Point changes for the same players",
+  "Punkteänderung": "Point change",
+  "Die spätere Rangliste änderte sich während der Aufnahme. Ein Doppeleintrag wurde entfernt. Zwei frühere Spieler wurden nicht eindeutig wiederzugeordnet. Die beiden Gesamtsummen sind deshalb kein exakter Phasenvergleich.": "The later leaderboard changed during capture. One duplicate was removed. Two earlier players could not be uniquely matched. The two overall totals therefore do not provide an exact phase comparison.",
+  "Mitgliederzahlen stammen aus den späteren Allianzüberblicken gegen 19:14 Uhr.": "Membership figures come from the later alliance overviews at around 19:14.",
+  "Verglichen werden nur eindeutig zugeordnete Spieler, die zu beiden Zeitpunkten die gewählte Mindestgrenze erreichen. Der Unterschied beschreibt den zeitlichen Punkteanstieg, keinen Beitrag zur Eroberung. Fehlende Zuordnungen werden nicht als null Punkte behandelt.": "Only uniquely matched players reaching the selected threshold in both snapshots are compared. The difference describes points gained over time, not a contribution to conquest. Missing matches are not treated as zero points.",
+  "Mitgliederzahlen: 20 Allianzen von S105, aufgenommen am 24.10.2026 gegen 19:14 Uhr. Die Ranglistenquote bezieht sich auf diesen späteren Mitgliederstand und misst keine tatsächliche Teilnahme.": "Membership: 20 alliances on S105, captured on 24 October 2026 at around 19:14. Leaderboard coverage uses this later membership count and does not measure actual participation.",
+  "Erster Stand: 688 Ränge aus einem Video direkt nach der Eroberung. Späterer Stand: 75 Ranglistenbilder zwischen 16:46 und 16:55 Uhr laut Dateinamen, 732 beobachtete Positionen und 731 verschiedene Spieler nach Entfernung eines Doppeleintrags. Die Rangliste änderte sich während der Aufnahme. Zwei frühere Spieler wurden später nicht eindeutig wiederzugeordnet; ein vollständiger gleichzeitiger Endstand ist nicht belegt.": "First snapshot: 688 ranks from a video immediately after conquest. Later snapshot: 75 leaderboard images between 16:46 and 16:55 according to filenames, 732 observed positions and 731 distinct players after removing one duplicate. The leaderboard changed during capture. Two earlier players could not be uniquely matched later; a complete simultaneous final ranking is not established.",
+  "24.10.2026 · Nach der Sammelphase": "24 October 2026 · After the gathering phase",
+  "24.10.2026 · Direkt nach der Eroberung": "24 October 2026 · Immediately after conquest",
+  "Vergleicht die Systempunkte beider Aufnahmezeitpunkte und die Ranglisteneinträge jeder Allianz.": "Compare system points from both snapshots and the leaderboard entries of each alliance."
 }

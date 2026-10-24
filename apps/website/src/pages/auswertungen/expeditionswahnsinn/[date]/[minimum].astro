@@ -2,8 +2,8 @@
 import ExpeditionReport from "../../../../components/ExpeditionReport.astro";
 import { expeditionReports } from "../../../../data/expedition-reports";
 export function getStaticPaths() {
- return expeditionReports.map(report => ({params:{date:report.date,minimum:"50000"},props:{report}}));
+ return [...expeditionReports.map(report => ({params:{date:report.date,minimum:"50000"},props:{report,phase:"before",minimumPoints:50000}})), ...expeditionReports.filter(report=>report.date==="2026-10-24").map(report=>({params:{date:report.date,minimum:"after"},props:{report,phase:"after",minimumPoints:1000}}))];
 }
-const {report}=Astro.props;
+const {report,phase,minimumPoints}=Astro.props;
 ---
-<ExpeditionReport report={report} minimumPoints={50000} />
+<ExpeditionReport report={report} minimumPoints={minimumPoints} phase={phase} />
