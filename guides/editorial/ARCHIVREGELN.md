@@ -28,7 +28,7 @@ Auf dieser Website und im Repository wird die Allianz durchgängig als **DIE** b
 - `apps/website`: technische Quellen, Generatoren, Tests und Build-Konfiguration der Website.
 - `apps/page-views`: der getrennt deploybare Cloudflare-Worker für Seitenaufrufe.
 - `docs`: technische Dokumentation und erzeugte Prüfberichte.
-- `.local`, `tmp`, `.tmp`, `state`: lokale Arbeitsstände und Importe; diese Bereiche werden nicht veröffentlicht und gehören nicht ins Online-Repository.
+- `.local`: lokale Arbeitsstände und Importe, gegliedert in `sources`, `workshop`, `tools`, `work`, `logs` und `state`; dieser Bereich wird nicht veröffentlicht und gehört nicht ins Online-Repository. Auch `.tmp` und `state` sind ausschließlich lokal.
 
 ## Ablageregeln
 

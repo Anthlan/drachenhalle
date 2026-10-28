@@ -1,7 +1,7 @@
 ---
 title: "Champ de bataille : Pandore"
 date: "2026-10-30"
-time: "22:00"
+time: "21:00"
 category: "Manifestation de l'Alliance"
 summary: "Combattez ensemble sur le champ de bataille de Pandore – avec de bonnes récompenses et aucune perte réelle de troupes."
 ---

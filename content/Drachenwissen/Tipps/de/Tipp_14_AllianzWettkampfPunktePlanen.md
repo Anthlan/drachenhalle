@@ -102,7 +102,7 @@ Für Samstag sind allgemeine Eliminierungen, Eliminierungen im „spezifischen K
 
 ## Quellen und noch offene Werte
 
-Stand: **06.10.2026**. Primärquellen sind die vom Allianzmitglied bereitgestellten Screenshots in `tmp/Allianz_Wettkampf`. Die folgenden Punktetabellen dokumentieren die abgelesenen Werte dauerhaft im Wissensartikel. Vollständige 650er-EP-, Zehner-Energie- und Sammelblöcke werden im Rechner vorsichtig abgerundet; die exakte Rundung der Spielwertung ist noch zu prüfen.
+Stand: **06.10.2026**. Primärquellen sind die vom Allianzmitglied bereitgestellten Screenshots in `.local/sources/Allianz_Wettkampf`. Die folgenden Punktetabellen dokumentieren die abgelesenen Werte dauerhaft im Wissensartikel. Vollständige 650er-EP-, Zehner-Energie- und Sammelblöcke werden im Rechner vorsichtig abgerundet; die exakte Rundung der Spielwertung ist noch zu prüfen.
 
 Noch offen sind Einsatzbereitschafts-Aufgaben und -Zeiten, persönliche Bonusgrundlagen, Radar-Speicherlimit, Auffüllmenge und -Zeiten, Ablauf-/Abholregeln sowie Training durch Aufwertung. Es werden keine fehlenden Punktewerte hochgerechnet.
 

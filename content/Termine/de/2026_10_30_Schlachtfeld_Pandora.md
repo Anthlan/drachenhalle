@@ -1,7 +1,7 @@
 ---
 title: "Schlachtfeld: Pandora"
 date: "2026-10-30"
-time: "22:00"
+time: "21:00"
 category: "Allianz-Event"
 summary: "Kämpft gemeinsam auf dem Schlachtfeld Pandora – ohne reale Truppenverluste und mit guten Belohnungen."
 ---

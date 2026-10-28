@@ -102,7 +102,7 @@ Sábado lista eliminações gerais, eliminações em “Combate específico” e
 
 ## Fontes e valores ainda não resolvidos
 
-A partir de: **6 de Outubro de 2026**. As fontes primárias são capturas de tela dos membros da aliança fornecidas em `tmp/Allianz_Wettkampf`. As tabelas de pontos a seguir documentam permanentemente os valores que são leídos a partir delas neste artigo de conhecimento. A calculadora arredona de forma conservadora os blocos completos de 650-EXP, dez-potência e coleta; a arredondada exata da pontuação do jogo ainda deve ser verificada.
+A partir de: **6 de Outubro de 2026**. As fontes primárias são capturas de tela dos membros da aliança fornecidas em `.local/sources/Allianz_Wettkampf`. As tabelas de pontos a seguir documentam permanentemente os valores que são leídos a partir delas neste artigo de conhecimento. A calculadora arredona de forma conservadora os blocos completos de 650-EXP, dez-potência e coleta; a arredondada exata da pontuação do jogo ainda deve ser verificada.
 
 As tarefas e os horários da corrida de armas, as bases de bônus pessoais, o limite de armazenamento do radar, a quantidade e os tempos de reabastecimento, as regras de expiração/recolha e o treinamento através da promoção permanecem sem solução. Os valores dos pontos faltantes não são extrapolados.
 

@@ -102,7 +102,7 @@ Saturday lists general eliminations, eliminations in “specific combat” and l
 
 ## Sources and values still unresolved
 
-As of: **6 October 2026**. Primary sources are alliance-member screenshots supplied in `tmp/Allianz_Wettkampf`. The following point tables permanently document the values read from them in this knowledge article. The calculator conservatively rounds down complete 650-EXP, ten-power and gathering blocks; exact game-score rounding remains to be checked.
+As of: **6 October 2026**. Primary sources are alliance-member screenshots supplied in `.local/sources/Allianz_Wettkampf`. The following point tables permanently document the values read from them in this knowledge article. The calculator conservatively rounds down complete 650-EXP, ten-power and gathering blocks; exact game-score rounding remains to be checked.
 
 Arms Race tasks and times, personal bonus bases, radar storage limit, refill quantity and times, expiry/collection rules and training through promotion remain unresolved. Missing point values are not extrapolated.
 

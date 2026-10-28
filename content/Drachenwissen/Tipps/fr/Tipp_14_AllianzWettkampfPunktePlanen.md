@@ -102,7 +102,7 @@ Samedi liste les éliminations générales, les éliminations dans, combat spéc
 
 ## Sources et valeurs encore en suspens
 
-À partir de: **6 Octobre 2026**. Les sources primaires sont les captures d'écran des membres de l'alliance fournies dans `tmp/Allianz_Wettkampf`. Les tableaux suivants documentent en permanence les valeurs lues dans cet article de connaissance. La calculatrice se retourne prudemment vers le bas 650- EXP, dix-puissances et blocs de rassemblement; l'arrondissement exact du score de jeu reste à vérifier.
+À partir de: **6 Octobre 2026**. Les sources primaires sont les captures d'écran des membres de l'alliance fournies dans `.local/sources/Allianz_Wettkampf`. Les tableaux suivants documentent en permanence les valeurs lues dans cet article de connaissance. La calculatrice se retourne prudemment vers le bas 650- EXP, dix-puissances et blocs de rassemblement; l'arrondissement exact du score de jeu reste à vérifier.
 
 Les tâches et les heures de course des armes, les bases de bonus personnelles, la limite de stockage radar, la quantité et les heures de recharge, les règles d'expiration/de collecte et la formation par la promotion restent non résolues.
 
