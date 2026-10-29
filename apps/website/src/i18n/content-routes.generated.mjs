@@ -411,6 +411,16 @@ export default [
     }
   },
   {
+    "id": "content:Drachenwissen/Tipps/Tipp_15_KleineTricksGrosseWirkung.md",
+    "paths": {
+      "de": "/docs/tipp-15-kleine-tricks-grosse-wirkung/",
+      "en": "/guides/tip-15-small-tricks-big-impact/",
+      "fr": "/guides/conseil-15-petites-astuces-grands-effets/",
+      "ru": "/руководства/совет-no15-маленькие-хитрости-большая-польза/",
+      "pt": "/guias/dica-15-pequenos-truques-grande-impacto/"
+    }
+  },
+  {
     "id": "content:Drachenwissen/Events/Event_01_GefechtsvorbereitungFlugbesatzung.md",
     "paths": {
       "de": "/docs/event-01-gefechtsvorbereitung-flugbesatzung/",

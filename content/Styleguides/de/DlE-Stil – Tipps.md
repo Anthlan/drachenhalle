@@ -24,6 +24,18 @@ Die Grafik soll den vollständigen Inhalt des zugehörigen Tipptextes verständl
 - Inhalte dürfen sprachlich verkürzt werden, wenn Bedeutung und Einschränkungen vollständig erhalten bleiben.
 - Nicht bestätigte Mechaniken werden nicht ergänzt oder als Tatsache dargestellt.
 
+## Verbindlicher Sprach- und Freigabeworkflow
+
+Die deutsche Fassung ist die führende Arbeits- und Freigabefassung. Übersetzungen beginnen erst, wenn der deutsche Tipp inhaltlich und visuell final abgestimmt ist.
+
+1. Zuerst werden der deutsche Wissensartikel, die kopierbare deutsche Allianz-Mitteilung und die deutsche Tippgrafik erstellt.
+2. Inhalt, Zahlen, Formulierungen, Beispiele, Symbole und Bildaufbau werden ausschließlich an dieser deutschen Fassung geprüft und korrigiert.
+3. Erst nach ausdrücklicher oder eindeutig erkennbarer Finalisierung der deutschen Fassung werden die registrierten Sprachfassungen erstellt beziehungsweise aktualisiert.
+4. Spätere inhaltliche Änderungen werden erneut zuerst auf Deutsch finalisiert und erst anschließend in alle Übersetzungen übertragen.
+5. Übersetzungen übernehmen die freigegebene deutsche Informationsstruktur vollständig. Sie dürfen keine noch ungeklärten Zwischenstände vorwegnehmen.
+
+Dadurch bleibt Deutsch die eindeutige Quelle und wiederholte Korrekturschleifen in allen Sprachfassungen werden vermieden.
+
 ## Format und Aufbau
 
 - Hochformat im Verhältnis **2:3**, bevorzugt 1024 × 1536 Pixel oder größer im gleichen Verhältnis.
