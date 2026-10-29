@@ -24,6 +24,18 @@ The graphic should communicate the complete accompanying tip text understandably
 - Wording may be shortened if meaning and limitations remain complete.
 - Do not add unconfirmed mechanics or present them as fact.
 
+## Mandatory language and approval workflow
+
+The German version is the leading working and approval version. Translation begins only after the German tip has been fully approved in terms of content and visuals.
+
+1. First create the German knowledge article, the copyable German alliance announcement and the German tip graphic.
+2. Check and correct content, numbers, wording, examples, symbols and image composition exclusively in this German version.
+3. Create or update the registered language versions only after the German version has been explicitly or clearly finalised.
+4. Finalise subsequent content changes in German first and only then transfer them to all translations.
+5. Translations adopt the approved German information structure in full. They must not anticipate unresolved intermediate versions.
+
+This keeps German as the unambiguous source and avoids repeated correction loops in every language version.
+
 ## Format and structure
 
 - Portrait format with a **2:3** ratio, preferably 1024 × 1536 pixels or larger at the same ratio.

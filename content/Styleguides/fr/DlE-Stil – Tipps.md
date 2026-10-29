@@ -24,6 +24,18 @@ Le graphique doit communiquer le texte complet du bout d'accompagnement de faço
 - La rédaction peut être abrégée si le sens et les limites demeurent complets.
 - N'ajoutez pas de mécanique non confirmée ou ne présentez pas de faits.
 
+## Processus obligatoire de langue et de validation
+
+La version allemande est la version de travail et de validation de référence. Les traductions ne commencent qu’après la validation définitive du contenu et des visuels du conseil allemand.
+
+1. Créez d’abord l’article de connaissances allemand, l’annonce d’alliance allemande à copier et le visuel allemand du conseil.
+2. Vérifiez et corrigez le contenu, les chiffres, les formulations, les exemples, les symboles et la composition de l’image exclusivement dans cette version allemande.
+3. Créez ou actualisez les versions linguistiques enregistrées uniquement lorsque la version allemande est explicitement ou clairement finalisée.
+4. Finalisez également les modifications ultérieures d’abord en allemand, puis transférez-les dans toutes les traductions.
+5. Les traductions reprennent intégralement la structure d’information allemande validée. Elles ne doivent pas anticiper des versions intermédiaires encore incertaines.
+
+L’allemand reste ainsi la source unique et claire, et les corrections répétées dans toutes les langues sont évitées.
+
 ## Format et structure
 
 - Format de portrait avec un **2:3** ratio, de préférence 1024 × 1536 pixels ou plus grand au même rapport.

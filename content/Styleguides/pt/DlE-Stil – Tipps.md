@@ -24,6 +24,18 @@ O gráfico deve comunicar compreensivelmente o texto completo da dica que acompa
 - A redação pode ser encurtada se o significado e as limitações permanecerem completos.
 - Não adicione mecânicas não confirmadas nem as apresente como fatos.
 
+## Fluxo obrigatório de idioma e aprovação
+
+A versão alemã é a versão principal de trabalho e aprovação. As traduções só começam depois de a dica alemã estar totalmente aprovada em termos de conteúdo e imagem.
+
+1. Primeiro são criados o artigo de conhecimento em alemão, o anúncio de aliança alemão para copiar e o gráfico alemão da dica.
+2. Conteúdo, números, formulações, exemplos, símbolos e composição da imagem são verificados e corrigidos exclusivamente nesta versão alemã.
+3. As versões nos idiomas registados só são criadas ou atualizadas depois de a versão alemã estar explícita ou claramente finalizada.
+4. Alterações posteriores ao conteúdo também são finalizadas primeiro em alemão e só depois transferidas para todas as traduções.
+5. As traduções adotam integralmente a estrutura de informação alemã aprovada. Não devem antecipar versões intermédias ainda não esclarecidas.
+
+Assim, o alemão continua a ser a fonte inequívoca e evitam-se ciclos repetidos de correções em todas as versões linguísticas.
+
 ## Formatos e estrutura
 
 - Formatos de retrato com um **2:3** proporção, de preferência 1024 × 1536 pixels ou maior na mesma proporção.
