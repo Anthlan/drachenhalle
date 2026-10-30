@@ -1,7 +1,7 @@
 {
   "language": "fr-FR",
   "tool": "built-in Imagegen",
-  "date": "2026-10-19",
+  "date": "2026-10-30",
   "prompt": "Localize the supplied infographic into fluent, concise French. Translate every visible heading, caption, label and body text while preserving the complete navy-and-gold composition, illustrations, icons, arrows, all numbers, times, percentages, identifiers and game mechanics. Fit the French text inside the original panels without clipping. Leave no English, German or Portuguese text. Do not add, omit or reinterpret facts. Keep the original aspect ratio and resolution.",
   "sources": [
     "media/alliance/Allianz_Regeln.png",
@@ -23,6 +23,7 @@
     "media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Spielautomat.png",
     "media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png",
     "media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png",
+    "media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch_Winterzeit.png",
     "media/knowledge/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png"
   ]
 }

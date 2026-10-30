@@ -74,7 +74,7 @@ const baseDocuments = [
     summary: "Gefahrenzeitraum, Schildplan und Vorbereitung im Allianz-Shop.",
     parentSlug: "eventankuendigungen",
     kind: "alliance",
-    imageSource: "media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png",
+    imageSource: "media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch_Winterzeit.png",
   },
   {
     source: "Drachenwissen/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.md",

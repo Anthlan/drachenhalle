@@ -4,7 +4,13 @@ Während der Raubzugkämpfe können Gegner anderer Server zu uns springen und un
 
 Die Ankündigung verbindet drei Informationen, die für alle Mitglieder wichtig sind: den tatsächlichen Gefahrenzeitraum, die rechtzeitige Vorbereitung im Allianz-Shop und die beiden Zeitpunkte unseres Schildplans.
 
-![Raubzugkämpfe – Schilde hoch](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
+**Winterzeit in Deutschland (aktuell):**
+
+![Raubzugkämpfe – Schilde hoch, Winterzeit](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch_Winterzeit.png)
+
+**Sommerzeit in Deutschland:**
+
+![Raubzugkämpfe – Schilde hoch, Sommerzeit](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
 
 ## Warum der Schildplan wichtig ist
 
@@ -18,21 +24,21 @@ Ohne Schild kann grundsätzlich jede Basis zum Ziel werden – unabhängig von i
 - Setzt den ersten Schild pünktlich am Freitagabend.
 - Verlängert den Schutz am Samstagabend mit dem 8-Stunden-Schild.
 - Kontrolliert nach dem Aktivieren, ob die angezeigte Restlaufzeit den geplanten Zeitraum vollständig abdeckt.
-- Achtet vor dem Versenden der Mitteilung darauf, ob lokale Zeit und Serverzeit weiterhin stimmen.
+- Ersetzt vor dem Versenden den Platzhalter **`[UHRZEIT]`** durch die von der Allianz festgelegte Schildzeit.
 
 ## Allianz-Mitteilung zum Kopieren
 
 ```html
 <color=#FFD700><b>⚔️ Raubzugkampf – Schilde hoch! 🛡️</b></color>
 
-Von <b>Samstag 04:00 Uhr (00:00 Serverzeit)</b> bis <b>Sonntag 04:00 Uhr (00:00 Serverzeit)</b> ist wieder Raubzugkampf. In dieser Zeit können Gegner von anderen Servern zu uns springen und unsere Basen angreifen.
+Von <b>Samstag 03:00 Uhr (00:00 Serverzeit)</b> bis <b>Sonntag 03:00 Uhr (00:00 Serverzeit)</b> ist wieder Raubzugkampf. In dieser Zeit können Gegner von anderen Servern zu uns springen und unsere Basen angreifen.
 
 <color=#87CEEB><b>Vorbereitung:</b></color>
 Bitte besorgt euch rechtzeitig im Allianz-Shop <b>1× 24h-Schild + 1× 8h-Schild.</b>
 
 <color=#90EE90><b>Unser Schildplan:</b></color>
-<b>Freitag 20:00 Uhr (16:00 Serverzeit)</b> → 24h-Schild
-<b>Samstag 20:00 Uhr (16:00 Serverzeit)</b> → 8h-Schild
+<b>Freitag [UHRZEIT]</b> → 24h-Schild
+<b>Samstag [UHRZEIT]</b> → 8h-Schild
 
 <color=#FF6347><b>⚠️ Wichtig:</b></color> Ohne Schild kann <b>jeder</b> zum Ziel werden – unabhängig von der Stärke. Wird die Basis auf 0 gebrannt, sterben massiv Soldaten auf dem Übungsplatz.
 

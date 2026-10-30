@@ -4,7 +4,13 @@ During raid battles, opponents from other servers can teleport to us and attack 
 
 This announcement combines three things every member needs to know: the actual danger period, timely preparation in the alliance shop and the two activation times in our shield plan.
 
-![Raid battles – shields up](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
+**Winter time in Germany (current):**
+
+![Raid battles – shields up, winter time](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch_Winterzeit.png)
+
+**Summer time in Germany:**
+
+![Raid battles – shields up, summer time](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
 
 ## Why the shield plan matters
 
@@ -18,21 +24,21 @@ Without a shield, any base can become a target, regardless of its strength. If a
 - Activate the first shield on time on Friday evening.
 - Extend your protection on Saturday evening with the 8-hour shield.
 - After activation, check that the displayed remaining duration covers the entire planned period.
-- Before sending the message, check that local time and server time still match.
+- Before sending the message, replace **`[TIME]`** with the shield time set by the alliance.
 
 ## Alliance message to copy
 
 ```html
 <color=#FFD700><b>⚔️ Raid battle – shields up! 🛡️</b></color>
 
-From <b>Saturday 04:00 (00:00 server time)</b> until <b>Sunday 04:00 (00:00 server time)</b>, raid battle is back. During this time, opponents from other servers can teleport to us and attack our bases.
+From <b>Saturday 03:00 (00:00 server time)</b> until <b>Sunday 03:00 (00:00 server time)</b>, raid battle is back. During this time, opponents from other servers can teleport to us and attack our bases.
 
 <color=#87CEEB><b>Preparation:</b></color>
 Please get <b>1× 24h shield + 1× 8h shield</b> from the alliance shop in time.
 
 <color=#90EE90><b>Our shield plan:</b></color>
-<b>Friday 20:00 (16:00 server time)</b> → 24h shield
-<b>Saturday 20:00 (16:00 server time)</b> → 8h shield
+<b>Friday [TIME]</b> → 24h shield
+<b>Saturday [TIME]</b> → 8h shield
 
 <color=#FF6347><b>⚠️ Important:</b></color> Without a shield, <b>anyone</b> can become a target, regardless of strength. If your base is burned to 0, massive numbers of soldiers die on the drill ground.
 

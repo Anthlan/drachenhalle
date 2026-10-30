@@ -4,7 +4,13 @@ Pendant les combats de raid, les adversaires d'autres serveurs peuvent nous tél
 
 Cette annonce combine trois choses que chaque membre doit savoir : la période de danger réelle, la préparation en temps opportun dans le magasin d'alliance et les deux temps d'activation dans notre plan de bouclier.
 
-![Batailles de raid – boucliers vers le haut](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
+**Heure d’hiver en Allemagne (actuelle) :**
+
+![Batailles de raid – boucliers activés, heure d’hiver](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch_Winterzeit.png)
+
+**Heure d’été en Allemagne :**
+
+![Batailles de raid – boucliers activés, heure d’été](../../../../media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png)
 
 ## Pourquoi le plan de bouclier est important
 
@@ -18,21 +24,21 @@ Sans bouclier, une base peut devenir une cible, quelle que soit sa force. Si une
 - Activer le premier bouclier à l'heure vendredi soir.
 - Prolongez votre protection le samedi soir avec la 8- bouclier horaire.
 - Après activation, vérifiez que la durée restante affichée couvre la période entière prévue.
-- Avant d'envoyer le message, vérifiez que l'heure locale et l'heure du serveur correspondent encore.
+- Avant d’envoyer le message, remplacez **`[HEURE]`** par l’heure de bouclier fixée par l’alliance.
 
 ## Message de l'Alliance à copier
 
 ```html
 <color=#FFD700><b>Bataille de raid – boucliers vers le haut!</b></color>
 
-Depuis <b>Samedi 04:00 (00:00 temps du serveur)</b> jusqu'à <b>Dimanche 04:00 (00:00 temps du serveur)</b>Pendant ce temps, les adversaires d'autres serveurs peuvent nous téléporter et attaquer nos bases.
+Depuis <b>Samedi 03:00 (00:00 temps du serveur)</b> jusqu'à <b>Dimanche 03:00 (00:00 temps du serveur)</b>Pendant ce temps, les adversaires d'autres serveurs peuvent nous téléporter et attaquer nos bases.
 
 <color=#87CEEB><b>Préparation:</b></color>
 S'il vous plaît, obtenez <b>1× 24h bouclier + 1× 8h bouclier</b> de la boutique d'alliance à temps.
 
 <color=#90EE90><b>Notre plan de bouclier :</b></color>
-<b>Vendredi 20:00 (16:00 temps du serveur)</b> → 24h bouclier
-<b>Samedi 20:00 (16:00 temps du serveur)</b> → 8h bouclier
+<b>Vendredi [HEURE]</b> → 24h bouclier
+<b>Samedi [HEURE]</b> → 8h bouclier
 
 <color=#FF6347><b>- --------</b></color> Sans bouclier, <b>qui que ce soit</b> peut devenir une cible, peu importe la force. 0, Des soldats en nombre massif meurent sur le terrain de forage.
 

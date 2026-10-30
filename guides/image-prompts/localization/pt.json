@@ -1,7 +1,7 @@
 {
   "language": "pt-BR",
   "tool": "built-in Imagegen",
-  "date": "2026-10-16",
+  "date": "2026-10-30",
   "prompts": [
     {
       "source": "media/alliance/Allianz_Regeln.png",
@@ -82,6 +82,10 @@
     {
       "source": "media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch.png",
       "prompt": "Precise text-only correction to this Brazilian Portuguese infographic. Preserve all graphics, composition, colors, fonts, icons and unmentioned text exactly. Replace main title 'SAQUE DE ESCUDOS' with exact 'COMBATES DE SAQUE'. Replace subtitle 'Proteja-se bem!' with 'Ative os escudos!'. Keep all times and timezone labels and all other text unchanged."
+    },
+    {
+      "source": "media/knowledge/Eventankuendigungen/Raubzugkaempfe_Schilde_Hoch_Winterzeit.png",
+      "prompt": "Use case: text-localization. Create the Brazilian Portuguese winter-time variant from the localized summer-time infographic. Preserve the complete composition and all wording. Change only the German-local-time values: Sáb 04:00 and Dom 04:00 to 03:00; Sex 20:00 and Sáb 20:00 to 19:00. Keep 00:00 ST and 16:00 ST unchanged."
     },
     {
       "source": "media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Budget.png",
