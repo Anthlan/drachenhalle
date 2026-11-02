@@ -10,6 +10,7 @@ Les annonces d'événements complètent les deux sections voisines :
 
 ## Annonces d'événements disponibles
 
+- [Terres contaminées : vérifier la résistance et éliminer les agents pathogènes ensemble](VerseuchtesLand_Widerstand_Erreger.md)
 - [Concours Alliance : Planifier les points et radar](AllianzWettkampf_Punkte_Radar.md) – combiner la course aux armes et préparer l'espace radar
 
 - [Embuscade d’alliance : Début préparé](AllianzHinterhalt_Start_Verlueste.md) – préparation, gestion des pertes et guérison efficace

@@ -10,6 +10,7 @@ Event announcements complement the two neighboring sections:
 
 ## Available event announcements
 
+- [Radiated Land: check resistance and clear pathogens together](VerseuchtesLand_Widerstand_Erreger.md)
 - [Alliance Competition: Plan points and radar](AllianzWettkampf_Punkte_Radar.md) – combine Arms Race and prepare radar space
 
 - [Alliance Ambush: Start prepared](AllianzHinterhalt_Start_Verlueste.md) – preparation, loss management and efficient healing

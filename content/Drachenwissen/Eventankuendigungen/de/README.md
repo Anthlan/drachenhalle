@@ -10,6 +10,7 @@ Eventankündigungen ergänzen die beiden benachbarten Bereiche:
 
 ## Verfügbare Eventankündigungen
 
+- [Verseuchtes Land: Widerstand prüfen und Erreger gemeinsam reinigen](VerseuchtesLand_Widerstand_Erreger.md)
 - [Allianz-Wettkampf: Punkte und Radar planen](AllianzWettkampf_Punkte_Radar.md) – Einsatzbereitschaft kombinieren und Radarplatz vorbereiten
 
 - [Allianz-Hinterhalt: vorbereitet starten](AllianzHinterhalt_Start_Verlueste.md) – Startvorbereitung, Verlustmanagement und effizientes Heilen

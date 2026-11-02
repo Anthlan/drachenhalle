@@ -10,6 +10,7 @@ Os anúncios de eventos complementam as duas secções vizinhas:
 
 ## Anúncios de eventos disponíveis
 
+- [Terra contaminada: verificar resistência e remover patógenos juntos](VerseuchtesLand_Widerstand_Erreger.md)
 - [Concorrência da Aliança: pontos de planejamento e radar](AllianzWettkampf_Punkte_Radar.md) – combinar Arms Race e preparar espaço radar
 
 - [Emboscada da Aliança: Começo preparado](AllianzHinterhalt_Start_Verlueste.md) – Preparação, gestão de perdas e cura eficiente

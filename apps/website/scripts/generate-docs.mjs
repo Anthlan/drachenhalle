@@ -28,6 +28,16 @@ const imageMimeType = (sourcePath) => {
 
 const baseDocuments = [
   {
+    source: "Drachenwissen/Eventankuendigungen/VerseuchtesLand_Widerstand_Erreger.md",
+    slug: "eventankuendigung-verseuchtes-land",
+    title: "Verseuchtes Land: Widerstand prüfen und Erreger gemeinsam reinigen",
+    section: "Drachenwissen",
+    summary: "Für uns in DIE stehen Widerstand, Erregerkontrolle und gegenseitige Hilfe im Mittelpunkt. Diese Seite verbindet die Allianz-Mitteilung mit einer ausführlicheren Einordnung der neuen Saisonmechanik.",
+    parentSlug: "eventankuendigungen",
+    kind: "alliance",
+    imageSource: "media/knowledge/Eventankuendigungen/VerseuchtesLand_Widerstand_Erreger.png",
+  },
+  {
     source: "Drachenwissen/Eventankuendigungen/AllianzWettkampf_Punkte_Radar.md",
     slug: "eventankuendigung-allianzwettkampf",
     title: "Allianz-Wettkampf: Punkte und Radar planen",
@@ -523,7 +533,10 @@ const normalizeWebsiteSpelling = (markdown, source) => {
       );
   }
 
-  return normalized.replaceAll("DlE", "DIE").replaceAll("dle", "die");
+  // In-game copy blocks must keep DlE: the game's filter rejects DIE.
+  return normalized.split(/(```[\s\S]*?```)/g)
+    .map((part, index) => index % 2 ? part : part.replaceAll("DlE", "DIE").replaceAll("dle", "die"))
+    .join("");
 };
 
 const resolveLocalMarkdownImages = (markdown, source) => {
