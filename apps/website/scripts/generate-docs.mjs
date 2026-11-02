@@ -32,7 +32,7 @@ const baseDocuments = [
     slug: "eventankuendigung-verseuchtes-land",
     title: "Verseuchtes Land: Widerstand prüfen und Erreger gemeinsam reinigen",
     section: "Drachenwissen",
-    summary: "Für uns in DIE stehen Widerstand, Erregerkontrolle und gegenseitige Hilfe im Mittelpunkt. Diese Seite verbindet die Allianz-Mitteilung mit einer ausführlicheren Einordnung der neuen Saisonmechanik.",
+    summary: "Im Event „Verseuchtes Land“ entscheidet neben unserer Kampfkraft auch der Widerstand darüber, welche Ziele wir sicher angreifen können. Erregerladungen schwächen uns und können bei hoher Belastung auf benachbarte Basen übergreifen. Mit dem Ausbau unserer Saisongebäude und gegenseitiger Reinigung schützen wir uns gemeinsam.",
     parentSlug: "eventankuendigungen",
     kind: "alliance",
     imageSource: "media/knowledge/Eventankuendigungen/VerseuchtesLand_Widerstand_Erreger.png",

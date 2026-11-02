@@ -1,47 +1,41 @@
 # Verseuchtes Land: Widerstand prüfen und Erreger gemeinsam reinigen
 
-Für uns in DIE stehen Widerstand, Erregerkontrolle und gegenseitige Hilfe im Mittelpunkt. Diese Seite verbindet die Allianz-Mitteilung mit einer ausführlicheren Einordnung der neuen Saisonmechanik.
-
-## Stand und Verlässlichkeit
-
-Recherche: 2. November 2026. Alle Mechanikwerte sind **Community-Hinweise**, nicht von uns durch Spielaufnahmen bestätigt. Russische Quellen nennen die Saison „Облучённая земля“, englische „Radiated Land“. Aktuelle Zielanzeigen und Eventregeln im Spiel haben Vorrang. Für unsere Allianz liegt hier kein bestätigtes Enddatum vor; diese Seite ist deshalb nicht als abgeschlossen archiviert.
+Im Event „Verseuchtes Land“ entscheidet neben unserer Kampfkraft auch der Widerstand darüber, welche Ziele wir sicher angreifen können. Erregerladungen schwächen uns und können bei hoher Belastung auf benachbarte Basen übergreifen. Mit dem Ausbau unserer Saisongebäude und gegenseitiger Reinigung schützen wir uns gemeinsam.
 
 ## Grafik und Kurzfassung
 
 ![Verseuchtes Land: Widerstand prüfen und Erreger gemeinsam reinigen](../../../../media/knowledge/Eventankuendigungen/VerseuchtesLand_Widerstand_Erreger.png)
 
-Deutsche Originalgrafik im blau-goldenen DIE-Stil: Widerstand prüfen, Produktion ausbauen, gegenseitig reinigen und Ausbruch vermeiden.
-
 ## Widerstand und Erreger unterscheiden
 
-Widerstand ist der Schutzwert, den wir vor einem Angriff mit der Zielanforderung vergleichen. Erregerladungen beschreiben die bereits angesammelte Belastung. Ein Sieg allein belegt nicht, dass der Angriff ohne Infektion bleibt. Laut [Quelle 1](https://zroutehub.bond/handbook/event_season_guide/) können Angriffe bei zu geringem Widerstand Ladungen verursachen. Eine genaue Formel für Risiko und Widerstandsdifferenz ist nicht belegt.
+Widerstand ist der Schutzwert, den wir vor einem Angriff mit der Zielanforderung vergleichen. Erregerladungen beschreiben die bereits angesammelte Belastung. Ein Sieg allein schützt nicht vor Infektion: Bei zu geringem Widerstand könnt ihr auch bei einem erfolgreichen Angriff Erregerladungen sammeln. [Mehr zur Mechanik](https://zroutehub.bond/handbook/event_season_guide/).
 
 ## Widerstand aufbauen
 
-Das Virenlabor erhöht den Widerstand; Immunprotein dient seinem Ausbau. Die saisonalen Produktionsgebäude liefern Protein und werden mit Uran-Kristallen verbessert. [Quelle 2](https://trassaz.ru/sezon-s1/) nennt zusätzlich Forschung und einen Passbonus von +250 Widerstand. Das ist kein Kaufargument ohne Prüfung des aktuellen Angebots. Unsere Empfehlung: Produktion und Labor gemeinsam entwickeln, neue Ziele erst nach Prüfung ihrer Anforderungen angehen.
+Das Virenlabor erhöht unseren Widerstand und wird mit Immunprotein verbessert. Die saisonalen Produktionsgebäude liefern dieses Protein; für ihren Ausbau benötigen wir Uran-Kristalle. Entwickelt Produktion und Labor gemeinsam, damit der Nachschub mit dem Bedarf Schritt hält. Zusätzlichen Widerstand erhalten wir durch Forschung und einen Saisonpass-Bonus von +250. [Mehr zum Ausbau](https://trassaz.ru/sezon-s1/).
 
 ## Reinigung und Ausbruch
 
-Laut [Quelle 1](https://zroutehub.bond/handbook/event_season_guide/) entfernt eine Aufklärungsdrohne zur verbündeten Basis 2 Erregerladungen beziehungsweise gibt 2 Schutzladungen bei unbelasteter Basis. Schutzladungen nicht mit einem normalen Basisschild gleichsetzen. Bei 100 Ladungen drohen laut Community ein Ausbruch, Ansteckung in der Umgebung und Zwangsteleport. Deshalb früh Hilfe im Chat holen, Belastung kontrollieren und bei drohendem Ausbruch Abstand zu unseren Basen halten. Reinigung nicht absichtlich deaktivieren, solange wir die Mechanik nicht gemeinsam geprüft haben.
+Eine Aufklärungsdrohne zur verbündeten Basis entfernt 2 Erregerladungen. Ist die Basis nicht infiziert, erhält sie stattdessen 2 Schutzladungen. Bei 100 Erregerladungen kommt es zum Ausbruch: Benachbarte Ziele werden angesteckt und die betroffene Basis wird zwangsteleportiert. Meldet eine steigende Belastung frühzeitig im Allianzchat, damit wir uns rechtzeitig gegenseitig reinigen können. Steht ein Ausbruch bevor, haltet Abstand zu unseren Basen. [Mehr zu Reinigung und Ausbruch](https://zroutehub.bond/handbook/event_season_guide/).
 
-## Widersprüche und offene Fragen
+## Widerstand und Schutzladungen richtig einordnen
 
-Die Quellen nennen 30 beziehungsweise 35 übertragene Ladungen beim Ausbruch. Auch bei Protein aus Beobachter-Kämpfen widersprechen sie sich. Reichweite, Auslösezeit, Reinigungslimits, Rally-Regeln und die Dauer möglicher Nachteile nach einer Reinigung bleiben für unseren Spielstand zu testen. Erreger, Schutzladungen, Widerstand und Antikörper sind getrennte Begriffe; eine Umrechnung ist nicht belegt.
+Widerstand schützt uns bei Angriffen auf infizierte Ziele. Die Reinigung durch Verbündete baut bereits angesammelte Erregerladungen ab. Schutzladungen werden auf einer unbelasteten Basis aufgebaut und sind vom normalen Basisschild zu unterscheiden. Antikörper sind ein weiterer eigener Wert. Diese Begriffe dürfen nicht gleichgesetzt werden.
 
 ## Unser Vorgehen
 
-- Vor Angriffen Zielanforderung und eigenen Widerstand prüfen.
-- Labor und Proteinproduktion ausbauen; Ressourcen nicht ungeprüft in ein einziges Gebäude stecken.
-- Erregerstand nach Kämpfen kontrollieren und früh gegenseitige Reinigung organisieren.
-- Abweichungen mit Screenshot von Ziel, Widerstand und Erregerstand dokumentieren.
+- Vor jedem Angriff unseren Widerstand mit der Zielanforderung vergleichen.
+- Virenlabor und Immunprotein-Produktion gemeinsam ausbauen.
+- Nach Kämpfen die Erregerladungen prüfen und frühzeitig um Reinigung bitten.
+- Bei drohendem Ausbruch Abstand zu unseren Basen halten und Hilfe im Allianzchat holen.
 
-## Quellen und Einordnung
+## Quellen
 
-1. [Server 33](https://zroutehub.bond/handbook/event_season_guide/) — Russischer Community-Guide von Server 33: saisonale Gebäude, Widerstand, Drohnenreinigung und Ausbruch. Trotz der Überschrift „offizieller Guide“ ist die Website eine inoffizielle Community-Seite.
+1. [Server 33](https://zroutehub.bond/handbook/event_season_guide/) — Russischer Community-Guide zu Saisongebäuden, Widerstand, Drohnenreinigung und Ausbruch.
 
-2. [Z Route Wiki](https://trassaz.ru/sezon-s1/) — Russischer Fan-Guide, datiert 7. Oktober 2026: Gamma-Virus, Labor, Forschung und saisonale Boni. Einzelne Angaben weichen von Quelle 1 ab.
+2. [Z Route Wiki](https://trassaz.ru/sezon-s1/) — Russischer Fan-Guide vom 7. Oktober 2026 zu Gamma-Virus, Widerstand und Saisonboni.
 
-3. [ARES](https://rutube.ru/video/b487339c34cd06938c1ba8a1af58c624/) — Video von ARES, 23. September 2026, 22:18 Minuten: Die Beschreibung nennt Widerstand, Moral und verseuchtes Land. Nur ergänzender Videolink; konkrete Zahlen dieser Seite wurden nicht aus dem Video verifiziert.
+3. [ARES](https://rutube.ru/video/b487339c34cd06938c1ba8a1af58c624/) — Russisches Video vom 23. September 2026 mit Tipps zu Widerstand, Moral und verseuchtem Land (22:18 Minuten).
 
 ## Allianz-Mitteilung zum Kopieren
 
@@ -52,11 +46,9 @@ Die Quellen nennen 30 beziehungsweise 35 übertragene Ladungen beim Ausbruch. Au
 
 🧪 <b>Virenlabor und Immunprotein-Produktion ausbauen.</b> So erhöhen wir unseren Widerstand.
 
-🛰️ <b>Gegenseitig reinigen!</b> Eine Aufklärungsdrohne zur verbündeten Basis entfernt laut Community-Guide 2 Erregerladungen; ohne Infektion gibt sie 2 Schutzladungen.
+🛰️ <b>Gegenseitig reinigen!</b> Eine Aufklärungsdrohne zur verbündeten Basis entfernt 2 Erregerladungen; ohne Infektion gibt sie 2 Schutzladungen.
 
 <color=#FF4040><b>⚠️ Erreger frühzeitig melden!</b></color> Sie schwächen euch. Ab 100 Ladungen drohen Ausbruch, Ansteckung benachbarter Basen und Zwangsteleport. Bei hoher Belastung Abstand zu unseren Basen halten und Hilfe im Chat anfordern.
 
 <b>Gemeinsam schützen, gegenseitig helfen!</b>
-
-Hinweise aus Community-Guides; prüft die aktuellen Werte im Spiel.
 ```
