@@ -41,6 +41,7 @@ const knownPeople = [
   "Helltrain",
   "Hitmann",
   "Hulkster666",
+  "JuliaDE11",
   "Kaylani",
   "Killergruppe",
   "Korpi92",

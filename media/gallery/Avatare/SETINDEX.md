@@ -15,6 +15,8 @@ Dieser Index ordnet jeden Avatar genau einer Serie zu. Eine Serie beschreibt das
 - [DRACHENHERZ_2026_10_02_0817.png](DRACHENHERZ_2026_10_02_0817.png)
 - [DRACHENHERZ_2026_10_18_2235.png](DRACHENHERZ_2026_10_18_2235.png)
 - [DRACHENHERZ_2026_10_18_2327.png](DRACHENHERZ_2026_10_18_2327.png)
+- [JuliaDE11_2026_11_04_0904.png](JuliaDE11_2026_11_04_0904.png)
+- [JuliaDE11_2026_11_04_0924.png](JuliaDE11_2026_11_04_0924.png)
 - [Krasaviza_2026_10_08_0654.png](Krasaviza_2026_10_08_0654.png)
 - [mysteryZ_2026_10_02_0832.png](mysteryZ_2026_10_02_0832.png)
 - [Somea_2026_10_16_2354.png](Somea_2026_10_16_2354.png)

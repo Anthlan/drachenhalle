@@ -12,6 +12,7 @@ Toutes les déclarations se réfèrent uniquement à la représentation fictive 
 - [DaVinci1986](DaVinci1986.md)
 - [Drachenherz](Drachenherz.md)
 - [Helltrain](Helltrain.md)
+- [JuliaDE11](JuliaDE11.md)
 - [Kaylani](Kaylani.md)
 - [Krasaviza](Krasaviza.md)
 - [Lordmirko](Lordmirko.md)

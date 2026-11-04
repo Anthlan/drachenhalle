@@ -12,6 +12,7 @@ All statements refer solely to the fictional portrayal within the Dragon Knights
 - [DaVinci1986](DaVinci1986.md)
 - [Drachenherz](Drachenherz.md)
 - [Helltrain](Helltrain.md)
+- [JuliaDE11](JuliaDE11.md)
 - [Kaylani](Kaylani.md)
 - [Krasaviza](Krasaviza.md)
 - [Lordmirko](Lordmirko.md)
