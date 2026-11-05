@@ -139,6 +139,9 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 
 ## S3 – Chibi-Fantasy
 
+- [2026_11_05_1219_CoffeeTime_JuliaDE11.png](Reaktionsbilder/2026_11_05_1219_CoffeeTime_JuliaDE11.png)
+- [2026_11_04_1907_KopftaetschelnImTeddykostuem_Drachenherz_Anthlan.png](Chatbilder/2026_11_04_1907_KopftaetschelnImTeddykostuem_Drachenherz_Anthlan.png)
+- [2026_11_04_1833_GRRR_Baerenkostuem_Anthlan.png](Reaktionsbilder/2026_11_04_1833_GRRR_Baerenkostuem_Anthlan.png)
 - [2026_11_04_1145_GutenMorgen_JuliaDE11.png](Reaktionsbilder/2026_11_04_1145_GutenMorgen_JuliaDE11.png)
 - [2026_11_04_1145_GuteNacht_JuliaDE11.png](Reaktionsbilder/2026_11_04_1145_GuteNacht_JuliaDE11.png)
 - [2026_11_04_1120_Passt_JuliaDE11.png](Reaktionsbilder/2026_11_04_1120_Passt_JuliaDE11.png)
