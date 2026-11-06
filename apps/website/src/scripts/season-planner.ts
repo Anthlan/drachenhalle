@@ -1,3 +1,4 @@
+import { createPlanSync } from './season-plan-sync';
 import { translateClient as t } from '../i18n/client';
 type Entry = {alliance:string; note:string};
 type Plan = Record<string,Entry>;
@@ -33,6 +34,25 @@ if(root){
   const note=form.elements.namedItem('note') as HTMLTextAreaElement;
   const status=get<HTMLElement>('[data-status]');
   let plan:Plan={}; let selected=''; let activeAlliance=''; let suppressTokenClick=false;
+  const endpoint=root.dataset?.planEndpoint || '';
+  const snapshotMode=typeof location!=='undefined'&&location.hash.startsWith('#plan=');
+  const liveMode=Boolean(endpoint)&&!snapshotMode;
+  let writable=!liveMode;
+  let sync:ReturnType<typeof createPlanSync>|undefined;
+  let editToken='';
+  if(liveMode){
+    const hash=new URLSearchParams(location.hash.slice(1));
+    try{editToken=hash.get('edit')||sessionStorage.getItem('die-season-edit')||'';if(hash.has('edit')){sessionStorage.setItem('die-season-edit',editToken);history.replaceState(null,'',location.pathname+location.search);}}catch{editToken=hash.get('edit')||'';}
+  }
+  const syncStatus=(text:string)=>{const el=root.querySelector<HTMLElement>('[data-sync-status]');if(el)el.textContent=t(text);};
+  function updatePermissions(){
+    root!.querySelectorAll<HTMLButtonElement>('[data-alliance-token]').forEach(button=>button.disabled=!writable);
+    alliance.disabled=!writable;note.disabled=!writable;
+    get<HTMLButtonElement>('[data-save]').disabled=!writable||!selected;
+    get<HTMLButtonElement>('[data-clear]').disabled=!writable||!selected;
+    get<HTMLInputElement>('[data-import]').disabled=!writable;
+    get<HTMLButtonElement>('[data-share-edit]').hidden=!(liveMode&&writable&&editToken);
+  }
   const message=(text:string)=>{status.textContent=t(text);};
   try{const saved=localStorage.getItem(key);if(saved)plan=validatePlan(JSON.parse(saved));}catch{message('Lokaler Plan konnte nicht geladen werden.');}
   if(typeof location!=='undefined' && location.hash.startsWith('#plan=')){
@@ -41,27 +61,29 @@ if(root){
   }
   get<HTMLButtonElement>('[data-share-plan]').onclick=async()=>{
     const url=new URL('https://anthlan.github.io'+location.pathname);
-    url.hash='plan='+encodeSharedPlan(plan);
+    if(!liveMode)url.hash='plan='+encodeSharedPlan(plan);
     const field=get<HTMLInputElement>('[data-share-link]');field.value=url.href;field.hidden=false;
     try{await navigator.clipboard.writeText(url.href);message('Link zum aktuellen Plan kopiert.');}
     catch{field.focus();field.select();message('Bitte den angezeigten Planlink kopieren.');}
   };
-  function select(code:string){selected=code;get<HTMLElement>('[data-selection]').textContent=code;alliance.value=plan[code]?.alliance||'';note.value=plan[code]?.note||'';get<HTMLButtonElement>('[data-save]').disabled=false;get<HTMLButtonElement>('[data-clear]').disabled=false;render();}
+  const localBackup:Plan=JSON.parse(JSON.stringify(plan));
+  if(liveMode)plan={};
+  function select(code:string){selected=code;get<HTMLElement>('[data-selection]').textContent=code;alliance.value=plan[code]?.alliance||'';note.value=plan[code]?.note||'';updatePermissions();render();}
   function render(){
     root!.querySelectorAll<HTMLButtonElement>('[data-cell]').forEach(button=>{const code=button.dataset.cell!;const entry=plan[code];button.dataset.plannerAlliance=entry?.alliance||'';button.setAttribute('aria-pressed',String(code===selected));button.setAttribute('aria-label',`${code}${entry?`: ${entry.alliance} ${entry.note}`:''}`);button.title=`${code} ${t(button.dataset.building || '')} ${button.dataset.level ? 'Lv'+button.dataset.level : ''}${entry?`: ${entry.alliance} ${entry.note}`:''}`;const span=button.querySelector<HTMLElement>('[data-assignment]')!;span.textContent='';});
     const list=get<HTMLUListElement>('[data-list]');list.replaceChildren();
     for(const [code,entry] of Object.entries(plan).sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true}))){const li=document.createElement('li');const button=document.createElement('button');button.type='button';button.textContent=`${code} · ${entry.alliance||t('Offen')}${entry.note?' · '+entry.note:''}`;button.onclick=()=>select(code);li.append(button);list.append(li);}
   }
-  function persist(){render();get<HTMLInputElement>('[data-share-link]').hidden=true;if(typeof location!=='undefined'&&location.hash.startsWith('#plan='))history.replaceState(null,'',location.pathname+location.search);try{localStorage.setItem(key,JSON.stringify(plan));message('Plan lokal gespeichert.');}catch{message('Speichern nicht möglich. Bitte den Plan exportieren.');}}
+  function persist(){render();if(sync)sync.save(plan);get<HTMLInputElement>('[data-share-link]').hidden=true;if(typeof location!=='undefined'&&location.hash.startsWith('#plan='))history.replaceState(null,'',location.pathname+location.search);try{localStorage.setItem(key,JSON.stringify(plan));if(!liveMode)message('Plan lokal gespeichert.');}catch{message('Speichern nicht möglich. Bitte den Plan exportieren.');}}
   function assign(code:string, tag:string){
-    if(!alliances.includes(tag))return;
+    if(!writable||!alliances.includes(tag))return;
     plan[code]={alliance:tag,note:plan[code]?.note||''};select(code);persist();
   }
   root.querySelectorAll<HTMLButtonElement>('[data-alliance-token]').forEach(token=>{
     token.onclick=()=>{if(suppressTokenClick){suppressTokenClick=false;return;}activeAlliance=activeAlliance===token.dataset.allianceToken?'':token.dataset.allianceToken!;root.querySelectorAll<HTMLButtonElement>('[data-alliance-token]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.allianceToken===activeAlliance)));};
     let pointer: {id:number; x:number; y:number; ghost:HTMLElement|null} | null=null;
     token.onpointerdown=event=>{
-      if(event.button!==0)return;
+      if(!writable||event.button!==0)return;
       event.preventDefault();
       pointer={id:event.pointerId,x:event.clientX,y:event.clientY,ghost:null};
       token.setPointerCapture(event.pointerId);
@@ -88,8 +110,8 @@ if(root){
     button.ondrop=event=>{event.preventDefault();delete button.dataset.dropTarget;const tag=event.dataTransfer?.getData('application/x-die-alliance')||'';assign(button.dataset.cell!,tag);};
   });
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){activeAlliance='';root.querySelectorAll('[data-alliance-token]').forEach(b=>b.setAttribute('aria-pressed','false'));}});
-  form.onsubmit=event=>{event.preventDefault();if(!selected)return;plan[selected]={alliance:alliance.value,note:note.value.trim()};persist();};
-  get<HTMLButtonElement>('[data-clear]').onclick=()=>{if(!selected)return;delete plan[selected];alliance.value='';note.value='';persist();};
+  form.onsubmit=event=>{event.preventDefault();if(!writable||!selected)return;plan[selected]={alliance:alliance.value,note:note.value.trim()};persist();};
+  get<HTMLButtonElement>('[data-clear]').onclick=()=>{if(!writable||!selected)return;delete plan[selected];alliance.value='';note.value='';persist();};
   get<HTMLInputElement>('[data-zoom]').oninput=event=>{const value=(event.target as HTMLInputElement).value;get<HTMLElement>('[data-map]').style.width=value+'%';get<HTMLOutputElement>('[data-zoom-value]').value=value+' %';};
   get<HTMLButtonElement>('[data-export]').onclick=()=>{const blob=new Blob([JSON.stringify({version:1,map:'season-2026-11-06',cells:plan},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='saisonplan-2026-11-06.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
   get<HTMLButtonElement>('[data-export-image]').onclick=()=>{
@@ -109,6 +131,19 @@ if(root){
     const capitalX=left+9*cellWidth,capitalY=top+9*cellHeight;ctx.strokeStyle='#17212b';ctx.lineWidth=4;ctx.strokeRect(capitalX+2,capitalY+2,136,92);ctx.textAlign='center';ctx.font='bold 16px sans-serif';ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.strokeText(t('Hauptstadt'),capitalX+70,capitalY+43);ctx.fillStyle='#111';ctx.fillText(t('Hauptstadt'),capitalX+70,capitalY+43);ctx.font='13px sans-serif';ctx.strokeText('Lv7',capitalX+70,capitalY+63);ctx.fillText('Lv7',capitalX+70,capitalY+63);
     canvas.toBlob(blob=>{if(!blob)return;const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='saisonkarte-2026-11-06.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);},'image/png');
   };
-  get<HTMLInputElement>('[data-import]').onchange=async event=>{const input=event.target as HTMLInputElement;const file=input.files?.[0];if(!file)return;try{if(file.size>500000)throw new Error('Too large');const data=JSON.parse(await file.text());if(data.version!==1||data.map!=='season-2026-11-06')throw new Error('Wrong map');const next=validatePlan(data.cells);if(!window.confirm(t('Lokalen Plan durch den importierten Plan ersetzen?')))return;plan=next;persist();if(selected)select(selected);}catch{message('Ungültige Plandatei. Der bisherige Plan bleibt erhalten.');}finally{input.value='';}};
+  get<HTMLInputElement>('[data-import]').onchange=async event=>{if(!writable)return;const input=event.target as HTMLInputElement;const file=input.files?.[0];if(!file)return;try{if(file.size>500000)throw new Error('Too large');const data=JSON.parse(await file.text());if(data.version!==1||data.map!=='season-2026-11-06')throw new Error('Wrong map');const next=validatePlan(data.cells);if(!window.confirm(t(liveMode?'Gemeinsamen Plan durch die importierte Datei ersetzen?':'Lokalen Plan durch den importierten Plan ersetzen?')))return;plan=next;persist();if(selected)select(selected);}catch{message('Ungültige Plandatei. Der bisherige Plan bleibt erhalten.');}finally{input.value='';}};
+  get<HTMLButtonElement>('[data-seed-local]').onclick=()=>{if(!writable||Object.keys(plan).length)return;plan=JSON.parse(JSON.stringify(localBackup));persist();};
+  get<HTMLButtonElement>('[data-share-edit]').onclick=async()=>{
+    const url=new URL('https://anthlan.github.io'+location.pathname);url.hash='edit='+encodeURIComponent(editToken);
+    const field=get<HTMLInputElement>('[data-share-link]');field.value=url.href;field.hidden=false;
+    try{await navigator.clipboard.writeText(url.href);message('Bearbeitungslink kopiert. Nur an berechtigte Allianzen weitergeben.');}catch{field.focus();field.select();}
+  };
+  updatePermissions();
+  if(liveMode){
+    syncStatus('Gemeinsamer Plan wird geladen.');
+    sync=createPlanSync({endpoint,token:editToken,validate:validatePlan,onState:(cells,canEdit)=>{plan=cells;writable=canEdit;updatePermissions();get<HTMLButtonElement>('[data-seed-local]').hidden=!canEdit||Object.keys(cells).length>0||Object.keys(localBackup).length===0;render();},onStatus:syncStatus});
+    window.addEventListener('beforeunload',event=>{if(sync?.hasPending()){event.preventDefault();event.returnValue='';}});
+    window.addEventListener('pagehide',()=>sync?.stop());
+  }else syncStatus(snapshotMode?'Geteilter Planstand · Lokale Kopie':'Lokaler Plan · Gemeinsamer Speicher noch nicht eingerichtet');
   render();
 }

@@ -2311,5 +2311,20 @@
   "Geteilter Plan geladen. Änderungen bleiben in deinem Browser.": "Shared plan loaded. Changes stay in your browser.",
   "Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.": "The shared plan is invalid. Your local plan is preserved.",
   "Link zum aktuellen Plan kopiert.": "Link to current plan copied.",
-  "Bitte den angezeigten Planlink kopieren.": "Please copy the displayed plan link."
+  "Bitte den angezeigten Planlink kopieren.": "Please copy the displayed plan link.",
+  "Bearbeitungslink kopieren": "Copy edit link",
+  "Lokalen Plan übernehmen": "Use local plan",
+  "Gemeinsamer Plan: Normaler Link zum Ansehen, separater Link zum Bearbeiten. Änderungen werden automatisch geladen. Im Bearbeitungsmodus eine Allianz auf ein Feld ziehen oder zuerst die Allianz und dann das Feld wählen.": "Shared plan: the normal link is view-only, with a separate edit link. Changes load automatically. In edit mode, drag an alliance onto a cell or select the alliance and then the cell.",
+  "Gemeinsamer Plan · Bearbeitung aktiv": "Shared plan · Editing enabled",
+  "Gemeinsamer Plan · Nur ansehen": "Shared plan · View only",
+  "Gemeinsamer Plan wird geladen.": "Loading shared plan.",
+  "Gemeinsamer Plan gespeichert.": "Shared plan saved.",
+  "Verbindung unterbrochen. Der letzte Stand bleibt sichtbar.": "Connection lost. The last state remains visible.",
+  "Speichern fehlgeschlagen. Änderungen bleiben vorgemerkt und werden erneut versucht.": "Saving failed. Changes remain queued and will be retried.",
+  "Andere Änderungen geladen. Eigene Änderungen werden erneut gespeichert.": "Other changes loaded. Your changes will be saved again.",
+  "Bearbeitungslink ungültig. Ungespeicherte Änderungen bitte exportieren.": "Invalid edit link. Please export unsaved changes.",
+  "Bearbeitungslink kopiert. Nur an berechtigte Allianzen weitergeben.": "Edit link copied. Share only with authorized alliances.",
+  "Geteilter Planstand · Lokale Kopie": "Shared snapshot · Local copy",
+  "Lokaler Plan · Gemeinsamer Speicher noch nicht eingerichtet": "Local plan · Shared storage not configured yet",
+  "Gemeinsamen Plan durch die importierte Datei ersetzen?": "Replace the shared plan with the imported file?"
 }

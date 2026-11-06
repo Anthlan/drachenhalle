@@ -2311,5 +2311,20 @@
   "Geteilter Plan geladen. Änderungen bleiben in deinem Browser.": "Plan partagé chargé. Les modifications restent dans votre navigateur.",
   "Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.": "Le plan partagé est invalide. Votre plan local est conservé.",
   "Link zum aktuellen Plan kopiert.": "Lien vers le plan actuel copié.",
-  "Bitte den angezeigten Planlink kopieren.": "Veuillez copier le lien affiché."
+  "Bitte den angezeigten Planlink kopieren.": "Veuillez copier le lien affiché.",
+  "Bearbeitungslink kopieren": "Copier le lien de modification",
+  "Lokalen Plan übernehmen": "Reprendre le plan local",
+  "Gemeinsamer Plan: Normaler Link zum Ansehen, separater Link zum Bearbeiten. Änderungen werden automatisch geladen. Im Bearbeitungsmodus eine Allianz auf ein Feld ziehen oder zuerst die Allianz und dann das Feld wählen.": "Plan partagé : lien normal en lecture seule, lien séparé pour modifier. Les changements se chargent automatiquement. En modification, glissez une alliance sur une case ou choisissez l’alliance puis la case.",
+  "Gemeinsamer Plan · Bearbeitung aktiv": "Plan partagé · Modification active",
+  "Gemeinsamer Plan · Nur ansehen": "Plan partagé · Lecture seule",
+  "Gemeinsamer Plan wird geladen.": "Chargement du plan partagé.",
+  "Gemeinsamer Plan gespeichert.": "Plan partagé enregistré.",
+  "Verbindung unterbrochen. Der letzte Stand bleibt sichtbar.": "Connexion perdue. Le dernier état reste visible.",
+  "Speichern fehlgeschlagen. Änderungen bleiben vorgemerkt und werden erneut versucht.": "Échec de sauvegarde. Les modifications sont conservées en attente et seront réessayées.",
+  "Andere Änderungen geladen. Eigene Änderungen werden erneut gespeichert.": "Autres modifications chargées. Vos modifications seront enregistrées à nouveau.",
+  "Bearbeitungslink ungültig. Ungespeicherte Änderungen bitte exportieren.": "Lien de modification invalide. Exportez les modifications non enregistrées.",
+  "Bearbeitungslink kopiert. Nur an berechtigte Allianzen weitergeben.": "Lien de modification copié. À transmettre uniquement aux alliances autorisées.",
+  "Geteilter Planstand · Lokale Kopie": "État partagé · Copie locale",
+  "Lokaler Plan · Gemeinsamer Speicher noch nicht eingerichtet": "Plan local · Stockage partagé non configuré",
+  "Gemeinsamen Plan durch die importierte Datei ersetzen?": "Remplacer le plan partagé par le fichier importé ?"
 }

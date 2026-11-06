@@ -53,6 +53,7 @@ jobs:
         working-directory: ./apps/website
         env:
           PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN: ${{ vars.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN }}
+          PUBLIC_PLAN_API_URL: ${{ vars.PUBLIC_PLAN_API_URL }}
           PUBLIC_PAGE_VIEWS_API_URL: ${{ vars.PUBLIC_PAGE_VIEWS_API_URL }}
         run: pnpm run build
 

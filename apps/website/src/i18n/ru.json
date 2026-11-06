@@ -2444,5 +2444,20 @@
   "Geteilter Plan geladen. Änderungen bleiben in deinem Browser.": "Общий план загружен. Изменения останутся в вашем браузере.",
   "Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.": "Ссылка недействительна. Ваш локальный план сохранён.",
   "Link zum aktuellen Plan kopiert.": "Ссылка на текущий план скопирована.",
-  "Bitte den angezeigten Planlink kopieren.": "Скопируйте показанную ссылку на план."
+  "Bitte den angezeigten Planlink kopieren.": "Скопируйте показанную ссылку на план.",
+  "Bearbeitungslink kopieren": "Копировать ссылку редактора",
+  "Lokalen Plan übernehmen": "Использовать локальный план",
+  "Gemeinsamer Plan: Normaler Link zum Ansehen, separater Link zum Bearbeiten. Änderungen werden automatisch geladen. Im Bearbeitungsmodus eine Allianz auf ein Feld ziehen oder zuerst die Allianz und dann das Feld wählen.": "Общий план: обычная ссылка для просмотра, отдельная — для редактирования. Изменения загружаются автоматически. В режиме редактора перетащите альянс на клетку или выберите альянс, затем клетку.",
+  "Gemeinsamer Plan · Bearbeitung aktiv": "Общий план · Редактирование",
+  "Gemeinsamer Plan · Nur ansehen": "Общий план · Только просмотр",
+  "Gemeinsamer Plan wird geladen.": "Загрузка общего плана.",
+  "Gemeinsamer Plan gespeichert.": "Общий план сохранён.",
+  "Verbindung unterbrochen. Der letzte Stand bleibt sichtbar.": "Соединение потеряно. Последний план остаётся видимым.",
+  "Speichern fehlgeschlagen. Änderungen bleiben vorgemerkt und werden erneut versucht.": "Не удалось сохранить. Изменения остаются в очереди для повторной попытки.",
+  "Andere Änderungen geladen. Eigene Änderungen werden erneut gespeichert.": "Загружены другие изменения. Ваши изменения будут сохранены повторно.",
+  "Bearbeitungslink ungültig. Ungespeicherte Änderungen bitte exportieren.": "Неверная ссылка редактора. Экспортируйте несохранённые изменения.",
+  "Bearbeitungslink kopiert. Nur an berechtigte Allianzen weitergeben.": "Ссылка редактора скопирована. Передавайте только уполномоченным альянсам.",
+  "Geteilter Planstand · Lokale Kopie": "Снимок плана · Локальная копия",
+  "Lokaler Plan · Gemeinsamer Speicher noch nicht eingerichtet": "Локальный план · Общее хранилище не настроено",
+  "Gemeinsamen Plan durch die importierte Datei ersetzen?": "Заменить общий план импортированным файлом?"
 }

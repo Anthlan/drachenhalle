@@ -4,20 +4,24 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import expedition from "../../data/expedition-2026-10-24.json";
 import { buildings, buildingName } from "../../data/season-map";
+const planEndpoint = (import.meta.env.PUBLIC_PLAN_API_URL || import.meta.env.PUBLIC_PAGE_VIEWS_API_URL || '').replace(/\/$/, '');
 const alliances = expedition.alliances.filter(a => a.server === 105).sort((a,b) => b.power-a.power).slice(0,10);
 ---
 <!doctype html>
 <html lang="de"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><title>Kartenplaner · DIE Drachenhalle</title></head>
 <body><div class="page-shell"><SiteHeader active="tools" />
-<main id="main-content" class="tool-main" data-planner>
+<main id="main-content" class="tool-main" data-planner data-plan-endpoint={planEndpoint ? planEndpoint + "/api/season-plan" : ""}>
   <header class="tool-hero"><p class="eyebrow">Saisonplanung · 06.11.2026</p><h1>Kartenplaner</h1><p>Neutrale Planungskarte ohne vorgegebene Allianzgebiete. Eigene Einträge sind Vorschläge, keine bestätigten Besitzstände.</p></header>
   <details><summary>Kartenbild auswerten</summary><p>20 × 20 Rasterfelder. Die Hauptstadt Lv7 liegt im Zentrum. Darum liegen Ziele der Stufen 4 bis 6; außen überwiegend Schutzräume Lv1, Märkte Lv2 und Wasserwerke Lv3. Rasteradressen dienen nur dieser Planung und sind keine Spielkoordinaten.</p></details>
-  <p>Allianz auf ein Feld ziehen oder eine Allianz anklicken und danach ein Feld wählen. Änderungen bleiben in diesem Browser. Pläne lassen sich exportieren und importieren.</p>
+  {planEndpoint ? <p>Gemeinsamer Plan: Normaler Link zum Ansehen, separater Link zum Bearbeiten. Änderungen werden automatisch geladen. Im Bearbeitungsmodus eine Allianz auf ein Feld ziehen oder zuerst die Allianz und dann das Feld wählen.</p> : <p>Allianz auf ein Feld ziehen oder eine Allianz anklicken und danach ein Feld wählen. Änderungen bleiben in diesem Browser. Pläne lassen sich exportieren und importieren.</p>}
   <section class="alliance-tray" aria-label="Allianzen zur Planung">
     <h2>Top 10 · Server 105</h2><p>Nach Allianzstärke · Hauptstadteroberung vom 24.10.2026</p>
     <div class="alliance-tokens">{alliances.map((a,i)=><button type="button" draggable="true" data-alliance-token={a.tag} data-planner-alliance={a.tag} aria-pressed="false" title={a.tag === 'DIE' ? 'DIE' : a.alliance}><small>{i+1}</small><strong>{a.tag}</strong></button>)}</div>
   </section>
+  <p data-sync-status role="status" aria-live="polite"></p>
   <div class="plan-actions">
+    <button type="button" data-seed-local hidden>Lokalen Plan übernehmen</button>
+    <button type="button" data-share-edit hidden>Bearbeitungslink kopieren</button>
     <button type="button" data-share-plan>Plan teilen</button>
     <button type="button" data-export-image>Karte als Bild exportieren</button>
     <button type="button" data-export>Plan exportieren</button>

@@ -8354,5 +8354,20 @@
   "Geteilter Plan geladen. Änderungen bleiben in deinem Browser.": "Plano compartilhado carregado. As alterações ficam no seu navegador.",
   "Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.": "O plano compartilhado é inválido. Seu plano local foi mantido.",
   "Link zum aktuellen Plan kopiert.": "Link do plano atual copiado.",
-  "Bitte den angezeigten Planlink kopieren.": "Copie o link do plano exibido."
+  "Bitte den angezeigten Planlink kopieren.": "Copie o link do plano exibido.",
+  "Bearbeitungslink kopieren": "Copiar link de edição",
+  "Lokalen Plan übernehmen": "Usar plano local",
+  "Gemeinsamer Plan: Normaler Link zum Ansehen, separater Link zum Bearbeiten. Änderungen werden automatisch geladen. Im Bearbeitungsmodus eine Allianz auf ein Feld ziehen oder zuerst die Allianz und dann das Feld wählen.": "Plano compartilhado: link normal para visualizar e outro para editar. Alterações são carregadas automaticamente. No modo de edição, arraste uma aliança para a célula ou selecione a aliança e depois a célula.",
+  "Gemeinsamer Plan · Bearbeitung aktiv": "Plano compartilhado · Edição ativa",
+  "Gemeinsamer Plan · Nur ansehen": "Plano compartilhado · Somente leitura",
+  "Gemeinsamer Plan wird geladen.": "Carregando plano compartilhado.",
+  "Gemeinsamer Plan gespeichert.": "Plano compartilhado salvo.",
+  "Verbindung unterbrochen. Der letzte Stand bleibt sichtbar.": "Conexão perdida. O último estado continua visível.",
+  "Speichern fehlgeschlagen. Änderungen bleiben vorgemerkt und werden erneut versucht.": "Falha ao salvar. As alterações ficam na fila para nova tentativa.",
+  "Andere Änderungen geladen. Eigene Änderungen werden erneut gespeichert.": "Outras alterações carregadas. Suas alterações serão salvas novamente.",
+  "Bearbeitungslink ungültig. Ungespeicherte Änderungen bitte exportieren.": "Link de edição inválido. Exporte as alterações não salvas.",
+  "Bearbeitungslink kopiert. Nur an berechtigte Allianzen weitergeben.": "Link de edição copiado. Compartilhe apenas com alianças autorizadas.",
+  "Geteilter Planstand · Lokale Kopie": "Estado compartilhado · Cópia local",
+  "Lokaler Plan · Gemeinsamer Speicher noch nicht eingerichtet": "Plano local · Armazenamento compartilhado ainda não configurado",
+  "Gemeinsamen Plan durch die importierte Datei ersetzen?": "Substituir o plano compartilhado pelo arquivo importado?"
 }
