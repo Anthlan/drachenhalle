@@ -4,6 +4,7 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 
 ## S1 – Filmische Allianz-Fantasy
 
+- [2026_11_05_1435_BasisLevel27_mysteryZ.png](Chatbilder/2026_11_05_1435_BasisLevel27_mysteryZ.png)
 - [2026_10_28_1006_BasisLevel28_Somea.png](Chatbilder/2026_10_28_1006_BasisLevel28_Somea.png)
 - [2026_10_24_2114_BasisLevel30_Thor63_Anthlan.png](Chatbilder/2026_10_24_2114_BasisLevel30_Thor63_Anthlan.png)
 - [2026_10_16_0845_BasisLevel26_Killergruppe.png](Chatbilder/2026_10_16_0845_BasisLevel26_Killergruppe.png)

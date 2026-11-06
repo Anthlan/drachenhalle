@@ -1,0 +1,32 @@
+---
+import "../../styles/global.css";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+const alliances = ["DIE", "GGR", "TuT", "IGGG", "CCE", "BTS", "Lrs"];
+---
+<!doctype html>
+<html lang="de"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><title>Kartenplaner · DIE Drachenhalle</title></head>
+<body><div class="page-shell"><SiteHeader active="tools" />
+<main id="main-content" class="tool-main" data-planner>
+  <header class="tool-hero"><p class="eyebrow">Saisonplanung · 06.11.2026</p><h1>Kartenplaner</h1><p>Arbeitsentwurf aus dem Allianzchat. Farben und Pfeile sind Vorschläge, keine bestätigten Besitzstände oder festen Grenzen.</p></header>
+  <details><summary>Kartenbild auswerten</summary><p>20 × 20 Rasterfelder. Die Hauptstadt Lv7 liegt im Zentrum. Darum liegen Ziele der Stufen 4 bis 6; außen überwiegend Schutzräume Lv1, Märkte Lv2 und Wasserwerke Lv3. Rasteradressen dienen nur dieser Planung und sind keine Spielkoordinaten.</p><p>GGR: von Norden zur Mitte. Lrs: Westflanke Richtung Hauptstadt. TuT: vom Nordosten ins östliche Innengebiet. IGGG: vom Südosten ins südliche Innengebiet. BTS: vom Südwesten nach Nordosten. CCE: südliche Startmarkierungen ohne eingezeichnete Route. Der BTS-Pfeil ist trotz gelber Legende pfirsichfarben; maßgeblich ist seine Beschriftung.</p><p>Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.</p></details>
+  <p>Feld auswählen, Allianz und Notiz eintragen, dann übernehmen. Änderungen bleiben in diesem Browser. Export und Import dienen zum Austausch; es gibt keine gemeinsame Live-Speicherung.</p>
+  <div class="planner-layout">
+    <section aria-label="Planungskarte"><label>Zoom <input data-zoom type="range" min="100" max="250" step="25" value="100" /> <output data-zoom-value>100 %</output></label>
+      <div class="map-scroll"><div class="planning-map" data-map>
+        <img src="/drachenhalle/planning/Saisonplanung_2026_11_06.png" alt="Saisonkarte mit Gebäudestufen, Allianzlegende und vorgeschlagenen Routen" width="1505" height="969" />
+        <div class="planning-grid">{Array.from({length:400}, (_, i) => {const code = `${String.fromCharCode(65+i%20)}${Math.floor(i/20)+1}`;return <button type="button" data-cell={code} aria-label={code} title={code}><span></span></button>;})}</div>
+      </div></div>
+    </section>
+    <aside><h2 data-selection>Feld auswählen</h2><form data-editor><label>Allianz<select name="alliance"><option value="">Offen</option>{alliances.map(a=><option>{a}</option>)}</select></label><label>Notiz<textarea name="note" maxlength="300" rows="3"></textarea></label><button type="submit" disabled data-save>Übernehmen</button><button type="button" disabled data-clear>Feldeintrag entfernen</button></form>
+      <p role="status" data-status aria-live="polite"></p><button type="button" data-export>Plan exportieren</button><label class="import-label">Plan importieren<input data-import type="file" accept="application/json,.json" /></label><p>Ein Import ersetzt den lokalen Plan erst nach Bestätigung.</p>
+      <h3>Geplante Felder</h3><ul data-list></ul>
+    </aside>
+  </div>
+  <noscript>Der Kartenplaner benötigt JavaScript. Das Kartenbild und seine Auswertung bleiben sichtbar.</noscript>
+</main><SiteFooter /></div>
+<script>import "../../scripts/season-planner";</script>
+</body></html>
+<style>
+  details{padding:1rem;border:1px solid #8d784b;border-radius:8px}summary{cursor:pointer}.planner-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:1.5rem;margin:1.5rem 0}.map-scroll{overflow:auto;margin-top:.6rem;border:1px solid #8d784b}.planning-map{position:relative;width:100%;min-width:720px}.planning-map img{display:block;width:100%;height:auto}.planning-grid{position:absolute;left:.1993%;top:.1032%;width:93.0233%;height:99.1744%;display:grid;grid-template-columns:repeat(20,1fr);grid-template-rows:repeat(20,1fr)}.planning-grid button{border:0;border-radius:0;padding:0;min-width:0;background:transparent;cursor:pointer;position:relative}.planning-grid button:hover,.planning-grid button:focus-visible{outline:3px solid #075bff;outline-offset:-3px;z-index:1}.planning-grid button[aria-pressed=true]{box-shadow:inset 0 0 0 3px #075bff}.planning-grid span{position:absolute;inset:auto 0 0;font-size:clamp(7px,.7vw,12px);font-weight:bold;color:#111;background:var(--alliance-color);line-height:1.4}.planner-layout aside{padding:1rem;background:#151d26;border:1px solid #8d784b;border-radius:8px}form,label{display:grid;gap:.5rem}form{gap:1rem}select,textarea{width:100%;padding:.5rem;background:#fff;color:#111}button,.import-label{padding:.6rem;cursor:pointer}.import-label{margin-top:1rem}input[type=file]{max-width:100%}[data-list]{padding-left:1.2rem;max-height:300px;overflow:auto}[data-list] button{text-align:left;background:transparent;color:inherit;border:0}input[type=range]{max-width:200px}@media(max-width:900px){.planner-layout{grid-template-columns:1fr}.planning-map{min-width:720px}}
+</style>
