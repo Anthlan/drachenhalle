@@ -14,6 +14,17 @@ export function validatePlan(value:unknown): Plan {
   }
   return plan;
 }
+export function encodeSharedPlan(plan:Plan): string {
+  return encodeURIComponent(JSON.stringify(Object.entries(validatePlan(plan)).map(([code,entry])=>[code,entry.alliance,entry.note])));
+}
+export function decodeSharedPlan(encoded:string): Plan {
+  if(encoded.length>500000)throw new Error('Link too large');
+  const rows=JSON.parse(decodeURIComponent(encoded));
+  if(!Array.isArray(rows)||rows.length>400)throw new Error('Invalid shared plan');
+  const cells:Record<string,Entry>=Object.create(null);
+  for(const row of rows){if(!Array.isArray(row)||row.length!==3||typeof row[0]!=='string'||Object.hasOwn(cells,row[0]))throw new Error('Invalid shared cell');cells[row[0]]={alliance:row[1],note:row[2]};}
+  return validatePlan(cells);
+}
 const root=document.querySelector<HTMLElement>('[data-planner]');
 if(root){
   const get=<T extends Element>(selector:string)=>root.querySelector<T>(selector)!;
@@ -24,13 +35,24 @@ if(root){
   let plan:Plan={}; let selected=''; let activeAlliance=''; let suppressTokenClick=false;
   const message=(text:string)=>{status.textContent=t(text);};
   try{const saved=localStorage.getItem(key);if(saved)plan=validatePlan(JSON.parse(saved));}catch{message('Lokaler Plan konnte nicht geladen werden.');}
+  if(typeof location!=='undefined' && location.hash.startsWith('#plan=')){
+    try{plan=decodeSharedPlan(location.hash.slice(6));message('Geteilter Plan geladen. Änderungen bleiben in deinem Browser.');}
+    catch{message('Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.');}
+  }
+  get<HTMLButtonElement>('[data-share-plan]').onclick=async()=>{
+    const url=new URL('https://anthlan.github.io'+location.pathname);
+    url.hash='plan='+encodeSharedPlan(plan);
+    const field=get<HTMLInputElement>('[data-share-link]');field.value=url.href;field.hidden=false;
+    try{await navigator.clipboard.writeText(url.href);message('Link zum aktuellen Plan kopiert.');}
+    catch{field.focus();field.select();message('Bitte den angezeigten Planlink kopieren.');}
+  };
   function select(code:string){selected=code;get<HTMLElement>('[data-selection]').textContent=code;alliance.value=plan[code]?.alliance||'';note.value=plan[code]?.note||'';get<HTMLButtonElement>('[data-save]').disabled=false;get<HTMLButtonElement>('[data-clear]').disabled=false;render();}
   function render(){
     root!.querySelectorAll<HTMLButtonElement>('[data-cell]').forEach(button=>{const code=button.dataset.cell!;const entry=plan[code];button.dataset.plannerAlliance=entry?.alliance||'';button.setAttribute('aria-pressed',String(code===selected));button.setAttribute('aria-label',`${code}${entry?`: ${entry.alliance} ${entry.note}`:''}`);button.title=`${code} ${t(button.dataset.building || '')} ${button.dataset.level ? 'Lv'+button.dataset.level : ''}${entry?`: ${entry.alliance} ${entry.note}`:''}`;const span=button.querySelector<HTMLElement>('[data-assignment]')!;span.textContent='';});
     const list=get<HTMLUListElement>('[data-list]');list.replaceChildren();
     for(const [code,entry] of Object.entries(plan).sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true}))){const li=document.createElement('li');const button=document.createElement('button');button.type='button';button.textContent=`${code} · ${entry.alliance||t('Offen')}${entry.note?' · '+entry.note:''}`;button.onclick=()=>select(code);li.append(button);list.append(li);}
   }
-  function persist(){render();try{localStorage.setItem(key,JSON.stringify(plan));message('Plan lokal gespeichert.');}catch{message('Speichern nicht möglich. Bitte den Plan exportieren.');}}
+  function persist(){render();get<HTMLInputElement>('[data-share-link]').hidden=true;if(typeof location!=='undefined'&&location.hash.startsWith('#plan='))history.replaceState(null,'',location.pathname+location.search);try{localStorage.setItem(key,JSON.stringify(plan));message('Plan lokal gespeichert.');}catch{message('Speichern nicht möglich. Bitte den Plan exportieren.');}}
   function assign(code:string, tag:string){
     if(!alliances.includes(tag))return;
     plan[code]={alliance:tag,note:plan[code]?.note||''};select(code);persist();

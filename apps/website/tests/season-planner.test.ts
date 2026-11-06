@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { stripTypeScriptTypes } from 'node:module';
 import { runInNewContext } from 'node:vm';
-const source=(await readFile(new URL('../src/scripts/season-planner.ts',import.meta.url),'utf8')).replace(/^import .*;\r?\n/gm,'').replace('export function validatePlan','function validatePlan');
+const source=(await readFile(new URL('../src/scripts/season-planner.ts',import.meta.url),'utf8')).replace(/^import .*;\r?\n/gm,'').replace(/export function /g,'function ');
 const validate=runInNewContext(stripTypeScriptTypes(source,{mode:'strip'})+';validatePlan',{document:{querySelector:()=>null}});
 test('planner imports only known cells, alliances and bounded text',()=>{
  assert.equal(validate({A1:{alliance:'DIE',note:'Start'},T20:{alliance:'',note:'Check'}}).A1.note,'Start');
@@ -30,4 +30,12 @@ test('dragging and click placement retain notes, ignore foreign drops and save t
  assert.equal(JSON.parse(saved).A1.alliance,'DIE');assert.equal(JSON.parse(saved).A1.note,'Preserve note');
  const previous=saved;cell.ondrop({preventDefault(){},dataTransfer:{getData:()=>'<bad>'}});assert.equal(saved,previous);
  token.onclick();cell.onclick();assert.equal(JSON.parse(saved).A1.alliance,'DIE');
+});
+
+test('shared plans round-trip Unicode notes and reject malformed links',()=>{
+ const context={document:{querySelector:()=>null}};
+ const api=runInNewContext(stripTypeScriptTypes(source,{mode:'strip'})+';({encodeSharedPlan,decodeSharedPlan})',context);
+ const plan={A1:{alliance:'DIE',note:'Grün 🌍 Привет'},T20:{alliance:'BTs',note:''}};
+ assert.equal(JSON.stringify(api.decodeSharedPlan(api.encodeSharedPlan(plan))),JSON.stringify(plan));
+ for(const value of ['%',encodeURIComponent('{}'),encodeURIComponent(JSON.stringify([['A1','wrong','']]))])assert.throws(()=>api.decodeSharedPlan(value));
 });

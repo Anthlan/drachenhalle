@@ -2438,5 +2438,11 @@
   "Raketenbasis": "Ракетная база",
   "Kernkraftwerk": "Атомная электростанция",
   "Karte als Bild exportieren": "Экспорт карты как изображения",
-  "Felddetails und Notizen": "Данные клеток и заметки"
+  "Felddetails und Notizen": "Данные клеток и заметки",
+  "Plan teilen": "Поделиться планом",
+  "Link zum aktuellen Plan": "Ссылка на текущий план",
+  "Geteilter Plan geladen. Änderungen bleiben in deinem Browser.": "Общий план загружен. Изменения останутся в вашем браузере.",
+  "Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.": "Ссылка недействительна. Ваш локальный план сохранён.",
+  "Link zum aktuellen Plan kopiert.": "Ссылка на текущий план скопирована.",
+  "Bitte den angezeigten Planlink kopieren.": "Скопируйте показанную ссылку на план."
 }

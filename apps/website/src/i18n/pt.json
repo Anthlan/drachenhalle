@@ -8348,5 +8348,11 @@
   "Raketenbasis": "Base de lançamento de mísseis",
   "Kernkraftwerk": "Usina nuclear",
   "Karte als Bild exportieren": "Exportar mapa como imagem",
-  "Felddetails und Notizen": "Detalhes das células e notas"
+  "Felddetails und Notizen": "Detalhes das células e notas",
+  "Plan teilen": "Compartilhar plano",
+  "Link zum aktuellen Plan": "Link do plano atual",
+  "Geteilter Plan geladen. Änderungen bleiben in deinem Browser.": "Plano compartilhado carregado. As alterações ficam no seu navegador.",
+  "Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.": "O plano compartilhado é inválido. Seu plano local foi mantido.",
+  "Link zum aktuellen Plan kopiert.": "Link do plano atual copiado.",
+  "Bitte den angezeigten Planlink kopieren.": "Copie o link do plano exibido."
 }

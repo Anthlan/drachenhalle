@@ -2305,5 +2305,11 @@
   "Raketenbasis": "Missile launch base",
   "Kernkraftwerk": "Nuclear power plant",
   "Karte als Bild exportieren": "Export map as image",
-  "Felddetails und Notizen": "Cell details and notes"
+  "Felddetails und Notizen": "Cell details and notes",
+  "Plan teilen": "Share plan",
+  "Link zum aktuellen Plan": "Link to current plan",
+  "Geteilter Plan geladen. Änderungen bleiben in deinem Browser.": "Shared plan loaded. Changes stay in your browser.",
+  "Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.": "The shared plan is invalid. Your local plan is preserved.",
+  "Link zum aktuellen Plan kopiert.": "Link to current plan copied.",
+  "Bitte den angezeigten Planlink kopieren.": "Please copy the displayed plan link."
 }

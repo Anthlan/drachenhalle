@@ -2305,5 +2305,11 @@
   "Raketenbasis": "Base de lancement de missiles",
   "Kernkraftwerk": "Centrale nucléaire",
   "Karte als Bild exportieren": "Exporter la carte en image",
-  "Felddetails und Notizen": "Détails des cases et notes"
+  "Felddetails und Notizen": "Détails des cases et notes",
+  "Plan teilen": "Partager le plan",
+  "Link zum aktuellen Plan": "Lien vers le plan actuel",
+  "Geteilter Plan geladen. Änderungen bleiben in deinem Browser.": "Plan partagé chargé. Les modifications restent dans votre navigateur.",
+  "Der geteilte Plan ist ungültig. Dein lokaler Plan bleibt erhalten.": "Le plan partagé est invalide. Votre plan local est conservé.",
+  "Link zum aktuellen Plan kopiert.": "Lien vers le plan actuel copié.",
+  "Bitte den angezeigten Planlink kopieren.": "Veuillez copier le lien affiché."
 }
