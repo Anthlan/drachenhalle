@@ -25,6 +25,22 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: apps/website/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: ./apps/website
+        run: pnpm install --frozen-lockfile
+
       - name: Count files in Dropbox inbox
         working-directory: ./apps/website
         env:
@@ -33,13 +49,27 @@ jobs:
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: node scripts/generate-inbox-count.mjs
 
-      - name: Install, build, and upload website
-        uses: withastro/action@v6
+      - name: Build static Astro website
+        working-directory: ./apps/website
         env:
           PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN: ${{ vars.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN }}
           PUBLIC_PAGE_VIEWS_API_URL: ${{ vars.PUBLIC_PAGE_VIEWS_API_URL }}
+        run: pnpm run build
+
+      - name: Verify Pages entry points
+        working-directory: ./apps/website
+        run: |
+          test -s dist/index.html
+          test -s dist/tools/kartenplaner/index.html
+          test -d dist/_astro
+          touch dist/.nojekyll
+          du -sh dist
+
+      - name: Upload static website
+        uses: actions/upload-pages-artifact@v5
         with:
-          path: ./apps/website
+          path: ./apps/website/dist
+          include-hidden-files: true
 
   deploy:
     needs: build
