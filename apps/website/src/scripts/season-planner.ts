@@ -70,6 +70,23 @@ if(root){
   get<HTMLButtonElement>('[data-clear]').onclick=()=>{if(!selected)return;delete plan[selected];alliance.value='';note.value='';persist();};
   get<HTMLInputElement>('[data-zoom]').oninput=event=>{const value=(event.target as HTMLInputElement).value;get<HTMLElement>('[data-map]').style.width=value+'%';get<HTMLOutputElement>('[data-zoom-value]').value=value+' %';};
   get<HTMLButtonElement>('[data-export]').onclick=()=>{const blob=new Blob([JSON.stringify({version:1,map:'season-2026-11-06',cells:plan},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='saisonplan-2026-11-06.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+  get<HTMLButtonElement>('[data-export-image]').onclick=()=>{
+    const canvas=document.createElement('canvas');canvas.width=1440;canvas.height=1100;
+    const ctx=canvas.getContext('2d');if(!ctx)return;
+    ctx.fillStyle='#fff';ctx.fillRect(0,0,1440,1100);ctx.fillStyle='#17212b';ctx.font='bold 24px sans-serif';ctx.fillText(t('Kartenplaner'),20,32);
+    root.querySelectorAll<HTMLButtonElement>('[data-alliance-token]').forEach((token,i)=>{const style=getComputedStyle(token);const x=20+i*140;ctx.fillStyle=style.getPropertyValue('--alliance-color');ctx.fillRect(x,48,130,30);ctx.fillStyle=style.getPropertyValue('--alliance-ink');ctx.font='bold 15px sans-serif';ctx.fillText(token.dataset.allianceToken!,x+10,69);});
+    const cellWidth=70,cellHeight=48,top=110,left=20;
+    ctx.textAlign='center';ctx.font='12px sans-serif';ctx.fillStyle='#17212b';for(let i=0;i<20;i++)ctx.fillText(String.fromCharCode(65+i),left+(i+.5)*cellWidth,top-7);
+    root.querySelectorAll<HTMLButtonElement>('[data-cell]').forEach(button=>{
+      const code=button.dataset.cell!;const x=left+(code.charCodeAt(0)-65)*cellWidth;const y=top+(Number(code.slice(1))-1)*cellHeight;const style=getComputedStyle(button);
+      ctx.fillStyle=style.backgroundColor;ctx.fillRect(x,y,cellWidth,cellHeight);if(button.dataset.capital)return;ctx.strokeStyle='#777';ctx.lineWidth=1;ctx.strokeRect(x+.5,y+.5,cellWidth-1,cellHeight-1);
+      if(button.dataset.capital)return;
+      ctx.fillStyle=style.color;ctx.font='8px sans-serif';ctx.textAlign='left';ctx.fillText(code,x+4,y+10);
+      if(button.dataset.level){ctx.strokeStyle='#17212b';ctx.lineWidth=3;ctx.strokeRect(x+1.5,y+1.5,cellWidth-3,cellHeight-3);ctx.textAlign='center';ctx.font='9px sans-serif';const words=t(button.dataset.building||'').split(' ');let line='',lines:string[]=[];for(const word of words){if(ctx.measureText(line+' '+word).width>64&&line){lines.push(line);line=word;}else line+=(line?' ':'')+word;}if(line)lines.push(line);lines.slice(0,2).forEach((text,i)=>ctx.fillText(text,x+35,y+21+i*10));ctx.fillText('Lv'+button.dataset.level,x+35,y+43);}
+    });
+    const capitalX=left+9*cellWidth,capitalY=top+9*cellHeight;ctx.strokeStyle='#17212b';ctx.lineWidth=4;ctx.strokeRect(capitalX+2,capitalY+2,136,92);ctx.textAlign='center';ctx.font='bold 16px sans-serif';ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.strokeText(t('Hauptstadt'),capitalX+70,capitalY+43);ctx.fillStyle='#111';ctx.fillText(t('Hauptstadt'),capitalX+70,capitalY+43);ctx.font='13px sans-serif';ctx.strokeText('Lv7',capitalX+70,capitalY+63);ctx.fillText('Lv7',capitalX+70,capitalY+63);
+    canvas.toBlob(blob=>{if(!blob)return;const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='saisonkarte-2026-11-06.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);},'image/png');
+  };
   get<HTMLInputElement>('[data-import]').onchange=async event=>{const input=event.target as HTMLInputElement;const file=input.files?.[0];if(!file)return;try{if(file.size>500000)throw new Error('Too large');const data=JSON.parse(await file.text());if(data.version!==1||data.map!=='season-2026-11-06')throw new Error('Wrong map');const next=validatePlan(data.cells);if(!window.confirm(t('Lokalen Plan durch den importierten Plan ersetzen?')))return;plan=next;persist();if(selected)select(selected);}catch{message('Ungültige Plandatei. Der bisherige Plan bleibt erhalten.');}finally{input.value='';}};
   render();
 }
