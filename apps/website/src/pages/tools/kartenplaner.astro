@@ -5,7 +5,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import expedition from "../../data/expedition-2026-10-24.json";
 import { buildings, buildingName } from "../../data/season-map";
 const planEndpoint = (import.meta.env.PUBLIC_PLAN_API_URL || import.meta.env.PUBLIC_PAGE_VIEWS_API_URL || '').replace(/\/$/, '');
-const alliances = expedition.alliances.filter(a => a.server === 105).sort((a,b) => b.power-a.power).slice(0,10);
+const alliances = expedition.alliances.filter(a => a.server === 105).sort((a,b) => b.power-a.power).slice(0,10).concat([{tag:"PAXX",alliance:"PAXX"}] as typeof expedition.alliances);
 ---
 <!doctype html>
 <html lang="de"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><title>Kartenplaner · DIE Drachenhalle</title></head>
@@ -15,7 +15,7 @@ const alliances = expedition.alliances.filter(a => a.server === 105).sort((a,b) 
   <details><summary>Kartenbild auswerten</summary><p>20 × 20 Rasterfelder. Die Hauptstadt Lv7 liegt im Zentrum. Darum liegen Ziele der Stufen 4 bis 6; außen überwiegend Schutzräume Lv1, Märkte Lv2 und Wasserwerke Lv3. Rasteradressen dienen nur dieser Planung und sind keine Spielkoordinaten.</p></details>
   {planEndpoint ? <p>Gemeinsamer Plan: Normaler Link zum Ansehen, separater Link zum Bearbeiten. Änderungen werden automatisch geladen. Im Bearbeitungsmodus eine Allianz auf ein Feld ziehen oder zuerst die Allianz und dann das Feld wählen.</p> : <p>Allianz auf ein Feld ziehen oder eine Allianz anklicken und danach ein Feld wählen. Änderungen bleiben in diesem Browser. Pläne lassen sich exportieren und importieren.</p>}
   <section class="alliance-tray" aria-label="Allianzen zur Planung">
-    <h2>Top 10 · Server 105</h2><p>Nach Allianzstärke · Hauptstadteroberung vom 24.10.2026</p>
+    <h2>Allianzen · Server 105</h2><p>Top 10 nach Allianzstärke vom 24.10.2026 · ergänzt um PAXX</p>
     <div class="alliance-tokens">{alliances.map((a,i)=><button type="button" draggable="true" data-alliance-token={a.tag} data-planner-alliance={a.tag} aria-pressed="false" title={a.tag === 'DIE' ? 'DIE' : a.alliance}><small>{i+1}</small><strong>{a.tag}</strong></button>)}</div>
   </section>
   <p data-sync-status role="status" aria-live="polite"></p>
@@ -67,4 +67,5 @@ const alliances = expedition.alliances.filter(a => a.server === 105).sort((a,b) 
   .planning-grid button[data-cell="J10"]{z-index:1}
 .plan-actions{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem;margin-top:1rem}.plan-actions button,.import-button{padding:.65rem 1rem;border:1px solid #93805c;border-radius:6px;background:#172636;color:#fff;font:inherit;cursor:pointer}.import-button{display:inline-flex}.import-button input{position:absolute;width:1px;height:1px;opacity:0}.import-button:focus-within{outline:2px solid #70b7ff}.plan-actions [role="status"]{flex-basis:100%;margin:0;min-height:1.5em}.field-details{margin-top:1rem}.field-details form{display:flex;flex-wrap:wrap;align-items:end;gap:1rem}.field-details textarea{max-width:420px}
 .plan-actions [data-share-link]{flex-basis:100%;width:100%;padding:.6rem;background:#fff;color:#111;border:1px solid #93805c;border-radius:5px}
+:global([data-planner-alliance="PAXX"]){--alliance-color:#ea580c;--alliance-ink:#111}
 </style>

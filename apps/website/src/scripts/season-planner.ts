@@ -2,7 +2,7 @@ import { createPlanSync } from './season-plan-sync';
 import { translateClient as t } from '../i18n/client';
 type Entry = {alliance:string; note:string};
 type Plan = Record<string,Entry>;
-const alliances = ['GGR','CCE','BTs','Lrs','IGGG','TuT','BOD','DIE','LIG','Beep'];
+const alliances = ['GGR','CCE','BTs','Lrs','IGGG','TuT','BOD','DIE','LIG','Beep','PAXX'];
 const key='die-season-planning-2026-11-06-v1';
 export function validatePlan(value:unknown): Plan {
   if(!value || typeof value!=='object' || Array.isArray(value)) throw new Error('Invalid plan');
@@ -118,7 +118,7 @@ if(root){
     const canvas=document.createElement('canvas');canvas.width=1440;canvas.height=1100;
     const ctx=canvas.getContext('2d');if(!ctx)return;
     ctx.fillStyle='#fff';ctx.fillRect(0,0,1440,1100);ctx.fillStyle='#17212b';ctx.font='bold 24px sans-serif';ctx.fillText(t('Kartenplaner'),20,32);
-    root.querySelectorAll<HTMLButtonElement>('[data-alliance-token]').forEach((token,i)=>{const style=getComputedStyle(token);const x=20+i*140;ctx.fillStyle=style.getPropertyValue('--alliance-color');ctx.fillRect(x,48,130,30);ctx.fillStyle=style.getPropertyValue('--alliance-ink');ctx.font='bold 15px sans-serif';ctx.fillText(token.dataset.allianceToken!,x+10,69);});
+    root.querySelectorAll<HTMLButtonElement>('[data-alliance-token]').forEach((token,i)=>{const style=getComputedStyle(token);const legendWidth=1400/root.querySelectorAll('[data-alliance-token]').length;const x=20+i*legendWidth;ctx.fillStyle=style.getPropertyValue('--alliance-color');ctx.fillRect(x,48,legendWidth-10,30);ctx.fillStyle=style.getPropertyValue('--alliance-ink');ctx.font='bold 15px sans-serif';ctx.fillText(token.dataset.allianceToken!,x+10,69);});
     const cellWidth=70,cellHeight=48,top=110,left=20;
     ctx.textAlign='center';ctx.font='12px sans-serif';ctx.fillStyle='#17212b';for(let i=0;i<20;i++)ctx.fillText(String.fromCharCode(65+i),left+(i+.5)*cellWidth,top-7);
     root.querySelectorAll<HTMLButtonElement>('[data-cell]').forEach(button=>{

@@ -1,4 +1,4 @@
-const tags = new Set(['GGR', 'CCE', 'BTs', 'Lrs', 'IGGG', 'TuT', 'BOD', 'DIE', 'LIG', 'Beep']);
+const tags = new Set(['GGR', 'CCE', 'BTs', 'Lrs', 'IGGG', 'TuT', 'BOD', 'DIE', 'LIG', 'Beep', 'PAXX']);
 export const PLAN_ID = 'season-2026-11-06';
 export function validateChanges(changes) {
   if (!Array.isArray(changes) || !changes.length || changes.length > 400) throw new Error('Invalid changes');

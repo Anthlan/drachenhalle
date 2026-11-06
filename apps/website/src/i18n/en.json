@@ -2326,5 +2326,7 @@
   "Bearbeitungslink kopiert. Nur an berechtigte Allianzen weitergeben.": "Edit link copied. Share only with authorized alliances.",
   "Geteilter Planstand · Lokale Kopie": "Shared snapshot · Local copy",
   "Lokaler Plan · Gemeinsamer Speicher noch nicht eingerichtet": "Local plan · Shared storage not configured yet",
-  "Gemeinsamen Plan durch die importierte Datei ersetzen?": "Replace the shared plan with the imported file?"
+  "Gemeinsamen Plan durch die importierte Datei ersetzen?": "Replace the shared plan with the imported file?",
+  "Allianzen · Server 105": "Alliances · Server 105",
+  "Top 10 nach Allianzstärke vom 24.10.2026 · ergänzt um PAXX": "Top 10 by alliance power on 24/10/2026 · plus PAXX"
 }

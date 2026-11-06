@@ -11,8 +11,8 @@ test('planner imports only known cells, alliances and bounded text',()=>{
 });
 test('planner preserves notes as plain text',()=>{assert.equal(validate({A1:{alliance:'DIE',note:'<script>example</script>'}}).A1.note,'<script>example</script>');});
 
-test('planner accepts all ten server alliances and migrates the old BTS spelling',()=>{
- for(const alliance of ['GGR','CCE','BTs','Lrs','IGGG','TuT','BOD','DIE','LIG','Beep'])assert.equal(validate({A1:{alliance,note:''}}).A1.alliance,alliance);
+test('planner accepts all offered server alliances and migrates the old BTS spelling',()=>{
+ for(const alliance of ['GGR','CCE','BTs','Lrs','IGGG','TuT','BOD','DIE','LIG','Beep','PAXX'])assert.equal(validate({A1:{alliance,note:''}}).A1.alliance,alliance);
  assert.equal(validate({A1:{alliance:'BTS',note:'Keep'}}).A1.alliance,'BTs');
 });
 
