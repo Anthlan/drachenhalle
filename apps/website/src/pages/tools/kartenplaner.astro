@@ -21,7 +21,7 @@ const alliances = expedition.alliances.filter(a => a.server === 105).sort((a,b) 
     <section aria-label="Planungskarte"><label>Zoom <input data-zoom type="range" min="100" max="250" step="25" value="100" /> <output data-zoom-value>100 %</output></label>
       <div class="map-scroll"><div class="planning-map" data-map>
         <div class="column-labels" aria-hidden="true">{Array.from({length:20},(_,i)=><span>{String.fromCharCode(65+i)}</span>)}</div>
-        <div class="planning-grid">{Array.from({length:400}, (_, i) => {const code = String.fromCharCode(65+i%20)+(Math.floor(i/20)+1);const capital=['J10','K10','J11','K11'].includes(code);const level=capital ? 7 : buildings[code];const name=level ? buildingName(code,level):'';return <button type="button" data-cell={code} data-building={name} data-level={level} aria-label={code} title={code}><small class="cell-coordinate">{code}</small>{level && (!capital || code==='J10') && <span class="building">{name}<b>Lv{level}</b></span>}<span class="assignment" data-assignment></span></button>;})}</div>
+        <div class="planning-grid">{Array.from({length:400}, (_, i) => {const code = String.fromCharCode(65+i%20)+(Math.floor(i/20)+1);const capital=['J10','K10','J11','K11'].includes(code);const level=capital ? 7 : buildings[code];const name=level ? buildingName(code,level):'';return <button type="button" data-cell={code} data-capital={capital ? "true" : undefined} data-building={name} data-level={level} aria-label={code} title={code}><small class="cell-coordinate">{code}</small>{level && (!capital || code==='J10') && <span class:list={["building", {"capital-label":capital}]}>{name}<b>Lv{level}</b></span>}<span class="assignment" data-assignment></span></button>;})}</div>
       </div></div>
     </section>
     <aside><h2 data-selection>Feld auswählen</h2><form data-editor><label>Allianz<select name="alliance"><option value="">Offen</option>{alliances.map(a=><option value={a.tag}>{a.tag}</option>)}</select></label><label>Notiz<textarea name="note" maxlength="300" rows="3"></textarea></label><button type="submit" disabled data-save>Übernehmen</button><button type="button" disabled data-clear>Feldeintrag entfernen</button></form>
@@ -46,5 +46,13 @@ const alliances = expedition.alliances.filter(a => a.server === 105).sort((a,b) 
   :global([data-planner-alliance="DIE"]){--alliance-color:#15803d;--alliance-ink:#fff}
   :global([data-planner-alliance="LIG"]){--alliance-color:#0f766e;--alliance-ink:#fff}
   :global([data-planner-alliance="Beep"]){--alliance-color:#cbd5e1;--alliance-ink:#111}
-  .planning-grid button[data-planner-alliance]:not([data-planner-alliance=""]){background:color-mix(in srgb,var(--alliance-color) 25%,#fff)}
+  .planning-grid button[data-planner-alliance]:not([data-planner-alliance=""]){background:var(--alliance-color);color:var(--alliance-ink)}
+
+  .planning-grid button[data-level]:not([data-capital])::after{content:"";position:absolute;inset:0;border:3px solid #17212b;pointer-events:none}
+  .planning-grid button[data-capital]{border:0}
+  .planning-grid button[data-cell="J10"]::after{content:"";position:absolute;inset:0 auto auto 0;width:200%;height:200%;box-sizing:border-box;border:4px solid #17212b;pointer-events:none;z-index:3}
+  .planning-grid .capital-label{inset:0;width:200%;height:200%;display:flex;flex-direction:column;justify-content:center;font-size:13px;z-index:3;pointer-events:none;color:#111;text-shadow:0 0 3px #fff,0 0 3px #fff}
+  .planning-grid button[data-planner-alliance]:not([data-planner-alliance=""]) .cell-coordinate{color:var(--alliance-ink)}
+  .planning-grid button[data-capital] .cell-coordinate{display:none}
+  .planning-grid button[data-cell="J10"]{z-index:1}
 </style>
