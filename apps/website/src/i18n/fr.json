@@ -2289,5 +2289,19 @@
   "Saisonkarte: Felder auswählen, Allianzen und Notizen planen und Pläne austauschen.": "Carte de saison : choisir les cases, planifier les alliances et notes, échanger les plans.",
   "20 × 20 Rasterfelder. Die Hauptstadt Lv7 liegt im Zentrum. Darum liegen Ziele der Stufen 4 bis 6; außen überwiegend Schutzräume Lv1, Märkte Lv2 und Wasserwerke Lv3. Rasteradressen dienen nur dieser Planung und sind keine Spielkoordinaten.": "Grille de 20 × 20 cases. La capitale niv. 7 est au centre, entourée d’objectifs niv. 4 à 6. À l’extérieur : surtout abris niv. 1, marchés niv. 2 et usines d’eau niv. 3. Les adresses sont des repères de planification, pas des coordonnées du jeu.",
   "GGR: von Norden zur Mitte. Lrs: Westflanke Richtung Hauptstadt. TuT: vom Nordosten ins östliche Innengebiet. IGGG: vom Südosten ins südliche Innengebiet. BTS: vom Südwesten nach Nordosten. CCE: südliche Startmarkierungen ohne eingezeichnete Route. Der BTS-Pfeil ist trotz gelber Legende pfirsichfarben; maßgeblich ist seine Beschriftung.": "GGR : nord vers centre. Lrs : flanc ouest vers capitale. TuT : nord-est vers intérieur est. IGGG : sud-est vers intérieur sud. BTS : sud-ouest vers nord-est. CCE : départs au sud, sans itinéraire. La flèche BTS est pêche malgré la légende jaune ; se fier au texte.",
-  "Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.": "Lrs soutient la direction générale. BTS a annoncé son itinéraire. TuT examine la proposition ; aucun accord final de toutes les alliances n’est établi dans le chat."
+  "Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.": "Lrs soutient la direction générale. BTS a annoncé son itinéraire. TuT examine la proposition ; aucun accord final de toutes les alliances n’est établi dans le chat.",
+  "Neutrale Planungskarte ohne vorgegebene Allianzgebiete. Eigene Einträge sind Vorschläge, keine bestätigten Besitzstände.": "Carte neutre sans territoires d’alliance prédéfinis. Vos entrées sont des propositions, sans possession confirmée.",
+  "Allianz auf ein Feld ziehen oder eine Allianz anklicken und danach ein Feld wählen. Änderungen bleiben in diesem Browser. Pläne lassen sich exportieren und importieren.": "Glissez une alliance sur une case, ou cliquez sur une alliance puis sur une case. Les modifications restent dans ce navigateur. Les plans peuvent être exportés et importés.",
+  "Allianzen zur Planung": "Alliances à placer",
+  "Top 10 · Server 105": "Top 10 · Serveur 105",
+  "Nach Allianzstärke · Hauptstadteroberung vom 24.10.2026": "Par puissance d’alliance · Conquête de la capitale du 24/10/2026",
+  "Schutzraum": "Abri",
+  "Plündermarkt": "Marché de récupération",
+  "Wasserwerk": "Station de purification",
+  "Eisenfestung": "Ville forteresse de fer",
+  "Festungsarsenal": "Arsenal de forteresse",
+  "Militärflugplatz": "Aérodrome militaire",
+  "Hauptstadt": "Capitale",
+  "Raketenbasis": "Base de lancement de missiles",
+  "Kernkraftwerk": "Centrale nucléaire"
 }

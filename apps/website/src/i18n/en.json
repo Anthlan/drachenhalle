@@ -2289,5 +2289,19 @@
   "Saisonkarte: Felder auswählen, Allianzen und Notizen planen und Pläne austauschen.": "Season map: select cells, plan alliances and notes, and exchange plans.",
   "20 × 20 Rasterfelder. Die Hauptstadt Lv7 liegt im Zentrum. Darum liegen Ziele der Stufen 4 bis 6; außen überwiegend Schutzräume Lv1, Märkte Lv2 und Wasserwerke Lv3. Rasteradressen dienen nur dieser Planung und sind keine Spielkoordinaten.": "20 × 20 grid cells. The level 7 capital is central, surrounded by level 4–6 objectives. Outer areas mainly contain level 1 shelters, level 2 markets and level 3 water plants. Grid addresses are planning references, not game coordinates.",
   "GGR: von Norden zur Mitte. Lrs: Westflanke Richtung Hauptstadt. TuT: vom Nordosten ins östliche Innengebiet. IGGG: vom Südosten ins südliche Innengebiet. BTS: vom Südwesten nach Nordosten. CCE: südliche Startmarkierungen ohne eingezeichnete Route. Der BTS-Pfeil ist trotz gelber Legende pfirsichfarben; maßgeblich ist seine Beschriftung.": "GGR: north to centre. Lrs: western flank towards the capital. TuT: northeast to eastern interior. IGGG: southeast to southern interior. BTS: southwest to northeast. CCE: southern starting markers, no route. The BTS arrow is peach despite the yellow legend; use its label.",
-  "Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.": "Lrs supports the general direction. BTS announced its own route. TuT is reviewing the proposal; the chat does not establish final agreement by all alliances."
+  "Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.": "Lrs supports the general direction. BTS announced its own route. TuT is reviewing the proposal; the chat does not establish final agreement by all alliances.",
+  "Neutrale Planungskarte ohne vorgegebene Allianzgebiete. Eigene Einträge sind Vorschläge, keine bestätigten Besitzstände.": "Neutral planning map without preset alliance territories. Your entries are proposals, not confirmed ownership.",
+  "Allianz auf ein Feld ziehen oder eine Allianz anklicken und danach ein Feld wählen. Änderungen bleiben in diesem Browser. Pläne lassen sich exportieren und importieren.": "Drag an alliance onto a cell, or click an alliance then choose a cell. Changes stay in this browser. Plans can be exported and imported.",
+  "Allianzen zur Planung": "Alliances for planning",
+  "Top 10 · Server 105": "Top 10 · Server 105",
+  "Nach Allianzstärke · Hauptstadteroberung vom 24.10.2026": "By alliance power · Capital conquest data from 24/10/2026",
+  "Schutzraum": "Shelter",
+  "Plündermarkt": "Scavenger market",
+  "Wasserwerk": "Water purification plant",
+  "Eisenfestung": "Iron fortress town",
+  "Festungsarsenal": "Fortress arsenal",
+  "Militärflugplatz": "Military airfield",
+  "Hauptstadt": "Capital",
+  "Raketenbasis": "Missile launch base",
+  "Kernkraftwerk": "Nuclear power plant"
 }

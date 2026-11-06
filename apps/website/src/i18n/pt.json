@@ -8332,5 +8332,19 @@
   "Saisonkarte: Felder auswählen, Allianzen und Notizen planen und Pläne austauschen.": "Mapa da temporada: selecione células, planeje alianças e notas e troque planos.",
   "20 × 20 Rasterfelder. Die Hauptstadt Lv7 liegt im Zentrum. Darum liegen Ziele der Stufen 4 bis 6; außen überwiegend Schutzräume Lv1, Märkte Lv2 und Wasserwerke Lv3. Rasteradressen dienen nur dieser Planung und sind keine Spielkoordinaten.": "Grade de 20 × 20. A capital nv. 7 fica no centro, cercada de objetivos nv. 4–6. Nas bordas predominam abrigos nv. 1, mercados nv. 2 e estações de água nv. 3. Os endereços são referências do plano, não coordenadas do jogo.",
   "GGR: von Norden zur Mitte. Lrs: Westflanke Richtung Hauptstadt. TuT: vom Nordosten ins östliche Innengebiet. IGGG: vom Südosten ins südliche Innengebiet. BTS: vom Südwesten nach Nordosten. CCE: südliche Startmarkierungen ohne eingezeichnete Route. Der BTS-Pfeil ist trotz gelber Legende pfirsichfarben; maßgeblich ist seine Beschriftung.": "GGR: norte ao centro. Lrs: flanco oeste rumo à capital. TuT: nordeste ao interior leste. IGGG: sudeste ao interior sul. BTS: sudoeste a nordeste. CCE: inícios ao sul sem rota. A seta BTS é pêssego apesar da legenda amarela; vale o rótulo.",
-  "Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.": "Lrs apoia a direção geral. BTS anunciou sua própria rota. TuT está avaliando; o chat não comprova acordo final de todas as alianças."
+  "Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.": "Lrs apoia a direção geral. BTS anunciou sua própria rota. TuT está avaliando; o chat não comprova acordo final de todas as alianças.",
+  "Neutrale Planungskarte ohne vorgegebene Allianzgebiete. Eigene Einträge sind Vorschläge, keine bestätigten Besitzstände.": "Mapa neutro sem territórios de aliança predefinidos. Seus registros são propostas, não posse confirmada.",
+  "Allianz auf ein Feld ziehen oder eine Allianz anklicken und danach ein Feld wählen. Änderungen bleiben in diesem Browser. Pläne lassen sich exportieren und importieren.": "Arraste uma aliança para uma célula ou clique na aliança e depois na célula. As alterações ficam neste navegador. É possível exportar e importar planos.",
+  "Allianzen zur Planung": "Alianças para planejar",
+  "Top 10 · Server 105": "Top 10 · Servidor 105",
+  "Nach Allianzstärke · Hauptstadteroberung vom 24.10.2026": "Por poder da aliança · Conquista da capital de 24/10/2026",
+  "Schutzraum": "Abrigo",
+  "Plündermarkt": "Mercado de saque",
+  "Wasserwerk": "Estação de purificação",
+  "Eisenfestung": "Cidade fortaleza de ferro",
+  "Festungsarsenal": "Arsenal da fortaleza",
+  "Militärflugplatz": "Aeródromo militar",
+  "Hauptstadt": "Capital",
+  "Raketenbasis": "Base de lançamento de mísseis",
+  "Kernkraftwerk": "Usina nuclear"
 }

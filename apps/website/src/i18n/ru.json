@@ -2422,5 +2422,19 @@
   "Saisonkarte: Felder auswählen, Allianzen und Notizen planen und Pläne austauschen.": "Карта сезона: выбор клеток, альянсов и заметок, обмен планами.",
   "20 × 20 Rasterfelder. Die Hauptstadt Lv7 liegt im Zentrum. Darum liegen Ziele der Stufen 4 bis 6; außen überwiegend Schutzräume Lv1, Märkte Lv2 und Wasserwerke Lv3. Rasteradressen dienen nur dieser Planung und sind keine Spielkoordinaten.": "Сетка 20 × 20. В центре столица ур. 7, вокруг цели ур. 4–6. Снаружи в основном убежища ур. 1, рынки ур. 2 и водоочистные станции ур. 3. Адреса клеток — ориентиры плана, не координаты игры.",
   "GGR: von Norden zur Mitte. Lrs: Westflanke Richtung Hauptstadt. TuT: vom Nordosten ins östliche Innengebiet. IGGG: vom Südosten ins südliche Innengebiet. BTS: vom Südwesten nach Nordosten. CCE: südliche Startmarkierungen ohne eingezeichnete Route. Der BTS-Pfeil ist trotz gelber Legende pfirsichfarben; maßgeblich ist seine Beschriftung.": "GGR: с севера к центру. Lrs: западный фланг к столице. TuT: с северо-востока внутрь востока. IGGG: с юго-востока внутрь юга. BTS: с юго-запада на северо-восток. CCE: южные старты без маршрута. Стрелка BTS персиковая при жёлтой легенде; ориентир — подпись.",
-  "Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.": "Lrs поддерживает общее направление. BTS объявил свой маршрут. TuT изучает предложение; окончательное согласие всех альянсов в чате не подтверждено."
+  "Lrs unterstützt die Grundrichtung. BTS hat eine eigene Route angekündigt. TuT prüft den Vorschlag; eine abschließende Zustimmung aller Allianzen ist im Chat nicht belegt.": "Lrs поддерживает общее направление. BTS объявил свой маршрут. TuT изучает предложение; окончательное согласие всех альянсов в чате не подтверждено.",
+  "Neutrale Planungskarte ohne vorgegebene Allianzgebiete. Eigene Einträge sind Vorschläge, keine bestätigten Besitzstände.": "Нейтральная карта без заданных территорий альянсов. Ваши отметки — предложения, а не подтверждённое владение.",
+  "Allianz auf ein Feld ziehen oder eine Allianz anklicken und danach ein Feld wählen. Änderungen bleiben in diesem Browser. Pläne lassen sich exportieren und importieren.": "Перетащите альянс на клетку или нажмите на альянс, затем выберите клетку. Изменения хранятся в этом браузере. Планы можно экспортировать и импортировать.",
+  "Allianzen zur Planung": "Альянсы для планирования",
+  "Top 10 · Server 105": "Топ-10 · Сервер 105",
+  "Nach Allianzstärke · Hauptstadteroberung vom 24.10.2026": "По силе альянса · Захват столицы от 24.10.2026",
+  "Schutzraum": "Убежище",
+  "Plündermarkt": "Рынок добычи",
+  "Wasserwerk": "Водоочистная станция",
+  "Eisenfestung": "Железная крепость",
+  "Festungsarsenal": "Арсенал крепости",
+  "Militärflugplatz": "Военный аэродром",
+  "Hauptstadt": "Столица",
+  "Raketenbasis": "Ракетная база",
+  "Kernkraftwerk": "Атомная электростанция"
 }
