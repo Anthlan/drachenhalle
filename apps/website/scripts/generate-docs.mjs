@@ -118,6 +118,7 @@ const baseDocuments = [
     summary: "Der Schritt-für-Schritt-Einstieg für neue Mitglieder der DIE-Allianz.",
     parentSlug: "tutorials",
     kind: "onboarding",
+    tutorialStorageKey: "die-allianz-einstieg-regeln-v2",
   },
   {
     source: "Tutorials/Pluenderungsquiz.md",
@@ -160,10 +161,9 @@ const baseDocuments = [
     slug: "allianzregeln",
     title: "Unsere Regeln",
     section: "Allianz",
-    summary: "Verbindliche Regeln zu NAP10, erlaubten Angriffen, Plündern und dem Umgang mit Verstößen.",
+    summary: "Kampf, Ränge, Aktivität und unser gemeinsamer Sanktionsprozess mit 24 Stunden für Antwort und Klärung.",
     parentSlug: "allianz",
     kind: "alliance",
-    imageSource: "media/alliance/Allianz_Regeln.png",
   },
   {
     source: "Allianz/Allianz_Offiziere.md",

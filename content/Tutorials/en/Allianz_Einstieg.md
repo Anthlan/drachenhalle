@@ -2,13 +2,13 @@
 
 ## Welcome to the Dragon Hall
 
-**Glad you are here!** This tour guides you safely through the most important information for getting started at DIE in nine short steps.
+**Glad you are here!** This tour guides you safely through the most important information for getting started at DIE in ten short steps.
 
 <img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="Anthlan welcomes new members with a thumbs-up." decoding="async">
 
 You will get to know our community, binding rules and key contacts. For more detailed topics, the tutorial links directly to the relevant Dragon Knowledge pages.
 
-- Allow about **five minutes**.
+- Allow about **ten to fifteen minutes**.
 - Use **Next** or jump to a topic through the step overview.
 - Your progress is saved on this device.
 - Open the linked detail pages if you want to explore a topic straight away.
@@ -20,7 +20,7 @@ You will get to know our community, binding rules and key contacts. For more det
 
 **DIE is a community built on clear agreements and acting together.** We want to grow together with commitment and enjoyment. Rules protect the alliance from unnecessary conflict, defined areas of responsibility for our officers (R4) make help easy to find, and Dragon Knowledge records experience for everyone.
 
-![Anthlan, mysteryZ, DaVinci, Somea and Drachenherz build the Dragon Hall together and plant a young tree](/drachenhalle/tutorial/03_gemeinsam_wachsen_chibi.webp)
+![Anthlan, mysteryZ, DaVinci1986, Somea and Drachenherz build the Dragon Hall together and plant a young tree](/drachenhalle/tutorial/03_gemeinsam_wachsen_chibi.webp)
 
 What you can expect from us:
 
@@ -42,15 +42,37 @@ You do not have to work out who handles a topic by yourself. [Our officers](../.
 1. **Respect NAP10:** Do not attack members of a current NAP10 alliance. Recheck the rankings and alliance membership before every attack.
 2. **Attack permitted targets proportionately:** Players without an alliance and players named **Commander\*\*\*\*** may be attacked, but must not be reduced completely to **0**.
 3. **Raid only on other servers:** Do not raid trucks, freight trains or special missions on our own server. Check the server number before starting.
-4. **Do not retaliate after a NAP10 attack:** Share the attack report and report the attacker's name, alliance and the time to an officer (R4) or the leader (R5). Leadership will handle the resolution.
+4. **Resolve incidents through the sanctions process:** Report rule violations and attacks, including attacks by NAP10 members, to R4/R5 with available evidence, player name, alliance and time. Leadership coordinates resolution through our [sanctions process](/drachenhalle/docs/allianzregeln/#sanktionen). Do not retaliate independently.
 
-If unsure, always **check or ask first, then act**. Rule violations receive **2 warnings**; the next violation leads to removal. Warnings remain valid until they are lifted.
+If unsure, always **check or ask first, then act**. The response deadline, measures and additional membership rules form our shared [sanctions process](/drachenhalle/docs/allianzregeln/#sanktionen), which the next step explains.
 
-Rank 1 means a **7-day probation period** for new members and also applies to Commanders without a custom name. Rank 2 can be permanent for regularly active members at the rally point with little event participation. Rank 3 means regular activity and participation in alliance events; not every event is mandatory. **Ranks reflect activity, not personal worth.**
+Rank 1 applies to new members during their **7-day trial period**, Commander accounts without a personal name and members inactive for seven days without notice. Rank 2 can be permanent for regularly active members at the alliance gathering point with little event participation. Rank 3 means regular activity and participation in alliance events; overall participation counts, not every event is compulsory. **Ranks reflect activity, not personal worth.**
 
 [Read all alliance rules with examples](../../Allianz/en/Allianz_Regeln.md)
 
-> **Remember:** Check rankings and server. Report a NAP10 incident rather than responding yourself.
+> **Remember:** Check rankings and server numbers. Report incidents and resolve them through the sanctions process rather than retaliating independently.
+
+## When rules are broken
+
+A mistake does not justify independent retaliation. Report the incident and help resolve it. This prevents a single violation from becoming a wider conflict.
+
+We follow this sanctions process as our shared approach to rule violations. We seek dialogue first; the maximum time for a reply and clarification is **24 hours**.
+
+1. Report the incident to R4/R5: include a brief description, the players involved, alliance and time; attach the battle report for an attack.
+2. Leadership coordinates contact with the player involved and their alliance leadership. Anyone contacted must reply within 24 hours and help clarify the incident.
+3. Leadership coordinates the next steps. No independent retaliation and no automatic attacks.
+
+| Violation | Dialogue within 24 hours | No dialogue within 24 hours |
+| --- | --- | --- |
+| 1st violation | Warning + removal of one special operation or transporter (of equal or higher value) | Base attack, without complete destruction |
+| 2nd violation | Base attack, without complete destruction | Base attacks up to complete destruction |
+| 3rd violation | Base attacks up to complete destruction | Not separately specified |
+
+> Our principle: peaceful resolution first. The same standards apply to our own members. The table does not replace coordination with R4/R5.
+
+Membership is also subject to this rule: two warnings, then removal from our alliance on the next violation. Warnings remain valid until revoked. This is separate from removal after nine days of unannounced inactivity.
+
+[Read all rules and the full sanctions process](/drachenhalle/docs/allianzregeln/#sanktionen)
 
 ## Our netiquette
 
@@ -78,7 +100,7 @@ Rank 1 means a **7-day probation period** for new members and also applies to Co
 
 ![Enabled checkbox: “Exclude transport trucks from this server”](/drachenhalle/tutorial/01_transportlastwagen_server_ausschliessen.webp)
 
-This means only trucks from other servers are offered for raiding. It supports our rule against raiding trucks on our own server. Still check the server again before every action.
+The exclusion checkbox applies to trucks. Check freight trains and special missions separately. Verify the server number before every raid.
 
 ### Special missions and containers
 
@@ -97,7 +119,7 @@ When special missions are shared in chat, identify the server from the first num
   </figure>
 </div>
 
-> **Check:** For transport trucks, the exclusion checkbox must be enabled in green. For special missions, another server must be displayed or the first coordinate number must not be **105**.
+> **Check:** Enable the green exclusion checkbox for transport trucks. Confirm the server for every target: a foreign server must be verified; **105** is our own server and off limits.
 
 ## Raiding quiz
 
@@ -109,15 +131,15 @@ Test the raiding rules in six short scenarios. Each answer explains what to look
 
 **This short checklist guides your start without overwhelming you.**
 
-![Anthlan and DaVinci guide a young new member through choosing a name, the rally point, shield supplies and research donations](/drachenhalle/tutorial/02_erste_schritte_chibi.webp)
+![Anthlan and DaVinci1986 guide a young new member through choosing a name, the rally point, shield supplies and research donations](/drachenhalle/tutorial/02_erste_schritte_chibi.webp)
 
 ### In the first 24 hours
 
-- [ ] Read the [complete alliance rules](../../Allianz/en/Allianz_Regeln.md).
+- [ ] Read the [alliance rules, including the sanctions process](../../Allianz/en/Allianz_Regeln.md).
 - [ ] Choose your own player name – please do not keep a name like **Commander\*\*\*\***.
 - [ ] Move to the **alliance gathering point**, unless otherwise agreed with leadership.
 - [ ] Enable **“Exclude transport trucks from this server”**.
-- [ ] Keep at least one **24-hour shield** and one **8-hour shield** in your inventory.
+- [ ] Keep at least one **24-hour shield** and one **8-hour shield** in your inventory. Inventory alone does not protect you: plan timely activation with the [shield planner](/drachenhalle/tools/schildrechner/).
 - [ ] Open [Our officers](../../Allianz/en/Allianz_Offiziere.md) and note your contacts.
 - [ ] Check the next [events](/drachenhalle/en/termine/) and their guidance.
 - [ ] Check current rankings before attacks and the server number before raids.
@@ -158,11 +180,11 @@ Find more here:
 
 **You now know the main routes through the Dragon Hall.** For your start, keep three things in mind above all:
 
-<img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp" alt="DaVinci accompanies the end of the tour." loading="lazy" decoding="async">
+<img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp" alt="DaVinci1986 accompanies the end of the tour." loading="lazy" decoding="async">
 
 - Check rules before combat and raiding actions.
 - Read dates and current guidance before shared events.
-- Ask an officer (R4) or the leader (R5) if you have questions, and return alliance help.
+- Ask R4/R5 about questions or violations, cooperate with the sanctions process and do not retaliate independently. Return alliance help.
 
 Next, try the [tips](/drachenhalle/en/docs/tipps/), [event guides](/drachenhalle/en/docs/events/) and upcoming [events](/drachenhalle/en/termine/). You can reopen the tour or start again at any time.
 

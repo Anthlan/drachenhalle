@@ -1,0 +1,69 @@
+Use case: precise-object-edit + style-transfer.
+Input image 1 is the EDIT TARGET: the consolidated German rules draft, all current detailed rules are to be preserved except the explicitly specified content changes below.
+Input image 2 is the AUTHORITATIVE DESIGN REFERENCE: our existing DIE alliance rules poster. Match its blue-and-gold Dragon Knight design, dimensional gold dragon crest, gilded beveled medieval frames and shield-number badges, subtly textured deep navy panels, warm softly blurred castle hall and candlelight visible only around edges. Use the same visual family of small gold medallion icons (crossed swords, transport, castle, community, stars, warning/clock), but keep them compact. High-quality official alliance announcement, informative rather than illustrative. Gold display headings, ivory very readable sans-serif bullets, sophisticated ornate framework. No modern flat dashboard/card look. Preserve the clarity of the consolidated draft; decoration must never reduce text size or crowd content.
+
+Create a complete NEW revision, high-resolution tall portrait poster. Only three main numbered sections. Compact title with dragon crest. Section 1 concise well-spaced rules; section 2 three rank columns and a community strip; section 3 contains ALL sanctions, including both the membership-warning strip and the escalation table. Generous inner padding and consistent type sizes. This can be taller than the original if needed to keep all body text comfortably readable. Avoid huge title or massive unused icons.
+
+Critical requested content correction: section 3 is OUR general sanctions process for rule violations, not TuT's separate process and not limited only to looting. Remove every occurrence of 'TuT', 'Laut TuT', 'Server-105-Regeln', and 'Betrifft das Plündern...' from the edited poster. These measures are our own adopted practice. Do not mention their origin. Keep every table condition and consequence intact, including 'Nicht separat geregelt' for third violation without dialogue. Membership discipline must remain explicit as a separately labeled strip WITHIN section 3, not silently replaced by the table. No invented extra penalties or timers.
+
+Exact final German text (render accurately with all bullets, umlauts and four stars in Commander****):
+HEADER
+DIE – ALLIANZREGELN
+
+SECTION 1
+1  KAMPF & PLÜNDERN
+• NAP10 nicht angreifen. Vorher Rangliste & Allianz prüfen.
+• Basen: Allianzlose & Commander**** erlaubt – niemanden auf 0 bringen.
+• Lastwagen, Güterzüge & Spezialmissionen: nur auf anderen Servern plündern!
+• Servernummer vor jedem Plündern prüfen.
+• Bei NAP10-Angriff: nicht zurückschlagen. Bericht an R4/R5.
+
+SECTION 2
+2  RÄNGE & AKTIVITÄT
+
+RANG 1 – EINSTIEG
+• Neue: 7 Tage Probezeit
+• Commander ohne eigenen Namen
+• Ab 7 Tagen unangemeldet inaktiv
+
+RANG 2 – MITGLIED
+• Regelmäßig online
+• Am Allianzsammelpunkt
+• Wenig Eventbeteiligung
+• Dauerhaft möglich
+
+RANG 3 – AKTIV
+• Regelmäßig online
+• Teilnahme an Allianz-Events
+• Gesamtbeteiligung zählt
+• Nicht jedes Event ist Pflicht
+
+GEMEINSCHAFT & PAUSEN
+• Am Allianzsammelpunkt stehen, wichtige PN beantworten, Regeln beachten.
+• Urlaub, Krankheit & Pausen melden.
+• Unangemeldet inaktiv: Tag 7 → PN & Rang 1.
+• Ohne Rückmeldung: Tag 9 → Entfernung.
+Ränge zeigen Aktivität – keine persönliche Wertung.
+
+SECTION 3
+3  SANKTIONEN BEI REGELVERSTÖSSEN
+Wir suchen zuerst das Gespräch mit dem Spieler und der Allianzführung.
+Maximal 24 Stunden für Antwort & Klärung.
+
+TABLE (three columns with a clear grid; green-tinted dialogue header, restrained red no-dialogue header):
+VERSTOSS | DIALOG INNERHALB 24 STUNDEN | KEIN DIALOG INNERHALB 24 STUNDEN
+1. Verstoß | Verwarnung + Entzug einer Spezialoperation oder eines Transporters (gleich- oder höherwertig) | Basisangriff, aber keine vollständige Zerstörung
+2. Verstoß | Basisangriff, aber keine vollständige Zerstörung | Basisangriffe bis zur vollständigen Zerstörung
+3. Verstoß | Basisangriffe bis zur vollständigen Zerstörung | Nicht separat geregelt
+
+MEMBERSHIP STRIP BELOW THE TABLE
+MITGLIEDSCHAFT IN UNSERER ALLIANZ
+• 1. & 2. Verstoß → Verwarnung; nächster Verstoß → Entfernung.
+• Verwarnungen gelten, bis sie aufgehoben werden.
+
+BOTTOM NOTES (readable normal body size, not microprint)
+• Wir setzen zuerst auf friedliche Klärung. Angriffe erfolgen nicht automatisch.
+• Die gleichen Maßstäbe gelten auch für unsere Mitglieder.
+• Vorfälle melden – Abstimmung über R4/R5.
+
+All text must be typeset sharply, correctly spelled, complete, not clipped, no extra prose. Inactivity removal after day 9 must remain clearly about unannounced inactivity, distinct from rule-violation sanctions. Do not change asset-removal 'Entzug' into reimbursement. Maintain the exact 3-row dialogue/no-dialogue table and its six consequences.

@@ -1,0 +1,63 @@
+Tool: built-in Imagegen
+Sprachfassung: pt
+Referenz: media/alliance/Allianz_Regeln.png (konsolidierte deutsche Fassung)
+Stand: 2026-11-09
+
+Use case: text-localization. EDIT the supplied German consolidated DIE rules infographic into the specified language. The supplied image is the edit target and exact visual reference. Preserve the portrait aspect ratio, layout with THREE numbered sections, gold dragon crest, warm candlelit castle border, gilded frames, navy panels, compact icons, three rank columns, and the sanctions table. Keep the official blue/gold Dragon Hall style. All text must remain comfortably readable, crisp, typeset-looking, with no clipping. You may slightly reflow text to fit, but never omit or invent policies. Translate EVERY text element using the exact text below; leave no German or other-language fragments. Keep DIE, NAP10, Commander**** (four stars), R4/R5 and all numbers unchanged. Preserve the 24-hour distinction and every sanctions cell exactly. In particular do NOT invent a sanction for the third violation without dialogue. Membership warnings/removal are a SEPARATE labeled strip, not a replacement for the sanctions table. This is OUR process; no mention of TuT. No watermark or extra prose. Use this complete target-language copy:
+
+Target language: Brazilian Portuguese (pt-BR). Names and numeric identifiers stay unchanged.
+
+DIE – REGRAS DA ALIANÇA
+
+1  COMBATE E SAQUES
+• Não atacar o NAP10. Conferir ranking e aliança.
+• Bases: sem aliança e Commander**** permitidos – não reduzir ninguém a 0.
+• Caminhões, trens de carga e missões especiais: saquear só em outros servidores!
+• Conferir o servidor antes de cada saque.
+• Se o NAP10 atacar: não revidar. Avisar R4/R5.
+
+2  CARGOS E ATIVIDADE
+CARGO 1 – INICIANTE
+• Novos membros: 7 dias de experiência
+• Commander sem nome próprio
+• 7 ou mais dias inativo sem aviso
+CARGO 2 – MEMBRO
+• Online regularmente
+• No ponto de encontro da aliança
+• Pouca participação em eventos
+• Pode ser permanente
+CARGO 3 – ATIVO
+• Online regularmente
+• Participação em eventos da aliança
+• Conta a participação geral
+• Nem todo evento é obrigatório
+
+COMUNIDADE E PAUSAS
+• Ficar no ponto de encontro, responder MPs importantes e seguir as regras.
+• Avisar férias, doença e pausas.
+• Inatividade sem aviso: dia 7 → MP e cargo 1.
+• Sem resposta: dia 9 → remoção.
+Cargos indicam atividade, não o valor de uma pessoa.
+
+3  SANÇÕES POR INFRAÇÕES
+Buscamos primeiro o diálogo com o jogador e a liderança da aliança.
+Máximo de 24 horas para responder e esclarecer.
+
+TABLE HEADERS:
+INFRAÇÃO | DIÁLOGO EM ATÉ 24 HORAS | SEM DIÁLOGO EM ATÉ 24 HORAS
+ROW 1:
+1ª infração | Advertência + retirada de uma operação especial ou transportador (valor igual ou superior) | Ataque à base, sem destruição completa
+ROW 2:
+2ª infração | Ataque à base, sem destruição completa | Ataques à base até a destruição completa
+ROW 3:
+3ª infração | Ataques à base até a destruição completa | Sem regra específica
+
+PERMANÊNCIA NA NOSSA ALIANÇA
+• 1ª e 2ª infração → advertência; próxima → remoção.
+• Advertências válidas até serem revogadas.
+
+• Resolução pacífica primeiro. Ataques não são automáticos.
+• Os mesmos critérios valem para os nossos membros.
+• Relatar incidentes – coordenação com R4/R5.
+
+The words TABLE HEADERS and ROW 1/2/3 are layout instructions only, NOT visible labels. Render as an actual three-column, three-row comparison table like the reference.

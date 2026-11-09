@@ -2,13 +2,13 @@
 
 ## Willkommen in der Drachenhalle
 
-**Schön, dass du da bist!** Dieser Rundgang bringt dich in neun kurzen Schritten sicher durch die wichtigsten Informationen für deinen Start bei DIE.
+**Schön, dass du da bist!** Dieser Rundgang bringt dich in zehn kurzen Schritten sicher durch die wichtigsten Informationen für deinen Start bei DIE.
 
 <img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="Anthlan begrüßt neue Mitglieder mit einem Daumen nach oben." decoding="async">
 
 Du lernst unsere Gemeinschaft, die verbindlichen Regeln und die wichtigsten Anlaufstellen kennen. Für ausführliche Themen führt dich das Tutorial direkt zu den passenden Seiten im Drachenwissen.
 
-- Plane ungefähr **fünf Minuten** ein.
+- Plane ungefähr **zehn bis fünfzehn Minuten** ein.
 - Nutze **Weiter** oder springe über die Schrittübersicht direkt zu einem Thema.
 - Dein Fortschritt bleibt auf diesem Gerät gespeichert.
 - Öffne die verlinkten Detailseiten, wenn du ein Thema gleich genauer nachlesen möchtest.
@@ -20,7 +20,7 @@ Du lernst unsere Gemeinschaft, die verbindlichen Regeln und die wichtigsten Anla
 
 **DIE ist eine Gemeinschaft, in der klare Absprachen und gemeinsames Handeln zählen.** Wir wollen engagiert und mit Freude gemeinsam wachsen. Regeln schützen die Allianz vor unnötigen Konflikten, feste Verantwortungsbereiche unserer Offiziere (R4) schaffen kurze Wege und unser Drachenwissen hält Erfahrungen für alle fest.
 
-![Anthlan, mysteryZ, DaVinci, Somea und Drachenherz bauen gemeinsam an der Drachenhalle und pflanzen einen jungen Baum](/drachenhalle/tutorial/03_gemeinsam_wachsen_chibi.webp)
+![Anthlan, mysteryZ, DaVinci1986, Somea und Drachenherz bauen gemeinsam an der Drachenhalle und pflanzen einen jungen Baum](/drachenhalle/tutorial/03_gemeinsam_wachsen_chibi.webp)
 
 Was dich bei uns erwartet:
 
@@ -42,15 +42,37 @@ Du musst nicht selbst herausfinden, wer für ein Thema zuständig ist. Die Über
 1. **NAP10 respektieren:** Greife keine Mitglieder einer aktuellen NAP10-Allianz an. Prüfe vor jedem Angriff die Rangliste und die Allianzzugehörigkeit erneut.
 2. **Erlaubte Ziele mit Maß angreifen:** Allianzlose Spieler und Spieler mit einem Namen nach dem Muster **Commander\*\*\*\*** dürfen angegriffen, aber nicht vollständig auf **0** gebracht werden.
 3. **Nur auf anderen Servern plündern:** Plündere keine Lastwagen, Güterzüge oder Spezialmissionen unseres eigenen Servers. Kontrolliere vor dem Start die Servernummer.
-4. **Nach einem NAP10-Angriff nicht zurückschlagen:** Teile den Angriffsbericht und melde den Namen des Angreifers, seine Allianz und den Zeitpunkt an einen Offizier (R4) oder den Anführer (R5). Die Führung übernimmt die Klärung.
+4. **Vorfälle nach dem Sanktionsprozess klären:** Melde Regelverstöße und Angriffe – auch durch NAP10-Mitglieder – mit vorhandenen Nachweisen, Spielername, Allianz und Zeitpunkt an R4/R5. Die Führung stimmt die Klärung nach unserem [Sanktionsprozess](/drachenhalle/docs/allianzregeln/#sanktionen) ab. Keine eigenmächtigen Gegenangriffe.
 
-Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Bei Regelverstößen gibt es **2 Verwarnungen**, beim nächsten Verstoß erfolgt die Entfernung. Verwarnungen bleiben gültig, bis sie aufgehoben werden.
+Bei Unsicherheit gilt immer: **erst prüfen oder fragen, dann handeln**. Klärungsfrist, Maßnahmen und die zusätzlichen Regeln zur Mitgliedschaft gehören zum gemeinsamen [Sanktionsprozess](/drachenhalle/docs/allianzregeln/#sanktionen), den du im nächsten Schritt kennenlernst.
 
-Rang 1 bedeutet **7 Tage Probezeit** für neue Mitglieder und gilt auch für Commander ohne eigenen Namen. Rang 2 ist für regelmäßig aktive Mitglieder am Sammelpunkt mit wenig Eventbeteiligung dauerhaft möglich. Rang 3 steht für regelmäßige Aktivität und Teilnahme an Allianz-Events; nicht jedes Event ist Pflicht. **Ränge zeigen Aktivität, keine persönliche Wertung.**
+Rang 1 gilt für neue Mitglieder mit **7 Tagen Probezeit**, für Commander ohne eigenen Namen und ab sieben Tagen unangemeldeter Inaktivität. Rang 2 ist bei regelmäßiger Aktivität am Allianzsammelpunkt mit wenig Eventbeteiligung dauerhaft möglich. Rang 3 steht für regelmäßige Aktivität und Teilnahme an Allianz-Events; die Gesamtbeteiligung zählt, nicht jedes Event ist Pflicht. **Ränge zeigen Aktivität, keine persönliche Wertung.**
 
 [Alle Allianzregeln mit Beispielen lesen](../../Allianz/de/Allianz_Regeln.md)
 
-> **Merksatz:** Rangliste und Server prüfen. Einen NAP10-Vorfall melden, nicht selbst beantworten.
+> **Merksatz:** Rangliste und Server prüfen. Vorfälle melden und nach dem Sanktionsprozess klären, nicht eigenmächtig vergelten.
+
+## Wenn Regeln verletzt werden
+
+Ein Fehler ist kein Anlass für einen eigenmächtigen Gegenangriff. Melde den Vorfall und hilf bei der Klärung mit. So vermeiden wir, dass aus einem einzelnen Verstoß ein größerer Konflikt wird.
+
+Wir leben diesen Sanktionsprozess als unseren gemeinsamen Umgang mit Regelverstößen. Zuerst suchen wir das Gespräch; für Antwort und Klärung gelten maximal **24 Stunden**.
+
+1. Vorfall an R4/R5 melden: kurze Beschreibung, beteiligte Spieler, Allianz und Zeitpunkt; bei Angriffen den Angriffsbericht beifügen.
+2. Die Führung stimmt den Kontakt mit dem beteiligten Spieler und seiner Allianzführung ab. Wer kontaktiert wird, antwortet innerhalb von 24 Stunden und wirkt an der Klärung mit.
+3. Die Führung stimmt das weitere Vorgehen ab. Keine eigenmächtigen Gegenangriffe und keine automatischen Angriffe.
+
+| Verstoß | Dialog innerhalb von 24 Stunden | Kein Dialog innerhalb von 24 Stunden |
+| --- | --- | --- |
+| 1. Verstoß | Verwarnung + Entzug einer Spezialoperation oder eines Transporters (gleich- oder höherwertig) | Basisangriff, aber keine vollständige Zerstörung |
+| 2. Verstoß | Basisangriff, aber keine vollständige Zerstörung | Basisangriffe bis zur vollständigen Zerstörung |
+| 3. Verstoß | Basisangriffe bis zur vollständigen Zerstörung | Nicht separat geregelt |
+
+> Unser Grundsatz: Friedliche Klärung zuerst. Die gleichen Maßstäbe gelten auch für unsere Mitglieder. Die Tabelle ersetzt keine Abstimmung mit R4/R5.
+
+Für die Mitgliedschaft gilt zusätzlich: Zwei Verwarnungen, beim nächsten Verstoß Entfernung aus unserer Allianz. Verwarnungen gelten, bis sie aufgehoben werden. Das ist von der Entfernung nach neun Tagen unangemeldeter Inaktivität zu unterscheiden.
+
+[Alle Regeln und den vollständigen Sanktionsprozess nachlesen](/drachenhalle/docs/allianzregeln/#sanktionen)
 
 ## Unsere Netiquette
 
@@ -78,7 +100,7 @@ Rang 1 bedeutet **7 Tage Probezeit** für neue Mitglieder und gilt auch für Com
 
 ![Aktivierter Haken „Transportlastwagen dieses Servers ausschließen“](/drachenhalle/tutorial/01_transportlastwagen_server_ausschliessen.webp)
 
-So werden dir beim Plündern nur Transportlastwagen anderer Server angeboten. Das unterstützt die Allianzregel, nach der wir keine Lastwagen unseres eigenen Servers plündern. Prüfe den Server trotzdem vor jeder Aktion noch einmal.
+Der Ausschluss-Haken gilt für Lastwagen. Güterzüge und Spezialmissionen musst du separat prüfen. Kontrolliere die Servernummer vor jeder Plünderung.
 
 ### Spezialmissionen und Container
 
@@ -97,7 +119,7 @@ Werden Spezialmissionen im Chat geteilt, erkennst du den Server an der ersten Za
   </figure>
 </div>
 
-> **Kontrolle:** Bei Transportlastwagen muss der Ausschluss-Haken grün aktiviert sein. Bei Spezialmissionen muss ein Fremdserver angezeigt werden beziehungsweise die erste Koordinatenzahl darf nicht **105** sein.
+> **Kontrolle:** Bei Transportlastwagen muss der Ausschluss-Haken grün aktiviert sein. Prüfe bei jedem Ziel den Server: Ein Fremdserver muss bestätigt sein; **105** ist unser eigener Server und tabu.
 
 ## Plünderungsquiz
 
@@ -109,15 +131,15 @@ Teste die Plünderungsregeln in sechs kurzen Situationen. Nach jeder Antwort erf
 
 **Diese kurze Checkliste bringt dich ohne Informationsflut durch deinen Einstieg.**
 
-![Anthlan und DaVinci begleiten ein neues junges Mitglied bei Namenswahl, Sammelpunkt, Schildvorrat und Forschungsspende](/drachenhalle/tutorial/02_erste_schritte_chibi.webp)
+![Anthlan und DaVinci1986 begleiten ein neues junges Mitglied bei Namenswahl, Sammelpunkt, Schildvorrat und Forschungsspende](/drachenhalle/tutorial/02_erste_schritte_chibi.webp)
 
 ### In den ersten 24 Stunden
 
-- [ ] Die [vollständigen Allianzregeln](../../Allianz/de/Allianz_Regeln.md) lesen.
+- [ ] Die [Allianzregeln einschließlich Sanktionsprozess](../../Allianz/de/Allianz_Regeln.md) lesen.
 - [ ] Einen eigenen Spielernamen festlegen – bitte keinen Namen nach dem Muster **Commander\*\*\*\*** behalten.
 - [ ] Zum **Allianz-Sammelpunkt** umziehen, sofern nichts anderes mit der Führung besprochen ist.
 - [ ] Den Haken **„Transportlastwagen dieses Servers ausschließen“** aktivieren.
-- [ ] Mindestens einen **24-Stunden-Schutzschild** und einen **8-Stunden-Schutzschild** im Inventar bereithalten.
+- [ ] Mindestens einen **24-Stunden-Schutzschild** und einen **8-Stunden-Schutzschild** im Inventar bereithalten. Bestand allein schützt nicht: Plane die rechtzeitige Aktivierung mit dem [Schildplaner](/drachenhalle/tools/schildrechner/).
 - [ ] Die Seite [Unsere Offiziere](../../Allianz/de/Allianz_Offiziere.md) öffnen und die passenden Anlaufstellen merken.
 - [ ] Die nächsten [Termine](/drachenhalle/termine/) und ihre Eventhinweise prüfen.
 - [ ] Vor Angriffen die aktuelle Rangliste und vor Plünderungen die Servernummer kontrollieren.
@@ -158,11 +180,11 @@ Mehr dazu findest du hier:
 
 **Du kennst jetzt die wichtigsten Wege durch die Drachenhalle.** Für deinen Start brauchst du vor allem drei Dinge im Blick zu behalten:
 
-<img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp" alt="DaVinci begleitet den Abschluss des Rundgangs." loading="lazy" decoding="async">
+<img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp" alt="DaVinci1986 begleitet den Abschluss des Rundgangs." loading="lazy" decoding="async">
 
 - Regeln vor Kampf- und Plünderungsaktionen prüfen.
 - Termine und aktuelle Hinweise vor gemeinsamen Events lesen.
-- Bei Fragen einen Offizier (R4) oder den Anführer (R5) ansprechen und Allianzhilfe erwidern.
+- Bei Fragen oder Regelverstößen R4/R5 ansprechen, am Sanktionsprozess mitwirken und keine eigenmächtigen Gegenangriffe starten. Allianzhilfe erwidern.
 
 Als nächste Ziele bieten sich die [Tipps](/drachenhalle/docs/tipps/), die [Event-Guides](/drachenhalle/docs/events/) und der Blick auf die nächsten [Termine](/drachenhalle/termine/) an. Den Rundgang kannst du jederzeit erneut öffnen oder von vorn beginnen.
 

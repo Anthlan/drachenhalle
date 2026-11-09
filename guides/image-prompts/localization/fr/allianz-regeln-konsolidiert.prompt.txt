@@ -1,0 +1,66 @@
+Tool: built-in Imagegen
+Sprachfassung: fr
+Referenz: media/alliance/Allianz_Regeln.png (konsolidierte deutsche Fassung)
+Stand: 2026-11-09
+
+Use case: text-localization. EDIT the supplied German consolidated DIE rules infographic into the specified language. The supplied image is the edit target and exact visual reference. Preserve the portrait aspect ratio, layout with THREE numbered sections, gold dragon crest, warm candlelit castle border, gilded frames, navy panels, compact icons, three rank columns, and the sanctions table. Keep the official blue/gold Dragon Hall style. All text must remain comfortably readable, crisp, typeset-looking, with no clipping. You may slightly reflow text to fit, but never omit or invent policies. Translate EVERY text element using the exact text below; leave no German or other-language fragments. Keep DIE, NAP10, Commander**** (four stars), R4/R5 and all numbers unchanged. Preserve the 24-hour distinction and every sanctions cell exactly. In particular do NOT invent a sanction for the third violation without dialogue. Membership warnings/removal are a SEPARATE labeled strip, not a replacement for the sanctions table. This is OUR process; no mention of TuT. No watermark or extra prose. Use this complete target-language copy:
+
+Target language: French. Names and numeric identifiers stay unchanged.
+
+DIE – RÈGLES DE L’ALLIANCE
+
+1  COMBAT & PILLAGE
+• Ne pas attaquer le NAP10. Vérifier classement & alliance.
+• Bases : sans alliance & Commander**** autorisés – ne réduire personne à 0.
+• Camions, trains de fret & missions spéciales : piller uniquement sur d’autres serveurs !
+• Vérifier le serveur avant chaque pillage.
+• Si le NAP10 attaque : ne pas riposter. Signaler aux R4/R5.
+
+2  RANGS & ACTIVITÉ
+RANG 1 – DÉBUTANT
+• Nouveaux : 7 jours d’essai
+• Commander sans nom personnel
+• 7 jours ou plus inactif sans prévenir
+RANG 2 – MEMBRE
+• Connexion régulière
+• Au point de rassemblement
+• Faible participation aux événements
+• Peut être permanent
+RANG 3 – ACTIF
+• Connexion régulière
+• Participation aux événements
+• La participation globale compte
+• Tous les événements ne sont pas obligatoires
+
+COMMUNAUTÉ & ABSENCES
+• Rester au rassemblement, répondre aux MP importants et respecter les règles.
+• Signaler vacances, maladie & pauses.
+• Inactivité non signalée : jour 7 → MP & rang 1.
+• Sans réponse : jour 9 → exclusion.
+Les rangs indiquent l’activité, pas la valeur d’une personne.
+
+3  SANCTIONS EN CAS D’INFRACTION
+Nous cherchons d’abord le dialogue avec le joueur et la direction de l’alliance.
+Maximum 24 heures pour répondre et clarifier.
+
+TABLE HEADERS:
+INFRACTION | DIALOGUE DANS LES 24 HEURES | AUCUN DIALOGUE DANS LES 24 HEURES
+ROW 1:
+1re infraction | Avertissement + retrait d’une opération spéciale ou d’un transporteur (valeur égale ou supérieure) | Attaque de base, sans destruction complète
+ROW 2:
+2e infraction | Attaque de base, sans destruction complète | Attaques de base jusqu’à destruction complète
+ROW 3:
+3e infraction | Attaques de base jusqu’à destruction complète | Non précisé séparément
+
+APPARTENANCE À NOTRE ALLIANCE
+• 1re & 2e infraction → avertissement ; suivante → exclusion.
+• Avertissements valables jusqu’à leur levée.
+
+• Résolution pacifique d’abord. Pas d’attaques automatiques.
+• Les mêmes critères s’appliquent à nos membres.
+• Signaler les incidents – coordination avec les R4/R5.
+
+The words TABLE HEADERS and ROW 1/2/3 are layout instructions only, NOT visible labels. Render as an actual three-column, three-row comparison table like the reference.
+
+Gezielte Korrektur im zweiten Durchlauf:
+Edit ONLY the Commander placeholder in the first section, second bullet of this French rules poster. The current text has too many asterisks. It must be exactly Commander****: the word Commander immediately followed by FOUR (4) asterisks, not five, with no spaces. Exact full line: « • Bases : sans alliance & Commander**** autorisés – ne réduire personne à 0. » Keep every other text, all sanctions table cells, all rank and inactivity numbers, all headings, colors, icons, layout and border unchanged. Preserve the entire portrait image and its dimensions. This is a very small typographic correction, not a redesign.

@@ -2,8 +2,6 @@
 
 Nossas regras protegem a comunidade, evitam conflitos desnecessários e mantêm nossos ataques e saques de acordo com os combinados do servidor. Na dúvida, conferimos primeiro e agimos depois. Se algo não estiver claro, procure um R4 ou R5.
 
-![Nossas regras da aliança](../../../media/alliance/Allianz_Regeln.png)
-
 ## 1. Respeitar o NAP10
 
 Nós **não atacamos membros das alianças que fazem parte do NAP10 atual**. O ranking pode mudar, por isso não usamos uma classificação antiga como referência.
@@ -46,24 +44,32 @@ Online regularmente e participando dos **eventos da aliança**. Nem todo evento 
 
 Fique no **ponto de encontro da aliança**, responda às **mensagens privadas** importantes e siga as regras. **Avise sobre férias, doenças e pausas.** Os cargos indicam atividade e **não representam um julgamento pessoal**.
 
-## Infrações e advertências
+## Sanções por violações das regras
+
+Adotamos este processo como nossa forma comum de tratar violações das regras. Buscamos primeiro o diálogo; o prazo máximo para responder e esclarecer a situação é de **24 horas**.
+
+1. Relate o incidente a R4/R5: descrição breve, jogadores envolvidos, aliança e horário; em caso de ataque, anexe o relatório de combate.
+2. A liderança coordena o contato com o jogador envolvido e a liderança da aliança dele. Quem for contatado deve responder em até 24 horas e colaborar com o esclarecimento.
+3. A liderança coordena os próximos passos. Sem retaliação por conta própria e sem ataques automáticos.
+
+| Infração | Diálogo em até 24 horas | Sem diálogo em até 24 horas |
+| --- | --- | --- |
+| 1ª infração | Advertência + retirada de uma operação especial ou de um transportador (de valor igual ou superior) | Ataque à base, sem destruição completa |
+| 2ª infração | Ataque à base, sem destruição completa | Ataques à base até a destruição completa |
+| 3ª infração | Ataques à base até a destruição completa | Sem regra específica |
+
+> Nosso princípio: resolver de forma pacífica primeiro. Os mesmos critérios valem para os nossos membros. A tabela não substitui a coordenação com R4/R5.
+
+## Permanência na nossa aliança
 
 As infrações recebem **2 advertências**. A próxima infração leva à **remoção da aliança**. As advertências continuam válidas **até serem revogadas**.
 
-| Situação | Como devemos agir |
-| --- | --- |
-| O alvo pertence a uma aliança do NAP10 atual | Não atacar |
-| O alvo está sem aliança ou usa o nome Commander\*\*\*\* | Ataque permitido, mas sem reduzir a 0 |
-| Caminhão, trem de carga ou missão especial é do nosso servidor | Não saquear; escolher outro servidor |
-| Um membro do NAP10 ataca você | Não revidar; enviar o relatório a um R4 ou R5 |
-| Você está em dúvida | Perguntar a um R4 ou R5 antes de agir |
 
-> **Lembrete:** Confira primeiro o ranking e o servidor. Relate incidentes com o NAP10 em vez de revidar.
 
 ## Mensagem da aliança para copiar
 
 ```html
-<size=46><b>DIE - REGRAS DA ALIANÇA</b></size>
+<size=46><b>DlE - REGRAS DA ALIANÇA</b></size>
 
 🛡️ <size=40><b>1. Respeitar o NAP10</b></size>
 Não atacamos membros do NAP10 atual. Confira o ranking regularmente.
@@ -107,4 +113,43 @@ Ficar no ponto de encontro, responder MPs importantes e seguir as regras.
 
 📌 <size=40><b>Importante</b></size>
 Avisar sobre férias, doenças e pausas. Cargos indicam atividade, não o valor de uma pessoa.
+```
+
+## Processo de sanções para copiar
+
+```html
+<size=46><b>DlE – SANÇÕES</b></size>
+
+<b>Esclarecer primeiro:</b> Relate a R4/R5. A liderança coordena o contato. Prazo máximo: 24h para responder e esclarecer.
+
+<b>Diálogo em até 24h:</b>
+1ª infração: advertência + retirada de uma operação especial ou transportador (valor igual ou superior).
+2ª: ataque à base, sem destruição completa.
+3ª: ataques à base até a destruição completa.
+
+<b>Sem diálogo em até 24h:</b>
+1ª: ataque à base, sem destruição completa.
+2ª: ataques à base até a destruição completa.
+3ª: sem regra específica.
+
+<b>Permanência:</b> 2 advertências; na próxima infração, remoção. Advertências válidas até serem revogadas.
+
+Resolução pacífica primeiro. Sem ataques automáticos ou retaliação por conta própria.
+```
+
+## Lembrete geral para publicar regularmente
+
+```html
+<size=40><b>DlE – LEMBRETE</b></size>
+
+• Não atacar o NAP10; conferir ranking & aliança.
+• Bases: sem aliança & Commander**** permitidos; não reduzir ninguém a 0.
+• Caminhões, trens de carga & missões especiais: saquear só em outros servidores. Conferir o servidor!
+• Ficar no ponto de encontro, responder MPs importantes; avisar férias, doença & pausas.
+• R1: 7 dias de experiência, Commander sem nome ou 7 dias inativo sem aviso. Dia 7: MP; sem resposta, remoção no dia 9.
+• R2: online regularmente, poucos eventos; pode ser permanente. R3: online regularmente & eventos; conta a participação geral, nem todos são obrigatórios. Cargo não é julgamento pessoal.
+• Incidentes: R4/R5. Liderança coordena; responder em 24h. Não revidar por conta própria!
+• Sanções conforme infrações & diálogo, até destruição total da base. Permanência: 2 advertências, próxima infração: remoção. Válidas até revogadas.
+
+Detalhes: https://anthlan.github.io/drachenhalle/pt/docs/allianzregeln/
 ```

@@ -1,6 +1,7 @@
 ---
 import SocialMeta from "../../components/SocialMeta.astro";
 import "../../styles/global.css";
+import "../../styles/rules-tutorial.css";
 import ContentShare from "../../components/ContentShare.astro";
 import { prepareShareAnalysis } from "../../scripts/share-analysis.mjs";
 import ReducedView from "../../components/ReducedView.astro";
@@ -10,6 +11,8 @@ import ImageActionIcon from "../../components/ImageActionIcon.astro";
 import TeleportDemo from "../../components/TeleportDemo.astro";
 import RaidQuiz from "../../components/RaidQuiz.astro";
 import EventArchiveNotice from "../../components/EventArchiveNotice.astro";
+import AllianceRules from "../../components/AllianceRules.astro";
+import {responsiveSanctionsTable} from "../../lib/alliance-rules.mjs";
 import docsData from "../../data/docs.generated.json";
 import galleryData from "../../data/gallery.generated.json";
 
@@ -863,12 +866,12 @@ const responsibilities = [
                   {document.onboardingSteps.map((step, index) => (
                     <section
                       id={step.id}
-                      class="tutorial-step"
+                      class:list={["tutorial-step", {"is-sanctions-step": step.id.endsWith("wenn-regeln-verletzt-werden")} ]}
                       data-tutorial-step={index}
                       aria-label={`Schritt ${index + 1}: ${step.title}`}
                     >
                       <p class="eyebrow">Schritt {index + 1} von {document.onboardingSteps.length}</p>
-                      <div class="markdown-content tutorial-step-content" set:html={step.html} />
+                      <div class="markdown-content tutorial-step-content" set:html={step.id.endsWith("wenn-regeln-verletzt-werden") ? responsiveSanctionsTable(step.html) : step.html} />
                       {document.slug === "dein-einstieg-bei-uns" && step.id.endsWith("plunderungsquiz") && <RaidQuiz />}
                     </section>
                   ))}
@@ -912,6 +915,8 @@ const responsibilities = [
                   </div>
                 </div>
               </div>
+            ) : document.slug === "allianzregeln" ? (
+              <AllianceRules html={document.allianceArticleHtml} copySections={document.allianceCopySections} />
             ) : document.kind === "alliance" && document.allianceArticleHtml && document.allianceCopyHtml ? (
               <div class="alliance-article-body">
                 <div class:list={["alliance-main-layout", { "has-aside-image": document.imageUrl }]}>

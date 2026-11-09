@@ -1,0 +1,63 @@
+Tool: built-in Imagegen
+Sprachfassung: ru
+Referenz: media/alliance/Allianz_Regeln.png (konsolidierte deutsche Fassung)
+Stand: 2026-11-09
+
+Use case: text-localization. EDIT the supplied German consolidated DIE rules infographic into the specified language. The supplied image is the edit target and exact visual reference. Preserve the portrait aspect ratio, layout with THREE numbered sections, gold dragon crest, warm candlelit castle border, gilded frames, navy panels, compact icons, three rank columns, and the sanctions table. Keep the official blue/gold Dragon Hall style. All text must remain comfortably readable, crisp, typeset-looking, with no clipping. You may slightly reflow text to fit, but never omit or invent policies. Translate EVERY text element using the exact text below; leave no German or other-language fragments. Keep DIE, NAP10, Commander**** (four stars), R4/R5 and all numbers unchanged. Preserve the 24-hour distinction and every sanctions cell exactly. In particular do NOT invent a sanction for the third violation without dialogue. Membership warnings/removal are a SEPARATE labeled strip, not a replacement for the sanctions table. This is OUR process; no mention of TuT. No watermark or extra prose. Use this complete target-language copy:
+
+Target language: Russian. Names and numeric identifiers stay unchanged.
+
+DIE – ПРАВИЛА АЛЬЯНСА
+
+1  БОЙ И ГРАБЁЖ
+• Не атаковать NAP10. Проверять рейтинг и альянс.
+• Базы: без альянса и Commander**** разрешены – не сводить никого к 0.
+• Грузовики, грузовые поезда и спецмиссии: грабить только на других серверах!
+• Проверять сервер перед каждым грабежом.
+• Если атакует NAP10: не отвечать атакой. Сообщить R4/R5.
+
+2  РАНГИ И АКТИВНОСТЬ
+РАНГ 1 – НОВИЧОК
+• Новые участники: 7 дней испытания
+• Commander без собственного имени
+• От 7 дней без активности и уведомления
+РАНГ 2 – УЧАСТНИК
+• Регулярно онлайн
+• У точки сбора альянса
+• Мало участия в событиях
+• Можно сохранять постоянно
+РАНГ 3 – АКТИВНЫЙ
+• Регулярно онлайн
+• Участие в событиях альянса
+• Важно общее участие
+• Не каждое событие обязательно
+
+ОБЩЕНИЕ И ПЕРЕРЫВЫ
+• Быть у точки сбора, отвечать на важные ЛС, соблюдать правила.
+• Сообщать об отпуске, болезни и перерывах.
+• Неактивность без уведомления: день 7 → ЛС и ранг 1.
+• Без ответа: день 9 → исключение.
+Ранги отражают активность, а не личную ценность.
+
+3  САНКЦИИ ЗА НАРУШЕНИЯ
+Сначала ищем диалог с игроком и руководством альянса.
+Максимум 24 часа для ответа и выяснения обстоятельств.
+
+TABLE HEADERS:
+НАРУШЕНИЕ | ДИАЛОГ В ТЕЧЕНИЕ 24 ЧАСОВ | НЕТ ДИАЛОГА В ТЕЧЕНИЕ 24 ЧАСОВ
+ROW 1:
+1-е нарушение | Предупреждение + изъятие одной спецоперации или транспортёра (равной или большей ценности) | Атака на базу без полного уничтожения
+ROW 2:
+2-е нарушение | Атака на базу без полного уничтожения | Атаки на базу вплоть до полного уничтожения
+ROW 3:
+3-е нарушение | Атаки на базу вплоть до полного уничтожения | Отдельно не урегулировано
+
+ЧЛЕНСТВО В НАШЕМ АЛЬЯНСЕ
+• 1-е и 2-е нарушение → предупреждение; следующее → исключение.
+• Предупреждения действуют до отмены.
+
+• Сначала мирное урегулирование. Атаки не автоматические.
+• Те же требования действуют и для наших участников.
+• Сообщать об инцидентах – согласовывать с R4/R5.
+
+The words TABLE HEADERS and ROW 1/2/3 are layout instructions only, NOT visible labels. Render as an actual three-column, three-row comparison table like the reference.

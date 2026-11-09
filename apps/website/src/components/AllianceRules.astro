@@ -1,0 +1,124 @@
+---
+import {prepareRulesContent, prepareRulesCopySections, responsiveSanctionsTable, ruleSubheading} from "../lib/alliance-rules.mjs";
+const { html, copySections } = Astro.props;
+// In-game rich text uses DlE because the game's filter blocks DIE.
+const gameCopySections = prepareRulesCopySections(copySections.map(section => section.replaceAll("&lt;b&gt;DIE", "&lt;b&gt;DlE")));
+const {intro, combat, rankHeading, rankCards, community, sanctions, membership} = prepareRulesContent(html);
+---
+
+<div class="rules-page">
+  <section class="rules-intro">
+    <p class="eyebrow">Unsere Regeln auf einen Blick</p>
+    <h2>Erst prüfen. Dann gemeinsam handeln.</h2>
+    <p>Regeln, Ränge und Sanktionen gehören zusammen. Hier findet ihr verbindliche Absprachen und das richtige Vorgehen bei einem Vorfall.</p>
+    <nav class="rules-jumps" aria-label="Unsere Regeln">
+      <a href="#kampf"><span aria-hidden="true">⚔</span> Kampf &amp; Plündern</a>
+      <a href="#raenge"><span aria-hidden="true">✦</span> Ränge &amp; Aktivität</a>
+      <a href="#sanktionen"><span aria-hidden="true">⚖</span> Sanktionen</a>
+    </nav>
+    <div class="rules-source-intro markdown-content" set:html={intro} />
+  </section>
+
+  <section id="kampf" class="rules-chapter">
+    <div class="rules-chapter-heading"><span aria-hidden="true">01</span><h2>Kampf &amp; Plündern</h2></div>
+    <div class="rules-combat-grid">
+      {combat.map(card => <section class="rules-card markdown-content" set:html={ruleSubheading(card)} />)}
+    </div>
+  </section>
+
+  <section id="raenge" class="rules-chapter">
+    <div class="rules-chapter-heading"><span aria-hidden="true">02</span><Fragment set:html={rankHeading} /></div>
+    <div class="rules-rank-grid">
+      {rankCards.map((card, index) => <section class="rules-card rules-rank markdown-content"><span class="rules-stars" aria-hidden="true">{"★".repeat(index + 1)}</span><div set:html={card} /></section>)}
+    </div>
+    <div class="rules-community markdown-content" set:html={ruleSubheading(community)} />
+  </section>
+
+  <section id="sanktionen" class="rules-chapter rules-sanctions">
+    <span class="rules-chapter-number" aria-hidden="true">03</span>
+    <div class="markdown-content rules-sanctions-content" set:html={responsiveSanctionsTable(sanctions)} />
+    <div class="rules-membership markdown-content" set:html={ruleSubheading(membership)} />
+  </section>
+
+  <details class="rules-poster">
+    <summary>Regelgrafik ansehen</summary>
+    <p>Die Gesamtgrafik fasst Kampfregeln, Ränge, Aktivität und Sanktionen zusammen.</p>
+    <a href="/drachenhalle/rules/allianz-regeln-de-4x.webp" target="_blank" rel="noopener noreferrer"><img src="/drachenhalle/rules/allianz-regeln-de.webp" width="1024" height="1536" loading="lazy" alt="Unsere Allianzregeln als Gesamtgrafik" /></a>
+    <a class="rules-download" href="/drachenhalle/rules/allianz-regeln-de-4x.webp" download="DIE_Allianzregeln_de_4096x6144.webp">Grafik herunterladen (4096 × 6144 Pixel)</a>
+  </details>
+
+  <section class="rules-copy-area">
+    <h2>Kopiervorlagen für den Allianzchat</h2>
+    <p>Einzelthemen oder die kurze Gesamterinnerung kopieren.</p>
+    {gameCopySections.map(section => <details class="rules-copy-item" data-copy-section><summary><span set:html={section.heading} /><button type="button" class="copy-code-button" data-copy-code>Mitteilung kopieren</button></summary><div class="markdown-content rules-copy-content" set:html={section.html} /></details>)}
+  </section>
+</div>
+
+<style>
+  .rules-page { padding: clamp(1.25rem, 4vw, 3rem); display: grid; gap: 2.5rem; min-width: 0; }
+  .rules-intro { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--line-bright); border-radius: 1rem; background: radial-gradient(ellipse at top right, #29426766, transparent 70%), #101e30; }
+  .rules-intro h2 { font-size: clamp(1.65rem, 3vw, 2.25rem); margin: .75rem 0 1rem; }
+  .rules-intro p { line-height: 1.8; }
+  .rules-jumps { display: flex; gap: .75rem; flex-wrap: wrap; margin-block: 1.5rem; }
+  .rules-jumps a { display: inline-flex; align-items: center; gap: .6rem; padding: .8rem 1rem; border: 1px solid var(--line-bright); border-radius: .65rem; color: var(--gold-pale); background: #080f21; font-weight: 650; }
+  .rules-jumps a:hover { background: #24324a; }
+  .rules-source-intro { padding: .5rem 0 0; border-top: 1px solid var(--line); }
+  .rules-chapter { min-width: 0; scroll-margin-top: 1.5rem; }
+  .rules-chapter-heading { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .rules-chapter-heading > span, .rules-chapter-number { color: var(--gold); font-size: 1.35rem; font-weight: 800; letter-spacing: .1em; }
+  .rules-chapter-heading :global(h2) { margin: 0; font-size: clamp(1.5rem, 3vw, 1.9rem); color: var(--gold-pale); }
+  .rules-combat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .rules-card { min-width: 0; padding: 1.5rem; border: 1px solid var(--line); border-radius: .8rem; background: linear-gradient(135deg, #122238, #0b1324); }
+  .rules-rank-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .rules-stars { color: var(--gold); letter-spacing: .25rem; font-size: 1.35rem; }
+  .rules-rank :global(h3) { font-size: 1.15rem; }
+  .rules-community, .rules-membership { margin-top: 1.25rem; padding: 1.5rem; border: 1px solid var(--line-bright); border-radius: .8rem; background: #152337; }
+  .rules-sanctions { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--line-bright); border-radius: 1rem; background: linear-gradient(160deg, #17283d, #0b1425); }
+  .rules-sanctions-content :global(> h2) { margin-top: .75rem; color: var(--gold-pale); }
+  .rules-sanctions-content { padding: 0; }
+  .rules-sanctions-content :global(> ol) { padding-left: 1.5rem; margin-block: 1.5rem; }
+  .rules-sanctions-content :global(> ol > li) { padding: .5rem 0 .5rem .5rem; }
+  .rules-sanctions-content :global(> p strong) { color: var(--gold-pale); white-space: nowrap; }
+  .rules-page :global(.markdown-content) { font-family: inherit; font-size: 1rem; line-height: 1.8; }
+  .rules-page :global(.markdown-content h3) { margin: 0 0 1rem; color: var(--gold-pale); }
+  .rules-page :global(.rules-rank h3) { margin-top: .75rem; }
+  .rules-page :global(.markdown-content p) { margin-block: .75rem; }
+  .rules-page :global(.markdown-content p:last-child) { margin-bottom: 0; }
+  .rules-page :global(.rules-table-wrap) { margin-block: 1.75rem; border: 1px solid var(--line-bright); border-radius: .75rem; overflow: hidden; }
+  .rules-page :global(table) { display: table; width: 100%; table-layout: fixed; border-collapse: collapse; font-size: .95rem; }
+  .rules-page :global(th), .rules-page :global(td) { min-width: 0; padding: 1rem; line-height: 1.65; overflow-wrap: anywhere; border: 1px solid var(--line); }
+  .rules-page :global(th:first-child), .rules-page :global(td:first-child) { width: 20%; color: var(--gold-pale); font-weight: 700; }
+  .rules-page :global(th:nth-child(2)) { background: #1f463c; color: #d6f5df; }
+  .rules-page :global(th:nth-child(3)) { background: #512d31; color: #ffe0df; }
+  .rules-page :global(.rules-cell-label) { display: none; }
+  .rules-page :global(blockquote) { margin: 1.5rem 0 0; padding: 1rem 1.25rem; border-left: 3px solid var(--gold); background: #e3ad4e0c; }
+  .rules-poster { padding: 1.5rem; border: 1px solid var(--line); border-radius: .8rem; }
+  .rules-poster summary { color: var(--gold-pale); font-weight: 700; cursor: pointer; }
+  .rules-poster p { line-height: 1.7; color: var(--muted); }
+  .rules-poster img { display: block; width: 100%; height: auto; margin-block: 1.25rem; border-radius: .4rem; }
+  .rules-download { display: inline-block; padding-block: .5rem; color: var(--gold-pale); text-decoration: underline; }
+  .rules-copy-area { min-width: 0; }
+  .rules-copy-area > p { color: var(--muted); line-height: 1.7; }
+  .rules-copy-item { margin-top: 1rem; border: 1px solid var(--line); border-radius: .8rem; background: #0b1324; }
+  .rules-copy-item > summary { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 1rem; padding: 1.25rem; cursor: pointer; color: var(--gold-pale); font-weight: 650; }
+  .rules-copy-item > summary > span::before { content: "+"; margin-right: .75rem; color: var(--gold); }
+  .rules-copy-item[open] > summary > span::before { content: "−"; }
+  .rules-copy-item > summary::-webkit-details-marker { display: none; }
+  .rules-copy-item .copy-code-button { float: none; margin: 0; }
+  .rules-copy-content { padding: 0 1.25rem 1.25rem; }
+  .rules-copy-area :global(pre) { white-space: pre-wrap; overflow-wrap: anywhere; }
+  @media(max-width: 1100px) { .rules-rank-grid { grid-template-columns: 1fr; } }
+  @media(max-width: 700px) {
+    .rules-combat-grid { grid-template-columns: 1fr; }
+    .rules-page { gap: 2rem; }
+    .rules-copy-item > summary { grid-template-columns: 1fr; justify-items: start; }
+    .rules-card, .rules-community, .rules-membership { padding: 1.25rem; }
+    .rules-page :global(table), .rules-page :global(tbody), .rules-page :global(tr), .rules-page :global(td) { display: block; width: 100%; }
+    .rules-page :global(thead) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .rules-page :global(td:first-child) { width: 100%; background: #26354b; }
+    .rules-page :global(tr + tr) { border-top: 2px solid var(--gold); }
+    .rules-page :global(.rules-cell-label) { display: block; color: var(--gold-pale); font-weight: 700; margin-bottom: .5rem; }
+    .rules-page :global(td:nth-child(2)) { border-left: 3px solid #72a48a; }
+    .rules-page :global(td:nth-child(3)) { border-left: 3px solid #bd7775; }
+  }
+</style>

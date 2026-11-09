@@ -2,8 +2,6 @@
 
 Unsere Allianzregeln schützen uns, vermeiden unnötige Konflikte und sorgen dafür, dass unsere Angriffe und Beutezüge mit den Absprachen unseres Servers vereinbar bleiben. Im Zweifel prüfen wir zuerst und handeln danach. Wenn ihr unsicher seid, fragt bitte einen R4 oder R5.
 
-![Unsere Allianzregeln](../../../media/alliance/Allianz_Regeln.png)
-
 ## 1. NAP10 respektieren
 
 Wir greifen **keine Mitglieder der aktuellen NAP10-Allianzen** an. Da sich die Rangliste verändern kann, verlassen wir uns nicht auf eine frühere Einordnung.
@@ -46,24 +44,32 @@ Regelmäßig online und Teilnahme an **Allianz-Events**. Nicht jedes Event ist P
 
 Am **Allianzsammelpunkt stehen**, wichtige **PN beantworten** und die Regeln beachten. **Urlaub, Krankheit und Pausen bitte melden.** Ränge zeigen Aktivität und sind **keine persönliche Wertung**.
 
-## Regelverstöße und Verwarnungen
+## Sanktionen bei Regelverstößen
+
+Wir leben diesen Sanktionsprozess als unseren gemeinsamen Umgang mit Regelverstößen. Zuerst suchen wir das Gespräch; für Antwort und Klärung gelten maximal **24 Stunden**.
+
+1. Vorfall an R4/R5 melden: kurze Beschreibung, beteiligte Spieler, Allianz und Zeitpunkt; bei Angriffen den Angriffsbericht beifügen.
+2. Die Führung stimmt den Kontakt mit dem beteiligten Spieler und seiner Allianzführung ab. Wer kontaktiert wird, antwortet innerhalb von 24 Stunden und wirkt an der Klärung mit.
+3. Die Führung stimmt das weitere Vorgehen ab. Keine eigenmächtigen Gegenangriffe und keine automatischen Angriffe.
+
+| Verstoß | Dialog innerhalb von 24 Stunden | Kein Dialog innerhalb von 24 Stunden |
+| --- | --- | --- |
+| 1. Verstoß | Verwarnung + Entzug einer Spezialoperation oder eines Transporters (gleich- oder höherwertig) | Basisangriff, aber keine vollständige Zerstörung |
+| 2. Verstoß | Basisangriff, aber keine vollständige Zerstörung | Basisangriffe bis zur vollständigen Zerstörung |
+| 3. Verstoß | Basisangriffe bis zur vollständigen Zerstörung | Nicht separat geregelt |
+
+> Unser Grundsatz: Friedliche Klärung zuerst. Die gleichen Maßstäbe gelten auch für unsere Mitglieder. Die Tabelle ersetzt keine Abstimmung mit R4/R5.
+
+## Mitgliedschaft in unserer Allianz
 
 Bei Regelverstößen gibt es **2 Verwarnungen**. Beim nächsten Verstoß erfolgt die **Entfernung aus der Allianz**. Verwarnungen bleiben gültig, **bis sie aufgehoben werden**.
 
-| Situation | Unser richtiges Vorgehen |
-| --- | --- |
-| Ziel gehört zu einer aktuellen NAP10-Allianz | Nicht angreifen |
-| Ziel ist allianzlos oder heißt Commander\*\*\*\* | Angriff erlaubt, aber nicht auf 0 bringen |
-| Lastwagen, Güterzug oder Spezialmission stammt vom eigenen Server | Nicht plündern; anderes Serverziel wählen |
-| NAP10-Mitglied greift euch an | Nicht zurückschlagen; Bericht an R4 oder R5 senden |
-| Ihr seid unsicher | Vor der Aktion einen R4 oder R5 fragen |
 
-> **Unser Merksatz:** Wir prüfen zuerst Rangliste und Server. Bei einem NAP10-Vorfall schlagen wir nicht zurück, sondern melden ihn.
 
 ## Allianz-Mitteilung zum Kopieren
 
 ```html
-<size=46><b>DIE - ALLIANZREGELN</b></size>
+<size=46><b>DlE - ALLIANZREGELN</b></size>
 
 🛡️ <size=40><b>1. NAP10 respektieren</b></size>
 Wir greifen keine Mitglieder der aktuellen NAP10-Allianzen an. Bitte regelmäßig die Rangliste prüfen.
@@ -107,4 +113,43 @@ Am Sammelpunkt stehen, wichtige PN beantworten, Regeln beachten.
 
 📌 <size=40><b>Wichtig</b></size>
 Urlaub, Krankheit und Pausen melden. Ränge zeigen Aktivität, keine persönliche Wertung.
+```
+
+## Sanktionsprozess zum Kopieren
+
+```html
+<size=46><b>DlE – SANKTIONEN</b></size>
+
+<b>Zuerst klären:</b> Vorfall an R4/R5 melden. Die Führung koordiniert den Kontakt. Max. 24h für Antwort und Klärung.
+
+<b>Dialog innerhalb 24h:</b>
+1. Verstoß: Verwarnung + Entzug einer Spezialoperation oder eines Transporters (gleich- oder höherwertig).
+2. Verstoß: Basisangriff, keine vollständige Zerstörung.
+3. Verstoß: Basisangriffe bis zur vollständigen Zerstörung.
+
+<b>Kein Dialog innerhalb 24h:</b>
+1. Verstoß: Basisangriff, keine vollständige Zerstörung.
+2. Verstoß: Basisangriffe bis zur vollständigen Zerstörung.
+3. Verstoß: Nicht separat geregelt.
+
+<b>Mitgliedschaft:</b> 2 Verwarnungen, nächster Verstoß: Entfernung. Verwarnungen gelten bis zur Aufhebung.
+
+Friedliche Klärung zuerst. Keine automatischen oder eigenmächtigen Angriffe.
+```
+
+## Gesamterinnerung zum regelmäßigen Posten
+
+```html
+<size=40><b>DlE – KURZ ERINNERT</b></size>
+
+• NAP10 nicht angreifen; Rangliste & Allianz prüfen.
+• Basen: Allianzlose & Commander**** erlaubt, niemanden auf 0 bringen.
+• Lastwagen, Güterzüge & Spezialmissionen nur auf anderen Servern plündern. Server prüfen!
+• Am Sammelpunkt stehen, wichtige PN beantworten, Urlaub, Krankheit & Pausen melden.
+• R1: 7 Tage Probezeit, Commander ohne Namen oder 7 Tage unangemeldet inaktiv. Tag 7: PN; ohne Antwort Tag 9: Entfernung.
+• R2: regelmäßig online, wenig Events; dauerhaft möglich. R3: regelmäßig online & bei Events; Gesamtbeteiligung zählt, nicht jedes Event ist Pflicht. Ränge: keine Wertung.
+• Vorfälle an R4/R5 melden. Führung klärt; innerhalb 24h antworten. Keine eigenmächtigen Gegenangriffe!
+• Sanktionen je Verstoßzahl & Dialog bis zur völligen Basiszerstörung. Mitgliedschaft: 2 Verwarnungen, nächster Verstoß Entfernung. Verwarnungen gelten bis zur Aufhebung.
+
+Details: https://anthlan.github.io/drachenhalle/docs/allianzregeln/
 ```

@@ -1,0 +1,16 @@
+.is-sanctions-step .rules-table-wrap { margin-block: 1.5rem; border: 1px solid var(--line-bright); border-radius: .75rem; overflow: hidden; }
+.is-sanctions-step .rules-table-wrap table { display: table; width: 100%; table-layout: fixed; margin: 0; }
+.is-sanctions-step .rules-table-wrap th, .is-sanctions-step .rules-table-wrap td { min-width: 0; padding: 1rem; overflow-wrap: anywhere; line-height: 1.7; }
+.is-sanctions-step th:first-child, .is-sanctions-step td:first-child { width: 20%; font-weight: 700; color: var(--gold-pale); }
+.is-sanctions-step th:nth-child(2) { background: #1f463c; color: #d6f5df; }
+.is-sanctions-step th:nth-child(3) { background: #512d31; color: #ffe0df; }
+.is-sanctions-step .rules-cell-label { display: none; }
+@media(max-width: 700px) {
+  .is-sanctions-step .rules-table-wrap table, .is-sanctions-step tbody, .is-sanctions-step tr, .is-sanctions-step td { display: block; width: 100%; }
+  .is-sanctions-step thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .is-sanctions-step td:first-child { width: 100%; background: #26354b; }
+  .is-sanctions-step tr + tr { border-top: 2px solid var(--gold); }
+  .is-sanctions-step .rules-cell-label { display: block; color: var(--gold-pale); font-weight: 700; margin-bottom: .5rem; }
+  .is-sanctions-step td:nth-child(2) { border-left: 3px solid #72a48a; }
+  .is-sanctions-step td:nth-child(3) { border-left: 3px solid #bd7775; }
+}

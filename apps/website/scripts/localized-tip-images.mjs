@@ -2,6 +2,13 @@ import { readFile, readdir, mkdir, copyFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
+export function localizedRulesPoster(html, base, language) {
+  return html
+    .replaceAll(`${base}/rules/allianz-regeln-de.webp`, `${base}/rules/allianz-regeln-${language}.webp`)
+    .replaceAll(`${base}/rules/allianz-regeln-de-4x.webp`, `${base}/rules/allianz-regeln-${language}-4x.webp`)
+    .replaceAll("DIE_Allianzregeln_de_4096x6144.webp", `DIE_Allianzregeln_${language}_4096x6144.webp`);
+}
+
 // Localized originals live beside the translated content, with language last.
 export async function localizedTipImages(repositoryRoot, outputRoot, base, language) {
   const areas = [
@@ -39,5 +46,5 @@ export async function localizedTipImages(repositoryRoot, outputRoot, base, langu
       );
     }
   }
-  return html => replacements.reduce((html, [from, to]) => from ? html.replaceAll(from, to) : html, html);
+  return html => localizedRulesPoster(replacements.reduce((html, [from, to]) => from ? html.replaceAll(from, to) : html, html), base, language);
 }

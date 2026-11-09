@@ -2,13 +2,13 @@
 
 ## Boas-vindas ao Salão dos Dragões
 
-**Que bom ter você aqui!** Este passeio apresenta, em nove etapas curtas, as informações mais importantes para começar na DIE.
+**Que bom ter você aqui!** Este passeio apresenta, em dez etapas curtas, as informações mais importantes para começar na DIE.
 
 <img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-anthlan.webp" alt="Anthlan dá boas-vindas aos novos membros com um sinal de positivo." decoding="async">
 
 Você conhecerá nossa comunidade, as regras que todos devem seguir e os principais contatos. Para se aprofundar, o tutorial leva diretamente às páginas do Conhecimento dos Dragões.
 
-- Reserve cerca de **cinco minutos**.
+- Reserve cerca de **dez a quinze minutos**.
 - Use **Avançar** ou escolha um assunto na lista de etapas.
 - Seu progresso fica salvo neste dispositivo.
 - Abra as páginas indicadas quando quiser conhecer melhor um assunto.
@@ -20,7 +20,7 @@ Você conhecerá nossa comunidade, as regras que todos devem seguir e os princip
 
 **A DIE é uma comunidade que valoriza acordos claros e ações em conjunto.** Queremos crescer juntos, com dedicação e diversão. As regras evitam conflitos desnecessários, as responsabilidades dos oficiais (R4) facilitam encontrar ajuda e o Conhecimento dos Dragões reúne experiências para todos.
 
-![Anthlan, mysteryZ, DaVinci, Somea e Drachenherz constroem juntos o Salão dos Dragões e plantam uma árvore jovem](/drachenhalle/tutorial/03_gemeinsam_wachsen_chibi.webp)
+![Anthlan, mysteryZ, DaVinci1986, Somea e Drachenherz constroem juntos o Salão dos Dragões e plantam uma árvore jovem](/drachenhalle/tutorial/03_gemeinsam_wachsen_chibi.webp)
 
 O que você pode esperar de nós:
 
@@ -42,15 +42,37 @@ Você não precisa descobrir sozinho quem cuida de cada assunto. A página [Noss
 1. **Respeitar o NAP10:** Não ataque membros das alianças que estão no NAP10 atual. Confira novamente o ranking e a aliança do alvo antes de cada ataque.
 2. **Atacar alvos permitidos com moderação:** Jogadores sem aliança e jogadores com nome no padrão **Commander\*\*\*\*** podem ser atacados, mas não devem ser reduzidos completamente a **0**.
 3. **Saquear somente em outros servidores:** Não saqueie caminhões, trens de carga nem missões especiais do nosso próprio servidor. Confira o número do servidor antes de começar.
-4. **Não revidar após um ataque do NAP10:** Compartilhe o relatório e informe o nome do atacante, sua aliança e o horário a um oficial (R4) ou ao líder (R5). A liderança cuidará da resolução.
+4. **Resolver incidentes pelo processo de sanções:** Relate a R4/R5 infrações e ataques, inclusive de membros do NAP10, com as evidências disponíveis, nome do jogador, aliança e horário. A liderança coordena a resolução pelo nosso [processo de sanções](/drachenhalle/docs/allianzregeln/#sanktionen). Não revide por conta própria.
 
-Na dúvida, sempre **confira ou pergunte antes de agir**. As infrações recebem **2 advertências**; a próxima infração leva à remoção. As advertências continuam válidas até serem revogadas.
+Na dúvida, **confira ou pergunte antes de agir**. O prazo de resposta, as medidas e as regras adicionais de permanência fazem parte do nosso [processo de sanções](/drachenhalle/docs/allianzregeln/#sanktionen), explicado na próxima etapa.
 
-O cargo 1 inclui **7 dias de experiência** para novos membros e também se aplica a Commander sem nome próprio. O cargo 2 pode ser permanente para membros regularmente ativos no ponto de encontro, mesmo com pouca participação em eventos. O cargo 3 indica atividade regular e participação em eventos da aliança; nem todo evento é obrigatório. **Os cargos indicam atividade, não o valor de uma pessoa.**
+O cargo 1 se aplica a novos membros durante os **7 dias de experiência**, a Commander sem nome próprio e a membros inativos há sete dias sem aviso. O cargo 2 pode ser permanente para membros regularmente ativos no ponto de encontro, mesmo com pouca participação em eventos. O cargo 3 indica atividade regular e participação nos eventos da aliança; conta a participação geral, nem todo evento é obrigatório. **Os cargos indicam atividade, não o valor de uma pessoa.**
 
 [Ler todas as regras da aliança com exemplos](../../Allianz/pt/Allianz_Regeln.md)
 
-> **Lembrete:** Confira o ranking e o servidor. Relate incidentes com o NAP10 em vez de revidar.
+> **Lembrete:** Confira o ranking e o servidor. Relate incidentes e siga o processo de sanções, sem revidar por conta própria.
+
+## Quando as regras são violadas
+
+Um erro não justifica uma retaliação por conta própria. Relate o incidente e ajude a esclarecer a situação. Assim evitamos que uma infração isolada vire um conflito maior.
+
+Adotamos este processo como nossa forma comum de tratar violações das regras. Buscamos primeiro o diálogo; o prazo máximo para responder e esclarecer a situação é de **24 horas**.
+
+1. Relate o incidente a R4/R5: descrição breve, jogadores envolvidos, aliança e horário; em caso de ataque, anexe o relatório de combate.
+2. A liderança coordena o contato com o jogador envolvido e a liderança da aliança dele. Quem for contatado deve responder em até 24 horas e colaborar com o esclarecimento.
+3. A liderança coordena os próximos passos. Sem retaliação por conta própria e sem ataques automáticos.
+
+| Infração | Diálogo em até 24 horas | Sem diálogo em até 24 horas |
+| --- | --- | --- |
+| 1ª infração | Advertência + retirada de uma operação especial ou de um transportador (de valor igual ou superior) | Ataque à base, sem destruição completa |
+| 2ª infração | Ataque à base, sem destruição completa | Ataques à base até a destruição completa |
+| 3ª infração | Ataques à base até a destruição completa | Sem regra específica |
+
+> Nosso princípio: resolver de forma pacífica primeiro. Os mesmos critérios valem para os nossos membros. A tabela não substitui a coordenação com R4/R5.
+
+Para permanecer na nossa aliança, também vale esta regra: duas advertências e, na próxima infração, remoção. As advertências valem até serem revogadas. Isso é diferente da remoção após nove dias de inatividade sem aviso.
+
+[Ler todas as regras e o processo completo de sanções](/drachenhalle/docs/allianzregeln/#sanktionen)
 
 ## Nossa convivência
 
@@ -78,7 +100,7 @@ O cargo 1 inclui **7 dias de experiência** para novos membros e também se apli
 
 ![Opção “Excluir caminhões de transporte deste servidor” ativada](/drachenhalle/tutorial/01_transportlastwagen_server_ausschliessen.webp)
 
-Assim, serão oferecidos apenas caminhões de outros servidores. A configuração ajuda a seguir nossa regra, mas você deve conferir o servidor antes de cada ação.
+A opção de exclusão vale para caminhões. Confira os trens de carga e as missões especiais separadamente. Verifique o servidor antes de cada saque.
 
 ### Missões especiais e contêineres
 
@@ -97,7 +119,7 @@ Quando uma missão especial é compartilhada no chat, o primeiro número das coo
   </figure>
 </div>
 
-> **Confira:** Nos caminhões de transporte, a opção de exclusão deve estar ativada em verde. Nas missões especiais, a tela deve indicar outro servidor ou o primeiro número das coordenadas não pode ser **105**.
+> **Conferência:** Ative a opção de exclusão em verde para caminhões de transporte. Confira o servidor de cada alvo: outro servidor deve estar confirmado; **105** é nosso servidor e seus alvos são proibidos.
 
 ## Quiz de saques
 
@@ -109,15 +131,15 @@ Pratique as regras de saque em seis situações curtas. Cada resposta explica o 
 
 **Esta lista curta ajuda você a começar sem excesso de informações.**
 
-![Anthlan e DaVinci orientam um novo membro sobre nome, ponto de encontro, escudos e doações para pesquisa](/drachenhalle/tutorial/02_erste_schritte_chibi.webp)
+![Anthlan e DaVinci1986 orientam um novo membro sobre nome, ponto de encontro, escudos e doações para pesquisa](/drachenhalle/tutorial/02_erste_schritte_chibi.webp)
 
 ### Nas primeiras 24 horas
 
-- [ ] Ler as [regras completas da aliança](../../Allianz/pt/Allianz_Regeln.md).
+- [ ] Ler as [regras da aliança, incluindo o processo de sanções](../../Allianz/pt/Allianz_Regeln.md).
 - [ ] Escolher um nome de jogador próprio — não manter nomes no padrão **Commander\*\*\*\***.
 - [ ] Mudar para o **ponto de encontro da aliança**, salvo outro acordo com a liderança.
 - [ ] Ativar **“Excluir caminhões de transporte deste servidor”**.
-- [ ] Manter pelo menos um **escudo de 24 horas** e um **escudo de 8 horas** no inventário.
+- [ ] Manter pelo menos um **escudo de 24 horas** e um **escudo de 8 horas** no inventário. Só ter os escudos não protege: planeje a ativação a tempo com o [planejador de escudos](/drachenhalle/tools/schildrechner/).
 - [ ] Abrir [Nossos oficiais](../../Allianz/pt/Allianz_Offiziere.md) e conhecer os contatos.
 - [ ] Conferir os próximos [eventos](/drachenhalle/pt/termine/) e suas orientações.
 - [ ] Conferir o ranking antes dos ataques e o servidor antes dos saques.
@@ -158,11 +180,11 @@ Saiba mais aqui:
 
 **Agora você conhece os principais caminhos pelo Salão dos Dragões.** Para começar, mantenha principalmente três pontos em mente:
 
-<img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp" alt="DaVinci acompanha a conclusão do passeio." loading="lazy" decoding="async">
+<img class="tutorial-side-character" src="/drachenhalle/brand/tutorial-chibi-davinci1986.webp" alt="DaVinci1986 acompanha a conclusão do passeio." loading="lazy" decoding="async">
 
 - Conferir as regras antes dos ataques e saques.
 - Ler as datas e orientações antes dos eventos em conjunto.
-- Procurar um oficial (R4) ou o líder (R5) quando tiver dúvidas e retribuir a ajuda da aliança.
+- Procure R4/R5 em caso de dúvida ou infração, colabore com o processo de sanções e não revide por conta própria. Retribua a ajuda da aliança.
 
 Os próximos passos são explorar as [dicas](/drachenhalle/pt/docs/tipps/), os [guias de eventos](/drachenhalle/pt/docs/events/) e os próximos [eventos](/drachenhalle/pt/termine/). Você pode reabrir o passeio ou recomeçar quando quiser.
 

@@ -1,0 +1,116 @@
+{
+  "date": "2026-11-09",
+  "tool": "built-in Imagegen",
+  "items": [
+    {
+      "language": "de",
+      "source": "media/alliance/Allianz_Regeln.png",
+      "archived": "media/archive/2026_11_09_Allianz_Regeln_de_vor_Konsolidierung.png",
+      "preview": "apps/website/public/rules/allianz-regeln-de.webp",
+      "download": "apps/website/public/rules/allianz-regeln-de-4x.webp",
+      "downloadDimensions": [
+        4096,
+        6144
+      ],
+      "prompt": "guides/image-prompts/allianz-regeln-konsolidiert.prompt.txt",
+      "sha256": "543a2d0b1ced46533733c107659ff6d7f6eba50b775a2a35935dde3640cc7083",
+      "reviewed": [
+        "rules and foreign-server restriction",
+        "ranks 1–3 and trial period",
+        "inactivity day 7 and day 9",
+        "24-hour reply period",
+        "all six sanctions cells",
+        "membership warnings distinct from sanctions table",
+        "same rules for our own members"
+      ]
+    },
+    {
+      "language": "en",
+      "source": "content/Allianz/en/Allianz_Regeln.png",
+      "archived": "media/archive/2026_11_09_Allianz_Regeln_en_vor_Konsolidierung.png",
+      "preview": "apps/website/public/rules/allianz-regeln-en.webp",
+      "download": "apps/website/public/rules/allianz-regeln-en-4x.webp",
+      "downloadDimensions": [
+        4096,
+        6144
+      ],
+      "prompt": "guides/image-prompts/localization/en/allianz-regeln-konsolidiert.prompt.txt",
+      "sha256": "cb767f8062ce9a869b8f3155fd7728a09fca72968ba2d909c8096d1f3f9008be",
+      "reviewed": [
+        "rules and foreign-server restriction",
+        "ranks 1–3 and trial period",
+        "inactivity day 7 and day 9",
+        "24-hour reply period",
+        "all six sanctions cells",
+        "membership warnings distinct from sanctions table",
+        "same rules for our own members"
+      ]
+    },
+    {
+      "language": "fr",
+      "source": "content/Allianz/fr/Allianz_Regeln.png",
+      "archived": "media/archive/2026_11_09_Allianz_Regeln_fr_vor_Konsolidierung.png",
+      "preview": "apps/website/public/rules/allianz-regeln-fr.webp",
+      "download": "apps/website/public/rules/allianz-regeln-fr-4x.webp",
+      "downloadDimensions": [
+        4096,
+        6144
+      ],
+      "prompt": "guides/image-prompts/localization/fr/allianz-regeln-konsolidiert.prompt.txt",
+      "sha256": "3d8c57b60835464e68069f8303e19acce6368cb3e25d2126c7444bd1c6c5122d",
+      "reviewed": [
+        "rules and foreign-server restriction",
+        "ranks 1–3 and trial period",
+        "inactivity day 7 and day 9",
+        "24-hour reply period",
+        "all six sanctions cells",
+        "membership warnings distinct from sanctions table",
+        "same rules for our own members"
+      ]
+    },
+    {
+      "language": "ru",
+      "source": "content/Allianz/ru/Allianz_Regeln.png",
+      "archived": "media/archive/2026_11_09_Allianz_Regeln_ru_vor_Konsolidierung.png",
+      "preview": "apps/website/public/rules/allianz-regeln-ru.webp",
+      "download": "apps/website/public/rules/allianz-regeln-ru-4x.webp",
+      "downloadDimensions": [
+        4096,
+        6144
+      ],
+      "prompt": "guides/image-prompts/localization/ru/allianz-regeln-konsolidiert.prompt.txt",
+      "sha256": "541d190f00cff03fd3c4d70120c68638025ac6cd91a33c90810e6fcef25e07b8",
+      "reviewed": [
+        "rules and foreign-server restriction",
+        "ranks 1–3 and trial period",
+        "inactivity day 7 and day 9",
+        "24-hour reply period",
+        "all six sanctions cells",
+        "membership warnings distinct from sanctions table",
+        "same rules for our own members"
+      ]
+    },
+    {
+      "language": "pt",
+      "source": "content/Allianz/pt/Allianz_Regeln.png",
+      "archived": "media/archive/2026_11_09_Allianz_Regeln_pt_vor_Konsolidierung.png",
+      "preview": "apps/website/public/rules/allianz-regeln-pt.webp",
+      "download": "apps/website/public/rules/allianz-regeln-pt-4x.webp",
+      "downloadDimensions": [
+        4096,
+        6144
+      ],
+      "prompt": "guides/image-prompts/localization/pt/allianz-regeln-konsolidiert.prompt.txt",
+      "sha256": "97ceb5576a64e019edb66eb3317397383aaa10c2902fee46eae2b3756e43f499",
+      "reviewed": [
+        "rules and foreign-server restriction",
+        "ranks 1–3 and trial period",
+        "inactivity day 7 and day 9",
+        "24-hour reply period",
+        "all six sanctions cells",
+        "membership warnings distinct from sanctions table",
+        "same rules for our own members"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+Tool: built-in Imagegen
+Sprachfassung: en
+Referenz: media/alliance/Allianz_Regeln.png (konsolidierte deutsche Fassung)
+Stand: 2026-11-09
+
+Use case: text-localization. EDIT the supplied German consolidated DIE rules infographic into the specified language. The supplied image is the edit target and exact visual reference. Preserve the portrait aspect ratio, layout with THREE numbered sections, gold dragon crest, warm candlelit castle border, gilded frames, navy panels, compact icons, three rank columns, and the sanctions table. Keep the official blue/gold Dragon Hall style. All text must remain comfortably readable, crisp, typeset-looking, with no clipping. You may slightly reflow text to fit, but never omit or invent policies. Translate EVERY text element using the exact text below; leave no German or other-language fragments. Keep DIE, NAP10, Commander**** (four stars), R4/R5 and all numbers unchanged. Preserve the 24-hour distinction and every sanctions cell exactly. In particular do NOT invent a sanction for the third violation without dialogue. Membership warnings/removal are a SEPARATE labeled strip, not a replacement for the sanctions table. This is OUR process; no mention of TuT. No watermark or extra prose. Use this complete target-language copy:
+
+Target language: English. Names and numeric identifiers stay unchanged.
+
+DIE – ALLIANCE RULES
+
+1  COMBAT & RAIDING
+• Do not attack NAP10. Check rankings & alliance first.
+• Bases: unaffiliated players & Commander**** allowed – never reduce anyone to 0.
+• Trucks, freight trains & special missions: raid only on other servers!
+• Check the server number before every raid.
+• If NAP10 attacks: do not retaliate. Report to R4/R5.
+
+2  RANKS & ACTIVITY
+RANK 1 – NEWCOMER
+• New members: 7-day trial
+• Commander without a personal name
+• 7+ days inactive without notice
+RANK 2 – MEMBER
+• Regularly online
+• At the alliance gathering point
+• Little event participation
+• Can be permanent
+RANK 3 – ACTIVE
+• Regularly online
+• Takes part in alliance events
+• Overall participation counts
+• Not every event is compulsory
+
+COMMUNITY & BREAKS
+• Stay at the gathering point, answer important PMs and follow the rules.
+• Report holidays, illness & breaks.
+• Inactive without notice: day 7 → PM & rank 1.
+• No reply: day 9 → removal.
+Ranks reflect activity – not personal worth.
+
+3  SANCTIONS FOR RULE VIOLATIONS
+We seek dialogue with the player and alliance leadership first.
+Maximum 24 hours to reply & clarify.
+
+TABLE HEADERS:
+VIOLATION | DIALOGUE WITHIN 24 HOURS | NO DIALOGUE WITHIN 24 HOURS
+ROW 1:
+1st violation | Warning + removal of one special operation or transporter (of equal or higher value) | Base attack, without complete destruction
+ROW 2:
+2nd violation | Base attack, without complete destruction | Base attacks up to complete destruction
+ROW 3:
+3rd violation | Base attacks up to complete destruction | Not separately specified
+
+MEMBERSHIP IN OUR ALLIANCE
+• 1st & 2nd violation → warning; next violation → removal.
+• Warnings remain valid until revoked.
+
+• Peaceful resolution first. Attacks are not automatic.
+• The same standards apply to our own members.
+• Report incidents – coordinate through R4/R5.
+
+The words TABLE HEADERS and ROW 1/2/3 are layout instructions only, NOT visible labels. Render as an actual three-column, three-row comparison table like the reference.
