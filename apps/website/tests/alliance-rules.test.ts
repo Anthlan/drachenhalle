@@ -25,7 +25,13 @@ test('all languages preserve the complete sanctions matrix and onboarding step',
     assert.ok(copy[2].text.length<=1000,code+': sanctions message exceeds game limit');
     const reminder=copy[3].text;
     assert.ok(reminder.replaceAll('\n','\r\n').length+2<=1000,code+': reminder exceeds game limit including Windows line endings');
-    for(const term of ['NAP10','Commander****','R1','R2','R3','R4/R5','24','https://anthlan.github.io/drachenhalle/'])assert.ok(reminder.includes(term),code+': reminder misses '+term);
+    for(const term of ['NAP10','Commander****','R1','R2','R3','R4/R5','24'])assert.ok(reminder.includes(term),code+': reminder misses '+term);
+    assert.ok(!/https?:\/\//.test(reminder),code+': reminder must remain link-free');
+    assert.equal((reminder.match(/<color=#FFD700>/g)??[]).length,4,code+': gold headings missing');
+    assert.equal((reminder.match(/<color=#FF4040>/g)??[]).length,1,code+': sanctions heading missing');
+    if(code==='de'){
+      assert.ok(reminder.includes('Urlaub, Krankheit & Pausen gerne melden.'));
+    }
     assert.ok(!/\bTuT\b/.test(rules),code+': process must be presented as our own');
   }
 });

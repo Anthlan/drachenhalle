@@ -140,16 +140,24 @@ Peaceful resolution first. No automatic attacks or independent retaliation.
 ## All-in-one reminder for regular posts
 
 ```html
-<size=40><b>DlE – QUICK REMINDER</b></size>
+<size=40><color=#FFD700><b>DlE – STRONG TOGETHER</b></color></size>
 
-• Do not attack NAP10; check rankings & alliance.
-• Bases: unaffiliated players & Commander**** allowed; never reduce them to 0.
-• Raid trucks, freight trains & special missions only on other servers. Check the server!
-• Stay at the gathering point, answer important PMs; report holidays, illness & breaks.
-• R1: 7-day trial, unnamed Commander or 7 days inactive without notice. Day 7: PM; no reply by day 9: removal.
-• R2: regularly online, few events; permanent possible. R3: regularly online & in events; overall participation counts, not every event is compulsory. Ranks are not personal judgements.
-• Report incidents to R4/R5. Leadership coordinates; reply within 24h. No independent retaliation!
-• Sanctions depend on violations & dialogue, up to full base destruction. Membership: 2 warnings, then removal on the next violation. Warnings last until revoked.
+<color=#FFD700><b>⚔ COMBAT & RAIDING</b></color>
+• NAP10 is off-limits! Check rankings & alliance.
+• Attack only unaffiliated players & Commander**** – never reduce anyone to 0.
+• Trucks, freight trains & special missions: raid only on other servers! Check the server!
 
-Details: https://anthlan.github.io/drachenhalle/en/docs/allianzregeln/
+<color=#FFD700><b>🤝 COMMUNITY</b></color>
+• Stay at the gathering point, answer important PMs.
+• Feel free to let us know about holidays, illness & breaks.
+
+<color=#FFD700><b>⭐ RANKS</b></color>
+• R1: entry, 7-day trial.
+• R2: regularly online, permanent possible; R3: active in events.
+• Overall participation counts – not every event is required!
+
+<color=#FF4040><b>⚠ SANCTIONS</b></color>
+• Report to R4/R5, reply within 24h. No independent retaliation!
+• Measures follow the sanctions process. Membership: 2 warnings, next violation: removal. Warnings last until revoked.
+
 ```

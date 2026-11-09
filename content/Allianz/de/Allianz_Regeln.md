@@ -140,16 +140,24 @@ Friedliche Klärung zuerst. Keine automatischen oder eigenmächtigen Angriffe.
 ## Gesamterinnerung zum regelmäßigen Posten
 
 ```html
-<size=40><b>DlE – KURZ ERINNERT</b></size>
+<size=40><color=#FFD700><b>DlE – GEMEINSAM STARK</b></color></size>
 
-• NAP10 nicht angreifen; Rangliste & Allianz prüfen.
-• Basen: Allianzlose & Commander**** erlaubt, niemanden auf 0 bringen.
-• Lastwagen, Güterzüge & Spezialmissionen nur auf anderen Servern plündern. Server prüfen!
-• Am Sammelpunkt stehen, wichtige PN beantworten, Urlaub, Krankheit & Pausen melden.
-• R1: 7 Tage Probezeit, Commander ohne Namen oder 7 Tage unangemeldet inaktiv. Tag 7: PN; ohne Antwort Tag 9: Entfernung.
-• R2: regelmäßig online, wenig Events; dauerhaft möglich. R3: regelmäßig online & bei Events; Gesamtbeteiligung zählt, nicht jedes Event ist Pflicht. Ränge: keine Wertung.
-• Vorfälle an R4/R5 melden. Führung klärt; innerhalb 24h antworten. Keine eigenmächtigen Gegenangriffe!
-• Sanktionen je Verstoßzahl & Dialog bis zur völligen Basiszerstörung. Mitgliedschaft: 2 Verwarnungen, nächster Verstoß Entfernung. Verwarnungen gelten bis zur Aufhebung.
+<color=#FFD700><b>⚔ KAMPF & PLÜNDERN</b></color>
+• NAP10 tabu! Rangliste & Allianz prüfen.
+• Nur Allianzlose & Commander**** angreifen – niemanden auf 0 bringen.
+• Lastwagen, Güterzüge & Spezialmissionen: nur auf anderen Servern plündern! Server prüfen!
 
-Details: https://anthlan.github.io/drachenhalle/docs/allianzregeln/
+<color=#FFD700><b>🤝 GEMEINSCHAFT</b></color>
+• Am Sammelpunkt stehen, wichtige PN beantworten.
+• Urlaub, Krankheit & Pausen gerne melden.
+
+<color=#FFD700><b>⭐ RÄNGE</b></color>
+• R1: Einstieg, 7 Tage Probezeit.
+• R2: regelmäßig online, dauerhaft möglich; R3: bei Events aktiv.
+• Gesamtbeteiligung zählt – nicht jedes Event ist Pflicht!
+
+<color=#FF4040><b>⚠ SANKTIONEN</b></color>
+• An R4/R5 melden, binnen 24h antworten. Keine eigenmächtigen Gegenangriffe!
+• Maßnahmen nach Sanktionsprozess. Mitgliedschaft: 2 Verwarnungen, nächster Verstoß Entfernung. Verwarnungen gelten bis zur Aufhebung.
+
 ```

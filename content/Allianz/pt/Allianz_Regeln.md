@@ -140,16 +140,24 @@ Resolução pacífica primeiro. Sem ataques automáticos ou retaliação por con
 ## Lembrete geral para publicar regularmente
 
 ```html
-<size=40><b>DlE – LEMBRETE</b></size>
+<size=40><color=#FFD700><b>DlE – JUNTOS SOMOS FORTES</b></color></size>
 
-• Não atacar o NAP10; conferir ranking & aliança.
-• Bases: sem aliança & Commander**** permitidos; não reduzir ninguém a 0.
-• Caminhões, trens de carga & missões especiais: saquear só em outros servidores. Conferir o servidor!
-• Ficar no ponto de encontro, responder MPs importantes; avisar férias, doença & pausas.
-• R1: 7 dias de experiência, Commander sem nome ou 7 dias inativo sem aviso. Dia 7: MP; sem resposta, remoção no dia 9.
-• R2: online regularmente, poucos eventos; pode ser permanente. R3: online regularmente & eventos; conta a participação geral, nem todos são obrigatórios. Cargo não é julgamento pessoal.
-• Incidentes: R4/R5. Liderança coordena; responder em 24h. Não revidar por conta própria!
-• Sanções conforme infrações & diálogo, até destruição total da base. Permanência: 2 advertências, próxima infração: remoção. Válidas até revogadas.
+<color=#FFD700><b>⚔ COMBATE & SAQUES</b></color>
+• NAP10 é intocável! Confiram ranking & aliança.
+• Ataquem só jogadores sem aliança & Commander**** – nunca levem ninguém a 0.
+• Caminhões, trens de carga & missões especiais: saqueiem só em outros servidores! Confiram o servidor!
 
-Detalhes: https://anthlan.github.io/drachenhalle/pt/docs/allianzregeln/
+<color=#FFD700><b>🤝 COMUNIDADE</b></color>
+• Fiquem no ponto de reunião, respondam às MPs importantes.
+• Fiquem à vontade para avisar sobre férias, doença & pausas.
+
+<color=#FFD700><b>⭐ PATENTES</b></color>
+• R1: entrada, teste de 7 dias.
+• R2: online regularmente, pode ser permanente; R3: ativo nos eventos.
+• Vale a participação geral – nem todo evento é obrigatório!
+
+<color=#FF4040><b>⚠ SANÇÕES</b></color>
+• Avisem R4/R5, respondam em até 24h. Sem retaliação por conta própria!
+• Medidas conforme o processo de sanções. Membros: 2 advertências, próxima infração: expulsão. Valem até serem revogadas.
+
 ```

@@ -140,16 +140,24 @@ Résolution pacifique d’abord. Pas d’attaques automatiques ni de représaill
 ## Rappel global pour les publications régulières
 
 ```html
-<size=40><b>DlE – RAPPEL</b></size>
+<size=40><color=#FFD700><b>DlE – UNIS ET FORTS</b></color></size>
 
-• Ne pas attaquer le NAP10 ; vérifier classement & alliance.
-• Bases : sans alliance & Commander**** autorisés ; ne réduire personne à 0.
-• Pillage : camions, trains de fret & missions spéciales, autres serveurs uniquement. Vérifier le serveur !
-• Au rassemblement ; répondre aux MP importants. Signaler vacances, maladie & pauses.
-• R1 : essai de 7 jours, Commander sans nom ou 7 jours inactif sans prévenir. Jour 7 : MP ; sans réponse, exclusion jour 9.
-• R2 : connexion régulière, peu d’événements ; permanent admis. R3 : en ligne & événements ; participation globale, pas tous obligatoires. Rangs ≠ valeur personnelle.
-• Incidents aux R4/R5. Direction coordonne ; répondre sous 24h. Pas de riposte individuelle !
-• Sanctions selon infractions & dialogue, jusqu’à destruction totale de base. Membres : 2 avertissements, exclusion à l’infraction suivante. Valables jusqu’à levée.
+<color=#FFD700><b>⚔ COMBAT & PILLAGE</b></color>
+• NAP10 interdit ! Vérifiez classement & alliance.
+• Attaquez uniquement les sans-alliance & Commander**** – jamais jusqu’à 0.
+• Camions, trains de fret & missions spéciales : pillez sur les autres serveurs ! Vérifiez le serveur !
 
-https://anthlan.github.io/drachenhalle/fr/docs/allianzregeln/
+<color=#FFD700><b>🤝 COMMUNAUTÉ</b></color>
+• Restez au point de ralliement, répondez aux MP importants.
+• N’hésitez pas à signaler vacances, maladie & pauses.
+
+<color=#FFD700><b>⭐ RANGS</b></color>
+• R1 : arrivée, essai de 7 jours.
+• R2 : connexion régulière, durable possible ; R3 : actif aux événements.
+• La participation globale compte – aucun besoin de tout faire !
+
+<color=#FF4040><b>⚠ SANCTIONS</b></color>
+• Signalez aux R4/R5, répondez sous 24h. Pas de représailles en solo !
+• Selon la procédure de sanctions. Adhésion : 2 avertissements, puis exclusion au prochain écart. Valables jusqu’à révocation.
+
 ```
