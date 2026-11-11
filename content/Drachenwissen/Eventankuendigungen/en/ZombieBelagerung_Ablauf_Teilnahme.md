@@ -18,7 +18,7 @@ If you do not want to participate, leave your defence empty. Your event then end
 
 If you need support defending, ask before the start if possible. This gives the alliance time to coordinate help. Anthlan and the R4 officers are your first points of contact.
 
-> **Before sending:** Replace `[TIME]`, `[LEVEL]` and `[BASE LEVEL]` with the details announced for this event. The existing illustration shows the version for **21:00**.
+> **Before sending:** `[TIME]`, `[LEVEL]` and `[BASE LEVEL]` must be replaced with the details announced for this event. The existing illustration shows the version for **21:00**.
 
 ## Alliance message to copy
 

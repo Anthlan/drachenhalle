@@ -18,7 +18,7 @@ Se não quiser participar, deixe a sua defesa vazia. O seu evento termina depois
 
 Se precisar de apoio na defesa, pergunte antes do início, se possível. Isto dá à aliança tempo para coordenar a ajuda. O Anthlan e os oficiais da R4 são os seus primeiros pontos de contacto.
 
-> **Antes de enviar:** substitua `[HORA]`, `[NÍVEL]` e `[NÍVEL DA BASE]` pelos dados anunciados para este evento. A ilustração existente mostra a versão para **21:00**.
+> **Antes de enviar:** `[HORA]`, `[NÍVEL]` e `[NÍVEL DA BASE]` devem ser substituídos pelos dados anunciados para este evento. A ilustração existente mostra a versão para **21:00**.
 
 ## Mensagem da Aliança para copiar
 

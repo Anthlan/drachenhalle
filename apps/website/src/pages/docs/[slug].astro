@@ -71,6 +71,10 @@ const isResponsibilities = document.kind === "responsibilities";
 const isAllianceDocument = document.section === "Allianz";
 const isHealingTip = document.slug === "tipp-08-soldaten-schneller-heilen";
 const isFlightEvent = document.slug === "event-01-gefechtsvorbereitung-flugbesatzung";
+const isZombieSiegeAnnouncement = document.slug === "eventankuendigung-zombie-belagerung";
+const zombieCopySection = isZombieSiegeAnnouncement ? document.allianceCopySections?.[0] : null;
+const zombieCopyParts = zombieCopySection?.match(/^\s*(<h2\b[^>]*>[\s\S]*?<\/h2>)\s*([\s\S]*)$/i);
+const hasZombieMessageConfigurator = Boolean(zombieCopyParts);
 const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument || document.kind === "alliance";
 const tutorialStorageKey = document.tutorialStorageKey ?? `die-${document.slug}-step-v1`;
 const tutorialProgressLabel = document.tutorialProgressLabel ?? "Fortschritt im Einstieg";
@@ -947,7 +951,42 @@ const responsibilities = [
                     </aside>
                   )}
                 </div>
-                {document.allianceCopySections.map((section) => (
+                {hasZombieMessageConfigurator ? (
+                  <section class="markdown-content alliance-copy alliance-copy-configurable" data-copy-section data-message-template="zombie-siege">
+                    <div class="alliance-copy-heading" set:html={zombieCopyParts[1]} />
+                    <div class="alliance-template-configurator" data-message-configurator>
+                      <div class="alliance-template-intro">
+                        <p class="eyebrow">Mitteilung vorbereiten</p>
+                        <h3>Terminangaben einsetzen</h3>
+                        <p>Trage Uhrzeit, Event-Stufe und Mindestlevel der angegriffenen Basen ein. Die Vorschau wird automatisch ausgefüllt.</p>
+                      </div>
+                      <div class="alliance-template-fields" role="group" aria-label="Angaben für die Zombie-Belagerung">
+                        <label>
+                          <span>Uhrzeit</span>
+                          <input type="time" data-message-field="time" required />
+                        </label>
+                        <label>
+                          <span>Event-Stufe</span>
+                          <input type="number" min="1" step="1" inputmode="numeric" placeholder="10" data-message-field="level" required />
+                        </label>
+                        <label>
+                          <span>Angriff ab Basis-Level</span>
+                          <input type="number" min="1" step="1" inputmode="numeric" placeholder="15" data-message-field="baseLevel" required />
+                        </label>
+                      </div>
+                      <div class="alliance-template-actions">
+                        <p role="status" aria-live="polite" data-message-status>Bitte alle drei Angaben ausfüllen.</p>
+                        <button type="button" class="copy-code-button" data-copy-code disabled>Fertige Mitteilung kopieren</button>
+                      </div>
+                      <span hidden data-message-status-incomplete>Bitte alle drei Angaben ausfüllen.</span>
+                      <span hidden data-message-status-ready>Die Mitteilung ist bereit zum Kopieren.</span>
+                    </div>
+                    <div class="alliance-template-preview">
+                      <p class="alliance-template-preview-label">Vorschau der Allianz-Mitteilung</p>
+                      <div set:html={zombieCopyParts[2]} />
+                    </div>
+                  </section>
+                ) : document.allianceCopySections.map((section) => (
                   <section class="markdown-content alliance-copy" data-copy-section>
                     <button type="button" class="copy-code-button" data-copy-code>Mitteilung kopieren</button>
                     <div set:html={section} />
@@ -1075,6 +1114,7 @@ const responsibilities = [
 
     <script>
       import { initializeImageActions } from "../../scripts/image-actions";
+      import { fillZombieSiegeMessage, isZombieSiegeMessageComplete } from "../../lib/alliance-message-template.mjs";
 
       for (const openButton of document.querySelectorAll("[data-officer-open]")) {
         if (!(openButton instanceof HTMLButtonElement)) continue;
@@ -1485,9 +1525,38 @@ const responsibilities = [
 
       initializeImageActions();
 
+      for (const configurator of document.querySelectorAll("[data-message-configurator]")) {
+        if (!(configurator instanceof HTMLElement)) continue;
+        const section = configurator.closest("[data-message-template='zombie-siege']");
+        const code = section?.querySelector("pre code");
+        const button = configurator.querySelector("[data-copy-code]");
+        const status = configurator.querySelector("[data-message-status]");
+        const incompleteStatus = configurator.querySelector("[data-message-status-incomplete]")?.textContent?.trim() ?? "";
+        const readyStatus = configurator.querySelector("[data-message-status-ready]")?.textContent?.trim() ?? "";
+        const inputs = [...configurator.querySelectorAll("[data-message-field]")];
+        if (!(code instanceof HTMLElement) || !(button instanceof HTMLButtonElement)) continue;
+        const templateText = code.textContent ?? "";
+
+        const updateMessage = () => {
+          const values = Object.fromEntries(inputs.map((input) => [
+            input instanceof HTMLInputElement ? input.dataset.messageField : "",
+            input instanceof HTMLInputElement ? input.value : "",
+          ]));
+          const isComplete = isZombieSiegeMessageComplete(values);
+          code.textContent = fillZombieSiegeMessage(templateText, values);
+          button.disabled = !isComplete;
+          section?.classList.toggle("is-message-ready", isComplete);
+          if (status) status.textContent = isComplete ? readyStatus : incompleteStatus;
+        };
+
+        for (const input of inputs) input.addEventListener("input", updateMessage);
+        updateMessage();
+      }
+
       for (const button of document.querySelectorAll("[data-copy-code]")) {
         button.addEventListener("click", async () => {
           if (!(button instanceof HTMLButtonElement)) return;
+          const defaultLabel = button.textContent?.trim() || "Mitteilung kopieren";
           const section = button.closest("[data-copy-section]");
           const code = section?.querySelector("pre code");
           const copyText = code?.textContent ?? "";
@@ -1509,7 +1578,7 @@ const responsibilities = [
           }
 
           window.setTimeout(() => {
-            button.textContent = "Mitteilung kopieren";
+            button.textContent = defaultLabel;
           }, 1800);
         });
       }
