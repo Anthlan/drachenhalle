@@ -1,0 +1,52 @@
+---
+import "../../styles/global.css";
+import "../../styles/leadership-workshop.css";
+import LanguagePicker from "../../components/LanguagePicker.astro";
+import draft from "../../../../shared/leadership-seed.json";
+const api = (import.meta.env.PUBLIC_PLAN_API_URL || import.meta.env.PUBLIC_PAGE_VIEWS_API_URL || '').replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <title>Führungsworkshop · DIE</title>
+  </head>
+  <body>
+    <main id="leadership-workshop" class="leadership-workshop readonly" data-shared="true" data-endpoint={api ? api + '/api/leadership' : ''}>
+      <header class="topline"><a href="/drachenhalle/werkstatt/">← Werkstatt</a><span>Gemeinsamer Entwurf</span><LanguagePicker /></header>
+      <section class="workshop-hero" aria-labelledby="page-title">
+        <div><p class="eyebrow">DIE · Führungsworkshop</p><h1 id="page-title">Wer übernimmt was?</h1><p class="intro">Acht R4-Posten. Aufgaben frei verteilen. Gemeinsam vereinbaren, wer entscheidet und wer vertritt.</p></div>
+        <div class="workshop-actions editor-only"><button type="button" id="present" class="primary-button">Gemeinsam ansehen ↗</button><div><button type="button" id="export">Exportieren</button><button type="button" id="import">Importieren</button></div><input type="file" id="import-file" accept=".json,application/json" hidden /></div>
+        <div class="presentation-only workshop-actions"><button type="button" id="edit">Zurück zum Bearbeiten</button><button type="button" id="print">Drucken / PDF</button></div>
+      </section>
+      <div class="workshop-facts" aria-label="Planungsstand"><div><strong>8</strong><span>R4-Posten · 4 feste / 4 freie Titel</span></div><div><strong id="task-count">0</strong><span>Aufgabenbereiche</span></div><div><strong id="primary-open">0</strong><span>ohne Hauptverantwortung</span></div><div><strong id="deputy-open">0</strong><span>ohne Vertretung</span></div></div>
+      <p id="save-state" class="save-state" role="status" aria-live="polite">Gemeinsamer Stand wird geladen …</p>
+      <div class="shared-controls editor-only"><button type="button" id="share-edit" hidden>Bearbeitungslink kopieren</button><button type="button" id="take-local" hidden>Lokalen Entwurf übernehmen</button><input type="url" id="edit-link" readonly hidden aria-label="Bearbeitungslink" /><p>Ein gemeinsamer Stand für alle. Zum Ändern den Bearbeitungslink eurer Runde verwenden.</p></div>
+      <section id="sync-conflict" class="sync-conflict" hidden aria-label="Gleichzeitige Änderungen"><p>Ein Feld wurde gleichzeitig bearbeitet. Deine Eingaben bleiben erhalten. Welcher Stand soll gelten?</p><button type="button" id="keep-remote">Serverstand übernehmen</button><button type="button" id="keep-local">Meine Änderungen speichern</button></section>
+      <section class="workshop-instructions editor-only" aria-label="So funktioniert die Zuordnung"><span class="step-number">1</span><p>Aufgabe aus dem Vorrat auf <strong>Haupt</strong> oder <strong>Vertretung</strong> ziehen. Alternativ: Aufgabe anklicken, dann „Hier zuordnen“ wählen. Jede Aufgabe hat höchstens einen Posten je Zuständigkeit.</p></section>
+      <div class="selection-bar editor-only"><span id="selected-name">Keine Aufgabe ausgewählt</span><button type="button" id="clear-selection" class="text-button" hidden>Auswahl aufheben</button><a href="#posts">Zu den Posten ↓</a></div>
+      <p id="board-notice" class="board-notice editor-only" role="status" aria-live="polite">Die vier festen Titel geben keine Aufgaben vor. Auch ihre Zuständigkeiten legt ihr gemeinsam fest.</p>
+      <datalist id="people">{draft.people.map((person: string) => <option value={person} />)}</datalist>
+      <div class="planning-board">
+        <aside class="task-library editor-only" aria-labelledby="library-title">
+          <header><div><p class="eyebrow">Aufgabenvorrat</p><h2 id="library-title">Was liegt an?</h2></div><span id="pool-count"></span></header>
+          <button type="button" id="add-task" class="add-task">+ Neue Aufgabe</button>
+          <label class="search-label"><span class="sr-only">Aufgaben durchsuchen</span><input type="search" id="task-search" placeholder="Aufgabe suchen …" /></label>
+          <label class="filter-label"><span class="sr-only">Aufgaben filtern</span><select id="task-filter"><option value="all">Alle Aufgaben</option><option value="primary">Ohne Hauptverantwortung</option><option value="deputy">Ohne Vertretung</option></select></label>
+          <div id="task-pool" class="task-pool"></div>
+        </aside>
+        <section class="post-board" aria-labelledby="posts-title"><div class="board-heading"><div><p class="eyebrow">Aufgaben und Besetzung getrennt planen</p><h2 id="posts-title">Unsere acht R4-Posten</h2></div><span class="editor-only">Namen und Besetzung sind Vorschläge</span></div><div id="posts" class="posts"></div></section>
+      </div>
+      <section class="workshop-review" aria-labelledby="review-title"><p class="eyebrow">Gemeinsam prüfen</p><h2 id="review-title">Ist die Verantwortung tragfähig verteilt?</h2><ul id="coverage-gaps"></ul><p>Vor der Zusage: Auftrag, eigene Entscheidungen, Verfügbarkeit und Grenzen abgleichen. Eine Zuordnung wird erst durch die Zustimmung der Beteiligten verbindlich.</p><label class="editor-only">Workshop-Notizen<textarea id="notes" maxlength="12000" rows="3" placeholder="Was wollen wir noch klären oder festhalten?"></textarea></label></section>
+      <section class="assignment-overview" aria-labelledby="overview-title"><h2 id="overview-title">Alle Zuständigkeiten auf einen Blick</h2><div class="table-scroll"><table><thead><tr><th>Aufgabe</th><th>Hauptverantwortung</th><th>Vertretung</th></tr></thead><tbody id="assignment-rows"></tbody></table></div></section>
+      <section class="task-mandates" aria-labelledby="mandates-title"><h2 id="mandates-title">Aufträge und Entscheidungsrechte</h2><div id="task-mandates"></div></section>
+      <section class="r5-frame"><p class="eyebrow">R5 · Anthlan</p><h2>Den gemeinsamen Rahmen sichern</h2><p>Ziele, Grundsatzentscheidungen und weitreichende Zusagen bleiben bei der Allianzleitung. Für die laufenden Aufgaben vereinbaren wir echte Entscheidungsrechte und klare Übergaben.</p></section>
+      <footer>Arbeitsentwurf für die gemeinsame Abstimmung · Aufgaben und Notizen sind in allen Sprachen derselbe gemeinsame Inhalt.</footer>
+      <dialog id="task-dialog" aria-labelledby="dialog-title"><form id="task-form"><header><p class="eyebrow">Verantwortung konkret machen</p><h2 id="dialog-title">Aufgabe bearbeiten</h2></header><label>Aufgabe<input name="title" required maxlength="120" /></label><label>Bereich<input name="category" placeholder="Zum Beispiel: Gemeinschaft, Kampf, Versorgung" maxlength="80" /></label><label>Auftrag<textarea name="mission" maxlength="4000" rows="2"></textarea></label><details><summary>Aufgaben, Entscheidungen und Grenzen</summary><label>Konkrete Aufgaben<textarea name="tasks" maxlength="8000" rows="3"></textarea></label><label>Welche Entscheidungen darf der Posten treffen?<textarea name="decisions" maxlength="4000" rows="3"></textarea></label><label>Grenzen und Übergaben<textarea name="boundary" maxlength="4000" rows="3"></textarea></label><label>Benötigte Verfügbarkeit<textarea name="time" maxlength="2000" rows="2"></textarea></label></details><div class="dialog-actions"><button type="submit" class="primary-button">Speichern</button><button type="button" id="cancel-task">Abbrechen</button><button type="button" id="delete-task" class="delete-task">Aufgabe löschen</button></div></form></dialog>
+    </main>
+    <script type="application/json" id="leadership-seed" set:html={JSON.stringify(draft).replace(/</g, "\\u003c")} />
+    <script>import { initializeLeadershipWorkshop } from "../../scripts/leadership-workshop"; initializeLeadershipWorkshop();</script>
+  </body>
+</html>

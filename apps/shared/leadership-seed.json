@@ -1,0 +1,318 @@
+{
+  "id": "allianzfuehrung",
+  "version": 2,
+  "title": "Wer übernimmt was?",
+  "date": "11. November 2026",
+  "members": 90,
+  "people": [
+    "Anthlan",
+    "mysteryZ",
+    "Somea",
+    "DaVinci1986",
+    "Drachenherz",
+    "Helltrain",
+    "Thor63",
+    "Chouquette"
+  ],
+  "notes": "",
+  "posts": [
+    {
+      "id": "butler",
+      "title": "Butler",
+      "fixed": true,
+      "person": "",
+      "availability": ""
+    },
+    {
+      "id": "goettin",
+      "title": "Göttin",
+      "fixed": true,
+      "person": "",
+      "availability": ""
+    },
+    {
+      "id": "rekrutierer",
+      "title": "Rekrutierer",
+      "fixed": true,
+      "person": "",
+      "availability": ""
+    },
+    {
+      "id": "kriegsherr",
+      "title": "Kriegsherr",
+      "fixed": true,
+      "person": "",
+      "availability": ""
+    },
+    {
+      "id": "frei-1",
+      "title": "Freier Posten 1",
+      "fixed": false,
+      "person": "",
+      "availability": ""
+    },
+    {
+      "id": "frei-2",
+      "title": "Freier Posten 2",
+      "fixed": false,
+      "person": "",
+      "availability": ""
+    },
+    {
+      "id": "frei-3",
+      "title": "Freier Posten 3",
+      "fixed": false,
+      "person": "",
+      "availability": ""
+    },
+    {
+      "id": "frei-4",
+      "title": "Freier Posten 4",
+      "fixed": false,
+      "person": "",
+      "availability": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": "vertretung",
+      "title": "Operative Vertretung der R5-Leitung",
+      "category": "Führung",
+      "mission": "Bei Abwesenheit der Leitung handlungsfähig bleiben.",
+      "tasks": "Übergabe übernehmen; offene Vorgänge nachhalten; zuständige Personen koordinieren; Entscheidungen dokumentieren.",
+      "decisions": "Im vereinbarten Rahmen eigenständig entscheiden.",
+      "boundary": "Grundsatzänderungen und weitreichende Zusagen mit R5 abstimmen. Kein Sammelposten für alle Lücken.",
+      "time": "Erreichbarkeit, Beginn und Ende einer Vertretung ausdrücklich vereinbaren.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "diplomatie",
+      "title": "Diplomatie & Außenkontakte",
+      "category": "Außenbeziehungen",
+      "mission": "Kontakte und Absprachen mit anderen Allianzen verlässlich betreuen.",
+      "tasks": "Kontakte pflegen; Informationen einordnen; relevante Absprachen für die Führung festhalten.",
+      "decisions": "Laufende Absprachen innerhalb vereinbarter Leitplanken treffen.",
+      "boundary": "Bündnisse, Fusionen und weitreichende Zusagen mit R5 abstimmen.",
+      "time": "Vertretung laufender Kontakte bei Abwesenheit sicherstellen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "rekrutierung",
+      "title": "Rekrutierung",
+      "category": "Mitglieder",
+      "mission": "Passende neue Mitglieder gewinnen.",
+      "tasks": "Interessenten ansprechen; Erwartungen klären; Kapazität prüfen; an das Onboarding übergeben.",
+      "decisions": "Aufnahmen nach vereinbarten Kriterien begleiten.",
+      "boundary": "Größere Gruppenwechsel und Sonderzusagen abstimmen. Betreuung nach der Aufnahme klar übergeben.",
+      "time": "Aufnahmekapazität vor größeren Zugängen abstimmen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "onboarding",
+      "title": "Onboarding neuer Mitglieder",
+      "category": "Mitglieder",
+      "mission": "Neue Spieler finden bei uns verlässlich Anschluss.",
+      "tasks": "Begrüßen; Regeln und Sammelpunkt erklären; Ansprechpartner und Sprachbegleiter vermitteln.",
+      "decisions": "Den Einstieg selbstständig organisieren.",
+      "boundary": "Konflikte an die zuständige Person übergeben. Onboarding ist zeitlich begrenzt.",
+      "time": "Über Sprachen und Zeitzonen hinweg eine Ansprechperson benennen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "gemeinschaft",
+      "title": "Gemeinschaft & interne Information",
+      "category": "Gemeinschaft",
+      "mission": "Zugehörigkeit und verständliche Informationen für die internationale Allianz fördern.",
+      "tasks": "Anliegen aufnehmen; Mitglieder einbinden; wichtige Informationen in den benötigten Sprachen weitergeben.",
+      "decisions": "Gemeinschaftsaktionen und interne Informationen koordinieren.",
+      "boundary": "Keine dauernde persönliche Verfügbarkeit erwarten; Aufgaben bei Überlastung zurückgeben.",
+      "time": "Regelmäßige Präsenz und ein realistisches Zeitbudget vereinbaren.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "verwaltung",
+      "title": "Mitgliederverwaltung",
+      "category": "Mitglieder",
+      "mission": "Ränge, Abwesenheiten und vereinbarte Fristen zuverlässig pflegen.",
+      "tasks": "Probezeiten, Aktivität und Abwesenheiten nachhalten; Ränge nach Kriterien pflegen.",
+      "decisions": "Routinefälle anhand gemeinsam vereinbarter Kriterien bearbeiten.",
+      "boundary": "Strittige Ausschlüsse und Sonderfälle mit der zuständigen Führung klären.",
+      "time": "Kurze regelmäßige Routinen und Fristen festlegen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "konflikte",
+      "title": "Konflikte & Regelverstöße",
+      "category": "Gemeinschaft",
+      "mission": "Schwierige Fälle fair und nachvollziehbar bearbeiten.",
+      "tasks": "Sachverhalt klären; Beteiligte anhören; schlichten; Maßnahmen festhalten.",
+      "decisions": "Gespräche und vereinbarte Standardmaßnahmen selbstständig durchführen.",
+      "boundary": "Strittige oder schwere Sanktionen mit einer zweiten zuständigen Person abstimmen.",
+      "time": "Reaktionsrahmen und Eskalationsweg vereinbaren.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "pandora-strategie",
+      "title": "Pandora: Strategie",
+      "category": "Kampf",
+      "mission": "Einen verständlichen und umsetzbaren Plan für Pandora vorbereiten.",
+      "tasks": "Gegner und Möglichkeiten einschätzen; Taktik vorbereiten; Plan an Einteilung und Einsatzleitung übergeben.",
+      "decisions": "Taktiken im vereinbarten Rahmen entwickeln.",
+      "boundary": "Strategie und anwesende Einsatzleitung bleiben getrennt planbar.",
+      "time": "Rechtzeitig vor dem Freitagstermin vorbereiten.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "pandora-einteilung",
+      "title": "Pandora: Einteilung",
+      "category": "Kampf",
+      "mission": "Teams und Aufgaben rechtzeitig festlegen.",
+      "tasks": "Teilnahme abfragen; Teams einteilen; Aufgaben und Vertretung kommunizieren.",
+      "decisions": "Einteilung passend zur vereinbarten Strategie festlegen.",
+      "boundary": "Änderungen mit Strategie und Einsatzleitung abstimmen.",
+      "time": "Vorbereitung vor dem Event; Frist zur Rückmeldung festlegen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "pandora-leitung",
+      "title": "Pandora: Leitung im Event",
+      "category": "Kampf",
+      "mission": "Während Pandora klar und erreichbar führen.",
+      "tasks": "Einweisen; Ansagen bündeln; Ziele anpassen; Erfahrungen zurückmelden.",
+      "decisions": "Im Einsatz Ziele und Prioritäten innerhalb der Strategie anpassen.",
+      "boundary": "Vor dem Event eine tatsächliche anwesende Leitung benennen.",
+      "time": "Verfügbarkeit freitags und eine Vertretung pro Einsatz.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "raubzug",
+      "title": "Raubzug: Vorbereitung & Leitung",
+      "category": "Kampf",
+      "mission": "Raubzüge vorbereitet und mit einer anwesenden Leitung spielen.",
+      "tasks": "Teilnahme und Plan klären; Sammelangriffe und Ziele koordinieren; kurz auswerten.",
+      "decisions": "Im vereinbarten Rahmen den laufenden Einsatz führen.",
+      "boundary": "Bei Bedarf Vorbereitung und Einsatzleitung als eigene Aufgaben aufteilen.",
+      "time": "Besonders samstags verfügbar; Vertretung pro Termin festlegen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "hauptstadtkampf",
+      "title": "Hauptstadtkampf",
+      "category": "Kampf",
+      "mission": "Gemeinsame Hauptstadt-Einsätze koordinieren.",
+      "tasks": "Vorbereiten; Teilnehmer einweisen; Ziele, Angriffe und Rückmeldungen koordinieren.",
+      "decisions": "Laufende Einsätze innerhalb der Absprachen führen.",
+      "boundary": "Übergreifende diplomatische Absprachen mit der Außenvertretung klären.",
+      "time": "Einsatzzeiten frühzeitig prüfen; anwesende Vertretung benennen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "training",
+      "title": "PvP-Wissen & Training",
+      "category": "Entwicklung",
+      "mission": "Spieler und Einsatzleiter sicherer machen.",
+      "tasks": "Kurze Anleitungen und Übungen anbieten; Erfahrungen aus Kämpfen auswerten.",
+      "decisions": "Trainings und Wissensvermittlung organisieren.",
+      "boundary": "Keine automatische Pflicht, jedes Event selbst zu leiten.",
+      "time": "Planbare Übungstermine statt ständiger Einzelhilfe.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "hinterhalt",
+      "title": "Allianz-Hinterhalt",
+      "category": "Events",
+      "mission": "Den Hinterhalt von Planung bis Durchführung betreuen.",
+      "tasks": "Zeit und Stufe festlegen; ankündigen; einstellen; durchführen.",
+      "decisions": "Zeit und Stufe nach gemeinsam vereinbarten Leitplanken wählen.",
+      "boundary": "Standardregel bei fehlenden Rückmeldungen und nötige Freigaben ausdrücklich klären.",
+      "time": "Vorbereitungs- und Ankündigungsfrist vereinbaren.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "routineevents",
+      "title": "Weitere Routineevents",
+      "category": "Events",
+      "mission": "Zugeordnete wiederkehrende Events zuverlässig durchführen.",
+      "tasks": "Zum Beispiel Zombie-Events planen, ankündigen und einstellen.",
+      "decisions": "Für konkret zugeordnete Events im vereinbarten Rahmen entscheiden.",
+      "boundary": "Eventliste und Spielrechte gemeinsam festlegen; bei Bedarf in einzelne Aufgaben aufteilen.",
+      "time": "Feste Routinen und eine Vertretung vereinbaren.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "kalender",
+      "title": "Eventkalender & Ankündigungen",
+      "category": "Organisation",
+      "mission": "Alle wissen rechtzeitig, was ansteht und wer führt.",
+      "tasks": "Termine und Rückmeldefristen bündeln; Ankündigungen abstimmen; Sprachbedarf beachten.",
+      "decisions": "Kommunikationsablauf selbstständig organisieren.",
+      "boundary": "Eventverantwortliche liefern Inhalte und benennen die Leitung.",
+      "time": "Fristen und benötigte Sprachen gemeinsam festlegen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "forschung",
+      "title": "Allianzforschung & Führungsstern",
+      "category": "Entwicklung",
+      "mission": "Die gemeinsame Entwicklung regelmäßig betreuen.",
+      "tasks": "Forschungsziele und Spendenhinweise pflegen; Führungsstern nach vereinbarten Regeln betreuen.",
+      "decisions": "Innerhalb gemeinsam festgelegter Forschungsprioritäten entscheiden.",
+      "boundary": "Benötigte Spielrechte und Auswahlkriterien prüfen.",
+      "time": "Kurze regelmäßige Routinen; Vertretung für Abwesenheiten.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "zug",
+      "title": "Güterzug & Begleitung",
+      "category": "Versorgung",
+      "mission": "Den Zug zuverlässig und nach nachvollziehbaren Kriterien betreuen.",
+      "tasks": "Zugablauf organisieren; passende Begleitung wählen; Fragen dazu bündeln.",
+      "decisions": "Nach gemeinsam festgelegten Kriterien auswählen.",
+      "boundary": "Ausnahmen und strittige Fälle abstimmen. Rekrutierung und Zug sind unabhängig verteilbar.",
+      "time": "Tägliche Abläufe und Vertretung vereinbaren.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "wissen",
+      "title": "Anleitungen & Wissenspflege",
+      "category": "Organisation",
+      "mission": "Wichtige Regeln und Spielwissen aktuell zugänglich halten.",
+      "tasks": "Änderungen sammeln; Anleitungen pflegen; Übersetzungen und Veröffentlichung koordinieren.",
+      "decisions": "Vereinbarte Inhalte aufbereiten und aktualisieren.",
+      "boundary": "Neue Regeln und unbestätigte Mechaniken vor Veröffentlichung klären.",
+      "time": "Bei Änderungen aktualisieren; Umfang realistisch begrenzen.",
+      "primary": null,
+      "deputy": null
+    },
+    {
+      "id": "fusion",
+      "title": "Fusion: Abstimmung & Integration",
+      "category": "Zeitlich begrenzt",
+      "mission": "Einen möglichen Zusammenschluss gemeinsam vorbereiten.",
+      "tasks": "Betroffene Ansprechpartner einbeziehen; Erwartungen, Kapazität und Integration abstimmen.",
+      "decisions": "Gespräche und Vorbereitung koordinieren.",
+      "boundary": "Verbindliche Zusagen mit R5 abstimmen. Auftrag nach Abschluss überprüfen oder auflösen.",
+      "time": "Befristeten Auftrag mit Ansprechpartnern und nächsten Schritten vereinbaren.",
+      "primary": null,
+      "deputy": null
+    }
+  ]
+}

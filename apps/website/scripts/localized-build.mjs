@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { marked } from "marked";
 import { createTranslator, localizedNavigationUrl, languageAvailable, normalizeText } from "../src/i18n/translate.mjs";
 import config from "../src/i18n/config.json" with { type: "json" };
+import workshopTranslations from "../src/i18n/leadership-workshop.json" with { type: "json" };
 import { translateCalendar } from "../src/i18n/calendar.mjs";
 import { localizedTipImages } from "./localized-tip-images.mjs";
 import { contentIsRequiredInLanguage } from "./content-languages.mjs";
@@ -37,7 +38,7 @@ const leaves = html => html.split(/<[^>]*>/g).map(decode).map(normalizeText).fil
 const normalizedWebsite=text=>text.replaceAll("DlE","DIE").replaceAll("dle","die");
 
 async function loadCatalog(language) {
-  const catalog = JSON.parse(await readFile(path.join(siteRoot,"src/i18n",language+".json"),"utf8"));
+  const catalog = { ...JSON.parse(await readFile(path.join(siteRoot,"src/i18n",language+".json"),"utf8")), ...workshopTranslations[language] };
   const warnings = [];
   const translatedFiles = await localizedFiles(language);
   for(const englishPath of translatedFiles) {
@@ -122,7 +123,11 @@ function translateHtml(html, translate, language, sources) {
 export default function localizedBuild() {
   return {name:"drachenhalle-languages",hooks:{"astro:build:done":async ({dir})=> {
     const out=fileURLToPath(dir);
-    const htmlFiles=(await walk(out,".html")).filter(file=>!path.relative(out,file).startsWith("werkstatt"+path.sep)&&!config.languages.some(language=>language.path&&path.relative(out,file).startsWith(language.path+path.sep)));
+    const htmlFiles=(await walk(out,".html")).filter(file=>{
+      const relative=path.relative(out,file);
+      const sharedWorkshop=['werkstatt/index.html','werkstatt/fuehrung/index.html'].includes(relative.split(path.sep).join('/'));
+      return (!relative.startsWith("werkstatt"+path.sep)||sharedWorkshop)&&!config.languages.some(language=>language.path&&relative.startsWith(language.path+path.sep));
+    });
     for(const language of config.languages.filter(item=>item.code!==config.defaultLanguage)) {
       const localizeImages = await localizedTipImages(repositoryRoot, out, config.base, language.code);
       const {catalog,warnings}=await loadCatalog(language.code);

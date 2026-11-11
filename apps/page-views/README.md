@@ -1,5 +1,15 @@
 # Cloudflare-Aufrufzähler
 
+## Gemeinsamer Führungsworkshop
+
+`GET /api/leadership` liefert den zentralen Workshop mit acht R4-Posten, Aufgaben, Besetzung, Hauptverantwortung, Vertretung und Notizen. Der Stand liegt in der eigenen D1-Tabelle `leadership_plans`; der neutrale Anfangsstand kommt aus `apps/shared/leadership-seed.json`. Ein Deployment setzt bestehende Planungen nicht zurück.
+
+`POST /api/leadership` benötigt den separaten geheimen Schlüssel `LEADERSHIP_EDIT_TOKEN`. Der Kartenplaner behält seinen eigenen Schlüssel. Den neuen Schlüssel mit `wrangler secret put LEADERSHIP_EDIT_TOKEN` setzen, niemals als öffentliche Build-Variable speichern. Der normale Link `/drachenhalle/werkstatt/fuehrung/` öffnet den Plan lesend. Der Bearbeitungslink ergänzt `#edit=…`; der Browser übernimmt den Schlüssel in den Sitzungsspeicher und entfernt das Fragment aus der Adresszeile. Die lokale Ablage des Bearbeitungslinks ist `.local/workshop/fuehrung-bearbeitungslink.txt`.
+
+Die Website verwendet die bestehende API-Konfiguration `PUBLIC_PLAN_API_URL`, ersatzweise `PUBLIC_PAGE_VIEWS_API_URL`. Änderungen werden automatisch gespeichert und von sichtbaren Browsern alle vier Sekunden geladen. Schreibzugriffe übertragen nur veränderte Felder und prüfen atomar die Versionsnummer. Unabhängige Änderungen werden zusammengeführt. Bei konkurrierenden Änderungen am selben Feld muss der Bearbeiter ausdrücklich zwischen dem gemeinsamen Stand und den eigenen Eingaben wählen. Bei Verbindungsproblemen bleiben ausstehende Eingaben erhalten; Export bleibt verfügbar, und die Seite warnt vor dem Schließen mit ungespeicherten Änderungen.
+
+Lokale Entwürfe werden nicht automatisch hochgeladen. Bearbeiter können ihren bisherigen Browserstand ausdrücklich übernehmen oder eine JSON-Datei importieren; vor einer Übernahme wird der gemeinsame Stand als Sicherung zum Download angeboten. Die Bedienoberfläche ist in `de`, `en`, `fr`, `ru` und `pt` verfügbar. Aufgaben und Notizen bilden sprachübergreifend einen einzigen gemeinsam bearbeiteten Inhalt.
+
 ## Gemeinsamer Kartenplan
 
 Der bestehende Worker stellt zusätzlich `GET /api/season-plan` und `POST /api/season-plan` bereit. Der Plan wird dauerhaft in derselben D1-Datenbank in einer eigenen Tabelle `season_plans` gespeichert. Gespeichert werden Feldadressen, Allianzzuordnungen, Notizen, Versionsnummer und Änderungszeitpunkt.

@@ -1,4 +1,5 @@
 import { seasonPlan } from './season-plan.js';
+import { leadership } from './leadership.js';
 const SITE_ROOT = "/drachenhalle";
 const VIEWS_ROUTE = "/api/views";
 
@@ -92,6 +93,11 @@ export default {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin");
     const originAllowed = isAllowedOrigin(origin, env.ALLOWED_ORIGINS);
+
+    if (url.pathname === '/api/leadership') {
+      if (!originAllowed) return json({ error: 'Origin not allowed' }, { status: 403 });
+      return leadership(request, env, origin);
+    }
 
     if (url.pathname === '/api/season-plan') {
       if (!originAllowed) return json({ error: 'Origin not allowed' }, { status: 403 });
