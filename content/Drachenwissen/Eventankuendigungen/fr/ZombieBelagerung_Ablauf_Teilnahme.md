@@ -18,14 +18,15 @@ Si vous ne voulez pas participer, laissez votre défense vide. Votre événement
 
 Si vous avez besoin d'aide pour la défense, demandez avant le début si possible. Cela donne le temps à l'alliance de coordonner l'aide. Anthlan et les R4 Les officiers sont vos premiers points de contact.
 
-> **Avant d'envoyer:** `[UHRZEIT]` doit être remplacé par l'heure locale annoncée pour cet événement. L'illustration existante montre la version pour **21:00**.
+> **Avant l’envoi :** remplacez `[HEURE]`, `[NIVEAU]` et `[NIVEAU DE BASE]` par les informations annoncées pour cet événement. L’illustration existante montre la version pour **21:00**.
 
 ## Message de l'Alliance à copier
 
 ```html
-<color=#FFD700><b>, ZOMBIE SIEGE – aujourd' [UHRZEIT]</b></color>
+<color=#FFD700><b>🧟 SIÈGE DE ZOMBIES – AUJOURD’HUI [HEURE]</b></color>
 
-Depuis <color=#FFD700><b>[UHRZEIT]</b></color>, les ondes zombie attaquent nos bases l'une après l'autre.
+À partir de <color=#FFD700><b>[HEURE]</b></color>, les vagues de zombies attaquent nos bases les unes après les autres.
+Nous jouons le <b>niveau [NIVEAU]</b>. Les bases à partir du <b>niveau [NIVEAU DE BASE]</b> seront attaquées.
 
 🛡️ <b>Défendez votre défense</b> – les boucliers ne vous protègent pas ici.
 , Les pertes vont à la <b>hôpital</b>; les soldats ne meurent pas.

@@ -18,14 +18,15 @@ Se não quiser participar, deixe a sua defesa vazia. O seu evento termina depois
 
 Se precisar de apoio na defesa, pergunte antes do início, se possível. Isto dá à aliança tempo para coordenar a ajuda. O Anthlan e os oficiais da R4 são os seus primeiros pontos de contacto.
 
-> **Antes de enviar:** `[UHRZEIT]` deve ser substituída pela hora local anunciada para este evento. A ilustração existente mostra a versão para **21:00**.
+> **Antes de enviar:** substitua `[HORA]`, `[NÍVEL]` e `[NÍVEL DA BASE]` pelos dados anunciados para este evento. A ilustração existente mostra a versão para **21:00**.
 
 ## Mensagem da Aliança para copiar
 
 ```html
-<color=#FFD700><b>🧟 ZOMBIE SIEGE – Hoje em dia</b></color>
+<color=#FFD700><b>🧟 CERCO DE ZUMBIS – HOJE [HORA]</b></color>
 
-A partir <color=#FFD700><b>Não, não.</b></color>, ondas zumbi atacar as nossas bases uma após a outra.
+A partir das <color=#FFD700><b>[HORA]</b></color>, as ondas de zumbis atacam as nossas bases uma após a outra.
+Vamos jogar o <b>nível [NÍVEL]</b>. Serão atacadas as bases a partir do <b>nível [NÍVEL DA BASE]</b>.
 
 🛡️ <b>Configure a sua defesa .</b> – Os escudos não te protegem aqui.
 🏥 As perdas vão para o <b>Hospital</b>; Os soldados não morrem.
