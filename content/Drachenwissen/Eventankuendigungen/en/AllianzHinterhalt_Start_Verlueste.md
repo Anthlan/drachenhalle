@@ -17,14 +17,14 @@ Careful deployment is better than continuing to fight blindly. Check your hospit
 
 While online during the event, heal troops in small batches. This lets you use alliance help more frequently and return soldiers to action faster.
 
-> **Before sending:** `[UHRZEIT]` must be replaced with the local time announced for this event.
+> **Before sending:** `[TIME]` must be replaced with the local time announced for this event.
 
 ## Alliance message to copy
 
 ```html
-<color=#FFD700><b>⚔️ ALLIANCE AMBUSH – TODAY [UHRZEIT]</b></color>
+<color=#FFD700><b>⚔️ ALLIANCE AMBUSH – TODAY [TIME]</b></color>
 
-At <color=#FFD700><b>[UHRZEIT]</b></color>, we start the ambush together.
+At <color=#FFD700><b>[TIME]</b></color>, we start the ambush together.
 
 ⚔️ <b>Keep troops ready</b> and be online in time.
 🏥 Watch your <b>hospital</b> and losses during the event.

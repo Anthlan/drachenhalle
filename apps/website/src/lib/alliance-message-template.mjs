@@ -13,6 +13,12 @@ const cityConquestTokens = {
   time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
   cityLevel: ["[STADTLEVEL]", "[CITY LEVEL]", "[NIVEAU DE VILLE]", "[УРОВЕНЬ ГОРОДА]", "[NÍVEL DA CIDADE]"],
 };
+const raidShieldTokens = {
+  time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
+};
+const allianceAmbushTokens = {
+  time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
+};
 
 const normalizedValue = (value) => String(value ?? "").trim();
 const validTime = (value) => {
@@ -45,3 +51,13 @@ export const isCityConquestMessageComplete = (values) =>
 
 export const fillCityConquestMessage = (template, values) =>
   fillMessage(template, values, cityConquestTokens);
+
+export const isRaidShieldMessageComplete = (values) => validTime(values.time);
+
+export const fillRaidShieldMessage = (template, values) =>
+  fillMessage(template, values, raidShieldTokens);
+
+export const isAllianceAmbushMessageComplete = (values) => validTime(values.time);
+
+export const fillAllianceAmbushMessage = (template, values) =>
+  fillMessage(template, values, allianceAmbushTokens);

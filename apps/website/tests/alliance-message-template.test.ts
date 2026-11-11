@@ -1,9 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
+  fillAllianceAmbushMessage,
   fillCityConquestMessage,
+  fillRaidShieldMessage,
   fillZombieSiegeMessage,
+  isAllianceAmbushMessageComplete,
   isCityConquestMessageComplete,
+  isRaidShieldMessageComplete,
   isZombieSiegeMessageComplete,
 } from "../src/lib/alliance-message-template.mjs";
 
@@ -46,4 +50,26 @@ test("ersetzt die Stadteroberungs-Platzhalter in allen Sprachen", () => {
     fillCityConquestMessage(template, { time: "20:15", cityLevel: "7" }),
     "20:15 · 20:15 · 20:15 · 20:15 | 7 · 7 · 7 · 7",
   );
+});
+
+test("setzt die gemeinsame Schildzeit im Raubzugplan in allen Sprachen ein", () => {
+  const template = "Freitag [UHRZEIT] · Friday [TIME] · Vendredi [HEURE] · Пятница [ВРЕМЯ] · Sexta-feira [HORÁRIO]";
+  assert.equal(
+    fillRaidShieldMessage(template, { time: "20:00" }),
+    "Freitag 20:00 · Friday 20:00 · Vendredi 20:00 · Пятница 20:00 · Sexta-feira 20:00",
+  );
+  assert.equal(isRaidShieldMessageComplete({ time: "" }), false);
+  assert.equal(isRaidShieldMessageComplete({ time: "24:00" }), false);
+  assert.equal(isRaidShieldMessageComplete({ time: "20:00" }), true);
+});
+
+test("setzt die Startzeit des Allianz-Hinterhalts in allen Sprachen ein", () => {
+  const template = "Heute [UHRZEIT] · Today [TIME] · Aujourd’hui [HEURE] · Сегодня [ВРЕМЯ] · Hoje [HORÁRIO]";
+  assert.equal(
+    fillAllianceAmbushMessage(template, { time: "19:45" }),
+    "Heute 19:45 · Today 19:45 · Aujourd’hui 19:45 · Сегодня 19:45 · Hoje 19:45",
+  );
+  assert.equal(isAllianceAmbushMessageComplete({ time: "" }), false);
+  assert.equal(isAllianceAmbushMessageComplete({ time: "19:60" }), false);
+  assert.equal(isAllianceAmbushMessageComplete({ time: "19:45" }), true);
 });

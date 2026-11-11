@@ -96,7 +96,29 @@ const messageConfigurator = document.slug === "eventankuendigung-zombie-belageru
           { name: "time", label: "Uhrzeit", type: "time" },
         ],
       }
-    : null;
+    : document.slug === "eventankuendigung-raubzugkaempfe"
+      ? {
+          type: "raid-shields",
+          title: "Schildplan vorbereiten",
+          description: "Trage die gemeinsam festgelegte Schildzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
+          groupLabel: "Angaben für den Raubzug-Schildplan",
+          incompleteStatus: "Bitte die Schildzeit ausfüllen.",
+          fields: [
+            { name: "time", label: "Schildzeit", type: "time" },
+          ],
+        }
+      : document.slug === "eventankuendigung-hinterhalt"
+        ? {
+            type: "alliance-ambush",
+            title: "Hinterhalt vorbereiten",
+            description: "Trage die vereinbarte Startzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
+            groupLabel: "Angaben für den Allianz-Hinterhalt",
+            incompleteStatus: "Bitte die Startzeit ausfüllen.",
+            fields: [
+              { name: "time", label: "Startzeit", type: "time" },
+            ],
+          }
+        : null;
 const configurableCopySection = messageConfigurator ? document.allianceCopySections?.[0] : null;
 const configurableCopyParts = configurableCopySection?.match(/^\s*(<h2\b[^>]*>[\s\S]*?<\/h2>)\s*([\s\S]*)$/i);
 const hasMessageConfigurator = Boolean(messageConfigurator && configurableCopyParts);
@@ -1142,9 +1164,13 @@ const responsibilities = [
     <script>
       import { initializeImageActions } from "../../scripts/image-actions";
       import {
+        fillAllianceAmbushMessage,
         fillCityConquestMessage,
+        fillRaidShieldMessage,
         fillZombieSiegeMessage,
+        isAllianceAmbushMessageComplete,
         isCityConquestMessageComplete,
+        isRaidShieldMessageComplete,
         isZombieSiegeMessageComplete,
       } from "../../lib/alliance-message-template.mjs";
 
@@ -1568,19 +1594,22 @@ const responsibilities = [
         const inputs = [...configurator.querySelectorAll("[data-message-field]")];
         if (!(code instanceof HTMLElement) || !(button instanceof HTMLButtonElement)) continue;
         const templateText = code.textContent ?? "";
-        const isCityConquest = section?.getAttribute("data-message-template") === "city-conquest";
+        const templateType = section?.getAttribute("data-message-template");
+        const messageHandler = templateType === "city-conquest"
+          ? { isComplete: isCityConquestMessageComplete, fill: fillCityConquestMessage }
+          : templateType === "raid-shields"
+            ? { isComplete: isRaidShieldMessageComplete, fill: fillRaidShieldMessage }
+            : templateType === "alliance-ambush"
+              ? { isComplete: isAllianceAmbushMessageComplete, fill: fillAllianceAmbushMessage }
+              : { isComplete: isZombieSiegeMessageComplete, fill: fillZombieSiegeMessage };
 
         const updateMessage = () => {
           const values = Object.fromEntries(inputs.map((input) => [
             input instanceof HTMLInputElement ? input.dataset.messageField : "",
             input instanceof HTMLInputElement ? input.value : "",
           ]));
-          const isComplete = isCityConquest
-            ? isCityConquestMessageComplete(values)
-            : isZombieSiegeMessageComplete(values);
-          code.textContent = isCityConquest
-            ? fillCityConquestMessage(templateText, values)
-            : fillZombieSiegeMessage(templateText, values);
+          const isComplete = messageHandler.isComplete(values);
+          code.textContent = messageHandler.fill(templateText, values);
           button.disabled = !isComplete;
           section?.classList.toggle("is-message-ready", isComplete);
           if (status) status.textContent = isComplete ? readyStatus : incompleteStatus;

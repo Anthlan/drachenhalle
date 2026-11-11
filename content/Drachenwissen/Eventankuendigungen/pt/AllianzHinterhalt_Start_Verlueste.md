@@ -17,14 +17,14 @@ Um desdobramento cuidadoso é melhor do que continuar a lutar cegamente. Verifiq
 
 Enquanto estiveres online durante o evento, cura tropas em pequenos lotes. Isto permite que você use ajuda da aliança com mais frequência e devolva os soldados para a ação mais rápido.
 
-> **Antes de enviar:** `[UHRZEIT]` deve ser substituída pela hora local anunciada para este evento.
+> **Antes de enviar:** `[HORÁRIO]` deve ser substituída pela hora local anunciada para este evento.
 
 ## Mensagem da Aliança para copiar
 
 ```html
-<color=#FFD700><b>⚔️ Aliança de Ambos – Hoje em dia</b></color>
+<color=#FFD700><b>⚔️ Aliança de Ambos – Hoje [HORÁRIO]</b></color>
 
-Em <color=#FFD700><b>Não, não.</b></color>, começamos a emboscada juntos.
+Em <color=#FFD700><b>[HORÁRIO]</b></color>, começamos a emboscada juntos.
 
 ⚔️ <b>Mantenha as tropas prontas .</b> E estar online a tempo.
 🏥 Cuidado com o seu <b>Hospital</b> e perdas durante o evento.

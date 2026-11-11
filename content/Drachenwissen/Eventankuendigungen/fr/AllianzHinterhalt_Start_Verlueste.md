@@ -17,14 +17,14 @@ Un déploiement attentif est préférable à la poursuite de la lutte aveugle. V
 
 Pendant la période de l'événement, guérissez les troupes en petits lots. Cela vous permet d'utiliser l'alliance aider plus fréquemment et de ramener les soldats à l'action plus rapidement.
 
-> **Avant d'envoyer:** `[UHRZEIT]` doit être remplacé par l'heure locale annoncée pour cet événement.
+> **Avant d'envoyer:** `[HEURE]` doit être remplacé par l'heure locale annoncée pour cet événement.
 
 ## Message de l'Alliance à copier
 
 ```html
-<color=#FFD700><b>------------- [UHRZEIT]</b></color>
+<color=#FFD700><b>------------- [HEURE]</b></color>
 
-À <color=#FFD700><b>[UHRZEIT]</b></color>On commence l'embuscade ensemble.
+À <color=#FFD700><b>[HEURE]</b></color>On commence l'embuscade ensemble.
 
 ⚔️ <b>Prépare les troupes</b> et être en ligne à temps.
 Surveillez votre <b>hôpital</b> et les pertes pendant l'événement.
