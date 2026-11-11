@@ -9,6 +9,10 @@ const zombieSiegeTokens = {
     "[NÍVEL DA BASE]",
   ],
 };
+const cityConquestTokens = {
+  time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
+  cityLevel: ["[STADTLEVEL]", "[CITY LEVEL]", "[NIVEAU DE VILLE]", "[УРОВЕНЬ ГОРОДА]", "[NÍVEL DA CIDADE]"],
+};
 
 const normalizedValue = (value) => String(value ?? "").trim();
 const validTime = (value) => {
@@ -17,13 +21,10 @@ const validTime = (value) => {
 };
 const positiveInteger = (value) => /^\d+$/.test(normalizedValue(value)) && Number(value) >= 1;
 
-export const isZombieSiegeMessageComplete = (values) =>
-  validTime(values.time) && positiveInteger(values.level) && positiveInteger(values.baseLevel);
-
-export const fillZombieSiegeMessage = (template, values) => {
+const fillMessage = (template, values, tokensByField) => {
   let message = String(template ?? "");
 
-  for (const [field, tokens] of Object.entries(zombieSiegeTokens)) {
+  for (const [field, tokens] of Object.entries(tokensByField)) {
     const value = normalizedValue(values[field]);
     if (!value) continue;
     for (const token of tokens) message = message.split(token).join(value);
@@ -31,3 +32,16 @@ export const fillZombieSiegeMessage = (template, values) => {
 
   return message;
 };
+
+export const isZombieSiegeMessageComplete = (values) =>
+  validTime(values.time) && positiveInteger(values.level) && positiveInteger(values.baseLevel);
+
+export const fillZombieSiegeMessage = (template, values) => {
+  return fillMessage(template, values, zombieSiegeTokens);
+};
+
+export const isCityConquestMessageComplete = (values) =>
+  validTime(values.time) && positiveInteger(values.cityLevel);
+
+export const fillCityConquestMessage = (template, values) =>
+  fillMessage(template, values, cityConquestTokens);

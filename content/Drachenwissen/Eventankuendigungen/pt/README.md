@@ -16,6 +16,7 @@ Os anúncios de eventos complementam as duas secções vizinhas:
 - [Emboscada da Aliança: Começo preparado](AllianzHinterhalt_Start_Verlueste.md) – Preparação, gestão de perdas e cura eficiente
 - [Batalhas de ataque: Coloque escudos a tempo](Raubzugkaempfe_Schilde_Hoch.md) – Período de protecção, plano de proteção e preparação
 - [Zombie Siege: Defendemos juntos](ZombieBelagerung_Ablauf_Teilnahme.md) – Procedimento, participação, retirada e apoio
+- [Conquista de cidade na nova temporada: atacar juntos](Saison_Stadteroberung_GemeinsamAngreifen.md) – informe o nível e o horário, siga a marcação e ataque em conjunto
 
 ## Regras de nomeação
 

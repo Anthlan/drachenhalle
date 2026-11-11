@@ -44,6 +44,11 @@ export function translateRoutePath(pathname, fromLanguage, toLanguage) {
   return match.route.prefix ? target + clean.slice(match.routePath.length) : target;
 }
 
+export function routeLanguageAvailable(pathname, fromLanguage, toLanguage) {
+  const match = matchRoute(normalized(pathname), fromLanguage);
+  return !match || Boolean(match.route.paths[toLanguage]);
+}
+
 export function routeId(pathname, language = "de") {
   return matchRoute(normalized(pathname), language)?.route.id ?? null;
 }

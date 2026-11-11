@@ -81,6 +81,16 @@ export default [
     }
   },
   {
+    "id": "content:Drachenwissen/Eventankuendigungen/Saison_Stadteroberung_GemeinsamAngreifen.md",
+    "paths": {
+      "de": "/docs/eventankuendigung-stadteroberung/",
+      "en": "/guides/city-conquest-in-the-new-season-attack-together/",
+      "fr": "/guides/conquete-d-une-ville-dans-la-nouvelle-saison-attaquer-ensemble/",
+      "ru": "/руководства/захват-города-в-новом-сезоне-атакуем-вместе/",
+      "pt": "/guias/conquista-de-cidade-na-nova-temporada-atacar-juntos/"
+    }
+  },
+  {
     "id": "content:Allianz/README.md",
     "paths": {
       "de": "/docs/allianz/",

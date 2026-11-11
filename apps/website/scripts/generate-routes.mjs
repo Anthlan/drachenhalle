@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import config from "../src/i18n/config.json" with { type: "json" };
 import { contentPath } from "./content-files.mjs";
+import { contentIsRequiredInLanguage } from "./content-languages.mjs";
 
 const siteRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const repositoryRoot=path.resolve(siteRoot,"../..");
@@ -38,7 +39,9 @@ const definitions=[
 const routes=[];
 for(const {area,item} of definitions) {
   const paths={de:item.url?.slice(config.base.length)??item.detailUrl.slice(config.base.length)};
+  const defaultSource=await readFile(contentPath(path.join(repositoryRoot,...item.source.split("/")),config.defaultLanguage),"utf8");
   for(const language of config.languages.filter(({code})=>code!==config.defaultLanguage)) {
+    if(!contentIsRequiredInLanguage(defaultSource,language.code))continue;
     const title=await localizedTitle(item.source,language.code,item.title);
     const slug=(area==="calendar"?`${item.date}-`:"")+slugify(title);
     paths[language.code]=routePath(area,language.code,slug||item.slug);
@@ -49,6 +52,7 @@ for(const language of config.languages) {
   const seen=new Map();
   for(const route of routes) {
     const key=route.paths[language.code];
+    if(!key)continue;
     if(seen.has(key))throw new Error(`Duplicate ${language.code} route ${key}: ${seen.get(key)} and ${route.id}`);
     seen.set(key,route.id);
   }

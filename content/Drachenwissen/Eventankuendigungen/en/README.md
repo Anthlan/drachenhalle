@@ -16,6 +16,7 @@ Event announcements complement the two neighboring sections:
 - [Alliance Ambush: Start prepared](AllianzHinterhalt_Start_Verlueste.md) – preparation, loss management and efficient healing
 - [Raid battles: Set shields in time](Raubzugkaempfe_Schilde_Hoch.md) – protection period, shield plan and preparation
 - [Zombie Siege: Defend together](ZombieBelagerung_Ablauf_Teilnahme.md) – procedure, participation, withdrawal and support
+- [City conquest in the new season: attack together](Saison_Stadteroberung_GemeinsamAngreifen.md) – enter the city level and start time, follow the marker and attack as one
 
 ## Naming rules
 

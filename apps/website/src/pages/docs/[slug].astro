@@ -71,10 +71,35 @@ const isResponsibilities = document.kind === "responsibilities";
 const isAllianceDocument = document.section === "Allianz";
 const isHealingTip = document.slug === "tipp-08-soldaten-schneller-heilen";
 const isFlightEvent = document.slug === "event-01-gefechtsvorbereitung-flugbesatzung";
-const isZombieSiegeAnnouncement = document.slug === "eventankuendigung-zombie-belagerung";
-const zombieCopySection = isZombieSiegeAnnouncement ? document.allianceCopySections?.[0] : null;
-const zombieCopyParts = zombieCopySection?.match(/^\s*(<h2\b[^>]*>[\s\S]*?<\/h2>)\s*([\s\S]*)$/i);
-const hasZombieMessageConfigurator = Boolean(zombieCopyParts);
+const messageConfigurator = document.slug === "eventankuendigung-zombie-belagerung"
+  ? {
+      type: "zombie-siege",
+      title: "Terminangaben einsetzen",
+      description: "Trage Uhrzeit, Event-Stufe und Mindestlevel der angegriffenen Basen ein. Die Vorschau wird automatisch ausgefüllt.",
+      groupLabel: "Angaben für die Zombie-Belagerung",
+      incompleteStatus: "Bitte alle drei Angaben ausfüllen.",
+      fields: [
+        { name: "time", label: "Uhrzeit", type: "time" },
+        { name: "level", label: "Event-Stufe", type: "number", placeholder: "10" },
+        { name: "baseLevel", label: "Angriff ab Basis-Level", type: "number", placeholder: "15" },
+      ],
+    }
+  : document.slug === "eventankuendigung-stadteroberung"
+    ? {
+        type: "city-conquest",
+        title: "Angriff vorbereiten",
+        description: "Trage das Stadtlevel und die vereinbarte Startzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
+        groupLabel: "Angaben für die Stadteroberung",
+        incompleteStatus: "Bitte Stadtlevel und Uhrzeit ausfüllen.",
+        fields: [
+          { name: "cityLevel", label: "Stadtlevel", type: "number", placeholder: "5" },
+          { name: "time", label: "Uhrzeit", type: "time" },
+        ],
+      }
+    : null;
+const configurableCopySection = messageConfigurator ? document.allianceCopySections?.[0] : null;
+const configurableCopyParts = configurableCopySection?.match(/^\s*(<h2\b[^>]*>[\s\S]*?<\/h2>)\s*([\s\S]*)$/i);
+const hasMessageConfigurator = Boolean(messageConfigurator && configurableCopyParts);
 const hasShareableArticle = document.hidden || isBriefKnowledgeArticle || isOnboarding || isAllianceDocument || document.kind === "alliance";
 const tutorialStorageKey = document.tutorialStorageKey ?? `die-${document.slug}-step-v1`;
 const tutorialProgressLabel = document.tutorialProgressLabel ?? "Fortschritt im Einstieg";
@@ -951,39 +976,41 @@ const responsibilities = [
                     </aside>
                   )}
                 </div>
-                {hasZombieMessageConfigurator ? (
-                  <section class="markdown-content alliance-copy alliance-copy-configurable" data-copy-section data-message-template="zombie-siege">
-                    <div class="alliance-copy-heading" set:html={zombieCopyParts[1]} />
+                {hasMessageConfigurator ? (
+                  <section class="markdown-content alliance-copy alliance-copy-configurable" data-copy-section data-message-template={messageConfigurator.type}>
+                    <div class="alliance-copy-heading" set:html={configurableCopyParts[1]} />
                     <div class="alliance-template-configurator" data-message-configurator>
                       <div class="alliance-template-intro">
                         <p class="eyebrow">Mitteilung vorbereiten</p>
-                        <h3>Terminangaben einsetzen</h3>
-                        <p>Trage Uhrzeit, Event-Stufe und Mindestlevel der angegriffenen Basen ein. Die Vorschau wird automatisch ausgefüllt.</p>
+                        <h3>{messageConfigurator.title}</h3>
+                        <p>{messageConfigurator.description}</p>
                       </div>
-                      <div class="alliance-template-fields" role="group" aria-label="Angaben für die Zombie-Belagerung">
-                        <label>
-                          <span>Uhrzeit</span>
-                          <input type="time" data-message-field="time" required />
-                        </label>
-                        <label>
-                          <span>Event-Stufe</span>
-                          <input type="number" min="1" step="1" inputmode="numeric" placeholder="10" data-message-field="level" required />
-                        </label>
-                        <label>
-                          <span>Angriff ab Basis-Level</span>
-                          <input type="number" min="1" step="1" inputmode="numeric" placeholder="15" data-message-field="baseLevel" required />
-                        </label>
+                      <div class="alliance-template-fields" role="group" aria-label={messageConfigurator.groupLabel}>
+                        {messageConfigurator.fields.map((field) => (
+                          <label>
+                            <span>{field.label}</span>
+                            <input
+                              type={field.type}
+                              min={field.type === "number" ? "1" : undefined}
+                              step={field.type === "number" ? "1" : undefined}
+                              inputmode={field.type === "number" ? "numeric" : undefined}
+                              placeholder={field.placeholder}
+                              data-message-field={field.name}
+                              required
+                            />
+                          </label>
+                        ))}
                       </div>
                       <div class="alliance-template-actions">
-                        <p role="status" aria-live="polite" data-message-status>Bitte alle drei Angaben ausfüllen.</p>
+                        <p role="status" aria-live="polite" data-message-status>{messageConfigurator.incompleteStatus}</p>
                         <button type="button" class="copy-code-button" data-copy-code disabled>Fertige Mitteilung kopieren</button>
                       </div>
-                      <span hidden data-message-status-incomplete>Bitte alle drei Angaben ausfüllen.</span>
+                      <span hidden data-message-status-incomplete>{messageConfigurator.incompleteStatus}</span>
                       <span hidden data-message-status-ready>Die Mitteilung ist bereit zum Kopieren.</span>
                     </div>
                     <div class="alliance-template-preview">
                       <p class="alliance-template-preview-label">Vorschau der Allianz-Mitteilung</p>
-                      <div set:html={zombieCopyParts[2]} />
+                      <div set:html={configurableCopyParts[2]} />
                     </div>
                   </section>
                 ) : document.allianceCopySections.map((section) => (
@@ -1114,7 +1141,12 @@ const responsibilities = [
 
     <script>
       import { initializeImageActions } from "../../scripts/image-actions";
-      import { fillZombieSiegeMessage, isZombieSiegeMessageComplete } from "../../lib/alliance-message-template.mjs";
+      import {
+        fillCityConquestMessage,
+        fillZombieSiegeMessage,
+        isCityConquestMessageComplete,
+        isZombieSiegeMessageComplete,
+      } from "../../lib/alliance-message-template.mjs";
 
       for (const openButton of document.querySelectorAll("[data-officer-open]")) {
         if (!(openButton instanceof HTMLButtonElement)) continue;
@@ -1527,7 +1559,7 @@ const responsibilities = [
 
       for (const configurator of document.querySelectorAll("[data-message-configurator]")) {
         if (!(configurator instanceof HTMLElement)) continue;
-        const section = configurator.closest("[data-message-template='zombie-siege']");
+        const section = configurator.closest("[data-message-template]");
         const code = section?.querySelector("pre code");
         const button = configurator.querySelector("[data-copy-code]");
         const status = configurator.querySelector("[data-message-status]");
@@ -1536,14 +1568,19 @@ const responsibilities = [
         const inputs = [...configurator.querySelectorAll("[data-message-field]")];
         if (!(code instanceof HTMLElement) || !(button instanceof HTMLButtonElement)) continue;
         const templateText = code.textContent ?? "";
+        const isCityConquest = section?.getAttribute("data-message-template") === "city-conquest";
 
         const updateMessage = () => {
           const values = Object.fromEntries(inputs.map((input) => [
             input instanceof HTMLInputElement ? input.dataset.messageField : "",
             input instanceof HTMLInputElement ? input.value : "",
           ]));
-          const isComplete = isZombieSiegeMessageComplete(values);
-          code.textContent = fillZombieSiegeMessage(templateText, values);
+          const isComplete = isCityConquest
+            ? isCityConquestMessageComplete(values)
+            : isZombieSiegeMessageComplete(values);
+          code.textContent = isCityConquest
+            ? fillCityConquestMessage(templateText, values)
+            : fillZombieSiegeMessage(templateText, values);
           button.disabled = !isComplete;
           section?.classList.toggle("is-message-ready", isComplete);
           if (status) status.textContent = isComplete ? readyStatus : incompleteStatus;

@@ -97,6 +97,16 @@ const baseDocuments = [
     imageSource: "media/knowledge/Eventankuendigungen/ZombieBelagerung_Ablauf_Teilnahme.png",
   },
   {
+    source: "Drachenwissen/Eventankuendigungen/Saison_Stadteroberung_GemeinsamAngreifen.md",
+    slug: "eventankuendigung-stadteroberung",
+    title: "Stadteroberung: gemeinsam angreifen",
+    section: "Drachenwissen",
+    summary: "Stadtlevel und Startzeit einsetzen, Markierung beachten und gemeinsam angreifen.",
+    parentSlug: "eventankuendigungen",
+    kind: "alliance",
+    imageSource: "media/knowledge/Eventankuendigungen/Saison_Stadteroberung_GemeinsamAngreifen.png",
+  },
+  {
     source: "Allianz/README.md",
     slug: "allianz",
     title: "Allianz",

@@ -32,6 +32,16 @@ Beide Dateien beschreiben denselben Inhalt. Der französische Seitentitel, die N
 1. Deutsche Hauptfassung unter `content/<Thema>/.../de/` anlegen oder ändern.
 2. Dieselbe Inhalts-ID in allen registrierten Sprachordnern pflegen.
 3. Übersetzen: Titel, Zusammenfassungen, Fließtext, Bildbeschreibungen und Ingame-Kopiervorlagen.
+
+Soll ein neuer Inhalt bewusst zunächst nur in einzelnen Sprachen erscheinen, wird das im Frontmatter kenntlich gemacht:
+
+```yaml
+---
+languages: [de]
+---
+```
+
+Der Produktions-Build verlangt dann nur die genannten Sprachfassungen und erzeugt für die übrigen Sprachen keine unvollständige Seite. Sobald Übersetzungen hinzukommen, muss die Liste entsprechend erweitert oder ganz entfernt werden.
 4. Unverändert lassen: technische IDs, Rechenwerte, Serverkennungen, Linkziele und die Markdown-Blockstruktur.
 5. Neue öffentliche Bereiche oder besonders wichtige Seitennamen in `apps/website/src/i18n/routes.mjs` mit einer stabilen Routen-ID registrieren.
 6. `pnpm test` und `pnpm build` in `apps/website` ausführen.

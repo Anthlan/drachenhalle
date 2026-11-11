@@ -6,6 +6,7 @@ import { createTranslator, localizedNavigationUrl, languageAvailable, normalizeT
 import config from "../src/i18n/config.json" with { type: "json" };
 import { translateCalendar } from "../src/i18n/calendar.mjs";
 import { localizedTipImages } from "./localized-tip-images.mjs";
+import { contentIsRequiredInLanguage } from "./content-languages.mjs";
 
 import { logicalSource, localizedSource, isLocalizedSource } from "./content-files.mjs";
 
@@ -126,7 +127,12 @@ export default function localizedBuild() {
       const localizeImages = await localizedTipImages(repositoryRoot, out, config.base, language.code);
       const {catalog,warnings}=await loadCatalog(language.code);
       const sources=new Set((await localizedFiles(language.code)).map(file=>logicalSource(path.relative(repositoryRoot,file).split(path.sep).join("/"))));
-      const requiredSources=language.contentSources ?? (await localizedFiles(config.defaultLanguage)).map(file=>logicalSource(path.relative(repositoryRoot,file).split(path.sep).join("/")));
+      const defaultFiles=await localizedFiles(config.defaultLanguage);
+      const requiredSources=language.contentSources ?? (await Promise.all(defaultFiles.map(async file=>
+        contentIsRequiredInLanguage(await readFile(file,"utf8"),language.code)
+          ? logicalSource(path.relative(repositoryRoot,file).split(path.sep).join("/"))
+          : null
+      ))).filter(Boolean);
       const missing=requiredSources.filter(source=>!sources.has(source));
       const languageHtmlFiles=htmlFiles.filter(file=>languageAvailable(config.base+"/"+path.relative(out,file).split(path.sep).join("/").replace(/index\.html$/,""),language,config));
       if(missing.length)throw new Error(`Missing ${language.code} content translations: ${missing.join(", ")}`);

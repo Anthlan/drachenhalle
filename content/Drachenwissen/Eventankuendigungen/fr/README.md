@@ -16,6 +16,7 @@ Les annonces d'événements complètent les deux sections voisines :
 - [Embuscade d’alliance : Début préparé](AllianzHinterhalt_Start_Verlueste.md) – préparation, gestion des pertes et guérison efficace
 - [Batailles de raid: Définissez les boucliers dans le temps](Raubzugkaempfe_Schilde_Hoch.md) – période de protection, plan de protection et préparation
 - [Zombie Siege: Défendre ensemble](ZombieBelagerung_Ablauf_Teilnahme.md) – procédure, participation, retrait et soutien
+- [Conquête d’une ville dans la nouvelle saison : attaquer ensemble](Saison_Stadteroberung_GemeinsamAngreifen.md) – renseigner le niveau et l’heure, suivre le marqueur et attaquer ensemble
 
 ## Règles de désignation
 

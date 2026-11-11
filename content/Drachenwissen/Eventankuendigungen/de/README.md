@@ -16,6 +16,7 @@ Eventankündigungen ergänzen die beiden benachbarten Bereiche:
 - [Allianz-Hinterhalt: vorbereitet starten](AllianzHinterhalt_Start_Verlueste.md) – Startvorbereitung, Verlustmanagement und effizientes Heilen
 - [Raubzugkämpfe: Schilde rechtzeitig setzen](Raubzugkaempfe_Schilde_Hoch.md) – Schutzzeitraum, Schildplan und Vorbereitung
 - [Zombie-Belagerung: gemeinsam verteidigen](ZombieBelagerung_Ablauf_Teilnahme.md) – Ablauf, Teilnahme, Ausstieg und Unterstützung
+- [Stadteroberung in der neuen Season: gemeinsam angreifen](Saison_Stadteroberung_GemeinsamAngreifen.md) – Stadtlevel und Startzeit einsetzen, Markierung beachten und geschlossen angreifen
 
 ## Benennungsregeln
 

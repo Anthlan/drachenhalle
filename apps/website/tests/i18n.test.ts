@@ -18,6 +18,11 @@ test("language routes preserve counterpart paths and shared downloads",()=> {
     assert.equal(localizedPageUrl(url,"en"),url);
 });
 
+test("translated city announcement exposes every registered language route",()=> {
+  const cityAnnouncement="/drachenhalle/docs/eventankuendigung-stadteroberung/";
+  for(const language of config.languages)assert.equal(languageAvailable(cityAnnouncement,language,config),true);
+});
+
 test("specific templates win and nested labels are translated",()=> {
   const t=createTranslator({"${left} von ${right}":"${left} of ${right}","${shown} von ${total} Allianzen":"${shown} of ${total} alliances","Punkte":"Points","${count} Punkte":"${count} points"});
   assert.equal(t("15 von 77 Allianzen"),"15 of 77 alliances");

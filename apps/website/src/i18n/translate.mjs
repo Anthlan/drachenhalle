@@ -1,4 +1,4 @@
-import { translateRoutePath } from "./routes.mjs";
+import { routeLanguageAvailable, translateRoutePath } from "./routes.mjs";
 
 export const normalizeText = (text) => text.replace(/\s+/g, " ").trim();
 
@@ -68,12 +68,13 @@ export function localizedPageUrl(url, language, base = "/drachenhalle", language
 }
 
 export function languageAvailable(url, language, config) {
-  if (!language.pages) return true;
   const pathname = url.startsWith('http') ? new URL(url).pathname : url.split(/[?#]/)[0];
   let route = pathname.slice(config.base.length);
   const first = route.split('/')[1];
   const sourceLanguage=config.languages.some(item => item.code === first)?first:config.defaultLanguage;
   if (sourceLanguage!==config.defaultLanguage) route = route.slice(first.length + 1);
+  if (!routeLanguageAvailable(route||'/',sourceLanguage,language.code)) return false;
+  if (!language.pages) return true;
   route=translateRoutePath(route||'/',sourceLanguage,config.defaultLanguage);
   return language.pages.includes((route || '/').replace(/\/?$/, '/'));
 }
