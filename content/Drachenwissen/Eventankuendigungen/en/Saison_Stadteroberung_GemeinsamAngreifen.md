@@ -12,6 +12,7 @@ The actual targets and requirements depend on the current season map. For the an
 
 - Be online a few minutes before the announced start.
 - Keep the required marches available if possible.
+- Use rallies whenever possible instead of attacking the target individually.
 - Check the current alliance marker and alliance chat.
 - Do not start the attack until approval has been given.
 - Ask beforehand if the target or procedure is unclear.
@@ -28,6 +29,7 @@ At <color=#FFD700><b>[TIME]</b></color>, we attack a <b>level [CITY LEVEL] city<
 📍 <b>Check the marker:</b> Check our marked target before the start.
 ⏳ <b>Wait for approval:</b> Please do not attack early.
 ⚔️ <b>Attack together:</b> Keep your marches ready and watch alliance chat.
+🤝 <b>Use rallies:</b> Start or join a rally against the marked target whenever possible.
 
 Please be online a few minutes early so we can begin the attack together.
 

@@ -12,6 +12,7 @@ Die tatsächlichen Ziele und Voraussetzungen richten sich nach dem aktuellen Sta
 
 - Seid einige Minuten vor dem angekündigten Start online.
 - Haltet eure benötigten Märsche möglichst frei.
+- Nutzt nach Möglichkeit Sammelangriffe, statt das Ziel einzeln anzugreifen.
 - Prüft die aktuelle Allianzmarkierung und den Allianzchat.
 - Startet den Angriff erst nach der gemeinsamen Freigabe.
 - Fragt vorab nach, wenn das Ziel oder der Ablauf unklar ist.
@@ -28,6 +29,7 @@ Um <color=#FFD700><b>[UHRZEIT] Uhr</b></color> greifen wir gemeinsam eine <b>Sta
 📍 <b>Markierung beachten:</b> Prüft vor dem Start unser markiertes Ziel.
 ⏳ <b>Auf Freigabe warten:</b> Bitte nicht vorzeitig angreifen.
 ⚔️ <b>Gemeinsam starten:</b> Haltet eure Märsche bereit und achtet auf den Allianzchat.
+🤝 <b>Sammelangriffe nutzen:</b> Startet oder unterstützt möglichst einen Sammelangriff auf das markierte Ziel.
 
 Seid bitte einige Minuten vorher online, damit wir den Angriff geschlossen beginnen können.
 

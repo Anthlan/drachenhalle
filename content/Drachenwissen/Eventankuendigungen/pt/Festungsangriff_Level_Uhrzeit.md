@@ -13,6 +13,7 @@ Os requisitos e o procedimento exato dependem da fortaleza selecionada. Para o a
 - Fique online alguns minutos antes do início anunciado.
 - Confira o nível da fortaleza e nossa marcação atual do alvo.
 - Se possível, mantenha as marchas necessárias disponíveis.
+- Jogadores com resistência alta devem iniciar os ataques conjuntos, pois essa resistência também se aplica aos participantes com resistência menor.
 - Aguarde a liberação conjunta no chat da aliança.
 - Não faça ataques individuais antecipados ao alvo marcado.
 
@@ -28,6 +29,7 @@ Os requisitos e o procedimento exato dependem da fortaleza selecionada. Para o a
 📍 <b>Confira a marcação do alvo:</b> Verifique se você selecionou a fortaleza correta.
 ⏳ <b>Aguarde a liberação:</b> Não ataque antes da hora.
 ⚔️ <b>Mantenha as marchas disponíveis:</b> Esteja online a tempo e acompanhe o chat da aliança.
+🛡️ <b>Use a resistência:</b> Jogadores com resistência alta iniciam os ataques conjuntos; essa resistência também se aplica aos participantes com resistência menor.
 
 Comece o ataque somente após a liberação conjunta para chegarmos juntos ao alvo.
 

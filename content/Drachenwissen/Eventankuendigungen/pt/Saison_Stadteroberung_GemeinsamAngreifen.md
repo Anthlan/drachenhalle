@@ -12,6 +12,7 @@ Os alvos e requisitos reais dependem da situação atual do mapa da temporada. P
 
 - Fique online alguns minutos antes do início anunciado.
 - Se possível, mantenha as marchas necessárias disponíveis.
+- Sempre que possível, use ataques conjuntos em vez de atacar o alvo sozinho.
 - Confira a marcação atual e o chat da aliança.
 - Inicie o ataque somente depois da liberação conjunta.
 - Pergunte antes se o alvo ou o procedimento não estiver claro.
@@ -28,6 +29,7 @@ Os alvos e requisitos reais dependem da situação atual do mapa da temporada. P
 📍 <b>Confira a marcação:</b> Confira nosso alvo marcado antes do início.
 ⏳ <b>Aguarde a liberação:</b> Não ataque antes da hora.
 ⚔️ <b>Ataquem juntos:</b> Mantenha suas marchas prontas e acompanhe o chat da aliança.
+🤝 <b>Use ataques conjuntos:</b> Sempre que possível, inicie ou participe de um ataque conjunto contra o alvo marcado.
 
 Fique online alguns minutos antes para iniciarmos o ataque juntos.
 

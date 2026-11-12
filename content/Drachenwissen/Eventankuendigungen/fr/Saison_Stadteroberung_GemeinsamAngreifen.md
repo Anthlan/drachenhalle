@@ -12,6 +12,7 @@ Les cibles et les conditions réelles dépendent de l’état actuel de la carte
 
 - Soyez en ligne quelques minutes avant le départ annoncé.
 - Gardez si possible les marches nécessaires disponibles.
+- Privilégiez les attaques groupées plutôt que d’attaquer la cible individuellement.
 - Vérifiez le marqueur d’alliance actuel et le chat d’alliance.
 - Ne lancez l’attaque qu’après le feu vert commun.
 - Posez vos questions à l’avance si la cible ou le déroulement n’est pas clair.
@@ -28,6 +29,7 @@ Les cibles et les conditions réelles dépendent de l’état actuel de la carte
 📍 <b>Vérifier le marqueur :</b> Vérifiez notre cible marquée avant le départ.
 ⏳ <b>Attendre le feu vert :</b> Merci de ne pas attaquer trop tôt.
 ⚔️ <b>Attaquer ensemble :</b> Gardez vos marches prêtes et surveillez le chat d’alliance.
+🤝 <b>Privilégier les attaques groupées :</b> Lancez ou rejoignez si possible une attaque groupée contre la cible marquée.
 
 Soyez en ligne quelques minutes à l’avance afin que nous puissions lancer l’attaque ensemble.
 

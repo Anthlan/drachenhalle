@@ -13,6 +13,7 @@ Les conditions et le déroulement exact dépendent de la forteresse actuellement
 - Soyez en ligne quelques minutes avant le départ annoncé.
 - Vérifiez le niveau de la forteresse et notre marqueur de cible actuel.
 - Gardez si possible les marches nécessaires disponibles.
+- Les joueurs disposant d’une résistance élevée doivent lancer les rassemblements, car leur résistance s’applique alors aussi aux participants dont la résistance est plus faible.
 - Attendez le feu vert commun dans le chat d’alliance.
 - Ne lancez aucune attaque individuelle prématurée sur la cible marquée.
 
@@ -28,6 +29,7 @@ Les conditions et le déroulement exact dépendent de la forteresse actuellement
 📍 <b>Vérifier le marqueur de cible :</b> Assurez-vous d’avoir sélectionné la bonne forteresse.
 ⏳ <b>Attendre le feu vert :</b> Merci de ne pas attaquer trop tôt.
 ⚔️ <b>Garder les marches disponibles :</b> Soyez en ligne à temps et suivez le chat d’alliance.
+🛡️ <b>Utiliser la résistance :</b> Les joueurs disposant d’une résistance élevée lancent les rassemblements ; leur résistance s’applique alors aussi aux participants dont la résistance est plus faible.
 
 Ne lancez l’attaque qu’après le feu vert commun afin que nous arrivions ensemble sur la cible.
 

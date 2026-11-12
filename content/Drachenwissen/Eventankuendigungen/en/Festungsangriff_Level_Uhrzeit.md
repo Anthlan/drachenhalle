@@ -13,6 +13,7 @@ The requirements and exact procedure depend on the fortress currently selected. 
 - Be online a few minutes before the announced start.
 - Check the fortress level and our current target marker.
 - Keep the required marches available if possible.
+- Players with high resistance should start the rallies, because their resistance then also applies to participants with lower resistance.
 - Wait for joint approval in alliance chat.
 - Do not launch early individual attacks on the marked target.
 
@@ -28,6 +29,7 @@ At <color=#FFD700><b>[TIME]</b></color>, we will attack a <b>Level [FORTRESS LEV
 📍 <b>Check the target marker:</b> Make sure you have selected the correct fortress.
 ⏳ <b>Wait for approval:</b> Please do not attack early.
 ⚔️ <b>Keep marches ready:</b> Be online in time and follow alliance chat.
+🛡️ <b>Use resistance:</b> Players with high resistance start the rallies; their resistance then also applies to participants with lower resistance.
 
 Begin the attack only after joint approval so that we reach the target together.
 

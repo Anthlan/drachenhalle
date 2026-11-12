@@ -13,6 +13,7 @@ Die Voraussetzungen und der genaue Ablauf richten sich nach der aktuell ausgewä
 - Seid einige Minuten vor dem angekündigten Start online.
 - Prüft das Festungslevel und unsere aktuelle Zielmarkierung.
 - Haltet die benötigten Märsche möglichst frei.
+- Spieler mit hohem Widerstand sollten die Versammlungen starten, weil ihr Widerstand dann auch für Teilnehmer mit geringerem Widerstand wirkt.
 - Wartet auf die gemeinsame Freigabe im Allianzchat.
 - Startet keine vorzeitigen Einzelangriffe auf das markierte Ziel.
 
@@ -28,6 +29,7 @@ Um <color=#FFD700><b>[UHRZEIT] Uhr</b></color> greifen wir gemeinsam eine <b>Fes
 📍 <b>Zielmarkierung prüfen:</b> Achtet darauf, dass ihr die richtige Festung ausgewählt habt.
 ⏳ <b>Auf Freigabe warten:</b> Bitte nicht vorzeitig angreifen.
 ⚔️ <b>Märsche bereithalten:</b> Seid rechtzeitig online und achtet auf den Allianzchat.
+🛡️ <b>Widerstand nutzen:</b> Spieler mit hohem Widerstand starten die Versammlungen; ihr Widerstand wirkt dann auch für Teilnehmer mit geringerem Widerstand.
 
 Beginnt den Angriff erst nach der gemeinsamen Freigabe, damit wir geschlossen am Ziel eintreffen.
 
