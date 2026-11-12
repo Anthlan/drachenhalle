@@ -107,6 +107,16 @@ const baseDocuments = [
     imageSource: "media/knowledge/Eventankuendigungen/Saison_Stadteroberung_GemeinsamAngreifen.png",
   },
   {
+    source: "Drachenwissen/Eventankuendigungen/Festungsangriff_Level_Uhrzeit.md",
+    slug: "eventankuendigung-festungsangriff",
+    title: "Festungsangriff: gemeinsam angreifen",
+    section: "Drachenwissen",
+    summary: "Festungslevel und Startzeit einsetzen, Zielmarkierung prüfen und gemeinsam angreifen.",
+    parentSlug: "eventankuendigungen",
+    kind: "alliance",
+    imageSource: "media/knowledge/Eventankuendigungen/Festungsangriff_Level_Uhrzeit.png",
+  },
+  {
     source: "Allianz/README.md",
     slug: "allianz",
     title: "Allianz",

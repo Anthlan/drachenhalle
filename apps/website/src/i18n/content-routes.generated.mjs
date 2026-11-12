@@ -91,6 +91,16 @@ export default [
     }
   },
   {
+    "id": "content:Drachenwissen/Eventankuendigungen/Festungsangriff_Level_Uhrzeit.md",
+    "paths": {
+      "de": "/docs/eventankuendigung-festungsangriff/",
+      "en": "/guides/fortress-attack-attack-together-in-coordination/",
+      "fr": "/guides/assaut-de-forteresse-attaquer-ensemble-et-de-facon-coordonnee/",
+      "ru": "/руководства/штурм-крепости-атакуем-вместе-и-согласованно/",
+      "pt": "/guias/ataque-a-fortaleza-atacar-juntos-e-de-forma-coordenada/"
+    }
+  },
+  {
     "id": "content:Allianz/README.md",
     "paths": {
       "de": "/docs/allianz/",

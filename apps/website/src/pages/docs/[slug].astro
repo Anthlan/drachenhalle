@@ -96,6 +96,18 @@ const messageConfigurator = document.slug === "eventankuendigung-zombie-belageru
           { name: "time", label: "Uhrzeit", type: "time" },
         ],
       }
+    : document.slug === "eventankuendigung-festungsangriff"
+      ? {
+          type: "fortress-attack",
+          title: "Festungsangriff vorbereiten",
+          description: "Trage das Festungslevel und die vereinbarte Startzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
+          groupLabel: "Angaben für den Festungsangriff",
+          incompleteStatus: "Bitte Festungslevel und Uhrzeit ausfüllen.",
+          fields: [
+            { name: "fortressLevel", label: "Festungslevel", type: "number", placeholder: "5" },
+            { name: "time", label: "Uhrzeit", type: "time" },
+          ],
+        }
     : document.slug === "eventankuendigung-raubzugkaempfe"
       ? {
           type: "raid-shields",
@@ -1166,10 +1178,12 @@ const responsibilities = [
       import {
         fillAllianceAmbushMessage,
         fillCityConquestMessage,
+        fillFortressAttackMessage,
         fillRaidShieldMessage,
         fillZombieSiegeMessage,
         isAllianceAmbushMessageComplete,
         isCityConquestMessageComplete,
+        isFortressAttackMessageComplete,
         isRaidShieldMessageComplete,
         isZombieSiegeMessageComplete,
       } from "../../lib/alliance-message-template.mjs";
@@ -1597,6 +1611,8 @@ const responsibilities = [
         const templateType = section?.getAttribute("data-message-template");
         const messageHandler = templateType === "city-conquest"
           ? { isComplete: isCityConquestMessageComplete, fill: fillCityConquestMessage }
+          : templateType === "fortress-attack"
+            ? { isComplete: isFortressAttackMessageComplete, fill: fillFortressAttackMessage }
           : templateType === "raid-shields"
             ? { isComplete: isRaidShieldMessageComplete, fill: fillRaidShieldMessage }
             : templateType === "alliance-ambush"

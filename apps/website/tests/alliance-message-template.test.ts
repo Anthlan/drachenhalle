@@ -3,10 +3,12 @@ import assert from "node:assert/strict";
 import {
   fillAllianceAmbushMessage,
   fillCityConquestMessage,
+  fillFortressAttackMessage,
   fillRaidShieldMessage,
   fillZombieSiegeMessage,
   isAllianceAmbushMessageComplete,
   isCityConquestMessageComplete,
+  isFortressAttackMessageComplete,
   isRaidShieldMessageComplete,
   isZombieSiegeMessageComplete,
 } from "../src/lib/alliance-message-template.mjs";
@@ -49,6 +51,24 @@ test("ersetzt die Stadteroberungs-Platzhalter in allen Sprachen", () => {
   assert.equal(
     fillCityConquestMessage(template, { time: "20:15", cityLevel: "7" }),
     "20:15 · 20:15 · 20:15 · 20:15 | 7 · 7 · 7 · 7",
+  );
+});
+
+test("füllt Festungslevel und Uhrzeit für den Festungsangriff ein", () => {
+  const template = "Um [UHRZEIT] greifen wir eine Festung auf Level [FESTUNGSLEVEL] an.";
+  assert.equal(
+    fillFortressAttackMessage(template, { time: "20:30", fortressLevel: "4" }),
+    "Um 20:30 greifen wir eine Festung auf Level 4 an.",
+  );
+  assert.equal(isFortressAttackMessageComplete({ time: "20:30", fortressLevel: "" }), false);
+  assert.equal(isFortressAttackMessageComplete({ time: "20:30", fortressLevel: "4" }), true);
+});
+
+test("ersetzt die Festungsangriff-Platzhalter in allen Sprachen", () => {
+  const template = "[TIME] · [HEURE] · [ВРЕМЯ] · [HORÁRIO] | [FORTRESS LEVEL] · [NIVEAU DE FORTERESSE] · [УРОВЕНЬ КРЕПОСТИ] · [NÍVEL DA FORTALEZA]";
+  assert.equal(
+    fillFortressAttackMessage(template, { time: "20:30", fortressLevel: "4" }),
+    "20:30 · 20:30 · 20:30 · 20:30 | 4 · 4 · 4 · 4",
   );
 });
 

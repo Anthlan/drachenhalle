@@ -13,6 +13,10 @@ const cityConquestTokens = {
   time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
   cityLevel: ["[STADTLEVEL]", "[CITY LEVEL]", "[NIVEAU DE VILLE]", "[УРОВЕНЬ ГОРОДА]", "[NÍVEL DA CIDADE]"],
 };
+const fortressAttackTokens = {
+  time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
+  fortressLevel: ["[FESTUNGSLEVEL]", "[FORTRESS LEVEL]", "[NIVEAU DE FORTERESSE]", "[УРОВЕНЬ КРЕПОСТИ]", "[NÍVEL DA FORTALEZA]"],
+};
 const raidShieldTokens = {
   time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
 };
@@ -51,6 +55,12 @@ export const isCityConquestMessageComplete = (values) =>
 
 export const fillCityConquestMessage = (template, values) =>
   fillMessage(template, values, cityConquestTokens);
+
+export const isFortressAttackMessageComplete = (values) =>
+  validTime(values.time) && positiveInteger(values.fortressLevel);
+
+export const fillFortressAttackMessage = (template, values) =>
+  fillMessage(template, values, fortressAttackTokens);
 
 export const isRaidShieldMessageComplete = (values) => validTime(values.time);
 
