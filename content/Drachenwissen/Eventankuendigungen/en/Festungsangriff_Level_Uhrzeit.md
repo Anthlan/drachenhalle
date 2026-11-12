@@ -17,7 +17,7 @@ The requirements and exact procedure depend on the fortress currently selected. 
 - Wait for joint approval in alliance chat.
 - Do not launch early individual attacks on the marked target.
 
-> **Before sending:** `[TIME]` and `[FORTRESS LEVEL]` must be replaced with the details for the planned attack.
+> **Before sending:** `[TIME]` and `[FORTRESS LEVEL]` must be replaced with the details for the planned attack. `[SERVER TIME]` is calculated automatically from `[TIME]`: −3 hours in winter and −4 hours in summer.
 
 ## Alliance message to copy
 
@@ -25,6 +25,7 @@ The requirements and exact procedure depend on the fortress currently selected. 
 <color=#FFD700><b>🏰 FORTRESS ATTACK – TODAY [TIME]</b></color>
 
 At <color=#FFD700><b>[TIME]</b></color>, we will attack a <b>Level [FORTRESS LEVEL] fortress</b> together.
+🕒 <b>Server time:</b> [SERVER TIME]
 
 📍 <b>Check the target marker:</b> Make sure you have selected the correct fortress.
 ⏳ <b>Wait for approval:</b> Please do not attack early.

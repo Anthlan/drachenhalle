@@ -18,7 +18,7 @@ Se não quiser participar, deixe a sua defesa vazia. O seu evento termina depois
 
 Se precisar de apoio na defesa, pergunte antes do início, se possível. Isto dá à aliança tempo para coordenar a ajuda. O Anthlan e os oficiais da R4 são os seus primeiros pontos de contacto.
 
-> **Antes de enviar:** `[HORA]`, `[NÍVEL]` e `[NÍVEL DA BASE]` devem ser substituídos pelos dados anunciados para este evento. A ilustração existente mostra a versão para **21:00**.
+> **Antes de enviar:** `[HORA]`, `[NÍVEL]` e `[NÍVEL DA BASE]` devem ser substituídos pelos dados anunciados para este evento. `[HORA DO SERVIDOR]` é calculada automaticamente a partir de `[HORA]`: −3 horas no inverno e −4 horas no verão. A ilustração existente mostra a versão para **21:00**.
 
 ## Mensagem da Aliança para copiar
 
@@ -26,6 +26,7 @@ Se precisar de apoio na defesa, pergunte antes do início, se possível. Isto d�
 <color=#FFD700><b>🧟 CERCO DE ZUMBIS – HOJE [HORA]</b></color>
 
 A partir das <color=#FFD700><b>[HORA]</b></color>, as ondas de zumbis atacam as nossas bases uma após a outra.
+🕒 <b>Hora do servidor:</b> [HORA DO SERVIDOR]
 Vamos jogar o <b>nível [NÍVEL]</b>. Serão atacadas as bases a partir do <b>nível [NÍVEL DA BASE]</b>.
 
 🛡️ <b>Configure a sua defesa .</b> – Os escudos não te protegem aqui.

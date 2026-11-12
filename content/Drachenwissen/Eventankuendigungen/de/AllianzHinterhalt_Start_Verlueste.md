@@ -17,7 +17,7 @@ Beim Hinterhalt ist ein kontrollierter Einsatz sinnvoller als blindes Weiterkäm
 
 Wer während des Events online ist, heilt am besten in kleinen Truppenblöcken. Dadurch kann die Allianzhilfe häufiger genutzt werden und die Soldaten stehen schneller wieder zur Verfügung.
 
-> **Vor dem Versenden:** `[STUFE]` und `[UHRZEIT]` durch die Angaben für den geplanten Hinterhalt ersetzen.
+> **Vor dem Versenden:** `[STUFE]` und `[UHRZEIT]` durch die Angaben für den geplanten Hinterhalt ersetzen. `[SERVERZEIT]` wird automatisch aus `[UHRZEIT]` berechnet: Winterzeit −3 Stunden, Sommerzeit −4 Stunden.
 
 ## Allianz-Mitteilung zum Kopieren
 
@@ -25,6 +25,7 @@ Wer während des Events online ist, heilt am besten in kleinen Truppenblöcken. 
 <color=#FFD700><b>⚔️ ALLIANZ-HINTERHALT – STUFE [STUFE] – HEUTE [UHRZEIT]</b></color>
 
 Um <color=#FFD700><b>[UHRZEIT] Uhr</b></color> starten wir gemeinsam in den Allianz-Hinterhalt auf <b>Stufe [STUFE]</b>.
+🕒 <b>Serverzeit:</b> [SERVERZEIT] Uhr
 
 ⚔️ <b>Truppen bereithalten</b> und rechtzeitig online sein.
 🏥 Achtet während des Events auf euer <b>Krankenhaus</b> und eure Verluste.

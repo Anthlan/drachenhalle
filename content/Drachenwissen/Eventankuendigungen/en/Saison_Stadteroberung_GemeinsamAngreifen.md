@@ -17,7 +17,7 @@ The actual targets and requirements depend on the current season map. For the an
 - Do not start the attack until approval has been given.
 - Ask beforehand if the target or procedure is unclear.
 
-> **Before sending:** `[TIME]` and `[CITY LEVEL]` must be replaced with the details for the planned attack.
+> **Before sending:** `[TIME]` and `[CITY LEVEL]` must be replaced with the details for the planned attack. `[SERVER TIME]` is calculated automatically from `[TIME]`: −3 hours in winter and −4 hours in summer.
 
 ## Alliance message to copy
 
@@ -25,6 +25,7 @@ The actual targets and requirements depend on the current season map. For the an
 <color=#FFD700><b>🏰 CITY CONQUEST – TODAY [TIME]</b></color>
 
 At <color=#FFD700><b>[TIME]</b></color>, we attack a <b>level [CITY LEVEL] city</b> together.
+🕒 <b>Server time:</b> [SERVER TIME]
 
 📍 <b>Check the marker:</b> Check our marked target before the start.
 ⏳ <b>Wait for approval:</b> Please do not attack early.

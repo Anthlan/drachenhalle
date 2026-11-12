@@ -17,7 +17,7 @@ Os alvos e requisitos reais dependem da situação atual do mapa da temporada. P
 - Inicie o ataque somente depois da liberação conjunta.
 - Pergunte antes se o alvo ou o procedimento não estiver claro.
 
-> **Antes de enviar:** `[HORÁRIO]` e `[NÍVEL DA CIDADE]` devem ser substituídos pelos dados do ataque planejado.
+> **Antes de enviar:** `[HORÁRIO]` e `[NÍVEL DA CIDADE]` devem ser substituídos pelos dados do ataque planejado. `[HORÁRIO DO SERVIDOR]` é calculado automaticamente a partir de `[HORÁRIO]`: −3 horas no inverno e −4 horas no verão.
 
 ## Mensagem da aliança para copiar
 
@@ -25,6 +25,7 @@ Os alvos e requisitos reais dependem da situação atual do mapa da temporada. P
 <color=#FFD700><b>🏰 CONQUISTA DA CIDADE — HOJE ÀS [HORÁRIO]</b></color>
 
 Às <color=#FFD700><b>[HORÁRIO]</b></color>, atacaremos juntos uma <b>cidade de nível [NÍVEL DA CIDADE]</b>.
+🕒 <b>Horário do servidor:</b> [HORÁRIO DO SERVIDOR]
 
 📍 <b>Confira a marcação:</b> Confira nosso alvo marcado antes do início.
 ⏳ <b>Aguarde a liberação:</b> Não ataque antes da hora.

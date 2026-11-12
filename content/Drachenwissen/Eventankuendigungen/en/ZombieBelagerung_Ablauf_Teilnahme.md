@@ -18,7 +18,7 @@ If you do not want to participate, leave your defence empty. Your event then end
 
 If you need support defending, ask before the start if possible. This gives the alliance time to coordinate help. Anthlan and the R4 officers are your first points of contact.
 
-> **Before sending:** `[TIME]`, `[LEVEL]` and `[BASE LEVEL]` must be replaced with the details announced for this event. The existing illustration shows the version for **21:00**.
+> **Before sending:** `[TIME]`, `[LEVEL]` and `[BASE LEVEL]` must be replaced with the details announced for this event. `[SERVER TIME]` is calculated automatically from `[TIME]`: −3 hours in winter and −4 hours in summer. The existing illustration shows the version for **21:00**.
 
 ## Alliance message to copy
 
@@ -26,6 +26,7 @@ If you need support defending, ask before the start if possible. This gives the 
 <color=#FFD700><b>🧟 ZOMBIE SIEGE – TODAY [TIME]</b></color>
 
 From <color=#FFD700><b>[TIME]</b></color>, zombie waves attack our bases one after another.
+🕒 <b>Server time:</b> [SERVER TIME]
 We are playing <b>level [LEVEL]</b>. Bases from <b>level [BASE LEVEL]</b> upward will be attacked.
 
 🛡️ <b>Set your defence</b> – shields do not protect you here.

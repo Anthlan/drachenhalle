@@ -17,7 +17,7 @@ Os requisitos e o procedimento exato dependem da fortaleza selecionada. Para o a
 - Aguarde a liberação conjunta no chat da aliança.
 - Não faça ataques individuais antecipados ao alvo marcado.
 
-> **Antes de enviar:** `[HORÁRIO]` e `[NÍVEL DA FORTALEZA]` devem ser substituídos pelos dados do ataque planejado.
+> **Antes de enviar:** `[HORÁRIO]` e `[NÍVEL DA FORTALEZA]` devem ser substituídos pelos dados do ataque planejado. `[HORÁRIO DO SERVIDOR]` é calculado automaticamente a partir de `[HORÁRIO]`: −3 horas no inverno e −4 horas no verão.
 
 ## Mensagem da aliança para copiar
 
@@ -25,6 +25,7 @@ Os requisitos e o procedimento exato dependem da fortaleza selecionada. Para o a
 <color=#FFD700><b>🏰 ATAQUE À FORTALEZA – HOJE [HORÁRIO]</b></color>
 
 Às <color=#FFD700><b>[HORÁRIO]</b></color>, atacaremos juntos uma <b>fortaleza de nível [NÍVEL DA FORTALEZA]</b>.
+🕒 <b>Horário do servidor:</b> [HORÁRIO DO SERVIDOR]
 
 📍 <b>Confira a marcação do alvo:</b> Verifique se você selecionou a fortaleza correta.
 ⏳ <b>Aguarde a liberação:</b> Não ataque antes da hora.

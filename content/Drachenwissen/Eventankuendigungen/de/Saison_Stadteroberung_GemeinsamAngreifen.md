@@ -17,7 +17,7 @@ Die tatsächlichen Ziele und Voraussetzungen richten sich nach dem aktuellen Sta
 - Startet den Angriff erst nach der gemeinsamen Freigabe.
 - Fragt vorab nach, wenn das Ziel oder der Ablauf unklar ist.
 
-> **Vor dem Versenden:** `[UHRZEIT]` und `[STADTLEVEL]` durch die Angaben für den geplanten Angriff ersetzen.
+> **Vor dem Versenden:** `[UHRZEIT]` und `[STADTLEVEL]` durch die Angaben für den geplanten Angriff ersetzen. `[SERVERZEIT]` wird automatisch aus `[UHRZEIT]` berechnet: Winterzeit −3 Stunden, Sommerzeit −4 Stunden.
 
 ## Allianz-Mitteilung zum Kopieren
 
@@ -25,6 +25,7 @@ Die tatsächlichen Ziele und Voraussetzungen richten sich nach dem aktuellen Sta
 <color=#FFD700><b>🏰 STADTEROBERUNG – HEUTE [UHRZEIT]</b></color>
 
 Um <color=#FFD700><b>[UHRZEIT] Uhr</b></color> greifen wir gemeinsam eine <b>Stadt auf Level [STADTLEVEL]</b> an.
+🕒 <b>Serverzeit:</b> [SERVERZEIT] Uhr
 
 📍 <b>Markierung beachten:</b> Prüft vor dem Start unser markiertes Ziel.
 ⏳ <b>Auf Freigabe warten:</b> Bitte nicht vorzeitig angreifen.

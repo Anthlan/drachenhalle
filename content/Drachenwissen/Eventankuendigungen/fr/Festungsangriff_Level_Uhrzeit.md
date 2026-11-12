@@ -17,7 +17,7 @@ Les conditions et le déroulement exact dépendent de la forteresse actuellement
 - Attendez le feu vert commun dans le chat d’alliance.
 - Ne lancez aucune attaque individuelle prématurée sur la cible marquée.
 
-> **Avant l’envoi :** `[HEURE]` et `[NIVEAU DE FORTERESSE]` doivent être remplacés par les informations de l’attaque prévue.
+> **Avant l’envoi :** `[HEURE]` et `[NIVEAU DE FORTERESSE]` doivent être remplacés par les informations de l’attaque prévue. `[HEURE SERVEUR]` est calculée automatiquement à partir de `[HEURE]` : −3 heures en hiver et −4 heures en été.
 
 ## Message d’alliance à copier
 
@@ -25,6 +25,7 @@ Les conditions et le déroulement exact dépendent de la forteresse actuellement
 <color=#FFD700><b>🏰 ASSAUT DE FORTERESSE – AUJOURD’HUI [HEURE]</b></color>
 
 À <color=#FFD700><b>[HEURE]</b></color>, nous attaquerons ensemble une <b>forteresse de niveau [NIVEAU DE FORTERESSE]</b>.
+🕒 <b>Heure du serveur :</b> [HEURE SERVEUR]
 
 📍 <b>Vérifier le marqueur de cible :</b> Assurez-vous d’avoir sélectionné la bonne forteresse.
 ⏳ <b>Attendre le feu vert :</b> Merci de ne pas attaquer trop tôt.

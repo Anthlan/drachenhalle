@@ -17,7 +17,7 @@ Les cibles et les conditions réelles dépendent de l’état actuel de la carte
 - Ne lancez l’attaque qu’après le feu vert commun.
 - Posez vos questions à l’avance si la cible ou le déroulement n’est pas clair.
 
-> **Avant l’envoi :** `[HEURE]` et `[NIVEAU DE VILLE]` doivent être remplacés par les informations de l’attaque prévue.
+> **Avant l’envoi :** `[HEURE]` et `[NIVEAU DE VILLE]` doivent être remplacés par les informations de l’attaque prévue. `[HEURE SERVEUR]` est calculée automatiquement à partir de `[HEURE]` : −3 heures en hiver et −4 heures en été.
 
 ## Message d’alliance à copier
 
@@ -25,6 +25,7 @@ Les cibles et les conditions réelles dépendent de l’état actuel de la carte
 <color=#FFD700><b>🏰 CONQUÊTE DE VILLE – AUJOURD’HUI À [HEURE]</b></color>
 
 À <color=#FFD700><b>[HEURE]</b></color>, nous attaquerons ensemble une <b>ville de niveau [NIVEAU DE VILLE]</b>.
+🕒 <b>Heure du serveur :</b> [HEURE SERVEUR]
 
 📍 <b>Vérifier le marqueur :</b> Vérifiez notre cible marquée avant le départ.
 ⏳ <b>Attendre le feu vert :</b> Merci de ne pas attaquer trop tôt.

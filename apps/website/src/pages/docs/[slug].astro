@@ -75,7 +75,7 @@ const messageConfigurator = document.slug === "eventankuendigung-zombie-belageru
   ? {
       type: "zombie-siege",
       title: "Terminangaben einsetzen",
-      description: "Trage Uhrzeit, Event-Stufe und Mindestlevel der angegriffenen Basen ein. Die Vorschau wird automatisch ausgefüllt.",
+      description: "Trage Uhrzeit, Event-Stufe und Mindestlevel der angegriffenen Basen ein. Die Serverzeit wird automatisch ergänzt.",
       groupLabel: "Angaben für die Zombie-Belagerung",
       incompleteStatus: "Bitte alle drei Angaben ausfüllen.",
       fields: [
@@ -88,7 +88,7 @@ const messageConfigurator = document.slug === "eventankuendigung-zombie-belageru
     ? {
         type: "city-conquest",
         title: "Angriff vorbereiten",
-        description: "Trage das Stadtlevel und die vereinbarte Startzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
+        description: "Trage das Stadtlevel und die vereinbarte Startzeit ein. Die Serverzeit wird automatisch ergänzt.",
         groupLabel: "Angaben für die Stadteroberung",
         incompleteStatus: "Bitte Stadtlevel und Uhrzeit ausfüllen.",
         fields: [
@@ -100,7 +100,7 @@ const messageConfigurator = document.slug === "eventankuendigung-zombie-belageru
       ? {
           type: "fortress-attack",
           title: "Festungsangriff vorbereiten",
-          description: "Trage das Festungslevel und die vereinbarte Startzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
+          description: "Trage das Festungslevel und die vereinbarte Startzeit ein. Die Serverzeit wird automatisch ergänzt.",
           groupLabel: "Angaben für den Festungsangriff",
           incompleteStatus: "Bitte Festungslevel und Uhrzeit ausfüllen.",
           fields: [
@@ -123,7 +123,7 @@ const messageConfigurator = document.slug === "eventankuendigung-zombie-belageru
         ? {
             type: "alliance-ambush",
             title: "Hinterhalt vorbereiten",
-            description: "Trage die Hinterhalt-Stufe und die vereinbarte Startzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
+            description: "Trage die Hinterhalt-Stufe und die vereinbarte Startzeit ein. Die Serverzeit wird automatisch ergänzt.",
             groupLabel: "Angaben für den Allianz-Hinterhalt",
             incompleteStatus: "Bitte Hinterhalt-Stufe und Startzeit ausfüllen.",
             fields: [

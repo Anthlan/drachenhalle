@@ -18,7 +18,7 @@ Si vous ne voulez pas participer, laissez votre défense vide. Votre événement
 
 Si vous avez besoin d'aide pour la défense, demandez avant le début si possible. Cela donne le temps à l'alliance de coordonner l'aide. Anthlan et les R4 Les officiers sont vos premiers points de contact.
 
-> **Avant l’envoi :** `[HEURE]`, `[NIVEAU]` et `[NIVEAU DE BASE]` doivent être remplacés par les informations annoncées pour cet événement. L’illustration existante montre la version pour **21:00**.
+> **Avant l’envoi :** `[HEURE]`, `[NIVEAU]` et `[NIVEAU DE BASE]` doivent être remplacés par les informations annoncées pour cet événement. `[HEURE SERVEUR]` est calculée automatiquement à partir de `[HEURE]` : −3 heures en hiver et −4 heures en été. L’illustration existante montre la version pour **21:00**.
 
 ## Message de l'Alliance à copier
 
@@ -26,6 +26,7 @@ Si vous avez besoin d'aide pour la défense, demandez avant le début si possibl
 <color=#FFD700><b>🧟 SIÈGE DE ZOMBIES – AUJOURD’HUI [HEURE]</b></color>
 
 À partir de <color=#FFD700><b>[HEURE]</b></color>, les vagues de zombies attaquent nos bases les unes après les autres.
+🕒 <b>Heure du serveur :</b> [HEURE SERVEUR]
 Nous jouons le <b>niveau [NIVEAU]</b>. Les bases à partir du <b>niveau [NIVEAU DE BASE]</b> seront attaquées.
 
 🛡️ <b>Défendez votre défense</b> – les boucliers ne vous protègent pas ici.

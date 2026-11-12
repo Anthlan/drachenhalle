@@ -17,7 +17,7 @@ Agir com controle é melhor do que continuar lutando sem avaliar a situação. C
 
 Enquanto estiver online durante o evento, cure as tropas em pequenos grupos. Assim, você poderá usar a ajuda da aliança com mais frequência e devolver seus soldados à ação mais rapidamente.
 
-> **Antes de enviar:** `[NÍVEL]` e `[HORÁRIO]` devem ser substituídos pelos dados da emboscada planejada.
+> **Antes de enviar:** `[NÍVEL]` e `[HORÁRIO]` devem ser substituídos pelos dados da emboscada planejada. `[HORÁRIO DO SERVIDOR]` é calculado automaticamente a partir de `[HORÁRIO]`: −3 horas no inverno e −4 horas no verão.
 
 ## Mensagem da Aliança para copiar
 
@@ -25,6 +25,7 @@ Enquanto estiver online durante o evento, cure as tropas em pequenos grupos. Ass
 <color=#FFD700><b>⚔️ EMBOSCADA DA ALIANÇA – NÍVEL [NÍVEL] – HOJE [HORÁRIO]</b></color>
 
 Às <color=#FFD700><b>[HORÁRIO]</b></color>, começamos juntos a Emboscada da Aliança no <b>nível [NÍVEL]</b>.
+🕒 <b>Horário do servidor:</b> [HORÁRIO DO SERVIDOR]
 
 ⚔️ <b>Mantenha as tropas prontas</b> e esteja online no horário.
 🏥 Acompanhe seu <b>hospital</b> e suas perdas durante o evento.

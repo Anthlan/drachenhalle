@@ -17,7 +17,7 @@ Des actions maîtrisées valent mieux que de continuer à combattre sans réflé
 
 Lorsque vous êtes en ligne pendant l’événement, soignez vos troupes par petits groupes. Vous pouvez ainsi profiter plus souvent de l’aide d’alliance et remettre vos soldats en action plus rapidement.
 
-> **Avant l’envoi :** `[NIVEAU]` et `[HEURE]` doivent être remplacés par les informations de l’embuscade prévue.
+> **Avant l’envoi :** `[NIVEAU]` et `[HEURE]` doivent être remplacés par les informations de l’embuscade prévue. `[HEURE SERVEUR]` est calculée automatiquement à partir de `[HEURE]` : −3 heures en hiver et −4 heures en été.
 
 ## Message d’alliance à copier
 
@@ -25,6 +25,7 @@ Lorsque vous êtes en ligne pendant l’événement, soignez vos troupes par pet
 <color=#FFD700><b>⚔️ EMBUSCADE D’ALLIANCE – NIVEAU [NIVEAU] – AUJOURD’HUI [HEURE]</b></color>
 
 À <color=#FFD700><b>[HEURE]</b></color>, nous lançons ensemble l’Embuscade d’alliance au <b>niveau [NIVEAU]</b>.
+🕒 <b>Heure du serveur :</b> [HEURE SERVEUR]
 
 ⚔️ <b>Gardez vos troupes prêtes</b> et soyez en ligne à temps.
 🏥 Surveillez votre <b>hôpital</b> et vos pertes pendant l’événement.

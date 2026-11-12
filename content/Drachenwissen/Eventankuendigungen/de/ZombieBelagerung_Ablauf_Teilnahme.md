@@ -18,7 +18,7 @@ Wer nicht teilnehmen möchte, lässt die Verteidigung leer. Dadurch ist nach der
 
 Wer Unterstützung bei der Verteidigung benötigt, meldet sich möglichst vor dem Start. So bleibt genug Zeit, die Hilfe innerhalb der Allianz abzustimmen. Anthlan und die R4 sind dafür die ersten Anlaufstellen.
 
-> **Vor dem Versenden:** `[UHRZEIT]`, `[STUFE]` und `[BASIS-LEVEL]` durch die Angaben für diesen Termin ersetzen. Die vorhandene Grafik zeigt die Variante für **21:00 Uhr**.
+> **Vor dem Versenden:** `[UHRZEIT]`, `[STUFE]` und `[BASIS-LEVEL]` durch die Angaben für diesen Termin ersetzen. `[SERVERZEIT]` wird automatisch aus `[UHRZEIT]` berechnet: Winterzeit −3 Stunden, Sommerzeit −4 Stunden. Die vorhandene Grafik zeigt die Variante für **21:00 Uhr**.
 
 ## Allianz-Mitteilung zum Kopieren
 
@@ -26,6 +26,7 @@ Wer Unterstützung bei der Verteidigung benötigt, meldet sich möglichst vor de
 <color=#FFD700><b>🧟 ZOMBIE-BELAGERUNG – HEUTE [UHRZEIT]</b></color>
 
 Ab <color=#FFD700><b>[UHRZEIT] Uhr</b></color> greifen Zombie-Wellen nacheinander unsere Basen an.
+🕒 <b>Serverzeit:</b> [SERVERZEIT] Uhr
 Wir spielen <b>Stufe [STUFE]</b>. Angegriffen werden Basen <b>ab Level [BASIS-LEVEL]</b>.
 
 🛡️ <b>Verteidigung aufstellen</b> – Schilde schützen hier nicht.

@@ -17,7 +17,7 @@ Die Voraussetzungen und der genaue Ablauf richten sich nach der aktuell ausgewä
 - Wartet auf die gemeinsame Freigabe im Allianzchat.
 - Startet keine vorzeitigen Einzelangriffe auf das markierte Ziel.
 
-> **Vor dem Versenden:** `[UHRZEIT]` und `[FESTUNGSLEVEL]` durch die Angaben für den geplanten Angriff ersetzen.
+> **Vor dem Versenden:** `[UHRZEIT]` und `[FESTUNGSLEVEL]` durch die Angaben für den geplanten Angriff ersetzen. `[SERVERZEIT]` wird automatisch aus `[UHRZEIT]` berechnet: Winterzeit −3 Stunden, Sommerzeit −4 Stunden.
 
 ## Allianz-Mitteilung zum Kopieren
 
@@ -25,6 +25,7 @@ Die Voraussetzungen und der genaue Ablauf richten sich nach der aktuell ausgewä
 <color=#FFD700><b>🏰 FESTUNGSANGRIFF – HEUTE [UHRZEIT]</b></color>
 
 Um <color=#FFD700><b>[UHRZEIT] Uhr</b></color> greifen wir gemeinsam eine <b>Festung auf Level [FESTUNGSLEVEL]</b> an.
+🕒 <b>Serverzeit:</b> [SERVERZEIT] Uhr
 
 📍 <b>Zielmarkierung prüfen:</b> Achtet darauf, dass ihr die richtige Festung ausgewählt habt.
 ⏳ <b>Auf Freigabe warten:</b> Bitte nicht vorzeitig angreifen.

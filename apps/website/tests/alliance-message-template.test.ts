@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   fillAllianceAmbushMessage,
+  calculateServerTime,
   fillCityConquestMessage,
   fillFortressAttackMessage,
   fillRaidShieldMessage,
@@ -11,6 +12,7 @@ import {
   isFortressAttackMessageComplete,
   isRaidShieldMessageComplete,
   isZombieSiegeMessageComplete,
+  serverTimeOffsetHours,
 } from "../src/lib/alliance-message-template.mjs";
 
 test("füllt die deutsche Zombie-Mitteilung vollständig aus", () => {
@@ -93,4 +95,27 @@ test("setzt Stufe und Startzeit des Allianz-Hinterhalts in allen Sprachen ein", 
   assert.equal(isAllianceAmbushMessageComplete({ time: "19:60", level: "12" }), false);
   assert.equal(isAllianceAmbushMessageComplete({ time: "19:45", level: "" }), false);
   assert.equal(isAllianceAmbushMessageComplete({ time: "19:45", level: "12" }), true);
+});
+
+test("berechnet die Serverzeit im Winter drei und im Sommer vier Stunden früher", () => {
+  const winter = new Date("2026-01-15T12:00:00Z");
+  const summer = new Date("2026-07-15T12:00:00Z");
+  assert.equal(serverTimeOffsetHours(winter), 3);
+  assert.equal(serverTimeOffsetHours(summer), 4);
+  assert.equal(calculateServerTime("20:15", winter), "17:15");
+  assert.equal(calculateServerTime("20:15", summer), "16:15");
+  assert.equal(calculateServerTime("02:30", winter), "23:30");
+});
+
+test("setzt die Serverzeit in alle frei planbaren Ankündigungen ein", () => {
+  const referenceDate = new Date("2026-01-15T12:00:00Z");
+  const template = "[SERVERZEIT] · [SERVER TIME] · [HEURE SERVEUR] · [ВРЕМЯ СЕРВЕРА] · [HORÁRIO DO SERVIDOR]";
+  const expected = "17:00 · 17:00 · 17:00 · 17:00 · 17:00";
+  assert.equal(fillCityConquestMessage(template, { time: "20:00", referenceDate }), expected);
+  assert.equal(fillFortressAttackMessage(template, { time: "20:00", referenceDate }), expected);
+  assert.equal(fillAllianceAmbushMessage(template, { time: "20:00", referenceDate }), expected);
+  assert.equal(
+    fillZombieSiegeMessage("[SERVERZEIT] · [SERVER TIME] · [HEURE SERVEUR] · [ВРЕМЯ СЕРВЕРА] · [HORA DO SERVIDOR]", { time: "20:00", referenceDate }),
+    expected,
+  );
 });
