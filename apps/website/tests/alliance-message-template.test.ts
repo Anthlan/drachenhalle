@@ -83,13 +83,14 @@ test("setzt die gemeinsame Schildzeit im Raubzugplan in allen Sprachen ein", () 
   assert.equal(isRaidShieldMessageComplete({ time: "20:00" }), true);
 });
 
-test("setzt die Startzeit des Allianz-Hinterhalts in allen Sprachen ein", () => {
-  const template = "Heute [UHRZEIT] · Today [TIME] · Aujourd’hui [HEURE] · Сегодня [ВРЕМЯ] · Hoje [HORÁRIO]";
+test("setzt Stufe und Startzeit des Allianz-Hinterhalts in allen Sprachen ein", () => {
+  const template = "[STUFE] um [UHRZEIT] · [LEVEL] at [TIME] · [NIVEAU] à [HEURE] · [УРОВЕНЬ] в [ВРЕМЯ] · [NÍVEL] às [HORÁRIO]";
   assert.equal(
-    fillAllianceAmbushMessage(template, { time: "19:45" }),
-    "Heute 19:45 · Today 19:45 · Aujourd’hui 19:45 · Сегодня 19:45 · Hoje 19:45",
+    fillAllianceAmbushMessage(template, { time: "19:45", level: "12" }),
+    "12 um 19:45 · 12 at 19:45 · 12 à 19:45 · 12 в 19:45 · 12 às 19:45",
   );
-  assert.equal(isAllianceAmbushMessageComplete({ time: "" }), false);
-  assert.equal(isAllianceAmbushMessageComplete({ time: "19:60" }), false);
-  assert.equal(isAllianceAmbushMessageComplete({ time: "19:45" }), true);
+  assert.equal(isAllianceAmbushMessageComplete({ time: "", level: "12" }), false);
+  assert.equal(isAllianceAmbushMessageComplete({ time: "19:60", level: "12" }), false);
+  assert.equal(isAllianceAmbushMessageComplete({ time: "19:45", level: "" }), false);
+  assert.equal(isAllianceAmbushMessageComplete({ time: "19:45", level: "12" }), true);
 });

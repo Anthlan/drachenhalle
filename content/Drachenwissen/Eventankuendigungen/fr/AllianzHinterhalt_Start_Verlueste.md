@@ -1,40 +1,40 @@
 # Embuscade d’alliance : bien préparer et limiter les pertes
 
-Embuscade d’alliance dépend du plus grand nombre possible de membres en ligne et du déploiement attentif de leurs troupes. Cette annonce rappelle donc à tout le monde l'heure de départ et la gestion de la capacité hospitalière, des pertes et de la guérison - Bien réfléchi.
+L’Embuscade d’alliance repose sur la présence simultanée du plus grand nombre possible de membres et sur un engagement maîtrisé de leurs troupes. Cette annonce rappelle donc l’heure de départ ainsi que la gestion attentive de l’hôpital, des pertes et des soins.
 
-Pour la stratégie détaillée de l'événement, y compris les quêtes personnelles de rallye et le but partagé x10, voir la [Conseil Embuscade d’alliance](../../Tipps/fr/Tipp_07_AllianzHinterhalt.md). Cette annonce est délibérément plus courte et destinée à être utilisée immédiatement avant l'événement.
+Pour la stratégie détaillée de l’événement, notamment les quêtes personnelles de rassemblement et l’objectif collectif x10, consultez le [conseil sur l’Embuscade d’alliance](../../Tipps/fr/Tipp_07_AllianzHinterhalt.md). Cette annonce est volontairement plus courte et conçue pour être utilisée juste avant l’événement.
 
 ## Avant le début
 
-- Vérifiez l'heure annoncée et soyez en ligne quelques minutes plus tôt.
+- Vérifiez l’heure annoncée et soyez en ligne quelques minutes plus tôt.
 - Gardez les troupes et les marches que vous comptez utiliser disponibles.
-- Faites autant de place que possible à votre hôpital.
-- Suivez les directives actuelles des coordonnateurs de l'événement sur la difficulté et la force de l'équipe.
+- Libérez autant de place que possible dans votre hôpital.
+- Suivez les consignes actuelles de la coordination concernant la difficulté et la force de l’équipe.
 
-## Pendant l'embuscade
+## Pendant l’embuscade
 
-Un déploiement attentif est préférable à la poursuite de la lutte aveugle. Vérifiez votre hôpital et les pertes régulièrement. Si le niveau sélectionné est terminé en toute sécurité, ajusté la formation peut réduire les pertes inutiles. suffisamment, l'achèvement de l'événement avec succès prend la priorité.
+Des actions maîtrisées valent mieux que de continuer à combattre sans réfléchir. Vérifiez régulièrement votre hôpital et vos pertes. Si le niveau choisi est terminé sans difficulté, des formations adaptées peuvent réduire les pertes inutiles. Si les dégâts collectifs sont tout juste suffisants, la réussite de l’événement reste prioritaire.
 
-Pendant la période de l'événement, guérissez les troupes en petits lots. Cela vous permet d'utiliser l'alliance aider plus fréquemment et de ramener les soldats à l'action plus rapidement.
+Lorsque vous êtes en ligne pendant l’événement, soignez vos troupes par petits groupes. Vous pouvez ainsi profiter plus souvent de l’aide d’alliance et remettre vos soldats en action plus rapidement.
 
-> **Avant d'envoyer:** `[HEURE]` doit être remplacé par l'heure locale annoncée pour cet événement.
+> **Avant l’envoi :** `[NIVEAU]` et `[HEURE]` doivent être remplacés par les informations de l’embuscade prévue.
 
-## Message de l'Alliance à copier
+## Message d’alliance à copier
 
 ```html
-<color=#FFD700><b>------------- [HEURE]</b></color>
+<color=#FFD700><b>⚔️ EMBUSCADE D’ALLIANCE – NIVEAU [NIVEAU] – AUJOURD’HUI [HEURE]</b></color>
 
-À <color=#FFD700><b>[HEURE]</b></color>On commence l'embuscade ensemble.
+À <color=#FFD700><b>[HEURE]</b></color>, nous lançons ensemble l’Embuscade d’alliance au <b>niveau [NIVEAU]</b>.
 
-⚔️ <b>Prépare les troupes</b> et être en ligne à temps.
-Surveillez votre <b>hôpital</b> et les pertes pendant l'événement.
----------------------------------------------
+⚔️ <b>Gardez vos troupes prêtes</b> et soyez en ligne à temps.
+🏥 Surveillez votre <b>hôpital</b> et vos pertes pendant l’événement.
+🛡️ Combattez avec prudence au lieu de perdre inutilement trop de troupes à la fois.
 
-<color=#87CEEB><b>- Gestion des pertes :</b></color>
-Ne continuez pas à lutter aveuglément – vérifiez votre hôpital et les pertes régulièrement.
+<color=#87CEEB><b>💡 Gestion des pertes :</b></color>
+Ne continuez pas à combattre à l’aveugle : vérifiez régulièrement votre hôpital et vos pertes.
 
-<color=#90EE90><b>-Cure efficace :</b></color>
-En ligne, guérir seulement <b>petits lots de troupes</b> à la fois et utiliser l'aide de l'alliance. Cela rend vos soldats beaucoup plus vite.
+<color=#90EE90><b>💡 Soins efficaces :</b></color>
+Lorsque vous êtes en ligne, soignez uniquement de <b>petits groupes de troupes</b> et utilisez l’aide d’alliance. Vos soldats seront ainsi disponibles beaucoup plus rapidement.
 
-<b>Des questions?</b> Message Anthlan ou une R4.
+<b>Des questions ?</b> Contactez simplement Anthlan ou un R4.
 ```

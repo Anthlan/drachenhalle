@@ -123,10 +123,11 @@ const messageConfigurator = document.slug === "eventankuendigung-zombie-belageru
         ? {
             type: "alliance-ambush",
             title: "Hinterhalt vorbereiten",
-            description: "Trage die vereinbarte Startzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
+            description: "Trage die Hinterhalt-Stufe und die vereinbarte Startzeit ein. Die fertige Mitteilung wird automatisch erstellt.",
             groupLabel: "Angaben für den Allianz-Hinterhalt",
-            incompleteStatus: "Bitte die Startzeit ausfüllen.",
+            incompleteStatus: "Bitte Hinterhalt-Stufe und Startzeit ausfüllen.",
             fields: [
+              { name: "level", label: "Hinterhalt-Stufe", type: "number", placeholder: "10" },
               { name: "time", label: "Startzeit", type: "time" },
             ],
           }

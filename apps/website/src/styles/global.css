@@ -3187,9 +3187,9 @@ h1 {
 }
 
 .alliance-template-actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
   gap: 18px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
@@ -3228,6 +3228,13 @@ h1 {
 
 .alliance-template-preview pre {
   margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.alliance-template-preview code {
+  white-space: inherit;
+  overflow-wrap: inherit;
 }
 
 .tip-view-switcher {
@@ -9037,7 +9044,7 @@ footer a {
 
   .alliance-template-actions {
     align-items: stretch;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .alliance-template-actions .copy-code-button {

@@ -1,40 +1,40 @@
 # Emboscada da Aliança: preparar bem e limitar as perdas
 
-A Emboscada da Aliança depende de o maior número possível de membros estarem online juntos e desplegarem as suas tropas com cuidado. Este anúncio recorda, portanto, a todos o tempo de início e a gestão ponderada da capacidade hospitalar, das perdas e da cura.
+O sucesso da Emboscada da Aliança depende de que o maior número possível de membros esteja online ao mesmo tempo e use suas tropas com cuidado. Por isso, este comunicado lembra não apenas o horário de início, mas também a importância de controlar o hospital, as perdas e a cura.
 
-Para a estratégia detalhada do evento, incluindo missões de ataque conjunto pessoais e o objetivo compartilhado x10, consulte o [Alteração emboscada dica](../../Tipps/pt/Tipp_07_AllianzHinterhalt.md). Este anúncio é deliberadamente mais curto e destina-se a ser utilizado imediatamente antes do evento.
+Para conhecer a estratégia detalhada do evento, incluindo as missões pessoais de ataque conjunto e o objetivo coletivo x10, consulte a [dica sobre a Emboscada da Aliança](../../Tipps/pt/Tipp_07_AllianzHinterhalt.md). Este comunicado é propositalmente mais curto e foi preparado para uso imediato antes do evento.
 
 ## Antes do início
 
-- Verifique a hora anunciada e esteja online alguns minutos antes.
-- Mantenha as tropas e as marchas disponíveis.
-- Faça o máximo de espaço possível no seu hospital.
-- Seguir as orientações atuais dos coordenadores do evento sobre dificuldade e força da equipe.
+- Confira o horário anunciado e esteja online alguns minutos antes.
+- Mantenha disponíveis as tropas e marchas que pretende usar.
+- Libere o máximo de espaço possível no hospital.
+- Siga as orientações atuais da coordenação sobre dificuldade e força da equipe.
 
 ## Durante a emboscada
 
-Um desdobramento cuidadoso é melhor do que continuar a lutar cegamente. Verifique o seu hospital e perdas regularmente. Se o nível selecionado for concluído com segurança, as formações ajustadas podem reduzir as perdas desnecessárias. Se o dano total for apenas suficiente, a conclusão bem sucedida do evento é prioritária.
+Agir com controle é melhor do que continuar lutando sem avaliar a situação. Confira regularmente o hospital e as perdas. Se o nível escolhido for concluído com segurança, formações adaptadas podem reduzir perdas desnecessárias. Se o dano coletivo estiver no limite, concluir o evento com sucesso continua sendo a prioridade.
 
-Enquanto estiveres online durante o evento, cura tropas em pequenos lotes. Isto permite que você use ajuda da aliança com mais frequência e devolva os soldados para a ação mais rápido.
+Enquanto estiver online durante o evento, cure as tropas em pequenos grupos. Assim, você poderá usar a ajuda da aliança com mais frequência e devolver seus soldados à ação mais rapidamente.
 
-> **Antes de enviar:** `[HORÁRIO]` deve ser substituída pela hora local anunciada para este evento.
+> **Antes de enviar:** `[NÍVEL]` e `[HORÁRIO]` devem ser substituídos pelos dados da emboscada planejada.
 
 ## Mensagem da Aliança para copiar
 
 ```html
-<color=#FFD700><b>⚔️ Aliança de Ambos – Hoje [HORÁRIO]</b></color>
+<color=#FFD700><b>⚔️ EMBOSCADA DA ALIANÇA – NÍVEL [NÍVEL] – HOJE [HORÁRIO]</b></color>
 
-Em <color=#FFD700><b>[HORÁRIO]</b></color>, começamos a emboscada juntos.
+Às <color=#FFD700><b>[HORÁRIO]</b></color>, começamos juntos a Emboscada da Aliança no <b>nível [NÍVEL]</b>.
 
-⚔️ <b>Mantenha as tropas prontas .</b> E estar online a tempo.
-🏥 Cuidado com o seu <b>Hospital</b> e perdas durante o evento.
-🛡️ Combate cuidadosamente em vez de perder um número desnecessário de tropas de uma só vez.
+⚔️ <b>Mantenha as tropas prontas</b> e esteja online no horário.
+🏥 Acompanhe seu <b>hospital</b> e suas perdas durante o evento.
+🛡️ Lute com cuidado para não perder tropas demais de uma só vez.
 
 <color=#87CEEB><b>💡 Gestão de perdas:</b></color>
-Não continue a lutar cego – Verifique o seu hospital e as perdas regularmente.
+Não continue lutando sem avaliar a situação — confira regularmente o hospital e as perdas.
 
-<color=#90EE90><b>💡 Cura eficaz:</b></color>
-Enquanto estiver on-line, cura apenas <b>pequenos lotes de tropas</b> E usem a ajuda da Aliança. Isto retorna os seus soldados muito mais rápido.
+<color=#90EE90><b>💡 Cura eficiente:</b></color>
+Enquanto estiver online, cure apenas <b>pequenos grupos de tropas</b> e use a ajuda da aliança. Assim, seus soldados voltarão muito mais rápido.
 
-<b>Perguntas?</b> Basta enviar mensagem ao Anthlan ou a R4.
+<b>Dúvidas?</b> Fale com Anthlan ou com um R4.
 ```

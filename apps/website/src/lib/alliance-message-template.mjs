@@ -22,6 +22,7 @@ const raidShieldTokens = {
 };
 const allianceAmbushTokens = {
   time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
+  level: ["[STUFE]", "[LEVEL]", "[NIVEAU]", "[УРОВЕНЬ]", "[NÍVEL]"],
 };
 
 const normalizedValue = (value) => String(value ?? "").trim();
@@ -67,7 +68,8 @@ export const isRaidShieldMessageComplete = (values) => validTime(values.time);
 export const fillRaidShieldMessage = (template, values) =>
   fillMessage(template, values, raidShieldTokens);
 
-export const isAllianceAmbushMessageComplete = (values) => validTime(values.time);
+export const isAllianceAmbushMessageComplete = (values) =>
+  validTime(values.time) && positiveInteger(values.level);
 
 export const fillAllianceAmbushMessage = (template, values) =>
   fillMessage(template, values, allianceAmbushTokens);
