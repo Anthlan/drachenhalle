@@ -14,7 +14,7 @@ const { url } = Astro.props;
   </details>
 </div>
 <style>
-.content-share-actions { position: relative; width:fit-content; }
+.content-share-actions { position:relative; width:fit-content; display:flex; align-items:center; gap:8px; }
 .content-share-actions button { width:44px; height:44px; flex:0 0 44px; padding:0; }
 .content-share-help > summary { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line-bright); border-radius:50%; color:var(--gold-pale); background:rgba(227,173,78,.07); cursor:pointer; list-style:none; font:700 19px/1 Georgia,"Times New Roman",serif; }
 .content-share-help > summary::-webkit-details-marker { display:none; }
