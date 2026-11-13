@@ -945,7 +945,7 @@
   "Festungsangriff: gemeinsam angreifen": "Ataque à fortaleza: atacar juntos",
   "Festungslevel und Startzeit einsetzen, Zielmarkierung prüfen und gemeinsam angreifen.": "Informe o nível da fortaleza e o horário de início, confira a marcação do alvo e ataque em conjunto.",
   "Schildplan vorbereiten": "Preparar o plano de escudos",
-  "Trage die gemeinsam festgelegte Schildzeit ein. Die fertige Mitteilung wird automatisch erstellt.": "Informe o horário combinado para ativar os escudos. O comunicado final será criado automaticamente.",
+  "Trage den frühesten empfohlenen Zeitpunkt ein. Die Serverzeit wird automatisch ergänzt.": "Informe o primeiro horário recomendado. O horário do servidor será adicionado automaticamente.",
   "Angaben für den Raubzug-Schildplan": "Dados do plano de escudos do ataque",
   "Bitte die Schildzeit ausfüllen.": "Informe o horário do escudo.",
   "Schildzeit": "Horário do escudo",

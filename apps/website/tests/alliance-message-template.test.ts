@@ -75,10 +75,10 @@ test("ersetzt die Festungsangriff-Platzhalter in allen Sprachen", () => {
 });
 
 test("setzt die gemeinsame Schildzeit im Raubzugplan in allen Sprachen ein", () => {
-  const template = "Freitag [UHRZEIT] · Friday [TIME] · Vendredi [HEURE] · Пятница [ВРЕМЯ] · Sexta-feira [HORÁRIO]";
+  const template = "Freitag [UHRZEIT] ([SERVERZEIT]) · Friday [TIME] ([SERVER TIME]) · Vendredi [HEURE] ([HEURE SERVEUR]) · Пятница [ВРЕМЯ] ([ВРЕМЯ СЕРВЕРА]) · Sexta-feira [HORÁRIO] ([HORÁRIO DO SERVIDOR])";
   assert.equal(
-    fillRaidShieldMessage(template, { time: "20:00" }),
-    "Freitag 20:00 · Friday 20:00 · Vendredi 20:00 · Пятница 20:00 · Sexta-feira 20:00",
+    fillRaidShieldMessage(template, { time: "20:00", referenceDate: new Date("2026-01-15T12:00:00Z") }),
+    "Freitag 20:00 (17:00) · Friday 20:00 (17:00) · Vendredi 20:00 (17:00) · Пятница 20:00 (17:00) · Sexta-feira 20:00 (17:00)",
   );
   assert.equal(isRaidShieldMessageComplete({ time: "" }), false);
   assert.equal(isRaidShieldMessageComplete({ time: "24:00" }), false);

@@ -21,10 +21,10 @@ Without a shield, any base can become a target, regardless of its strength. If a
 ## Preparation
 
 - Get **one 24-hour shield and one 8-hour shield** from the alliance shop before Friday evening.
-- Activate the first shield on time on Friday evening.
-- Extend your protection on Saturday evening with the 8-hour shield.
+- Activate the first shield **from** the agreed time on Friday evening. Later is fine as long as protection is active before the raid begins.
+- Extend protection on Saturday **from** the agreed time with the 8-hour shield and avoid any gap in protection.
 - After activation, check that the displayed remaining duration covers the entire planned period.
-- Before sending the message, replace **`[TIME]`** with the shield time set by the alliance.
+- Before sending the message, replace **`[TIME]`** with the earliest recommended time. **`[SERVER TIME]`** is calculated automatically from **`[TIME]`**.
 
 ## Alliance message to copy
 
@@ -37,8 +37,9 @@ From <b>Saturday 03:00 (00:00 server time)</b> until <b>Sunday 03:00 (00:00 serv
 Please get <b>1× 24h shield + 1× 8h shield</b> from the alliance shop in time.
 
 <color=#90EE90><b>Our shield plan:</b></color>
-<b>Friday [TIME]</b> → 24h shield
-<b>Saturday [TIME]</b> → 8h shield
+<b>From Friday [TIME] ([SERVER TIME] server time)</b> → 24h shield
+<b>From Saturday [TIME] ([SERVER TIME] server time)</b> → 8h shield
+Each time is the earliest recommended time. You may activate the shields later, provided your protection remains uninterrupted for the entire raid.
 
 <color=#FF6347><b>⚠️ Important:</b></color> Without a shield, <b>anyone</b> can become a target, regardless of strength. If your base is burned to 0, massive numbers of soldiers die on the drill ground.
 

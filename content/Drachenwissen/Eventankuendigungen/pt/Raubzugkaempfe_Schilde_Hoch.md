@@ -21,10 +21,10 @@ Sem um escudo, qualquer base pode tornar-se um alvo, independentemente da sua fo
 ## Preparação
 
 - Vamos lá. **Um escudo de 24 horas e um escudo 8 horas** da loja da Aliança antes da sexta-feira à noite.
-- Ativa o primeiro escudo a tempo na noite de sexta-feira.
-- Prolongem a sua proteção no sábado à noite com o escudo de 8 horas.
+- Ative o primeiro escudo **a partir do** horário combinado na noite de sexta-feira. Pode ativá-lo mais tarde, desde que a proteção esteja ativa antes do início do ataque.
+- Prolongue a proteção no sábado **a partir do** horário combinado com o escudo de 8 horas, sem deixar uma lacuna na proteção.
 - Após a ativação, verifique se a duração restante exibida abrange todo o período planejado.
-- Antes de enviar a mensagem, substitua **`[HORÁRIO]`** pelo horário de escudo definido pela aliança.
+- Antes de enviar a mensagem, substitua **`[HORÁRIO]`** pelo primeiro horário recomendado. **`[HORÁRIO DO SERVIDOR]`** é calculado automaticamente a partir de **`[HORÁRIO]`**.
 
 ## Mensagem da Aliança para copiar
 
@@ -37,8 +37,9 @@ A partir de <b>sábado às 03:00 (00:00, horário do servidor)</b> até <b>domin
 Por favor, tira-te. <b>Escudo de 1×24h + Escudo 1×8h</b> da loja da Aliança a tempo.
 
 <color=#90EE90><b>O nosso plano de escudo:</b></color>
-<b>Sexta-feira [HORÁRIO]</b> → Escudo de 24 horas
-<b>Sábado [HORÁRIO]</b> → Escudo de 8 h
+<b>A partir de sexta-feira [HORÁRIO] ([HORÁRIO DO SERVIDOR], horário do servidor)</b> → Escudo de 24 horas
+<b>A partir de sábado [HORÁRIO] ([HORÁRIO DO SERVIDOR], horário do servidor)</b> → Escudo de 8 horas
+Cada horário é o primeiro momento recomendado. Pode ativar os escudos mais tarde, desde que a proteção permaneça contínua durante todo o ataque.
 
 <color=#FF6347><b>⚠️ Importante:</b></color> Sem um escudo, <b>Qualquer pessoa</b> Pode tornar-se um alvo, independentemente da força. Se a sua base for queimada para 0, um número enorme de soldados morrem no campo de perfuração.
 

@@ -21,10 +21,10 @@ Ohne Schild kann grundsätzlich jede Basis zum Ziel werden – unabhängig von i
 ## Vorbereitung
 
 - Besorgt vor Freitagabend **einen 24-Stunden-Schild und einen 8-Stunden-Schild** im Allianz-Shop.
-- Setzt den ersten Schild pünktlich am Freitagabend.
-- Verlängert den Schutz am Samstagabend mit dem 8-Stunden-Schild.
+- Setzt den ersten Schild **ab** dem vereinbarten Zeitpunkt am Freitagabend. Später ist möglich, solange der Schutz vor Beginn des Raubzugs aktiv ist.
+- Verlängert den Schutz am Samstag **ab** dem vereinbarten Zeitpunkt mit dem 8-Stunden-Schild und vermeidet dabei eine Schutzlücke.
 - Kontrolliert nach dem Aktivieren, ob die angezeigte Restlaufzeit den geplanten Zeitraum vollständig abdeckt.
-- Ersetzt vor dem Versenden den Platzhalter **`[UHRZEIT]`** durch die von der Allianz festgelegte Schildzeit.
+- Ersetzt vor dem Versenden den Platzhalter **`[UHRZEIT]`** durch den frühesten empfohlenen Zeitpunkt. **`[SERVERZEIT]`** wird automatisch aus **`[UHRZEIT]`** berechnet.
 
 ## Allianz-Mitteilung zum Kopieren
 
@@ -37,8 +37,9 @@ Von <b>Samstag 03:00 Uhr (00:00 Serverzeit)</b> bis <b>Sonntag 03:00 Uhr (00:00 
 Bitte besorgt euch rechtzeitig im Allianz-Shop <b>1× 24h-Schild + 1× 8h-Schild.</b>
 
 <color=#90EE90><b>Unser Schildplan:</b></color>
-<b>Freitag [UHRZEIT]</b> → 24h-Schild
-<b>Samstag [UHRZEIT]</b> → 8h-Schild
+<b>Ab Freitag [UHRZEIT] Uhr ([SERVERZEIT] Uhr Serverzeit)</b> → 24h-Schild
+<b>Ab Samstag [UHRZEIT] Uhr ([SERVERZEIT] Uhr Serverzeit)</b> → 8h-Schild
+Die Uhrzeit ist jeweils der früheste empfohlene Zeitpunkt. Ihr könnt die Schilde später setzen – wichtig ist ein lückenloser Schutz während des gesamten Raubzugs.
 
 <color=#FF6347><b>⚠️ Wichtig:</b></color> Ohne Schild kann <b>jeder</b> zum Ziel werden – unabhängig von der Stärke. Wird die Basis auf 0 gebrannt, sterben massiv Soldaten auf dem Übungsplatz.
 

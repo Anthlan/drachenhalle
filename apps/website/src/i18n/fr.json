@@ -945,7 +945,7 @@
   "Festungsangriff: gemeinsam angreifen": "Assaut de forteresse : attaquer ensemble",
   "Festungslevel und Startzeit einsetzen, Zielmarkierung prüfen und gemeinsam angreifen.": "Indiquer le niveau de la forteresse et l’heure de départ, vérifier le marqueur de cible et attaquer ensemble.",
   "Schildplan vorbereiten": "Préparer le plan de bouclier",
-  "Trage die gemeinsam festgelegte Schildzeit ein. Die fertige Mitteilung wird automatisch erstellt.": "Indiquez l’heure de bouclier convenue. L’annonce finale est créée automatiquement.",
+  "Trage den frühesten empfohlenen Zeitpunkt ein. Die Serverzeit wird automatisch ergänzt.": "Indiquez la première heure recommandée. L’heure du serveur est ajoutée automatiquement.",
   "Angaben für den Raubzug-Schildplan": "Informations pour le plan de bouclier du raid",
   "Bitte die Schildzeit ausfüllen.": "Veuillez indiquer l’heure du bouclier.",
   "Schildzeit": "Heure du bouclier",

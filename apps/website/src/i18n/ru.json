@@ -1102,7 +1102,7 @@
   "Festungsangriff: gemeinsam angreifen": "Штурм крепости: атакуем вместе",
   "Festungslevel und Startzeit einsetzen, Zielmarkierung prüfen und gemeinsam angreifen.": "Укажите уровень крепости и время начала, проверьте метку цели и атакуйте вместе.",
   "Schildplan vorbereiten": "Подготовить план щитов",
-  "Trage die gemeinsam festgelegte Schildzeit ein. Die fertige Mitteilung wird automatisch erstellt.": "Укажите согласованное время установки щитов. Готовое объявление будет создано автоматически.",
+  "Trage den frühesten empfohlenen Zeitpunkt ein. Die Serverzeit wird automatisch ergänzt.": "Укажите самое раннее рекомендуемое время. Серверное время будет добавлено автоматически.",
   "Angaben für den Raubzug-Schildplan": "Данные для плана щитов на рейд",
   "Bitte die Schildzeit ausfüllen.": "Укажите время установки щитов.",
   "Schildzeit": "Время установки щита",

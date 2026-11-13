@@ -22,6 +22,7 @@ const fortressAttackTokens = {
 };
 const raidShieldTokens = {
   time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
+  serverTime: ["[SERVERZEIT]", "[SERVER TIME]", "[HEURE SERVEUR]", "[ВРЕМЯ СЕРВЕРА]", "[HORÁRIO DO SERVIDOR]"],
 };
 const allianceAmbushTokens = {
   time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
@@ -96,7 +97,7 @@ export const fillFortressAttackMessage = (template, values) =>
 export const isRaidShieldMessageComplete = (values) => validTime(values.time);
 
 export const fillRaidShieldMessage = (template, values) =>
-  fillMessage(template, values, raidShieldTokens);
+  fillMessage(template, withServerTime(values), raidShieldTokens);
 
 export const isAllianceAmbushMessageComplete = (values) =>
   validTime(values.time) && positiveInteger(values.level);

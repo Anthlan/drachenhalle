@@ -21,10 +21,10 @@ Sans bouclier, une base peut devenir une cible, quelle que soit sa force. Si une
 ## Préparation
 
 - Prends **une 24- un bouclier et un 8- bouclier horaire** de la boutique d'alliance avant vendredi soir.
-- Activer le premier bouclier à l'heure vendredi soir.
-- Prolongez votre protection le samedi soir avec la 8- bouclier horaire.
+- Activez le premier bouclier **à partir de** l’heure convenue le vendredi soir. Vous pouvez le faire plus tard tant que la protection est active avant le début du raid.
+- Prolongez la protection le samedi **à partir de** l’heure convenue avec le bouclier de 8 heures, sans laisser d’interruption.
 - Après activation, vérifiez que la durée restante affichée couvre la période entière prévue.
-- Avant d’envoyer le message, remplacez **`[HEURE]`** par l’heure de bouclier fixée par l’alliance.
+- Avant d’envoyer le message, remplacez **`[HEURE]`** par l’heure de début recommandée. **`[HEURE SERVEUR]`** est calculée automatiquement à partir de **`[HEURE]`**.
 
 ## Message de l'Alliance à copier
 
@@ -37,8 +37,9 @@ Depuis <b>Samedi 03:00 (00:00 temps du serveur)</b> jusqu'à <b>Dimanche 03:00 (
 S'il vous plaît, obtenez <b>1× 24h bouclier + 1× 8h bouclier</b> de la boutique d'alliance à temps.
 
 <color=#90EE90><b>Notre plan de bouclier :</b></color>
-<b>Vendredi [HEURE]</b> → 24h bouclier
-<b>Samedi [HEURE]</b> → 8h bouclier
+<b>À partir de vendredi [HEURE] ([HEURE SERVEUR], heure du serveur)</b> → Bouclier de 24 h
+<b>À partir de samedi [HEURE] ([HEURE SERVEUR], heure du serveur)</b> → Bouclier de 8 h
+Chaque heure indiquée est la première heure recommandée. Vous pouvez activer les boucliers plus tard, à condition que la protection reste continue pendant tout le raid.
 
 <color=#FF6347><b>- --------</b></color> Sans bouclier, <b>qui que ce soit</b> peut devenir une cible, peu importe la force. 0, Des soldats en nombre massif meurent sur le terrain de forage.
 

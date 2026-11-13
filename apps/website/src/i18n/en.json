@@ -945,7 +945,7 @@
   "Festungsangriff: gemeinsam angreifen": "Fortress attack: attack together",
   "Festungslevel und Startzeit einsetzen, Zielmarkierung prüfen und gemeinsam angreifen.": "Enter the fortress level and start time, check the target marker and attack together.",
   "Schildplan vorbereiten": "Prepare the shield plan",
-  "Trage die gemeinsam festgelegte Schildzeit ein. Die fertige Mitteilung wird automatisch erstellt.": "Enter the agreed shield time. The finished announcement is created automatically.",
+  "Trage den frühesten empfohlenen Zeitpunkt ein. Die Serverzeit wird automatisch ergänzt.": "Enter the earliest recommended time. Server time is added automatically.",
   "Angaben für den Raubzug-Schildplan": "Details for the raid shield plan",
   "Bitte die Schildzeit ausfüllen.": "Please enter the shield time.",
   "Schildzeit": "Shield time",
