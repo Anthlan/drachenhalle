@@ -47,6 +47,7 @@ const knownPeople = [
   "Korpi92",
   "Krasaviza",
   "Lordmirko",
+  "Markus78",
   "Odin71",
   "Odin81",
   "RuhrpottBlach",
