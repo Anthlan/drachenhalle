@@ -4,6 +4,13 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 
 ## S1 – Filmische Allianz-Fantasy
 
+- [2026_11_15_2015_DrachenritterbarFrauenrunde_Kaylani_Somea_SheWolf_RuhrpottBlach_JuliaDE11.png](Chatbilder/2026_11_15_2015_DrachenritterbarFrauenrunde_Kaylani_Somea_SheWolf_RuhrpottBlach_JuliaDE11.png)
+- [2026_11_15_2020_DrachenritterbarStammplatzStreetjudge.png](Chatbilder/2026_11_15_2020_DrachenritterbarStammplatzStreetjudge.png)
+- [2026_11_15_2021_DrachenritterbarAmBahnsteig.png](Chatbilder/2026_11_15_2021_DrachenritterbarAmBahnsteig.png)
+- [2026_11_15_2020_FeierInDerDrachenritterbar.png](Chatbilder/2026_11_15_2020_FeierInDerDrachenritterbar.png)
+- [2026_11_15_2028_BierStattGoldzug_Kaylani_Nono33_Somea_RuhrpottBlach_Hulkster666.png](Chatbilder/2026_11_15_2028_BierStattGoldzug_Kaylani_Nono33_Somea_RuhrpottBlach_Hulkster666.png)
+- [2026_11_15_2020_DrachenritterbarStammplaetze.png](Chatbilder/2026_11_15_2020_DrachenritterbarStammplaetze.png)
+
 - [2026_11_13_2153_IchHabDochSonstNix_Somea_Anthlan.png](Chatbilder/2026_11_13_2153_IchHabDochSonstNix_Somea_Anthlan.png)
 
 - [2026_11_05_1435_BasisLevel27_mysteryZ.png](Chatbilder/2026_11_05_1435_BasisLevel27_mysteryZ.png)
@@ -79,6 +86,11 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_10_23_1625_BasisLevel28_DaVinci1986.png](Chatbilder/2026_10_23_1625_BasisLevel28_DaVinci1986.png)
 
 ## S2 – Fantasy-Comic & Infografik
+
+- [2026_11_15_2028_WortDesTages_Drachenherz.png](Chatbilder/2026_11_15_2028_WortDesTages_Drachenherz.png)
+- [2026_11_15_2020_DrachenritterbarHeissgetraenke.png](Chatbilder/2026_11_15_2020_DrachenritterbarHeissgetraenke.png)
+- [2026_11_15_2020_DrachenritterbarGetraenkekarteFranzoesisch.png](Chatbilder/2026_11_15_2020_DrachenritterbarGetraenkekarteFranzoesisch.png)
+- [2026_11_15_2020_DrachenritterbarAlkoholfreieGetraenke.png](Chatbilder/2026_11_15_2020_DrachenritterbarAlkoholfreieGetraenke.png)
 
 - [2026_11_13_2203_AlleSchildeAuf50_RuhrpottBlach.png](Chatbilder/2026_11_13_2203_AlleSchildeAuf50_RuhrpottBlach.png)
 - [2026_11_13_2202_BasisLevel27_Markus78.png](Chatbilder/2026_11_13_2202_BasisLevel27_Markus78.png)
@@ -294,6 +306,9 @@ Dieser Index ordnet jedes Chat- und Reaktionsbild genau einer der vier Stilgrupp
 - [2026_11_13_2203_Typical_Somea.png](Reaktionsbilder/2026_11_13_2203_Typical_Somea.png)
 
 ## S4 – Z-Routes-Postapokalypse
+
+- [2026_11_15_2028_DerBoss_RuhrpottBlach.png](Chatbilder/2026_11_15_2028_DerBoss_RuhrpottBlach.png)
+- [2026_11_15_2027_HaltMalDiePfanne_Skibbi_RuhrpottBlach.png](Chatbilder/2026_11_15_2027_HaltMalDiePfanne_Skibbi_RuhrpottBlach.png)
 
 - [2026_09_29_1901_KeinHandyZumZocken_Skibbi.png](Chatbilder/2026_09_29_1901_KeinHandyZumZocken_Skibbi.png)
 - [2026_09_29_1905_BratpfannenGerechtigkeit_RuhrpottBlach_Skibbi.png](Chatbilder/2026_09_29_1905_BratpfannenGerechtigkeit_RuhrpottBlach_Skibbi.png)

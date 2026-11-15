@@ -48,6 +48,8 @@ const knownPeople = [
   "Krasaviza",
   "Lordmirko",
   "Markus78",
+  "Nono33",
+  "SheWolf",
   "Odin71",
   "Odin81",
   "RuhrpottBlach",
