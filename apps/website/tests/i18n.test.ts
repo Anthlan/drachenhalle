@@ -28,6 +28,11 @@ test("translated fortress announcement exposes every registered language route",
   for(const language of config.languages)assert.equal(languageAvailable(fortressAnnouncement,language,config),true);
 });
 
+test("translated Radiation Legion announcement exposes every registered language route",()=> {
+  const radiationLegionAnnouncement="/drachenhalle/docs/eventankuendigung-strahlungslegion/";
+  for(const language of config.languages)assert.equal(languageAvailable(radiationLegionAnnouncement,language,config),true);
+});
+
 test("specific templates win and nested labels are translated",()=> {
   const t=createTranslator({"${left} von ${right}":"${left} of ${right}","${shown} von ${total} Allianzen":"${shown} of ${total} alliances","Punkte":"Points","${count} Punkte":"${count} points"});
   assert.equal(t("15 von 77 Allianzen"),"15 of 77 alliances");

@@ -17,6 +17,7 @@ Event announcements complement the two neighboring sections:
 - [Raid battles: Set shields in time](Raubzugkaempfe_Schilde_Hoch.md) – protection period, shield plan and preparation
 - [Zombie Siege: Defend together](ZombieBelagerung_Ablauf_Teilnahme.md) – procedure, participation, withdrawal and support
 - [City conquest in the new season: attack together](Saison_Stadteroberung_GemeinsamAngreifen.md) – enter the city level and start time, follow the marker and attack as one
+- [Radiation Legion: defend the attacked city together](Strahlungslegion_StadtVerteidigen.md) – enter the start time, check the announced target and hold the attack waves together
 
 ## Naming rules
 

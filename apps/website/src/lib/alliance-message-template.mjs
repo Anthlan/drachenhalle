@@ -29,6 +29,10 @@ const allianceAmbushTokens = {
   serverTime: ["[SERVERZEIT]", "[SERVER TIME]", "[HEURE SERVEUR]", "[ВРЕМЯ СЕРВЕРА]", "[HORÁRIO DO SERVIDOR]"],
   level: ["[STUFE]", "[LEVEL]", "[NIVEAU]", "[УРОВЕНЬ]", "[NÍVEL]"],
 };
+const radiationLegionTokens = {
+  time: ["[UHRZEIT]", "[TIME]", "[HEURE]", "[ВРЕМЯ]", "[HORÁRIO]"],
+  serverTime: ["[SERVERZEIT]", "[SERVER TIME]", "[HEURE SERVEUR]", "[ВРЕМЯ СЕРВЕРА]", "[HORÁRIO DO SERVIDOR]"],
+};
 
 const normalizedValue = (value) => String(value ?? "").trim();
 const validTime = (value) => {
@@ -104,3 +108,8 @@ export const isAllianceAmbushMessageComplete = (values) =>
 
 export const fillAllianceAmbushMessage = (template, values) =>
   fillMessage(template, withServerTime(values), allianceAmbushTokens);
+
+export const isRadiationLegionMessageComplete = (values) => validTime(values.time);
+
+export const fillRadiationLegionMessage = (template, values) =>
+  fillMessage(template, withServerTime(values), radiationLegionTokens);

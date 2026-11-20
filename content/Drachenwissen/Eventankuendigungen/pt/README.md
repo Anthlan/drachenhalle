@@ -17,6 +17,7 @@ Os anúncios de eventos complementam as duas secções vizinhas:
 - [Batalhas de ataque: Coloque escudos a tempo](Raubzugkaempfe_Schilde_Hoch.md) – Período de protecção, plano de proteção e preparação
 - [Zombie Siege: Defendemos juntos](ZombieBelagerung_Ablauf_Teilnahme.md) – Procedimento, participação, retirada e apoio
 - [Conquista de cidade na nova temporada: atacar juntos](Saison_Stadteroberung_GemeinsamAngreifen.md) – informe o nível e o horário, siga a marcação e ataque em conjunto
+- [Legião Radioativa: defender juntos a cidade atacada](Strahlungslegion_StadtVerteidigen.md) – informe o horário de início, confira o alvo anunciado e resistam juntos às ondas de ataque
 
 ## Regras de nomeação
 

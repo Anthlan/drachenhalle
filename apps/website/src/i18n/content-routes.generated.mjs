@@ -101,6 +101,16 @@ export default [
     }
   },
   {
+    "id": "content:Drachenwissen/Eventankuendigungen/Strahlungslegion_StadtVerteidigen.md",
+    "paths": {
+      "de": "/docs/eventankuendigung-strahlungslegion/",
+      "en": "/guides/radiation-legion-defend-the-attacked-city-together/",
+      "fr": "/guides/legion-radioactive-defendre-ensemble-la-ville-attaquee/",
+      "ru": "/руководства/радиационныи-легион-вместе-защитим-атакованныи-город/",
+      "pt": "/guias/legiao-radioativa-defender-juntos-a-cidade-atacada/"
+    }
+  },
+  {
     "id": "content:Allianz/README.md",
     "paths": {
       "de": "/docs/allianz/",

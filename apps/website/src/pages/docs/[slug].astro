@@ -108,6 +108,17 @@ const messageConfigurator = document.slug === "eventankuendigung-zombie-belageru
             { name: "time", label: "Uhrzeit", type: "time" },
           ],
         }
+    : document.slug === "eventankuendigung-strahlungslegion"
+      ? {
+          type: "radiation-legion",
+          title: "Verteidigung vorbereiten",
+          description: "Trage die vereinbarte Startzeit ein. Die Serverzeit wird automatisch ergänzt.",
+          groupLabel: "Angaben für den Angriff der Strahlungslegion",
+          incompleteStatus: "Bitte die Startzeit ausfüllen.",
+          fields: [
+            { name: "time", label: "Startzeit", type: "time" },
+          ],
+        }
     : document.slug === "eventankuendigung-raubzugkaempfe"
       ? {
           type: "raid-shields",
@@ -1181,11 +1192,13 @@ const responsibilities = [
         fillCityConquestMessage,
         fillFortressAttackMessage,
         fillRaidShieldMessage,
+        fillRadiationLegionMessage,
         fillZombieSiegeMessage,
         isAllianceAmbushMessageComplete,
         isCityConquestMessageComplete,
         isFortressAttackMessageComplete,
         isRaidShieldMessageComplete,
+        isRadiationLegionMessageComplete,
         isZombieSiegeMessageComplete,
       } from "../../lib/alliance-message-template.mjs";
 
@@ -1614,6 +1627,8 @@ const responsibilities = [
           ? { isComplete: isCityConquestMessageComplete, fill: fillCityConquestMessage }
           : templateType === "fortress-attack"
             ? { isComplete: isFortressAttackMessageComplete, fill: fillFortressAttackMessage }
+          : templateType === "radiation-legion"
+            ? { isComplete: isRadiationLegionMessageComplete, fill: fillRadiationLegionMessage }
           : templateType === "raid-shields"
             ? { isComplete: isRaidShieldMessageComplete, fill: fillRaidShieldMessage }
             : templateType === "alliance-ambush"

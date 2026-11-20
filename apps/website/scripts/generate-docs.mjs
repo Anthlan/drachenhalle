@@ -117,6 +117,16 @@ const baseDocuments = [
     imageSource: "media/knowledge/Eventankuendigungen/Festungsangriff_Level_Uhrzeit.png",
   },
   {
+    source: "Drachenwissen/Eventankuendigungen/Strahlungslegion_StadtVerteidigen.md",
+    slug: "eventankuendigung-strahlungslegion",
+    title: "Strahlungslegion: Stadt gemeinsam verteidigen",
+    section: "Drachenwissen",
+    summary: "Startzeit einsetzen, angekündigtes Ziel prüfen und die Angriffswellen gemeinsam verteidigen.",
+    parentSlug: "eventankuendigungen",
+    kind: "alliance",
+    imageSource: "media/knowledge/Eventankuendigungen/Strahlungslegion_StadtVerteidigen.png",
+  },
+  {
     source: "Allianz/README.md",
     slug: "allianz",
     title: "Allianz",

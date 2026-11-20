@@ -6,11 +6,13 @@ import {
   fillCityConquestMessage,
   fillFortressAttackMessage,
   fillRaidShieldMessage,
+  fillRadiationLegionMessage,
   fillZombieSiegeMessage,
   isAllianceAmbushMessageComplete,
   isCityConquestMessageComplete,
   isFortressAttackMessageComplete,
   isRaidShieldMessageComplete,
+  isRadiationLegionMessageComplete,
   isZombieSiegeMessageComplete,
   serverTimeOffsetHours,
 } from "../src/lib/alliance-message-template.mjs";
@@ -95,6 +97,33 @@ test("setzt Stufe und Startzeit des Allianz-Hinterhalts in allen Sprachen ein", 
   assert.equal(isAllianceAmbushMessageComplete({ time: "19:60", level: "12" }), false);
   assert.equal(isAllianceAmbushMessageComplete({ time: "19:45", level: "" }), false);
   assert.equal(isAllianceAmbushMessageComplete({ time: "19:45", level: "12" }), true);
+});
+
+test("setzt lokale Zeit und Serverzeit für die Strahlungslegion ein", () => {
+  const winter = new Date("2026-11-20T12:00:00Z");
+  const summer = new Date("2026-07-15T12:00:00Z");
+  const template = "Beginn [UHRZEIT] Uhr · Serverzeit [SERVERZEIT] Uhr";
+
+  assert.equal(
+    fillRadiationLegionMessage(template, { time: "20:15", referenceDate: winter }),
+    "Beginn 20:15 Uhr · Serverzeit 17:15 Uhr",
+  );
+  assert.equal(
+    fillRadiationLegionMessage(template, { time: "20:15", referenceDate: summer }),
+    "Beginn 20:15 Uhr · Serverzeit 16:15 Uhr",
+  );
+  assert.equal(isRadiationLegionMessageComplete({ time: "" }), false);
+  assert.equal(isRadiationLegionMessageComplete({ time: "24:00" }), false);
+  assert.equal(isRadiationLegionMessageComplete({ time: "20:15" }), true);
+});
+
+test("ersetzt Uhrzeit und Serverzeit der Strahlungslegion in allen Sprachen", () => {
+  const referenceDate = new Date("2026-11-20T12:00:00Z");
+  const template = "[TIME] [SERVER TIME] · [HEURE] [HEURE SERVEUR] · [ВРЕМЯ] [ВРЕМЯ СЕРВЕРА] · [HORÁRIO] [HORÁRIO DO SERVIDOR]";
+  assert.equal(
+    fillRadiationLegionMessage(template, { time: "20:15", referenceDate }),
+    "20:15 17:15 · 20:15 17:15 · 20:15 17:15 · 20:15 17:15",
+  );
 });
 
 test("berechnet die Serverzeit im Winter drei und im Sommer vier Stunden früher", () => {
