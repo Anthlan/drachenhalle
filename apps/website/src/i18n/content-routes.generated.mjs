@@ -471,6 +471,16 @@ export default [
     }
   },
   {
+    "id": "content:Drachenwissen/Events/Event_02_Erntefest.md",
+    "paths": {
+      "de": "/docs/event-02-erntefest/",
+      "en": "/guides/event-harvest-festival/",
+      "fr": "/guides/evenement-fete-des-recoltes/",
+      "ru": "/руководства/событие-праздник-урожая/",
+      "pt": "/guias/evento-festival-da-colheita/"
+    }
+  },
+  {
     "id": "content:Aktuelles/2026_10_23_Bildgeschichten_DerVerboteneKnopf.md",
     "paths": {
       "de": "/neuigkeiten/bildgeschichten-derverboteneknopf/",
