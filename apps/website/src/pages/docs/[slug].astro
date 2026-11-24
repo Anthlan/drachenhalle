@@ -1139,6 +1139,12 @@ const responsibilities = [
                     </aside>
                   )}
                 </div>
+                {document.copyHtml && (
+                  <section class="markdown-content alliance-copy tip-copy" data-copy-section>
+                    <button type="button" class="copy-code-button" data-copy-code>Mitteilung kopieren</button>
+                    <div set:html={document.copyHtml} />
+                  </section>
+                )}
               </div>
             ) : document.kind === "tip" && document.introHtml && document.tipHtml && document.copyHtml ? (
               <div class="tip-article-body">

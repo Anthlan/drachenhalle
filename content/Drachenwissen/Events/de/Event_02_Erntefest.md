@@ -12,7 +12,7 @@ status: Zeitlich begrenzt
 - Tagesangebote im Markt: **10 goldene Universalsplitter für 60 Tickets** oder **Deluxe-Truhe für 100 Tickets**, wahlweise mit 5.000 Veredelten Steinen.
 - Im Füllhorn genügen **600 Körbe insgesamt** für alle persönlichen Belohnungsschwellen. Der Server muss zusätzlich die jeweilige Stufe erreichen.
 
-![Erntefest im DIE-Stil: tägliches Abholen, Würfelkosten und Startboni, Tagesangebote und Füllhorn-Beitrag](../../../../media/knowledge/Events/Event_02_Erntefest.png)
+![Beschriftete Erntefest-Übersicht: tägliches Abholen, Würfelkosten und Startboni, Tagesangebote und Füllhorn-Bedingungen](../../../../media/knowledge/Events/Event_02_Erntefest.png)
 
 ## Wofür ist dieser Event-Guide?
 

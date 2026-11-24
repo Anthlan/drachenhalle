@@ -680,16 +680,17 @@ for (const document of documents) {
     ? splitLevelTwoSections(articleMarkdown)
     : [];
   const tipSections = ["tip", "event"].includes(document.kind) ? articleSections : [];
+  const copySection = tipSections.find((section) => section.title.startsWith("html-block") || section.title === "allianz-mitteilung zum kopieren");
   const briefSection = tipSections.find((section) => section.title === "das wichtigste in kürze");
   const detailStartIndex = tipSections.findIndex((section) => section.title.startsWith("wofür ist dieser"));
   const detailMarkdown = detailStartIndex >= 0
-    ? tipSections.slice(detailStartIndex).map((section) => section.markdown).join("\n\n")
+    ? tipSections.slice(detailStartIndex).filter((section) => section !== copySection).map((section) => section.markdown).join("\n\n")
     : null;
   const detailIntroMarkdown = detailStartIndex >= 0
     ? tipSections[detailStartIndex].markdown
     : null;
   const detailBodyMarkdown = detailStartIndex >= 0
-    ? tipSections.slice(detailStartIndex + 1).map((section) => section.markdown).join("\n\n")
+    ? tipSections.slice(detailStartIndex + 1).filter((section) => section !== copySection).map((section) => section.markdown).join("\n\n")
     : null;
   const hasBriefView = Boolean(briefSection && detailMarkdown);
   const briefMarkdown = hasBriefView
@@ -706,7 +707,6 @@ for (const document of documents) {
     : null;
   const introSection = tipSections.find((section) => section.title.startsWith("wofür"));
   const mainSection = tipSections.find((section) => section.title === "tipp");
-  const copySection = tipSections.find((section) => section.title.startsWith("html-block"));
   const allianceCopyMatch = document.kind === "alliance"
     ? /^##\s+Allianz-Mitteilung zum Kopieren\s*$/im.exec(articleMarkdown)
     : null;
