@@ -33,6 +33,13 @@ test("translated Radiation Legion announcement exposes every registered language
   for(const language of config.languages)assert.equal(languageAvailable(radiationLegionAnnouncement,language,config),true);
 });
 
+test("mysteryZ set card follows the translated character chronicle routes",()=> {
+  const setCard="/drachenhalle/charakterchroniken/mysteryz/setcard/";
+  for(const language of config.languages)assert.equal(languageAvailable(setCard,language,config),true);
+  assert.equal(localizedNavigationUrl(setCard,"en",config),"/drachenhalle/en/character-chronicles/mysteryz/setcard/");
+  assert.equal(localizedNavigationUrl(setCard,"fr",config),"/drachenhalle/fr/chroniques-des-personnages/mysteryz/setcard/");
+});
+
 test("specific templates win and nested labels are translated",()=> {
   const t=createTranslator({"${left} von ${right}":"${left} of ${right}","${shown} von ${total} Allianzen":"${shown} of ${total} alliances","Punkte":"Points","${count} Punkte":"${count} points"});
   assert.equal(t("15 von 77 Allianzen"),"15 of 77 alliances");

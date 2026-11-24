@@ -2,6 +2,24 @@
 
 Dieser Index ordnet jedes Charaktermodell genau einer Serie zu. Eine Serie beschreibt Aufbau und Zweck der Referenz, nicht nur ihren Zeichenstil. Die klassischen Referenztafeln sichern vor allem das Aussehen einer Figur; die Weltserie ergänzt diese Grundlage um ihre individuelle Umgebung und Bildsprache.
 
+## M4 – mysteryZ: Schattenmagierin
+
+- **Status:** Kuratierte Setcard in Entwicklung
+- **Beschreibung:** Charakterstudien für mysteryZ zwischen Schattenmagie, Eleganz und starken Gefühlen. Die Serie erprobt dynamische Posen, kräftige Kontraste sowie ein stoffbetontes Magierinnen-Outfit mit hochgeschlossenem Oberteil, gerafften Ärmeln und Leder nur als Akzent.
+
+### Bilder
+
+- [2026_11_24_1412_Dachwache_mysteryZ.png](2026_11_24_1412_Dachwache_mysteryZ.png)
+- [2026_11_24_1412_NachDerMission_mysteryZ.png](2026_11_24_1412_NachDerMission_mysteryZ.png)
+- [2026_11_24_1412_Schattenschritt_mysteryZ.png](2026_11_24_1412_Schattenschritt_mysteryZ.png)
+- [2026_11_24_1421_Drachenzauber_mysteryZ.png](2026_11_24_1421_Drachenzauber_mysteryZ.png)
+- [2026_11_24_1421_KarminroteKonstellation_mysteryZ.png](2026_11_24_1421_KarminroteKonstellation_mysteryZ.png)
+- [2026_11_24_1421_Papierdrachen_mysteryZ.png](2026_11_24_1421_Papierdrachen_mysteryZ.png)
+- [2026_11_24_1442_DerSchutzraum_mysteryZ.png](2026_11_24_1442_DerSchutzraum_mysteryZ.png)
+- [2026_11_24_1442_EntschlossenerSchutz_mysteryZ.png](2026_11_24_1442_EntschlossenerSchutz_mysteryZ.png)
+- [2026_11_24_1456_Eifersucht_mysteryZ.png](2026_11_24_1456_Eifersucht_mysteryZ.png)
+- [2026_11_24_1456_Trotz_mysteryZ.png](2026_11_24_1456_Trotz_mysteryZ.png)
+
 ## M3 – Chibi
 
 - **Status:** Grundmodelle freigegeben; Posenbögen in Sichtung

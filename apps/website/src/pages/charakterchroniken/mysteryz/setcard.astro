@@ -1,0 +1,305 @@
+---
+import SocialMeta from "../../../components/SocialMeta.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import galleryData from "../../../data/gallery.generated.json";
+import "../../../styles/global.css";
+
+const collection = galleryData.items.filter((item) => item.series === "M4");
+const bySource = new Map(collection.map((item) => [item.sourcePath.split("/").at(-1), item]));
+const pick = (fileName) => {
+  const item = bySource.get(fileName);
+  if (!item) throw new Error(`Setcard-Bild fehlt: ${fileName}`);
+  return item;
+};
+
+const chapters = [
+  {
+    eyebrow: "Die neue Richtung",
+    title: "Magie mit Haltung",
+    intro: "Kräftige Kontraste, mehr Stofflichkeit und Gefühle, die nicht hinter der Maske verschwinden.",
+    items: [
+      ["2026_11_24_1421_KarminroteKonstellation_mysteryZ.png", "Karminrote Konstellation", "Leidenschaft wird zur sichtbaren Kraft."],
+      ["2026_11_24_1456_Trotz_mysteryZ.png", "Trotz", "Eine klare Haltung, die keinen Schritt zurückweicht."],
+      ["2026_11_24_1456_Eifersucht_mysteryZ.png", "Eifersucht", "Ein scharfer Blick, kontrolliert und doch unverkennbar."],
+      ["2026_11_24_1442_EntschlossenerSchutz_mysteryZ.png", "Entschlossener Schutz", "Fürsorge wird nicht erklärt, sondern verteidigt."],
+      ["2026_11_24_1442_DerSchutzraum_mysteryZ.png", "Der Schutzraum", "Die stille Seite hinter der beeindruckenden Fassade."],
+    ],
+  },
+  {
+    eyebrow: "Magische Studien",
+    title: "Verspielte Kraft",
+    intro: "Mehr Magierin, mehr Bewegung und Motive, in denen Intuition ebenso wichtig ist wie Macht.",
+    items: [
+      ["2026_11_24_1421_Papierdrachen_mysteryZ.png", "Papierdrachen", "Eine leichtere Geste, ohne die geheimnisvolle Präsenz zu verlieren."],
+      ["2026_11_24_1421_Drachenzauber_mysteryZ.png", "Drachenzauber", "Ein bewusst großes Experiment mit roter Beschwörungsmagie."],
+    ],
+  },
+  {
+    eyebrow: "Frühe Schattenstudien",
+    title: "Assassinin im Zwielicht",
+    intro: "Die ursprüngliche Richtung: elegant, wachsam und stärker von der lautlosen Jägerin geprägt.",
+    items: [
+      ["2026_11_24_1412_Dachwache_mysteryZ.png", "Dachwache", "Über den Lichtern der Stadt bleibt ihr nichts verborgen."],
+      ["2026_11_24_1412_Schattenschritt_mysteryZ.png", "Schattenschritt", "Geschwindigkeit und Präzision zwischen zwei Atemzügen."],
+      ["2026_11_24_1412_NachDerMission_mysteryZ.png", "Nach der Mission", "Ein ruhiger Moment, wenn die Anspannung endlich nachlässt."],
+    ],
+  },
+].map((chapter) => ({
+  ...chapter,
+  items: chapter.items.map(([fileName, title, caption]) => ({ ...pick(fileName), title, caption })),
+}));
+
+const allItems = chapters.flatMap((chapter) => chapter.items);
+const hero = pick("2026_11_24_1421_KarminroteKonstellation_mysteryZ.png");
+const originalUrl = (item) => `https://github.com/Anthlan/drachenhalle/blob/main/${item.sourcePath.split("/").map(encodeURIComponent).join("/")}`;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Eine kuratierte Setcard von mysteryZ zwischen Schattenmagie, Eleganz und starken Gefühlen." />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>mysteryZ · Setcard · DIE Drachenhalle</title>
+    <SocialMeta
+      title="mysteryZ · Setcard · DIE Drachenhalle"
+      description="Eine kuratierte Setcard von mysteryZ zwischen Schattenmagie, Eleganz und starken Gefühlen."
+      image={hero.webUrl}
+      imageAlt="mysteryZ in einer karminroten magischen Konstellation"
+      imageWidth={hero.width}
+      imageHeight={hero.height}
+    />
+  </head>
+  <body class="mystery-setcard-page">
+    <div class="page-shell">
+      <SiteHeader active="alliance" />
+      <main id="main-content" class="mystery-setcard">
+        <nav class="breadcrumbs setcard-breadcrumbs" aria-label="Brotkrümelnavigation">
+          <a href="/drachenhalle/">Start</a><span aria-hidden="true">/</span>
+          <a href="/drachenhalle/charakterchroniken/">Charakterchroniken</a><span aria-hidden="true">/</span>
+          <a href="/drachenhalle/charakterchroniken/mysteryz/">mysteryZ</a><span aria-hidden="true">/</span>
+          <span aria-current="page">Setcard</span>
+        </nav>
+
+        <header class="setcard-hero">
+          <img src={hero.webUrl} alt="mysteryZ in einer karminroten magischen Konstellation" width={hero.width} height={hero.height} />
+          <div class="setcard-hero-shade"></div>
+          <div class="setcard-hero-copy">
+            <p>Eine Charakterkollektion</p>
+            <h1><span>mystery</span><b>Z</b></h1>
+            <h2>Wo Schatten Gefühle bekommen</h2>
+            <div class="setcard-rule"></div>
+            <p class="setcard-lead">Mysteriös, leidenschaftlich und intuitiv. Eine Schattenmagierin, deren Stärke nicht darin liegt, nichts zu fühlen – sondern darin, ihre Gefühle in Magie zu verwandeln.</p>
+            <a href="#kollektion">Kollektion ansehen <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="setcard-sigil setcard-sigil-left" aria-hidden="true"></div>
+          <div class="setcard-sigil setcard-sigil-right" aria-hidden="true"></div>
+        </header>
+
+        <section class="setcard-intro" id="kollektion">
+          <p class="eyebrow">Die Setcard</p>
+          <h2>Zehn Facetten einer Figur</h2>
+          <p>Die Auswahl zeigt nicht nur ein Kostüm, sondern eine Entwicklung: von der stillen Assassinin zur ausdrucksstarken Magierin. Bild auswählen, um es groß zu betrachten.</p>
+          <dl>
+            <div><dt>{allItems.length}</dt><dd>Motive</dd></div>
+            <div><dt>3</dt><dd>Bildrichtungen</dd></div>
+            <div><dt>1</dt><dd>Charakterkern</dd></div>
+          </dl>
+        </section>
+
+        {chapters.map((chapter, chapterIndex) => (
+          <section class={`setcard-chapter chapter-${chapterIndex + 1}`} aria-labelledby={`setcard-chapter-${chapterIndex + 1}`}>
+            <header>
+              <div><span>0{chapterIndex + 1}</span><p>{chapter.eyebrow}</p></div>
+              <h2 id={`setcard-chapter-${chapterIndex + 1}`}>{chapter.title}</h2>
+              <p>{chapter.intro}</p>
+            </header>
+            <div class="setcard-grid">
+              {chapter.items.map((item, index) => (
+                <article class:list={["setcard-card", chapterIndex === 0 && index === 0 && "is-featured"]} data-index={allItems.findIndex((entry) => entry.id === item.id)}>
+                  <button type="button" class="setcard-open" aria-label="Bild groß ansehen">
+                    <span class="setcard-image">
+                      <img src={item.thumbnailUrl} alt={item.title} width={item.width} height={item.height} loading={chapterIndex === 0 && index < 3 ? "eager" : "lazy"} decoding="async" />
+                      <span class="setcard-zoom" aria-hidden="true">↗</span>
+                    </span>
+                    <span class="setcard-card-copy">
+                      <span>mysteryZ</span>
+                      <strong>{item.title}</strong>
+                      <small>{item.caption}</small>
+                    </span>
+                  </button>
+                </article>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <section class="setcard-identity">
+          <div>
+            <p class="eyebrow">Der gemeinsame Kern</p>
+            <h2>Wiedererkennbar, ohne stillzustehen</h2>
+          </div>
+          <ul>
+            <li><span>01</span><strong>Maske &amp; Kapuze</strong><p>Ihre Distanz bleibt Teil der Silhouette.</p></li>
+            <li><span>02</span><strong>Aschblondes Haar</strong><p>Ein heller Kontrast zur dunklen Welt.</p></li>
+            <li><span>03</span><strong>Karminrote Magie</strong><p>Gefühl wird Licht, Bewegung und Gefahr.</p></li>
+            <li><span>04</span><strong>Stoff statt Rüstung</strong><p>Raffungen, Brokat und fließende Lagen geben ihr mehr Persönlichkeit.</p></li>
+          </ul>
+        </section>
+
+        <nav class="setcard-actions" aria-label="Weitere Inhalte zu mysteryZ">
+          <a href="/drachenhalle/charakterchroniken/mysteryz/"><span>Ihre Geschichte</span><strong>Charakterchronik öffnen →</strong></a>
+          <a href="/drachenhalle/galerie/?person=mysteryZ&amp;series=M4"><span>Alle Bilddaten</span><strong>Galerie öffnen →</strong></a>
+        </nav>
+      </main>
+
+      <dialog class="setcard-dialog" id="setcard-dialog" aria-labelledby="setcard-dialog-title">
+        <button type="button" class="setcard-dialog-close" aria-label="Großansicht schließen">×</button>
+        <div class="setcard-dialog-stage"><img id="setcard-dialog-image" alt="" /></div>
+        <aside>
+          <p>mysteryZ · Setcard</p>
+          <h2 id="setcard-dialog-title"></h2>
+          <p id="setcard-dialog-caption"></p>
+          <div class="setcard-dialog-nav">
+            <button type="button" id="setcard-previous" aria-label="Vorheriges Bild">←</button>
+            <span id="setcard-position"></span>
+            <button type="button" id="setcard-next" aria-label="Nächstes Bild">→</button>
+          </div>
+          <a id="setcard-original" href="#" target="_blank" rel="noopener noreferrer">Original in der Galerie öffnen ↗</a>
+        </aside>
+      </dialog>
+      <SiteFooter />
+    </div>
+
+    <script define:vars={{ items: allItems.map((item) => ({ title: item.title, caption: item.caption, webUrl: item.webUrl, originalUrl: originalUrl(item) })) }}>
+      const cards = [...document.querySelectorAll(".setcard-card")];
+      const dialog = document.querySelector("#setcard-dialog");
+      const image = document.querySelector("#setcard-dialog-image");
+      const title = document.querySelector("#setcard-dialog-title");
+      const caption = document.querySelector("#setcard-dialog-caption");
+      const position = document.querySelector("#setcard-position");
+      const original = document.querySelector("#setcard-original");
+      let activeIndex = 0;
+
+      const show = (nextIndex) => {
+        activeIndex = (nextIndex + items.length) % items.length;
+        const item = items[activeIndex];
+        image.src = item.webUrl;
+        image.alt = `${item.title} – ${item.caption}`;
+        title.textContent = item.title;
+        caption.textContent = item.caption;
+        position.textContent = `${activeIndex + 1} / ${items.length}`;
+        original.href = item.originalUrl;
+        if (!dialog.open) dialog.showModal();
+      };
+
+      cards.forEach((card) => card.querySelector(".setcard-open").addEventListener("click", () => show(Number(card.dataset.index))));
+      document.querySelector(".setcard-dialog-close").addEventListener("click", () => dialog.close());
+      document.querySelector("#setcard-previous").addEventListener("click", () => show(activeIndex - 1));
+      document.querySelector("#setcard-next").addEventListener("click", () => show(activeIndex + 1));
+      dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+      dialog.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") show(activeIndex - 1);
+        if (event.key === "ArrowRight") show(activeIndex + 1);
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  :global(.mystery-setcard-page) { background: #07050b; }
+  .mystery-setcard { --mystery-red: #ff3159; --mystery-crimson: #8d1735; --mystery-cream: #fff4e9; --mystery-muted: #c4b6c1; --setcard-display: Georgia, "Times New Roman", serif; --setcard-sans: Inter, ui-sans-serif, system-ui, sans-serif; background: radial-gradient(circle at 50% 8%, #3b0b1b 0, #120812 30rem, #07050b 64rem); color: var(--mystery-cream); overflow: hidden; }
+  .setcard-breadcrumbs { max-width: 1500px; margin: 0 auto; padding: 1.2rem clamp(1rem, 4vw, 4rem); color: #bcaeb8; }
+  .setcard-breadcrumbs a { color: inherit; }
+  .setcard-hero { position: relative; min-height: min(78rem, 86vh); display: grid; align-items: end; isolation: isolate; border-block: 1px solid #552033; overflow: hidden; }
+  .setcard-hero > img { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; object-position: 68% 10%; filter: saturate(1.08) contrast(1.05); }
+  .setcard-hero-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(7,5,11,.98) 0%, rgba(17,5,14,.9) 34%, rgba(12,3,11,.34) 67%, rgba(7,5,11,.58) 100%), linear-gradient(0deg, #07050b 0%, transparent 38%); }
+  .setcard-hero-copy { width: min(48rem, 90%); margin: 0 clamp(1.3rem, 8vw, 9rem) clamp(3rem, 9vw, 8rem); }
+  .setcard-hero-copy > p:first-child, .setcard-chapter header div p { color: #ff738e; font: 800 .76rem/1.2 var(--setcard-sans); letter-spacing: .32em; text-transform: uppercase; }
+  .setcard-hero h1 { margin: .5rem 0 0; font: 600 clamp(5.5rem, 13vw, 12rem)/.78 var(--setcard-display); letter-spacing: -.065em; text-shadow: 0 0 3rem rgba(255,49,89,.3); }
+  .setcard-hero h1 b { color: var(--mystery-red); font-weight: 700; }
+  .setcard-hero h2 { margin: 1.4rem 0 0; font: 500 clamp(1.25rem, 2vw, 1.85rem)/1.3 var(--setcard-display); letter-spacing: .08em; text-transform: uppercase; }
+  .setcard-rule { width: 7rem; height: 2px; margin: 2rem 0; background: linear-gradient(90deg, var(--mystery-red), transparent); }
+  .setcard-lead { max-width: 41rem; color: #e7dce2; font-size: clamp(1rem, 1.3vw, 1.2rem); line-height: 1.8; }
+  .setcard-hero-copy > a { display: inline-flex; gap: .8rem; margin-top: 1.8rem; color: var(--mystery-cream); font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+  .setcard-sigil { position: absolute; width: 8rem; aspect-ratio: 1; border: 1px solid rgba(255,49,89,.25); transform: rotate(45deg); z-index: -1; }
+  .setcard-sigil::after { content: ""; position: absolute; inset: 27%; border: inherit; }
+  .setcard-sigil-left { left: -4rem; top: 17%; } .setcard-sigil-right { right: -4rem; bottom: 14%; }
+  .setcard-intro { max-width: 86rem; margin: 0 auto; padding: clamp(5rem, 10vw, 9rem) clamp(1.3rem, 4vw, 3rem); text-align: center; }
+  .setcard-intro h2 { margin: .6rem 0 1rem; font: 600 clamp(2.8rem, 6vw, 5.8rem)/.95 var(--setcard-display); }
+  .setcard-intro > p:not(.eyebrow) { max-width: 48rem; margin: 0 auto; color: var(--mystery-muted); font-size: 1.08rem; line-height: 1.8; }
+  .setcard-intro dl { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 42rem; margin: 3rem auto 0; border-block: 1px solid #43202e; }
+  .setcard-intro dl div { padding: 1.4rem 1rem; } .setcard-intro dl div + div { border-left: 1px solid #43202e; }
+  .setcard-intro dt { color: #ff708b; font: 600 2rem/1 var(--setcard-display); } .setcard-intro dd { margin: .4rem 0 0; color: #ac9da7; font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; }
+  .setcard-chapter { max-width: 92rem; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 3rem) clamp(6rem, 11vw, 10rem); }
+  .setcard-chapter > header { display: grid; grid-template-columns: minmax(11rem, .55fr) 1fr 1fr; gap: 2rem; align-items: end; padding: 0 0 2rem; border-bottom: 1px solid #4c2030; }
+  .setcard-chapter header div { display: flex; gap: 1rem; align-items: center; } .setcard-chapter header div span { color: #ff3159; font: 700 .8rem/1 var(--setcard-sans); }
+  .setcard-chapter header h2 { margin: 0; font: 600 clamp(2.2rem, 4vw, 3.9rem)/1 var(--setcard-display); }
+  .setcard-chapter header > p { margin: 0; color: var(--mystery-muted); line-height: 1.65; }
+  .setcard-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.15rem; margin-top: 1.3rem; }
+  .setcard-card { grid-column: span 2; min-width: 0; border: 1px solid #3e2230; background: linear-gradient(150deg, #1c1019, #0e0a10); transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .setcard-card:hover { transform: translateY(-4px); border-color: #a72a4d; box-shadow: 0 1.4rem 4rem rgba(0,0,0,.35), 0 0 2rem rgba(255,49,89,.08); }
+  .setcard-card.is-featured { grid-column: span 4; }
+  .setcard-open { width: 100%; height: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+  .setcard-image { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: #120910; }
+  .setcard-card.is-featured .setcard-image { aspect-ratio: 2.04 / 1; }
+  .setcard-card.is-featured .setcard-image img { object-position: center 15%; }
+  .setcard-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.75,.25,1); }
+  .setcard-card:hover img { transform: scale(1.035); }
+  .setcard-zoom { position: absolute; right: .9rem; top: .9rem; display: grid; place-items: center; width: 2.5rem; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.5); background: rgba(8,5,10,.6); backdrop-filter: blur(6px); }
+  .setcard-card-copy { display: grid; gap: .35rem; padding: 1.25rem 1.35rem 1.5rem; }
+  .setcard-card-copy > span { color: #ff5575; font-size: .65rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
+  .setcard-card-copy strong { font: 600 clamp(1.35rem, 2vw, 2rem)/1.1 var(--setcard-display); }
+  .setcard-card-copy small { color: #b9abb4; font-size: .9rem; line-height: 1.55; }
+  .setcard-identity { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 9rem); max-width: 92rem; margin: 0 auto clamp(6rem, 11vw, 10rem); padding: clamp(3rem, 7vw, 6rem); border-block: 1px solid #592137; background: radial-gradient(circle at 12% 20%, rgba(156,22,58,.24), transparent 35%), #120a12; }
+  .setcard-identity h2 { margin: .7rem 0 0; font: 600 clamp(2.5rem, 5vw, 4.8rem)/1 var(--setcard-display); }
+  .setcard-identity ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; list-style: none; margin: 0; padding: 0; }
+  .setcard-identity li { padding-top: 1rem; border-top: 1px solid #4a2735; } .setcard-identity li span { color: #ff5878; font-size: .7rem; font-weight: 800; }
+  .setcard-identity li strong { display: block; margin: .55rem 0; font: 600 1.35rem/1.2 var(--setcard-display); } .setcard-identity li p { margin: 0; color: #bcaeb7; line-height: 1.6; }
+  .setcard-actions { display: grid; grid-template-columns: repeat(2, 1fr); max-width: 92rem; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 3rem) 7rem; }
+  .setcard-actions a { display: grid; gap: .65rem; padding: 2rem; border: 1px solid #4c2433; color: inherit; background: #100a11; } .setcard-actions a + a { border-left: 0; }
+  .setcard-actions span { color: #b4a6b0; font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; } .setcard-actions strong { font: 600 1.4rem/1.2 var(--setcard-display); }
+  .setcard-dialog { width: min(96vw, 92rem); height: min(94vh, 72rem); max-width: none; max-height: none; padding: 0; border: 1px solid #7b2d49; background: #08060a; color: var(--mystery-cream); }
+  .setcard-dialog::backdrop { background: rgba(2,1,3,.88); backdrop-filter: blur(10px); }
+  .setcard-dialog[open] { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; }
+  .setcard-dialog-stage { min-width: 0; display: grid; place-items: center; overflow: hidden; background: #030205; }
+  .setcard-dialog-stage img { width: 100%; height: 100%; object-fit: contain; }
+  .setcard-dialog aside { display: flex; flex-direction: column; padding: 3.2rem 2rem 2rem; border-left: 1px solid #4c2433; }
+  .setcard-dialog aside > p:first-child { color: #ff5878; font-size: .7rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+  .setcard-dialog h2 { margin: .7rem 0; font: 600 2.2rem/1.05 var(--setcard-display); } .setcard-dialog aside > p { color: #bcaeb7; line-height: 1.65; }
+  .setcard-dialog-close { position: absolute; z-index: 3; top: .8rem; right: .8rem; width: 2.8rem; aspect-ratio: 1; border: 1px solid #714057; background: #110910; color: white; font-size: 1.6rem; cursor: pointer; }
+  .setcard-dialog-nav { display: grid; grid-template-columns: 3rem 1fr 3rem; align-items: center; margin-top: auto; text-align: center; }
+  .setcard-dialog-nav button { height: 3rem; border: 1px solid #5c2b3f; background: #180c15; color: white; cursor: pointer; } .setcard-dialog-nav span { color: #aa9ca6; }
+  .setcard-dialog aside a { margin-top: 1rem; padding: 1rem; border: 1px solid #6e2f46; color: white; text-align: center; font-weight: 800; }
+  @media (max-width: 900px) {
+    .setcard-hero { min-height: 78vh; align-items: end; }
+    .setcard-hero > img { object-position: 60% 12%; }
+    .setcard-hero-shade { background: linear-gradient(0deg, #07050b 0%, rgba(7,5,11,.82) 49%, rgba(7,5,11,.18) 100%); }
+    .setcard-hero-copy { width: auto; margin: 0 1.3rem 3rem; }
+    .setcard-hero h1 { font-size: clamp(4.5rem, 21vw, 8rem); }
+    .setcard-chapter > header { grid-template-columns: 1fr; gap: .8rem; }
+    .setcard-card, .setcard-card.is-featured { grid-column: span 3; grid-row: auto; }
+    .setcard-card.is-featured .setcard-image { aspect-ratio: 1; }
+    .setcard-identity { grid-template-columns: 1fr; }
+    .setcard-dialog[open] { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
+    .setcard-dialog aside { padding: 1.4rem; border-left: 0; border-top: 1px solid #4c2433; }
+    .setcard-dialog aside > p:first-child, .setcard-dialog aside > p:not(:first-child), .setcard-dialog aside > a { display: none; }
+    .setcard-dialog h2 { margin: 0 3rem 1rem 0; font-size: 1.5rem; }
+  }
+  @media (max-width: 580px) {
+    .setcard-breadcrumbs { font-size: .75rem; overflow-x: auto; white-space: nowrap; }
+    .setcard-hero { min-height: 42rem; }
+    .setcard-hero h2 { font-size: 1rem; }
+    .setcard-lead { font-size: .92rem; line-height: 1.65; }
+    .setcard-intro dl { grid-template-columns: 1fr; max-width: 15rem; } .setcard-intro dl div + div { border-left: 0; border-top: 1px solid #43202e; }
+    .setcard-grid { grid-template-columns: 1fr; }
+    .setcard-card, .setcard-card.is-featured { grid-column: auto; }
+    .setcard-identity { padding-inline: 1.3rem; }
+    .setcard-identity ul { grid-template-columns: 1fr; }
+    .setcard-actions { grid-template-columns: 1fr; } .setcard-actions a + a { border-left: 1px solid #4c2433; border-top: 0; }
+    .setcard-dialog { width: 100vw; height: 100dvh; border: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .setcard-card, .setcard-image img { transition: none; } }
+</style>
