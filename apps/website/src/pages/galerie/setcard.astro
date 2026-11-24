@@ -1,0 +1,202 @@
+---
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SocialMeta from "../../components/SocialMeta.astro";
+import gallery from "../../data/gallery.generated.json";
+import "../../styles/global.css";
+
+const title = "Setcard erstellen · DIE Drachenhalle";
+const description = "Kombiniere Setcard-Motive und Galeriebilder zu einer eigenen Bildauswahl.";
+const sources = [
+  { id: "setcard", items: gallery.setcardItems },
+  { id: "gallery", items: gallery.items },
+];
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
+    <title>{title}</title>
+    <SocialMeta title={title} description={description} />
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader active="gallery" />
+      <main id="main-content" class="setcard-maker" data-setcard>
+        <header class="maker-header">
+          <h1>Setcard erstellen</h1>
+          <p>{description}</p>
+        </header>
+
+        <noscript>Für den Setcard-Editor ist JavaScript erforderlich.</noscript>
+        <div class="maker-workspace">
+          <section class="maker-panel" data-editor aria-labelledby="setcard-library-title">
+            <h2 id="setcard-library-title">Bilder auswählen</h2>
+            <div class="maker-filters">
+              <label>
+                Bildquelle
+                <select data-source>
+                  <option value="all">Alle Bilder</option>
+                  <option value="setcard">Setcard-Motive</option>
+                  <option value="gallery">Galeriebilder</option>
+                </select>
+              </label>
+              <label>
+                Bilder suchen
+                <input type="search" placeholder="Titel oder Spielername" data-search />
+              </label>
+            </div>
+            <div class="maker-library" data-library></div>
+            <p data-no-results hidden>Keine passenden Bilder gefunden.</p>
+            <button type="button" data-more hidden>Weitere Bilder anzeigen</button>
+          </section>
+
+          <section class="maker-panel maker-result" aria-labelledby="setcard-result-title">
+            <div class="maker-toolbar">
+              <h2 id="setcard-result-title">Deine Setcard</h2>
+              <button type="button" data-edit hidden>Setcard bearbeiten</button>
+            </div>
+            <div class="maker-options" data-editor>
+              <label>
+                Setcard-Titel
+                <input type="text" maxlength="100" placeholder="Meine Setcard" data-title />
+              </label>
+              <label>
+                Layout
+                <select data-layout-picker>
+                  <option value="grid">Raster</option>
+                  <option value="feature">Großes Auftaktbild</option>
+                  <option value="stack">Einzelbilder</option>
+                </select>
+              </label>
+            </div>
+            <div class="maker-toolbar" data-editor>
+              <button type="button" data-share disabled>Setcard-Link kopieren</button>
+              <span>Ausgewählte Bilder <strong data-count aria-live="polite">0</strong></span>
+            </div>
+            <div data-editor>
+              <input data-share-link type="url" readonly aria-label="Setcard-Link" hidden />
+              <p data-copied role="status" hidden>Setcard-Link kopiert.</p>
+            </div>
+
+            <div class="maker-preview" data-preview>
+              <h3 data-preview-title hidden></h3>
+              <p class="maker-empty" data-empty>Wähle Bilder für deine Setcard aus.</p>
+              <p class="maker-empty" data-unavailable hidden>Die Bilder dieser Setcard sind nicht mehr verfügbar.</p>
+              <div class="maker-cards" data-cards data-layout="grid"></div>
+            </div>
+          </section>
+        </div>
+
+        <template data-library-card>
+          <button type="button" class="maker-thumbnail" aria-pressed="false">
+            <img alt="" loading="lazy" decoding="async" />
+            <span data-image-title></span>
+            <span class="maker-check" aria-hidden="true">✓</span>
+          </button>
+        </template>
+        <template data-preview-card>
+          <figure class="maker-card">
+            <a data-full-image target="_blank" rel="noopener">
+              <img loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <span data-image-title></span>
+              <span class="maker-card-actions" data-card-editor>
+                <button type="button" data-action="earlier" aria-label="Nach vorne verschieben" title="Nach vorne verschieben">←</button>
+                <button type="button" data-action="later" aria-label="Nach hinten verschieben" title="Nach hinten verschieben">→</button>
+                <button type="button" data-action="remove" aria-label="Bild entfernen" title="Bild entfernen">×</button>
+              </span>
+            </figcaption>
+          </figure>
+        </template>
+        <template data-image-catalog>
+          {sources.flatMap(({ id, items }) => items.map((item) => (
+            <span
+              data-id={item.id}
+              data-source={id}
+              data-thumbnail={item.thumbnailUrl}
+              data-image={item.webUrl}
+              data-width={item.width}
+              data-height={item.height}
+              data-people={item.people.join(" ")}
+            >{item.title}</span>
+          )))}
+        </template>
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
+
+<script>
+  import { mountSetcard } from "../../scripts/setcard";
+  const root = document.querySelector<HTMLElement>("[data-setcard]");
+  if (root) mountSetcard(root);
+</script>
+
+<style>
+  .setcard-maker { padding-block: clamp(2rem, 5vw, 5rem); }
+  .setcard-maker [hidden] { display: none !important; }
+  .maker-header { margin-bottom: 2rem; }
+  .maker-header h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1; margin: 0 0 .6rem; }
+  .maker-header p, .maker-empty { color: var(--muted, #b5bbd0); }
+  .maker-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 1.25rem; align-items: start; }
+  .maker-panel { min-width: 0; padding: clamp(1rem, 2.3vw, 2rem); border: 1px solid #42382a; background: #101526; }
+  .maker-panel h2 { margin: 0 0 1rem; }
+  .maker-filters, .maker-options { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .75rem; margin-bottom: 1rem; }
+  .maker-options { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+  .setcard-maker label { display: grid; gap: .35rem; min-width: 0; }
+  .setcard-maker input, .setcard-maker select, .setcard-maker button {
+    font: inherit;
+    color: inherit;
+    background: #0b1121;
+    border: 1px solid #67532f;
+    border-radius: .25rem;
+    padding: .5rem .65rem;
+    min-height: 2.6rem;
+  }
+  .setcard-maker input, .setcard-maker select { width: 100%; min-width: 0; }
+  .setcard-maker button { cursor: pointer; }
+  .setcard-maker button:hover:not(:disabled), .maker-thumbnail[aria-pressed="true"] { border-color: #f5c566; }
+  .setcard-maker button:disabled { opacity: .4; cursor: default; }
+  .maker-library { display: grid; grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr)); gap: .6rem; }
+  .maker-library .maker-thumbnail { display: grid; align-content: start; position: relative; padding: 0; text-align: left; overflow: hidden; }
+  .maker-thumbnail img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .maker-thumbnail [data-image-title] { display: block; padding: .35rem .45rem; font-size: .77rem; overflow-wrap: anywhere; }
+  .maker-check { display: none; position: absolute; inset: .25rem .25rem auto auto; border-radius: 100%; background: #f5c566; color: #0b1121; padding: 0 .32rem; font-weight: 900; }
+  .maker-thumbnail[aria-pressed="true"] .maker-check { display: block; }
+  [data-more] { margin-top: 1rem; }
+  .maker-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem; }
+  .maker-toolbar h2 { margin: 0; }
+  .maker-toolbar + .maker-options { margin-top: 1rem; }
+  .maker-preview { margin-top: 1rem; }
+  .maker-preview h3 { font-size: clamp(1.5rem, 3vw, 2.6rem); margin: 0 0 .8rem; overflow-wrap: anywhere; }
+  .maker-empty { padding: 1.5rem 1rem; margin: 0; text-align: center; border: 1px dashed #67532f; }
+  .maker-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: .8rem; }
+  .maker-cards[data-layout="feature"] .maker-card:first-child { grid-column: 1 / -1; }
+  .maker-cards[data-layout="stack"] { grid-template-columns: minmax(0, 1fr); }
+  .maker-card { display: flex; flex-direction: column; min-width: 0; margin: 0; border: 1px solid #42382a; background: #090e1b; }
+  .maker-card a { display: block; }
+  .maker-card img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; }
+  .maker-cards[data-layout="feature"] .maker-card:first-child img,
+  .maker-cards[data-layout="stack"] .maker-card img { aspect-ratio: auto; max-height: 70vh; }
+  .maker-card figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .35rem; padding: .5rem .65rem; overflow-wrap: anywhere; }
+  .maker-card-actions { display: flex; gap: .3rem; margin-left: auto; }
+  .maker-card-actions button { padding: .2rem .55rem; min-width: 2.45rem; min-height: 2.45rem; }
+  [data-share-link] { margin-top: .65rem; }
+  .setcard-maker[data-mode="view"] .maker-header,
+  .setcard-maker[data-mode="view"] [data-editor] { display: none; }
+  .setcard-maker[data-mode="view"] .maker-workspace { grid-template-columns: minmax(0, 1fr); }
+  @media (max-width: 840px) {
+    .maker-workspace { grid-template-columns: minmax(0, 1fr); }
+    .maker-library { max-height: 21rem; overflow: auto; }
+  }
+  @media (max-width: 400px) {
+    .maker-filters, .maker-options { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>

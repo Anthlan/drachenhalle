@@ -29,6 +29,7 @@ const contentAreas = [
   ["media/gallery/Charaktermodelle", "Charaktermodell"],
   ["media/gallery/Chatbilder", "Chatbild"],
   ["media/gallery/Reaktionsbilder", "Reaktionsbild"],
+  ["media/setcards", "Setcard"],
 ];
 
 const knownPeople = [
@@ -280,7 +281,7 @@ function parseMetadata(sourcePath, defaultCategory) {
 async function loadPreviousItems() {
   try {
     const data = JSON.parse(await readFile(dataFile, "utf8"));
-    return new Map(data.items.map((item) => [item.sourcePath, item]));
+    return new Map([...data.items, ...(data.setcardItems ?? [])].map((item) => [item.sourcePath, item]));
   } catch {
     return new Map();
   }
@@ -545,41 +546,47 @@ await writeFile(
   "utf8",
 );
 
+// Keep the curated mysteryZ series available for existing Setcard links.
+const setcardItems = items.filter((item) => item.modelSet === "M4" || item.category === "Setcard");
+const setcardIds = new Set(setcardItems.map((item) => item.id));
+const galleryItems = items.filter((item) => !setcardIds.has(item.id));
+
 const galleryData = {
   generatedAt: new Date().toISOString(),
-  imageCount: items.length,
-  originalBytes: items.reduce((sum, item) => sum + item.originalBytes, 0),
+  imageCount: galleryItems.length,
+  originalBytes: galleryItems.reduce((sum, item) => sum + item.originalBytes, 0),
   generatedBytes,
   styles: styleIndex.styles.map((style) => ({
     ...style,
-    count: items.filter((item) => item.style === style.value).length,
+    count: galleryItems.filter((item) => item.style === style.value).length,
   })),
   avatarSets: avatarSetIndex.sets.map((set) => ({
     ...set,
-    count: items.filter((item) => item.avatarSet === set.value).length,
+    count: galleryItems.filter((item) => item.avatarSet === set.value).length,
   })),
   modelSets: modelSetIndex.sets.map((set) => ({
     ...set,
-    count: items.filter((item) => item.modelSet === set.value).length,
+    count: galleryItems.filter((item) => item.modelSet === set.value).length,
   })),
   series: [
     ...avatarSetIndex.sets.map((set) => ({
       ...set,
       type: "Avatar-Serie",
-      count: items.filter((item) => item.avatarSet === set.value).length,
+      count: galleryItems.filter((item) => item.avatarSet === set.value).length,
     })),
     ...modelSetIndex.sets.map((set) => ({
       ...set,
       type: "Modell-Serie",
-      count: items.filter((item) => item.modelSet === set.value).length,
+      count: galleryItems.filter((item) => item.modelSet === set.value).length,
     })),
   ],
-  items,
+  items: galleryItems,
+  setcardItems,
 };
 
 await writeFile(dataFile, `${JSON.stringify(galleryData, null, 2)}\n`, "utf8");
 
 const megabytes = (bytes) => `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 console.log(
-  `Gallery ready: ${items.length} originals (${megabytes(galleryData.originalBytes)}) → ${items.length * 2} web assets (${megabytes(generatedBytes)}); ${documentImages.length} hidden document assets`,
+  `Gallery ready: ${galleryItems.length} gallery images, ${setcardItems.length} Setcard images → ${items.length * 2} web assets (${megabytes(generatedBytes)}); ${documentImages.length} hidden document assets`,
 );

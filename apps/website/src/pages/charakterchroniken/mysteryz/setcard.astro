@@ -5,7 +5,7 @@ import SiteHeader from "../../../components/SiteHeader.astro";
 import galleryData from "../../../data/gallery.generated.json";
 import "../../../styles/global.css";
 
-const collection = galleryData.items.filter((item) => item.series === "M4");
+const collection = galleryData.setcardItems.filter((item) => item.series === "M4");
 const bySource = new Map(collection.map((item) => [item.sourcePath.split("/").at(-1), item]));
 const pick = (fileName) => {
   const item = bySource.get(fileName);
@@ -59,6 +59,7 @@ const originalUrl = (item) => `https://github.com/Anthlan/drachenhalle/blob/main
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Eine kuratierte Setcard von mysteryZ zwischen Schattenmagie, Eleganz und starken Gefühlen." />
     <link rel="icon" type="image/png" href="/drachenhalle/favicon.png" />
@@ -151,7 +152,7 @@ const originalUrl = (item) => `https://github.com/Anthlan/drachenhalle/blob/main
 
         <nav class="setcard-actions" aria-label="Weitere Inhalte zu mysteryZ">
           <a href="/drachenhalle/charakterchroniken/mysteryz/"><span>Ihre Geschichte</span><strong>Charakterchronik öffnen →</strong></a>
-          <a href="/drachenhalle/galerie/?person=mysteryZ&amp;series=M4"><span>Alle Bilddaten</span><strong>Galerie öffnen →</strong></a>
+          <a href="/drachenhalle/galerie/setcard/"><span>Setcards</span><strong>Setcard erstellen →</strong></a>
         </nav>
       </main>
 
