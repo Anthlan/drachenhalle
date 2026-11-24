@@ -1,46 +1,48 @@
 # Erntefest: sprachneutrale Handlungsübersicht im DIE-Stil
 
-Werkzeug: integriertes Imagegen, Bildgenerierung mit Stilreferenz und anschließende Bearbeitung.
+Werkzeug: integriertes Imagegen; gezielte Bearbeitung des vorhandenen Motivs am 24.11.2026.
 
 Artikelbild für alle Sprachfassungen: `media/knowledge/Events/Event_02_Erntefest.png`.
 Identische Fassung zum separaten Teilen: `media/knowledge/Events/Event_02_Erntefest_Piktogramme.png`.
 
-## Stil und Informationsaufbau
+## Stil und Inhalt
 
-Grundlagen: `content/Styleguides/de/DlE-Stil – Tipps.md` und `content/Styleguides/de/DlE-Stil – Allianz-Mitteilungen.md`. Stilreferenz: `media/knowledge/Events/Event_01_GefechtsvorbereitungFlugbesatzung_Vorratsdepot.png`.
+Grundlagen: `content/Styleguides/de/DlE-Stil – Tipps.md` und `content/Styleguides/de/DlE-Stil – Allianz-Mitteilungen.md`. Hochformat 2:3, navy-goldener Allianzsaal, Pergament, Altmessing, Drachenrahmen und DIE-Wappen. Keine Sprachtexte; nur Zahlen, Rechenzeichen und DIE.
 
-Hochformat 2:3, navy-goldener Allianzsaal, Pergament, Altmessing, Drachenrahmen und DIE-Wappen. Keine Sprachtexte; nur Zahlen, Rechenzeichen und der für alle Sprachen gleiche Allianzname DIE. Vier große Informationsbereiche:
+- Täglich Gratis-Münze, Pass-Aufgaben und Belohnungen abholen.
+- Normale Patrouille: ein Würfel, 1–6 Schritte, 1 Münze. Doppelpatrouille: zwei Würfel, 2–12 Schritte, 1 Münze + 60 Diamanten.
+- Beim Erreichen oder Überqueren von Start: Belohnungen und Feld-EP von 2–4 zufälligen Feldern. Mehr Strecke ermöglicht häufigere Startboni und schnelleren Feldausbau. Kein Gleichheitszeichen für die Gesamterträge, kein pauschaler 2×-Belohnungsmultiplikator und keine pauschale Empfehlung zugunsten eines Modus.
+- Markt: täglich 60 Tickets für 10 goldene Splitter; 100 Tickets für die Deluxe-Truhe mit 5.000 Veredelten Steinen als gewähltem Inhalt.
+- Füllhorn: 10 Körbe ergeben 1 persönlichen Punkt; 600 Körbe ergeben 60 Punkte. Für die letzte Serverbelohnung muss zusätzlich der Server-Meilenstein erreicht sein; sie enthält unter anderem 10 goldene Splitter.
 
-- Täglich Gratis-Münze und Pass-Aufgaben abholen.
-- Eine Münze für einen Würfel beziehungsweise eine Münze plus 60 Diamanten für zwei Würfel; gleicher Belohnungsertrag. Neutrale Belohnungssymbole, keine Deluxe-Truhen als garantierter Patrouillenertrag.
-- Tagesangebote: 60 Tickets für 10 goldene Splitter; 100 Tickets für die Deluxe-Truhe mit 5.000 Veredelten Steinen als gewähltem Inhalt.
-- 10 Körbe ergeben einen persönlichen Fülle-Punkt; 600 Körbe ergeben 60 Punkte. Zusätzlich muss der Server die Stufe erreicht haben; 10 goldene Splitter sind ein bestätigter Bestandteil der letzten Stufenbelohnung.
+## Auflösung und Quellen
 
-## Auflösung und Export
+Imagegen lieferte 1024 × 1536 Pixel. Die veröffentlichte PNG ist ein 2×-Export mit Lanczos3 auf **2048 × 3072 Pixel**, keine native Generierung in dieser Auflösung.
 
-Imagegen wurde um 2048 × 3072 Pixel gebeten, lieferte jedoch 1024 × 1536 Pixel. Die veröffentlichte PNG ist ein 2×-Export mit Lanczos3 auf **2048 × 3072 Pixel**. Sie ist keine native Generierung in dieser Auflösung.
+Native korrigierte Fassung: `.local/work/erntefest/sources/Piktogramme_Startbonus_1024x1536.png`.
+Die überholte Grafik mit gleichgesetzten Gesamterträgen bleibt nur lokal unter `.local/work/erntefest/rejected/Piktogramme_ohneStartbonus_2048x3072.png`.
 
-Native Stilfassung: `.local/work/erntefest/sources/Piktogramme_DIE_1024x1536.png`.
-Korrigiertes Inhaltsschema als Bearbeitungsreferenz: `.local/work/erntefest/sources/Piktogramme_Korrekturschema.png`.
-Die zuvor abgelehnte dekorative Fassung bleibt ausschließlich im lokalen Arbeitsbereich erhalten.
+Die zwei Würfel sind durch den Allianz-Screenshot belegt; der Startbonus steht in Regel 4 des Spielscreens `media/knowledge/Events/Event_02_Erntefest_Regeln.jpg`. Der häufigere Startdurchlauf bei gleicher Münzzahl ist eine Folgerung aus der höheren mittleren Würfelstrecke unter Annahme fairer Würfel. Der zusätzliche Ticketertrag ist nicht beziffert.
 
-## Abschließender Bearbeitungsprompt
+## Verwendeter Bearbeitungsprompt
 
 ```text
-Edit target: image 1, the corrected four-panel portrait Harvest Festival infographic.
-Reference image 2: visual style of the DIE alliance's established fantasy strategy-room information posters.
+Use case: precise-object-edit / infographic-diagram.
+Input image 1 is the edit target: the existing language-neutral Harvest Festival strategy sheet for the DIE alliance. Preserve its navy-and-aged-gold fantasy strategy hall style, dragon frame, DIE crest, parchment, composition, sharp pictograms, and portrait 2:3 ratio.
 
-Produce the FINAL HIGH-RESOLUTION VERSION at 2048 x 3072 pixels, portrait 2:3, with clean native detail and sharply readable symbols and numerals. Higher resolution is a specific user requirement.
+Correct ONLY the SECOND panel, which currently falsely equates the total rewards of single-die and double-die patrol.
+Replace that entire panel's information with this accurate compact pictogram diagram:
+- Top left: ONE die; cost ONE turkey coin with numeral 1; walking-footstep symbol with range "1–6".
+- Top right: TWO dice; cost ONE turkey coin with numeral 1 plus a blue diamond with numeral 60; walking-footstep symbol with range "2–12".
+- Bottom of this panel: a prominent circular lap arrow passing a checkered START FLAG, then an arrow to a small group of reward-board tiles labelled "2–4", with a reward star and a rising level arrow. This is the shared rule: every time the start square is reached or passed, receive rewards and tile experience from 2–4 random tiles. Connect the faster two-dice movement to this lap/start-bonus illustration. It means extra travel allows more start bonuses and faster tile development at the extra diamond cost.
+- REMOVE the equals sign between total rewards. REMOVE the green check that recommends the single die as equal in total yield. Do NOT show any reward "2x" multiplier or promise twice all rewards. Do NOT show two ordinary landings per double-die turn.
+Make this panel readable and uncluttered. It may use both its upper and lower halves.
 
-Change ONLY the visual finish to make the DIE alliance identity much more unmistakable. Preserve every infographic instruction, icon relationship, numeral, arrow, equation, panel order and meaning from image 1.
+Keep the other THREE panels completely unchanged:
+Top daily panel: calendar/repeat icon -> turkey coin 1 + claim task scroll -> green check.
+Market panel: calendar applies to BOTH equations: harvest tickets 60 -> golden shard 10; harvest tickets 100 -> selection chest -> refined stone disc 5000.
+Bottom panel: baskets 10 -> abundance medallion 1; baskets 600 -> abundance medallion 60 + completed green five-stage SERVER progress -> golden shard 10.
 
-DIE visual identity: a majestic warm candlelit medieval alliance strategy hall, rich DEEP NAVY fabric banners with subtle gold dragon heraldry, age-darkened wood, tooled leather, carefully engraved antique brass and restrained parchment. Cinematic, semi-realistic, noble and mature. The sheet should feel like an official page of the alliance's strategy folio, not a generic game infographic. Emphasize navy and aged gold over bright orange. Stronger fine dragon reliefs in the frame corners and a detailed gilded dragon crest at the top. Add only the short alliance name 'DIE' engraved into the small navy crest plate directly under the dragon; this is a universal brand name. No other words, headings, slogans or letters anywhere. Keep the header compact so all four information panels remain large and readable.
-
-All facts and layout MUST remain unchanged:
-Top: daily calendar/sun repeat icon -> turkey coin 1 + checked task list/claiming hand -> green check.
-Second: single die costs turkey coin 1 and gives a neutral hand-with-star reward symbol; two dice cost turkey coin 1 + diamond 60 and give the IDENTICAL neutral hand-with-star symbol. Equals sign between the two rewards and green check on the single-die option. Never turn these back into deluxe chests.
-Third: daily-market icon applying to BOTH exact equations: harvest tickets 60 -> golden puzzle shard 10; harvest tickets 100 -> optional deluxe chest -> silver refined stone disc 5000.
-Fourth: vegetable baskets 10 -> cornucopia-point medallion 1. Below, vegetable baskets 600 -> cornucopia-point medallion 60 + community/server icon with a complete green five-segment progress bar -> golden puzzle shard 10.
-Only numerals, mathematical arrows, + and =, and the small DIE crest are allowed as text. Do not add any extra costs, rewards or multipliers.
-No post-apocalyptic structures, military depot, glossy plastic, cartoon toy aesthetic, oversized decorative still-life or new characters. Use the reference's authentic fantasy-alliance environment and engraved materials. Make all numbers crisp and legible at the requested 2048x3072 resolution.
+Only the existing brand "DIE", numerals, mathematical signs and arrows are allowed as text. No language words, no headings, no START or XP lettering. Keep transparent_background false.
+Output target 2048 x 3072 pixels, preserving the existing high-resolution presentation and exact 2:3 framing.
 ```
